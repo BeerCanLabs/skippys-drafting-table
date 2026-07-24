@@ -1,3 +1,23 @@
+## Unreleased
+
+### Compatibility Impact
+
+- None. Two browser-only fixes; no schema, validator, or CLI changes.
+
+### Added
+
+- Added regression test asserting SDP initial render waits for `DOMContentLoaded`.
+- Added regression test asserting `businessPillarForObject` checks `pillar` before `ownerNode`.
+
+### Fixed
+
+- Fixed diagram load-order race on direct/bookmarked SDP pages (gated initial render on `DOMContentLoaded`). Closes #177.
+- Fixed business pillar grouping to prefer primary `pillar` over `ownerNode` per documented model. Closes #176.
+
+### Migration Notes
+
+- No manual migration required.
+
 ## 0.63.2 - 2026-07-24
 
 ### Compatibility Impact
