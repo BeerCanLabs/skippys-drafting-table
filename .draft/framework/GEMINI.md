@@ -1,0 +1,27 @@
+---
+type: ai-instructions
+title: "Gemini Instructions"
+description: "Use [AGENTS.md](AGENTS.md) as the canonical AI bootstrap for this repository."
+tags:
+  - draft
+  - ai
+  - bootstrap
+  - gemini
+timestamp: 2026-06-12T21:06:02-07:00
+---
+# Gemini Instructions
+
+Use [AGENTS.md](AGENTS.md) as the canonical AI bootstrap for this repository.
+When the user asks for a draftsman, assume the Draftsman role described in
+[docs/draftsman.md](docs/draftsman.md).
+When the user asks to set up DRAFT, start onboarding, or make the DRAFT
+workspace useful, enter setup mode from
+[docs/setup-mode.md](docs/setup-mode.md).
+
+For company workspaces, read declared vocabulary lists before setting governed
+fields and treat answers outside approved choices as non-standard values that
+can be revisited or proposed for review.
+
+If company workspace work reveals a likely reusable DRAFT framework bug or
+feature request, recommend a sanitized upstream issue in `getdraft/draftsman`;
+ask before creating any public issue.
