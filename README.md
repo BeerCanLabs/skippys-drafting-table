@@ -120,6 +120,25 @@ first, then optional `.draft/providers/*/configurations/`, then workspace
 configuration overlays, then workspace catalog content. The public repo is an
 update source, not a runtime dependency for a company's Draftsman.
 
+### Official Draftsman Agent Package & Deployment
+
+`draftsman` includes a turn-key, official agent package located in [`agent/`](agent/) containing:
+* **`agent/SOUL.md`**: Canonical persona, core identity, and `/draft` slash command handlers (`/draft author`, `/draft validate`, `/draft review`, `/draft triage`).
+* **`agent/agent-spec.yaml`**: Universal runtime & resource specification.
+* **`agent/skills/`**: 6 specialized agent skills (`draftsman`, `draftsman-author`, `draftsman-autodiscover`, `draftsman-diagram`, `draftsman-query`, `draftsman-standards`).
+* **`agent/bindings/`**: Factory bindings for **Hermes Agent Factories** (`agent/bindings/hermes/agent.yaml`) and **GitHub Actions** (`agent/bindings/github-actions/draft-agent-gatekeeper.yml`).
+* **`agent/docs/DEPLOYMENT.md`**: Infrastructure-as-Code (OpenTofu for GCP Cloud Run, Terraform for AWS Fargate) and Secret Manager setup guides.
+
+#### Enabling Draftsman Agent in a Company Workspace
+
+When a company vendors `draftsman`, the agent package is included out-of-the-box. Deploying the agent requires 3 integration components:
+
+1. **User Interface / Chat Gateway**: A Slack App (`SLACK_BOT_TOKEN`), Discord Bot (`DISCORD_BOT_TOKEN`), or Web UI to interact with engineers via chat and slash commands.
+2. **Repository Access**: A GitHub PAT or GitHub App Token (`GITHUB_PAT`) with contributor access to read schemas, run validation, and open pull requests against the company catalog repo.
+3. **Agent Harness (Runtime & Model)**: A container execution environment (GCP Cloud Run, AWS Fargate, or local Hermes runner) backed by a capable AI model (Claude 3.7, GPT-4o, Gemini 1.5 Pro).
+
+See [`agent/docs/DEPLOYMENT.md`](agent/docs/DEPLOYMENT.md) for complete deployment blueprints and secret configuration.
+
 ### Framework Update Workflow
 
 New company workspaces include an optional GitHub Actions workflow at
