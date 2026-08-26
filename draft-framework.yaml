@@ -1,8 +1,8 @@
 schemaVersion: "1.0"
 id: draft-framework
 name: DRAFT Framework
-version: "1.0.1"
+version: "1.0.2"
 releasePhase: GA
 compatibility:
   minDraftTableVersion: "1.0.0"
-  contract: DRAFT Framework 1.0.1 release; fixes agent package manifests, adds web_ui channel, and introduces automated agent package validation.
+  contract: DRAFT Framework 1.0.2 release; implements executable stdio MCP server, index access contracts, and functional handshake validation.

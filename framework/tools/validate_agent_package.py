@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Agent Package Validator: Verifies agent specifications, manifest consistency, skills, and MCP paths.
+Agent Package Validator: Verifies agent specifications, manifest consistency, skills, and MCP server execution.
 
 Usage:
     python3 framework/tools/validate_agent_package.py
@@ -9,6 +9,8 @@ Usage:
 from __future__ import annotations
 
 import argparse
+import json
+import subprocess
 import sys
 from pathlib import Path
 from typing import Any
@@ -21,7 +23,7 @@ AGENT_ROOT = REPO_ROOT / "agent"
 
 
 def parse_args(argv: list[str]) -> argparse.Namespace:
-    parser = argparse.ArgumentParser(description="Validate DRAFT framework agent package manifests and skills.")
+    parser = argparse.ArgumentParser(description="Validate DRAFT framework agent package manifests, skills, and MCP server handshakes.")
     parser.add_argument(
         "--agent-dir",
         type=Path,
@@ -39,6 +41,70 @@ def load_yaml(path: Path) -> dict[str, Any]:
     if not isinstance(data, dict):
         raise ValueError(f"File '{path}' must be a YAML mapping.")
     return data
+
+
+def test_mcp_server_handshake(mcp_file: Path) -> list[str]:
+    failures: list[str] = []
+    try:
+        data = json.loads(mcp_file.read_text(encoding="utf-8"))
+    except Exception as exc:
+        failures.append(f"{mcp_file}: Invalid JSON: {exc}")
+        return failures
+
+    servers = data.get("mcpServers", {})
+    if not isinstance(servers, dict) or not servers:
+        failures.append(f"{mcp_file}: Must declare non-empty mcpServers mapping")
+        return failures
+
+    for server_name, config in servers.items():
+        cmd = config.get("command")
+        args = config.get("args", [])
+        if not cmd:
+            failures.append(f"{mcp_file}: Server '{server_name}' missing command")
+            continue
+
+        full_cmd = [cmd] + args
+        try:
+            proc = subprocess.Popen(
+                full_cmd,
+                stdin=subprocess.PIPE,
+                stdout=subprocess.PIPE,
+                stderr=subprocess.PIPE,
+                cwd=str(REPO_ROOT),
+                text=True,
+            )
+        except Exception as exc:
+            failures.append(f"{mcp_file}: Failed to launch MCP server '{server_name}' ({full_cmd}): {exc}")
+            continue
+
+        # Send initialize and tools/list requests
+        init_req = json.dumps({"jsonrpc": "2.0", "id": 1, "method": "initialize", "params": {}}) + "\n"
+        list_req = json.dumps({"jsonrpc": "2.0", "id": 2, "method": "tools/list"}) + "\n"
+
+        try:
+            stdout_data, stderr_data = proc.communicate(input=init_req + list_req, timeout=5)
+        except subprocess.TimeoutExpired:
+            proc.kill()
+            failures.append(f"{mcp_file}: MCP server '{server_name}' timed out on JSON-RPC handshake")
+            continue
+
+        lines = [line.strip() for line in stdout_data.splitlines() if line.strip()]
+        tools_found = False
+
+        for line in lines:
+            try:
+                msg = json.loads(line)
+                if msg.get("id") == 2 and "result" in msg:
+                    tools = msg["result"].get("tools", [])
+                    if isinstance(tools, list) and len(tools) > 0:
+                        tools_found = True
+            except Exception:
+                pass
+
+        if not tools_found:
+            failures.append(f"{mcp_file}: MCP server '{server_name}' failed handshake: did not return a non-empty tool list over stdio (output: {lines})")
+
+    return failures
 
 
 def validate_agent_package(agent_dir: Path) -> tuple[list[str], list[str]]:
@@ -69,7 +135,7 @@ def validate_agent_package(agent_dir: Path) -> tuple[list[str], list[str]]:
             if not skill_path.exists() or not skill_path.is_dir():
                 failures.append(f"{spec_path}: Declared skill '{skill}' does not exist as a directory in agent/skills/")
 
-    # 2. Validate MCP paths exist
+    # 2. Validate MCP paths exist and execute stdio handshake
     spec_mcps = spec_data.get("mcps") or []
     if not isinstance(spec_mcps, list):
         failures.append(f"{spec_path}: mcps must be a list")
@@ -78,6 +144,9 @@ def validate_agent_package(agent_dir: Path) -> tuple[list[str], list[str]]:
             mcp_path = REPO_ROOT / str(mcp_path_str)
             if not mcp_path.exists():
                 failures.append(f"{spec_path}: Referenced MCP file '{mcp_path_str}' does not exist")
+            else:
+                mcp_failures = test_mcp_server_handshake(mcp_path)
+                failures.extend(mcp_failures)
 
     # 3. Validate Hermes binding consistency
     if hermes_path.exists():

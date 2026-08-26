@@ -1,7 +1,7 @@
 name: draftsman
 display_name: "Draftsman"
 description: "Official DRAFT Framework Factory Agent: read-only architecture search, dependency mapping, C4 diagrams, maturity rubric scoring, and compliance guidance."
-version: "1.0.0"
+version: "1.0.2"
 role: "Enterprise Software Architect"
 runtime:
   cpu: "1"
@@ -23,6 +23,9 @@ requirements:
     - name: ANTHROPIC_API_KEY
       required: true
       purpose: "Anthropic API key for agent reasoning and query resolution"
+    - name: GITHUB_READ_TOKEN
+      required: false
+      purpose: "Optional read-only GitHub token to fetch catalog_indexes.json if reading directly from a private GitHub repository"
     - name: DISCORD_BOT_TOKEN
       required: false
       purpose: "Discord Bot Token for interactive chat interface"

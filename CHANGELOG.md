@@ -1,3 +1,30 @@
+## 1.0.2 - 2026-08-26
+
+### Compatibility Impact
+
+- Fixes issue #184: implements executable stdio MCP server (`framework/tools/mcp_server.py`), index access contracts (`DRAFT_CATALOG_INDEX_URL`, `DRAFT_CATALOG_INDEX_PATH`, `GITHUB_READ_TOKEN`), and functional stdio MCP handshake validation.
+
+### Added
+
+- Added executable stdio JSON-RPC MCP server (`framework/tools/mcp_server.py`) exposing `query_architecture`, `get_c4_diagram`, `check_compliance`, and `validate_yaml_object`.
+- Added runtime index resolution order (`DRAFT_CATALOG_INDEX_URL` -> `DRAFT_CATALOG_INDEX_PATH` -> local workspace fallback) with optional `GITHUB_READ_TOKEN` authorization support for private GitHub catalog repositories.
+- Added live stdio MCP `initialize` & `tools/list` handshake test to `framework/tools/validate_agent_package.py`.
+
+### Changed
+
+- Updated `agent/mcp/draftsman-mcp.json` to point `args` to `["-m", "framework.tools.mcp_server"]`.
+- Updated `agent/agent-spec.yaml` and `agent/bindings/hermes/agent.yaml` to declare `GITHUB_READ_TOKEN` in `requirements.secrets` and bumped agent version to `1.0.2`.
+- Updated `agent/docs/DEPLOYMENT.md` with explicit Pattern A (Private GitHub repo with `GITHUB_READ_TOKEN`) and Pattern B (Published index URL `DRAFT_CATALOG_INDEX_URL` / `DRAFT_CATALOG_INDEX_PATH`).
+
+### Fixed
+
+- Fixed non-executable MCP server entrypoint in `agent/mcp/draftsman-mcp.json`.
+- Fixed missing index access contract declarations in agent specifications.
+
+### Migration Notes
+
+- Run `python3 framework/tools/validate_agent_package.py` to verify agent package and live stdio MCP server execution.
+
 ## 1.0.1 - 2026-08-26
 
 ### Compatibility Impact
