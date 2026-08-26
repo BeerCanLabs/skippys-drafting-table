@@ -162,6 +162,8 @@ def legacy_ids_for_path(path: Path, data: dict[str, Any]) -> list[str]:
         return ["reference-architecture." + stem.removeprefix("reference-architecture-")]
     if object_type == "software_deployment_pattern" and stem.startswith("software-deployment-"):
         return ["software-deployment." + stem.removeprefix("software-deployment-")]
+    if object_type == "product_registration" and (stem.startswith("product-reg-") or stem.startswith("product-registration-")):
+        return ["product-registration." + stem.removeprefix("product-reg-").removeprefix("product-registration-")]
     if object_type == "decision_record" and stem.startswith("decision-"):
         return ["decision." + stem.removeprefix("decision-")]
     if object_type == "drafting_session" and stem.startswith("session-"):

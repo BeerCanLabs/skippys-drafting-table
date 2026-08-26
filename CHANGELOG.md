@@ -1,3 +1,34 @@
+## 1.0.0 - 2026-08-26
+
+### Compatibility Impact
+
+- DRAFT Framework 1.0.0 General Availability release.
+- Introduces `product_registration` contract and decentralized `.draft/sdp.yaml` manifests for engineering product repositories.
+- Backward Compatible: Existing central catalog SDPs continue to validate and render without breaking changes.
+
+### Added
+
+- Added `product_registration` schema contract (`framework/schemas/product-registration.schema.yaml`) for registering engineering products in `drafting-table`.
+- Added decentralized `.draft/sdp.yaml` manifest support in engineering product repositories.
+- Added Pattern 2 Least-Privilege GitHub Action templates (`templates/github/drafting-table-receiver.yml.tmpl` and `templates/github/product-repo-sync.yml.tmpl`) using ephemeral GitHub App tokens.
+- Added Read-Only Slack App Manifest (`framework/integrations/slack/manifest.yaml`) and Discord Application Manifest (`framework/integrations/discord/application.json`) for Draftsman AI in Query & Guidance Mode.
+- Added `decentralize_sdp.py` migration utility (`framework/tools/decentralize_sdp.py`) to convert central catalog SDPs into product registrations and starter manifests.
+
+### Changed
+
+- Established three clear content groups: Product Content, Shared Services & Infrastructure (Internal Providers), and External Provider Hooks.
+- Defined dual interaction modes for Draftsman AI: Query & Guidance Mode (Slack/Discord/Web - Read-Only) vs. Authoring & Execution Mode (IDE/CLI).
+- Updated validator (`framework/tools/validate.py`) and indexers (`framework/tools/generate_indexes.py`) to discover and aggregate decentralized product SDPs into `catalog_indexes.json`.
+
+### Fixed
+
+- N/A
+
+### Migration Notes
+
+- Run `python3 framework/tools/validate.py --workspace .` to verify existing catalog files.
+- To decentralize a legacy catalog SDP, run `python3 framework/tools/decentralize_sdp.py --sdp <path-to-sdp.yaml>`.
+
 ## 0.63.4 - 2026-07-29
 
 ### Compatibility Impact

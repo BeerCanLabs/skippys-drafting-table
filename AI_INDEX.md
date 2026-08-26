@@ -72,6 +72,7 @@ the selected framework schemas/configurations, provider packs, and workspace YAM
 |---|---|---|
 | framework/docs/capabilities.md | Capabilities | A Capability is a first-class framework object that names an architecture |
 | framework/docs/company-vocabulary.md | Company Vocabulary | Company vocabulary lists are optional governed lists in `.draft/workspace.yaml`. |
+| framework/docs/decentralized-sdp-setup.md | Decentralized SoftwareDeploymentPatterns & Product Registration | How product engineering teams house SoftwareDeploymentPatterns in their own repos and register with drafting-table. |
 | framework/docs/decision-records.md | DecisionRecords | DecisionRecords are first-class records for known risks, |
 | framework/docs/delivery-models.md | Delivery Models | Delivery models explain how a deployable service is operated. |
 | framework/docs/design-principles.md | Design Principles | DRAFT is opinionated. |
@@ -120,6 +121,7 @@ the selected framework schemas/configurations, provider packs, and workspace YAM
 | framework/schemas/network-service.schema.yaml | network_service | schemaVersion, uid, type, name, deliveryModel, catalogStatus, lifecycleStatus |
 | framework/schemas/object-patch.schema.yaml | object_patch | schemaVersion, uid, type, name, target, patch, catalogStatus, lifecycleStatus |
 | framework/schemas/product-component.schema.yaml | product_component | schemaVersion, uid, type, name, repoUrl, owner, classification, catalogStatus |
+| framework/schemas/product-registration.schema.yaml | product_registration | schemaVersion, uid, type, name, owner, catalogStatus, repository |
 | framework/schemas/reference-architecture.schema.yaml | reference_architecture | schemaVersion, uid, type, name, catalogStatus, lifecycleStatus |
 | framework/schemas/relationship.schema.yaml | relationship | schemaVersion, uid, type, name, source, label, catalogStatus |
 | framework/schemas/requirement-group.schema.yaml | requirement_group | schemaVersion, uid, type, name, description, catalogStatus, activation, appliesTo, requirements |
@@ -476,13 +478,17 @@ These are sample catalog objects used to validate and demonstrate the framework.
 | templates/decision-record.yaml.tmpl | Reusable YAML authoring template. |
 | templates/deployment-target.yaml.tmpl | Reusable YAML authoring template. |
 | templates/drafting-session.yaml.tmpl | Reusable YAML authoring template. |
+| templates/github/drafting-table-receiver.yml.tmpl | DRAFT Framework 1.0 — Central Receiver GitHub Action |
+| templates/github/product-repo-sync.yml.tmpl | DRAFT Framework 1.0 — Product Repo Sync GitHub Action |
 | templates/host.yaml.tmpl | Reusable YAML authoring template. |
 | templates/network-service.yaml.tmpl | Reusable YAML authoring template. |
 | templates/object-patch.yaml.tmpl | Reusable YAML authoring template. |
+| templates/product-registration.yaml.tmpl | Reusable YAML authoring template. |
 | templates/reference-architecture.yaml.tmpl | Reusable YAML authoring template. |
 | templates/relationship.yaml.tmpl | Reusable YAML authoring template. |
 | templates/requirement-group.yaml.tmpl | Reusable YAML authoring template. |
 | templates/runtime-service.yaml.tmpl | Reusable YAML authoring template. |
+| templates/sdp-manifest.yaml.tmpl | Reusable YAML authoring template. |
 | templates/software-deployment-pattern.yaml.tmpl | Reusable YAML authoring template. |
 | templates/technology-component.yaml.tmpl | Reusable YAML authoring template. |
 | templates/workspace/.cursor/rules/draftsman.mdc.tmpl | Reusable YAML authoring template. |

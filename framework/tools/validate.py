@@ -51,6 +51,7 @@ VALID_REQUIREMENT_SCOPES = {
     "data_component",
     "reference_architecture",
     "software_deployment_pattern",
+    "product_registration",
 }
 
 VALID_REQUIREMENT_ANSWER_TYPES = {
@@ -75,7 +76,7 @@ STANDARD_TYPES = {
     "data_component",
 }
 SERVICE_TYPES = {"runtime_service", "data_store_service", "network_service", "ai_gateway"}
-RELATIONSHIP_ENDPOINT_TYPES = STANDARD_TYPES | {"runtime_service", "data_store_service", "network_service", "ai_gateway", "software_deployment_pattern", "reference_architecture", "technology_component", "host"}
+RELATIONSHIP_ENDPOINT_TYPES = STANDARD_TYPES | {"runtime_service", "data_store_service", "network_service", "ai_gateway", "software_deployment_pattern", "reference_architecture", "technology_component", "host", "product_registration"}
 BUSINESS_PILLAR_ID_PATTERN = re.compile(r"^business-pillar\.[a-z0-9-]+$")
 UID_PATTERN = re.compile(UID_PATTERN_TEXT)
 WORKSPACE_DOCUMENT_TYPES = {"vocabulary", "vocabulary_proposal"}
@@ -148,12 +149,15 @@ def workspace_yaml_roots(workspace_root: Path) -> list[Path]:
             roots.append(community_path)
     workspace_config = workspace_root / "configurations"
     workspace_catalog = workspace_root / "catalog"
+    external_sdps = workspace_root / ".draft" / "external_sdps"
     if workspace_config.exists():
         roots.append(workspace_config)
     if workspace_catalog.exists():
         roots.append(workspace_catalog)
     elif workspace_root.exists() and workspace_root.name == "catalog":
         roots.append(workspace_root)
+    if external_sdps.exists():
+        roots.append(external_sdps)
     return roots
 
 
@@ -2991,6 +2995,24 @@ def validate_ra(
                                 )
 
 
+def validate_product_registration(
+    obj: dict[str, Any],
+    path: Path,
+    business_taxonomy: dict[str, Any],
+    failures: list[str],
+    warnings: list[str],
+) -> None:
+    validate_software_deployment_business_context(obj, path, business_taxonomy, failures)
+    repo = obj.get("repository")
+    if not isinstance(repo, dict) or not is_non_empty(repo.get("url")):
+        failures.append(f"{path}: ProductRegistration must declare repository.url")
+    sdp_manifest = obj.get("sdpManifest")
+    if isinstance(sdp_manifest, dict):
+        mode = sdp_manifest.get("mode")
+        if mode and mode not in {"git", "local_path", "inline"}:
+            failures.append(f"{path}: sdpManifest.mode must be one of git, local_path, or inline")
+
+
 def validate_software_deployment_pattern(
     obj: dict[str, Any],
     path: Path,
@@ -4420,6 +4442,8 @@ def main(argv: list[str] | None = None) -> int:
                 require_active_group_disposition,
             )
             validate_service_group_refs(obj, path, decision_record_ids, catalog_by_id, failures, warnings=warnings)
+        elif obj.get("type") == "product_registration":
+            validate_product_registration(obj, path, business_taxonomy, failures, warnings)
 
     if args.deployment_ready:
         sdp_uid, target_uid = args.deployment_ready

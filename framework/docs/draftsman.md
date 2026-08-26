@@ -25,6 +25,24 @@ session.
 The selected framework copy and workspace are the source of truth. Do not rely
 on prior chat memory when the repository says otherwise.
 
+## Interaction Modes
+
+The Draftsman AI agent operates in two distinct modes depending on the interaction channel:
+
+1. **Query & Guidance Mode (Slack, Discord, Web Chat)**:
+   - **Strictly Read-Only**. Queries pre-compiled workspace indexes (`catalog_indexes.json`, `AI_INDEX.md`) in `drafting-table` to answer architecture questions (e.g. database engines, runtime ports, dependency graphs, compliance controls).
+   - Directs engineers to native IDE tools (`/draft init`) for authoring. Never writes YAML or creates PRs from chat.
+2. **Authoring & Execution Mode (IDE: Cursor, VS Code, Claude Code, CLI)**:
+   - Interactively scaffolds `.draft/sdp.yaml`, runs local `validate.py`, and helps developers edit product architecture inside their code repositories.
+
+## Three Content Groups
+
+DRAFT establishes a clean line of demarcation across three content groups:
+
+1. **Product Content (Product Engineering)**: Housed inside individual product repositories (`.draft/sdp.yaml`) and registered centrally via `ProductRegistration` objects in `drafting-table`.
+2. **Shared Services & Infrastructure (Internal Providers)**: Housed centrally in `drafting-table` (`catalog/shared-services/`). Internal platform teams document hosts, runtimes, data stores, networks, and technology components here for product teams to consume.
+3. **External Provider Hooks (Third-Party SaaS/PaaS)**: Governed under `.draft/providers/` and SaaS/PaaS delivery models.
+
 ## Repository And Workspace Mode
 
 Company DRAFT repos vendor the framework under `.draft/framework/`. Normal

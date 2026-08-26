@@ -17,6 +17,20 @@ channels:
   slack: true
   voice_reachy: false
   github_webhooks: true
+requirements:
+  secrets:
+    - name: GITHUB_TOKEN
+      required: true
+      purpose: "GitHub access token with repo scope to read schemas and open catalog PRs"
+    - name: ANTHROPIC_API_KEY
+      required: true
+      purpose: "Anthropic API key for agent reasoning and co-authoring"
+    - name: DISCORD_BOT_TOKEN
+      required: false
+      purpose: "Discord Bot Token for interactive chat interface"
+    - name: SLACK_BOT_TOKEN
+      required: false
+      purpose: "Slack Bot Token for interactive chat interface"
 skills:
   - draftsman
   - draftsman-author

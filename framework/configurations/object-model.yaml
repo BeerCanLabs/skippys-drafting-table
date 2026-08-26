@@ -94,6 +94,16 @@ objectTypes:
       - deploymentTargets · relationships
       - businessContext · decisions
 
+  product_registration:
+    displayName: ProductRegistration
+    titleFontSize: 10
+    width: 140
+    height: 74
+    displayFields:
+      - product registration contract
+      - repoUrl · owner · pillar
+      - sdpManifest link
+
   product_component:
     displayName: ProductComponent
     titleFontSize: 10
