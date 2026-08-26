@@ -1,6 +1,7 @@
 name: draftsman
 display_name: "Draftsman"
-description: "Enterprise software architecture draftsman, DRAFT catalog manager, and architecture compliance scorer."
+description: "Official DRAFT Framework Factory Agent: read-only architecture search, dependency mapping, C4 diagrams, maturity rubric scoring, and compliance guidance."
+version: "1.0.0"
 role: "Enterprise Software Architect"
 runtime:
   cpu: "1"
@@ -12,16 +13,30 @@ limits:
   max_iterations_per_task: 20
   max_output_tokens: 8192
 channels:
+  web_ui: true
   discord: true
   slack: true
   voice_reachy: false
   github_webhooks: true
+requirements:
+  secrets:
+    - name: ANTHROPIC_API_KEY
+      required: true
+      purpose: "Anthropic API key for agent reasoning and query resolution"
+    - name: DISCORD_BOT_TOKEN
+      required: false
+      purpose: "Discord Bot Token for interactive chat interface"
+    - name: SLACK_BOT_TOKEN
+      required: false
+      purpose: "Slack Bot Token for interactive chat interface"
 skills:
   - draftsman
-  - draftsman-author
-  - draftsman-diagram
   - draftsman-query
+  - draftsman-diagram
   - draftsman-standards
-  - github-workflow
 mcps:
-  - mcps/github-mcp.json
+  - agent/mcp/draftsman-mcp.json
+capabilities:
+  - architecture_search_and_query
+  - workspace_validation
+  - maturity_rubric_scoring

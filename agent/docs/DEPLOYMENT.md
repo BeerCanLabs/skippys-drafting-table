@@ -1,25 +1,41 @@
 # Draftsman Agent Deployment & Integration Guide
 
-This guide details how to provision, configure secrets, and deploy the **Draftsman Agent** across company agent factories (`hermes-gcp-factory`, `das-hermes-poc`), chat platforms (Slack, Discord), and GitHub workspace repositories.
+This guide details how to provision, configure secrets, and deploy the **Draftsman Agent** across company agent factories (`hermes-gcp-factory`, `das-hermes-poc`), internal web environments (`web_ui`), chat platforms (Slack, Discord), and GitHub workspace repositories.
 
 ---
 
-## 1. Secrets & Identity Requirements
+## 1. Identity & Operational Models
 
-Before deploying the agent container, provision the required credentials in your cloud secret manager (**Google Cloud Secret Manager** or **AWS Secrets Manager**):
+DRAFT separates agent interaction into two distinct models:
 
-### Required Credentials Matrix
+### A. Singleton Factory Agent (`draftsman`)
+- **Deployment**: Factory-deployed singleton container running on AWS Fargate, GCP Cloud Run, or Kubernetes.
+- **Scope**: **Strictly Read-Only Query & Guidance.** Answers architecture questions, searches ports, database engines, dependencies, generates C4 diagrams, and guides engineers to onboarding workflows.
+- **Channels**: `web_ui` (Web chat page & `/health` endpoint), `slack`, `discord`, `github_webhooks`.
+- **Identity Model**: Uses `ANTHROPIC_API_KEY` for reasoning and reads pre-compiled `catalog_indexes.json` / `AI_INDEX.md`. Holds **zero write credentials** to product code repositories.
 
-| Platform / Integration | Secret Key | Required Scopes | Purpose |
+### B. Product Engineering Agent (`draftsman-engineer`)
+- **Deployment**: Connected AI coding assistants in developer IDEs (Cursor, VS Code, Claude Code, GitHub Copilot, Antigravity CLI).
+- **Scope**: **Authoring, Registration, Scaffolding, & Local Validation.**
+- **Channels**: IDE Chat window & Terminal CLI.
+- **Identity Model**: Runs locally under the developer's working copy and developer Git credentials. Authoring, `.draft/sdp.yaml` edits, and PR creation happen under the engineer's identity.
+
+---
+
+## 2. Secrets Requirements Matrix
+
+Before deploying the factory agent container, provision credentials in your cloud secret manager (**Google Cloud Secret Manager** or **AWS Secrets Manager**):
+
+| Integration | Secret Key | Required Scopes | Purpose |
 | :--- | :--- | :--- | :--- |
-| **GitHub Access** | `GITHUB_PAT` or `GITHUB_APP_KEY` | `repo`, `workflow`, `pull_requests:write` | Reading/writing DRAFT catalog YAML and opening PRs |
-| **Slack App** *(AWS/Frontline)* | `SLACK_BOT_TOKEN`, `SLACK_APP_TOKEN` | `chat:write`, `app_mentions:read`, `commands` | Interactive chat & slash command handling |
-| **Discord Bot** *(GCP/dsackr)* | `DISCORD_BOT_TOKEN`, `DISCORD_APP_ID` | `bot`, `applications.commands`, `Send Messages` | Discord channel interactions & diagrams |
-| **User GitHub OAuth** | `GITHUB_OAUTH_CLIENT_ID`, `CLIENT_SECRET` | `repo` (User-delegated token) | Repository auto-discovery on behalf of users |
+| **LLM Engine** | `ANTHROPIC_API_KEY` | API Access | Core agent reasoning & query resolution |
+| **Web UI** | N/A | None | Built-in web chat interface & `/health` endpoint |
+| **Slack App** | `SLACK_BOT_TOKEN`, `SLACK_APP_TOKEN` | `chat:write`, `app_mentions:read`, `commands` | Optional Slack chat & slash command handling |
+| **Discord Bot** | `DISCORD_BOT_TOKEN`, `DISCORD_APP_ID` | `bot`, `applications.commands`, `Send Messages` | Optional Discord channel interactions |
 
 ---
 
-## 2. Infrastructure-as-Code (IaC) Provisioning
+## 3. Infrastructure-as-Code (IaC) Provisioning
 
 ### A. GCP Cloud Run Deployment (`dsackr/hermes-gcp-factory`)
 
@@ -37,23 +53,16 @@ module "draftsman_agent" {
   
   # Secret Manager bindings
   secrets = {
-    DISCORD_BOT_TOKEN = "projects/${var.gcp_project_id}/secrets/draftsman-discord-token/versions/latest"
-    GITHUB_PAT        = "projects/${var.gcp_project_id}/secrets/draftsman-github-pat/versions/latest"
+    ANTHROPIC_API_KEY = "projects/${var.gcp_project_id}/secrets/draftsman-anthropic-key/versions/latest"
   }
 
-  # Scale-to-zero runtime configuration (Litestream SQLite safety)
+  # Scale-to-zero runtime configuration
   min_instances   = 0
   max_instances   = 1
   cpu_limit       = "1"
   memory_limit    = "2Gi"
   timeout_seconds = 300
 }
-```
-
-Execution:
-```bash
-tofu init
-tofu apply -target=module.draftsman_agent
 ```
 
 ---
@@ -80,12 +89,11 @@ resource "aws_ecs_task_definition" "draftsman" {
       image     = "${aws_ecr_repository.hermes.repository_url}:latest"
       essential = true
       environment = [
-        { name = "HERMES_ENV", value = "dev" },
-        { name = "HERMES_SLACK_BOT_USER_ID", value = var.slack_bot_user_id }
+        { name = "HERMES_ENV", value = "prod" },
+        { name = "WEB_UI_ENABLED", value = "true" }
       ]
       secrets = [
-        { name = "SLACK_BOT_TOKEN", valueFrom = "${aws_secretsmanager_secret.draftsman.arn}:SLACK_BOT_TOKEN::" },
-        { name = "GITHUB_PAT", valueFrom = "${aws_secretsmanager_secret.draftsman.arn}:GITHUB_PAT::" }
+        { name = "ANTHROPIC_API_KEY", valueFrom = "${aws_secretsmanager_secret.draftsman.arn}:ANTHROPIC_API_KEY::" }
       ]
     }
   ])
@@ -94,17 +102,10 @@ resource "aws_ecs_task_definition" "draftsman" {
 
 ---
 
-## 3. User-Delegated GitHub OAuth & Repository Auto-Discovery
+## 4. Web UI Channel & Zero-Approval Deployment
 
-To enable Draftsman to inspect a developer's private codebase and auto-discover infrastructure dependencies:
+The `web_ui` channel allows agent factories to deploy Draftsman on day one without waiting for Slack/Discord workspace admin bot approvals:
 
-1. **User Initiation:**
-   - Engineer chats: `@Draftsman scan my repo company/payment-service and generate its DRAFT catalog entry.`
-2. **OAuth Authorization Challenge:**
-   - If Draftsman lacks user-delegated scope for that repository, it replies with a secure OAuth button:
-     `[Connect GitHub Account via OAuth]`
-3. **Auto-Discovery Execution:**
-   - Once authorized, Draftsman clones the repository into an isolated memory sandbox using the user's short-lived OAuth token.
-   - It inspects `Dockerfile`, `docker-compose.yml`, `main.tf`, `cdk.json`, `pom.xml`, `package.json`, or `requirements.txt`.
-   - It automatically identifies runtimes (e.g. Java 17), datastores (PostgreSQL 14), queues (RabbitMQ/SQS), and ingress endpoints.
-   - It constructs valid DRAFT catalog YAML files and opens a PR on the company `drafting-table` repository.
+1. **Deployment**: Container serves a web interface at `/` and health check at `/health`.
+2. **Internal Exposure**: Place the task behind an internal Application Load Balancer (ALB) or Cloud Run endpoint.
+3. **Day One Readiness**: Engineers access Draftsman web chat immediately while chat platform approvals proceed in parallel.

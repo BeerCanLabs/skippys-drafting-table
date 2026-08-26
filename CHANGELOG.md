@@ -1,3 +1,31 @@
+## 1.0.1 - 2026-08-26
+
+### Compatibility Impact
+
+- Fixes issue #183: resolves agent package manifest mismatches and separates factory singleton agent (`draftsman`) from local product engineering agent (`draftsman-engineer`).
+
+### Added
+
+- Added `web_ui` channel support (`web_ui: true`) to `agent/agent-spec.yaml` and `agent/bindings/hermes/agent.yaml`.
+- Added `agent/mcp/draftsman-mcp.json` MCP configuration file.
+- Added `agent/skills/draftsman-engineer/SKILL.md` skill definition for product engineering IDE assistants.
+- Added automated agent package validator tool (`framework/tools/validate_agent_package.py`) integrated into framework validation (`validate.py`).
+
+### Changed
+
+- Separated agent personas: `draftsman` (Factory Agent: Read-Only Query, Diagrams, Guidance) vs. `draftsman-engineer` (IDE Agent: Product Registration, Local Scaffolding, Authoring, Autodiscovery).
+- Removed authoring capabilities and orphaned `github-workflow` skill reference from `draftsman` factory agent.
+- Updated `agent/docs/DEPLOYMENT.md` to document `web_ui` channel and clarify singleton factory vs. developer IDE/CLI identity models.
+
+### Fixed
+
+- Fixed manifest drift between `agent/agent-spec.yaml` and `agent/bindings/hermes/agent.yaml`.
+- Fixed missing MCP path references in agent manifests.
+
+### Migration Notes
+
+- Run `python3 framework/tools/validate_agent_package.py` to verify agent package integrity.
+
 ## 1.0.0 - 2026-08-26
 
 ### Compatibility Impact
