@@ -1,3 +1,25 @@
+## 1.0.5 - 2026-08-26
+
+### Compatibility Impact
+
+- Fixes issue #188: guards `validate_agent_package` in `framework/tools/validate.py` to execute only when `agent/agent-spec.yaml` exists, unblocking workspace catalog validation and browser generation for all vendored company workspaces (`.draft/framework/`).
+
+### Added
+
+- Added `try/except ImportError` handling and `agent_dir.exists()` manifest presence checks to `framework/tools/validate.py`.
+
+### Changed
+
+- Bumped framework version to `1.0.5`.
+
+### Fixed
+
+- Fixed false-positive `Missing agent-spec.yaml` validation failures in vendored company DRAFT workspaces (`.draft/framework/`).
+
+### Migration Notes
+
+- Re-run `python3 .draft/framework/tools/validate.py --workspace .` in company workspaces to verify clean validation.
+
 ## 1.0.4 - 2026-08-26
 
 ### Compatibility Impact

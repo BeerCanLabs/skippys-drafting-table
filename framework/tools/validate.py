@@ -17,7 +17,10 @@ if str(TOOLS_ROOT) not in sys.path:
     sys.path.insert(0, str(TOOLS_ROOT))
 
 from uid_utils import UID_PATTERN_TEXT, generate_uid
-from validate_agent_package import validate_agent_package
+try:
+    from validate_agent_package import validate_agent_package
+except ImportError:
+    validate_agent_package = None
 
 
 FRAMEWORK_ROOT = Path(__file__).resolve().parent.parent
@@ -4501,9 +4504,11 @@ def main(argv: list[str] | None = None) -> int:
                 print("")
                 print(f"SoftwareDeploymentPattern '{sdp_obj.get('name')}' is deployment-ready for DeploymentTarget '{target_obj.get('name')}' (200 OK).")
 
-    agent_failures, agent_warnings = validate_agent_package(REPO_ROOT / "agent")
-    failures.extend(agent_failures)
-    warnings.extend(agent_warnings)
+    agent_dir = REPO_ROOT / "agent"
+    if validate_agent_package is not None and agent_dir.exists() and (agent_dir / "agent-spec.yaml").exists():
+        agent_failures, agent_warnings = validate_agent_package(agent_dir)
+        failures.extend(agent_failures)
+        warnings.extend(agent_warnings)
 
     failing_paths = {entry.split(":", 1)[0] for entry in failures}
 
