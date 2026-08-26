@@ -1,3 +1,29 @@
+## 1.0.4 - 2026-08-26
+
+### Compatibility Impact
+
+- Merges PR #187 (closes #186): enables real catalog data querying (`objects` projection index), dynamic architecture compliance auditing (`check_compliance`), and stdio tool testing (`tests/test_agent_mcp_tools.py`).
+
+### Added
+
+- Added `build_object_index` to `framework/tools/indexes.py` emitting lightweight searchable `objects` index projections (`uid`, `name`, `type`, `catalogStatus`, `description`, `domain`).
+- Added end-to-end stdio tool unit test suite in `tests/test_agent_mcp_tools.py`.
+
+### Changed
+
+- Updated `query_architecture` tool in `agent/mcp/server.py` to search `index_data["objects"]`.
+- Updated `check_compliance` tool in `agent/mcp/server.py` to evaluate actual `requirementImplementations.rows` and return `compliant`, `non_compliant` (naming unsatisfied requirement IDs), or `unknown` (with reason).
+- Updated `get_c4_diagram` tool to verify object existence before rendering.
+
+### Fixed
+
+- Fixed empty query results when calling `query_architecture`.
+- Fixed constant hardcoded compliance responses when calling `check_compliance`.
+
+### Migration Notes
+
+- Run `python3 -m unittest tests/test_agent_mcp_tools.py` to verify stdio MCP tool execution.
+
 ## 1.0.3 - 2026-08-26
 
 ### Compatibility Impact

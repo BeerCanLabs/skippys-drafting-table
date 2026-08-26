@@ -1,8 +1,8 @@
 schemaVersion: "1.0"
 id: draft-framework
 name: DRAFT Framework
-version: "1.0.3"
+version: "1.0.4"
 releasePhase: GA
 compatibility:
   minDraftTableVersion: "1.0.0"
-  contract: DRAFT Framework 1.0.3 release; moves stdio MCP server inside agent/mcp/ to make agent package 100% hermetic and self-contained.
+  contract: DRAFT Framework 1.0.4 release; adds object index projection and real architecture compliance reporting to agent MCP tools.
