@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Agent Package Validator: Verifies agent specifications, manifest consistency, skills, and MCP server execution.
+Agent Package Validator: Verifies agent specifications, manifest consistency, skills, and hermetic MCP server execution.
 
 Usage:
     python3 framework/tools/validate_agent_package.py
@@ -10,8 +10,10 @@ from __future__ import annotations
 
 import argparse
 import json
+import shutil
 import subprocess
 import sys
+import tempfile
 from pathlib import Path
 from typing import Any
 
@@ -43,8 +45,13 @@ def load_yaml(path: Path) -> dict[str, Any]:
     return data
 
 
-def test_mcp_server_handshake(mcp_file: Path) -> list[str]:
+def test_mcp_server_handshake_hermetically(agent_dir: Path, mcp_rel_path: str) -> list[str]:
     failures: list[str] = []
+    mcp_file = agent_dir / mcp_rel_path
+    if not mcp_file.exists():
+        failures.append(f"Referenced MCP manifest '{mcp_rel_path}' does not exist inside agent package.")
+        return failures
+
     try:
         data = json.loads(mcp_file.read_text(encoding="utf-8"))
     except Exception as exc:
@@ -56,53 +63,59 @@ def test_mcp_server_handshake(mcp_file: Path) -> list[str]:
         failures.append(f"{mcp_file}: Must declare non-empty mcpServers mapping")
         return failures
 
-    for server_name, config in servers.items():
-        cmd = config.get("command")
-        args = config.get("args", [])
-        if not cmd:
-            failures.append(f"{mcp_file}: Server '{server_name}' missing command")
-            continue
+    with tempfile.TemporaryDirectory() as temp_dir_str:
+        temp_dir = Path(temp_dir_str)
+        # Copy ONLY the agent directory to test hermetic standalone execution
+        isolated_agent_dir = temp_dir / "agent"
+        shutil.copytree(agent_dir, isolated_agent_dir)
 
-        full_cmd = [cmd] + args
-        try:
-            proc = subprocess.Popen(
-                full_cmd,
-                stdin=subprocess.PIPE,
-                stdout=subprocess.PIPE,
-                stderr=subprocess.PIPE,
-                cwd=str(REPO_ROOT),
-                text=True,
-            )
-        except Exception as exc:
-            failures.append(f"{mcp_file}: Failed to launch MCP server '{server_name}' ({full_cmd}): {exc}")
-            continue
+        for server_name, config in servers.items():
+            cmd = config.get("command")
+            args = config.get("args", [])
+            if not cmd:
+                failures.append(f"{mcp_file}: Server '{server_name}' missing command")
+                continue
 
-        # Send initialize and tools/list requests
-        init_req = json.dumps({"jsonrpc": "2.0", "id": 1, "method": "initialize", "params": {}}) + "\n"
-        list_req = json.dumps({"jsonrpc": "2.0", "id": 2, "method": "tools/list"}) + "\n"
-
-        try:
-            stdout_data, stderr_data = proc.communicate(input=init_req + list_req, timeout=5)
-        except subprocess.TimeoutExpired:
-            proc.kill()
-            failures.append(f"{mcp_file}: MCP server '{server_name}' timed out on JSON-RPC handshake")
-            continue
-
-        lines = [line.strip() for line in stdout_data.splitlines() if line.strip()]
-        tools_found = False
-
-        for line in lines:
+            full_cmd = [cmd] + args
             try:
-                msg = json.loads(line)
-                if msg.get("id") == 2 and "result" in msg:
-                    tools = msg["result"].get("tools", [])
-                    if isinstance(tools, list) and len(tools) > 0:
-                        tools_found = True
-            except Exception:
-                pass
+                proc = subprocess.Popen(
+                    full_cmd,
+                    stdin=subprocess.PIPE,
+                    stdout=subprocess.PIPE,
+                    stderr=subprocess.PIPE,
+                    cwd=str(temp_dir),
+                    text=True,
+                )
+            except Exception as exc:
+                failures.append(f"{mcp_file}: Failed to launch hermetic MCP server '{server_name}' ({full_cmd}): {exc}")
+                continue
 
-        if not tools_found:
-            failures.append(f"{mcp_file}: MCP server '{server_name}' failed handshake: did not return a non-empty tool list over stdio (output: {lines})")
+            # Send initialize and tools/list requests
+            init_req = json.dumps({"jsonrpc": "2.0", "id": 1, "method": "initialize", "params": {}}) + "\n"
+            list_req = json.dumps({"jsonrpc": "2.0", "id": 2, "method": "tools/list"}) + "\n"
+
+            try:
+                stdout_data, stderr_data = proc.communicate(input=init_req + list_req, timeout=5)
+            except subprocess.TimeoutExpired:
+                proc.kill()
+                failures.append(f"{mcp_file}: MCP server '{server_name}' timed out on JSON-RPC handshake in hermetic sandbox")
+                continue
+
+            lines = [line.strip() for line in stdout_data.splitlines() if line.strip()]
+            tools_found = False
+
+            for line in lines:
+                try:
+                    msg = json.loads(line)
+                    if msg.get("id") == 2 and "result" in msg:
+                        tools = msg["result"].get("tools", [])
+                        if isinstance(tools, list) and len(tools) > 0:
+                            tools_found = True
+                except Exception:
+                    pass
+
+            if not tools_found:
+                failures.append(f"{mcp_file}: Hermetic MCP server '{server_name}' failed handshake in isolated sandbox: did not return a non-empty tool list over stdio (stdout: {lines}, stderr: {stderr_data})")
 
     return failures
 
@@ -135,18 +148,15 @@ def validate_agent_package(agent_dir: Path) -> tuple[list[str], list[str]]:
             if not skill_path.exists() or not skill_path.is_dir():
                 failures.append(f"{spec_path}: Declared skill '{skill}' does not exist as a directory in agent/skills/")
 
-    # 2. Validate MCP paths exist and execute stdio handshake
+    # 2. Validate MCP paths exist and execute hermetic stdio handshake
     spec_mcps = spec_data.get("mcps") or []
     if not isinstance(spec_mcps, list):
         failures.append(f"{spec_path}: mcps must be a list")
     else:
         for mcp_path_str in spec_mcps:
-            mcp_path = REPO_ROOT / str(mcp_path_str)
-            if not mcp_path.exists():
-                failures.append(f"{spec_path}: Referenced MCP file '{mcp_path_str}' does not exist")
-            else:
-                mcp_failures = test_mcp_server_handshake(mcp_path)
-                failures.extend(mcp_failures)
+            rel_mcp = mcp_path_str.removeprefix("agent/").removeprefix("./agent/").removeprefix("/")
+            mcp_failures = test_mcp_server_handshake_hermetically(agent_dir, rel_mcp)
+            failures.extend(mcp_failures)
 
     # 3. Validate Hermes binding consistency
     if hermes_path.exists():

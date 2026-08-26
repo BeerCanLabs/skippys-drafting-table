@@ -1,3 +1,27 @@
+## 1.0.3 - 2026-08-26
+
+### Compatibility Impact
+
+- Fixes issue #185: ships self-contained MCP server (`agent/mcp/server.py` and `agent/mcp/indexes.py`) directly inside the `agent/` package directory, eliminating all implicit external dependencies.
+
+### Added
+
+- Added self-contained stdio MCP server (`agent/mcp/server.py`) and index loader (`agent/mcp/indexes.py`) inside `agent/mcp/`.
+- Added hermetic sandbox execution testing to `framework/tools/validate_agent_package.py` (copies `agent/` to an isolated temp directory before executing stdio JSON-RPC handshake).
+
+### Changed
+
+- Updated `agent/mcp/draftsman-mcp.json` to point `args` to `["agent/mcp/server.py"]`.
+- Bumped agent and framework versions to `1.0.3`.
+
+### Fixed
+
+- Fixed `ModuleNotFoundError` when agent factories deploy the standalone `agent/` directory into clean containers.
+
+### Migration Notes
+
+- Run `python3 framework/tools/validate_agent_package.py` to verify hermetic agent package execution.
+
 ## 1.0.2 - 2026-08-26
 
 ### Compatibility Impact

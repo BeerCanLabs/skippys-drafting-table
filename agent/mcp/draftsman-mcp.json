@@ -3,8 +3,7 @@
     "draftsman-query-server": {
       "command": "python3",
       "args": [
-        "-m",
-        "framework.tools.mcp_server"
+        "agent/mcp/server.py"
       ],
       "env": {
         "DRAFT_WORKSPACE_MODE": "read_only"
