@@ -1,8 +1,8 @@
 schemaVersion: "1.0"
 id: draft-framework
 name: DRAFT Framework
-version: "1.0.5"
+version: "1.0.6"
 releasePhase: GA
 compatibility:
   minDraftTableVersion: "1.0.0"
-  contract: DRAFT Framework 1.0.5 release; guards validate_agent_package execution to run only when agent manifests exist.
+  contract: DRAFT Framework 1.0.6 release; encodes explicit 4-step IDE onboarding playbook into factory agent prompts and skills.

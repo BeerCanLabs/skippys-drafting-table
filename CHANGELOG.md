@@ -1,3 +1,26 @@
+## 1.0.6 - 2026-08-27
+
+### Compatibility Impact
+
+- Encodes explicit 4-step developer IDE onboarding playbook into factory agent prompts (`agent/SOUL.md`, `agent/skills/draftsman/SKILL.md`, `agent/skills/draftsman-query/SKILL.md`).
+
+### Added
+
+- Added explicit 4-step developer onboarding guidance protocol (Connecting IDE assistant, Product Registration, `/draft init` local repo initialization, and Least-Privilege Pattern 2 auto-sync).
+
+### Changed
+
+- Updated `agent/SOUL.md` to reinforce Read-Only chat identity boundary and instruct factory agent to redirect authoring to local IDE tools (`draftsman-engineer`).
+- Bumped framework version to `1.0.6`.
+
+### Fixed
+
+- Fixed missing developer onboarding guidance in Slack, Discord, and Web UI factory agent personas.
+
+### Migration Notes
+
+- Re-deploy factory agent container image or update `agent/` vendor files to pick up new onboarding guidance personas.
+
 ## 1.0.5 - 2026-08-26
 
 ### Compatibility Impact
