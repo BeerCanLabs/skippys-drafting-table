@@ -1,3 +1,29 @@
+## 1.0.7 - 2026-08-27
+
+### Compatibility Impact
+
+- Merges PR #191 (closes #191) and resolves issues #189 & #190: requires strict evidence discipline in `agent/SOUL.md`, projects relationship endpoints into catalog index, enables real C4 topology rendering, and syncs agent manifest version strings.
+
+### Added
+
+- Added strict evidence discipline rules to `agent/SOUL.md` requiring the agent to distinguish recorded facts from inferences and unrecorded values.
+- Added relationship endpoint fields (`source`, `target`, `label`, `technology`, `direction`) to `build_object_index` in `framework/tools/indexes.py`.
+- Added real C4 graph topology rendering and dual ASCII text + Mermaid block output to `get_c4_diagram` in `agent/mcp/server.py`.
+
+### Changed
+
+- Synchronized agent specification version to `1.0.7` in `agent/agent-spec.yaml` and `agent/bindings/hermes/agent.yaml`.
+- Bumped framework version to `1.0.7`.
+
+### Fixed
+
+- Fixed Issue #189: agent manifest version string drift across releases.
+- Fixed Issue #190: inability of `get_c4_diagram` to draw real relationship topology due to stripped relationship endpoints in catalog index.
+
+### Migration Notes
+
+- Run `python3 framework/tools/validate_agent_package.py` and `python3 -m unittest tests/test_agent_mcp_tools.py` to verify release integrity.
+
 ## 1.0.6 - 2026-08-27
 
 ### Compatibility Impact

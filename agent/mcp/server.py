@@ -137,14 +137,102 @@ def handle_tool_call(name: str, arguments: dict[str, Any]) -> dict[str, Any]:
                 "product": product_name,
                 "error": "No object with that name or uid is in the catalog index.",
             })
-        diagram = f"graph TD\n  subgraph {target.get('name') or product_name}\n    API[Product API]\n    DB[(Database)]\n    API --> DB\n  end"
+
+        target_uid = str(target.get("uid", ""))
+        target_name = str(target.get("name") or product_name)
+        all_objs = _objects(index_data)
+        objs_by_uid = {str(o.get("uid")): o for o in all_objs if o.get("uid")}
+
+        rel_objs = [o for o in all_objs if o.get("type") == "relationship"]
+        outbound = []
+        inbound = []
+
+        for r in rel_objs:
+            src = str(r.get("source", ""))
+            tgt = str(r.get("target", ""))
+            lbl = r.get("label") or "connects to"
+            tech = r.get("technology")
+            edge_info = {"rel": r, "label": lbl, "technology": tech}
+
+            if src == target_uid:
+                other_uid = tgt
+                other_obj = objs_by_uid.get(other_uid)
+                edge_info["other"] = other_obj or {"uid": tgt, "name": tgt, "type": "unknown"}
+                outbound.append(edge_info)
+            elif tgt == target_uid:
+                other_uid = src
+                other_obj = objs_by_uid.get(other_uid)
+                edge_info["other"] = other_obj or {"uid": src, "name": src, "type": "unknown"}
+                inbound.append(edge_info)
+
+        total_edges = len(outbound) + len(inbound)
+        if total_edges == 0:
+            return _text({
+                "product": target_name,
+                "uid": target_uid,
+                "status": "no_relationships_recorded",
+                "message": f"No relationships are recorded in the catalog for {target_name} ({target_uid}).",
+            })
+
+        max_display_edges = 12
+        displayed_out = outbound[:max_display_edges]
+        displayed_in = inbound[:max_display_edges]
+        omitted = total_edges - (len(displayed_out) + len(displayed_in))
+
+        # 1. Build ASCII Text Representation (Readable in Slack/Discord where Mermaid is plain text)
+        lines = [f"{target_name} ({target.get('type', 'object')})", "│"]
+        if displayed_out:
+            lines.append(f"├─ outbound ─────────────────────────────── {len(outbound)} edges")
+            for edge in displayed_out:
+                other_name = edge["other"].get("name", edge["other"].get("uid"))
+                lbl = edge["label"]
+                tech_str = f" via {edge['technology']}" if edge["technology"] else ""
+                lines.append(f"│   ▪ {other_name:<30} {lbl}{tech_str}")
+            lines.append("│")
+        if displayed_in:
+            lines.append(f"└─ inbound ──────────────────────────────── {len(inbound)} edges")
+            for edge in displayed_in:
+                other_name = edge["other"].get("name", edge["other"].get("uid"))
+                lbl = edge["label"]
+                tech_str = f" via {edge['technology']}" if edge["technology"] else ""
+                lines.append(f"    ▪ {other_name:<30} {lbl}{tech_str}")
+
+        if omitted > 0:
+            lines.append(f"\n_Omitted {omitted} additional edges due to diagram degree cap (12 max shown)._")
+
+        text_repr = "\n".join(lines)
+
+        # 2. Build Mermaid Diagram Block
+        mermaid_lines = ["graph LR", f'  node_target["{target_name}"]']
+        node_idx = 0
+        for edge in displayed_out:
+            node_idx += 1
+            other_name = edge["other"].get("name", edge["other"].get("uid"))
+            lbl = edge["label"]
+            tech_str = f" ({edge['technology']})" if edge["technology"] else ""
+            nid = f"n_out_{node_idx}"
+            mermaid_lines.append(f'  {nid}["{other_name}"]')
+            mermaid_lines.append(f'  node_target -->|{lbl}{tech_str}| {nid}')
+
+        for edge in displayed_in:
+            node_idx += 1
+            other_name = edge["other"].get("name", edge["other"].get("uid"))
+            lbl = edge["label"]
+            tech_str = f" ({edge['technology']})" if edge["technology"] else ""
+            nid = f"n_in_{node_idx}"
+            mermaid_lines.append(f'  {nid}["{other_name}"]')
+            mermaid_lines.append(f'  {nid} -->|{lbl}{tech_str}| node_target')
+
+        mermaid_lines.append("  style node_target stroke-width:3px")
+        mermaid_code = "\n".join(mermaid_lines)
+
+        combined_text = f"```\n{text_repr}\n```\n\n```mermaid\n{mermaid_code}\n```"
+
         return {
             "content": [
                 {
                     "type": "text",
-                    # Still a placeholder shape rather than the object's real relationships, and
-                    # labelled as one so it is not mistaken for the catalog's own topology.
-                    "text": f"```mermaid\n{diagram}\n```\n\n_Placeholder topology: generated from the object's identity, not its recorded relationships._",
+                    "text": combined_text,
                 }
             ]
         }

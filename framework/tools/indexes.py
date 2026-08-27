@@ -144,7 +144,7 @@ def build_requirement_implementation_index(registry: dict[str, dict[str, Any]]) 
 # Fields an index consumer needs to find an object and say what it is. The whole object would be
 # several times larger -- a real catalog runs to thousands of entries -- and an index is meant to
 # be small enough for an agent to load, so this is a projection rather than a dump.
-OBJECT_INDEX_FIELDS = ("uid", "name", "type", "catalogStatus", "description", "domain")
+OBJECT_INDEX_FIELDS = ("uid", "name", "type", "catalogStatus", "description", "domain", "source", "target", "label", "technology", "direction")
 
 
 def build_object_index(registry: dict[str, dict[str, Any]]) -> list[dict[str, Any]]:

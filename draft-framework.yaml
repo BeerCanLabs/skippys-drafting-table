@@ -1,8 +1,8 @@
 schemaVersion: "1.0"
 id: draft-framework
 name: DRAFT Framework
-version: "1.0.6"
+version: "1.0.7"
 releasePhase: GA
 compatibility:
   minDraftTableVersion: "1.0.0"
-  contract: DRAFT Framework 1.0.6 release; encodes explicit 4-step IDE onboarding playbook into factory agent prompts and skills.
+  contract: DRAFT Framework 1.0.7 release; adds evidence discipline to SOUL.md, projects relationship endpoints into catalog index, enables real C4 topology rendering, and syncs agent spec versions.

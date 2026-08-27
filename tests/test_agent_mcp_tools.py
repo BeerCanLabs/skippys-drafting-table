@@ -141,6 +141,46 @@ class DiagramTests(unittest.TestCase):
 
         self.assertIn("error", result)
 
+    def test_c4_diagram_renders_topology_from_relationships(self) -> None:
+        index = {
+            "objects": [
+                {"uid": "svc-1", "name": "Absence Service", "type": "runtime_service"},
+                {"uid": "svc-2", "name": "Payments Service", "type": "runtime_service"},
+                {"uid": "rel-1", "name": "Absence -> Payments", "type": "relationship", "source": "svc-1", "target": "svc-2", "label": "calls", "technology": "HTTPS/REST"},
+            ]
+        }
+        with tempfile.TemporaryDirectory() as tmp:
+            index_path = Path(tmp) / "catalog_indexes.json"
+            index_path.write_text(json.dumps(index), encoding="utf-8")
+            env = {
+                **os.environ,
+                "DRAFT_WORKSPACE_MODE": "read_only",
+                "DRAFT_CATALOG_INDEX_PATH": str(index_path),
+            }
+            proc = subprocess.Popen(
+                [sys.executable, str(SERVER)],
+                stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE,
+                text=True, env=env,
+            )
+            try:
+                for message in (
+                    {"jsonrpc": "2.0", "id": 1, "method": "initialize",
+                     "params": {"protocolVersion": "2024-11-05", "capabilities": {},
+                                "clientInfo": {"name": "tests", "version": "1"}}},
+                    {"jsonrpc": "2.0", "id": 2, "method": "tools/call",
+                     "params": {"name": "get_c4_diagram", "arguments": {"product_name": "Absence Service"}}},
+                ):
+                    proc.stdin.write(json.dumps(message) + "\n")
+                    proc.stdin.flush()
+                    response = json.loads(proc.stdout.readline())
+            finally:
+                proc.terminate()
+        
+        output_text = response["result"]["content"][0]["text"]
+        self.assertIn("Payments Service", output_text)
+        self.assertIn("calls via HTTPS/REST", output_text)
+        self.assertIn("```mermaid", output_text)
+
 
 if __name__ == "__main__":
     unittest.main()

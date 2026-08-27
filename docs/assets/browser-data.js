@@ -134249,28 +134249,32 @@ window.DRAFT_BROWSER_DATA = {
         "name": "Example capability.compute-platform implementations",
         "type": "object_patch",
         "catalogStatus": "incomplete",
-        "description": "Example workspace-owned capability implementation mapping."
+        "description": "Example workspace-owned capability implementation mapping.",
+        "target": "01KQQ4Q026-1HZP"
       },
       {
         "uid": "01KQQ4Q025-5VTH",
         "name": "Example capability.log-management implementations",
         "type": "object_patch",
         "catalogStatus": "incomplete",
-        "description": "Example workspace-owned capability implementation mapping."
+        "description": "Example workspace-owned capability implementation mapping.",
+        "target": "01KQQ4Q026-D04B"
       },
       {
         "uid": "01KQQ4Q026-4AYD",
         "name": "Example capability.operating-system implementations",
         "type": "object_patch",
         "catalogStatus": "incomplete",
-        "description": "Example workspace-owned capability implementation mapping."
+        "description": "Example workspace-owned capability implementation mapping.",
+        "target": "01KQQ4Q026-QM2X"
       },
       {
         "uid": "01KQQ4Q026-BQ87",
         "name": "Example capability.security-monitoring implementations",
         "type": "object_patch",
         "catalogStatus": "incomplete",
-        "description": "Example workspace-owned capability implementation mapping."
+        "description": "Example workspace-owned capability implementation mapping.",
+        "target": "01KQQ4Q026-JW52"
       },
       {
         "uid": "01KSE5V73Z-Q0A0",
@@ -134354,477 +134358,726 @@ window.DRAFT_BROWSER_DATA = {
         "name": "API Load Balancer \u2192 Keystone Identity",
         "type": "relationship",
         "catalogStatus": "complete",
-        "description": "HAProxy distributes inbound HTTPS identity and authentication requests across keystone-api instances running on controller nodes. TLS is terminated at the load balancer; backend traffic uses HTTP on the control plane network."
+        "description": "HAProxy distributes inbound HTTPS identity and authentication requests across keystone-api instances running on controller nodes. TLS is terminated at the load balancer; backend traffic uses HTTP on the control plane network.",
+        "source": "01KSF29JTP-9HYA",
+        "target": "STCK000002-RS02",
+        "label": "proxies authentication requests",
+        "technology": "HTTPS / HTTP",
+        "direction": "synchronous"
       },
       {
         "uid": "01KSKQNTCH-M6JX",
         "name": "API Load Balancer \u2192 Neutron Networking",
         "type": "relationship",
         "catalogStatus": "complete",
-        "description": "HAProxy distributes inbound HTTPS networking API requests across neutron-server instances running on controller nodes. TLS is terminated at the load balancer; backend traffic uses HTTP on the control plane network."
+        "description": "HAProxy distributes inbound HTTPS networking API requests across neutron-server instances running on controller nodes. TLS is terminated at the load balancer; backend traffic uses HTTP on the control plane network.",
+        "source": "01KSF29JTP-9HYA",
+        "target": "STCK000004-RS04",
+        "label": "proxies networking API requests",
+        "technology": "HTTPS / HTTP",
+        "direction": "synchronous"
       },
       {
         "uid": "01KSKQNTCH-QHJC",
         "name": "API Load Balancer \u2192 Nova Compute",
         "type": "relationship",
         "catalogStatus": "complete",
-        "description": "HAProxy distributes inbound HTTPS compute API requests across nova-api instances running on controller nodes. TLS is terminated at the load balancer; backend traffic uses HTTP on the control plane network."
+        "description": "HAProxy distributes inbound HTTPS compute API requests across nova-api instances running on controller nodes. TLS is terminated at the load balancer; backend traffic uses HTTP on the control plane network.",
+        "source": "01KSF29JTP-9HYA",
+        "target": "STCK000001-RS01",
+        "label": "proxies compute API requests",
+        "technology": "HTTPS / HTTP",
+        "direction": "synchronous"
       },
       {
         "uid": "01KSKWFZZX-34KP",
         "name": "AWS Lambda Runtime \u2192 AWS IAM",
         "type": "relationship",
-        "catalogStatus": "stub"
+        "catalogStatus": "stub",
+        "source": "01KQQ4Q025-T7B7",
+        "label": "calls"
       },
       {
         "uid": "01KSKWFZZX-JWP6",
         "name": "AWS Lambda Runtime \u2192 Amazon CloudWatch Logs",
         "type": "relationship",
-        "catalogStatus": "stub"
+        "catalogStatus": "stub",
+        "source": "01KQQ4Q025-T7B7",
+        "label": "sends events to"
       },
       {
         "uid": "01KSKWFZZX-NE4F",
         "name": "AWS Lambda Runtime \u2192 Amazon CloudWatch Metrics",
         "type": "relationship",
-        "catalogStatus": "stub"
+        "catalogStatus": "stub",
+        "source": "01KQQ4Q025-T7B7",
+        "label": "calls"
       },
       {
         "uid": "01KSKWFZZW-ZEKF",
         "name": "AWS Lambda Serverless Host \u2192 AWS Lambda Service",
         "type": "relationship",
-        "catalogStatus": "stub"
+        "catalogStatus": "stub",
+        "source": "01KQQ4Q025-1XDE",
+        "label": "calls"
       },
       {
         "uid": "01KSKWFZZY-FS6X",
         "name": "Ceilometer Telemetry Service \u2192 Keystone Identity",
         "type": "relationship",
-        "catalogStatus": "incomplete"
+        "catalogStatus": "incomplete",
+        "source": "STCK000008-RS08",
+        "target": "STCK000002-RS02",
+        "label": "calls"
       },
       {
         "uid": "P229JCRERR-86CX",
         "name": "Ceilometer Telemetry Service \u2192 OpenStack Linux Service Host",
         "type": "relationship",
-        "catalogStatus": "complete"
+        "catalogStatus": "complete",
+        "source": "STCK000008-RS08",
+        "target": "STCK00000F-HS0F",
+        "label": "runs on"
       },
       {
         "uid": "01KSKWFZZY-501S",
         "name": "Ceilometer Telemetry Service \u2192 RabbitMQ Message Broker",
         "type": "relationship",
-        "catalogStatus": "incomplete"
+        "catalogStatus": "incomplete",
+        "source": "STCK000008-RS08",
+        "target": "STCK00000D-RS0D",
+        "label": "sends events to"
       },
       {
         "uid": "7Y3DD8Y39N-BPKJ",
         "name": "Cinder Block Storage Service \u2192 OpenStack Linux Service Host",
         "type": "relationship",
-        "catalogStatus": "complete"
+        "catalogStatus": "complete",
+        "source": "STCK000005-RS05",
+        "target": "STCK00000F-HS0F",
+        "label": "runs on"
       },
       {
         "uid": "01KSKCDR01-DAR5",
         "name": "Cinder Block Storage \u2192 Cinder Database",
         "type": "relationship",
         "catalogStatus": "complete",
-        "description": "Cinder persists all volume state to the Cinder MariaDB schema including volume records, snapshots, volume type definitions, and backend driver assignments."
+        "description": "Cinder persists all volume state to the Cinder MariaDB schema including volume records, snapshots, volume type definitions, and backend driver assignments.",
+        "source": "STCK000005-RS05",
+        "target": "STCK000005-DAR5",
+        "label": "persists volume state",
+        "technology": "MySQL wire protocol",
+        "direction": "synchronous"
       },
       {
         "uid": "01KSKCDR01-KST1",
         "name": "Cinder Block Storage \u2192 Keystone Identity",
         "type": "relationship",
         "catalogStatus": "complete",
-        "description": "Cinder validates every incoming API request by verifying the caller's Keystone token. Cinder's service account is registered in the Keystone service catalog."
+        "description": "Cinder validates every incoming API request by verifying the caller's Keystone token. Cinder's service account is registered in the Keystone service catalog.",
+        "source": "STCK000005-RS05",
+        "target": "STCK000002-RS02",
+        "label": "validates tokens",
+        "technology": "HTTP (Keystone API)",
+        "direction": "synchronous"
       },
       {
         "uid": "01KSKCDR01-RMQ1",
         "name": "Cinder Block Storage \u2192 RabbitMQ Message Broker",
         "type": "relationship",
         "catalogStatus": "complete",
-        "description": "Cinder uses RabbitMQ AMQP messaging for communication between cinder-api, cinder-scheduler, and cinder-volume subcomponents. Volume provisioning requests flow from cinder-scheduler to the appropriate cinder-volume backend via the message bus."
+        "description": "Cinder uses RabbitMQ AMQP messaging for communication between cinder-api, cinder-scheduler, and cinder-volume subcomponents. Volume provisioning requests flow from cinder-scheduler to the appropriate cinder-volume backend via the message bus.",
+        "source": "STCK000005-RS05",
+        "target": "STCK00000D-RS0D",
+        "label": "publishes and consumes RPC messages",
+        "technology": "AMQP",
+        "direction": "asynchronous"
       },
       {
         "uid": "01KSKWFZZS-1SZX",
         "name": "Cinder Database \u2192 Backup Service",
         "type": "relationship",
-        "catalogStatus": "stub"
+        "catalogStatus": "stub",
+        "source": "STCK000005-DAR5",
+        "label": "calls"
       },
       {
         "uid": "6VK3ZARWWY-D4YF",
         "name": "Cinder Database \u2192 OpenStack Linux Service Host",
         "type": "relationship",
-        "catalogStatus": "complete"
+        "catalogStatus": "complete",
+        "source": "STCK000005-DAR5",
+        "target": "STCK00000F-HS0F",
+        "label": "runs on"
       },
       {
         "uid": "01KSKWFZZS-73X6",
         "name": "Glance Database \u2192 Backup Service",
         "type": "relationship",
-        "catalogStatus": "stub"
+        "catalogStatus": "stub",
+        "source": "STCK000003-DAR3",
+        "label": "calls"
       },
       {
         "uid": "M5RSAD9R82-5FBT",
         "name": "Glance Database \u2192 OpenStack Linux Service Host",
         "type": "relationship",
-        "catalogStatus": "complete"
+        "catalogStatus": "complete",
+        "source": "STCK000003-DAR3",
+        "target": "STCK00000F-HS0F",
+        "label": "runs on"
       },
       {
         "uid": "01KSKWG000-9Q1R",
         "name": "Glance Image Service \u2192 Glance Database",
         "type": "relationship",
-        "catalogStatus": "incomplete"
+        "catalogStatus": "incomplete",
+        "source": "STCK000003-RS03",
+        "target": "STCK000003-DAR3",
+        "label": "calls"
       },
       {
         "uid": "01KSKWG000-G0N1",
         "name": "Glance Image Service \u2192 Keystone Identity",
         "type": "relationship",
-        "catalogStatus": "incomplete"
+        "catalogStatus": "incomplete",
+        "source": "STCK000003-RS03",
+        "target": "STCK000002-RS02",
+        "label": "calls"
       },
       {
         "uid": "PTMR3XX723-1M92",
         "name": "Glance Image Service \u2192 OpenStack Linux Service Host",
         "type": "relationship",
-        "catalogStatus": "complete"
+        "catalogStatus": "complete",
+        "source": "STCK000003-RS03",
+        "target": "STCK00000F-HS0F",
+        "label": "runs on"
       },
       {
         "uid": "01KSKWG001-4ENK",
         "name": "Glance Image Service \u2192 Swift Object Storage",
         "type": "relationship",
-        "catalogStatus": "incomplete"
+        "catalogStatus": "incomplete",
+        "source": "STCK000003-RS03",
+        "target": "STCK000006-DAR6",
+        "label": "calls"
       },
       {
         "uid": "01KSKWG002-BKKF",
         "name": "Heat Orchestration Service \u2192 Heat Database",
         "type": "relationship",
-        "catalogStatus": "incomplete"
+        "catalogStatus": "incomplete",
+        "source": "STCK000007-RS07",
+        "target": "STCK000007-DAR7",
+        "label": "calls"
       },
       {
         "uid": "01KSKWG001-WJHM",
         "name": "Heat Orchestration Service \u2192 Keystone Identity",
         "type": "relationship",
-        "catalogStatus": "incomplete"
+        "catalogStatus": "incomplete",
+        "source": "STCK000007-RS07",
+        "target": "STCK000002-RS02",
+        "label": "calls"
       },
       {
         "uid": "TBHPSRGY35-D8EG",
         "name": "Heat Orchestration Service \u2192 OpenStack Linux Service Host",
         "type": "relationship",
-        "catalogStatus": "complete"
+        "catalogStatus": "complete",
+        "source": "STCK000007-RS07",
+        "target": "STCK00000F-HS0F",
+        "label": "runs on"
       },
       {
         "uid": "01KSKWG002-5JSY",
         "name": "Heat Orchestration Service \u2192 RabbitMQ Message Broker",
         "type": "relationship",
-        "catalogStatus": "incomplete"
+        "catalogStatus": "incomplete",
+        "source": "STCK000007-RS07",
+        "target": "STCK00000D-RS0D",
+        "label": "calls"
       },
       {
         "uid": "01KSKWG005-5P08",
         "name": "Horizon Dashboard \u2192 Cinder Block Storage",
         "type": "relationship",
-        "catalogStatus": "incomplete"
+        "catalogStatus": "incomplete",
+        "source": "STCK000006-RS06",
+        "target": "STCK000005-RS05",
+        "label": "calls"
       },
       {
         "uid": "01KSKWG004-C8QW",
         "name": "Horizon Dashboard \u2192 Glance Image Service",
         "type": "relationship",
-        "catalogStatus": "incomplete"
+        "catalogStatus": "incomplete",
+        "source": "STCK000006-RS06",
+        "target": "STCK000003-RS03",
+        "label": "calls"
       },
       {
         "uid": "01KSKWG005-P4TK",
         "name": "Horizon Dashboard \u2192 Heat Orchestration",
         "type": "relationship",
-        "catalogStatus": "incomplete"
+        "catalogStatus": "incomplete",
+        "source": "STCK000006-RS06",
+        "target": "STCK000007-RS07",
+        "label": "calls"
       },
       {
         "uid": "01KSKWG003-9EKX",
         "name": "Horizon Dashboard \u2192 Keystone Identity",
         "type": "relationship",
-        "catalogStatus": "incomplete"
+        "catalogStatus": "incomplete",
+        "source": "STCK000006-RS06",
+        "target": "STCK000002-RS02",
+        "label": "calls"
       },
       {
         "uid": "01KSKWG004-0E34",
         "name": "Horizon Dashboard \u2192 Neutron Networking",
         "type": "relationship",
-        "catalogStatus": "incomplete"
+        "catalogStatus": "incomplete",
+        "source": "STCK000006-RS06",
+        "target": "STCK000004-RS04",
+        "label": "calls"
       },
       {
         "uid": "01KSKWG003-G3Q2",
         "name": "Horizon Dashboard \u2192 Nova Compute Service",
         "type": "relationship",
-        "catalogStatus": "incomplete"
+        "catalogStatus": "incomplete",
+        "source": "STCK000006-RS06",
+        "target": "STCK000001-RS01",
+        "label": "calls"
       },
       {
         "uid": "B94JQQASNF-0TMY",
         "name": "Horizon Dashboard \u2192 OpenStack Linux Service Host",
         "type": "relationship",
-        "catalogStatus": "complete"
+        "catalogStatus": "complete",
+        "source": "STCK000006-RS06",
+        "target": "STCK00000F-HS0F",
+        "label": "runs on"
       },
       {
         "uid": "01KSKWG006-9TPR",
         "name": "Ironic Bare Metal Service \u2192 Ironic Database",
         "type": "relationship",
-        "catalogStatus": "incomplete"
+        "catalogStatus": "incomplete",
+        "source": "STCK000009-RS09",
+        "target": "STCK000007-DAR7",
+        "label": "calls"
       },
       {
         "uid": "01KSKWG005-PQGD",
         "name": "Ironic Bare Metal Service \u2192 Keystone Identity",
         "type": "relationship",
-        "catalogStatus": "incomplete"
+        "catalogStatus": "incomplete",
+        "source": "STCK000009-RS09",
+        "target": "STCK000002-RS02",
+        "label": "calls"
       },
       {
         "uid": "01KSKWG007-6VBX",
         "name": "Ironic Bare Metal Service \u2192 Nova Compute Service",
         "type": "relationship",
-        "catalogStatus": "incomplete"
+        "catalogStatus": "incomplete",
+        "source": "STCK000009-RS09",
+        "target": "STCK000001-RS01",
+        "label": "calls"
       },
       {
         "uid": "STDDEDDJ87-YASV",
         "name": "Ironic Bare Metal Service \u2192 OpenStack Linux Service Host",
         "type": "relationship",
-        "catalogStatus": "complete"
+        "catalogStatus": "complete",
+        "source": "STCK000009-RS09",
+        "target": "STCK00000F-HS0F",
+        "label": "runs on"
       },
       {
         "uid": "01KSKWG006-8HH7",
         "name": "Ironic Bare Metal Service \u2192 RabbitMQ Message Broker",
         "type": "relationship",
-        "catalogStatus": "incomplete"
+        "catalogStatus": "incomplete",
+        "source": "STCK000009-RS09",
+        "target": "STCK00000D-RS0D",
+        "label": "calls"
       },
       {
         "uid": "01KSKWFZZT-1511",
         "name": "Keystone Database \u2192 Backup Service",
         "type": "relationship",
-        "catalogStatus": "stub"
+        "catalogStatus": "stub",
+        "source": "STCK000002-DAR2",
+        "label": "calls"
       },
       {
         "uid": "PXB3127W5T-74JM",
         "name": "Keystone Database \u2192 OpenStack Linux Service Host",
         "type": "relationship",
-        "catalogStatus": "complete"
+        "catalogStatus": "complete",
+        "source": "STCK000002-DAR2",
+        "target": "STCK00000F-HS0F",
+        "label": "runs on"
       },
       {
         "uid": "01KSKWG008-3RQB",
         "name": "Keystone Identity Service \u2192 LDAP Directory",
         "type": "relationship",
-        "catalogStatus": "stub"
+        "catalogStatus": "stub",
+        "source": "STCK000002-RS02",
+        "label": "calls"
       },
       {
         "uid": "NPQG1XZQE8-299H",
         "name": "Keystone Identity Service \u2192 OpenStack Linux Service Host",
         "type": "relationship",
-        "catalogStatus": "complete"
+        "catalogStatus": "complete",
+        "source": "STCK000002-RS02",
+        "target": "STCK00000F-HS0F",
+        "label": "runs on"
       },
       {
         "uid": "01KSKKS001-DAR2",
         "name": "Keystone Identity \u2192 Keystone Database",
         "type": "relationship",
         "catalogStatus": "complete",
-        "description": "Keystone persists all identity data to the Keystone MariaDB schema including users, projects, roles, role assignments, service endpoints, and application credentials."
+        "description": "Keystone persists all identity data to the Keystone MariaDB schema including users, projects, roles, role assignments, service endpoints, and application credentials.",
+        "source": "STCK000002-RS02",
+        "target": "STCK000002-DAR2",
+        "label": "persists identity data",
+        "technology": "MySQL wire protocol",
+        "direction": "synchronous"
       },
       {
         "uid": "01KSKWFZZT-R5CF",
         "name": "Neutron Database \u2192 Backup Service",
         "type": "relationship",
-        "catalogStatus": "stub"
+        "catalogStatus": "stub",
+        "source": "STCK000004-DAR4",
+        "label": "calls"
       },
       {
         "uid": "TB66JJ4D80-J410",
         "name": "Neutron Database \u2192 OpenStack Linux Service Host",
         "type": "relationship",
-        "catalogStatus": "complete"
+        "catalogStatus": "complete",
+        "source": "STCK000004-DAR4",
+        "target": "STCK00000F-HS0F",
+        "label": "runs on"
       },
       {
         "uid": "V47P8M40FY-G8H0",
         "name": "Neutron Networking Service \u2192 OpenStack Linux Service Host",
         "type": "relationship",
-        "catalogStatus": "complete"
+        "catalogStatus": "complete",
+        "source": "STCK000004-RS04",
+        "target": "STCK00000F-HS0F",
+        "label": "runs on"
       },
       {
         "uid": "01KSKNTN01-KST1",
         "name": "Neutron Networking \u2192 Keystone Identity",
         "type": "relationship",
         "catalogStatus": "complete",
-        "description": "Neutron validates every incoming API request by verifying the caller's Keystone token. Neutron's service account is registered in the Keystone service catalog."
+        "description": "Neutron validates every incoming API request by verifying the caller's Keystone token. Neutron's service account is registered in the Keystone service catalog.",
+        "source": "STCK000004-RS04",
+        "target": "STCK000002-RS02",
+        "label": "validates tokens",
+        "technology": "HTTP (Keystone API)",
+        "direction": "synchronous"
       },
       {
         "uid": "01KSKNTN01-DAR4",
         "name": "Neutron Networking \u2192 Neutron Database",
         "type": "relationship",
         "catalogStatus": "complete",
-        "description": "Neutron persists all network state to the Neutron MariaDB schema including networks, subnets, ports, routers, security groups, and floating IPs."
+        "description": "Neutron persists all network state to the Neutron MariaDB schema including networks, subnets, ports, routers, security groups, and floating IPs.",
+        "source": "STCK000004-RS04",
+        "target": "STCK000004-DAR4",
+        "label": "persists network state",
+        "technology": "MySQL wire protocol",
+        "direction": "synchronous"
       },
       {
         "uid": "01KSKNTN01-RMQ1",
         "name": "Neutron Networking \u2192 RabbitMQ Message Broker",
         "type": "relationship",
         "catalogStatus": "complete",
-        "description": "Neutron uses RabbitMQ AMQP messaging for communication between neutron-server and neutron-agent subcomponents including the L2 agent, L3 agent, and DHCP agent running on compute and network nodes."
+        "description": "Neutron uses RabbitMQ AMQP messaging for communication between neutron-server and neutron-agent subcomponents including the L2 agent, L3 agent, and DHCP agent running on compute and network nodes.",
+        "source": "STCK000004-RS04",
+        "target": "STCK00000D-RS0D",
+        "label": "publishes and consumes agent RPC messages",
+        "technology": "AMQP",
+        "direction": "asynchronous"
       },
       {
         "uid": "01KSKWG00B-1Z27",
         "name": "Nova Compute Service \u2192 Glance Image Service",
         "type": "relationship",
-        "catalogStatus": "incomplete"
+        "catalogStatus": "incomplete",
+        "source": "STCK000001-RS01",
+        "target": "STCK000003-RS03",
+        "label": "calls"
       },
       {
         "uid": "ZA9TBBEWFM-ANM6",
         "name": "Nova Compute Service \u2192 OpenStack Linux Service Host",
         "type": "relationship",
-        "catalogStatus": "complete"
+        "catalogStatus": "complete",
+        "source": "STCK000001-RS01",
+        "target": "STCK00000F-HS0F",
+        "label": "runs on"
       },
       {
         "uid": "01KSKN0V01-CDR1",
         "name": "Nova Compute \u2192 Cinder Block Storage",
         "type": "relationship",
         "catalogStatus": "complete",
-        "description": "Nova calls Cinder APIs to attach and detach persistent block volumes to running instances. Volume attachment is initiated by nova-compute on the hypervisor host."
+        "description": "Nova calls Cinder APIs to attach and detach persistent block volumes to running instances. Volume attachment is initiated by nova-compute on the hypervisor host.",
+        "source": "STCK000001-RS01",
+        "target": "STCK000005-RS05",
+        "label": "attaches block volumes",
+        "technology": "HTTP (Cinder API)",
+        "direction": "synchronous"
       },
       {
         "uid": "01KSKN0V01-KST1",
         "name": "Nova Compute \u2192 Keystone Identity",
         "type": "relationship",
         "catalogStatus": "complete",
-        "description": "Nova validates every incoming API request by verifying the caller's Keystone token. Nova service-to-service calls use scoped service account tokens issued by Keystone."
+        "description": "Nova validates every incoming API request by verifying the caller's Keystone token. Nova service-to-service calls use scoped service account tokens issued by Keystone.",
+        "source": "STCK000001-RS01",
+        "target": "STCK000002-RS02",
+        "label": "validates tokens",
+        "technology": "HTTP (Keystone API)",
+        "direction": "synchronous"
       },
       {
         "uid": "01KSKN0V01-NTN1",
         "name": "Nova Compute \u2192 Neutron Networking",
         "type": "relationship",
         "catalogStatus": "complete",
-        "description": "Nova calls Neutron APIs to create, attach, and detach virtual network interfaces during instance provisioning and deletion. Network port lifecycle is tightly coupled to instance lifecycle."
+        "description": "Nova calls Neutron APIs to create, attach, and detach virtual network interfaces during instance provisioning and deletion. Network port lifecycle is tightly coupled to instance lifecycle.",
+        "source": "STCK000001-RS01",
+        "target": "STCK000004-RS04",
+        "label": "provisions network ports",
+        "technology": "HTTP (Neutron API)",
+        "direction": "synchronous"
       },
       {
         "uid": "01KSK0C6DP-5GFZ",
         "name": "Nova Compute \u2192 Nova Database",
         "type": "relationship",
         "catalogStatus": "complete",
-        "description": "Nova Compute reads and writes scheduling, instance, and host state to the Nova Database."
+        "description": "Nova Compute reads and writes scheduling, instance, and host state to the Nova Database.",
+        "source": "STCK000001-RS01",
+        "target": "STCK000001-DAR1",
+        "label": "reads from / writes to",
+        "technology": "MySQL wire protocol",
+        "direction": "synchronous"
       },
       {
         "uid": "01KSKN0V01-RMQ1",
         "name": "Nova Compute \u2192 RabbitMQ Message Broker",
         "type": "relationship",
         "catalogStatus": "complete",
-        "description": "Nova uses RabbitMQ AMQP messaging for all inter-subcomponent communication including scheduling requests from nova-api to nova-scheduler, conductor coordination, and compute agent RPC calls from nova-conductor to nova-compute."
+        "description": "Nova uses RabbitMQ AMQP messaging for all inter-subcomponent communication including scheduling requests from nova-api to nova-scheduler, conductor coordination, and compute agent RPC calls from nova-conductor to nova-compute.",
+        "source": "STCK000001-RS01",
+        "target": "STCK00000D-RS0D",
+        "label": "publishes and consumes RPC messages",
+        "technology": "AMQP",
+        "direction": "asynchronous"
       },
       {
         "uid": "01KSKWFZZT-JW98",
         "name": "Nova Database \u2192 Backup Service",
         "type": "relationship",
-        "catalogStatus": "stub"
+        "catalogStatus": "stub",
+        "source": "STCK000001-DAR1",
+        "label": "calls"
       },
       {
         "uid": "9YH5MC32YE-YWPJ",
         "name": "Nova Database \u2192 OpenStack Linux Service Host",
         "type": "relationship",
-        "catalogStatus": "complete"
+        "catalogStatus": "complete",
+        "source": "STCK000001-DAR1",
+        "target": "STCK00000F-HS0F",
+        "label": "runs on"
       },
       {
         "uid": "NJW68PCE7P-384H",
         "name": "OpenStack API Load Balancer \u2192 OpenStack Linux Service Host",
         "type": "relationship",
-        "catalogStatus": "complete"
+        "catalogStatus": "complete",
+        "source": "01KSF29JTP-9HYA",
+        "target": "STCK00000F-HS0F",
+        "label": "runs on"
       },
       {
         "uid": "95BR2EYAF9-AJ9Y",
         "name": "OpenStack Ops Console \u2192 Horizon Dashboard",
         "type": "relationship",
-        "catalogStatus": "complete"
+        "catalogStatus": "complete",
+        "source": "01KSE5V73Z-Q0A0",
+        "target": "STCK000006-RS06",
+        "label": "runs on"
       },
       {
         "uid": "01KSKWFZZV-A346",
         "name": "OpenStack Shared Database \u2192 Backup Service",
         "type": "relationship",
-        "catalogStatus": "stub"
+        "catalogStatus": "stub",
+        "source": "STCK000007-DAR7",
+        "label": "calls"
       },
       {
         "uid": "GSFETQG3HA-Z3VG",
         "name": "OpenStack Shared Database \u2192 OpenStack Linux Service Host",
         "type": "relationship",
-        "catalogStatus": "complete"
+        "catalogStatus": "complete",
+        "source": "STCK000007-DAR7",
+        "target": "STCK00000F-HS0F",
+        "label": "runs on"
       },
       {
         "uid": "Z0C8YHRRYJ-9A1E",
         "name": "Platform Audit Schema \u2192 OpenStack Shared Database",
         "type": "relationship",
-        "catalogStatus": "complete"
+        "catalogStatus": "complete",
+        "source": "01KSE5V73Z-RTKZ",
+        "target": "STCK000007-DAR7",
+        "label": "runs on"
       },
       {
         "uid": "01KSKWG00D-2AYJ",
         "name": "RabbitMQ Message Broker Service \u2192 Keystone Identity",
         "type": "relationship",
-        "catalogStatus": "incomplete"
+        "catalogStatus": "incomplete",
+        "source": "STCK00000D-RS0D",
+        "target": "STCK000002-RS02",
+        "label": "calls"
       },
       {
         "uid": "BJYH1BN0NA-0J5R",
         "name": "RabbitMQ Message Broker Service \u2192 OpenStack Linux Service Host",
         "type": "relationship",
-        "catalogStatus": "complete"
+        "catalogStatus": "complete",
+        "source": "STCK00000D-RS0D",
+        "target": "STCK00000F-HS0F",
+        "label": "runs on"
       },
       {
         "uid": "01KSKWG00D-V0KN",
         "name": "Sahara Data Processing Service \u2192 Keystone Identity",
         "type": "relationship",
-        "catalogStatus": "incomplete"
+        "catalogStatus": "incomplete",
+        "source": "STCK00000B-RS0B",
+        "target": "STCK000002-RS02",
+        "label": "calls"
       },
       {
         "uid": "6V7KBT8RTQ-AE6T",
         "name": "Sahara Data Processing Service \u2192 OpenStack Linux Service Host",
         "type": "relationship",
-        "catalogStatus": "complete"
+        "catalogStatus": "complete",
+        "source": "STCK00000B-RS0B",
+        "target": "STCK00000F-HS0F",
+        "label": "runs on"
       },
       {
         "uid": "01KSKWG00E-56JG",
         "name": "Sahara Data Processing Service \u2192 Sahara Database",
         "type": "relationship",
-        "catalogStatus": "incomplete"
+        "catalogStatus": "incomplete",
+        "source": "STCK00000B-RS0B",
+        "target": "STCK000007-DAR7",
+        "label": "calls"
       },
       {
         "uid": "01KSKWG00E-NC3H",
         "name": "Swift Proxy Service \u2192 Keystone Identity",
         "type": "relationship",
-        "catalogStatus": "incomplete"
+        "catalogStatus": "incomplete",
+        "source": "STCK00000C-RS0C",
+        "target": "STCK000002-RS02",
+        "label": "calls"
       },
       {
         "uid": "5DWN15W4MW-9ATW",
         "name": "Swift Proxy Service \u2192 OpenStack Linux Service Host",
         "type": "relationship",
-        "catalogStatus": "complete"
+        "catalogStatus": "complete",
+        "source": "STCK00000C-RS0C",
+        "target": "STCK00000F-HS0F",
+        "label": "runs on"
       },
       {
         "uid": "01KSKWG00F-87Z3",
         "name": "Swift Proxy Service \u2192 Swift Storage Cluster",
         "type": "relationship",
-        "catalogStatus": "incomplete"
+        "catalogStatus": "incomplete",
+        "source": "STCK00000C-RS0C",
+        "target": "STCK000006-DAR6",
+        "label": "calls"
       },
       {
         "uid": "01KSKWFZZW-2BN8",
         "name": "Swift Storage Cluster \u2192 Backup Service",
         "type": "relationship",
-        "catalogStatus": "stub"
+        "catalogStatus": "stub",
+        "source": "STCK000006-DAR6",
+        "label": "calls"
       },
       {
         "uid": "VBPFP4WWN0-4V1G",
         "name": "Swift Storage Cluster \u2192 OpenStack Linux Service Host",
         "type": "relationship",
-        "catalogStatus": "complete"
+        "catalogStatus": "complete",
+        "source": "STCK000006-DAR6",
+        "target": "STCK00000F-HS0F",
+        "label": "runs on"
       },
       {
         "uid": "01KSKWG00F-XS1H",
         "name": "Trove Database Service \u2192 Keystone Identity",
         "type": "relationship",
-        "catalogStatus": "incomplete"
+        "catalogStatus": "incomplete",
+        "source": "STCK00000A-RS0A",
+        "target": "STCK000002-RS02",
+        "label": "calls"
       },
       {
         "uid": "V3YAEBDFBP-VRTQ",
         "name": "Trove Database Service \u2192 OpenStack Linux Service Host",
         "type": "relationship",
-        "catalogStatus": "complete"
+        "catalogStatus": "complete",
+        "source": "STCK00000A-RS0A",
+        "target": "STCK00000F-HS0F",
+        "label": "runs on"
       },
       {
         "uid": "01KSKWG00F-PV05",
         "name": "Trove Database Service \u2192 RabbitMQ Message Broker",
         "type": "relationship",
-        "catalogStatus": "incomplete"
+        "catalogStatus": "incomplete",
+        "source": "STCK00000A-RS0A",
+        "target": "STCK00000D-RS0D",
+        "label": "calls"
       },
       {
         "uid": "01KSKWG00G-07D0",
         "name": "Trove Database Service \u2192 Trove Database",
         "type": "relationship",
-        "catalogStatus": "incomplete"
+        "catalogStatus": "incomplete",
+        "source": "STCK00000A-RS0A",
+        "target": "STCK000007-DAR7",
+        "label": "calls"
       },
       {
         "uid": "01KTWS3D6T-NB0E",
