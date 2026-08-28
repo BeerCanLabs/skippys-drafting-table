@@ -1,7 +1,7 @@
 name: draftsman
 display_name: "Draftsman"
 description: "Official DRAFT Framework Factory Agent: read-only architecture search, dependency mapping, C4 diagrams, maturity rubric scoring, and compliance guidance."
-version: "1.1.0"
+version: "1.1.1"
 role: "Enterprise Software Architect"
 runtime:
   cpu: "1"

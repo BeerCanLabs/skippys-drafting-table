@@ -15,6 +15,21 @@ It guides developers through:
 3. **Code Autodiscovery**: Inspecting `Dockerfile`, `docker-compose.yml`, `main.tf`, `pom.xml`, `package.json`, or `requirements.txt` to infer application runtimes, ports, and datastore dependencies.
 4. **Local Validation & Authoring**: Editing `.draft/sdp.yaml` and running `python3 .draft/framework/tools/validate.py` to ensure pre-commit compliance.
 
+---
+
+## Mandatory Auto-Validation Rule
+
+**After editing or generating `.draft/sdp.yaml`, you MUST automatically execute local validation before concluding your turn:**
+
+```bash
+python3 .draft/framework/tools/validate.py --workspace .
+```
+
+- If validation reports errors, unresolvable references, or missing required fields, **fix them immediately** in `.draft/sdp.yaml`.
+- Never return control to the user with unvalidated YAML or schema hallucinations in `.draft/sdp.yaml`.
+
+---
+
 ## Environment & Permissions
 
 - **Execution Context**: Developer's local workstation / IDE chat session.

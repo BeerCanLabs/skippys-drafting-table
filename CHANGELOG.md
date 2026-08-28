@@ -1,3 +1,28 @@
+## 1.1.1 - 2026-08-28
+
+### Compatibility Impact
+
+- Incorporates multi-persona adoption feedback from Acme Corp simulation (CTO, Infra, SWE).
+- Clarifies core Vibe Coding principle: AI drafts architectural intent (`.draft/sdp.yaml`); the composition engine (`compose_iac.py`) composes infrastructure (`main.tf`).
+- Enforces mandatory local auto-validation in `draftsman-engineer` AI agent skill.
+
+### Added
+
+- Added Pattern 2 token push sync sequence diagram to `framework/docs/engineering-onboarding.md`.
+- Added Inter-Module Variable Binding and Application Credential & Secret Handoff (`infra/outputs.json`) contracts to `framework/docs/SHARED_SERVICE_COMPOSITION_SPEC.md`.
+- Added mass module upgrade tooling specification (`framework/tools/upgrade_modules.py`) to `framework/docs/COMPOSITION_ROADMAP.md`.
+- Added mandatory local auto-validation rule to `agent/skills/draftsman-engineer/SKILL.md`.
+
+### Changed
+
+- Updated `README.md` with explicit Core Vibe Coding Principle note.
+- Explicitly labeled `EnvironmentProfile` as `[Roadmap Phase 2 Specification]` in `SHARED_SERVICE_COMPOSITION_SPEC.md`.
+- Bumped framework version to `1.1.1`.
+
+### Migration Notes
+
+- AI agent prompt updates take effect automatically on new agent sessions.
+
 ## 1.1.0 - 2026-08-28
 
 ### Compatibility Impact

@@ -4,7 +4,9 @@
 
 DRAFT enables **Enterprise-Grade Vibe Coding** — an architecture-as-code framework where product engineers describe what they want to build to an AI coding assistant, and the AI drafts standard, compliant architecture specifications (Software Deployment Patterns).
 
-Speed and compliance are achieved together because product specifications can **only be assembled from company-approved shared services and reference architectures**. Output is automatically standard, secure, and compliant by construction, rather than through slow manual gatekeeping.
+Speed and compliance are achieved together because product specifications can **only be assembled from company-approved shared services and reference architectures**.
+
+> **The Core Vibe Coding Principle:** **AI drafts the architectural intent** (`.draft/sdp.yaml`); **the Composition Engine (`compose_iac.py`) composes the deterministic, audited infrastructure code** (`main.tf`). AI never generates free-form Terraform code directly; it stitches pre-approved, versioned platform modules.
 
 ---
 
