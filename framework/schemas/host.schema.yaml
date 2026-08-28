@@ -19,9 +19,20 @@ optionalFields:
 - computePlatformComponent
 - internalComponents
 - deploymentConfigurations
+- provisioningModel
+- deployablePackage
 - decisionRecords
 - requirementImplementations
+conditionalRequired:
+- when:
+    provisioningModel:
+    - deployable
+  require:
+  - deployablePackage
 enumFields:
+  provisioningModel:
+  - deployable
+  - reference-only
   catalogStatus:
   - stub
   - incomplete
@@ -42,11 +53,25 @@ fieldTypes:
   requirementGroups: list
   decisionRecords: list
   requirementImplementations: list
-collectionSchemas:
-  internalComponents: internalComponent
-  deploymentConfigurations: deploymentConfiguration
-  decisionRecords: decisionRecordRef
-  requirementImplementations: requirementImplementation
+dictSubSchemas:
+  deployablePackage: deployablePackage
+deployablePackage:
+  requiredFields:
+  - registry
+  - source
+  - version
+  optionalFields:
+  - modulePath
+  fieldTypes:
+    registry: str
+    source: str
+    version: str
+    modulePath: str
+  fieldDescriptions:
+    registry: Registry type or platform (e.g. github, artifactory, terraform-registry).
+    source: Canonical source repository or package identifier (e.g. terraform-aws-modules/rds/aws).
+    version: Version tag or version constraint (e.g. v5.1.0 or >= 1.2.0).
+    modulePath: Optional sub-directory path within the repository module.
 internalComponent:
   requiredFields:
   - ref

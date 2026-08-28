@@ -1,3 +1,28 @@
+## 1.1.0 - 2026-08-28
+
+### Compatibility Impact
+
+- Reframes DRAFT around **Enterprise-Grade Vibe Coding** (speed with automatic compliance by composing approved, versioned shared service building blocks).
+- Introduces `provisioningModel: deployable | reference-only` and `deployablePackage` contract across shared service schemas (`host`, `runtime_service`, `data_store_service`, `network_service`, `ai_gateway`).
+- Enforces validator catalog status caps: SDPs relying on `reference-only` shared services are capped at `catalogStatus: documentation` and cannot be marked `complete` or `deployment-ready`.
+
+### Added
+
+- Added `provisioningModel` (`deployable` | `reference-only`) and `deployablePackage` (`registry`, `source`, `version`, `modulePath`) to `host.schema.yaml`, `runtime-service.schema.yaml`, `data-store-service.schema.yaml`, `network-service.schema.yaml`, and `ai-gateway.schema.yaml`.
+- Added validator status cap enforcement in `framework/tools/validate.py` for SDPs depending on `reference-only` shared services.
+- Added migration helper tool `framework/tools/migrate_shared_services_provisioning_model.py`.
+- Added design specification `framework/docs/SHARED_SERVICE_COMPOSITION_SPEC.md` and follow-on roadmap document `framework/docs/COMPOSITION_ROADMAP.md`.
+
+### Changed
+
+- Rewrote `README.md` to center DRAFT's outcome around Enterprise-Grade Vibe Coding and clean up legacy app positioning.
+- Updated `framework/docs/shared-services-onboarding.md` with `deployable` vs `reference-only` publishing playbooks.
+- Bumped framework version to `1.1.0`.
+
+### Migration Notes
+
+- Run `python3 .draft/framework/tools/migrate_shared_services_provisioning_model.py --workspace .` in company workspaces to set explicit `provisioningModel: reference-only` across legacy catalog entries.
+
 ## 1.0.7 - 2026-08-27
 
 ### Compatibility Impact

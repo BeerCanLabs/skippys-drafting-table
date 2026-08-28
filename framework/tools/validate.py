@@ -3204,6 +3204,24 @@ def validate_software_deployment_pattern(
                                 elif "enabled" not in auto:
                                     failures.append(f"{path}: tierVariants[{idx}].serviceGroupVariants[{sgv_idx}].autoscaling missing required field 'enabled'")
 
+    # Check for reference-only shared service dependencies
+    if obj.get("catalogStatus") == "complete":
+        referenced_uids = set()
+        extract_referenced_uids(obj, referenced_uids)
+        ref_only_deps = []
+        shared_types = {"host", "runtime_service", "data_store_service", "network_service", "ai_gateway"}
+        for ref_uid in sorted(referenced_uids):
+            ref_obj = catalog_by_id.get(ref_uid)
+            if ref_obj and ref_obj.get("type") in shared_types:
+                prov_model = ref_obj.get("provisioningModel", "reference-only")
+                if prov_model != "deployable":
+                    ref_only_deps.append(f"'{ref_obj.get('name') or ref_uid}' ({ref_uid})")
+        if ref_only_deps:
+            failures.append(
+                f"[{object_id}] SoftwareDeploymentPattern cannot be marked catalogStatus: complete because it depends on reference-only shared services: {', '.join(ref_only_deps)}. "
+                "SDPs with reference-only dependencies are capped at catalogStatus: documentation (or incomplete/stub) and cannot be marked complete or deployment-ready."
+            )
+
 
 def validate_environment_tier(obj: dict[str, Any], path: Path, failures: list[str], warnings: list[str]) -> None:
     tier_id = obj.get("tierId")
@@ -4499,6 +4517,14 @@ def main(argv: list[str] | None = None) -> int:
                             f"(type: {ref_obj.get('type')}, uid: {ref_uid}) in SDP closed graph has catalogStatus "
                             f"'{status}' instead of 'complete'"
                         )
+                    if ref_obj.get("type") in {"host", "runtime_service", "data_store_service", "network_service", "ai_gateway"}:
+                        prov_model = ref_obj.get("provisioningModel", "reference-only")
+                        if prov_model != "deployable":
+                            failures.append(
+                                f"Deployment readiness check failed: Shared service '{ref_obj.get('name') or ref_uid}' "
+                                f"(type: {ref_obj.get('type')}, uid: {ref_uid}) in SDP closed graph is reference-only (provisioningModel: {prov_model}). "
+                                f"Deployment-ready patterns must compose only deployable shared services."
+                            )
 
             if not failures:
                 print("")

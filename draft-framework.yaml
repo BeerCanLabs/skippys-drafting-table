@@ -1,8 +1,8 @@
 schemaVersion: "1.0"
 id: draft-framework
 name: DRAFT Framework
-version: "1.0.7"
+version: "1.1.0"
 releasePhase: GA
 compatibility:
   minDraftTableVersion: "1.0.0"
-  contract: DRAFT Framework 1.0.7 release; adds evidence discipline to SOUL.md, projects relationship endpoints into catalog index, enables real C4 topology rendering, and syncs agent spec versions.
+  contract: DRAFT Framework 1.1.0 release; introduces deployable vs reference-only shared services composition split, deployablePackage schema, validator status caps, and composition specs for enterprise vibe coding.
