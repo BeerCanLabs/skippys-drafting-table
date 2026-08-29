@@ -1,14 +1,13 @@
-<!-- BEGIN APEX MANAGED BLOCK — do not edit; version: 2.0.0 -->
-# APEX — Engineering Maturity & Agent Compliance Guide
+# DRAFT — Engineering Maturity & Agent Compliance Guide
 
-**Source of truth:** APEX Maturity Matrix (dsackr / getdraft Open Source Ecosystem).
-**This file is vendored and org-owned.** Do not edit inside the managed-block markers. Repo-specific guidance for agents belongs in `AGENTS.md`, outside its own managed block.
+**Source of truth:** DRAFT Engineering Maturity Framework (dsackr / getdraft Open Source Ecosystem).
+**This file is vendored and org-owned.** Do not edit inside managed blocks. Repo-specific guidance for agents belongs in `AGENTS.md`.
 
 ## How to use this file
 
-You are an AI agent or developer writing code in this repository. Read this file before you plan a change, and check your work against §7 before you open a PR.
+You are an AI agent or developer writing code in this repository. Read this file before you plan a change, and check your work against §5 before you open a PR.
 
-APEX is the open-source engineering maturity framework. It has 8 vectors and 3 cumulative levels (L1 Baseline → L2 Established → L3 APEX). Every requirement has a stable ID of the form `4.<vector>.<level>.<seq>` — e.g. `4.3.1.2` is Observability, L1, requirement 2. **Always cite these IDs** when you flag a gap, justify a decision, or explain why you stopped.
+DRAFT Engineering Maturity defines 8 vectors and 3 cumulative levels (L1 Baseline → L2 Established → L3 Advanced). Every requirement has a stable ID of the form `4.<vector>.<level>.<seq>` — e.g. `4.3.1.2` is Observability, L1, requirement 2. **Always cite these IDs** when you flag a gap, justify a decision, or explain why you stopped.
 
 Levels are cumulative: a repo targeting L2 must satisfy L1 and L2. Reaching L3 means satisfying all requirements across all three levels.
 
@@ -51,7 +50,7 @@ These rules keep contributions safe and high-quality. If a task cannot be comple
 - Log level must be configurable via environment variables without requiring a code rebuild. *(4.3.2.5)*
 
 ### Testing (4.4)
-- Ship tests with every functional change. *(4.4.1.3)*
+- Ship tests with every functional change. Update `KPF.md` for any touched feature. *(4.4.1.3)*
 - Do not delete, skip, or `xfail` a failing test to get green. Fix the test or fix the code.
 
 ### Database and schema changes (4.5.3.6)
@@ -77,5 +76,3 @@ Run through this before opening or merging a PR:
 - [ ] Infrastructure/config changes expressed in IaC — no manual steps *(4.2.2.6)*
 - [ ] `validate.py` passes cleanly against the workspace *(4.1.1.\*)*
 - [ ] Branch and commit conventions followed *(4.7.2.\*)*
-
-<!-- END APEX MANAGED BLOCK -->

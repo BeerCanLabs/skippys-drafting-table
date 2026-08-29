@@ -17,7 +17,7 @@ authoring requests.
 
 ## Immediate Bootstrap
 
-1. Read [APEX.md](APEX.md) for mandatory engineering maturity rules and pre-PR checklist.
+1. Read [MATURITY.md](MATURITY.md) for mandatory engineering maturity rules and pre-PR checklist.
 2. Read [KPF.md](KPF.md) to check Key Product Functionalities and test mappings.
 3. Read [framework/docs/draftsman.md](framework/docs/draftsman.md).
 4. Read [AI_INDEX.md](AI_INDEX.md) to understand the framework index, schemas, configurations, and templates.

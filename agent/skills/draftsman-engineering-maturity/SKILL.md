@@ -1,12 +1,12 @@
 ---
 name: draftsman-engineering-maturity
-description: Engineering maturity standards, APEX compliance, KPF tracking, test mapping, and automated release readiness guardrails for Archie, Switch, and engineering agents.
+description: Engineering maturity standards, KPF tracking, test mapping, and automated release readiness guardrails for Archie, Switch, and engineering agents.
 ---
 
 # Draftsman Engineering Maturity & Compliance Skill
 
 ## Purpose
-Equips engineering agents (**Archie**, **Switch**, **Draftsman**) with mandatory protocols to ensure any new or modified repository meets our personal APEX engineering maturity standards, Key Product Functionality (`KPF.md`) tracking, test coverage mandates, and DRAFT catalog registration.
+Equips engineering agents (**Archie**, **Switch**, **Draftsman**) with mandatory protocols to ensure any new or modified repository meets our DRAFT engineering maturity standards (`MATURITY.md`), Key Product Functionality (`KPF.md`) tracking, test coverage mandates, and DRAFT catalog registration.
 
 ---
 
@@ -15,11 +15,11 @@ Equips engineering agents (**Archie**, **Switch**, **Draftsman**) with mandatory
 ### 1. New Repository Onboarding Standard
 Whenever **Archie** or **Switch** bootstraps or scaffolds a new repository, the agent MUST:
 
-1. **Instantiate Root `APEX.md`:**
-   - Vendor the personal `APEX.md` template into the repo root (`APEX.md`).
+1. **Instantiate Root `MATURITY.md`:**
+   - Vendor the DRAFT `MATURITY.md` template into the repo root (`MATURITY.md`).
    - Declare the target maturity level in §1 (Default: **L1 Baseline**).
 2. **Create `AGENTS.md` Pointer:**
-   - Create `AGENTS.md` as the primary agent bootstrap file pointing directly to `APEX.md` and `KPF.md`.
+   - Create `AGENTS.md` as the primary agent bootstrap file pointing directly to `MATURITY.md` and `KPF.md`.
 3. **Instantiate `KPF.md` (Key Product Functionalities):**
    - Create `KPF.md` documenting all user- or service-facing capabilities.
    - Assign stable IDs (e.g. `KPF-APP-001`), descriptions, severities (Sev1/Sev2), and mapped automated test paths.
@@ -29,7 +29,7 @@ Whenever **Archie** or **Switch** bootstraps or scaffolds a new repository, the 
 
 ---
 
-### 2. PR Pre-Flight & Quality Checklist (§7 APEX Compliance)
+### 2. PR Pre-Flight & Quality Checklist (§5 DRAFT Maturity Compliance)
 Before opening a Pull Request or declaring a task complete, **Archie** and **Switch** MUST verify:
 
 * [ ] **`KPF.md` Updated:** Any new or modified product functionality is recorded in `KPF.md` with mapped test suite references.

@@ -8,7 +8,7 @@ category: decision
 status: accepted
 catalogStatus: complete
 lifecycleStatus: preferred
-decisionRationale: Standardized GCP Cloud Run, Secret Manager, Cloud SQL, and APEX engineering maturity standards.
+decisionRationale: Standardized GCP Cloud Run, Secret Manager, Cloud SQL, and DRAFT engineering maturity standards.
 owner:
   team: platform-ai-team
   contact: platform-ai@example.com
