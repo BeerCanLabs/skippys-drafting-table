@@ -1,0 +1,8 @@
+schemaVersion: "1.0"
+id: draft-framework
+name: DRAFT Framework
+version: "1.2.0"
+releasePhase: GA
+compatibility:
+  minDraftTableVersion: "1.0.0"
+  contract: DRAFT Framework 1.2.0 release; consolidates draftsman and draftsman-engineer into single canonical Draftsman Agent with dual-mode runtime behavior.
