@@ -17,14 +17,12 @@ authoring requests.
 
 ## Immediate Bootstrap
 
-1. Read [framework/docs/draftsman.md](framework/docs/draftsman.md).
-2. Read [AI_INDEX.md](AI_INDEX.md) to understand the current framework index,
-   available schemas, base configurations, templates, and example YAML.
-3. Use [framework/schemas/](framework/schemas/) as the authoritative object
-   contract.
-4. Use [framework/configurations/](framework/configurations/) as the
-   authoritative base capability, RequirementGroup, and domain model.
-5. Validate changes with `python3 framework/tools/validate.py`.
+1. Read [APEX.md](APEX.md) for mandatory engineering maturity rules and pre-PR checklist.
+2. Read [KPF.md](KPF.md) to check Key Product Functionalities and test mappings.
+3. Read [framework/docs/draftsman.md](framework/docs/draftsman.md).
+4. Read [AI_INDEX.md](AI_INDEX.md) to understand the framework index, schemas, configurations, and templates.
+5. Use [framework/schemas/](framework/schemas/) as the authoritative object contract.
+6. Validate changes with `python3 framework/tools/validate.py`.
 
 ## Draftsman Activation
 
