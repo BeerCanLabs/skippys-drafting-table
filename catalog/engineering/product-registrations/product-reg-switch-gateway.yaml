@@ -1,0 +1,15 @@
+schemaVersion: '1.0'
+uid: 01M15NEKT7-FMMC
+type: product_registration
+name: Switch AI Gateway Product Registration
+catalogStatus: complete
+owner:
+  team: switch-product-team
+  contact: switch-team@example.com
+repository:
+  url: https://github.com/company/switch-gateway
+  provider: github
+  defaultBranch: main
+sdpManifest:
+  mode: git
+  path: .draft/sdp.yaml

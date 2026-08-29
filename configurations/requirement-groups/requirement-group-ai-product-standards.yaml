@@ -1,0 +1,85 @@
+schemaVersion: '1.0'
+uid: 01M15NEKT7-4PZN
+type: requirement_group
+name: Enterprise AI Product Security & Acceptable Use Standards
+description: Mandatory compliance, governance, and secret management standards for all AI products built by Archie, Switch, or engineering teams.
+version: 1.0.0
+catalogStatus: complete
+lifecycleStatus: preferred
+activation: always
+appliesTo:
+- product_component
+- software_deployment_pattern
+authority:
+  name: DRAFT Framework
+  shortName: DRAFT
+  source: DRAFT Framework
+owner:
+  team: platform-ai-team
+  contact: platform-ai@example.com
+requirements:
+- id: req-ai-gateway-routing
+  description: AI products MUST route model inference calls through an approved, deployable AiGateway. Direct unmonitored public API calls are forbidden.
+  canBeSatisfiedBy:
+  - mechanism: field
+    key: aiGatewayRouting
+  - mechanism: decisionRecord
+    key: aiGatewayRoutingDecision
+  minimumSatisfactions: 1
+  requirementMode: mandatory
+  naAllowed: false
+  validAnswerTypes:
+  - field
+  - decisionRecord
+- id: req-zero-hardcoded-keys
+  description: API keys and bot tokens MUST be retrieved dynamically from Secret Manager at runtime.
+  canBeSatisfiedBy:
+  - mechanism: field
+    key: secretsManagement
+  - mechanism: decisionRecord
+    key: secretsManagementDecision
+  minimumSatisfactions: 1
+  requirementMode: mandatory
+  naAllowed: false
+  validAnswerTypes:
+  - field
+  - decisionRecord
+- id: req-local-auto-validation
+  description: AI product repositories MUST execute local schema validation (validate.py) prior to committing .draft/sdp.yaml.
+  canBeSatisfiedBy:
+  - mechanism: field
+    key: localValidation
+  - mechanism: decisionRecord
+    key: localValidationDecision
+  minimumSatisfactions: 1
+  requirementMode: mandatory
+  naAllowed: false
+  validAnswerTypes:
+  - field
+  - decisionRecord
+- id: req-product-registration
+  description: Every AI product repo MUST register its repository URL and SDP manifest path in drafting-table.
+  canBeSatisfiedBy:
+  - mechanism: field
+    key: productRegistration
+  - mechanism: decisionRecord
+    key: productRegistrationDecision
+  minimumSatisfactions: 1
+  requirementMode: mandatory
+  naAllowed: false
+  validAnswerTypes:
+  - field
+  - decisionRecord
+- id: req-model-inference-spec
+  description: Model versions, temperature parameters, and token budget limits must be declared in runtimeSpec.
+  canBeSatisfiedBy:
+  - mechanism: field
+    key: modelInferenceSpec
+  - mechanism: decisionRecord
+    key: modelInferenceSpecDecision
+  minimumSatisfactions: 1
+  requirementMode: mandatory
+  naAllowed: false
+  validAnswerTypes:
+  - field
+  - decisionRecord

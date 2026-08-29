@@ -1,0 +1,43 @@
+schemaVersion: '1.0'
+uid: 01M15NEKT7-QKPW
+type: ai_gateway
+name: Skippy's Submind AI Agent Factory Gateway
+description: Factory-deployed agent execution gateway providing LLM reasoning, C4 diagramming, and catalog search.
+version: 1.0.0
+deliveryModel: paas
+vendor: GCP
+productName: Skippy Submind Gateway
+productVersion: 1.2.0
+catalogStatus: complete
+lifecycleStatus: preferred
+owner:
+  team: platform-ai-team
+  contact: platform-ai@example.com
+tags:
+- ai-gateway
+- agent-factory
+- gcp
+- submind
+provisioningModel: deployable
+deployablePackage:
+  registry: github
+  source: company-infrastructure/hermes-gcp-factory
+  version: v1.2.0
+  modulePath: modules/hermes_agent
+decisionRecords:
+- ref: 01M15NFKKN-74NY
+  key: modelRoutingApproach
+- ref: 01M15NFKKN-74NY
+  key: rateLimitingApproach
+- ref: 01M15NFKKN-74NY
+  key: dataProtectionApproach
+- ref: 01M15NFKKN-74NY
+  key: loggingApproach
+notes:
+  modelRouting: Multi-model routing to Anthropic (Claude 3.5 Sonnet, Claude 3 Haiku)
+  modelRoutingApproach: Multi-model routing to Anthropic endpoints
+  rateLimitingApproach: Token rate limiting managed via GCP Cloud Run concurrency & API quotas
+  dataProtectionApproach: PII filtering and zero-data-retention compliance
+  loggingApproach: Centralized prompt and response audit logs streamed to GCP Cloud Logging
+  security_monitoring: Prompt logging and audit events routed to Cloud Logging.
+  secrets_management: API keys retrieved dynamically from GCP Secret Manager.

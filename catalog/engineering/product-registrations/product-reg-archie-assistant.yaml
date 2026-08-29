@@ -1,0 +1,15 @@
+schemaVersion: '1.0'
+uid: 01M15NEKT7-B26W
+type: product_registration
+name: Archie AI Assistant Product Registration
+catalogStatus: complete
+owner:
+  team: archie-product-team
+  contact: archie-team@example.com
+repository:
+  url: https://github.com/company/archie-assistant
+  provider: github
+  defaultBranch: main
+sdpManifest:
+  mode: git
+  path: .draft/sdp.yaml

@@ -1,0 +1,42 @@
+schemaVersion: '1.0'
+uid: 01M15NEKT7-H42Y
+type: data_store_service
+name: Standard GCP Cloud SQL PostgreSQL Database
+description: Managed PostgreSQL database service on GCP with automated backups, IAM database authentication, and SSL encryption.
+version: 1.0.0
+deliveryModel: paas
+vendor: GCP
+productName: GCP Cloud SQL PostgreSQL
+productVersion: '15'
+catalogStatus: complete
+lifecycleStatus: preferred
+authenticationModel: iam
+capabilities:
+- capability-data-persistence
+- capability-data-resilience
+- capability-encryption-at-rest
+owner:
+  team: data-engineering
+  contact: data-engineering@example.com
+tags:
+- database
+- gcp
+- postgresql
+- cloud-sql
+targetEngine: postgres
+decisionRecords:
+- ref: 01M15NFKKN-74NY
+  key: resilienceModel
+- ref: 01M15NFKKN-74NY
+  key: configurableSurface
+- ref: 01M15NFKKN-74NY
+  key: failureDomain
+provisioningModel: deployable
+deployablePackage:
+  registry: github
+  source: company-infrastructure/platform-iac-data
+  version: v1.0.0
+  modulePath: modules/cloud-sql-postgres
+notes:
+  data_resilience: Daily automated backups retained for 30 days.
+  encryption_at_rest: Encrypted using GCP managed keys (GCMK) or KMS.

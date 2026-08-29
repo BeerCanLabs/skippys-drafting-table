@@ -1,0 +1,33 @@
+schemaVersion: '1.0'
+uid: 01M15NEKT7-EKAR
+type: product_component
+name: Skippy's Submind Agent Runner Container
+description: First-party agent container running LLM reasoning loops, tool dispatch, and DRAFT catalog queries.
+version: 1.2.0
+classification: worker
+catalogStatus: complete
+lifecycleStatus: preferred
+repoUrl: https://github.com/dsackr/hermes-gcp-factory
+owner:
+  team: platform-ai-team
+  contact: platform-ai@example.com
+language: python
+tags:
+- agent-runner
+- python
+- containers
+decisionRecords:
+- ref: 01M15NFKKN-74NY
+  key: runtimeRequirement
+- ref: 01M15NFKKN-74NY
+  key: aiGatewayRoutingDecision
+- ref: 01M15NFKKN-74NY
+  key: secretsManagementDecision
+- ref: 01M15NFKKN-74NY
+  key: localValidationDecision
+- ref: 01M15NFKKN-74NY
+  key: productRegistrationDecision
+- ref: 01M15NFKKN-74NY
+  key: modelInferenceSpecDecision
+notes:
+  security_monitoring: Cloud Audit Logs enabled.

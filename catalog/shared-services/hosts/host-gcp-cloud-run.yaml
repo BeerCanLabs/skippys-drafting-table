@@ -1,0 +1,25 @@
+schemaVersion: '1.0'
+uid: 01M15NEKT7-1SN8
+type: host
+name: Standard GCP Cloud Run Serverless Substrate
+description: Fully managed serverless container host platform for stateless services and agent runners on Google Cloud Platform.
+version: 1.0.0
+catalogStatus: complete
+lifecycleStatus: preferred
+owner:
+  team: platform-engineering
+  contact: platform-engineering@example.com
+tags:
+- host
+- gcp
+- cloud-run
+- serverless
+provisioningModel: deployable
+deployablePackage:
+  registry: github
+  source: company-infrastructure/platform-iac-compute
+  version: v1.0.0
+  modulePath: modules/cloud-run
+notes:
+  security_monitoring: Native GCP Cloud Audit Logs and VPC Service Controls integration.
+  log_management: Application stdout/stderr streamed to Cloud Logging.

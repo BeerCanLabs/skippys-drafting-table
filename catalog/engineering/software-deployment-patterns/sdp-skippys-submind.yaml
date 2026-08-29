@@ -1,0 +1,65 @@
+schemaVersion: '1.0'
+uid: 01M15NEKT7-S14J
+type: software_deployment_pattern
+name: Skippy's Submind Agent Factory Deployment Pattern
+description: Serverless containerized agent factory deployment pattern on GCP Cloud Run with Secret Manager IAM bindings and Cloud SQL datastores.
+version: 1.2.0
+catalogStatus: complete
+lifecycleStatus: preferred
+owner:
+  team: platform-ai-team
+  contact: platform-ai@example.com
+tags:
+- software-deployment-pattern
+- agent-factory
+- gcp
+- cloud-run
+serviceGroups:
+- id: agent-factory-group
+  name: Agent Factory Processing Group
+  deploymentTarget: GCP Cloud Run Serverless Substrate in us-central1
+  components:
+  - productComponent: 01M15NEKT7-EKAR
+deployableObjects:
+- dataStoreService: 01M15NEKT7-H42Y
+- aiGateway: 01M15NEKT7-QKPW
+decisionRecords:
+- ref: 01M15NFKKN-74NY
+  key: noApplicablePattern
+- ref: 01M15NFKKN-74NY
+  key: interServiceConnections
+- ref: 01M15NFKKN-74NY
+  key: deploymentTargets
+- ref: 01M15NFKKN-74NY
+  key: availabilityRequirement
+- ref: 01M15NFKKN-74NY
+  key: externalDependencies
+- ref: 01M15NFKKN-74NY
+  key: dataClassification
+- ref: 01M15NFKKN-74NY
+  key: failureDomain
+- ref: 01M15NFKKN-74NY
+  key: patternDeviations
+- ref: 01M15NFKKN-74NY
+  key: localValidationDecision
+- ref: 01M15NFKKN-74NY
+  key: productRegistrationDecision
+- ref: 01M15NFKKN-74NY
+  key: modelInferenceSpecDecision
+- ref: 01M15NFKKN-74NY
+  key: aiGatewayRoutingDecision
+- ref: 01M15NFKKN-74NY
+  key: secretsManagementDecision
+notes:
+  availabilityTarget: 99.9%
+  availabilityRequirement: Active-active container execution on GCP Cloud Run
+  dataClassification: Internal
+  deploymentTargets: GCP Cloud Run Serverless Substrate in us-central1
+  failureDomain: Cloud Run regional availability domain
+  patternDeviations: none
+  externalDependencies: GCP Secret Manager and Cloud SQL Postgres
+  localValidation: Pre-commit validation executed
+  productRegistration: Registered in drafting-table
+  modelInferenceSpec: Claude 3.5 Sonnet / Claude 3 Haiku specs declared
+  aiGatewayRouting: Routed via Skippy Submind AI Gateway
+  secretsManagement: Dynamic GCP Secret Manager resolution
