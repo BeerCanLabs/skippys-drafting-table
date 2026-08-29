@@ -1,0 +1,85 @@
+schemaVersion: '1.0'
+uid: 01M15WPEFV-ZMA9
+type: requirement_group
+name: Engineering Maturity & Quality Standards
+description: Mandatory engineering maturity standards covering backward-compatible database migrations, IaC automation, zero gate suppressions, and synthetic test data.
+version: 1.0.0
+catalogStatus: complete
+lifecycleStatus: preferred
+activation: always
+appliesTo:
+- product_component
+- software_deployment_pattern
+authority:
+  name: DRAFT Framework
+  shortName: DRAFT
+  source: DRAFT Framework
+owner:
+  team: platform-engineering
+  contact: platform-engineering@example.com
+requirements:
+- id: req-expand-contract-migrations
+  description: Database schema changes MUST be backward-compatible and decoupled from application code deploys using expand-and-contract patterns.
+  canBeSatisfiedBy:
+  - mechanism: field
+    key: databaseMigrationStrategy
+  - mechanism: decisionRecord
+    key: databaseMigrationStrategyDecision
+  minimumSatisfactions: 1
+  requirementMode: mandatory
+  naAllowed: true
+  validAnswerTypes:
+  - field
+  - decisionRecord
+- id: req-zero-manual-infrastructure
+  description: All infrastructure changes MUST be expressed as version-controlled IaC modules (OpenTofu/Terraform). Undocumented manual steps are prohibited.
+  canBeSatisfiedBy:
+  - mechanism: field
+    key: iacAutomation
+  - mechanism: decisionRecord
+    key: iacAutomationDecision
+  minimumSatisfactions: 1
+  requirementMode: mandatory
+  naAllowed: false
+  validAnswerTypes:
+  - field
+  - decisionRecord
+- id: req-no-gate-suppressions
+  description: CI/CD pipelines MUST NOT introduce suppressions, allowlist entries, or continue-on-error overrides to bypass security or lint gates.
+  canBeSatisfiedBy:
+  - mechanism: field
+    key: gateEnforcement
+  - mechanism: decisionRecord
+    key: gateEnforcementDecision
+  minimumSatisfactions: 1
+  requirementMode: mandatory
+  naAllowed: false
+  validAnswerTypes:
+  - field
+  - decisionRecord
+- id: req-synthetic-test-data
+  description: Real production data or credentials MUST NOT be placed into test fixtures, seeds, or lower environments. Synthetic data is required.
+  canBeSatisfiedBy:
+  - mechanism: field
+    key: testDataGovernance
+  - mechanism: decisionRecord
+    key: testDataGovernanceDecision
+  minimumSatisfactions: 1
+  requirementMode: mandatory
+  naAllowed: false
+  validAnswerTypes:
+  - field
+  - decisionRecord
+- id: req-rollback-mechanism
+  description: Application deployments MUST declare an automated rollback path and zero-downtime deployment strategy.
+  canBeSatisfiedBy:
+  - mechanism: field
+    key: rollbackStrategy
+  - mechanism: decisionRecord
+    key: rollbackStrategyDecision
+  minimumSatisfactions: 1
+  requirementMode: mandatory
+  naAllowed: false
+  validAnswerTypes:
+  - field
+  - decisionRecord

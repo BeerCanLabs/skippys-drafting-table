@@ -50,6 +50,16 @@ decisionRecords:
   key: aiGatewayRoutingDecision
 - ref: 01M15NFKKN-74NY
   key: secretsManagementDecision
+- ref: 01M15NFKKN-74NY
+  key: databaseMigrationStrategyDecision
+- ref: 01M15NFKKN-74NY
+  key: iacAutomationDecision
+- ref: 01M15NFKKN-74NY
+  key: gateEnforcementDecision
+- ref: 01M15NFKKN-74NY
+  key: testDataGovernanceDecision
+- ref: 01M15NFKKN-74NY
+  key: rollbackStrategyDecision
 notes:
   availabilityTarget: 99.9%
   availabilityRequirement: Active-active container execution on GCP Cloud Run
