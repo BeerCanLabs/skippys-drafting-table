@@ -69,18 +69,45 @@ If your service owns a database table, queue, or dataset, author a `DataComponen
 * Bind it to the host or service it runs on using the `runsOn` reference.
 
 ### Step 3: Define Your SoftwareDeploymentPattern (SDP)
-The SDP is your product's "architectural blueprint." It binds your ProductComponents and DataComponents together:
-* Place the file in `catalog/engineering/software-deployment-patterns/`.
-* Group your components and databases into logical deployment tiers using `serviceGroups` (e.g., `presentation`, `application`, `data`).
-* Declare which `ReferenceArchitecture` your pattern aligns with using the `followsReferenceArchitecture` property (e.g., `ra-three-tier-web`).
+The SDP is your product's "architectural blueprint." Product engineering teams own their SDPs directly in their application source repositories (`.draft/sdp.yaml`).
 
 ---
 
-## 4. Operational Best Practices
+## 4. Decentralized Repository Setup & Pattern 2 Auto-Sync
+
+DRAFT uses **Pattern 2 Least-Privilege Sync**: your product repository pushes its `.draft/sdp.yaml` payload to the central company catalog (`drafting-table`) via ephemeral tokens on PR merge. The central catalog has **ZERO read credentials to your private source code repository**!
+
+```text
+ ┌──────────────────────────────────────────────┐          ┌─────────────────────────────────────────────┐
+ │  PRODUCT CODE REPO (e.g. github.com/acme/app)│          │  CENTRAL CATALOG REPO (drafting-table)      │
+ └──────────────────────┬───────────────────────┘          └──────────────────────┬──────────────────────┘
+                        │                                                         │
+ 1. Local IDE Assistant │                                                         │
+    runs `/draft init`  │                                                         │
+    to scaffold SDP     │                                                         │
+                        │                                                         │
+ 2. Validate locally    │                                                         │
+    python3 .draft/...  │                                                         │
+    validate.py         │                                                         │
+                        │                                                         │
+ 3. Merge PR in app repo│                                                         │
+    GitHub Action fires ├───────────────── Pattern 2 Token Push ──────────────────►│
+    ephemeral token     │                 (Payload: .draft/sdp.yaml)              │ Syncs payload & validates
+                        │                                                         │ catalog automatically
+```
+
+### 3-Step Local Developer Onboarding:
+1. **Register Product**: Point your IDE assistant to `drafting-table` and run `@Draftsman register my product [Name]`. It creates a `product_registration` file linking your repo URL to the central catalog.
+2. **Initialize Local Repo**: Open your product repo in your IDE and run `/draft init`. Your IDE assistant inspects your `Dockerfile`, `docker-compose.yml`, or `main.tf` to scaffold `.draft/sdp.yaml` and `.github/workflows/draft-sync.yml`.
+3. **Validate & Merge**: Validate locally (`python3 .draft/framework/tools/validate.py --workspace .`). On PR merge, the GitHub Action automatically syncs `.draft/sdp.yaml` to `drafting-table`.
+
+---
+
+## 5. Operational Best Practices
 
 * **Active Ownership:** Every engineering file you create **must** have your team ID mapped under `owner.team` matching the approved workspace team registry. Missing team mappings will trigger validation failures on complete objects.
 * **Incremental Drafting:** When starting a new design, set `catalogStatus: stub` or `catalogStatus: incomplete`. The validator will output warnings for incomplete evidence but will allow you to merge skeletal files so they are visible.
 * **Resolve Gaps Programmatically:** Run `/draft validate` in your AI chat window to check your local changes before opening a pull request. The validator will analyze your schemas, cross-references, and platform dependencies, highlighting exact repair steps if warnings or errors are found.
-* **Justify Exceptions Cleanly:** If your product deviates from standard platform rules (e.g. running a non-standard database), add clear architectural reasoning inside the object's `architectureNotes` field. The Draftsman will read these notes and use them to satisfy platform RequirementGroup compliance checks automatically during reviews.
+* **Justify Exceptions Cleanly:** If your product deviates from standard platform rules (e.g. running a non-standard database), add clear architectural reasoning inside the object's `notes` field. The Draftsman will read these notes and use them to satisfy platform RequirementGroup compliance checks automatically during reviews.
 
 For detailed guidelines on issue ticketing, lifecycle states, standard dispositions, and CODEOWNERS review routing, see the [Draft Operations Guide](operations-guide.md).

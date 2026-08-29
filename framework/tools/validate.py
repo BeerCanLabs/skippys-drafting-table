@@ -17,6 +17,10 @@ if str(TOOLS_ROOT) not in sys.path:
     sys.path.insert(0, str(TOOLS_ROOT))
 
 from uid_utils import UID_PATTERN_TEXT, generate_uid
+try:
+    from validate_agent_package import validate_agent_package
+except ImportError:
+    validate_agent_package = None
 
 
 FRAMEWORK_ROOT = Path(__file__).resolve().parent.parent
@@ -51,6 +55,7 @@ VALID_REQUIREMENT_SCOPES = {
     "data_component",
     "reference_architecture",
     "software_deployment_pattern",
+    "product_registration",
 }
 
 VALID_REQUIREMENT_ANSWER_TYPES = {
@@ -75,7 +80,7 @@ STANDARD_TYPES = {
     "data_component",
 }
 SERVICE_TYPES = {"runtime_service", "data_store_service", "network_service", "ai_gateway"}
-RELATIONSHIP_ENDPOINT_TYPES = STANDARD_TYPES | {"runtime_service", "data_store_service", "network_service", "ai_gateway", "software_deployment_pattern", "reference_architecture", "technology_component", "host"}
+RELATIONSHIP_ENDPOINT_TYPES = STANDARD_TYPES | {"runtime_service", "data_store_service", "network_service", "ai_gateway", "software_deployment_pattern", "reference_architecture", "technology_component", "host", "product_registration"}
 BUSINESS_PILLAR_ID_PATTERN = re.compile(r"^business-pillar\.[a-z0-9-]+$")
 UID_PATTERN = re.compile(UID_PATTERN_TEXT)
 WORKSPACE_DOCUMENT_TYPES = {"vocabulary", "vocabulary_proposal"}
@@ -148,12 +153,15 @@ def workspace_yaml_roots(workspace_root: Path) -> list[Path]:
             roots.append(community_path)
     workspace_config = workspace_root / "configurations"
     workspace_catalog = workspace_root / "catalog"
+    external_sdps = workspace_root / ".draft" / "external_sdps"
     if workspace_config.exists():
         roots.append(workspace_config)
     if workspace_catalog.exists():
         roots.append(workspace_catalog)
     elif workspace_root.exists() and workspace_root.name == "catalog":
         roots.append(workspace_root)
+    if external_sdps.exists():
+        roots.append(external_sdps)
     return roots
 
 
@@ -238,6 +246,31 @@ def load_workspace_requirements(workspace_root: Path, failures: list[str]) -> di
         "active_groups": active_groups,
         "require_active_group_disposition": requirements.get("requireActiveRequirementGroupDisposition") is True,
     }
+
+
+def load_workspace_decision_record_approval_policy(workspace_root: Path, failures: list[str]) -> dict[str, Any]:
+    config_path = workspace_root / ".draft" / "workspace.yaml"
+    if not config_path.exists():
+        return {"enforcement": "none"}
+    try:
+        data = yaml.safe_load(config_path.read_text(encoding="utf-8")) or {}
+    except Exception as exc:  # noqa: BLE001
+        failures.append(f"{config_path}: Fix workspace configuration YAML; parser reported {exc}")
+        return {"enforcement": "none"}
+    if not isinstance(data, dict):
+        failures.append(f"{config_path}: Make workspace configuration a mapping at the top level")
+        return {"enforcement": "none"}
+
+    policy = data.get("decisionRecordApproval")
+    if policy is None:
+        return {"enforcement": "none"}
+    if not isinstance(policy, dict):
+        failures.append(f"{config_path}: Make decisionRecordApproval a mapping")
+        return {"enforcement": "none"}
+    if not policy:
+        return {"enforcement": "none"}
+
+    return policy
 
 
 def load_workspace_business_taxonomy(workspace_root: Path, failures: list[str]) -> dict[str, Any]:
@@ -569,6 +602,7 @@ def validate_workspace_requirements(
     active_group_ids: set[str],
     catalog_by_id: dict[str, dict[str, Any]],
     failures: list[str],
+    warnings: list[str],
 ) -> None:
     config_path = workspace_root / ".draft" / "workspace.yaml"
     for group_id in sorted(active_group_ids):
@@ -578,7 +612,7 @@ def validate_workspace_requirements(
                 f"{config_path}: Activate only existing workspace-mode requirement groups; '{group_id}' was not found"
             )
         elif group.get("activation") != "workspace":
-            failures.append(
+            warnings.append(
                 f"{config_path}: Remove '{group_id}' from requirements.activeRequirementGroups; always-on requirement groups do not need workspace activation"
             )
 
@@ -810,6 +844,39 @@ def validate_duplicate_capability_domain_names(
                 )
 
 
+def validate_capability_ownership_patches(
+    objects: dict[Path, dict[str, Any]],
+    catalog_by_id: dict[str, dict[str, Any]],
+    capability_ids: set[str],
+    warnings: list[str],
+) -> None:
+    # Check if there are any active capability-ownership patches in the workspace configurations
+    has_patches = False
+    for obj in objects.values():
+        if isinstance(obj, dict) and obj.get("type") == "object_patch":
+            target_uid = obj.get("target")
+            if target_uid in capability_ids:
+                has_patches = True
+                break
+
+    if not has_patches:
+        # Check if there is any capability with zero implementations
+        has_zero_impl_caps = False
+        for cap_uid in capability_ids:
+            cap = catalog_by_id.get(cap_uid)
+            if isinstance(cap, dict):
+                impls = cap.get("implementations")
+                if not impls or not isinstance(impls, list) or len(impls) == 0:
+                    has_zero_impl_caps = True
+                    break
+        if has_zero_impl_caps:
+            warnings.append(
+                "No active capability-ownership object patches found in workspace configurations. "
+                "Capabilities have zero implementations, which will result in empty Acceptable Use grids. "
+                "Ensure capability-ownership patches are configured under configurations/object-patches/"
+            )
+
+
 def requirement_group_name(group: dict[str, Any], fallback: str = "RequirementGroup") -> str:
     name = str(group.get("name") or fallback)
     return re.sub(r"\s+RequirementGroup$", "", name).strip() or fallback
@@ -977,14 +1044,23 @@ def validate_schema_section(
         value = node.get(field)
         if value is None or value == "":
             continue
-        if value not in allowed_values:
-            failures.append(f"{context}: Set {field} to one of {allowed_values}; '{value}' is not valid")
+        if isinstance(value, list):
+            invalid = [item for item in value if item not in allowed_values]
+            if invalid:
+                failures.append(f"{context}: Set elements in list {field} to one of {allowed_values}; invalid values: {invalid}")
+        else:
+            if value not in allowed_values:
+                failures.append(f"{context}: Set {field} to one of {allowed_values}; '{value}' is not valid")
 
     for field, expected_type in (schema.get("fieldTypes") or {}).items():
         if field not in node or node.get(field) is None:
             continue
+        val = node.get(field)
+        if expected_type == "str" and isinstance(val, list):
+            if all(isinstance(item, str) for item in val):
+                continue
         checker = TYPE_CHECKERS.get(str(expected_type))
-        if checker and not isinstance(node.get(field), checker):
+        if checker and not isinstance(val, checker):
             failures.append(f"{context}: Change field '{field}' to type {expected_type}")
 
     for field, allowed_values in (schema.get("enumListFields") or {}).items():
@@ -1167,8 +1243,8 @@ def mechanism_description(mechanism: dict[str, Any]) -> str:
     if mechanism_type == "deploymentConfiguration":
         quality = mechanism.get("criteria", {}).get("quality", "unknown")
         return f"deploymentConfiguration(quality={quality})"
-    if mechanism_type == "architectureNote":
-        return f"architectureNote({mechanism.get('key', 'unknown')})"
+    if mechanism_type == "note":
+        return f"note({mechanism.get('key', 'unknown')})"
     if mechanism_type == "decisionRecord":
         key = mechanism.get("key")
         if key:
@@ -1406,8 +1482,8 @@ def mechanism_satisfied(obj: dict[str, Any], mechanism: dict[str, Any], catalog_
                 if isinstance(caps, list) and capability in caps:
                     return True
         return False
-    if mechanism_type == "architectureNote":
-        # An architectureNote is a drafting placeholder, not a satisfaction. It lets a
+    if mechanism_type == "note":
+        # A note is a drafting placeholder, not a satisfaction. It lets a
         # DraftingSession continue when information or the right decision-maker is not yet
         # available, but it never resolves a requirement — the decision must be committed
         # as a DecisionRecord (or the requirement satisfied by concrete implementation).
@@ -1675,7 +1751,7 @@ def rationale_bucket_matches(value: Any, candidates: list[str]) -> bool:
 
 
 def dependency_rationale_present(obj: dict[str, Any], entry: dict[str, Any], context: str) -> bool:
-    decisions = obj.get("architectureNotes", {})
+    decisions = obj.get("notes", {})
     if not isinstance(decisions, dict):
         return False
     candidates = entry_rationale_candidates(entry, context)
@@ -1685,7 +1761,7 @@ def dependency_rationale_present(obj: dict[str, Any], entry: dict[str, Any], con
 
 def dependency_rationale_guidance(entry: dict[str, Any], context: str) -> str:
     key = entry.get("name") or entry.get("ref") or entry.get("enabledBy") or entry.get("role") or context
-    return f"architectureNotes.internalComponentRationales[{key!r}]"
+    return f"notes.internalComponentRationales[{key!r}]"
 
 
 def validate_unrequired_dependency_rationales(
@@ -1995,13 +2071,13 @@ def validate_workspace_vocabulary_references(
 
         if obj.get("type") not in deployable_or_pattern_types:
             continue
-        decisions = obj.get("architectureNotes") or {}
+        decisions = obj.get("notes") or {}
         if not isinstance(decisions, dict):
             continue
         validate_vocabulary_value(
             obj,
             path,
-            "architectureNotes.dataClassification",
+            "notes.dataClassification",
             decisions.get("dataClassification"),
             data_vocabulary,
             failures,
@@ -2010,7 +2086,7 @@ def validate_workspace_vocabulary_references(
         validate_vocabulary_value(
             obj,
             path,
-            "architectureNotes.availabilityRequirement",
+            "notes.availabilityRequirement",
             decisions.get("availabilityRequirement"),
             availability_vocabulary,
             failures,
@@ -2019,7 +2095,7 @@ def validate_workspace_vocabulary_references(
         validate_vocabulary_value(
             obj,
             path,
-            "architectureNotes.failureDomain",
+            "notes.failureDomain",
             decisions.get("failureDomain"),
             failure_vocabulary,
             failures,
@@ -2069,7 +2145,7 @@ def validate_architectural_decisions(
     obj: dict[str, Any], path: Path, failures: list[str], warnings: list[str] | None = None
 ) -> None:
     decision_sets: list[dict[str, Any]] = []
-    direct_decisions = obj.get("architectureNotes", {})
+    direct_decisions = obj.get("notes", {})
     if isinstance(direct_decisions, dict) and direct_decisions:
         decision_sets.append(direct_decisions)
 
@@ -2078,7 +2154,7 @@ def validate_architectural_decisions(
             and obj.get("catalogStatus") == "complete"
             and not has_decision_records):
         warnings.append(
-            f"{path}: [{object_label(obj)}] architectureNotes are inline — promote each decision to a "
+            f"{path}: [{object_label(obj)}] notes are inline — promote each decision to a "
             "decision_record object and reference it via decisionRecords for complete catalog objects"
         )
 
@@ -2087,13 +2163,13 @@ def validate_architectural_decisions(
             if key in decisions and decisions[key] not in allowed_values:
                 allowed_text = ", ".join(sorted(allowed_values))
                 failures.append(
-                    f'{path}: [{object_label(obj)}] architectureNotes.{key} must be one of: '
+                    f'{path}: [{object_label(obj)}] notes.{key} must be one of: '
                     f'{allowed_text} — got "{decisions[key]}"'
                 )
 
         if "minNodes" in decisions and not isinstance(decisions["minNodes"], int):
             failures.append(
-                f'{path}: [{object_label(obj)}] architectureNotes.minNodes must be an integer — '
+                f'{path}: [{object_label(obj)}] notes.minNodes must be an integer — '
                 f'got "{decisions["minNodes"]}"'
             )
 
@@ -2207,7 +2283,7 @@ def validate_component(
 
 
 def agent_interaction_exception(obj: dict[str, Any], abb_id: str) -> bool:
-    decisions = obj.get("architectureNotes", {})
+    decisions = obj.get("notes", {})
     if not isinstance(decisions, dict):
         return False
     exceptions = decisions.get("agentInteractionExceptions")
@@ -2275,7 +2351,7 @@ def validate_classified_component_refs(
             )
             if not has_outbound_rel and not agent_interaction_exception(obj, ref):
                 failures.append(
-                    f"{path}: agent TechnologyComponent '{ref}' requires a relationship object with source == this object or architectureNotes.agentInteractionExceptions"
+                    f"{path}: agent TechnologyComponent '{ref}' requires a relationship object with source == this object or notes.agentInteractionExceptions"
                 )
 
 
@@ -2396,7 +2472,7 @@ def sdp_requirement_satisfied(
     """
     Checks if a SoftwareDeploymentPattern requirement is satisfied by a referenced decisionRecord
     or by a direct field on the SDP (structural satisfaction path).
-    Note: Inline architectureNotes are never considered appropriate for requirement satisfaction.
+    Note: Inline notes are never considered appropriate for requirement satisfaction.
     """
     if mechanism_satisfied(obj, {"mechanism": "decisionRecord", "key": key}, catalog_by_id):
         return True
@@ -2508,6 +2584,63 @@ def _matches_object_condition(obj: dict[str, Any], condition: dict[str, Any], ca
             return False
     return True
 
+def _sdp_deployable_entries(
+    sdp: dict[str, Any], catalog_by_id: dict[str, dict[str, Any]]
+) -> list[dict[str, Any]]:
+    """Return entry metadata for every deployable object in an SDP's service groups."""
+    entries: list[dict[str, Any]] = []
+    for group in sdp.get("serviceGroups") or []:
+        if not isinstance(group, dict):
+            continue
+        for entry in group.get("deployableObjects") or []:
+            if not isinstance(entry, dict):
+                continue
+            ref = entry.get("ref")
+            target = catalog_by_id.get(str(ref)) if ref else None
+            obj_type: str | None = None
+            if target:
+                obj_type = target.get("type")
+            if not obj_type:
+                obj_type = entry.get("objectType")
+            entries.append(
+                {
+                    "ref": str(ref) if ref else None,
+                    "target": target,
+                    "objectType": obj_type,
+                    "diagramTier": entry.get("diagramTier"),
+                    "slot": entry.get("slot"),
+                }
+            )
+    return entries
+
+
+def _matches_endpoint_filter(
+    entry: dict[str, Any], filter_dict: dict[str, Any], catalog_by_id: dict[str, dict[str, Any]]
+) -> bool:
+    if not isinstance(filter_dict, dict) or not filter_dict:
+        return True
+    
+    req_tier = filter_dict.get("diagramTier")
+    if req_tier and entry.get("diagramTier") != req_tier:
+        return False
+        
+    req_slot = filter_dict.get("slot")
+    if req_slot and entry.get("slot") != req_slot:
+        return False
+        
+    req_type = filter_dict.get("objectType")
+    if req_type and entry.get("objectType") != req_type:
+        return False
+        
+    req_cap = filter_dict.get("capability")
+    if req_cap and not _target_satisfies_capability(
+        entry.get("ref"), entry.get("target"), str(req_cap), catalog_by_id
+    ):
+        return False
+        
+    return True
+
+
 def evaluate_ra_constraints(
     sdp: dict[str, Any],
     path: Path,
@@ -2520,7 +2653,13 @@ def evaluate_ra_constraints(
         return
 
     sdp_objects = _sdp_deployable_objects(sdp, catalog_by_id)
+    sdp_entries = _sdp_deployable_entries(sdp, catalog_by_id)
     ra_name = ra.get("name") or ra.get("uid") or "unknown"
+
+    catalog_relationships = [
+        v for v in catalog_by_id.values()
+        if isinstance(v, dict) and v.get("type") == "relationship"
+    ]
 
     for constraint in constraints:
         if not isinstance(constraint, dict):
@@ -2536,38 +2675,154 @@ def evaluate_ra_constraints(
                     continue  # condition not met; constraint does not apply to this SDP
 
         require = constraint.get("require")
-        if not require or not isinstance(require, list):
-            continue
+        if isinstance(require, list):
+            for req in require:
+                if not isinstance(req, dict):
+                    continue
+                req_type = req.get("objectType")
+                req_tier = req.get("diagramTier")
+                req_capability = req.get("capability")
+                satisfied = any(
+                    (not req_type or o.get("objectType") == req_type)
+                    and (not req_tier or o.get("diagramTier") == req_tier)
+                    and (not req_capability or _target_satisfies_capability(
+                        o.get("ref"), o.get("target"), str(req_capability), catalog_by_id
+                    ))
+                    for o in sdp_objects
+                )
+                if not satisfied:
+                    sdp_id = object_label(sdp)
+                    parts = []
+                    if req_tier:
+                        parts.append(f"diagramTier '{req_tier}'")
+                    if req_type:
+                        parts.append(f"objectType '{req_type}'")
+                    if req_capability:
+                        parts.append(f"capability '{req_capability}'")
+                    req_desc = " and ".join(parts) if parts else "a required object"
+                    failures.append(
+                        f"{path}: [{sdp_id}] RA constraint '{constraint_id}' violated — "
+                        f"no service group entry satisfies {req_desc}. "
+                        f"Required by ReferenceArchitecture '{ra_name}'. "
+                        f"See constraint description: {constraint.get('description') or constraint_id}"
+                    )
 
-        for req in require:
-            if not isinstance(req, dict):
+        req_rels = constraint.get("requireRelationships")
+        if isinstance(req_rels, list):
+            for req_rel in req_rels:
+                if not isinstance(req_rel, dict):
+                    continue
+                source_filter = req_rel.get("source", {})
+                target_filter = req_rel.get("target", {})
+                allowed = req_rel.get("allowed")
+                if allowed is None:
+                    allowed = True
+
+                if allowed:
+                    satisfied = False
+                    for rel in catalog_relationships:
+                        rel_source = rel.get("source")
+                        rel_target = rel.get("target")
+                        src_entry = next((e for e in sdp_entries if e.get("ref") == rel_source), None)
+                        tgt_entry = next((e for e in sdp_entries if e.get("ref") == rel_target), None)
+                        if src_entry and tgt_entry:
+                            if _matches_endpoint_filter(src_entry, source_filter, catalog_by_id) and \
+                               _matches_endpoint_filter(tgt_entry, target_filter, catalog_by_id):
+                                satisfied = True
+                                break
+                    if not satisfied:
+                        sdp_id = object_label(sdp)
+                        failures.append(
+                            f"{path}: [{sdp_id}] RA constraint '{constraint_id}' violated — "
+                            f"required relationship from source '{source_filter}' to target '{target_filter}' is missing. "
+                            f"Required by ReferenceArchitecture '{ra_name}'."
+                        )
+                else:
+                    for rel in catalog_relationships:
+                        rel_source = rel.get("source")
+                        rel_target = rel.get("target")
+                        src_entry = next((e for e in sdp_entries if e.get("ref") == rel_source), None)
+                        tgt_entry = next((e for e in sdp_entries if e.get("ref") == rel_target), None)
+                        if src_entry and tgt_entry:
+                            if _matches_endpoint_filter(src_entry, source_filter, catalog_by_id) and \
+                               _matches_endpoint_filter(tgt_entry, target_filter, catalog_by_id):
+                                sdp_id = object_label(sdp)
+                                failures.append(
+                                    f"{path}: [{sdp_id}] RA constraint '{constraint_id}' violated — "
+                                    f"forbidden relationship from source '{source_filter}' to target '{target_filter}' was found. "
+                                    f"Forbidden by ReferenceArchitecture '{ra_name}'."
+                                )
+
+
+def validate_sdp_reference_architecture_slots(
+    sdp: dict[str, Any],
+    path: Path,
+    ra: dict[str, Any],
+    catalog_by_id: dict[str, dict[str, Any]],
+    failures: list[str],
+) -> None:
+    ra_service_groups = ra.get("serviceGroups")
+    if not isinstance(ra_service_groups, list):
+        return
+
+    sdp_objects = _sdp_deployable_objects(sdp, catalog_by_id)
+    ra_name = ra.get("name") or ra.get("uid") or "unknown"
+    sdp_id = object_label(sdp)
+
+    for group in ra_service_groups:
+        if not isinstance(group, dict):
+            continue
+        deployable_objects = group.get("deployableObjects")
+        if not isinstance(deployable_objects, list):
+            continue
+        for entry in deployable_objects:
+            if not isinstance(entry, dict):
                 continue
-            req_type = req.get("objectType")
-            req_tier = req.get("diagramTier")
-            req_capability = req.get("capability")
-            satisfied = any(
-                (not req_type or o.get("objectType") == req_type)
-                and (not req_tier or o.get("diagramTier") == req_tier)
-                and (not req_capability or _target_satisfies_capability(
-                    o.get("ref"), o.get("target"), str(req_capability), catalog_by_id
-                ))
-                for o in sdp_objects
-            )
+            cap_uid = entry.get("capability")
+            if not is_non_empty(cap_uid):
+                continue
+
+            slot_name = entry.get("slot") or "unnamed-slot"
+            req_type = entry.get("objectType")
+            req_tier = entry.get("diagramTier")
+
+            satisfied = False
+            for o in sdp_objects:
+                if req_type and o.get("objectType") != req_type:
+                    continue
+                if req_tier and o.get("diagramTier") != req_tier:
+                    continue
+                if _target_satisfies_capability(o.get("ref"), o.get("target"), str(cap_uid), catalog_by_id):
+                    satisfied = True
+                    break
+
             if not satisfied:
-                sdp_id = object_label(sdp)
-                parts = []
-                if req_tier:
-                    parts.append(f"diagramTier '{req_tier}'")
+                # Check if bypassed/satisfied by a DecisionRecord referenced on the SDP
+                sdp_decision_records = sdp.get("decisionRecords") or []
+                if isinstance(sdp_decision_records, list):
+                    for dr_entry in sdp_decision_records:
+                        if not isinstance(dr_entry, dict):
+                            continue
+                        entry_key = dr_entry.get("key")
+                        entry_cap = dr_entry.get("capability") or dr_entry.get("concern")
+                        if (entry_key and entry_key == slot_name) or (entry_cap and entry_cap in (cap_uid, slot_name)):
+                            dr_ref = dr_entry.get("ref")
+                            dr_obj = catalog_by_id.get(str(dr_ref)) if is_non_empty(dr_ref) else None
+                            if dr_obj and dr_obj.get("type") == "decision_record":
+                                satisfied = True
+                                break
+
+            if not satisfied:
+                parts = [f"capability '{cap_uid}'"]
                 if req_type:
                     parts.append(f"objectType '{req_type}'")
-                if req_capability:
-                    parts.append(f"capability '{req_capability}'")
-                req_desc = " and ".join(parts) if parts else "a required object"
+                if req_tier:
+                    parts.append(f"diagramTier '{req_tier}'")
+                slot_desc = " and ".join(parts)
                 failures.append(
-                    f"{path}: [{sdp_id}] RA constraint '{constraint_id}' violated — "
-                    f"no service group entry satisfies {req_desc}. "
-                    f"Required by ReferenceArchitecture '{ra_name}'. "
-                    f"See constraint description: {constraint.get('description') or constraint_id}"
+                    f"{path}: [{sdp_id}] RA capability slot '{slot_name}' unsatisfied — "
+                    f"no deployable object satisfies {slot_desc}. "
+                    f"Required by ReferenceArchitecture '{ra_name}'."
                 )
 
 
@@ -2608,14 +2863,14 @@ def validate_ra(
             for ref, mainstream_end, support_end in extended_support_technologies
         )
         failures.append(
-            f"{path}: Set lifecycleStatus: deprecated by default, or existing-only with architectureNotes.lifecycleRationale, on ReferenceArchitecture '{object_id}' because it includes TechnologyComponents in extended support: {details}"
+            f"{path}: Set lifecycleStatus: deprecated by default, or existing-only with notes.lifecycleRationale, on ReferenceArchitecture '{object_id}' because it includes TechnologyComponents in extended support: {details}"
         )
     if extended_support_technologies and obj.get("lifecycleStatus") == "existing-only":
-        decisions = obj.get("architectureNotes") or {}
+        decisions = obj.get("notes") or {}
         if not isinstance(decisions, dict) or not is_non_empty(decisions.get("lifecycleRationale")):
             details = ", ".join(f"{ref} mainstreamSupportEnd {mainstream_end.isoformat()}" for ref, mainstream_end, _ in extended_support_technologies)
             failures.append(
-                f"{path}: Add architectureNotes.lifecycleRationale to explain why ReferenceArchitecture '{object_id}' remains existing-only while these TechnologyComponents are in extended support: {details}"
+                f"{path}: Add notes.lifecycleRationale to explain why ReferenceArchitecture '{object_id}' remains existing-only while these TechnologyComponents are in extended support: {details}"
             )
 
     if not is_non_empty(obj.get("patternType")):
@@ -2667,11 +2922,11 @@ def validate_ra(
                         f"'{capability}' must reference a capability object UID from configurations/capabilities"
                     )
 
-    if not is_non_empty(obj.get("architectureNotes")):
+    if not is_non_empty(obj.get("notes")):
         record_requirement_gap(
             obj,
             path,
-            f"[{object_id}] Add architectureNotes to satisfy requirement-group.reference-architecture requirement 'deployment-qualities'",
+            f"[{object_id}] Add notes to satisfy requirement-group.reference-architecture requirement 'deployment-qualities'",
             failures,
             warnings,
         )
@@ -2687,8 +2942,8 @@ def validate_ra(
                     continue
                 if not is_non_empty(constraint.get("id")):
                     failures.append(f"{path}: constraints[{idx}] missing required field 'id'")
-                if not constraint.get("require"):
-                    failures.append(f"{path}: constraints[{idx}] missing required field 'require'")
+                if not constraint.get("require") and not constraint.get("requireRelationships"):
+                    failures.append(f"{path}: constraints[{idx}] missing required field 'require' or 'requireRelationships'")
                 when = constraint.get("when")
                 if when is not None:
                     if not isinstance(when, dict):
@@ -2744,6 +2999,24 @@ def validate_ra(
                                 )
 
 
+def validate_product_registration(
+    obj: dict[str, Any],
+    path: Path,
+    business_taxonomy: dict[str, Any],
+    failures: list[str],
+    warnings: list[str],
+) -> None:
+    validate_software_deployment_business_context(obj, path, business_taxonomy, failures)
+    repo = obj.get("repository")
+    if not isinstance(repo, dict) or not is_non_empty(repo.get("url")):
+        failures.append(f"{path}: ProductRegistration must declare repository.url")
+    sdp_manifest = obj.get("sdpManifest")
+    if isinstance(sdp_manifest, dict):
+        mode = sdp_manifest.get("mode")
+        if mode and mode not in {"git", "local_path", "inline"}:
+            failures.append(f"{path}: sdpManifest.mode must be one of git, local_path, or inline")
+
+
 def validate_software_deployment_pattern(
     obj: dict[str, Any],
     path: Path,
@@ -2770,8 +3043,19 @@ def validate_software_deployment_pattern(
     validate_software_deployment_business_context(obj, path, business_taxonomy, failures)
 
     object_id = object_label(obj)
-    ra_uid = obj.get("followsReferenceArchitecture")
-    if not is_non_empty(ra_uid) and not sdp_requirement_satisfied(obj, "noApplicablePattern", catalog_by_id):
+    ra_val = obj.get("followsReferenceArchitecture")
+    has_ra = False
+    ra_uids = []
+    if isinstance(ra_val, str):
+        if ra_val.strip():
+            ra_uids = [ra_val]
+            has_ra = True
+    elif isinstance(ra_val, list):
+        ra_uids = [str(x) for x in ra_val if x]
+        if ra_uids:
+            has_ra = True
+
+    if not has_ra and not sdp_requirement_satisfied(obj, "noApplicablePattern", catalog_by_id):
         record_requirement_gap(
             obj,
             path,
@@ -2780,10 +3064,11 @@ def validate_software_deployment_pattern(
             warnings,
         )
 
-    if is_non_empty(ra_uid):
-        ra_obj = catalog_by_id.get(str(ra_uid))
+    for ra_uid in ra_uids:
+        ra_obj = catalog_by_id.get(ra_uid)
         if ra_obj and ra_obj.get("type") == "reference_architecture":
             evaluate_ra_constraints(obj, path, ra_obj, catalog_by_id, failures)
+            validate_sdp_reference_architecture_slots(obj, path, ra_obj, catalog_by_id, failures)
 
     service_groups = obj.get("serviceGroups", [])
     if not isinstance(service_groups, list):
@@ -2919,6 +3204,24 @@ def validate_software_deployment_pattern(
                                 elif "enabled" not in auto:
                                     failures.append(f"{path}: tierVariants[{idx}].serviceGroupVariants[{sgv_idx}].autoscaling missing required field 'enabled'")
 
+    # Check for reference-only shared service dependencies
+    if obj.get("catalogStatus") == "complete":
+        referenced_uids = set()
+        extract_referenced_uids(obj, referenced_uids)
+        ref_only_deps = []
+        shared_types = {"host", "runtime_service", "data_store_service", "network_service", "ai_gateway"}
+        for ref_uid in sorted(referenced_uids):
+            ref_obj = catalog_by_id.get(ref_uid)
+            if ref_obj and ref_obj.get("type") in shared_types:
+                prov_model = ref_obj.get("provisioningModel", "reference-only")
+                if prov_model != "deployable":
+                    ref_only_deps.append(f"'{ref_obj.get('name') or ref_uid}' ({ref_uid})")
+        if ref_only_deps:
+            failures.append(
+                f"[{object_id}] SoftwareDeploymentPattern cannot be marked catalogStatus: complete because it depends on reference-only shared services: {', '.join(ref_only_deps)}. "
+                "SDPs with reference-only dependencies are capped at catalogStatus: documentation (or incomplete/stub) and cannot be marked complete or deployment-ready."
+            )
+
 
 def validate_environment_tier(obj: dict[str, Any], path: Path, failures: list[str], warnings: list[str]) -> None:
     tier_id = obj.get("tierId")
@@ -2943,9 +3246,208 @@ def validate_environment_tier(obj: dict[str, Any], path: Path, failures: list[st
                         failures.append(f"{path}: parameterSurface[{idx}].{bool_field} must be true or false")
 
 
-def validate_decision_record(obj: dict[str, Any], path: Path, failures: list[str], warnings: list[str]) -> None:
+def get_decision_record_instantiations(dr_uid: str, catalog_by_id: dict[str, dict[str, Any]]) -> set[tuple[str, str]]:
+    instantiations = set()
+    for cat_obj in catalog_by_id.values():
+        obj_uid = cat_obj.get("uid") or ""
+        req_impls = cat_obj.get("requirementImplementations") or []
+        for impl in req_impls:
+            if not isinstance(impl, dict):
+                continue
+            req_id = impl.get("requirementId") or ""
+            if impl.get("mechanism") == "decisionRecord" and str(impl.get("ref")) == dr_uid:
+                instantiations.add((str(obj_uid), str(req_id)))
+    return instantiations
+
+
+def dr_matches_requirement(
+    obj: dict[str, Any],
+    req_id: str,
+    catalog_by_id: dict[str, dict[str, Any]],
+) -> bool:
+    control_refs = obj.get("controlReferences") or []
+    for ref in control_refs:
+        if str(ref) == req_id:
+            return True
+
+    dr_uid = obj.get("uid")
+    if not dr_uid:
+        return False
+
+    for cat_obj in catalog_by_id.values():
+        req_impls = cat_obj.get("requirementImplementations") or []
+        for impl in req_impls:
+            if not isinstance(impl, dict):
+                continue
+            if str(impl.get("requirementId")) == req_id:
+                if impl.get("mechanism") == "decisionRecord" and str(impl.get("ref")) == dr_uid:
+                    return True
+    return False
+
+
+def dr_matches_domain(
+    obj: dict[str, Any],
+    domain_id: str,
+    catalog_by_id: dict[str, dict[str, Any]],
+    requirement_groups: dict[str, dict[str, Any]],
+) -> bool:
+    tags = obj.get("tags") or []
+    if domain_id in tags:
+        return True
+
+    linked_uid = obj.get("linkedObject") or obj.get("affectedComponent")
+    if linked_uid:
+        linked_obj = catalog_by_id.get(str(linked_uid))
+        if linked_obj:
+            if linked_obj.get("type") == "capability" and linked_obj.get("domain") == domain_id:
+                return True
+            if linked_obj.get("type") == "domain" and linked_obj.get("uid") == domain_id:
+                return True
+
+    dr_uid = obj.get("uid")
+    if not dr_uid:
+        return False
+
+    for cat_obj in catalog_by_id.values():
+        req_impls = cat_obj.get("requirementImplementations") or []
+        for impl in req_impls:
+            if not isinstance(impl, dict):
+                continue
+            is_ref = False
+            if impl.get("mechanism") == "decisionRecord" and str(impl.get("ref")) == dr_uid:
+                is_ref = True
+
+            if is_ref:
+                req_group_uid = impl.get("requirementGroup")
+                req_id = impl.get("requirementId")
+                group = requirement_groups.get(str(req_group_uid))
+                if group:
+                    for req in group.get("requirements", []) or []:
+                        if isinstance(req, dict) and str(req.get("uid")) == str(req_id):
+                            related_cap = req.get("relatedCapability")
+                            if related_cap:
+                                cap_obj = catalog_by_id.get(str(related_cap))
+                                if cap_obj and cap_obj.get("domain") == domain_id:
+                                    return True
+    return False
+
+
+def get_expected_approver(
+    obj: dict[str, Any],
+    policy: dict[str, Any],
+    catalog_by_id: dict[str, dict[str, Any]],
+    requirement_groups: dict[str, dict[str, Any]],
+    path: Path,
+    failures: list[str],
+) -> str | None:
+    if policy.get("enforcement") == "none":
+        return None
+
+    rules = policy.get("rules") or []
+    for rule_idx, rule in enumerate(rules):
+        if not isinstance(rule, dict):
+            continue
+        match_criteria = rule.get("match")
+        if not isinstance(match_criteria, dict):
+            continue
+
+        matched = True
+        if "category" in match_criteria:
+            if obj.get("category") != match_criteria["category"]:
+                matched = False
+
+        if matched and "domain" in match_criteria:
+            target_domain = match_criteria["domain"]
+            if not dr_matches_domain(obj, target_domain, catalog_by_id, requirement_groups):
+                matched = False
+
+        if matched and "requirement" in match_criteria:
+            target_req = match_criteria["requirement"]
+            if not dr_matches_requirement(obj, target_req, catalog_by_id):
+                matched = False
+
+        if matched and match_criteria.get("affectedComponentOwner") is True:
+            affected_uid = obj.get("affectedComponent") or obj.get("linkedObject")
+            if not affected_uid:
+                matched = False
+            else:
+                affected_obj = catalog_by_id.get(str(affected_uid))
+                if not affected_obj or not affected_obj.get("owner", {}).get("team"):
+                    matched = False
+
+        if matched:
+            approver = rule.get("approver")
+            if approver == "ownerTeam":
+                affected_uid = obj.get("affectedComponent") or obj.get("linkedObject")
+                affected_obj = catalog_by_id.get(str(affected_uid))
+                owner_team = affected_obj.get("owner", {}).get("team") if affected_obj else None
+                if owner_team:
+                    return f"team:{owner_team}"
+                else:
+                    failures.append(f"{path}: Could not resolve ownerTeam for matching rule {rule_idx} (no owner team on linked/affected component)")
+                    return None
+            return approver
+
+    # Fallback to default
+    default_config = policy.get("default")
+    if isinstance(default_config, dict):
+        approver = default_config.get("approver")
+        if approver == "ownerTeam":
+            affected_uid = obj.get("affectedComponent") or obj.get("linkedObject")
+            affected_obj = catalog_by_id.get(str(affected_uid))
+            owner_team = affected_obj.get("owner", {}).get("team") if affected_obj else None
+            if owner_team:
+                return f"team:{owner_team}"
+            else:
+                failures.append(f"{path}: Could not resolve ownerTeam for default approval policy (no owner team on linked/affected component)")
+                return None
+        return approver
+
+    return None
+
+
+def validate_decision_record(
+    obj: dict[str, Any],
+    path: Path,
+    catalog_by_id: dict[str, dict[str, Any]],
+    requirement_groups: dict[str, dict[str, Any]],
+    policy: dict[str, Any],
+    failures: list[str],
+    warnings: list[str],
+) -> None:
     if obj.get("category") == "decision" and not is_non_empty(obj.get("decisionRationale")):
         warnings.append(f"{path}: decision DecisionRecords should include decisionRationale")
+
+    dr_uid = obj.get("uid")
+    if not dr_uid:
+        return
+
+    # Check 1: Scoping (1:1 with affected component + requirement)
+    if obj.get("status") == "accepted":
+        instantiations = get_decision_record_instantiations(dr_uid, catalog_by_id)
+        if len(instantiations) > 1:
+            failures.append(
+                f"{path}: DecisionRecord '{dr_uid}' is reused across multiple requirement implementations: "
+                f"{sorted(list(instantiations))}. It must be 1:1 with its affectedComponent and requirement."
+            )
+
+        # Check that it defines either affectedComponent or linkedObject
+        if policy.get("enforcement") != "none":
+            if not is_non_empty(obj.get("affectedComponent")) and not is_non_empty(obj.get("linkedObject")):
+                failures.append(f"{path}: Accepted DecisionRecord '{dr_uid}' must declare an affectedComponent or linkedObject to define its scope.")
+
+        # Check 2: Policy rules and markings
+        expected_approver = get_expected_approver(obj, policy, catalog_by_id, requirement_groups, path, failures)
+        if expected_approver is not None:
+            actual_approver = obj.get("approver")
+            if not is_non_empty(actual_approver):
+                failures.append(f"{path}: Accepted DecisionRecord '{dr_uid}' requires an approver under the active policy (expected '{expected_approver}')")
+            elif actual_approver != expected_approver:
+                failures.append(f"{path}: Accepted DecisionRecord '{dr_uid}' has wrong approver '{actual_approver}' (expected '{expected_approver}')")
+
+            # Transition open -> accepted requires approvalDate
+            if not is_non_empty(obj.get("approvalDate")):
+                failures.append(f"{path}: Accepted DecisionRecord '{dr_uid}' transitioned to accepted without proper markings (missing approvalDate)")
 
 
 def validate_drafting_session(
@@ -3115,8 +3617,8 @@ def implementation_resolves(
     if mechanism == "field":
         key = implementation.get("key")
         return is_non_empty(key) and is_non_empty(get_nested_value(obj, str(key)))
-    if mechanism == "architectureNote":
-        # architectureNote is a drafting placeholder and does not resolve a requirement.
+    if mechanism == "note":
+        # note is a drafting placeholder and does not resolve a requirement.
         return False
     if mechanism == "relationship":
         return find_relationship_for_implementation(obj, implementation, catalog_by_id)
@@ -3489,9 +3991,9 @@ def validate_requirement_implementations(
         mechanism = implementation.get("mechanism")
         valid_answer_types = requirement.get("validAnswerTypes", [])
         label = requirement_display_label(group, requirement)
-        if mechanism == "architectureNote":
+        if mechanism == "note":
             failures.append(
-                f"{context}: architectureNote is not a valid implementation mechanism — "
+                f"{context}: note is not a valid implementation mechanism — "
                 "use a structural mechanism (relationship, technologyComponentConfiguration, field, etc.); "
                 "inline notes are scratchpad, not evidence"
             )
@@ -3754,11 +4256,16 @@ def validate_relationship(
 
 def scan_for_secrets(data: Any, path: Path, failures: list[str], current_field_path: str = "") -> None:
     if isinstance(data, dict):
-        if "secretReference" in data:
-            return
         for k, v in data.items():
             field_name = f"{current_field_path}.{k}" if current_field_path else k
             k_lower = str(k).lower()
+            # A secretReference is the approved indirection: its value points at a
+            # secret store rather than holding a literal secret. Skip the
+            # secretReference key itself, but keep scanning sibling keys so a
+            # plaintext secret cannot hide inside a mapping merely because that
+            # mapping also declares a secretReference.
+            if k_lower == "secretreference":
+                continue
             if k_lower in ("description", "architecturenotes", "notes", "rationale", "rationales", "decisionrecords"):
                 continue
             if isinstance(v, str) and any(sub in k_lower for sub in ("password", "token", "secret", "privatekey", "apikey", "private_key", "api_key")):
@@ -3799,10 +4306,27 @@ def main(argv: list[str] | None = None) -> int:
     workspace_requirements = load_workspace_requirements(workspace_root, failures)
     business_taxonomy = load_workspace_business_taxonomy(workspace_root, failures)
     workspace_vocabulary = load_workspace_vocabulary(workspace_root, failures, warnings)
+    workspace_decision_record_approval = load_workspace_decision_record_approval_policy(workspace_root, failures)
 
     for path in files:
         try:
-            objects[path] = load_yaml(path)
+            with path.open("r", encoding="utf-8") as handle:
+                docs = list(yaml.safe_load_all(handle))
+            docs = [d for d in docs if d is not None]
+            if not docs:
+                objects[path] = {}
+            elif len(docs) == 1:
+                if not isinstance(docs[0], dict):
+                    failures.append(f"{path}: top-level YAML document must be a mapping")
+                else:
+                    objects[path] = docs[0]
+            else:
+                for idx, doc in enumerate(docs):
+                    if not isinstance(doc, dict):
+                        failures.append(f"{path} (document {idx+1}): top-level YAML document must be a mapping")
+                    else:
+                        doc_path = Path(f"{path.as_posix()}:{idx}")
+                        objects[doc_path] = doc
         except Exception as exc:  # noqa: BLE001
             failures.append(f"{path}: failed to parse YAML ({exc})")
 
@@ -3814,6 +4338,11 @@ def main(argv: list[str] | None = None) -> int:
         for obj in objects.values()
         if isinstance(obj, dict) and is_non_empty(obj.get("uid"))
     }
+    
+    from uid_utils import derive_inline_relationships
+    derived = derive_inline_relationships(catalog_by_id)
+    catalog_by_id.update(derived)
+
     requirement_groups = {
         object_id: obj for object_id, obj in catalog_by_id.items() if obj.get("type") == "requirement_group"
     }
@@ -3824,9 +4353,10 @@ def main(argv: list[str] | None = None) -> int:
     catalog_ids = set(catalog_by_id.keys())
     active_group_ids = workspace_requirements["active_groups"]
     require_active_group_disposition = workspace_requirements["require_active_group_disposition"]
-    validate_workspace_requirements(workspace_root, active_group_ids, catalog_by_id, failures)
+    validate_workspace_requirements(workspace_root, active_group_ids, catalog_by_id, failures, warnings)
     validate_workspace_vocabulary_references(objects, workspace_vocabulary, failures, warnings)
     validate_duplicate_capability_domain_names(objects, workspace_root, warnings)
+    validate_capability_ownership_patches(objects, catalog_by_id, capability_ids, warnings)
 
     for path, obj in objects.items():
         if obj.get("type") is None:
@@ -3858,7 +4388,15 @@ def main(argv: list[str] | None = None) -> int:
                 require_active_group_disposition,
             )
         if obj.get("type") == "decision_record":
-            validate_decision_record(obj, path, failures, warnings)
+            validate_decision_record(
+                obj,
+                path,
+                catalog_by_id,
+                requirement_groups,
+                workspace_decision_record_approval,
+                failures,
+                warnings,
+            )
         if obj.get("type") == "relationship":
             validate_relationship(obj, path, catalog_by_id, failures)
         if obj.get("type") == "system":
@@ -3926,6 +4464,8 @@ def main(argv: list[str] | None = None) -> int:
                 require_active_group_disposition,
             )
             validate_service_group_refs(obj, path, decision_record_ids, catalog_by_id, failures, warnings=warnings)
+        elif obj.get("type") == "product_registration":
+            validate_product_registration(obj, path, business_taxonomy, failures, warnings)
 
     if args.deployment_ready:
         sdp_uid, target_uid = args.deployment_ready
@@ -3977,10 +4517,24 @@ def main(argv: list[str] | None = None) -> int:
                             f"(type: {ref_obj.get('type')}, uid: {ref_uid}) in SDP closed graph has catalogStatus "
                             f"'{status}' instead of 'complete'"
                         )
+                    if ref_obj.get("type") in {"host", "runtime_service", "data_store_service", "network_service", "ai_gateway"}:
+                        prov_model = ref_obj.get("provisioningModel", "reference-only")
+                        if prov_model != "deployable":
+                            failures.append(
+                                f"Deployment readiness check failed: Shared service '{ref_obj.get('name') or ref_uid}' "
+                                f"(type: {ref_obj.get('type')}, uid: {ref_uid}) in SDP closed graph is reference-only (provisioningModel: {prov_model}). "
+                                f"Deployment-ready patterns must compose only deployable shared services."
+                            )
 
             if not failures:
                 print("")
                 print(f"SoftwareDeploymentPattern '{sdp_obj.get('name')}' is deployment-ready for DeploymentTarget '{target_obj.get('name')}' (200 OK).")
+
+    agent_dir = REPO_ROOT / "agent"
+    if validate_agent_package is not None and agent_dir.exists() and (agent_dir / "agent-spec.yaml").exists():
+        agent_failures, agent_warnings = validate_agent_package(agent_dir)
+        failures.extend(agent_failures)
+        warnings.extend(agent_warnings)
 
     failing_paths = {entry.split(":", 1)[0] for entry in failures}
 
@@ -4016,4 +4570,6 @@ def main(argv: list[str] | None = None) -> int:
 
 
 if __name__ == "__main__":
+    # Trigger minor version promotion detection
     sys.exit(main())
+

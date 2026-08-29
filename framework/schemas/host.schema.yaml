@@ -14,14 +14,25 @@ optionalFields:
 - version
 - owner
 - tags
-- architectureNotes
+- notes
 - operatingSystemComponent
 - computePlatformComponent
 - internalComponents
 - deploymentConfigurations
+- provisioningModel
+- deployablePackage
 - decisionRecords
 - requirementImplementations
+conditionalRequired:
+- when:
+    provisioningModel:
+    - deployable
+  require:
+  - deployablePackage
 enumFields:
+  provisioningModel:
+  - deployable
+  - reference-only
   catalogStatus:
   - stub
   - incomplete
@@ -36,17 +47,31 @@ fieldTypes:
   aliases: list
   owner: dict
   tags: list
-  architectureNotes: dict
+  notes: dict
   internalComponents: list
   deploymentConfigurations: list
   requirementGroups: list
   decisionRecords: list
   requirementImplementations: list
-collectionSchemas:
-  internalComponents: internalComponent
-  deploymentConfigurations: deploymentConfiguration
-  decisionRecords: decisionRecordRef
-  requirementImplementations: requirementImplementation
+dictSubSchemas:
+  deployablePackage: deployablePackage
+deployablePackage:
+  requiredFields:
+  - registry
+  - source
+  - version
+  optionalFields:
+  - modulePath
+  fieldTypes:
+    registry: str
+    source: str
+    version: str
+    modulePath: str
+  fieldDescriptions:
+    registry: Registry type or platform (e.g. github, artifactory, terraform-registry).
+    source: Canonical source repository or package identifier (e.g. terraform-aws-modules/rds/aws).
+    version: Version tag or version constraint (e.g. v5.1.0 or >= 1.2.0).
+    modulePath: Optional sub-directory path within the repository module.
 internalComponent:
   requiredFields:
   - ref
@@ -73,7 +98,7 @@ deploymentConfiguration:
   - addressesQualities
   - addsInternalComponents
   - addsExternalInteractions
-  - addsArchitecturalDecisions
+  - addsNotes
   - notes
   enumListFields:
     addressesQualities:
@@ -84,7 +109,7 @@ deploymentConfiguration:
     addressesQualities: list
     addsInternalComponents: list
     addsExternalInteractions: list
-    addsArchitecturalDecisions: dict
+    addsNotes: dict
 requirementImplementation:
   requiredFields:
   - requirementGroup
@@ -126,3 +151,11 @@ fieldDescriptions:
   uid: Use the generated opaque UID for object identity. Do not edit it for display-name, product-name, or taxonomy changes.
   aliases: List prior or alternate human-readable names that should resolve to this object.
 uidPattern: ^[0-9A-HJKMNP-TV-Z]{10}-[0-9A-HJKMNP-TV-Z]{4}$
+decisionRecordRef:
+  requiredFields:
+  - ref
+  optionalFields:
+  - key
+  - concern
+  - capability
+

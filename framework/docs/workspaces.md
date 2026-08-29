@@ -352,9 +352,9 @@ All standard workspace templates (`AGENTS.md`, `CLAUDE.md`, `GEMINI.md`, `.githu
 The default workspace workflow is source based:
 
 1. Create or update YAML in `catalog/` or `configurations/`.
-2. Use the matching template from `.draft/templates/` when creating a new object.
+2. Use the matching template from `.draft/framework/templates/` when creating a new object.
 3. Read the relevant schema and RequirementGroup before filling in fields.
-4. Preserve unresolved facts in `catalog/sessions/` as DraftingSessions.
+4. Preserve unresolved facts in `catalog/governance/sessions/` as DraftingSessions.
 5. Run `python3 .draft/framework/tools/validate.py --workspace /path/to/workspace`.
 6. Review and commit the workspace changes through normal Git workflow.
 
@@ -421,6 +421,9 @@ validation output in the body. The branch remains available for the company or
 the Draftsman to repair catalog and configuration issues against the new
 framework version. Disable the workflow in GitHub Actions or delete the file if
 the company wants to manage framework updates manually.
+
+> [!IMPORTANT]
+> To allow the GitHub Actions workflow (or the Draftsman CLI) to push files under `.github/workflows/`, your Personal Access Token (PAT) or OAuth token must be granted the `workflow` scope. If this scope is missing, GitHub will reject pushes containing workflow template updates.
 
 ## Deployable Architecture Direction
 

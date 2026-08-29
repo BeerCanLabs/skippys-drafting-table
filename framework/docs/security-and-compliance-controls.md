@@ -49,19 +49,19 @@ the auditor, regulator, control owner, or company compliance program.
 
 ## Security Review Command
 
-Use `/draft security` when a CISO, security architect, security engineering
+Use `/draft review` when a CISO, security architect, security engineering
 lead, compliance/GRC owner, or delegated risk owner wants to manage security
 controls or audit architecture evidence.
 
 The command supports these scopes:
 
-- `/draft security requirements` creates or updates company security
+- `/draft review requirements` creates or updates company security
   RequirementGroups under `configurations/requirement-groups/`.
-- `/draft security satisfaction` defines or repairs the satisfaction mechanisms
+- `/draft review satisfaction` defines or repairs the satisfaction mechanisms
   for each requirement.
-- `/draft security review` reviews current RequirementGroups and explains which
+- `/draft review security` reviews current RequirementGroups and explains which
   catalog artifacts satisfy, fail, or weakly satisfy them.
-- `/draft security audit [artifact]` audits a selected artifact, UID, path, or
+- `/draft review artifact [name]` audits a selected artifact, UID, path, or
   scoped set of artifacts against active security RequirementGroups.
 
 Normal command work writes company controls and evidence to `configurations/`
@@ -72,7 +72,7 @@ is explicitly maintaining the framework itself.
 Security RequirementGroups should prefer concrete evidence over prose. Valid
 satisfaction mechanisms are `technologyComponent`,
 `technologyComponentConfiguration`, `deploymentConfiguration`, `relationship`,
-`internalComponent`, `decisionRecord`, and `field`. `architectureNotes` may
+`internalComponent`, `decisionRecord`, and `field`. `notes` may
 preserve rationale, but it is not completed evidence for an active security
 requirement.
 

@@ -1,8 +1,8 @@
 schemaVersion: "1.0"
 id: draft-framework
 name: DRAFT Framework
-version: "0.58.1"
-releasePhase: pre-1.0
+version: "1.1.1"
+releasePhase: GA
 compatibility:
-  minDraftTableVersion: "0.1.0"
-  contract: pre-1.0 framework formation; breaking object model changes are allowed in 0.MINOR.0 releases when documented with migration notes.
+  minDraftTableVersion: "1.0.0"
+  contract: DRAFT Framework 1.1.1 release; incorporates multi-persona adoption feedback (vibe coding intent clarification, Pattern 2 push-sync sequence diagram, inter-module variable binding spec, app secret handoff contracts, and AI auto-validation rules).

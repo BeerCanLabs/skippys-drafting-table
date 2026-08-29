@@ -28,7 +28,8 @@ optionalFields:
 - patchingOwner
 - authenticationModel
 - vendorGovernance
-- architectureNotes
+- provisioningModel
+- deployablePackage
 - notes
 - decisionRecords
 - requirementImplementations
@@ -42,7 +43,15 @@ conditionalRequired:
   - vendor
   - productName
   - productVersion
+- when:
+    provisioningModel:
+    - deployable
+  require:
+  - deployablePackage
 enumFields:
+  provisioningModel:
+  - deployable
+  - reference-only
   catalogStatus:
   - stub
   - incomplete
@@ -82,7 +91,7 @@ fieldTypes:
   deploymentConfigurations: list
   capabilities: list
   configurations: list
-  architectureNotes: dict
+  notes: dict
   vendorGovernance: dict
   requirementGroups: list
   decisionRecords: list
@@ -95,6 +104,24 @@ collectionSchemas:
   requirementImplementations: requirementImplementation
 dictSubSchemas:
   vendorGovernance: vendorGovernance
+  deployablePackage: deployablePackage
+deployablePackage:
+  requiredFields:
+  - registry
+  - source
+  - version
+  optionalFields:
+  - modulePath
+  fieldTypes:
+    registry: str
+    source: str
+    version: str
+    modulePath: str
+  fieldDescriptions:
+    registry: Registry type or platform (e.g. github, artifactory, terraform-registry).
+    source: Canonical source repository or package identifier (e.g. terraform-aws-modules/rds/aws).
+    version: Version tag or version constraint (e.g. v5.1.0 or >= 1.2.0).
+    modulePath: Optional sub-directory path within the repository module.
 internalComponent:
   requiredFields:
   - ref
@@ -121,7 +148,7 @@ deploymentConfiguration:
   - addressesQualities
   - addsInternalComponents
   - addsExternalInteractions
-  - addsArchitecturalDecisions
+  - addsNotes
   - notes
   enumListFields:
     addressesQualities:
@@ -132,7 +159,7 @@ deploymentConfiguration:
     addressesQualities: list
     addsInternalComponents: list
     addsExternalInteractions: list
-    addsArchitecturalDecisions: dict
+    addsNotes: dict
 configuration:
   requiredFields:
   - id
@@ -201,3 +228,11 @@ fieldDescriptions:
   lifecycleStatus: Use candidate, preferred, existing-only, deprecated, or retired for this deployable service pattern.
   aliases: List prior or alternate human-readable names that should resolve to this object.
 uidPattern: ^[0-9A-HJKMNP-TV-Z]{10}-[0-9A-HJKMNP-TV-Z]{4}$
+decisionRecordRef:
+  requiredFields:
+  - ref
+  optionalFields:
+  - key
+  - concern
+  - capability
+

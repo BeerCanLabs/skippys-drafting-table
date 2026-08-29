@@ -371,7 +371,7 @@ class ValidationTests(unittest.TestCase):
                     deliveryModel: self-managed
                     catalogStatus: complete
                     lifecycleStatus: candidate
-                    architectureNotes:
+                    notes:
                       serviceAuthentication: Uses centralized identity.
                       secretsManagement: Uses managed secrets injection.
                       serviceLogging: Emits logs to the central logging platform.
@@ -469,7 +469,7 @@ class ValidationTests(unittest.TestCase):
                         naAllowed: false
                         canBeSatisfiedBy:
                           - mechanism: field
-                            key: architectureNotes.companyEvidence
+                            key: notes.companyEvidence
                         minimumSatisfactions: 1
                         validAnswerTypes:
                           - field
@@ -495,14 +495,14 @@ class ValidationTests(unittest.TestCase):
                     lifecycleStatus: existing-only
                     requirementGroups:
                       - requirement-group.company-control
-                    architectureNotes:
+                    notes:
                       companyEvidence: Provided by explicit object-level evidence.
                     requirementImplementations:
                       - requirementGroup: requirement-group.company-control
                         requirementId: company-required-field
                         status: satisfied
                         mechanism: field
-                        key: architectureNotes.companyEvidence
+                        key: notes.companyEvidence
                     """
                 ).strip()
                 + "\n",
@@ -566,7 +566,7 @@ class ValidationTests(unittest.TestCase):
                         requirementId: company-required-field
                         status: satisfied
                         mechanism: decisionRecord
-                        key: architectureNotes.companyEvidence
+                        key: notes.companyEvidence
                     """
                 ).strip()
                 + "\n",
@@ -814,7 +814,7 @@ internalComponents:
     role: agent
   - ref: 01KQS0TF60-STVW
     role: agent
-architectureNotes:
+notes:
 {decision_lines}
 decisionRecords:
   - ref: 01KQS0TF60-DR01
@@ -865,7 +865,7 @@ requirementGroups:
                     networkPlacement: public-facing
                     patchingOwner: aws-managed
                     complianceCerts: []
-                    architectureNotes:
+                    notes:
                       resilienceModel: Managed multi-AZ control plane.
                       configurableSurface: Listeners, rules, certificates, and target groups.
                       failureDomain: Shared ingress dependency for the protected application path.
@@ -994,7 +994,7 @@ requirementGroups:
                         role: host
                       - ref: 01KQS0TF61-DBMS
                         role: function
-                    architectureNotes:
+                    notes:
                       serviceAuthentication: Uses centralized identity.
                       secretsManagement: Uses managed secrets injection.
                       serviceLogging: Emits logs to the central logging platform.
@@ -1118,7 +1118,7 @@ requirementGroups:
                         role: host
                       - ref: 01KQS0TF62-DBMS
                         role: function
-                    architectureNotes:
+                    notes:
                       serviceAuthentication: Uses centralized identity.
                       secretsManagement: Uses managed secrets injection.
                       serviceLogging: Emits logs to the central logging platform.
@@ -1423,7 +1423,7 @@ requirementGroups:
                       - ref: 01KQS0TF66-RBMQ
                         role: broker-client
                         configuration: amqp-listener
-                    architectureNotes:
+                    notes:
                       internalComponentRationales:
                         01KQS0TF66-RBMQ: Required broker client dependency for queue-mediated message publishing.
                     """
@@ -2132,7 +2132,7 @@ requirementGroups:
                             capability: 01KQS0TF73-CAP0
                             objectType: network_service
                             diagramTier: presentation
-                    architectureNotes:
+                    notes:
                       patternRationale: Test capability slots.
                     constraints:
                       - id: ingress-capability-required
@@ -2244,7 +2244,7 @@ requirementGroups:
                             capability: 01KQS0TF74-CAP0
                             objectType: network_service
                             diagramTier: presentation
-                    architectureNotes:
+                    notes:
                       patternRationale: Test capability slots.
                     constraints:
                       - id: ingress-capability-required
@@ -2309,6 +2309,700 @@ requirementGroups:
         self.assertFalse(result.ok, result.stdout + result.stderr)
         self.assertIn("ingress-capability-required", result.stdout)
         self.assertIn("capability '01KQS0TF74-CAP0'", result.stdout)
+
+    def test_ra_slot_validation_fails_when_unsatisfied(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            workspace = Path(directory)
+            ensure_workspace_layout(workspace)
+            cap_dir = workspace / "configurations" / "capabilities"
+            cap_dir.mkdir(parents=True, exist_ok=True)
+            (cap_dir / "capability-test-slot.yaml").write_text(
+                textwrap.dedent(
+                    """
+                    schemaVersion: "1.0"
+                    uid: 01KQS0TF75-CAP0
+                    type: capability
+                    name: Test Slot Capability
+                    description: Test capability for slot validation.
+                    catalogStatus: incomplete
+                    owner:
+                      team: test-architecture
+                    definitionOwner:
+                      provider: test
+                    domain: 01KQQ4Q027-ZTHF
+                    implementations: []
+                    """
+                ).strip()
+                + "\n",
+                encoding="utf-8",
+            )
+            ra_dir = workspace / "configurations" / "reference-architectures"
+            ra_dir.mkdir(parents=True, exist_ok=True)
+            (ra_dir / "ra-test-slots.yaml").write_text(
+                textwrap.dedent(
+                    """
+                    schemaVersion: "1.0"
+                    uid: 01KQS0TF75-RAXC
+                    type: reference_architecture
+                    name: Test Slots RA
+                    catalogStatus: incomplete
+                    lifecycleStatus: preferred
+                    serviceGroups:
+                      - name: Presentation Tier
+                        deployableObjects:
+                          - slot: test-slot
+                            capability: 01KQS0TF75-CAP0
+                            objectType: network_service
+                            diagramTier: presentation
+                    """
+                ).strip()
+                + "\n",
+                encoding="utf-8",
+            )
+            network_dir = workspace / "catalog" / "network-services"
+            network_dir.mkdir(parents=True, exist_ok=True)
+            (network_dir / "network-service-test.yaml").write_text(
+                textwrap.dedent(
+                    """
+                    schemaVersion: "1.0"
+                    uid: 01KQS0TF75-EGWS
+                    type: network_service
+                    name: Test NetworkService
+                    deliveryModel: appliance
+                    vendor: Test Vendor
+                    productName: Test Gateway
+                    productVersion: "1.0"
+                    catalogStatus: incomplete
+                    lifecycleStatus: preferred
+                    """
+                ).strip()
+                + "\n",
+                encoding="utf-8",
+            )
+            sdp_dir = workspace / "catalog" / "software-deployment-patterns"
+            sdp_dir.mkdir(parents=True, exist_ok=True)
+            dr_yaml = self._write_decision_records_for_sdp(workspace, indent=20)
+            (sdp_dir / "sdp-ra-slot-violation.yaml").write_text(
+                textwrap.dedent(
+                    f"""
+                    schemaVersion: "1.0"
+                    uid: 01KQS0TF75-SDPV
+                    type: software_deployment_pattern
+                    name: Test RA Slot Violation
+                    catalogStatus: incomplete
+                    lifecycleStatus: candidate
+                    followsReferenceArchitecture: 01KQS0TF75-RAXC
+{dr_yaml}
+                    serviceGroups:
+                      - name: Presentation Tier
+                        deploymentTarget: test-env
+                        deployableObjects:
+                          - ref: 01KQS0TF75-EGWS
+                            diagramTier: presentation
+                    """
+                ).strip()
+                + "\n",
+                encoding="utf-8",
+            )
+
+            result = validate_workspace(workspace)
+
+        self.assertFalse(result.ok, result.stdout + result.stderr)
+        self.assertIn("RA capability slot 'test-slot' unsatisfied", result.stdout)
+        self.assertIn("no deployable object satisfies capability '01KQS0TF75-CAP0'", result.stdout)
+
+    def test_ra_slot_validation_passes_when_bypassed_by_decision_record(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            workspace = Path(directory)
+            ensure_workspace_layout(workspace)
+            cap_dir = workspace / "configurations" / "capabilities"
+            cap_dir.mkdir(parents=True, exist_ok=True)
+            (cap_dir / "capability-test-slot.yaml").write_text(
+                textwrap.dedent(
+                    """
+                    schemaVersion: "1.0"
+                    uid: 01KQS0TF76-CAP0
+                    type: capability
+                    name: Test Slot Capability
+                    description: Test capability for slot validation.
+                    catalogStatus: incomplete
+                    owner:
+                      team: test-architecture
+                    definitionOwner:
+                      provider: test
+                    domain: 01KQQ4Q027-ZTHF
+                    implementations: []
+                    """
+                ).strip()
+                + "\n",
+                encoding="utf-8",
+            )
+            ra_dir = workspace / "configurations" / "reference-architectures"
+            ra_dir.mkdir(parents=True, exist_ok=True)
+            (ra_dir / "ra-test-slots.yaml").write_text(
+                textwrap.dedent(
+                    """
+                    schemaVersion: "1.0"
+                    uid: 01KQS0TF76-RAXC
+                    type: reference_architecture
+                    name: Test Slots RA
+                    catalogStatus: incomplete
+                    lifecycleStatus: preferred
+                    serviceGroups:
+                      - name: Presentation Tier
+                        deployableObjects:
+                          - slot: test-slot
+                            capability: 01KQS0TF76-CAP0
+                            objectType: network_service
+                            diagramTier: presentation
+                    """
+                ).strip()
+                + "\n",
+                encoding="utf-8",
+            )
+            network_dir = workspace / "catalog" / "network-services"
+            network_dir.mkdir(parents=True, exist_ok=True)
+            (network_dir / "network-service-test.yaml").write_text(
+                textwrap.dedent(
+                    """
+                    schemaVersion: "1.0"
+                    uid: 01KQS0TF76-EGWS
+                    type: network_service
+                    name: Test NetworkService
+                    deliveryModel: appliance
+                    vendor: Test Vendor
+                    productName: Test Gateway
+                    productVersion: "1.0"
+                    catalogStatus: incomplete
+                    lifecycleStatus: preferred
+                    """
+                ).strip()
+                + "\n",
+                encoding="utf-8",
+            )
+            dr_dir = workspace / "catalog" / "decision-records"
+            dr_dir.mkdir(parents=True, exist_ok=True)
+            (dr_dir / "dr-test-bypass.yaml").write_text(
+                textwrap.dedent(
+                    """
+                    schemaVersion: "1.0"
+                    uid: "01KQS0TF76-DRBP"
+                    type: decision_record
+                    name: Test Bypass Decision Record
+                    category: decision
+                    status: accepted
+                    catalogStatus: complete
+                    lifecycleStatus: preferred
+                    decisionRationale: "Rationale."
+                    """
+                ).strip()
+                + "\n",
+                encoding="utf-8",
+            )
+            sdp_dir = workspace / "catalog" / "software-deployment-patterns"
+            sdp_dir.mkdir(parents=True, exist_ok=True)
+            dr_yaml = self._write_decision_records_for_sdp(workspace, indent=20)
+            dr_yaml += "\n" + " " * 22 + '- ref: "01KQS0TF76-DRBP"\n' + " " * 24 + 'key: test-slot'
+            (sdp_dir / "sdp-ra-slot-bypassed.yaml").write_text(
+                textwrap.dedent(
+                    f"""
+                    schemaVersion: "1.0"
+                    uid: 01KQS0TF76-SDPV
+                    type: software_deployment_pattern
+                    name: Test RA Slot Bypassed
+                    catalogStatus: incomplete
+                    lifecycleStatus: candidate
+                    followsReferenceArchitecture: 01KQS0TF76-RAXC
+{dr_yaml}
+                    serviceGroups:
+                      - name: Presentation Tier
+                        deploymentTarget: test-env
+                        deployableObjects:
+                          - ref: 01KQS0TF76-EGWS
+                            diagramTier: presentation
+                    """
+                ).strip()
+                + "\n",
+                encoding="utf-8",
+            )
+
+            result = validate_workspace(workspace)
+
+        self.assertTrue(result.ok, result.stdout + result.stderr)
+
+    def test_ra_multiple_architectures_satisfied(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            workspace = Path(directory)
+            ensure_workspace_layout(workspace)
+            
+            ra_dir = workspace / "configurations" / "reference-architectures"
+            ra_dir.mkdir(parents=True, exist_ok=True)
+            (ra_dir / "ra-test-1.yaml").write_text(
+                textwrap.dedent(
+                    """
+                    schemaVersion: "1.0"
+                    uid: 01KQS0TF77-RAX1
+                    type: reference_architecture
+                    name: Test RA 1
+                    catalogStatus: incomplete
+                    lifecycleStatus: preferred
+                    constraints:
+                      - id: presentation-requires-network-service
+                        description: Presentation tier needs a network service.
+                        require:
+                          - objectType: network_service
+                            diagramTier: presentation
+                    """
+                ).strip() + "\n",
+                encoding="utf-8",
+            )
+            
+            (ra_dir / "ra-test-2.yaml").write_text(
+                textwrap.dedent(
+                    """
+                    schemaVersion: "1.0"
+                    uid: 01KQS0TF77-RAX2
+                    type: reference_architecture
+                    name: Test RA 2
+                    catalogStatus: incomplete
+                    lifecycleStatus: preferred
+                    constraints:
+                      - id: presentation-requires-runtime-service
+                        description: Presentation tier needs a runtime service.
+                        require:
+                          - objectType: runtime_service
+                            diagramTier: presentation
+                    """
+                ).strip() + "\n",
+                encoding="utf-8",
+            )
+            
+            network_dir = workspace / "catalog" / "network-services"
+            network_dir.mkdir(parents=True, exist_ok=True)
+            (network_dir / "network-service-test.yaml").write_text(
+                textwrap.dedent(
+                    """
+                    schemaVersion: "1.0"
+                    uid: 01KQS0TF77-EGWS
+                    type: network_service
+                    name: Test NetworkService
+                    deliveryModel: appliance
+                    vendor: Test Vendor
+                    productName: Test Gateway
+                    productVersion: "1.0"
+                    catalogStatus: incomplete
+                    lifecycleStatus: preferred
+                    """
+                ).strip() + "\n",
+                encoding="utf-8",
+            )
+            
+            runtime_dir = workspace / "catalog" / "runtime-services"
+            runtime_dir.mkdir(parents=True, exist_ok=True)
+            (runtime_dir / "runtime-service-test.yaml").write_text(
+                textwrap.dedent(
+                    """
+                    schemaVersion: "1.0"
+                    uid: 01KQS0TF77-RSRV
+                    type: runtime_service
+                    name: Test RuntimeService
+                    deliveryModel: paas
+                    vendor: Test Vendor
+                    productName: Test Runtime
+                    productVersion: "1.0"
+                    catalogStatus: incomplete
+                    lifecycleStatus: candidate
+                    """
+                ).strip() + "\n",
+                encoding="utf-8",
+            )
+            
+            sdp_dir = workspace / "catalog" / "software-deployment-patterns"
+            sdp_dir.mkdir(parents=True, exist_ok=True)
+            dr_yaml = self._write_decision_records_for_sdp(workspace, indent=20)
+            
+            (sdp_dir / "sdp-ra-multiple-satisfied.yaml").write_text(
+                textwrap.dedent(
+                    f"""
+                    schemaVersion: "1.0"
+                    uid: 01KQS0TF77-SDPS
+                    type: software_deployment_pattern
+                    name: Test RA Multiple Satisfied
+                    catalogStatus: incomplete
+                    lifecycleStatus: candidate
+                    followsReferenceArchitecture:
+                      - 01KQS0TF77-RAX1
+                      - 01KQS0TF77-RAX2
+{dr_yaml}
+                    serviceGroups:
+                      - name: Presentation Tier
+                        deploymentTarget: test-env
+                        deployableObjects:
+                          - ref: 01KQS0TF77-EGWS
+                            diagramTier: presentation
+                          - ref: 01KQS0TF77-RSRV
+                            diagramTier: presentation
+                    """
+                ).strip() + "\n",
+                encoding="utf-8",
+            )
+            
+            result = validate_workspace(workspace)
+            
+        self.assertTrue(result.ok, result.stdout + result.stderr)
+
+    def test_ra_multiple_architectures_violated(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            workspace = Path(directory)
+            ensure_workspace_layout(workspace)
+            
+            ra_dir = workspace / "configurations" / "reference-architectures"
+            ra_dir.mkdir(parents=True, exist_ok=True)
+            (ra_dir / "ra-test-1.yaml").write_text(
+                textwrap.dedent(
+                    """
+                    schemaVersion: "1.0"
+                    uid: 01KQS0TF78-RAX1
+                    type: reference_architecture
+                    name: Test RA 1
+                    catalogStatus: incomplete
+                    lifecycleStatus: preferred
+                    constraints:
+                      - id: presentation-requires-network-service
+                        description: Presentation tier needs a network service.
+                        require:
+                          - objectType: network_service
+                            diagramTier: presentation
+                    """
+                ).strip() + "\n",
+                encoding="utf-8",
+            )
+            
+            (ra_dir / "ra-test-2.yaml").write_text(
+                textwrap.dedent(
+                    """
+                    schemaVersion: "1.0"
+                    uid: 01KQS0TF78-RAX2
+                    type: reference_architecture
+                    name: Test RA 2
+                    catalogStatus: incomplete
+                    lifecycleStatus: preferred
+                    constraints:
+                      - id: presentation-requires-runtime-service
+                        description: Presentation tier needs a runtime service.
+                        require:
+                          - objectType: runtime_service
+                            diagramTier: presentation
+                    """
+                ).strip() + "\n",
+                encoding="utf-8",
+            )
+            
+            runtime_dir = workspace / "catalog" / "runtime-services"
+            runtime_dir.mkdir(parents=True, exist_ok=True)
+            (runtime_dir / "runtime-service-test.yaml").write_text(
+                textwrap.dedent(
+                    """
+                    schemaVersion: "1.0"
+                    uid: 01KQS0TF78-RSRV
+                    type: runtime_service
+                    name: Test RuntimeService
+                    deliveryModel: paas
+                    vendor: Test Vendor
+                    productName: Test Runtime
+                    productVersion: "1.0"
+                    catalogStatus: incomplete
+                    lifecycleStatus: candidate
+                    """
+                ).strip() + "\n",
+                encoding="utf-8",
+            )
+            
+            sdp_dir = workspace / "catalog" / "software-deployment-patterns"
+            sdp_dir.mkdir(parents=True, exist_ok=True)
+            dr_yaml = self._write_decision_records_for_sdp(workspace, indent=20)
+            
+            (sdp_dir / "sdp-ra-multiple-violated.yaml").write_text(
+                textwrap.dedent(
+                    f"""
+                    schemaVersion: "1.0"
+                    uid: 01KQS0TF78-SDPV
+                    type: software_deployment_pattern
+                    name: Test RA Multiple Violated
+                    catalogStatus: incomplete
+                    lifecycleStatus: candidate
+                    followsReferenceArchitecture:
+                      - 01KQS0TF78-RAX1
+                      - 01KQS0TF78-RAX2
+{dr_yaml}
+                    serviceGroups:
+                      - name: Presentation Tier
+                        deploymentTarget: test-env
+                        deployableObjects:
+                          - ref: 01KQS0TF78-RSRV
+                            diagramTier: presentation
+                    """
+                ).strip() + "\n",
+                encoding="utf-8",
+            )
+            
+            result = validate_workspace(workspace)
+            
+        self.assertFalse(result.ok, result.stdout + result.stderr)
+        self.assertIn("presentation-requires-network-service", result.stdout)
+        self.assertNotIn("presentation-requires-runtime-service", result.stdout)
+
+    def test_ra_relationship_constraint_required(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            workspace = Path(directory)
+            ensure_workspace_layout(workspace)
+            
+            ra_dir = workspace / "configurations" / "reference-architectures"
+            ra_dir.mkdir(parents=True, exist_ok=True)
+            
+            (ra_dir / "ra-test-rel-req.yaml").write_text(
+                textwrap.dedent(
+                    """
+                    schemaVersion: "1.0"
+                    uid: 01KQS0TF79-RAXR
+                    type: reference_architecture
+                    name: Test Rel Required RA
+                    catalogStatus: incomplete
+                    lifecycleStatus: preferred
+                    constraints:
+                      - id: presentation-to-application-required
+                        description: Presentation tier must connect to application tier.
+                        requireRelationships:
+                          - source:
+                              diagramTier: presentation
+                            target:
+                              diagramTier: application
+                            allowed: true
+                    """
+                ).strip() + "\n",
+                encoding="utf-8",
+            )
+            
+            runtime_dir = workspace / "catalog" / "runtime-services"
+            runtime_dir.mkdir(parents=True, exist_ok=True)
+            (runtime_dir / "service-pres.yaml").write_text(
+                textwrap.dedent(
+                    """
+                    schemaVersion: "1.0"
+                    uid: 01KQS0TF79-RSRP
+                    type: runtime_service
+                    name: Presentation Service
+                    deliveryModel: paas
+                    vendor: Test Vendor
+                    productName: Test Presentation
+                    productVersion: "1.0"
+                    catalogStatus: incomplete
+                    lifecycleStatus: candidate
+                    """
+                ).strip() + "\n",
+                encoding="utf-8",
+            )
+            (runtime_dir / "service-app.yaml").write_text(
+                textwrap.dedent(
+                    """
+                    schemaVersion: "1.0"
+                    uid: 01KQS0TF79-RSRA
+                    type: runtime_service
+                    name: Application Service
+                    deliveryModel: paas
+                    vendor: Test Vendor
+                    productName: Test Application
+                    productVersion: "1.0"
+                    catalogStatus: incomplete
+                    lifecycleStatus: candidate
+                    """
+                ).strip() + "\n",
+                encoding="utf-8",
+            )
+            
+            sdp_dir = workspace / "catalog" / "software-deployment-patterns"
+            sdp_dir.mkdir(parents=True, exist_ok=True)
+            dr_yaml = self._write_decision_records_for_sdp(workspace, indent=20)
+            
+            (sdp_dir / "sdp-rel-missing.yaml").write_text(
+                textwrap.dedent(
+                    f"""
+                    schemaVersion: "1.0"
+                    uid: 01KQS0TF79-SDPM
+                    type: software_deployment_pattern
+                    name: Test Rel Missing SDP
+                    catalogStatus: incomplete
+                    lifecycleStatus: candidate
+                    followsReferenceArchitecture: 01KQS0TF79-RAXR
+{dr_yaml}
+                    serviceGroups:
+                      - name: Pres Group
+                        deploymentTarget: test-env
+                        deployableObjects:
+                          - ref: 01KQS0TF79-RSRP
+                            diagramTier: presentation
+                      - name: App Group
+                        deploymentTarget: test-env
+                        deployableObjects:
+                          - ref: 01KQS0TF79-RSRA
+                            diagramTier: application
+                    """
+                ).strip() + "\n",
+                encoding="utf-8",
+            )
+            
+            result1 = validate_workspace(workspace)
+            self.assertFalse(result1.ok, result1.stdout + result1.stderr)
+            self.assertIn("presentation-to-application-required", result1.stdout)
+            self.assertIn("required relationship", result1.stdout)
+            
+            rel_dir = workspace / "catalog" / "relationships"
+            rel_dir.mkdir(parents=True, exist_ok=True)
+            (rel_dir / "rel-pres-to-app.yaml").write_text(
+                textwrap.dedent(
+                    """
+                    schemaVersion: "1.0"
+                    uid: 01KQS0TF79-RRK1
+                    type: relationship
+                    name: Presentation to Application
+                    catalogStatus: stub
+                    source: 01KQS0TF79-RSRP
+                    target: 01KQS0TF79-RSRA
+                    label: routes to
+                    direction: synchronous
+                    """
+                ).strip() + "\n",
+                encoding="utf-8",
+            )
+            
+            result2 = validate_workspace(workspace)
+            self.assertTrue(result2.ok, result2.stdout + result2.stderr)
+
+    def test_ra_relationship_constraint_forbidden(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            workspace = Path(directory)
+            ensure_workspace_layout(workspace)
+            
+            ra_dir = workspace / "configurations" / "reference-architectures"
+            ra_dir.mkdir(parents=True, exist_ok=True)
+            
+            (ra_dir / "ra-test-rel-forbidden.yaml").write_text(
+                textwrap.dedent(
+                    """
+                    schemaVersion: "1.0"
+                    uid: 01KQS0TF80-RAXF
+                    type: reference_architecture
+                    name: Test Rel Forbidden RA
+                    catalogStatus: incomplete
+                    lifecycleStatus: preferred
+                    constraints:
+                      - id: presentation-to-data-forbidden
+                        description: Presentation tier must not connect to data tier directly.
+                        requireRelationships:
+                          - source:
+                              diagramTier: presentation
+                            target:
+                              diagramTier: data
+                            allowed: false
+                    """
+                ).strip() + "\n",
+                encoding="utf-8",
+            )
+            
+            runtime_dir = workspace / "catalog" / "runtime-services"
+            runtime_dir.mkdir(parents=True, exist_ok=True)
+            (runtime_dir / "service-pres.yaml").write_text(
+                textwrap.dedent(
+                    """
+                    schemaVersion: "1.0"
+                    uid: 01KQS0TF80-RSRP
+                    type: runtime_service
+                    name: Presentation Service
+                    deliveryModel: paas
+                    vendor: Test Vendor
+                    productName: Test Presentation
+                    productVersion: "1.0"
+                    catalogStatus: incomplete
+                    lifecycleStatus: candidate
+                    """
+                ).strip() + "\n",
+                encoding="utf-8",
+            )
+            (runtime_dir / "service-data.yaml").write_text(
+                textwrap.dedent(
+                    """
+                    schemaVersion: "1.0"
+                    uid: 01KQS0TF80-RSRD
+                    type: runtime_service
+                    name: Data Service
+                    deliveryModel: paas
+                    vendor: Test Vendor
+                    productName: Test Data
+                    productVersion: "1.0"
+                    catalogStatus: incomplete
+                    lifecycleStatus: candidate
+                    """
+                ).strip() + "\n",
+                encoding="utf-8",
+            )
+            
+            sdp_dir = workspace / "catalog" / "software-deployment-patterns"
+            sdp_dir.mkdir(parents=True, exist_ok=True)
+            dr_yaml = self._write_decision_records_for_sdp(workspace, indent=20)
+            
+            (sdp_dir / "sdp-rel-forbidden-ok.yaml").write_text(
+                textwrap.dedent(
+                    f"""
+                    schemaVersion: "1.0"
+                    uid: 01KQS0TF80-SDPX
+                    type: software_deployment_pattern
+                    name: Test Rel Forbidden OK SDP
+                    catalogStatus: incomplete
+                    lifecycleStatus: candidate
+                    followsReferenceArchitecture: 01KQS0TF80-RAXF
+{dr_yaml}
+                    serviceGroups:
+                      - name: Pres Group
+                        deploymentTarget: test-env
+                        deployableObjects:
+                          - ref: 01KQS0TF80-RSRP
+                            diagramTier: presentation
+                      - name: Data Group
+                        deploymentTarget: test-env
+                        deployableObjects:
+                          - ref: 01KQS0TF80-RSRD
+                            diagramTier: data
+                    """
+                ).strip() + "\n",
+                encoding="utf-8",
+            )
+            
+            result1 = validate_workspace(workspace)
+            self.assertTrue(result1.ok, result1.stdout + result1.stderr)
+            
+            rel_dir = workspace / "catalog" / "relationships"
+            rel_dir.mkdir(parents=True, exist_ok=True)
+            (rel_dir / "rel-pres-to-data.yaml").write_text(
+                textwrap.dedent(
+                    """
+                    schemaVersion: "1.0"
+                    uid: 01KQS0TF80-RRK2
+                    type: relationship
+                    name: Presentation to Data
+                    catalogStatus: stub
+                    source: 01KQS0TF80-RSRP
+                    target: 01KQS0TF80-RSRD
+                    label: direct data access
+                    direction: synchronous
+                    """
+                ).strip() + "\n",
+                encoding="utf-8",
+            )
+            
+            result2 = validate_workspace(workspace)
+            self.assertFalse(result2.ok, result2.stdout + result2.stderr)
+            self.assertIn("presentation-to-data-forbidden", result2.stdout)
+            self.assertIn("forbidden relationship", result2.stdout)
 
     def _write_vocabulary_workspace(self, workspace: Path, mode: str) -> None:
         (workspace / ".draft" / "workspace.yaml").write_text(
@@ -2655,7 +3349,7 @@ requirementGroups:
                         naAllowed: false
                         canBeSatisfiedBy:
                           - mechanism: field
-                            key: architectureNotes.companyEvidence
+                            key: notes.companyEvidence
                         minimumSatisfactions: 1
                         validAnswerTypes:
                           - field
@@ -2683,14 +3377,14 @@ requirementGroups:
                     lifecycleStatus: existing-only
                     requirementGroups:
                       - requirement-group.company-control
-                    architectureNotes:
+                    notes:
                       companyEvidence: Provided.
                     requirementImplementations:
                       - requirementGroup: requirement-group.non-existent-group
                         requirementId: company-required-field
                         status: satisfied
                         mechanism: field
-                        key: architectureNotes.companyEvidence
+                        key: notes.companyEvidence
                     """
                 ).strip()
                 + "\n",
@@ -2719,14 +3413,14 @@ requirementGroups:
                     lifecycleStatus: existing-only
                     requirementGroups:
                       - requirement-group.company-control
-                    architectureNotes:
+                    notes:
                       companyEvidence: Provided.
                     requirementImplementations:
                       - requirementGroup: requirement-group.company-control
                         requirementId: non-existent-requirement-id
                         status: satisfied
                         mechanism: field
-                        key: architectureNotes.companyEvidence
+                        key: notes.companyEvidence
                     """
                 ).strip()
                 + "\n",
@@ -2947,7 +3641,7 @@ requirementGroups:
             write_dr("dr.deviations", "Deviations Decision")
             write_dr("dr.interactions", "Interactions Decision")
 
-            # Write the SDP with decisionRecords referencing the above DRs (and NO architectureNotes)
+            # Write the SDP with decisionRecords referencing the above DRs (and NO notes)
             sdp_dir = workspace / "catalog" / "software-deployment-patterns"
             sdp_dir.mkdir(parents=True, exist_ok=True)
             (sdp_dir / "sdp-test-service.yaml").write_text(
@@ -3027,7 +3721,7 @@ requirementGroups:
                     name: Test Service Pattern
                     catalogStatus: complete
                     lifecycleStatus: candidate
-                    architectureNotes:
+                    notes:
                       noApplicablePattern: "No reference architecture applies."
                       deploymentTargets: "Runs in the test target."
                       availabilityRequirement: "Best-effort availability is acceptable."
@@ -3279,6 +3973,85 @@ requirementGroups:
             result = validate_workspace(workspace)
             self.assertFalse(result.ok, result.stdout + result.stderr)
             self.assertIn("Replace businessUnit 'bu.invalid-bu' with a business unit declared in .draft/workspace.yaml", result.stdout)
+
+    def test_validate_capability_ownership_patches(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            workspace = Path(directory)
+            ensure_workspace_layout(workspace)
+            self._write_workspace_requirement_fixture(workspace, require_disposition=False)
+
+            # Remove scaffolded object-patch templates to ensure none are present initially
+            patches_dir = workspace / "configurations" / "object-patches"
+            if patches_dir.exists():
+                for f in patches_dir.glob("*.yaml"):
+                    f.unlink()
+
+            # Write a capability with zero implementations
+            cap_dir = workspace / "configurations" / "capabilities"
+            cap_dir.mkdir(parents=True, exist_ok=True)
+            (cap_dir / "cap-test.yaml").write_text(
+                textwrap.dedent(
+                    """
+                    schemaVersion: "1.0"
+                    uid: 01KQQ4Q026-CAPP
+                    type: capability
+                    name: Test Capability
+                    domain: 01KQQ4Q026-DMMN
+                    catalogStatus: incomplete
+                    lifecycleStatus: candidate
+                    implementations: []
+                    """
+                ).strip()
+                + "\n",
+                encoding="utf-8",
+            )
+            
+            # Write the domain
+            dom_dir = workspace / "configurations" / "domains"
+            dom_dir.mkdir(parents=True, exist_ok=True)
+            (dom_dir / "dom-test.yaml").write_text(
+                textwrap.dedent(
+                    """
+                    schemaVersion: "1.0"
+                    uid: 01KQQ4Q026-DMMN
+                    type: domain
+                    name: Test Domain
+                    catalogStatus: incomplete
+                    lifecycleStatus: candidate
+                    """
+                ).strip()
+                + "\n",
+                encoding="utf-8",
+            )
+
+            # Validate. Since there is a capability with zero implementations and no patches,
+            # we expect a validation warning.
+            result = validate_workspace(workspace)
+            self.assertIn("No active capability-ownership object patches found", result.stdout)
+
+            # Write a capability-ownership object patch targeting the capability
+            patches_dir = workspace / "configurations" / "object-patches"
+            patches_dir.mkdir(parents=True, exist_ok=True)
+            (patches_dir / "capability-ownership-patch.yaml").write_text(
+                textwrap.dedent(
+                    """
+                    schemaVersion: "1.0"
+                    uid: 01KQQ4Q026-PATC
+                    type: object_patch
+                    target: 01KQQ4Q026-CAPP
+                    patch:
+                      owner:
+                        team: "Test Team"
+                      implementations: []
+                    """
+                ).strip()
+                + "\n",
+                encoding="utf-8",
+            )
+
+            # Validate again. Now the patch is present, so the warning should go away.
+            result = validate_workspace(workspace)
+            self.assertNotIn("No active capability-ownership object patches found", result.stdout)
 
 
 if __name__ == "__main__":

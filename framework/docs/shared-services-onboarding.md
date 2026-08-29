@@ -35,21 +35,31 @@ catalog/shared-services/
   network-services/       ← Corporate load balancers, DNS setups, WAF engines
 ```
 
-For ongoing operating standards, ticketing, routing, and Pull Request reviews, refer directly to the central [Draft Operations Guide](operations-guide.md).
-
 ---
 
-## 2. Your First Action: Connect Your AI Assistant
+## 2. Choosing a Provisioning Model: `deployable` vs `reference-only`
 
-DRAFT is Git-native and repo-first. You do not need to install local CLI tools. You interact with DRAFT using the AI assistant connected to your repository workspace. 
+When publishing a shared service (`Host`, `RuntimeService`, `DataStoreService`, `NetworkService`, `AIGateway`), you must declare its `provisioningModel`:
 
-Copy the prompt below and paste it into your AI assistant chat window to start a session:
+### Path A: `provisioningModel: deployable` (Recommended for Modern Building Blocks)
+Use this path when your platform team maintains a versioned Infrastructure-as-Code (IaC) module or automated package repository (Terraform, OpenTofu, Helm, CloudFormation).
 
-```text
-I need a draftsman. Open a drafting session to document our new shared database standard.
-```
+* **Requirement**: You must specify a `deployablePackage` block:
+  ```yaml
+  provisioningModel: deployable
+  deployablePackage:
+    registry: github
+    source: company-infrastructure/terraform-aws-postgresql
+    version: v3.2.0
+    modulePath: modules/encrypted-rds
+  ```
+* **Impact**: Engineering product patterns (SDPs) that compose `deployable` shared services can be automatically built into executable IaC pipelines and reach `catalogStatus: complete` / `deployment-ready`.
 
-Your AI assistant will immediately assume the **Draftsman** role, read your workspace configuration, and guide you through the process step-by-step.
+### Path B: `provisioningModel: reference-only` (For Legacy Tech & SaaS Platforms)
+Use this path for legacy technology standards, SaaS platforms, or manual infrastructure platforms that do not have an automated IaC module repository.
+
+* **Requirement**: Omit `deployablePackage` or explicitly set `provisioningModel: reference-only`.
+* **Impact**: `reference-only` objects still satisfy `RequirementGroups` for compliance, audit, and security controls. However, any Product SDP that relies on a `reference-only` shared service **is capped at `catalogStatus: documentation`** and cannot reach `deployment-ready` until an IaC module is published.
 
 ---
 
@@ -58,31 +68,30 @@ Your AI assistant will immediately assume the **Draftsman** role, read your work
 To document a reusable platform standard correctly, follow the step-by-step modeling sequence:
 
 ### Step 1: Create a TechnologyComponent
-Before you can define a virtual host or runtime service, you must model the vendor products that compose them. Author a `TechnologyComponent` YAML file in `catalog/shared-services/technology-components/`:
+Before you can define a virtual host or runtime service, model the vendor products that compose them in `catalog/shared-services/technology-components/`:
 * Define a unique `uid` (your AI Draftsman will generate this).
 * Set the `vendor`, `productName`, and `productVersion` parameters.
 * Specify `classification` (e.g., `operating-system`, `compute-platform`, `software`, or `agent`).
-* Map `capabilities` to document which architectural functions this product satisfies out-of-the-box (e.g. satisfy `secrets-management` or `apm`).
+* Map `capabilities` to document which architectural functions this product satisfies out-of-the-box.
 
 ### Step 2: Model the Reusable Substrate or Host
-If your team provisions standard VM images or server profiles, author a `Host` YAML file in `catalog/shared-services/hosts/`:
-* Reference the exact `operatingSystemComponent` and `computePlatformComponent` UIDs you defined in Step 1.
-* Declare standard platform agents (e.g. monitoring agents, security software) in `agentComponents`.
-* Set `requirementGroups` to map the Host to standard workspace security profiles (e.g. `requirement-group-host`).
-* **Important:** Link the component to your team ID by setting the `owner.team` property (e.g. `owner.team: database-services`).
+Author a `Host` YAML file in `catalog/shared-services/hosts/`:
+* Set `provisioningModel: deployable` (with `deployablePackage`) if an IaC template exists, or `reference-only` if manual.
+* Reference the exact `operatingSystemComponent` and `computePlatformComponent` UIDs.
+* Declare standard platform agents in `internalComponents`.
+* Set `requirementGroups` to map the Host to standard workspace security profiles.
 
 ### Step 3: Define Shared Runtimes & Data Stores
-Model the actual execution environments that Engineering product teams will deploy their code onto. Author a `RuntimeService` or `DataStoreService` YAML file in their respective subfolders:
-* Reference the `host` substrate defined in Step 2.
-* Define `deliveryModel` (`saas`, `paas`, `appliance`, or `self-managed`) to capture who operates the platform.
-* For `DataStoreService` entries, explicitly document the data protection features (e.g. backup strategies, RTO, and RPO expectations).
+Author a `RuntimeService` or `DataStoreService` YAML file:
+* Declare `provisioningModel: deployable` or `reference-only`.
+* Reference the `host` substrate.
+* Define `deliveryModel` (`saas`, `paas`, `appliance`, or `self-managed`).
+* For `DataStoreService` entries, explicitly document data protection features (backup strategies, RTO, RPO).
 
 ---
 
 ## 4. Platform Mapping & Capability Governance
 
-* **Bridging Capabilities to Tech**: As a Shared Services lead, you are responsible for keeping DRAFT's capability mapping current. In your company configuration overlay (`configurations/object-patches/`), you will author deep-merge patches mapping core platform capabilities (such as APM or Secrets Management) to your approved, active TechnologyComponents. This is what enables Engineering teams' ProductComponents to validate cleanly when they reference standard substrates.
-* **Progressive Onboarding**: When creating new infrastructure profiles, start with `catalogStatus: stub` or `catalogStatus: incomplete`. This allows you to check in skeletal drafts without failing validation, letting your AI Draftsman help you enrich them later.
-* **Automated Code Validation**: Run `/draft validate` in your AI chat window before opening any pull request to verify that all cross-references between hosts, substrates, and technologies are completely intact and resolve cleanly.
-
-For detailed guidelines on issue ticketing, lifecycle states, standard dispositions, and CODEOWNERS review routing, see the [Draft Operations Guide](operations-guide.md).
+* **Bridging Capabilities to Tech**: Platform leads maintain capability mapping overlays in `configurations/object-patches/` mapping core capabilities to approved TechnologyComponents.
+* **Progressive Onboarding**: Start new profiles with `catalogStatus: stub` or `catalogStatus: incomplete`.
+* **Automated Code Validation**: Run `python3 .draft/framework/tools/validate.py --workspace .` before opening pull requests.

@@ -6,6 +6,7 @@ tags:
   - draft
   - ai_index
   - index
+timestamp: 2026-06-12T21:06:02-07:00
 ---
 
 # AI Framework Index
@@ -42,7 +43,6 @@ the selected framework schemas/configurations, provider packs, and workspace YAM
 | framework/browser | Static browser shell, CSS, JavaScript, and default theme assets copied by generate_browser.py. |
 | security.md | Credential and local security boundary notes for optional local tooling. |
 | framework/docs/draftsman.md | Draftsman role, intent routing, and authoring rules. |
-| framework/docs/soul.md | Draftsman character, cast of named personas, per-persona session contracts, routing logic, and personality pack extensibility. Read this to understand how the Draftsman adapts its voice and interaction style to the person in the chair. |
 | framework/docs/setup-mode.md | Draftsman first-run setup mode and guided interview cadence. |
 | framework/docs/engineering-onboarding.md | Targeted onboarding tutorial for product engineering teams. |
 | framework/docs/shared-services-onboarding.md | Targeted onboarding tutorial for platform/shared services teams. |
@@ -57,7 +57,6 @@ the selected framework schemas/configurations, provider packs, and workspace YAM
 | framework/docs/requirement-groups.md | Unified requirement group authoring and validation behavior. |
 | framework/docs/capabilities.md | Capability object model and implementation lookup behavior. |
 | framework/docs/drafting-sessions.md | How to persist incomplete authoring work. |
-| framework/personalities/README.md | Draftsman personality packs and alternative cast configuration guidance. |
 | framework/tools/validate.py | Executable validation for schemas, RequirementGroups, capabilities, and references. |
 | framework/tools/apply_vocabulary_proposals.py | Materializes Draftsman vocabulary_proposal files into reviewable company vocabulary entries. |
 | framework/tools/repair_uids.py | Explicit repair utility that adds or replaces generated object UIDs and rewrites object references. |
@@ -71,8 +70,11 @@ the selected framework schemas/configurations, provider packs, and workspace YAM
 
 | Path | Title | Summary |
 |---|---|---|
+| framework/docs/COMPOSITION_ROADMAP.md | DRAFT Framework Architecture Composition Roadmap | This roadmap defines the implementation specifications for follow-on DRAFT framework capabilities. These items build... |
+| framework/docs/SHARED_SERVICE_COMPOSITION_SPEC.md | Deployable Shared Services Composition Specification | DRAFT enables **Enterprise-Grade Vibe Coding** by turning static architecture specifications into composable, standar... |
 | framework/docs/capabilities.md | Capabilities | A Capability is a first-class framework object that names an architecture |
 | framework/docs/company-vocabulary.md | Company Vocabulary | Company vocabulary lists are optional governed lists in `.draft/workspace.yaml`. |
+| framework/docs/decentralized-sdp-setup.md | Decentralized SoftwareDeploymentPatterns & Product Registration | How product engineering teams house SoftwareDeploymentPatterns in their own repos and register with drafting-table. |
 | framework/docs/decision-records.md | DecisionRecords | DecisionRecords are first-class records for known risks, |
 | framework/docs/delivery-models.md | Delivery Models | Delivery models explain how a deployable service is operated. |
 | framework/docs/design-principles.md | Design Principles | DRAFT is opinionated. |
@@ -95,7 +97,7 @@ the selected framework schemas/configurations, provider packs, and workspace YAM
 | framework/docs/setup-mode.md | Draftsman Setup Mode | Setup mode is the first-run Draftsman conversation for a company DRAFT |
 | framework/docs/shared-services-onboarding.md | Shared Services Onboarding Guide | As a Shared Services representative, you are accountable for the **shared-services layer** of the architecture catalog. |
 | framework/docs/software-deployment-patterns.md | SoftwareDeploymentPatterns | A SoftwareDeploymentPattern is a declaration that a specific product is intended |
-| framework/docs/soul.md | Draftsman Soul | The character, voice, and interaction design of the Draftsman — who it is, how it feels, and how it adapts to the per... |
+| framework/docs/soul.md | Draftsman Soul | The character, voice, and interaction design of the Draftsman — who it is, how it feels, and how it speaks to the per... |
 | framework/docs/standards.md | Deployable Objects | DRAFT previously used the word "Standard" for reusable deployable building |
 | framework/docs/technology-components.md | TechnologyComponents | A TechnologyComponent is a discrete vendor product object. |
 | framework/docs/ticketing.md | Ticketing and Issue Creation Workflow | DRAFT is a repo-first, automation-friendly framework. |
@@ -121,6 +123,7 @@ the selected framework schemas/configurations, provider packs, and workspace YAM
 | framework/schemas/network-service.schema.yaml | network_service | schemaVersion, uid, type, name, deliveryModel, catalogStatus, lifecycleStatus |
 | framework/schemas/object-patch.schema.yaml | object_patch | schemaVersion, uid, type, name, target, patch, catalogStatus, lifecycleStatus |
 | framework/schemas/product-component.schema.yaml | product_component | schemaVersion, uid, type, name, repoUrl, owner, classification, catalogStatus |
+| framework/schemas/product-registration.schema.yaml | product_registration | schemaVersion, uid, type, name, owner, catalogStatus, repository |
 | framework/schemas/reference-architecture.schema.yaml | reference_architecture | schemaVersion, uid, type, name, catalogStatus, lifecycleStatus |
 | framework/schemas/relationship.schema.yaml | relationship | schemaVersion, uid, type, name, source, label, catalogStatus |
 | framework/schemas/requirement-group.schema.yaml | requirement_group | schemaVersion, uid, type, name, description, catalogStatus, activation, appliesTo, requirements |
@@ -477,12 +480,17 @@ These are sample catalog objects used to validate and demonstrate the framework.
 | templates/decision-record.yaml.tmpl | Reusable YAML authoring template. |
 | templates/deployment-target.yaml.tmpl | Reusable YAML authoring template. |
 | templates/drafting-session.yaml.tmpl | Reusable YAML authoring template. |
+| templates/github/drafting-table-receiver.yml.tmpl | DRAFT Framework 1.0 — Central Receiver GitHub Action |
+| templates/github/product-repo-sync.yml.tmpl | DRAFT Framework 1.0 — Product Repo Sync GitHub Action |
 | templates/host.yaml.tmpl | Reusable YAML authoring template. |
 | templates/network-service.yaml.tmpl | Reusable YAML authoring template. |
 | templates/object-patch.yaml.tmpl | Reusable YAML authoring template. |
+| templates/product-registration.yaml.tmpl | Reusable YAML authoring template. |
 | templates/reference-architecture.yaml.tmpl | Reusable YAML authoring template. |
+| templates/relationship.yaml.tmpl | Reusable YAML authoring template. |
 | templates/requirement-group.yaml.tmpl | Reusable YAML authoring template. |
 | templates/runtime-service.yaml.tmpl | Reusable YAML authoring template. |
+| templates/sdp-manifest.yaml.tmpl | Reusable YAML authoring template. |
 | templates/software-deployment-pattern.yaml.tmpl | Reusable YAML authoring template. |
 | templates/technology-component.yaml.tmpl | Reusable YAML authoring template. |
 | templates/workspace/.cursor/rules/draftsman.mdc.tmpl | Reusable YAML authoring template. |

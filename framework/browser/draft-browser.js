@@ -822,6 +822,21 @@ function catalogSearchMarkup(matchCount, baseCount) {
 }
 
 function businessPillarForObject(object) {
+  // The primary pillar drives browser grouping (see docs/workspaces.md).
+  // ownerNode is a secondary drill-down within that pillar, not a
+  // replacement for it, so it is only consulted when pillar is unset.
+  const pillarId = object.businessContext?.pillar || '';
+  if (pillarId) {
+    const pillar = businessPillarLookup[pillarId];
+    const hierarchyNode = !pillar && businessHierarchyNodeLookup.has(pillarId)
+      ? businessHierarchyNodeLookup.get(pillarId)
+      : null;
+    return {
+      id: pillarId,
+      name: pillar?.name || hierarchyNode?.name || formatTitleCase(pillarId.replace(/^business-pillar\./, '').replace(/-/g, ' ')),
+      owner: pillar?.owner || hierarchyNode?.owner || null
+    };
+  }
   const ownerNodeId = object.businessContext?.ownerNode;
   if (ownerNodeId && businessHierarchyNodeLookup.has(ownerNodeId)) {
     const node = businessHierarchyNodeLookup.get(ownerNodeId);
@@ -831,12 +846,10 @@ function businessPillarForObject(object) {
       owner: node.owner || null
     };
   }
-  const pillarId = object.businessContext?.pillar || '';
-  const pillar = pillarId ? businessPillarLookup[pillarId] : null;
   return {
-    id: pillarId || 'unassigned',
-    name: pillar?.name || (pillarId ? formatTitleCase(pillarId.replace(/^business-pillar\./, '').replace(/-/g, ' ')) : 'Unassigned Business Pillar'),
-    owner: pillar?.owner || null
+    id: 'unassigned',
+    name: 'Unassigned Business Pillar',
+    owner: null
   };
 }
 
@@ -1677,7 +1690,7 @@ function rationaleEntriesForCandidates(bucketValue, candidates) {
 }
 
 function dependencyRationales(object, entry, context) {
-  const decisions = object?.architecturalDecisions;
+  const decisions = object?.notes;
   if (!decisions || typeof decisions !== 'object') {
     return [];
   }
@@ -4751,17 +4764,17 @@ function flattenDecisionEntries(prefix, value, entries) {
 function decisionMarkup(object, excludedRootKeys = []) {
   const excluded = new Set(excludedRootKeys);
   const decisions = Object.fromEntries(
-    Object.entries(object.architecturalDecisions || {}).filter(([key]) => !excluded.has(key))
+    Object.entries(object.notes || {}).filter(([key]) => !excluded.has(key))
   );
   const entries = [];
   flattenDecisionEntries('', decisions, entries);
   if (!entries.length) {
-    return '<div class="empty-card">No architectural decisions are defined for this object.</div>';
+    return '<div class="empty-card">No notes are defined for this object.</div>';
   }
   return `
     <div class="decisions-grid single">
       <section class="decision-card">
-        <h4>Architecture Decisions</h4>
+        <h4>Notes</h4>
         <dl class="definition-list">
           ${entries.map(entry => `<dt>${escapeHtml(entry.key)}</dt><dd>${escapeHtml(entry.value)}</dd>`).join('')}
         </dl>
@@ -4797,7 +4810,7 @@ function businessContextMarkup(object) {
 }
 
 function sourceRepositoryMarkup(object) {
-  const repos = object.architecturalDecisions?.sourceRepositories || [];
+  const repos = object.notes?.sourceRepositories || [];
   if (!Array.isArray(repos) || !repos.length) {
     return '';
   }
@@ -4922,8 +4935,8 @@ function requirementMechanismSentence(mechanism) {
   if (mechanism.mechanism === 'internalComponent') {
     return `internalComponent(role=${mechanism.criteria?.role || 'unknown'})`;
   }
-  if (mechanism.mechanism === 'architecturalDecision') {
-    return `architecturalDecision(key=${mechanism.key || 'unknown'})`;
+  if (mechanism.mechanism === 'decisionRecord') {
+    return `decisionRecord(key=${mechanism.key || 'unknown'})`;
   }
   return mechanism.mechanism || 'unknown';
 }
@@ -5120,7 +5133,7 @@ function preferredComponentSource(object, fallbackObject) {
 }
 
 function preferredDecisionSource(object, fallbackObject) {
-  const ownDecisions = object?.architecturalDecisions || {};
+  const ownDecisions = object?.notes || {};
   if (Object.keys(ownDecisions).length) {
     return object;
   }
@@ -6179,8 +6192,8 @@ function architectureDetailMarkup(componentSource, interactionSource, decisionSo
       </div>
     </section>
     <section class="decisions-card">
-      <h3>Architecture Decisions</h3>
-      ${decisionSource ? decisionMarkup(decisionSource) : `<div class="empty-card">${escapeHtml(emptyDecisionText || 'No architectural decisions are documented for this object.')}</div>`}
+      <h3>Notes</h3>
+      ${decisionSource ? decisionMarkup(decisionSource) : `<div class="empty-card">${escapeHtml(emptyDecisionText || 'No notes are documented for this object.')}</div>`}
     </section>
   `;
 }
@@ -6460,7 +6473,14 @@ function _sdpBuildVM(object) {
     const zt = byZone[z.id]?.tiers || {};
     return Object.values(zt).reduce((s, a) => s + a.length, 0) > 0;
   });
-  return { members, zones, activeZones, byZone, connections, uidToZone };
+  // Reuse the catalog-wide Diagrams view's own SDP diagram builder (see
+  // mermaid-config.js) so this section stays in sync with that rendering —
+  // same node/edge rules, same mermaid dialect, same text-size handling.
+  const diagram = (window.DraftDiagrams && typeof window.DraftDiagrams.buildSdpDiagram === 'function')
+    ? window.DraftDiagrams.buildSdpDiagram(object)
+    : null;
+  const diagramRenderId = Date.now();
+  return { members, zones, activeZones, byZone, connections, uidToZone, diagram, diagramRenderId };
 }
 
 // ── Lifecycle badge (SDP scoped) ──────────────────────────────────────────────
@@ -6477,7 +6497,7 @@ function _sdpLifecycleBadge(status) {
 
 // ── Hero ──────────────────────────────────────────────────────────────────────
 function _sdpHeroMarkup(object) {
-  const d = object.architecturalDecisions || {};
+  const d = object.notes || {};
   const fd = d.failureDomain || {};
   const owner = object.owner || {};
   const bc = object.businessContext || {};
@@ -6507,7 +6527,7 @@ function _sdpHeroMarkup(object) {
 
 // ── KPI strip ─────────────────────────────────────────────────────────────────
 function _sdpKpiMarkup(object, vm) {
-  const d = object.architecturalDecisions || {};
+  const d = object.notes || {};
   const n = vm.members.length;
   const haCount  = vm.members.filter(m => m.intent === 'ha').length;
   const saGap    = vm.members.filter(m => m.intent !== 'ha' && !m.riskRef).length;
@@ -6536,6 +6556,7 @@ function _sdpKpiMarkup(object, vm) {
 function _sdpSectionNavMarkup(vm, object) {
   const sections = [
     { id: 'sdp-s-topology',    label: 'Topology' },
+    { id: 'sdp-s-diagrams',    label: 'Diagrams', skip: !vm.diagram },
     { id: 'sdp-s-groups',      label: 'Service Groups' },
     { id: 'sdp-s-decisions',   label: 'Decisions' },
     { id: 'sdp-s-connections', label: 'Connections', skip: !vm.connections.length },
@@ -6626,6 +6647,28 @@ function _sdpTopologyMarkup(vm) {
       </div>
     </div>
   </div>
+</div>`;
+}
+
+// ── Diagrams section ──────────────────────────────────────────────────────────
+// Reuses the catalog-wide Diagrams view's SDP diagram (mermaid-config.js) so
+// this section renders identically to that view instead of a bespoke one.
+function _sdpDiagramsMarkup(vm) {
+  if (!vm.diagram) return '';
+  if (window.DraftDiagrams && typeof window.DraftDiagrams.ensureStyles === 'function') {
+    window.DraftDiagrams.ensureStyles();
+  }
+  const objectBadge = window.DraftDiagrams && window.DraftDiagrams.objectBadge;
+  const pillsHtml = objectBadge ? vm.diagram.nodes.map(objectBadge).join('') : '';
+  return `
+<div class="sdp-section" id="sdp-s-diagrams">
+  <div class="section-head">
+    <div><span class="eyebrow">02 — Diagrams</span><h2>Container Diagram</h2></div>
+  </div>
+  <div id="diagram-slot-${vm.diagramRenderId}-0" class="diagram-slot">
+    <span style="color:#94a3b8;font-size:13px;">Rendering…</span>
+  </div>
+  ${pillsHtml ? `<div class="diagram-object-list">${pillsHtml}</div>` : ''}
 </div>`;
 }
 
@@ -6803,7 +6846,7 @@ function serviceGroupInteractionMarkup(object, interaction) {
 function _sdpGroupsMarkup(object, vm) {
   const groups = object.serviceGroups || [];
   if (!groups.length) return `<div class="sdp-section" id="sdp-s-groups">
-    <div class="section-head"><div><span class="eyebrow">02 — Service Groups</span><h2>Service Groups</h2></div></div>
+    <div class="section-head"><div><span class="eyebrow">03 — Service Groups</span><h2>Service Groups</h2></div></div>
     <p style="color:var(--muted)">No service groups documented.</p>
   </div>`;
   const groupCards = groups.map((sg, gi) => {
@@ -6842,7 +6885,7 @@ function _sdpGroupsMarkup(object, vm) {
   }).join('');
   return `<div class="sdp-section" id="sdp-s-groups">
     <div class="section-head"><div>
-      <span class="eyebrow">02 — Service Groups</span>
+      <span class="eyebrow">03 — Service Groups</span>
       <h2>Service Groups</h2>
     </div></div>
     <div class="group-list">${groupCards}</div>
@@ -6851,7 +6894,7 @@ function _sdpGroupsMarkup(object, vm) {
 
 // ── Decisions section ─────────────────────────────────────────────────────────
 function _sdpDecisionsMarkup(object) {
-  const d = object.architecturalDecisions || {};
+  const d = object.notes || {};
   const cards = [];
 
   if (d.availabilityTarget || d.availabilityRequirement) {
@@ -6871,8 +6914,8 @@ function _sdpDecisionsMarkup(object) {
   }
 
   if (!cards.length) return `<div class="sdp-section" id="sdp-s-decisions">
-    <div class="section-head"><div><span class="eyebrow">03 — Decisions</span><h2>Architectural Decisions</h2></div></div>
-    <p style="color:var(--muted)">No architectural decisions documented.</p>
+    <div class="section-head"><div><span class="eyebrow">04 — Decisions</span><h2>Notes</h2></div></div>
+    <p style="color:var(--muted)">No notes documented.</p>
   </div>`;
 
   const cardsHtml = cards.map(c => `<div class="decision-card">
@@ -6884,8 +6927,8 @@ function _sdpDecisionsMarkup(object) {
 
   return `<div class="sdp-section" id="sdp-s-decisions">
     <div class="section-head"><div>
-      <span class="eyebrow">03 — Decisions</span>
-      <h2>Architectural Decisions</h2>
+      <span class="eyebrow">04 — Decisions</span>
+      <h2>Notes</h2>
     </div></div>
     <div class="decisions-grid">${cardsHtml}</div>
   </div>`;
@@ -6915,7 +6958,7 @@ function _sdpConnectionsTableMarkup(vm) {
   }).join('');
   return `<div class="sdp-section" id="sdp-s-connections">
     <div class="section-head"><div>
-      <span class="eyebrow">04 — Connections</span>
+      <span class="eyebrow">05 — Connections</span>
       <h2>Service Connections</h2>
     </div><p>${vm.connections.length} documented connection${vm.connections.length === 1 ? '' : 's'}</p></div>
     <div class="conn-table-wrap">
@@ -6976,7 +7019,7 @@ function _sdpTierVariantsMarkup(object) {
 
   return `<div class="sdp-section" id="sdp-s-tiers">
     <div class="section-head"><div>
-      <span class="eyebrow">05 — Environment Tiers</span>
+      <span class="eyebrow">06 — Environment Tiers</span>
       <h2>Tier Variants</h2>
     </div></div>
     <div class="section-stack">${variantCards}</div>
@@ -7008,7 +7051,7 @@ function _sdpMetadataMarkup(object) {
 
   return `<div class="sdp-section" id="sdp-s-metadata">
     <div class="section-head"><div>
-      <span class="eyebrow">06 — Metadata</span>
+      <span class="eyebrow">07 — Metadata</span>
       <h2>Metadata</h2>
     </div></div>
     <div class="ref-grid">${cardsHtml}</div>
@@ -7041,6 +7084,7 @@ function _sdpDetailMarkup(object) {
       ${_sdpKpiMarkup(object, vm)}
       ${_sdpSectionNavMarkup(vm, object)}
       ${_sdpTopologyMarkup(vm)}
+      ${_sdpDiagramsMarkup(vm)}
       ${_sdpGroupsMarkup(object, vm)}
       ${_sdpDecisionsMarkup(object)}
       ${_sdpConnectionsTableMarkup(vm)}
@@ -7167,6 +7211,12 @@ function _sdpAttachHandlers(object, vm) {
 
   // ── Object links in drawer and service groups
   attachObjectLinkHandlers(root.querySelector('.sdp-detail'));
+
+  // ── Render this SDP's container diagram (mermaid-config.js)
+  if (vm.diagram && window.DraftDiagrams && typeof window.DraftDiagrams.buildMermaid === 'function') {
+    vm.diagram.mermaidSource = window.DraftDiagrams.buildMermaid(vm.diagram);
+    window.DraftDiagrams.renderDiagramsIntoSlots([vm.diagram], vm.diagramRenderId);
+  }
 }
 
 
@@ -7252,7 +7302,7 @@ function renderDetailView() {
         interactionSource,
         decisionSource,
         'The underlying deployable object is not available for this ProductComponent.',
-        'No architectural decisions are available because the underlying deployable object is not documented.'
+        'No notes are available because the underlying deployable object is not documented.'
       )}
       ${secondaryDetailMarkup([
         { title: 'ProductComponent Classification', body: productServiceDetailMarkup(object) },
@@ -7277,7 +7327,7 @@ function renderDetailView() {
         ${requirementEvidenceMarkup(object)}
         ${sdmServiceGroupsMarkup(object)}
         <section class="decisions-card">
-          <h3>Architecture Decisions</h3>
+          <h3>Notes</h3>
           ${decisionMarkup(object)}
         </section>
       </div>
@@ -7827,12 +7877,27 @@ window.addEventListener('hashchange', () => {
   applyRouteFromHash();
 });
 
-initSidebarNav();
-initPalette();
-applyRouteFromHash();
+function initialRender() {
+  initSidebarNav();
+  initPalette();
+  applyRouteFromHash();
 
-// Warm up the world-atlas fetch in the background so the map is ready
-// immediately when the user navigates to the Deployment Targets view.
-if (typeof topojson !== 'undefined') {
-  _dtLoadWorld().catch(() => {});
+  // Warm up the world-atlas fetch in the background so the map is ready
+  // immediately when the user navigates to the Deployment Targets view.
+  if (typeof topojson !== 'undefined') {
+    _dtLoadWorld().catch(() => {});
+  }
+}
+
+// This script and mermaid-config.js both load with `defer`, so they execute
+// in document order before DOMContentLoaded fires. Calling applyRouteFromHash()
+// immediately here would race mermaid-config.js: on a direct/bookmarked SDP
+// detail URL, the initial render would run before window.DraftDiagrams exists,
+// silently skipping the scoped diagram section. Waiting for DOMContentLoaded
+// guarantees every deferred script — including mermaid-config.js — has already
+// run.
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initialRender);
+} else {
+  initialRender();
 }

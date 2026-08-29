@@ -157,13 +157,20 @@ def load_workspace_catalog_folders(workspace_root: Path) -> list[str] | None:
 
 
 def discover_yaml_files(root: Path, folder_names: list[str] | None = None) -> list[Path]:
-    folders = folder_names if folder_names is not None else CATALOG_FOLDERS
     files: list[Path] = []
-    for folder_name in folders:
-        folder = root / folder_name
-        if not folder.exists():
-            continue
-        files.extend(sorted(folder.rglob("*.yaml")))
+    if folder_names is not None:
+        for folder_name in folder_names:
+            folder = root / folder_name
+            if not folder.exists():
+                continue
+            files.extend(sorted(folder.rglob("*.yaml")))
+    else:
+        # Default behavior: recursive scan of the root folder, matching validate.py
+        skip_dirs = {"tools", "schemas", "docs", "adrs", ".github", ".git", ".draft"}
+        for path in sorted(root.rglob("*.yaml")):
+            if any(part in skip_dirs for part in path.relative_to(root).parts):
+                continue
+            files.append(path)
     return files
 
 
@@ -424,6 +431,11 @@ def parse_args(argv: list[str]) -> argparse.Namespace:
             "across content regeneration runs."
         ),
     )
+    parser.add_argument(
+        "--skip-validation",
+        action="store_true",
+        help="Skip running DRAFT validation before generating the browser.",
+    )
     return parser.parse_args(argv)
 
 
@@ -434,12 +446,21 @@ def load_objects(workspace_root: Path) -> dict[str, dict[str, Any]]:
     for root in workspace_yaml_roots(workspace_root):
         folder_override = catalog_folders if (catalog_folders is not None and root == workspace_catalog) else None
         for path in discover_yaml_files(root, folder_override):
-            with path.open("r", encoding="utf-8") as handle:
-                data = yaml.safe_load(handle) or {}
-            if isinstance(data, dict) and data.get("uid"):
-                data["_source"] = display_path(path)
-                objects[str(data["uid"])] = data
-    return apply_object_patches(objects)
+            try:
+                with path.open("r", encoding="utf-8") as handle:
+                    docs = list(yaml.safe_load_all(handle))
+                for doc in docs:
+                    if isinstance(doc, dict) and doc.get("uid"):
+                        doc["_source"] = display_path(path)
+                        objects[str(doc["uid"])] = doc
+            except Exception:
+                pass
+    objects = apply_object_patches(objects)
+    
+    from uid_utils import derive_inline_relationships
+    derived = derive_inline_relationships(objects)
+    objects.update(derived)
+    return objects
 
 
 def deep_merge(base: Any, patch: Any) -> Any:
@@ -739,7 +760,7 @@ def build_requirement_payload(registry: dict[str, dict[str, Any]], workspace_roo
                 "catalogStatus": group.get("catalogStatus", ""),
                 "provider": group.get("provider", {}),
                 "authority": group.get("authority", {}),
-                "active": group["uid"] in active_ids,
+                "active": group.get("activation") == "always" or group["uid"] in active_ids,
                 "description": group.get("description", ""),
                 "requirementCount": len(group.get("requirements", [])) if isinstance(group.get("requirements"), list) else 0,
             }
@@ -793,6 +814,12 @@ def build_browser_payload(registry: dict[str, dict[str, Any]], workspace_root: P
     catalog_indexes = build_catalog_indexes(registry)
     schemas = load_schemas(SCHEMA_ROOT)
     outbound_refs, referenced_by, warnings = build_reference_index(registry)
+    if not registry:
+        warnings.append("Warning: The catalog is empty. No objects were loaded.")
+    else:
+        gov_types = {"decision_record", "relationship", "reference_architecture", "business_unit_hierarchy", "drafting_session", "system"}
+        if not any(obj.get("type") in gov_types for obj in objects):
+            warnings.append("Warning: No governance objects (DecisionRecords, Relationships, ReferenceArchitectures, Systems, Sessions, or Hierarchies) were found in the catalog.")
     domain_capability_index = build_domain_capability_index(registry)
     derived_domain_capabilities = domain_capability_index["domainCapabilities"]
     risk_marked_rbb_ids = {
@@ -878,7 +905,7 @@ def build_browser_payload(registry: dict[str, dict[str, Any]], workspace_root: P
                 "tags": obj.get("tags", []),
                 "ardCategory": obj.get("category", "") if obj.get("type") == "decision_record" else "",
                 "internalComponents": internal_component_refs(obj),
-                "architectureNotes": obj.get("architectureNotes", {}),
+                "notes": obj.get("notes", {}),
                 "requirements": obj.get("requirements", []),
                 "implementations": obj.get("implementations", []),
                 "appliesTo": obj.get("appliesTo", {}),
@@ -1010,7 +1037,7 @@ BROWSER_ASSET_OUTPUT_DIR = "assets"
 BROWSER_ASSET_ROOT = FRAMEWORK_ROOT / "browser"
 BROWSER_INDEX_TEMPLATE_PATH = BROWSER_ASSET_ROOT / "index.template.html"
 USER_MANUAL_TEMPLATE_PATH = BROWSER_ASSET_ROOT / "user-manual.html"
-BROWSER_STATIC_ASSET_NAMES = ("draft-browser.css", "draft-browser-sdp.css", "draft-browser-targets.css", "draft-browser.js")
+BROWSER_STATIC_ASSET_NAMES = ("draft-browser.css", "draft-browser-sdp.css", "draft-browser-targets.css", "draft-browser.js", "mermaid-config.js")
 BROWSER_STATIC_FONT_DIR = "fonts"
 WORKSPACE_THEME_OUTPUT_NAME = "workspace-theme.css"
 DEFAULT_WORKSPACE_THEME_PATH = BROWSER_ASSET_ROOT / WORKSPACE_THEME_OUTPUT_NAME
@@ -1544,6 +1571,25 @@ def write_user_manual(source_path: Path, output_path: Path) -> bool:
 
 def main(argv: list[str] | None = None) -> int:
     args = parse_args(argv or sys.argv[1:])
+    
+    if not args.skip_validation:
+        try:
+            import validate
+        except ImportError:
+            try:
+                from framework.tools import validate
+            except ImportError:
+                validate = None
+        
+        if validate is not None:
+            print("Running DRAFT catalog validation...")
+            val_code = validate.main(["--workspace", str(args.workspace.resolve()), "--quiet"])
+            if val_code != 0:
+                print("\nERROR: DRAFT catalog validation failed. Refusing to generate browser payload. Use --skip-validation to bypass.", file=sys.stderr)
+                return val_code
+        else:
+            print("Warning: validate.py tool not found. Skipping validation.", file=sys.stderr)
+
     output_path = args.output.resolve()
     manual_output_path = (args.manual_output.resolve() if args.manual_output else output_path.parent / USER_MANUAL_OUTPUT_NAME)
     vocabulary_output_path = output_path.parent / COMPANY_VOCABULARY_OUTPUT_NAME

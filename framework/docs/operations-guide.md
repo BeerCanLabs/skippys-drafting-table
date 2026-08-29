@@ -40,9 +40,9 @@ DRAFT operations are guided by five core principles:
 DRAFT recognizes three operational roles. Each owns a distinct layer of the catalog and configurations:
 * **Engineering:** Owns and authors application and product architecture. This includes `ProductComponent`, `DataComponent`, and `SoftwareDeploymentPattern` (SDP) objects. Engineering representatives focus on first-party runtime boundaries, data boundaries, scaling, and satisfying platform requirements.
 * **Shared Services:** Owns and authors reusable service and technology standards. This includes `Host`, `RuntimeService`, `DataStoreService`, `NetworkService`, and `TechnologyComponent` objects. Shared Services representatives govern standard infrastructure profiles, acceptable-use vendor lists, and shared platforms.
-* **Draft Admins:** Owns the workspace platform configuration, business navigation, schemas, base capability ownership, and operations policy. This includes capability definitions, base `RequirementGroups`, domains, and the authoritative team vocabulary list (`vocabulary.teams`). Draft Admins govern the workspace itself.
+* **Draft Admins:** Owns the workspace platform configuration, business navigation, schemas, base capability ownership, and operations policy. This includes capability definitions, base `RequirementGroups`, `ReferenceArchitecture` objects, domains, and the authoritative team vocabulary list (`vocabulary.teams`). Draft Admins govern the workspace itself.
 
-Security governance personas, such as CISOs, security architects, security
+Security governance roles, such as CISOs, security architects, security
 engineering leads, compliance/GRC owners, and delegated risk owners, can use
 Draft Admin-governed workspace paths to author or review security
 RequirementGroups and compliance evidence. They do not introduce a separate
@@ -59,12 +59,8 @@ The primary interface for developers and AI assistants inside a DRAFT workspace 
 | Verb | Command | Context | Action |
 |---|---|---|---|
 | `help` | `/draft` or `/draft help` | Framework & Workspace | Displays available verbs, arguments, and command usage. |
-| `validate` | `/draft validate [path]` | Workspace | Runs the schema, reference, and requirement validator against target files or the entire workspace. |
-| `review` | `/draft review [path]` | Workspace | Runs a static review of catalog files to check design completeness, advisory standards, and missing information. |
-| `security` | `/draft security [requirements\|satisfaction\|review\|audit]` | Workspace | Runs security RequirementGroup authoring, satisfaction design, posture review, and artifact compliance audit workflows. |
-| `triage` | `/draft triage` | Git Repo | Pulls open GitHub issues for the repository and runs the interactive selection/triage interface. |
-| `author` | `/draft author [type]` | Workspace | Launches a guided interface or templates to author new catalog objects. |
-| `session` | `/draft session` | Workspace | Manages drafting sessions, saving incomplete state, and recording open questions. |
+| `guide` | `/draft guide [intent]` | Workspace | Bootstraps the workspace, launches a guided interface to author new catalog objects, and manages drafting sessions, saving incomplete state, and recording open questions. |
+| `review` | `/draft review [PR number\|security\|path]` | Workspace | Reviews an open pull request for catalog correctness, or audits catalog content for quality and security compliance. |
 | `update` | `/draft update` | Workspace | Refreshes the vendored framework copy (`.draft/framework/`) in a company workspace. |
 
 ### Command Rules
@@ -125,6 +121,11 @@ artifact owner.team -> vocabulary.teams[owner.team] -> vocabulary.teams[owner.te
 
 This ensures there is never a conflict between who owns a file in the catalog and who is assigned the GitHub issue or CODEOWNERS review request. Both are derived directly from the team registry.
 
+### Ownership Is Per-Object, Not Per-Role
+The three DRAFT roles (`engineering`, `shared-services`, `draft-admins`) describe who is *active under* in the team registry's `draftRoles` field — they are not the unit of ownership. The actual unit of ownership is the individual catalog artifact's `owner.team`, resolved through the team registry as shown above. This means many distinct teams can share a single role: a company can register `billing-team`, `payments-team`, and `absence-management` all under `draftRoles: [engineering]`, and each owns a disjoint set of artifacts under `catalog/engineering/` via their own `owner.team` value. The same applies to `shared-services` (e.g. `database-services`, `network-services` as separate teams) and to `draft-admins` for company-wide governance objects.
+
+When a single artifact, or a single pull request, spans more than one team's ownership — for example a SoftwareDeploymentPattern that pulls in components owned by two different engineering teams, or a change that touches both a `shared-services`-owned Host and an `engineering`-owned ProductComponent — this is not a gap in the role model. It is normal cross-domain composition, and the **Multi-Team PR Behavior** described under [CODEOWNERS](#6-codeowners) is the intended mechanism for it: GitHub's automatic CODEOWNERS routing requests review from every owning team on the affected paths, and authors are encouraged to split the PR along ownership boundaries when the coordination cost is high. Do not introduce a new `ownerRole` or a synthetic "shared" team to work around multi-team artifacts; resolve ownership at the artifact level and let PR splitting and multi-team review absorb the coordination.
+
 ### Fallback Teams Configuration
 Workspace administrators configure role fallbacks in `.draft/workspace.yaml` under the `routing` configuration block. Fallback values must reference a valid team ID from the team registry:
 
@@ -152,18 +153,27 @@ If an issue must be created for a validator failure where `owner.team` is missin
 
 ## 6. CODEOWNERS
 
-### The Generation Model
-To maintain Git-native governance, the DRAFT workspace CODEOWNERS file is programmatically generated from the team registry and artifact ownership. It should not be modified manually.
+### The Ownership Model
+To maintain Git-native governance, the DRAFT workspace seeds its CODEOWNERS file by copying the framework template (`.draft/framework/templates/workspace/CODEOWNERS.tmpl`) to `.github/CODEOWNERS`, then keeping it current as the team registry and artifact ownership change.
 
-CODEOWNERS generation follows a two-tier strategy:
+The CODEOWNERS file follows a two-tier ownership strategy:
 1. **Broad Role/Folder Fallbacks:** Establishes catch-all owners for major folders. This protects new or unmapped files during a pull request, as GitHub evaluates CODEOWNERS from the base branch (where per-file rules for a new file do not exist yet).
-2. **Per-File Artifact Ownership:** Generates precise per-file rules for existing artifacts based on their resolved `owner.team`. This is the steady-state governance mechanism.
+2. **Per-File Artifact Ownership:** Adds precise per-file rules for existing artifacts based on their resolved `owner.team`. This is the steady-state governance mechanism.
+
+### Branch Protection Makes CODEOWNERS Meaningful
+A CODEOWNERS file only routes review requests; on its own it does not stop a pull request from merging without those reviews, and it does nothing to stop a direct push to the default branch. DRAFT expects the repository's default branch to have branch protection configured with:
+1. **Pull requests required** — no direct pushes to the default branch.
+2. **"Require review from Code Owners" enabled** — so the CODEOWNERS routing above is actually enforced, not advisory.
+3. **Required status checks** — at minimum, the catalog validator (`python3 .draft/framework/tools/validate.py --workspace .`) must pass before merge.
+
+Configure this once under the repository's branch protection settings during workspace bootstrap (see [Draft Admins Onboarding](draft-admins-onboarding.md)). Without it, the generated CODEOWNERS file is a suggestion; with it, the CODEOWNERS file is the enforcement mechanism that makes per-team ownership and validator status checks load-bearing.
 
 ### Default Path Conventions:
 * **draft-admins** (Governance files):
   - `.draft/`
   - `.github/`
   - `configurations/`
+  - `catalog/governance/`
 * **shared-services** (Infrastructure standards):
   - `catalog/shared-services/hosts/`
   - `catalog/shared-services/runtime-services/`
@@ -175,18 +185,19 @@ CODEOWNERS generation follows a two-tier strategy:
   - `catalog/engineering/data-components/`
   - `catalog/engineering/software-deployment-patterns/`
 
-### Example Generated CODEOWNERS Output:
+### Example CODEOWNERS Output:
 
 ```text
 # ==============================================================================
-# GENERATED FILE — DO NOT EDIT MANUALLY
-# Rebuild with: python3 .draft/framework/tools/generate_codeowners.py
+# Seeded from .draft/framework/templates/workspace/CODEOWNERS.tmpl
+# Maintained by Draft Admins as teams, paths, and ownership change.
 # ==============================================================================
 
 # Broad Role/Folder Fallbacks
 .draft/                      @my-org/draft-admins
 .github/                     @my-org/draft-admins
 configurations/              @my-org/draft-admins
+catalog/governance/          @my-org/draft-admins
 catalog/shared-services/     @my-org/shared-services-review
 catalog/engineering/         @my-org/engineering-architecture-review
 
@@ -205,14 +216,14 @@ catalog/engineering/product-components/billing-api.yaml              @my-org/bil
 
 ## 7. Issue Creation
 
-When a developer or security reviewer runs `/draft validate`, `/draft review`,
-or `/draft security`, the Draftsman identifies gaps (e.g. missing
-dependencies, outdated technologies, non-compliant controls).
+When a developer or security reviewer runs `/draft review`, the Draftsman
+identifies gaps (e.g. missing dependencies, outdated technologies,
+non-compliant controls).
 
 ### Sub-Actions
-* **validate sub-action:** Highlights hard errors (failed schema formats, unresolved UIDs, broken references) and offers to generate issues to repair them.
-* **review sub-action:** Highlights advisory architectural gaps or design reviews (e.g. missing backup configurations or unmapped scaling policies) and generates issues for enrichment.
-* **security sub-action:** Highlights unsatisfied controls, weak evidence,
+* **review (PR) sub-action:** Validates catalog changes in an open pull request for schema correctness, ownership, vocabulary compliance, and dependency completeness.
+* **review (catalog quality) sub-action:** Highlights advisory architectural gaps or design reviews (e.g. missing backup configurations or unmapped scaling policies) and generates issues for enrichment.
+* **review (security) sub-action:** Highlights unsatisfied controls, weak evidence,
   incorrect satisfaction mechanisms, or artifact audit findings and offers
   DecisionRecords, DraftingSession items, or issues for follow-up.
 
@@ -301,6 +312,6 @@ Not all architectural gaps must be resolved by changing code or architecture. In
 The Draft Admins team is accountable for maintaining the workspace's operational health. Their ongoing responsibilities include:
 1. **Vocabulary Curation:** Reviewing vocabulary proposals in `configurations/vocabulary-proposals/` and promoting them to the active gated lists.
 2. **Registry Governance:** Keeping the team registry (`vocabulary.teams`) current and removing obsolete teams or handles.
-3. **CODEOWNERS Sync:** Ensuring that `generate_codeowners.py` is run whenever vocabulary, paths, or file ownership change.
+3. **CODEOWNERS Sync:** Updating `.github/CODEOWNERS` (seeded from `.draft/framework/templates/workspace/CODEOWNERS.tmpl`) whenever vocabulary, paths, or file ownership change.
 4. **Advisory Triage:** Monitoring the `needs-routing` queue daily, resolving ambiguous ownership, and routing orphaned issues to the correct teams.
 5. **Policy Refresh:** Keeping the company-specific operations guide, command documentation, and base configurations in sync with upstream framework releases.

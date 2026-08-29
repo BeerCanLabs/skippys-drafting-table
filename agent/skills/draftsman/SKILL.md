@@ -1,59 +1,38 @@
 ---
 name: draftsman
-description: Deployable Reference Architecture Framework (DRAFT) catalog authoring, validation, maturity scoring, and GitHub PR workflows.
+description: Singleton Factory Agent skill for architecture catalog queries, C4 diagram generation, and developer onboarding guidance.
 ---
 
-# Draftsman Skill
+# Draftsman Skill (Factory Agent)
 
-## When to Use
-Use whenever performing architectural catalog tasks, including:
-- Authoring or editing DRAFT catalog objects (`product_component`, `data_store_service`, `runtime_service`, `edge_gateway_service`, `software_deployment_pattern`)
-- Validating DRAFT workspaces with `validate.py`
-- Running architecture maturity rubric evaluations (`ARCHITECTURE_MATURITY.md`)
-- Handling `/draft` and `/draftsman` slash commands
-- Creating GitHub pull requests for architecture proposals
+## Operational Role
 
-## Workflow Steps
+The `draftsman` skill is deployed on central chat channels (Slack, Discord, Web UI, webhooks) in Read-Only Query & Guidance Mode.
 
-### 1. Workspace Discovery & Context Setup
-1. Check repository root for `.draft/workspace.yaml` and `.draft/framework/`.
-2. If `.draft/framework/` exists, use `.draft/framework/schemas/` as authoritative contracts.
-3. If working in the upstream framework repo, do NOT write company architecture objects into `framework/` or `examples/` — request or switch to the company workspace repo first.
+It handles two primary categories of requests:
+1. **Architecture Queries & Diagrams**: Answering questions about listening ports, exposed APIs, database engines, dependencies, and generating C4 Mermaid diagrams.
+2. **Developer Onboarding Guidance**: Directing engineers on how to connect their local IDE tools (Cursor, Claude Code, Copilot, Antigravity) to `drafting-table`, register their product, and run `/draft init` inside their code repos.
 
-### 2. Catalog Authoring & Editing
-1. Search `catalog/` and `configurations/` to avoid creating duplicate objects or taxonomy entries.
-2. Read the corresponding schema file under `.draft/framework/schemas/<object-type>.schema.yaml`.
-3. Construct or modify YAML files using standard field naming and approved Technology Component identifiers.
-4. If an unapproved technology or non-standard vocabulary value is used, flag it clearly as a proposed non-standard choice or write a `vocabulary_proposal` file in `configurations/vocabulary-proposals/`.
+---
 
-### 3. Workspace Validation
-Run the DRAFT validator script:
-```bash
-python3 .draft/framework/tools/validate.py --workspace .
-```
-If errors are reported:
-- Fix missing required fields, unresolvable references, or schema syntax errors.
-- If UID repair is suggested, run `python3 .draft/framework/tools/repair_uids.py --workspace .`.
+## Developer Onboarding Guidance Protocol
 
-### 4. Documentation & Static Browser Generation
-Regenerate static browser assets after catalog changes:
-```bash
-python3 .draft/framework/tools/generate_browser.py --workspace . --output docs/index.html
+When users ask how to register, onboard a product, or create an SDP, return this standard 4-step onboarding guidance:
+
+```markdown
+### How to Onboard Your Product into DRAFT
+
+1. **Connect IDE to `drafting-table`**: Point your IDE AI assistant (Cursor, Claude Code, Copilot, Antigravity) to your company's `drafting-table` repository. It will automatically load the `draftsman-engineer` rules.
+2. **Register Product**: Tell your IDE AI: `@Draftsman register my product [Name]`. It creates `catalog/engineering/product-registrations/product-reg-[name].yaml`.
+3. **Initialize Local Repo (`/draft init`)**: Open your product code repo in your IDE and run `/draft init`. Your IDE AI inspects your Dockerfile/Terraform to scaffold `.draft/sdp.yaml` and `.github/workflows/draft-sync.yml`.
+4. **Validate & Auto-Sync**: Validate locally (`python3 .draft/framework/tools/validate.py --workspace .`). On PR merge, your repo automatically syncs `.draft/sdp.yaml` to `drafting-table` via ephemeral GitHub App token. `drafting-table` holds ZERO read access to your source code repository!
 ```
 
-### 5. Maturity Scoring Procedure
-When asked to score SDP maturity:
-1. Read `ARCHITECTURE_MATURITY.md`.
-2. Inspect the target `software_deployment_pattern` YAML file and its referenced components.
-3. Score across vector criteria (Environments, Data, Gateway, Security, Observability, Deployment).
-4. Output the standardized Phase 4 scorecard matrix.
+---
 
-### 6. GitHub Integration
-Commit changes and submit PR:
-```bash
-git checkout -b draft/<feature-name>
-git add catalog/ configurations/ docs/
-git commit -m "feat(draft): add <component-name> architecture definition"
-git push origin draft/<feature-name>
-gh pr create --title "feat(draft): add <component-name> architecture definition" --body "Architectural catalog addition validated by Draftsman."
-```
+## Architecture Query Protocol
+
+When users ask architecture questions (ports, APIs, databases, dependencies):
+1. Query the pre-compiled catalog index (`query_architecture`, `get_c4_diagram`, `check_compliance`).
+2. Provide precise, structured answers with port numbers, protocols, and network zones.
+3. If an object is not found in the index, report `unknown` status and direct the user to run `/draft init` in their product repo.

@@ -21,8 +21,11 @@ import re
 import sys
 from pathlib import Path
 from typing import Any
-
 import yaml
+
+TOOLS_ROOT = Path(__file__).resolve().parent
+if str(TOOLS_ROOT) not in sys.path:
+    sys.path.insert(0, str(TOOLS_ROOT))
 
 FRAMEWORK_ROOT = Path(__file__).resolve().parent.parent
 REPO_ROOT = FRAMEWORK_ROOT.parent
@@ -80,11 +83,16 @@ def load_catalog(workspace_root: Path) -> dict[str, dict[str, Any]]:
             seen.add(resolved)
             try:
                 with path.open("r", encoding="utf-8") as handle:
-                    data = yaml.safe_load(handle) or {}
-                if isinstance(data, dict) and data.get("uid") and data.get("type"):
-                    catalog[str(data["uid"])] = data
+                    docs = list(yaml.safe_load_all(handle))
+                for doc in docs:
+                    if isinstance(doc, dict) and doc.get("uid") and doc.get("type"):
+                        catalog[str(doc["uid"])] = doc
             except Exception:
                 pass
+    
+    from uid_utils import derive_inline_relationships
+    derived = derive_inline_relationships(catalog)
+    catalog.update(derived)
     return catalog
 
 
@@ -399,7 +407,7 @@ def main(argv: list[str] | None = None) -> int:
     else:
         system_name = "System"
         container_uids = {str(c.get("uid") or "") for c in all_containers}
-        rels = relationships_for_containers(container_uids, all_relationships if all_relationships else [])
+        rels = relationships_for_containers(container_uids, catalog)
         groups = group_containers_by_sdp(all_containers, catalog)
 
         if args.format in ("structurizr", "both"):

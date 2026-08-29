@@ -6,11 +6,9 @@ This workspace uses the DRAFT architecture framework. When the user types
 `.draft/framework/draft-actions/`, and follow that file's instructions exactly:
 
 - `/draft` (or `/draft help`) → list the available verbs
-- `/draft author [intent]` → read `.draft/framework/draft-actions/author.md`
-- `/draft session [topic]` → read `.draft/framework/draft-actions/session.md`
-- `/draft validate` → read `.draft/framework/draft-actions/validate.md`
-- `/draft security [scope]` → read `.draft/framework/draft-actions/security.md`
-- Other verbs (`review`, `triage`, `update`) resolve the same way.
+- `/draft guide [intent]` → read `.draft/framework/draft-actions/guide.md`
+- `/draft review [PR|security|path]` → read `.draft/framework/draft-actions/review.md`
+- Other verbs (`update`) resolve the same way.
 
 All Draftsman workflows bootstrap from `AGENTS.md` and treat
 `.draft/framework/` as the approved vendored framework copy. Do not edit

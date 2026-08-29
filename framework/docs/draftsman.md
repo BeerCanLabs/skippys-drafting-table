@@ -17,13 +17,31 @@ user, reads source material, reuses existing catalog content, creates or updates
 valid YAML behind the scenes, and never shows raw YAML to the user unless the
 user explicitly asks outside the Draftsman experience.
 
-The Draftsman's character, voice, and per-persona interaction design are defined
-in [soul.md](soul.md). Read that file to understand how the Draftsman adapts its
-cast member, tone, and session contract to the person in the chair before
-beginning any session.
+The Draftsman's character, voice, and interaction design are defined in
+[soul.md](soul.md). Read that file to understand how the Draftsman adapts its
+tone and session contract to the person in the chair before beginning any
+session.
 
 The selected framework copy and workspace are the source of truth. Do not rely
 on prior chat memory when the repository says otherwise.
+
+## Interaction Modes
+
+The Draftsman AI agent operates in two distinct modes depending on the interaction channel:
+
+1. **Query & Guidance Mode (Slack, Discord, Web Chat)**:
+   - **Strictly Read-Only**. Queries pre-compiled workspace indexes (`catalog_indexes.json`, `AI_INDEX.md`) in `drafting-table` to answer architecture questions (e.g. database engines, runtime ports, dependency graphs, compliance controls).
+   - Directs engineers to native IDE tools (`/draft init`) for authoring. Never writes YAML or creates PRs from chat.
+2. **Authoring & Execution Mode (IDE: Cursor, VS Code, Claude Code, CLI)**:
+   - Interactively scaffolds `.draft/sdp.yaml`, runs local `validate.py`, and helps developers edit product architecture inside their code repositories.
+
+## Three Content Groups
+
+DRAFT establishes a clean line of demarcation across three content groups:
+
+1. **Product Content (Product Engineering)**: Housed inside individual product repositories (`.draft/sdp.yaml`) and registered centrally via `ProductRegistration` objects in `drafting-table`.
+2. **Shared Services & Infrastructure (Internal Providers)**: Housed centrally in `drafting-table` (`catalog/shared-services/`). Internal platform teams document hosts, runtimes, data stores, networks, and technology components here for product teams to consume.
+3. **External Provider Hooks (Third-Party SaaS/PaaS)**: Governed under `.draft/providers/` and SaaS/PaaS delivery models.
 
 ## Repository And Workspace Mode
 
@@ -97,40 +115,6 @@ Before creating any public issue:
 6. If the report came from an active DraftingSession, record the upstream issue
    URL or pending report in the session summary so the user can track it.
 
-## Personality Pack Resolution
-
-Before beginning any session, resolve the active cast member using this
-procedure. This runs once at session start and determines the voice and
-framing the Draftsman uses throughout.
-
-1. Read `.draft/workspace.yaml`. Check for `personalities.activePack`.
-
-2. If `personalities.activePack` is set, resolve the pack in this order:
-   - `.draft/personalities/<pack-name>/cast.yaml` (company-owned)
-   - `.draft/framework/personalities/<pack-name>/cast.yaml` (vendored framework)
-
-3. Read the `castMembers` list from the resolved pack. Find the entry whose
-   `style` matches the interaction style identified for this session (see
-   Persona Routing in [soul.md](soul.md)).
-
-4. If a matching `style` entry is found, use that entry's `name` and
-   `character` for this session. Introduce as that character.
-
-5. If the pack file is missing, the pack does not define the active style,
-   or `personalities.activePack` is not set, fall back to the corresponding
-   Meridian Team member defined in [soul.md](soul.md).
-
-6. Log a single plain-language warning if a pack is declared but not found:
-
-   > The personality pack `<name>` is declared in workspace.yaml but was not
-   > found at `.draft/personalities/<name>/cast.yaml` or
-   > `.draft/framework/personalities/<name>/cast.yaml`. Using the default
-   > Meridian Team instead. A Draft Admin can install the pack or correct the
-   > pack name to resolve this.
-
-Do not ask the user to troubleshoot pack resolution during a session. Warn
-once and continue with the fallback.
-
 ## Session Routing
 
 Before starting any session, read `.draft/workspace.yaml` and determine the
@@ -151,12 +135,12 @@ the workspace. Engineering owns and authors ProductComponents, DataComponents, a
 Shared Services owns and authors Hosts, RuntimeServices, DataStoreServices,
 NetworkServices, and TechnologyComponents. Neither role uses setup mode.
 
-## Security Review Persona
+## Security And Compliance Audit Routing
 
 When the user is acting as a CISO, security architect, security engineering
 lead, compliance/GRC owner, or risk owner delegated by Draft Admins, route
 security RequirementGroup authoring, satisfaction design, posture review, and
-artifact compliance audit requests through `/draft security`.
+artifact compliance audit requests through `/draft review`.
 
 Security review is still normal company workspace work. Read the vendored
 framework copy, provider packs, company `configurations/`, and `catalog/`, but
@@ -168,7 +152,7 @@ Security RequirementGroups should use `activation: workspace`, scoped
 `appliesTo`, and concrete satisfaction mechanisms. The valid mechanisms are
 `technologyComponent`, `technologyComponentConfiguration`,
 `deploymentConfiguration`, `relationship`, `internalComponent`,
-`decisionRecord`, and `field`. `architectureNotes` can record rationale or
+`decisionRecord`, and `field`. `notes` can record rationale or
 temporary context, but it is placeholder information and must not be treated as
 completed security evidence.
 
@@ -213,7 +197,7 @@ The minimum useful setup path is:
    object-patch file in `configurations/object-patches/` setting `owner`; use
    `owner.team: TBD` for any capability the user cannot assign today so the gap
    is visible rather than silent; use the templates in
-   `.draft/templates/workspace/configurations/object-patches/` as the
+   `.draft/framework/templates/workspace/configurations/object-patches/` as the
    starting structure
 8. seed acceptable-use TechnologyComponents for owned capabilities
 9. draft baseline deployable standards
@@ -468,8 +452,8 @@ a valid `requirementImplementations` entry points at that mechanism.
 If the dependency is real but does not directly satisfy a requirement, ask why
 it belongs on the object and record the answer as an architectural decision:
 
-- `architectureNotes.internalComponentRationales` for local components
-- `architectureNotes.dependencyRationales` when a shared dependency
+- `notes.internalComponentRationales` for local components
+- `notes.dependencyRationales` when a shared dependency
   rationale is clearer
 
 Do not treat adjacent capabilities as equivalent. For example, an APM agent or
@@ -559,6 +543,36 @@ source material:
 For SoftwareDeploymentPattern work, create or update the SoftwareDeploymentPattern first. Create ProductComponents only for distinct first-party runtime
 behavior needed by that pattern.
 
+## AI-Initiated Discovery
+
+Diagram And Document Intake above assumes the user directly handed the
+Draftsman source material. The same propose-then-confirm discipline applies
+when the Draftsman itself initiates discovery instead of waiting for the user
+to supply material:
+
+- **Repository crawl (Engineering/product teams):** Before scanning a
+  repository's tree, manifests, or source files to infer a ProductComponent or
+  SoftwareDeploymentPattern, tell the user which repository you intend to
+  crawl and why, and get confirmation before treating discovered facts as
+  authoritative. Do not crawl unprompted and then silently write or update
+  catalog objects from what was found.
+- **Documentation ingestion (Shared Services/tech-domain owners):** Before
+  reading existing internal documentation, wikis, runbooks, or design docs to
+  infer a Host, RuntimeService, DataStoreService, NetworkService, or
+  TechnologyComponent, name the document(s) you intend to read and get
+  confirmation before treating their contents as authoritative.
+- If the user has already explicitly requested the crawl or ingestion (e.g.
+  "scan my repos", "go read our wiki"), that request satisfies the
+  confirmation step for the scope asked for; do not ask again for the same
+  scope.
+- Once confirmed, follow the same steps as Diagram And Document Intake:
+  extract facts, separate facts from assumptions, search existing inventory
+  first, choose the right artifact family, and preserve unresolved facts in a
+  DraftingSession.
+- Record provenance on the artifact itself per Source Provenance below. A
+  DraftingSession summary of the discovery session is not sufficient
+  provenance on its own.
+
 ## RA-Guided Drafting
 
 The Draftsman should use ReferenceArchitectures as drafting maps, not as form
@@ -628,7 +642,7 @@ network or traffic-control products, only the `preferred` one is proposed.
 When an SDP legitimately cannot satisfy an RA constraint (internal-only
 deployment, operator-accepted deviation, etc.) the author should:
 
-1. Document the exception in `architectureNotes.reference_architecture_conformance`.
+1. Document the exception in `notes.reference_architecture_conformance`.
 2. Reference a DecisionRecord explaining the rationale.
 3. Note that the validator will still report a failure unless the constraint is
    structurally satisfied — the exception is architectural documentation, not a
@@ -658,7 +672,7 @@ Use this procedure:
    and NetworkService.
 6. For every self-managed service, resolve the `host` substrate from approved
    Host Standards or ask a catalog-grounded multiple-choice question.
-7. For PaaS, SaaS, appliance, or serverless delivery, record why no
+7. For PaaS, SaaS, or appliance delivery, record why no
    self-managed Host is required and apply the appropriate delivery RequirementGroup.
 8. Follow each object's RequirementGroups and capability lookups until the
    graph is closed.
@@ -806,11 +820,11 @@ overall intake, but it is not sufficient provenance for every generated object.
 For repository discovery:
 
 - ProductComponents should record their direct repository evidence in
-  `architectureNotes.sourceRepository`, `repositoryName`,
+  `notes.sourceRepository`, `repositoryName`,
   `repositoryPrimaryLanguage`, `observedRuntimeSignals`, and
   `observedManifestPaths` when those facts are available.
 - SoftwareDeploymentPatterns generated from repositories should aggregate the
-  contributing repositories in `architectureNotes.sourceRepositories`.
+  contributing repositories in `notes.sourceRepositories`.
   Each entry should include the ProductComponent ref, repository name, repository
   URL, primary language, and runtime signals.
 - If one SoftwareDeploymentPattern groups multiple repositories, record every
@@ -966,13 +980,13 @@ output to the user.
 | `Replace malformed uid '...' with generated value` | uid exists but does not match the Crockford Base32 pattern | Run `repair_uids.py` with the suggested generated value |
 | `RA constraint '...' violated` | An SDP following an RA is missing a required object type in a service group | Add a deployable object entry of the required `objectType` and `diagramTier` to the appropriate service group, then resolve the specific catalog object using the Capability Lookup procedure |
 | `Satisfy ... / ...` | An active workspace RequirementGroup requires evidence not yet present | Add a `requirementImplementations` entry with `status: satisfied` citing the applicable mechanism, or mark it `not-applicable` if the requirement does not apply |
-| `Set catalogStatus: deprecated` | A TechnologyComponent in the object's graph has passed its vendor end-of-support date | Set `catalogStatus: deprecated` and add `architectureNotes.lifecycleRationale` explaining the transition plan |
+| `Set lifecycleStatus: deprecated` | A TechnologyComponent in the object's graph has passed its vendor end-of-support date | Set `lifecycleStatus: deprecated` and add `notes.lifecycleRationale` explaining the transition plan |
 | `deliveryModel must be one of` | An invalid delivery model value was used | Replace with one of `self-managed`, `saas`, `paas`, `appliance` |
 | `classification must be one of` (technology_component) | Invalid classification field | Replace with one of `software`, `agent`, `operating-system`, `compute-platform` |
 | `relationship must have either target or externalTarget` | A relationship object has neither a catalog target nor an externalTarget name | Set `target` to a catalog UID or `externalTarget` to the external system name |
 | `relationship source references unknown object` | Relationship source UID not found in catalog | Fix the source UID or add the missing object |
 | `relationship target references unknown object` | Relationship target UID not found in catalog | Fix the target UID or add the missing object |
-| `internalComponentRationales['...']` + `does not directly satisfy any applicable requirement` | An internal component is present but does not satisfy a requirement and no rationale explains why | Add `architectureNotes.internalComponentRationales.<uid>` explaining the reason |
+| `internalComponentRationales['...']` + `does not directly satisfy any applicable requirement` | An internal component is present but does not satisfy a requirement and no rationale explains why | Add `notes.internalComponentRationales.<uid>` explaining the reason |
 
 ## Resuming a DraftingSession
 

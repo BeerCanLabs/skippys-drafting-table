@@ -1,0 +1,17 @@
+schemaVersion: '1.0'
+uid: ${UID}
+type: software_deployment_pattern
+name: ${NAME}
+catalogStatus: complete
+lifecycleStatus: preferred
+followsReferenceArchitecture: ${REFERENCE_ARCHITECTURE_UID}
+businessContext:
+  pillar: ${PILLAR_ID}
+  productFamily: ${PRODUCT_FAMILY}
+serviceGroups:
+  - name: Application Services
+    deploymentTarget: ${DEPLOYMENT_TARGET}
+    substrate: ${RUNTIME_SERVICE_UID}
+    deployableObjects:
+      - ref: ${PRODUCT_COMPONENT_UID}
+        diagramTier: application
