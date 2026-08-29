@@ -9,7 +9,7 @@
 #    pull requests" must be enabled.  The default GITHUB_TOKEN is otherwise
 #    sufficient — no extra secrets required.
 # 3. Run it manually from Actions → DRAFT Framework Update → Run workflow,
-#    or let the Monday 09:17 UTC schedule run it automatically.
+#    or let the Sunday 09:17 UTC schedule run it automatically.
 #
 # WHAT IT DOES
 # ------------
@@ -31,7 +31,7 @@ name: DRAFT Framework Update
 
 on:
   schedule:
-    - cron: "17 9 * * 1"
+    - cron: "17 9 * * 0"
   workflow_dispatch:
     inputs:
       target_ref:
