@@ -1,34 +1,53 @@
 schemaVersion: '1.0'
-uid: 01M15NEKT7-EKAR
-type: product_component
-name: Skippy's Submind Agent Runner Container
-description: First-party agent container running LLM reasoning loops, tool dispatch, and DRAFT catalog queries.
-version: 1.2.0
-classification: worker
+uid: 01M162FHHS-TWRB
+type: software_deployment_pattern
+name: Aiden Game Platform — Tier 1 Static Web Game Pattern
+description: Standard deployment pattern for client-side HTML5/Canvas games hosted on GitHub Pages for immediate UAT playtesting with browser LocalStorage state.
+version: 1.0.0
 catalogStatus: complete
 lifecycleStatus: preferred
-repoUrl: https://github.com/dsackr/hermes-gcp-factory
 owner:
-  team: platform-ai-team
-  contact: platform-ai@example.com
-language: python
+  team: switch-product-team
+  contact: switch-team@example.com
 tags:
-- agent-runner
-- python
-- containers
+- software-deployment-pattern
+- game-platform
+- tier1-static
+- github-pages
+- uat
+serviceGroups:
+- id: game-client-group
+  name: Client Presentation Group
+  deploymentTarget: GitHub Pages Managed Edge
+  components:
+  - productComponent: 01M15NEKT7-EKAR
 decisionRecords:
 - ref: 01M15NFKKN-74NY
-  key: runtimeRequirement
+  key: noApplicablePattern
 - ref: 01M15NFKKN-74NY
-  key: aiGatewayRoutingDecision
+  key: interServiceConnections
 - ref: 01M15NFKKN-74NY
-  key: secretsManagementDecision
+  key: deploymentTargets
+- ref: 01M15NFKKN-74NY
+  key: availabilityRequirement
+- ref: 01M15NFKKN-74NY
+  key: externalDependencies
+- ref: 01M15NFKKN-74NY
+  key: dataClassification
+- ref: 01M15NFKKN-74NY
+  key: failureDomain
+- ref: 01M15NFKKN-74NY
+  key: patternDeviations
 - ref: 01M15NFKKN-74NY
   key: localValidationDecision
 - ref: 01M15NFKKN-74NY
   key: productRegistrationDecision
 - ref: 01M15NFKKN-74NY
   key: modelInferenceSpecDecision
+- ref: 01M15NFKKN-74NY
+  key: aiGatewayRoutingDecision
+- ref: 01M15NFKKN-74NY
+  key: secretsManagementDecision
 - ref: 01M15NFKKN-74NY
   key: databaseMigrationStrategyDecision
 - ref: 01M15NFKKN-74NY
@@ -72,4 +91,10 @@ decisionRecords:
 - ref: 01M15NFKKN-74NY
   key: gameRepoScaffoldingDecision
 notes:
-  security_monitoring: Cloud Audit Logs enabled.
+  availabilityTarget: 99.9%
+  availabilityRequirement: High availability static CDN hosting via GitHub Pages
+  dataClassification: Internal
+  deploymentTargets: GitHub Pages static site deployment
+  failureDomain: GitHub Pages CDN regional domain
+  patternDeviations: none
+  externalDependencies: GitHub Pages static hosting

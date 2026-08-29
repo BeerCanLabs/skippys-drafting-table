@@ -1,0 +1,72 @@
+schemaVersion: '1.0'
+uid: 01M162FHHS-XAJQ
+type: requirement_group
+name: Aiden Game Platform Architecture & UAT Standards
+description: Governed architecture standards for Switch to build, scaffold, and deploy games for Aiden (tier classification, persistent storage, auth/user profiles, GitHub Pages / Cloud Run UAT delivery).
+version: 1.0.0
+catalogStatus: complete
+lifecycleStatus: preferred
+activation: always
+appliesTo:
+- product_component
+- software_deployment_pattern
+authority:
+  name: DRAFT Framework
+  shortName: DRAFT
+  source: DRAFT Framework
+owner:
+  team: switch-product-team
+  contact: switch-team@example.com
+requirements:
+- id: req-game-tier-classification
+  description: Every game built by Switch MUST be classified into Tier 1 (Static Web Game), Tier 2 (Persistent Web Game with Auth/DB), or Tier 3 (Real-Time Multiplayer).
+  canBeSatisfiedBy:
+  - mechanism: field
+    key: gameTierClassification
+  - mechanism: decisionRecord
+    key: gameTierClassificationDecision
+  minimumSatisfactions: 1
+  requirementMode: mandatory
+  naAllowed: false
+  validAnswerTypes:
+  - field
+  - decisionRecord
+- id: req-game-uat-deployment
+  description: Every game MUST include automated CI/CD deployment pipelines providing an accessible UAT link for Aiden to play and test (GitHub Pages for Tier 1, GitHub Pages + Cloud Run for Tier 2).
+  canBeSatisfiedBy:
+  - mechanism: field
+    key: gameUatDeployment
+  - mechanism: decisionRecord
+    key: gameUatDeploymentDecision
+  minimumSatisfactions: 1
+  requirementMode: mandatory
+  naAllowed: false
+  validAnswerTypes:
+  - field
+  - decisionRecord
+- id: req-game-auth-profile-persistence
+  description: Tier 2+ persistent games MUST use standard authentication (JWT / Secret Manager / Auth Provider) and persistent storage (Cloud SQL Postgres / Firestore) for user profiles and saved state.
+  canBeSatisfiedBy:
+  - mechanism: field
+    key: gameAuthPersistence
+  - mechanism: decisionRecord
+    key: gameAuthPersistenceDecision
+  minimumSatisfactions: 1
+  requirementMode: mandatory
+  naAllowed: true
+  validAnswerTypes:
+  - field
+  - decisionRecord
+- id: req-game-repo-scaffolding
+  description: Every game repository created by Switch MUST be bootstrapped with MATURITY.md, AGENTS.md, KPF.md, and .draft/sdp.yaml registered in drafting-table.
+  canBeSatisfiedBy:
+  - mechanism: field
+    key: gameRepoScaffolding
+  - mechanism: decisionRecord
+    key: gameRepoScaffoldingDecision
+  minimumSatisfactions: 1
+  requirementMode: mandatory
+  naAllowed: false
+  validAnswerTypes:
+  - field
+  - decisionRecord

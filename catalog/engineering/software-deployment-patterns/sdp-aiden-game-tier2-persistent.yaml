@@ -1,28 +1,30 @@
 schemaVersion: '1.0'
-uid: 01M15NEKT7-S14J
+uid: 01M162FHHS-ETJ8
 type: software_deployment_pattern
-name: Skippy's Submind Agent Factory Deployment Pattern
-description: Serverless containerized agent factory deployment pattern on GCP Cloud Run with Secret Manager IAM bindings and Cloud SQL datastores.
-version: 1.2.0
+name: Aiden Game Platform — Tier 2 Persistent Web Game Pattern
+description: Standard full-stack game pattern combining a client UI on GitHub Pages, Cloud Run backend API, GCP Secret Manager Auth JWTs, and Cloud SQL Postgres for user profiles & saved game state.
+version: 1.0.0
 catalogStatus: complete
 lifecycleStatus: preferred
 owner:
-  team: platform-ai-team
-  contact: platform-ai@example.com
+  team: switch-product-team
+  contact: switch-team@example.com
 tags:
 - software-deployment-pattern
-- agent-factory
-- gcp
+- game-platform
+- tier2-persistent
 - cloud-run
+- cloud-sql
+- uat
 serviceGroups:
-- id: agent-factory-group
-  name: Agent Factory Processing Group
-  deploymentTarget: GCP Cloud Run Serverless Substrate in us-central1
+- id: game-fullstack-group
+  name: Full-Stack Game Processing Group
+  deploymentTarget: GitHub Pages Frontend + Cloud Run API Backend in us-central1
   components:
   - productComponent: 01M15NEKT7-EKAR
 deployableObjects:
+- host: 01M15NEKT7-1SN8
 - dataStoreService: 01M15NEKT7-H42Y
-- aiGateway: 01M15NEKT7-QKPW
 decisionRecords:
 - ref: 01M15NFKKN-74NY
   key: noApplicablePattern
@@ -94,14 +96,9 @@ decisionRecords:
   key: gameRepoScaffoldingDecision
 notes:
   availabilityTarget: 99.9%
-  availabilityRequirement: Active-active container execution on GCP Cloud Run
+  availabilityRequirement: High availability API execution on GCP Cloud Run
   dataClassification: Internal
-  deploymentTargets: GCP Cloud Run Serverless Substrate in us-central1
-  failureDomain: Cloud Run regional availability domain
+  deploymentTargets: GCP Cloud Run API + GitHub Pages Static Frontend
+  failureDomain: Cloud Run regional domain
   patternDeviations: none
-  externalDependencies: GCP Secret Manager and Cloud SQL Postgres
-  localValidation: Pre-commit validation executed
-  productRegistration: Registered in drafting-table
-  modelInferenceSpec: Claude 3.5 Sonnet / Claude 3 Haiku specs declared
-  aiGatewayRouting: Routed via Skippy Submind AI Gateway
-  secretsManagement: Dynamic GCP Secret Manager resolution
+  externalDependencies: Cloud SQL Postgres and Secret Manager

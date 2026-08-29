@@ -43,6 +43,7 @@ skills:
   - draftsman-query
   - draftsman-standards
   - draftsman-engineering-maturity
+  - switch-game-architect
 mcps:
   - agent/mcp/draftsman-mcp.json
 capabilities:

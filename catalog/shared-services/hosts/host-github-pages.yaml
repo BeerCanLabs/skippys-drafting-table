@@ -1,0 +1,28 @@
+schemaVersion: '1.0'
+uid: 01M162FHHS-3STQ
+type: host
+name: GitHub Pages Static Web Game Host
+description: Managed static hosting edge on GitHub Pages for hosting client-side HTML5/JS canvas games and UAT web apps.
+version: 1.0.0
+catalogStatus: complete
+lifecycleStatus: preferred
+vendor: GitHub
+productName: GitHub Pages
+productVersion: 1.0.0
+owner:
+  team: platform-engineering
+  contact: platform-engineering@example.com
+tags:
+- host
+- github-pages
+- static-hosting
+- uat
+provisioningModel: deployable
+deployablePackage:
+  registry: github
+  source: company-infrastructure/platform-iac-compute
+  version: v1.0.0
+  modulePath: modules/github-pages
+notes:
+  security_monitoring: HTTPS enforced on custom domain or github.io.
+  log_management: Web analytics and build deployment logs in GitHub Actions.
