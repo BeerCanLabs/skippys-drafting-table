@@ -222,6 +222,8 @@ These YAML files are framework-provided opt-in patterns. Company workspaces may 
 | UID | Name | Type | Tags | Description | Path |
 |---|---|---|---|---|---|
 | 01KTWYEE98-D3QV | AI-Enabled Application Pattern | reference_architecture | reference-architecture, ai, rag | Standard pattern for applications utilizing Artificial Intelligence and Large Language Models (LLMs). Integrates an a... | community/reference-architectures/ra-ai-enabled-application.yaml |
+| 01M1637YZS-PZSH | Tier 1 Static Web Game Platform | reference_architecture | reference-architecture, game-platform, tier1-static, github-pages, uat | Reference architecture for client-side HTML5/Canvas games hosted on GitHub Pages for immediate UAT playtesting with b... | community/reference-architectures/ra-aiden-game-tier1-static.yaml |
+| 01M1637YZT-QZ2Z | Tier 2 Persistent Web Game Platform | reference_architecture | reference-architecture, game-platform, tier2-persistent, cloud-run, cloud-sql, uat | Reference architecture combining a client UI on GitHub Pages, Cloud Run backend API, GCP Secret Manager Auth JWTs, an... | community/reference-architectures/ra-aiden-game-tier2-persistent.yaml |
 | 01KV0REFAR-CMSV | Containerized Microservices | reference_architecture | reference-architecture, microservices, containers, starter | Starter pattern for independently deployable services running on a container orchestration platform with service-to-s... | community/reference-architectures/ra-containerized-microservices.yaml |
 | GM7YJ3ZSA0-WHSN | Event-Driven Integration | reference_architecture | reference-architecture, event-driven, integration | Deployment pattern for systems coordinated through asynchronous events, queues, streams, or pub/sub topics. Use this... | community/reference-architectures/ra-event-driven-integration.yaml |
 | 01KV0REFAR-EVNT | Event-Driven Architecture | reference_architecture | reference-architecture, event-driven, messaging, starter | Starter pattern for asynchronous systems coordinated by messaging, event routing, producers, consumers, and eventuall... | community/reference-architectures/ra-event-driven.yaml |
@@ -456,7 +458,7 @@ These are sample catalog objects used to validate and demonstrate the framework.
 | framework/configurations/requirement-groups | 21 |
 | framework/configurations/reference-architectures | 0 |
 | framework/configurations/domains | 11 |
-| community/reference-architectures | 10 |
+| community/reference-architectures | 12 |
 | examples/catalog/engineering/product-components | 1 |
 | examples/catalog/engineering/data-components | 1 |
 | examples/catalog/engineering/software-deployment-patterns | 1 |

@@ -17289,6 +17289,363 @@ window.DRAFT_BROWSER_DATA = {
       "inboundRelationships": []
     },
     {
+      "id": "01M1637YZS-PZSH",
+      "uid": "01M1637YZS-PZSH",
+      "name": "Tier 1 Static Web Game Platform",
+      "aliases": [],
+      "type": "reference_architecture",
+      "typeLabel": "ReferenceArchitecture",
+      "filterType": "reference_architecture",
+      "category": "",
+      "deliveryModel": "",
+      "domain": "",
+      "description": "Reference architecture for client-side HTML5/Canvas games hosted on GitHub Pages for immediate UAT playtesting with browser LocalStorage state.",
+      "version": "",
+      "catalogStatus": "complete",
+      "lifecycleStatus": "preferred",
+      "status": "",
+      "businessContext": {},
+      "product": "",
+      "runsOn": "",
+      "subtype": "",
+      "vendor": "",
+      "productName": "",
+      "productVersion": "",
+      "classification": "",
+      "platformDependency": "",
+      "capabilities": [],
+      "configurations": [],
+      "networkPlacement": "",
+      "patchingOwner": "",
+      "complianceCerts": [],
+      "requirementGroups": [],
+      "requirementImplementations": [],
+      "dataLeavesInfrastructure": null,
+      "dataResidencyCommitment": "",
+      "dpaNotes": "",
+      "vendorSLA": "",
+      "authenticationModel": "",
+      "incidentNotificationProcess": "",
+      "owner": {},
+      "definitionOwner": {},
+      "provider": {},
+      "authority": {},
+      "shape": "hexagon",
+      "color": "#1f8a5b",
+      "source": "community/reference-architectures/ra-aiden-game-tier1-static.yaml",
+      "tags": [
+        "reference-architecture",
+        "game-platform",
+        "tier1-static",
+        "github-pages",
+        "uat"
+      ],
+      "ardCategory": "",
+      "internalComponents": [],
+      "notes": {
+        "patternRationale": "Tier 1 static games require zero server-side infrastructure, minimizing cost and maintenance while providing instant UAT playtesting.",
+        "onboardingQuestions": "Ask whether the game requires server-side persistence or user accounts. If no backend is required, use Tier 1."
+      },
+      "requirements": [],
+      "implementations": [],
+      "appliesTo": {},
+      "inherits": "",
+      "scalingUnits": [],
+      "networkZones": [],
+      "sdpConnections": [],
+      "serviceGroups": [
+        {
+          "name": "Presentation Tier",
+          "deployableObjects": [
+            {
+              "slot": "static-client-host",
+              "objectType": "host",
+              "diagramTier": "presentation",
+              "notes": "GitHub Pages static web hosting edge for UAT playtesting."
+            }
+          ]
+        }
+      ],
+      "tierVariants": [],
+      "tierId": "",
+      "purpose": "",
+      "availabilityExpectation": "",
+      "costPosture": "",
+      "complianceScope": [],
+      "parameterSurface": [],
+      "followsReferenceArchitecture": "",
+      "decisionRecords": [],
+      "affectedComponent": "",
+      "impact": "",
+      "mitigationPath": "",
+      "decisionRationale": "",
+      "relatedDecisionRecords": [],
+      "linkedObject": "",
+      "primaryObjectType": "",
+      "primaryObjectUid": "",
+      "generatedObjects": [],
+      "unresolvedQuestions": [],
+      "assumptions": [],
+      "nextSteps": [],
+      "defaultSelection": false,
+      "requirementCount": 0,
+      "hasRiskRef": false,
+      "outboundRefs": [],
+      "referencedBy": [],
+      "editorSchema": {
+        "requiredFields": [
+          "schemaVersion",
+          "uid",
+          "type",
+          "name",
+          "catalogStatus",
+          "lifecycleStatus"
+        ],
+        "optionalFields": [
+          "aliases",
+          "description",
+          "version",
+          "owner",
+          "tags",
+          "patternType",
+          "notes",
+          "applicableDefinitionChecklist",
+          "scalingUnits",
+          "serviceGroups",
+          "requirementGroups",
+          "requirementImplementations",
+          "constraints"
+        ],
+        "fieldTypes": {
+          "aliases": "list",
+          "owner": "dict",
+          "tags": "list",
+          "notes": "dict",
+          "scalingUnits": "list",
+          "serviceGroups": "list",
+          "requirementGroups": "list",
+          "requirementImplementations": "list",
+          "constraints": "list"
+        },
+        "enumFields": {
+          "catalogStatus": [
+            "stub",
+            "incomplete",
+            "complete"
+          ],
+          "lifecycleStatus": [
+            "candidate",
+            "preferred",
+            "existing-only",
+            "deprecated",
+            "retired"
+          ]
+        },
+        "enumListFields": {},
+        "collectionSchemas": {
+          "scalingUnits": "scalingUnit",
+          "serviceGroups": "serviceGroup",
+          "requirementImplementations": "requirementImplementation",
+          "constraints": "raConstraint"
+        },
+        "schemaPath": "framework/schemas/reference-architecture.schema.yaml"
+      },
+      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M1637YZS-PZSH\",\n  \"type\": \"reference_architecture\",\n  \"name\": \"Tier 1 Static Web Game Platform\",\n  \"description\": \"Reference architecture for client-side HTML5/Canvas games hosted on GitHub Pages for immediate UAT playtesting with browser LocalStorage state.\",\n  \"patternType\": \"static-web-game\",\n  \"catalogStatus\": \"complete\",\n  \"lifecycleStatus\": \"preferred\",\n  \"tags\": [\n    \"reference-architecture\",\n    \"game-platform\",\n    \"tier1-static\",\n    \"github-pages\",\n    \"uat\"\n  ],\n  \"applicableDefinitionChecklist\": [\n    \"A client-side presentation tier (HTML5/Canvas) is present.\",\n    \"Hosting is externalized to GitHub Pages managed edge.\",\n    \"Client state is stored in browser LocalStorage or SessionStorage.\"\n  ],\n  \"serviceGroups\": [\n    {\n      \"name\": \"Presentation Tier\",\n      \"deployableObjects\": [\n        {\n          \"slot\": \"static-client-host\",\n          \"objectType\": \"host\",\n          \"diagramTier\": \"presentation\",\n          \"notes\": \"GitHub Pages static web hosting edge for UAT playtesting.\"\n        }\n      ]\n    }\n  ],\n  \"notes\": {\n    \"patternRationale\": \"Tier 1 static games require zero server-side infrastructure, minimizing cost and maintenance while providing instant UAT playtesting.\",\n    \"onboardingQuestions\": \"Ask whether the game requires server-side persistence or user accounts. If no backend is required, use Tier 1.\"\n  },\n  \"constraints\": [\n    {\n      \"id\": \"static-host-required\",\n      \"description\": \"Tier 1 static games require a presentation-tier host slot.\",\n      \"require\": [\n        {\n          \"objectType\": \"host\",\n          \"diagramTier\": \"presentation\"\n        }\n      ]\n    }\n  ],\n  \"requirementGroups\": [],\n  \"requirementImplementations\": [],\n  \"_source\": \"community/reference-architectures/ra-aiden-game-tier1-static.yaml\"\n}",
+      "existsInCatalog": true,
+      "outboundRelationships": [],
+      "inboundRelationships": []
+    },
+    {
+      "id": "01M1637YZT-QZ2Z",
+      "uid": "01M1637YZT-QZ2Z",
+      "name": "Tier 2 Persistent Web Game Platform",
+      "aliases": [],
+      "type": "reference_architecture",
+      "typeLabel": "ReferenceArchitecture",
+      "filterType": "reference_architecture",
+      "category": "",
+      "deliveryModel": "",
+      "domain": "",
+      "description": "Reference architecture combining a client UI on GitHub Pages, Cloud Run backend API, GCP Secret Manager Auth JWTs, and Cloud SQL Postgres for user profiles & saved game state.",
+      "version": "",
+      "catalogStatus": "complete",
+      "lifecycleStatus": "preferred",
+      "status": "",
+      "businessContext": {},
+      "product": "",
+      "runsOn": "",
+      "subtype": "",
+      "vendor": "",
+      "productName": "",
+      "productVersion": "",
+      "classification": "",
+      "platformDependency": "",
+      "capabilities": [],
+      "configurations": [],
+      "networkPlacement": "",
+      "patchingOwner": "",
+      "complianceCerts": [],
+      "requirementGroups": [],
+      "requirementImplementations": [],
+      "dataLeavesInfrastructure": null,
+      "dataResidencyCommitment": "",
+      "dpaNotes": "",
+      "vendorSLA": "",
+      "authenticationModel": "",
+      "incidentNotificationProcess": "",
+      "owner": {},
+      "definitionOwner": {},
+      "provider": {},
+      "authority": {},
+      "shape": "hexagon",
+      "color": "#1f8a5b",
+      "source": "community/reference-architectures/ra-aiden-game-tier2-persistent.yaml",
+      "tags": [
+        "reference-architecture",
+        "game-platform",
+        "tier2-persistent",
+        "cloud-run",
+        "cloud-sql",
+        "uat"
+      ],
+      "ardCategory": "",
+      "internalComponents": [],
+      "notes": {
+        "patternRationale": "Tier 2 persistent games provide cloud save states and user accounts while retaining cost-efficiency via serverless execution.",
+        "onboardingQuestions": "Ask which datastore and auth mechanism will be used for user profiles."
+      },
+      "requirements": [],
+      "implementations": [],
+      "appliesTo": {},
+      "inherits": "",
+      "scalingUnits": [],
+      "networkZones": [],
+      "sdpConnections": [],
+      "serviceGroups": [
+        {
+          "name": "Presentation Tier",
+          "deployableObjects": [
+            {
+              "slot": "static-client-host",
+              "objectType": "host",
+              "diagramTier": "presentation",
+              "notes": "GitHub Pages static web hosting edge."
+            }
+          ]
+        },
+        {
+          "name": "Application Tier",
+          "deployableObjects": [
+            {
+              "slot": "api-runtime-host",
+              "objectType": "host",
+              "diagramTier": "application",
+              "notes": "Cloud Run serverless container runtime for state API."
+            }
+          ]
+        },
+        {
+          "name": "Data Tier",
+          "deployableObjects": [
+            {
+              "slot": "persistent-game-store",
+              "objectType": "data_store_service",
+              "diagramTier": "data",
+              "notes": "Cloud SQL Postgres database for user profiles, save slots, and leaderboards."
+            }
+          ]
+        }
+      ],
+      "tierVariants": [],
+      "tierId": "",
+      "purpose": "",
+      "availabilityExpectation": "",
+      "costPosture": "",
+      "complianceScope": [],
+      "parameterSurface": [],
+      "followsReferenceArchitecture": "",
+      "decisionRecords": [],
+      "affectedComponent": "",
+      "impact": "",
+      "mitigationPath": "",
+      "decisionRationale": "",
+      "relatedDecisionRecords": [],
+      "linkedObject": "",
+      "primaryObjectType": "",
+      "primaryObjectUid": "",
+      "generatedObjects": [],
+      "unresolvedQuestions": [],
+      "assumptions": [],
+      "nextSteps": [],
+      "defaultSelection": false,
+      "requirementCount": 0,
+      "hasRiskRef": false,
+      "outboundRefs": [],
+      "referencedBy": [],
+      "editorSchema": {
+        "requiredFields": [
+          "schemaVersion",
+          "uid",
+          "type",
+          "name",
+          "catalogStatus",
+          "lifecycleStatus"
+        ],
+        "optionalFields": [
+          "aliases",
+          "description",
+          "version",
+          "owner",
+          "tags",
+          "patternType",
+          "notes",
+          "applicableDefinitionChecklist",
+          "scalingUnits",
+          "serviceGroups",
+          "requirementGroups",
+          "requirementImplementations",
+          "constraints"
+        ],
+        "fieldTypes": {
+          "aliases": "list",
+          "owner": "dict",
+          "tags": "list",
+          "notes": "dict",
+          "scalingUnits": "list",
+          "serviceGroups": "list",
+          "requirementGroups": "list",
+          "requirementImplementations": "list",
+          "constraints": "list"
+        },
+        "enumFields": {
+          "catalogStatus": [
+            "stub",
+            "incomplete",
+            "complete"
+          ],
+          "lifecycleStatus": [
+            "candidate",
+            "preferred",
+            "existing-only",
+            "deprecated",
+            "retired"
+          ]
+        },
+        "enumListFields": {},
+        "collectionSchemas": {
+          "scalingUnits": "scalingUnit",
+          "serviceGroups": "serviceGroup",
+          "requirementImplementations": "requirementImplementation",
+          "constraints": "raConstraint"
+        },
+        "schemaPath": "framework/schemas/reference-architecture.schema.yaml"
+      },
+      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M1637YZT-QZ2Z\",\n  \"type\": \"reference_architecture\",\n  \"name\": \"Tier 2 Persistent Web Game Platform\",\n  \"description\": \"Reference architecture combining a client UI on GitHub Pages, Cloud Run backend API, GCP Secret Manager Auth JWTs, and Cloud SQL Postgres for user profiles & saved game state.\",\n  \"patternType\": \"persistent-web-game\",\n  \"catalogStatus\": \"complete\",\n  \"lifecycleStatus\": \"preferred\",\n  \"tags\": [\n    \"reference-architecture\",\n    \"game-platform\",\n    \"tier2-persistent\",\n    \"cloud-run\",\n    \"cloud-sql\",\n    \"uat\"\n  ],\n  \"applicableDefinitionChecklist\": [\n    \"A client-side presentation tier (GitHub Pages) is present.\",\n    \"An application API tier (Cloud Run) is present for user authentication and state APIs.\",\n    \"Durable user state and profiles are externalized to a governed DataStoreService (Cloud SQL Postgres).\"\n  ],\n  \"serviceGroups\": [\n    {\n      \"name\": \"Presentation Tier\",\n      \"deployableObjects\": [\n        {\n          \"slot\": \"static-client-host\",\n          \"objectType\": \"host\",\n          \"diagramTier\": \"presentation\",\n          \"notes\": \"GitHub Pages static web hosting edge.\"\n        }\n      ]\n    },\n    {\n      \"name\": \"Application Tier\",\n      \"deployableObjects\": [\n        {\n          \"slot\": \"api-runtime-host\",\n          \"objectType\": \"host\",\n          \"diagramTier\": \"application\",\n          \"notes\": \"Cloud Run serverless container runtime for state API.\"\n        }\n      ]\n    },\n    {\n      \"name\": \"Data Tier\",\n      \"deployableObjects\": [\n        {\n          \"slot\": \"persistent-game-store\",\n          \"objectType\": \"data_store_service\",\n          \"diagramTier\": \"data\",\n          \"notes\": \"Cloud SQL Postgres database for user profiles, save slots, and leaderboards.\"\n        }\n      ]\n    }\n  ],\n  \"notes\": {\n    \"patternRationale\": \"Tier 2 persistent games provide cloud save states and user accounts while retaining cost-efficiency via serverless execution.\",\n    \"onboardingQuestions\": \"Ask which datastore and auth mechanism will be used for user profiles.\"\n  },\n  \"constraints\": [\n    {\n      \"id\": \"app-runtime-required\",\n      \"description\": \"Tier 2 games require an application-tier host.\",\n      \"require\": [\n        {\n          \"objectType\": \"host\",\n          \"diagramTier\": \"application\"\n        }\n      ]\n    },\n    {\n      \"id\": \"data-store-required\",\n      \"description\": \"Tier 2 games require a data-tier DataStoreService.\",\n      \"require\": [\n        {\n          \"objectType\": \"data_store_service\",\n          \"diagramTier\": \"data\"\n        }\n      ]\n    }\n  ],\n  \"requirementGroups\": [],\n  \"requirementImplementations\": [],\n  \"_source\": \"community/reference-architectures/ra-aiden-game-tier2-persistent.yaml\"\n}",
+      "existsInCatalog": true,
+      "outboundRelationships": [],
+      "inboundRelationships": []
+    },
+    {
       "id": "01KV0REFAR-CMSV",
       "uid": "01KV0REFAR-CMSV",
       "name": "Containerized Microservices",
@@ -82220,6 +82577,363 @@ window.DRAFT_BROWSER_DATA = {
       "outboundRelationships": [],
       "inboundRelationships": []
     },
+    "01M1637YZS-PZSH": {
+      "id": "01M1637YZS-PZSH",
+      "uid": "01M1637YZS-PZSH",
+      "name": "Tier 1 Static Web Game Platform",
+      "aliases": [],
+      "type": "reference_architecture",
+      "typeLabel": "ReferenceArchitecture",
+      "filterType": "reference_architecture",
+      "category": "",
+      "deliveryModel": "",
+      "domain": "",
+      "description": "Reference architecture for client-side HTML5/Canvas games hosted on GitHub Pages for immediate UAT playtesting with browser LocalStorage state.",
+      "version": "",
+      "catalogStatus": "complete",
+      "lifecycleStatus": "preferred",
+      "status": "",
+      "businessContext": {},
+      "product": "",
+      "runsOn": "",
+      "subtype": "",
+      "vendor": "",
+      "productName": "",
+      "productVersion": "",
+      "classification": "",
+      "platformDependency": "",
+      "capabilities": [],
+      "configurations": [],
+      "networkPlacement": "",
+      "patchingOwner": "",
+      "complianceCerts": [],
+      "requirementGroups": [],
+      "requirementImplementations": [],
+      "dataLeavesInfrastructure": null,
+      "dataResidencyCommitment": "",
+      "dpaNotes": "",
+      "vendorSLA": "",
+      "authenticationModel": "",
+      "incidentNotificationProcess": "",
+      "owner": {},
+      "definitionOwner": {},
+      "provider": {},
+      "authority": {},
+      "shape": "hexagon",
+      "color": "#1f8a5b",
+      "source": "community/reference-architectures/ra-aiden-game-tier1-static.yaml",
+      "tags": [
+        "reference-architecture",
+        "game-platform",
+        "tier1-static",
+        "github-pages",
+        "uat"
+      ],
+      "ardCategory": "",
+      "internalComponents": [],
+      "notes": {
+        "patternRationale": "Tier 1 static games require zero server-side infrastructure, minimizing cost and maintenance while providing instant UAT playtesting.",
+        "onboardingQuestions": "Ask whether the game requires server-side persistence or user accounts. If no backend is required, use Tier 1."
+      },
+      "requirements": [],
+      "implementations": [],
+      "appliesTo": {},
+      "inherits": "",
+      "scalingUnits": [],
+      "networkZones": [],
+      "sdpConnections": [],
+      "serviceGroups": [
+        {
+          "name": "Presentation Tier",
+          "deployableObjects": [
+            {
+              "slot": "static-client-host",
+              "objectType": "host",
+              "diagramTier": "presentation",
+              "notes": "GitHub Pages static web hosting edge for UAT playtesting."
+            }
+          ]
+        }
+      ],
+      "tierVariants": [],
+      "tierId": "",
+      "purpose": "",
+      "availabilityExpectation": "",
+      "costPosture": "",
+      "complianceScope": [],
+      "parameterSurface": [],
+      "followsReferenceArchitecture": "",
+      "decisionRecords": [],
+      "affectedComponent": "",
+      "impact": "",
+      "mitigationPath": "",
+      "decisionRationale": "",
+      "relatedDecisionRecords": [],
+      "linkedObject": "",
+      "primaryObjectType": "",
+      "primaryObjectUid": "",
+      "generatedObjects": [],
+      "unresolvedQuestions": [],
+      "assumptions": [],
+      "nextSteps": [],
+      "defaultSelection": false,
+      "requirementCount": 0,
+      "hasRiskRef": false,
+      "outboundRefs": [],
+      "referencedBy": [],
+      "editorSchema": {
+        "requiredFields": [
+          "schemaVersion",
+          "uid",
+          "type",
+          "name",
+          "catalogStatus",
+          "lifecycleStatus"
+        ],
+        "optionalFields": [
+          "aliases",
+          "description",
+          "version",
+          "owner",
+          "tags",
+          "patternType",
+          "notes",
+          "applicableDefinitionChecklist",
+          "scalingUnits",
+          "serviceGroups",
+          "requirementGroups",
+          "requirementImplementations",
+          "constraints"
+        ],
+        "fieldTypes": {
+          "aliases": "list",
+          "owner": "dict",
+          "tags": "list",
+          "notes": "dict",
+          "scalingUnits": "list",
+          "serviceGroups": "list",
+          "requirementGroups": "list",
+          "requirementImplementations": "list",
+          "constraints": "list"
+        },
+        "enumFields": {
+          "catalogStatus": [
+            "stub",
+            "incomplete",
+            "complete"
+          ],
+          "lifecycleStatus": [
+            "candidate",
+            "preferred",
+            "existing-only",
+            "deprecated",
+            "retired"
+          ]
+        },
+        "enumListFields": {},
+        "collectionSchemas": {
+          "scalingUnits": "scalingUnit",
+          "serviceGroups": "serviceGroup",
+          "requirementImplementations": "requirementImplementation",
+          "constraints": "raConstraint"
+        },
+        "schemaPath": "framework/schemas/reference-architecture.schema.yaml"
+      },
+      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M1637YZS-PZSH\",\n  \"type\": \"reference_architecture\",\n  \"name\": \"Tier 1 Static Web Game Platform\",\n  \"description\": \"Reference architecture for client-side HTML5/Canvas games hosted on GitHub Pages for immediate UAT playtesting with browser LocalStorage state.\",\n  \"patternType\": \"static-web-game\",\n  \"catalogStatus\": \"complete\",\n  \"lifecycleStatus\": \"preferred\",\n  \"tags\": [\n    \"reference-architecture\",\n    \"game-platform\",\n    \"tier1-static\",\n    \"github-pages\",\n    \"uat\"\n  ],\n  \"applicableDefinitionChecklist\": [\n    \"A client-side presentation tier (HTML5/Canvas) is present.\",\n    \"Hosting is externalized to GitHub Pages managed edge.\",\n    \"Client state is stored in browser LocalStorage or SessionStorage.\"\n  ],\n  \"serviceGroups\": [\n    {\n      \"name\": \"Presentation Tier\",\n      \"deployableObjects\": [\n        {\n          \"slot\": \"static-client-host\",\n          \"objectType\": \"host\",\n          \"diagramTier\": \"presentation\",\n          \"notes\": \"GitHub Pages static web hosting edge for UAT playtesting.\"\n        }\n      ]\n    }\n  ],\n  \"notes\": {\n    \"patternRationale\": \"Tier 1 static games require zero server-side infrastructure, minimizing cost and maintenance while providing instant UAT playtesting.\",\n    \"onboardingQuestions\": \"Ask whether the game requires server-side persistence or user accounts. If no backend is required, use Tier 1.\"\n  },\n  \"constraints\": [\n    {\n      \"id\": \"static-host-required\",\n      \"description\": \"Tier 1 static games require a presentation-tier host slot.\",\n      \"require\": [\n        {\n          \"objectType\": \"host\",\n          \"diagramTier\": \"presentation\"\n        }\n      ]\n    }\n  ],\n  \"requirementGroups\": [],\n  \"requirementImplementations\": [],\n  \"_source\": \"community/reference-architectures/ra-aiden-game-tier1-static.yaml\"\n}",
+      "existsInCatalog": true,
+      "outboundRelationships": [],
+      "inboundRelationships": []
+    },
+    "01M1637YZT-QZ2Z": {
+      "id": "01M1637YZT-QZ2Z",
+      "uid": "01M1637YZT-QZ2Z",
+      "name": "Tier 2 Persistent Web Game Platform",
+      "aliases": [],
+      "type": "reference_architecture",
+      "typeLabel": "ReferenceArchitecture",
+      "filterType": "reference_architecture",
+      "category": "",
+      "deliveryModel": "",
+      "domain": "",
+      "description": "Reference architecture combining a client UI on GitHub Pages, Cloud Run backend API, GCP Secret Manager Auth JWTs, and Cloud SQL Postgres for user profiles & saved game state.",
+      "version": "",
+      "catalogStatus": "complete",
+      "lifecycleStatus": "preferred",
+      "status": "",
+      "businessContext": {},
+      "product": "",
+      "runsOn": "",
+      "subtype": "",
+      "vendor": "",
+      "productName": "",
+      "productVersion": "",
+      "classification": "",
+      "platformDependency": "",
+      "capabilities": [],
+      "configurations": [],
+      "networkPlacement": "",
+      "patchingOwner": "",
+      "complianceCerts": [],
+      "requirementGroups": [],
+      "requirementImplementations": [],
+      "dataLeavesInfrastructure": null,
+      "dataResidencyCommitment": "",
+      "dpaNotes": "",
+      "vendorSLA": "",
+      "authenticationModel": "",
+      "incidentNotificationProcess": "",
+      "owner": {},
+      "definitionOwner": {},
+      "provider": {},
+      "authority": {},
+      "shape": "hexagon",
+      "color": "#1f8a5b",
+      "source": "community/reference-architectures/ra-aiden-game-tier2-persistent.yaml",
+      "tags": [
+        "reference-architecture",
+        "game-platform",
+        "tier2-persistent",
+        "cloud-run",
+        "cloud-sql",
+        "uat"
+      ],
+      "ardCategory": "",
+      "internalComponents": [],
+      "notes": {
+        "patternRationale": "Tier 2 persistent games provide cloud save states and user accounts while retaining cost-efficiency via serverless execution.",
+        "onboardingQuestions": "Ask which datastore and auth mechanism will be used for user profiles."
+      },
+      "requirements": [],
+      "implementations": [],
+      "appliesTo": {},
+      "inherits": "",
+      "scalingUnits": [],
+      "networkZones": [],
+      "sdpConnections": [],
+      "serviceGroups": [
+        {
+          "name": "Presentation Tier",
+          "deployableObjects": [
+            {
+              "slot": "static-client-host",
+              "objectType": "host",
+              "diagramTier": "presentation",
+              "notes": "GitHub Pages static web hosting edge."
+            }
+          ]
+        },
+        {
+          "name": "Application Tier",
+          "deployableObjects": [
+            {
+              "slot": "api-runtime-host",
+              "objectType": "host",
+              "diagramTier": "application",
+              "notes": "Cloud Run serverless container runtime for state API."
+            }
+          ]
+        },
+        {
+          "name": "Data Tier",
+          "deployableObjects": [
+            {
+              "slot": "persistent-game-store",
+              "objectType": "data_store_service",
+              "diagramTier": "data",
+              "notes": "Cloud SQL Postgres database for user profiles, save slots, and leaderboards."
+            }
+          ]
+        }
+      ],
+      "tierVariants": [],
+      "tierId": "",
+      "purpose": "",
+      "availabilityExpectation": "",
+      "costPosture": "",
+      "complianceScope": [],
+      "parameterSurface": [],
+      "followsReferenceArchitecture": "",
+      "decisionRecords": [],
+      "affectedComponent": "",
+      "impact": "",
+      "mitigationPath": "",
+      "decisionRationale": "",
+      "relatedDecisionRecords": [],
+      "linkedObject": "",
+      "primaryObjectType": "",
+      "primaryObjectUid": "",
+      "generatedObjects": [],
+      "unresolvedQuestions": [],
+      "assumptions": [],
+      "nextSteps": [],
+      "defaultSelection": false,
+      "requirementCount": 0,
+      "hasRiskRef": false,
+      "outboundRefs": [],
+      "referencedBy": [],
+      "editorSchema": {
+        "requiredFields": [
+          "schemaVersion",
+          "uid",
+          "type",
+          "name",
+          "catalogStatus",
+          "lifecycleStatus"
+        ],
+        "optionalFields": [
+          "aliases",
+          "description",
+          "version",
+          "owner",
+          "tags",
+          "patternType",
+          "notes",
+          "applicableDefinitionChecklist",
+          "scalingUnits",
+          "serviceGroups",
+          "requirementGroups",
+          "requirementImplementations",
+          "constraints"
+        ],
+        "fieldTypes": {
+          "aliases": "list",
+          "owner": "dict",
+          "tags": "list",
+          "notes": "dict",
+          "scalingUnits": "list",
+          "serviceGroups": "list",
+          "requirementGroups": "list",
+          "requirementImplementations": "list",
+          "constraints": "list"
+        },
+        "enumFields": {
+          "catalogStatus": [
+            "stub",
+            "incomplete",
+            "complete"
+          ],
+          "lifecycleStatus": [
+            "candidate",
+            "preferred",
+            "existing-only",
+            "deprecated",
+            "retired"
+          ]
+        },
+        "enumListFields": {},
+        "collectionSchemas": {
+          "scalingUnits": "scalingUnit",
+          "serviceGroups": "serviceGroup",
+          "requirementImplementations": "requirementImplementation",
+          "constraints": "raConstraint"
+        },
+        "schemaPath": "framework/schemas/reference-architecture.schema.yaml"
+      },
+      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M1637YZT-QZ2Z\",\n  \"type\": \"reference_architecture\",\n  \"name\": \"Tier 2 Persistent Web Game Platform\",\n  \"description\": \"Reference architecture combining a client UI on GitHub Pages, Cloud Run backend API, GCP Secret Manager Auth JWTs, and Cloud SQL Postgres for user profiles & saved game state.\",\n  \"patternType\": \"persistent-web-game\",\n  \"catalogStatus\": \"complete\",\n  \"lifecycleStatus\": \"preferred\",\n  \"tags\": [\n    \"reference-architecture\",\n    \"game-platform\",\n    \"tier2-persistent\",\n    \"cloud-run\",\n    \"cloud-sql\",\n    \"uat\"\n  ],\n  \"applicableDefinitionChecklist\": [\n    \"A client-side presentation tier (GitHub Pages) is present.\",\n    \"An application API tier (Cloud Run) is present for user authentication and state APIs.\",\n    \"Durable user state and profiles are externalized to a governed DataStoreService (Cloud SQL Postgres).\"\n  ],\n  \"serviceGroups\": [\n    {\n      \"name\": \"Presentation Tier\",\n      \"deployableObjects\": [\n        {\n          \"slot\": \"static-client-host\",\n          \"objectType\": \"host\",\n          \"diagramTier\": \"presentation\",\n          \"notes\": \"GitHub Pages static web hosting edge.\"\n        }\n      ]\n    },\n    {\n      \"name\": \"Application Tier\",\n      \"deployableObjects\": [\n        {\n          \"slot\": \"api-runtime-host\",\n          \"objectType\": \"host\",\n          \"diagramTier\": \"application\",\n          \"notes\": \"Cloud Run serverless container runtime for state API.\"\n        }\n      ]\n    },\n    {\n      \"name\": \"Data Tier\",\n      \"deployableObjects\": [\n        {\n          \"slot\": \"persistent-game-store\",\n          \"objectType\": \"data_store_service\",\n          \"diagramTier\": \"data\",\n          \"notes\": \"Cloud SQL Postgres database for user profiles, save slots, and leaderboards.\"\n        }\n      ]\n    }\n  ],\n  \"notes\": {\n    \"patternRationale\": \"Tier 2 persistent games provide cloud save states and user accounts while retaining cost-efficiency via serverless execution.\",\n    \"onboardingQuestions\": \"Ask which datastore and auth mechanism will be used for user profiles.\"\n  },\n  \"constraints\": [\n    {\n      \"id\": \"app-runtime-required\",\n      \"description\": \"Tier 2 games require an application-tier host.\",\n      \"require\": [\n        {\n          \"objectType\": \"host\",\n          \"diagramTier\": \"application\"\n        }\n      ]\n    },\n    {\n      \"id\": \"data-store-required\",\n      \"description\": \"Tier 2 games require a data-tier DataStoreService.\",\n      \"require\": [\n        {\n          \"objectType\": \"data_store_service\",\n          \"diagramTier\": \"data\"\n        }\n      ]\n    }\n  ],\n  \"requirementGroups\": [],\n  \"requirementImplementations\": [],\n  \"_source\": \"community/reference-architectures/ra-aiden-game-tier2-persistent.yaml\"\n}",
+      "existsInCatalog": true,
+      "outboundRelationships": [],
+      "inboundRelationships": []
+    },
     "01KV0REFAR-CMSV": {
       "id": "01KV0REFAR-CMSV",
       "uid": "01KV0REFAR-CMSV",
@@ -134606,6 +135320,20 @@ window.DRAFT_BROWSER_DATA = {
         "type": "reference_architecture",
         "catalogStatus": "complete",
         "description": "Standard pattern for web-facing applications with a presentation tier (network services), an application tier (runtime services), and a data tier (data store services). Use this pattern when the deployment serves web or API traffic to external users or partners."
+      },
+      {
+        "uid": "01M1637YZS-PZSH",
+        "name": "Tier 1 Static Web Game Platform",
+        "type": "reference_architecture",
+        "catalogStatus": "complete",
+        "description": "Reference architecture for client-side HTML5/Canvas games hosted on GitHub Pages for immediate UAT playtesting with browser LocalStorage state."
+      },
+      {
+        "uid": "01M1637YZT-QZ2Z",
+        "name": "Tier 2 Persistent Web Game Platform",
+        "type": "reference_architecture",
+        "catalogStatus": "complete",
+        "description": "Reference architecture combining a client UI on GitHub Pages, Cloud Run backend API, GCP Secret Manager Auth JWTs, and Cloud SQL Postgres for user profiles & saved game state."
       },
       {
         "uid": "01KV0REFAR-2TR0",

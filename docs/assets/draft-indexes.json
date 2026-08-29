@@ -1238,6 +1238,20 @@
       "description": "Standard pattern for web-facing applications with a presentation tier (network services), an application tier (runtime services), and a data tier (data store services). Use this pattern when the deployment serves web or API traffic to external users or partners."
     },
     {
+      "uid": "01M1637YZS-PZSH",
+      "name": "Tier 1 Static Web Game Platform",
+      "type": "reference_architecture",
+      "catalogStatus": "complete",
+      "description": "Reference architecture for client-side HTML5/Canvas games hosted on GitHub Pages for immediate UAT playtesting with browser LocalStorage state."
+    },
+    {
+      "uid": "01M1637YZT-QZ2Z",
+      "name": "Tier 2 Persistent Web Game Platform",
+      "type": "reference_architecture",
+      "catalogStatus": "complete",
+      "description": "Reference architecture combining a client UI on GitHub Pages, Cloud Run backend API, GCP Secret Manager Auth JWTs, and Cloud SQL Postgres for user profiles & saved game state."
+    },
+    {
       "uid": "01KV0REFAR-2TR0",
       "name": "Two-Tier Client Data Application",
       "type": "reference_architecture",
