@@ -1,0 +1,54 @@
+schemaVersion: '1.0'
+uid: 01M1637YZT-QZ2Z
+type: reference_architecture
+name: Tier 2 Persistent Web Game Platform
+description: Reference architecture combining a client UI on GitHub Pages, Cloud Run backend API, GCP Secret Manager Auth JWTs, and Cloud SQL Postgres for user profiles & saved game state.
+patternType: persistent-web-game
+catalogStatus: complete
+lifecycleStatus: preferred
+tags:
+- reference-architecture
+- game-platform
+- tier2-persistent
+- cloud-run
+- cloud-sql
+- uat
+applicableDefinitionChecklist:
+- A client-side presentation tier (GitHub Pages) is present.
+- An application API tier (Cloud Run) is present for user authentication and state APIs.
+- Durable user state and profiles are externalized to a governed DataStoreService (Cloud SQL Postgres).
+serviceGroups:
+- name: Presentation Tier
+  deployableObjects:
+  - slot: static-client-host
+    objectType: host
+    diagramTier: presentation
+    notes: GitHub Pages static web hosting edge.
+- name: Application Tier
+  deployableObjects:
+  - slot: api-runtime-host
+    objectType: host
+    diagramTier: application
+    notes: Cloud Run serverless container runtime for state API.
+- name: Data Tier
+  deployableObjects:
+  - slot: persistent-game-store
+    objectType: data_store_service
+    diagramTier: data
+    notes: Cloud SQL Postgres database for user profiles, save slots, and leaderboards.
+notes:
+  patternRationale: Tier 2 persistent games provide cloud save states and user accounts while retaining cost-efficiency via serverless execution.
+  onboardingQuestions: Ask which datastore and auth mechanism will be used for user profiles.
+constraints:
+- id: app-runtime-required
+  description: Tier 2 games require an application-tier host.
+  require:
+  - objectType: host
+    diagramTier: application
+- id: data-store-required
+  description: Tier 2 games require a data-tier DataStoreService.
+  require:
+  - objectType: data_store_service
+    diagramTier: data
+requirementGroups: []
+requirementImplementations: []

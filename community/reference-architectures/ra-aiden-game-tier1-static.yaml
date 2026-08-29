@@ -1,0 +1,36 @@
+schemaVersion: '1.0'
+uid: 01M1637YZS-PZSH
+type: reference_architecture
+name: Tier 1 Static Web Game Platform
+description: Reference architecture for client-side HTML5/Canvas games hosted on GitHub Pages for immediate UAT playtesting with browser LocalStorage state.
+patternType: static-web-game
+catalogStatus: complete
+lifecycleStatus: preferred
+tags:
+- reference-architecture
+- game-platform
+- tier1-static
+- github-pages
+- uat
+applicableDefinitionChecklist:
+- A client-side presentation tier (HTML5/Canvas) is present.
+- Hosting is externalized to GitHub Pages managed edge.
+- Client state is stored in browser LocalStorage or SessionStorage.
+serviceGroups:
+- name: Presentation Tier
+  deployableObjects:
+  - slot: static-client-host
+    objectType: host
+    diagramTier: presentation
+    notes: GitHub Pages static web hosting edge for UAT playtesting.
+notes:
+  patternRationale: Tier 1 static games require zero server-side infrastructure, minimizing cost and maintenance while providing instant UAT playtesting.
+  onboardingQuestions: Ask whether the game requires server-side persistence or user accounts. If no backend is required, use Tier 1.
+constraints:
+- id: static-host-required
+  description: Tier 1 static games require a presentation-tier host slot.
+  require:
+  - objectType: host
+    diagramTier: presentation
+requirementGroups: []
+requirementImplementations: []
