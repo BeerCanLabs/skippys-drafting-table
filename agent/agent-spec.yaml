@@ -39,6 +39,7 @@ skills:
   - draftsman-diagram
   - draftsman-query
   - draftsman-standards
+  - draftsman-engineering-maturity
 mcps:
   - agent/mcp/draftsman-mcp.json
 capabilities:
