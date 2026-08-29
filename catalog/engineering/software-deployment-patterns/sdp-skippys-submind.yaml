@@ -60,6 +60,18 @@ decisionRecords:
   key: testDataGovernanceDecision
 - ref: 01M15NFKKN-74NY
   key: rollbackStrategyDecision
+- ref: 01M15NFKKN-74NY
+  key: composableIacDecision
+- ref: 01M15NFKKN-74NY
+  key: previewEnvironmentsDecision
+- ref: 01M15NFKKN-74NY
+  key: structuredLoggingDecision
+- ref: 01M15NFKKN-74NY
+  key: sloPolicyDecision
+- ref: 01M15NFKKN-74NY
+  key: zeroDowntimeStrategyDecision
+- ref: 01M15NFKKN-74NY
+  key: automatedSecurityGatesDecision
 notes:
   availabilityTarget: 99.9%
   availabilityRequirement: Active-active container execution on GCP Cloud Run

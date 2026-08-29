@@ -1,9 +1,9 @@
 schemaVersion: '1.0'
 uid: 01M15WPEFV-ZMA9
 type: requirement_group
-name: Engineering Maturity & Quality Standards
-description: Mandatory engineering maturity standards covering backward-compatible database migrations, IaC automation, zero gate suppressions, and synthetic test data.
-version: 1.0.0
+name: Engineering Maturity & Quality Standards (L1-L3)
+description: Comprehensive engineering maturity standards covering L1 Baseline through L3 Advanced (backward-compatible migrations, 100% composable IaC, zero gate suppressions, synthetic test data, automated zero-downtime rollback, JSON structured logging, SLO error budgets, and ephemeral preview environments).
+version: 1.2.0
 catalogStatus: complete
 lifecycleStatus: preferred
 activation: always
@@ -77,6 +77,84 @@ requirements:
     key: rollbackStrategy
   - mechanism: decisionRecord
     key: rollbackStrategyDecision
+  minimumSatisfactions: 1
+  requirementMode: mandatory
+  naAllowed: false
+  validAnswerTypes:
+  - field
+  - decisionRecord
+- id: req-l3-composable-iac
+  description: (L3 Advanced) 100% of compute host, database, cache, gateway, and security infrastructure MUST be provisionable as composable IaC modules.
+  canBeSatisfiedBy:
+  - mechanism: field
+    key: composableIac
+  - mechanism: decisionRecord
+    key: composableIacDecision
+  minimumSatisfactions: 1
+  requirementMode: mandatory
+  naAllowed: false
+  validAnswerTypes:
+  - field
+  - decisionRecord
+- id: req-l3-ephemeral-preview-environments
+  description: (L3 Advanced) Infrastructure IaC MUST support provisioning on-demand, isolated ephemeral preview environments for feature branches with automated teardown.
+  canBeSatisfiedBy:
+  - mechanism: field
+    key: previewEnvironments
+  - mechanism: decisionRecord
+    key: previewEnvironmentsDecision
+  minimumSatisfactions: 1
+  requirementMode: mandatory
+  naAllowed: true
+  validAnswerTypes:
+  - field
+  - decisionRecord
+- id: req-l3-json-structured-logging
+  description: (L3 Advanced) All application and service logs streamed to central log aggregators MUST use structured JSON formatting with distributed trace/span correlation IDs.
+  canBeSatisfiedBy:
+  - mechanism: field
+    key: structuredLogging
+  - mechanism: decisionRecord
+    key: structuredLoggingDecision
+  minimumSatisfactions: 1
+  requirementMode: mandatory
+  naAllowed: false
+  validAnswerTypes:
+  - field
+  - decisionRecord
+- id: req-l3-slo-error-budget
+  description: (L3 Advanced) Service boundaries MUST declare explicit Service Level Objectives (SLO), availability targets, and error budget policies.
+  canBeSatisfiedBy:
+  - mechanism: field
+    key: sloPolicy
+  - mechanism: decisionRecord
+    key: sloPolicyDecision
+  minimumSatisfactions: 1
+  requirementMode: mandatory
+  naAllowed: false
+  validAnswerTypes:
+  - field
+  - decisionRecord
+- id: req-l3-zero-downtime-deployment
+  description: (L3 Advanced) Production deployments MUST use zero-downtime deployment strategies (rolling, canary, blue/green) with automated health probes and auto-rollback.
+  canBeSatisfiedBy:
+  - mechanism: field
+    key: zeroDowntimeStrategy
+  - mechanism: decisionRecord
+    key: zeroDowntimeStrategyDecision
+  minimumSatisfactions: 1
+  requirementMode: mandatory
+  naAllowed: false
+  validAnswerTypes:
+  - field
+  - decisionRecord
+- id: req-l3-automated-security-gates
+  description: (L3 Advanced) CI/CD pipelines MUST enforce automated SAST, secret scanning, dependency vulnerability scanning (SCA), and IaC policy linting as blocking release gates.
+  canBeSatisfiedBy:
+  - mechanism: field
+    key: automatedSecurityGates
+  - mechanism: decisionRecord
+    key: automatedSecurityGatesDecision
   minimumSatisfactions: 1
   requirementMode: mandatory
   naAllowed: false

@@ -2,13 +2,13 @@ schemaVersion: '1.0'
 uid: 01M15NFKKN-74NY
 type: decision_record
 name: Agent Factory Platform Architecture Decisions
-description: Architecture decision record capturing operational decisions, resilience models, logging, security controls, and engineering maturity standards for the Agent Factory platform.
-version: 1.0.0
+description: Architecture decision record capturing operational decisions, resilience models, logging, security controls, and L1-L3 engineering maturity standards for the Agent Factory platform.
+version: 1.2.0
 category: decision
 status: accepted
 catalogStatus: complete
 lifecycleStatus: preferred
-decisionRationale: Standardized GCP Cloud Run, Secret Manager, Cloud SQL, and DRAFT engineering maturity standards.
+decisionRationale: Standardized GCP Cloud Run, Secret Manager, Cloud SQL, and DRAFT L3 Advanced engineering maturity standards.
 owner:
   team: platform-ai-team
   contact: platform-ai@example.com
