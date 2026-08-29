@@ -1,0 +1,98 @@
+schemaVersion: '1.0'
+uid: 01M15XYZXT-KTJA
+type: requirement_group
+name: OWASP ASVS & Secure Coding Standards
+description: Mandatory secure coding and application security verification standards based on OWASP ASVS v4.0 and NIST SSDF.
+version: 1.0.0
+catalogStatus: complete
+lifecycleStatus: preferred
+activation: always
+appliesTo:
+- product_component
+- software_deployment_pattern
+authority:
+  name: OWASP Application Security Verification Standard
+  shortName: OWASP ASVS
+  source: https://owasp.org/www-project-application-security-verification-standard/
+owner:
+  team: security-engineering
+  contact: security-engineering@example.com
+requirements:
+- id: req-asvs-parameterized-queries
+  description: (OWASP ASVS V5 / V13) All database queries MUST use parameterized prepared statements or ORM bindings. Direct string concatenation in queries is strictly prohibited to prevent SQL/NoSQL injection.
+  canBeSatisfiedBy:
+  - mechanism: field
+    key: queryParameterization
+  - mechanism: decisionRecord
+    key: queryParameterizationDecision
+  minimumSatisfactions: 1
+  requirementMode: mandatory
+  naAllowed: true
+  validAnswerTypes:
+  - field
+  - decisionRecord
+- id: req-asvs-broken-object-level-auth
+  description: (OWASP ASVS V4 / OWASP API1) Enforce default-deny, server-side object-level access control (BOLA/RBAC/ABAC) on every API endpoint.
+  canBeSatisfiedBy:
+  - mechanism: field
+    key: accessControlModel
+  - mechanism: decisionRecord
+    key: accessControlModelDecision
+  minimumSatisfactions: 1
+  requirementMode: mandatory
+  naAllowed: false
+  validAnswerTypes:
+  - field
+  - decisionRecord
+- id: req-asvs-strong-cryptography-tls
+  description: (OWASP ASVS V6 / V9) Enforce TLS 1.2+ for data in transit and AES-256/GCM or KMS for data at rest. Weak legacy ciphers (MD5, SHA1, DES) are prohibited.
+  canBeSatisfiedBy:
+  - mechanism: field
+    key: cryptographyStandard
+  - mechanism: decisionRecord
+    key: cryptographyStandardDecision
+  minimumSatisfactions: 1
+  requirementMode: mandatory
+  naAllowed: false
+  validAnswerTypes:
+  - field
+  - decisionRecord
+- id: req-asvs-session-jwt-security
+  description: (OWASP ASVS V2 / V3) Secure session management with short-lived tokens, explicit signature verification, MFA for admin access, and API rate-limiting.
+  canBeSatisfiedBy:
+  - mechanism: field
+    key: sessionManagement
+  - mechanism: decisionRecord
+    key: sessionManagementDecision
+  minimumSatisfactions: 1
+  requirementMode: mandatory
+  naAllowed: false
+  validAnswerTypes:
+  - field
+  - decisionRecord
+- id: req-asvs-error-handling-audit-logging
+  description: (OWASP ASVS V7) Return sanitized, generic error messages to API consumers without leaking stack traces. Stream detailed audit logs for authentication and security events.
+  canBeSatisfiedBy:
+  - mechanism: field
+    key: errorHandlingLogging
+  - mechanism: decisionRecord
+    key: errorHandlingLoggingDecision
+  minimumSatisfactions: 1
+  requirementMode: mandatory
+  naAllowed: false
+  validAnswerTypes:
+  - field
+  - decisionRecord
+- id: req-asvs-third-party-component-security
+  description: (OWASP ASVS V14 / NIST SSDF PW.4) Enforce automated Software Composition Analysis (SCA) in CI pipelines to block third-party dependencies with known High/Critical CVEs.
+  canBeSatisfiedBy:
+  - mechanism: field
+    key: dependencySecurity
+  - mechanism: decisionRecord
+    key: dependencySecurityDecision
+  minimumSatisfactions: 1
+  requirementMode: mandatory
+  naAllowed: false
+  validAnswerTypes:
+  - field
+  - decisionRecord

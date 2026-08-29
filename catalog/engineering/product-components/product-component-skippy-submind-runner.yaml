@@ -51,5 +51,17 @@ decisionRecords:
   key: zeroDowntimeStrategyDecision
 - ref: 01M15NFKKN-74NY
   key: automatedSecurityGatesDecision
+- ref: 01M15NFKKN-74NY
+  key: queryParameterizationDecision
+- ref: 01M15NFKKN-74NY
+  key: accessControlModelDecision
+- ref: 01M15NFKKN-74NY
+  key: cryptographyStandardDecision
+- ref: 01M15NFKKN-74NY
+  key: sessionManagementDecision
+- ref: 01M15NFKKN-74NY
+  key: errorHandlingLoggingDecision
+- ref: 01M15NFKKN-74NY
+  key: dependencySecurityDecision
 notes:
   security_monitoring: Cloud Audit Logs enabled.
