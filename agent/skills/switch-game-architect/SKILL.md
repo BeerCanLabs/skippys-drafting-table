@@ -1,6 +1,6 @@
 ---
 name: switch-game-architect
-description: Standardized decision matrix, scaffolding protocols, and automated UAT deployment workflows for Switch to build games for Aiden.
+description: Standardized decision matrix, Reference Architecture blueprints, scaffolding protocols, and automated UAT deployment workflows for Switch to build games for Aiden.
 ---
 
 # Switch Game Architect & Delivery Skill (for Aiden's Games)
@@ -10,20 +10,21 @@ Provides **Switch** (the AI Application & Gateway Engineer Agent) with a determi
 
 ---
 
-## 🎮 The 3-Tier Game Architecture Decision Matrix
+## 🎮 Game Reference Architecture Decision Matrix
 
-When Aiden asks Switch to build a game, Switch evaluates the requested features against this decision matrix:
+When Aiden asks Switch to build a game, Switch evaluates the requested features and selects the matching DRAFT **ReferenceArchitecture**:
 
 ```text
  ┌────────────────────────────────────────────────────────────────────────────────────────┐
- │                              SWITCH GAME DECISION MATRIX                               │
+ │                      GAME REFERENCE ARCHITECTURE DECISION MATRIX                       │
  ├──────────────────────────┬─────────────────────────────┬───────────────────────────────┤
  │ Tier 1: Static Web Game  │ Tier 2: Persistent Web Game │ Tier 3: Real-Time Multiplayer │
  ├──────────────────────────┼─────────────────────────────┼───────────────────────────────┤
- │ • Clicker, Arcade, Canvas│ • Saved Progress, Profiles  │ • Co-op, Real-Time PVP        │
+ │ • RA: `ra-aiden-game-`   │ • RA: `ra-aiden-game-`      │ • RA: `ra-aiden-game-`        │
+ │   `tier1-static.yaml`    │   `tier2-persistent.yaml`   │   `tier3-multiplayer.yaml`    │
  │ • LocalStorage state     │ • Auth & User Profiles      │ • Redis Session / WebSockets  │
  │ • Host: GitHub Pages     │ • Host: GitHub Pages + API  │ • Host: Cloud Run WebSocket   │
- │ • Storage: Browser Local │ • Storage: Cloud SQL / DB   │ • Storage: Redis + Cloud SQL  │
+ │ • Storage: Browser Local │ • Storage: Cloud SQL DB     │ • Storage: Redis + Cloud SQL  │
  └──────────────────────────┴─────────────────────────────┴───────────────────────────────┘
 ```
 
@@ -31,21 +32,21 @@ When Aiden asks Switch to build a game, Switch evaluates the requested features 
 
 ## 🛠️ Step-by-Step Execution Playbook for Switch
 
-### Step 1: Feature Evaluation & Tier Selection
+### Step 1: Feature Evaluation & Reference Architecture Selection
 1. If the game only needs local clicks, sound effects, or single-device progress:
-   -> Select **Tier 1 (Static Web Game)** using SDP `sdp-aiden-game-tier1-static.yaml`.
+   -> Select **Tier 1 (Static Web Game RA)** (`ra-aiden-game-tier1-static.yaml`).
 2. If the game needs logins, saved profiles, cloud sync across devices, or leaderboards:
-   -> Select **Tier 2 (Persistent Web Game)** using SDP `sdp-aiden-game-tier2-persistent.yaml`.
+   -> Select **Tier 2 (Persistent Web Game RA)** (`ra-aiden-game-tier2-persistent.yaml`).
 
 ---
 
-### Step 2: Repository Scaffolding
-Whenever Switch creates a new game repo (e.g. `dsackr/aiden-cookie-clicker` or `dsackr/aiden-space-runner`):
+### Step 2: Repository Scaffolding & Specific Game SDP
+Whenever Switch creates a new game repo (e.g. `dsackr/aiden-cookie-clicker`):
 1. **`MATURITY.md`**: Vendor the standard `MATURITY.md` file at root.
 2. **`AGENTS.md`**: Add bootstrap instructions pointing to `MATURITY.md` and `KPF.md`.
 3. **`KPF.md`**: Document Key Product Functionalities (e.g., `KPF-GAME-001: Clicker Loop`, `KPF-GAME-002: User Login & Save State`) mapped to unit/integration tests.
-4. **`.draft/sdp.yaml`**: Create the local SDP referencing Tier 1 or Tier 2 pattern.
-5. **DRAFT Product Registration**: Register the repo in `dsackr/drafting-table` under `catalog/engineering/product-registrations/`.
+4. **`.draft/sdp.yaml`**: Generate the specific game SDP (e.g. `sdp-aiden-cookie-clicker.yaml`), setting `followsReferenceArchitecture` to the selected RA's UID.
+5. **DRAFT Product Registration**: Register the product in `dsackr/drafting-table` under `catalog/engineering/product-registrations/`.
 
 ---
 
