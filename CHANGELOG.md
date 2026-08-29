@@ -19,6 +19,10 @@
 - Explicitly labeled `EnvironmentProfile` as `[Roadmap Phase 2 Specification]` in `SHARED_SERVICE_COMPOSITION_SPEC.md`.
 - Bumped framework version to `1.1.1`.
 
+### Fixed
+
+- Resolved merge conflicts and synchronized framework index files.
+
 ### Migration Notes
 
 - AI agent prompt updates take effect automatically on new agent sessions.

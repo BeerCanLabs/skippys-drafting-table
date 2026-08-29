@@ -20,6 +20,9 @@ channels:
   github_webhooks: true
 requirements:
   secrets:
+    - name: GITHUB_TOKEN
+      required: true
+      purpose: "GitHub access token with repo scope to read schemas and open catalog PRs"
     - name: ANTHROPIC_API_KEY
       required: true
       purpose: "Anthropic API key for agent reasoning and query resolution"
