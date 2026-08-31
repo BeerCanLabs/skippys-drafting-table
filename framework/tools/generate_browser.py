@@ -47,7 +47,7 @@ USER_MANUAL_SOURCE_PATH = FRAMEWORK_ROOT / "docs" / "user-manual.md"
 USER_MANUAL_OUTPUT_NAME = "user-manual.html"
 COMPANY_VOCABULARY_SOURCE_PATH = FRAMEWORK_ROOT / "docs" / "company-vocabulary.md"
 COMPANY_VOCABULARY_OUTPUT_NAME = "company-vocabulary.html"
-DEFAULT_WORKSPACE_ROOT = WORKSPACE_ROOT if REPO_ROOT.name == ".draft" else REPO_ROOT / "examples"
+DEFAULT_WORKSPACE_ROOT = WORKSPACE_ROOT
 LOGO_PATH = REPO_ROOT / "draft-logo.png"
 LEGACY_LOGO_PATH = REPO_ROOT / "draftlogo.png"
 CATALOG_FOLDERS = [
