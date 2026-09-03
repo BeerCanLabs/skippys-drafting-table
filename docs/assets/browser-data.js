@@ -1757,10 +1757,7 @@ window.DRAFT_BROWSER_DATA = {
       "vendorSLA": "",
       "authenticationModel": "",
       "incidentNotificationProcess": "",
-      "owner": {
-        "team": "example-architecture",
-        "contact": "architecture@example.com"
-      },
+      "owner": {},
       "definitionOwner": {
         "provider": "draft-framework",
         "team": "cloud-architecture",
@@ -1776,13 +1773,7 @@ window.DRAFT_BROWSER_DATA = {
       "internalComponents": [],
       "notes": {},
       "requirements": [],
-      "implementations": [
-        {
-          "ref": "01KQQ4Q025-9N4R",
-          "lifecycleStatus": "existing-only",
-          "notes": "Example workspace maps EC2 to the compute platform capability."
-        }
-      ],
+      "implementations": [],
       "appliesTo": {},
       "inherits": "",
       "scalingUnits": [],
@@ -1817,10 +1808,6 @@ window.DRAFT_BROWSER_DATA = {
         {
           "target": "01KQQ4Q027-ZTHF",
           "path": "domain"
-        },
-        {
-          "target": "01KQQ4Q025-9N4R",
-          "path": "implementations[0].ref"
         }
       ],
       "referencedBy": [
@@ -1831,14 +1818,6 @@ window.DRAFT_BROWSER_DATA = {
         {
           "source": "01KQQ4Q027-THYN",
           "path": "requirements[1].relatedCapability"
-        },
-        {
-          "source": "01KQQ4Q025-X682",
-          "path": "target"
-        },
-        {
-          "source": "01KQQ4Q025-T7B7",
-          "path": "capabilities[0]"
         }
       ],
       "editorSchema": {
@@ -1879,7 +1858,7 @@ window.DRAFT_BROWSER_DATA = {
         },
         "schemaPath": "framework/schemas/capability.schema.yaml"
       },
-      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01KQQ4Q026-1HZP\",\n  \"type\": \"capability\",\n  \"name\": \"Compute Platform\",\n  \"description\": \"Compute substrate or virtualized platform used to run Hosts.\",\n  \"version\": \"1.0.0\",\n  \"catalogStatus\": \"complete\",\n  \"definitionOwner\": {\n    \"provider\": \"draft-framework\",\n    \"team\": \"cloud-architecture\",\n    \"contact\": \"cloud-architecture@example.com\"\n  },\n  \"domain\": \"01KQQ4Q027-ZTHF\",\n  \"implementations\": [\n    {\n      \"ref\": \"01KQQ4Q025-9N4R\",\n      \"lifecycleStatus\": \"existing-only\",\n      \"notes\": \"Example workspace maps EC2 to the compute platform capability.\"\n    }\n  ],\n  \"_source\": \"framework/configurations/capabilities/capability-compute-platform.yaml\",\n  \"owner\": {\n    \"team\": \"example-architecture\",\n    \"contact\": \"architecture@example.com\"\n  }\n}",
+      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01KQQ4Q026-1HZP\",\n  \"type\": \"capability\",\n  \"name\": \"Compute Platform\",\n  \"description\": \"Compute substrate or virtualized platform used to run Hosts.\",\n  \"version\": \"1.0.0\",\n  \"catalogStatus\": \"complete\",\n  \"definitionOwner\": {\n    \"provider\": \"draft-framework\",\n    \"team\": \"cloud-architecture\",\n    \"contact\": \"cloud-architecture@example.com\"\n  },\n  \"domain\": \"01KQQ4Q027-ZTHF\",\n  \"implementations\": [],\n  \"_source\": \"framework/configurations/capabilities/capability-compute-platform.yaml\"\n}",
       "existsInCatalog": true,
       "outboundRelationships": [],
       "inboundRelationships": []
@@ -3427,10 +3406,6 @@ window.DRAFT_BROWSER_DATA = {
         {
           "source": "01KQQ4Q027-K5DR",
           "path": "requirements[5].relatedCapability"
-        },
-        {
-          "source": "01KSF29JTP-8YRX",
-          "path": "capabilities[0]"
         }
       ],
       "editorSchema": {
@@ -3514,10 +3489,7 @@ window.DRAFT_BROWSER_DATA = {
       "vendorSLA": "",
       "authenticationModel": "",
       "incidentNotificationProcess": "",
-      "owner": {
-        "team": "example-architecture",
-        "contact": "architecture@example.com"
-      },
+      "owner": {},
       "definitionOwner": {
         "provider": "draft-framework",
         "team": "cloud-architecture",
@@ -3533,14 +3505,7 @@ window.DRAFT_BROWSER_DATA = {
       "internalComponents": [],
       "notes": {},
       "requirements": [],
-      "implementations": [
-        {
-          "ref": "01KQQ4Q025-3HXA",
-          "configuration": "centralized-log-forwarding",
-          "lifecycleStatus": "existing-only",
-          "notes": "Example OS configuration for centralized log forwarding."
-        }
-      ],
+      "implementations": [],
       "appliesTo": {},
       "inherits": "",
       "scalingUnits": [],
@@ -3575,10 +3540,6 @@ window.DRAFT_BROWSER_DATA = {
         {
           "target": "01KQQ4Q027-C213",
           "path": "domain"
-        },
-        {
-          "target": "01KQQ4Q025-3HXA",
-          "path": "implementations[0].ref"
         }
       ],
       "referencedBy": [
@@ -3601,14 +3562,6 @@ window.DRAFT_BROWSER_DATA = {
         {
           "source": "01KQQ4Q027-THYN",
           "path": "requirements[3].relatedCapability"
-        },
-        {
-          "source": "01KQQ4Q025-5VTH",
-          "path": "target"
-        },
-        {
-          "source": "01KQQ4Q025-3HXA",
-          "path": "configurations[0].capabilities[0]"
         }
       ],
       "editorSchema": {
@@ -3649,7 +3602,7 @@ window.DRAFT_BROWSER_DATA = {
         },
         "schemaPath": "framework/schemas/capability.schema.yaml"
       },
-      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01KQQ4Q026-D04B\",\n  \"type\": \"capability\",\n  \"name\": \"Log Management\",\n  \"description\": \"Aggregation, retention, searchability, and forwarding of system or application logs.\",\n  \"version\": \"1.0.0\",\n  \"catalogStatus\": \"complete\",\n  \"definitionOwner\": {\n    \"provider\": \"draft-framework\",\n    \"team\": \"cloud-architecture\",\n    \"contact\": \"cloud-architecture@example.com\"\n  },\n  \"domain\": \"01KQQ4Q027-C213\",\n  \"implementations\": [\n    {\n      \"ref\": \"01KQQ4Q025-3HXA\",\n      \"configuration\": \"centralized-log-forwarding\",\n      \"lifecycleStatus\": \"existing-only\",\n      \"notes\": \"Example OS configuration for centralized log forwarding.\"\n    }\n  ],\n  \"_source\": \"framework/configurations/capabilities/capability-log-management.yaml\",\n  \"owner\": {\n    \"team\": \"example-architecture\",\n    \"contact\": \"architecture@example.com\"\n  }\n}",
+      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01KQQ4Q026-D04B\",\n  \"type\": \"capability\",\n  \"name\": \"Log Management\",\n  \"description\": \"Aggregation, retention, searchability, and forwarding of system or application logs.\",\n  \"version\": \"1.0.0\",\n  \"catalogStatus\": \"complete\",\n  \"definitionOwner\": {\n    \"provider\": \"draft-framework\",\n    \"team\": \"cloud-architecture\",\n    \"contact\": \"cloud-architecture@example.com\"\n  },\n  \"domain\": \"01KQQ4Q027-C213\",\n  \"implementations\": [],\n  \"_source\": \"framework/configurations/capabilities/capability-log-management.yaml\"\n}",
       "existsInCatalog": true,
       "outboundRelationships": [],
       "inboundRelationships": []
@@ -4377,10 +4330,7 @@ window.DRAFT_BROWSER_DATA = {
       "vendorSLA": "",
       "authenticationModel": "",
       "incidentNotificationProcess": "",
-      "owner": {
-        "team": "example-architecture",
-        "contact": "architecture@example.com"
-      },
+      "owner": {},
       "definitionOwner": {
         "provider": "draft-framework",
         "team": "cloud-architecture",
@@ -4396,13 +4346,7 @@ window.DRAFT_BROWSER_DATA = {
       "internalComponents": [],
       "notes": {},
       "requirements": [],
-      "implementations": [
-        {
-          "ref": "01KQQ4Q025-3HXA",
-          "lifecycleStatus": "existing-only",
-          "notes": "Example operating system implementation."
-        }
-      ],
+      "implementations": [],
       "appliesTo": {},
       "inherits": "",
       "scalingUnits": [],
@@ -4437,20 +4381,12 @@ window.DRAFT_BROWSER_DATA = {
         {
           "target": "01KQQ4Q027-ZTHF",
           "path": "domain"
-        },
-        {
-          "target": "01KQQ4Q025-3HXA",
-          "path": "implementations[0].ref"
         }
       ],
       "referencedBy": [
         {
           "source": "01KQQ4Q027-THYN",
           "path": "requirements[0].relatedCapability"
-        },
-        {
-          "source": "01KQQ4Q026-4AYD",
-          "path": "target"
         }
       ],
       "editorSchema": {
@@ -4491,7 +4427,7 @@ window.DRAFT_BROWSER_DATA = {
         },
         "schemaPath": "framework/schemas/capability.schema.yaml"
       },
-      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01KQQ4Q026-QM2X\",\n  \"type\": \"capability\",\n  \"name\": \"Operating System\",\n  \"description\": \"Supported operating system product used to define managed Hosts.\",\n  \"version\": \"1.0.0\",\n  \"catalogStatus\": \"complete\",\n  \"definitionOwner\": {\n    \"provider\": \"draft-framework\",\n    \"team\": \"cloud-architecture\",\n    \"contact\": \"cloud-architecture@example.com\"\n  },\n  \"domain\": \"01KQQ4Q027-ZTHF\",\n  \"implementations\": [\n    {\n      \"ref\": \"01KQQ4Q025-3HXA\",\n      \"lifecycleStatus\": \"existing-only\",\n      \"notes\": \"Example operating system implementation.\"\n    }\n  ],\n  \"_source\": \"framework/configurations/capabilities/capability-operating-system.yaml\",\n  \"owner\": {\n    \"team\": \"example-architecture\",\n    \"contact\": \"architecture@example.com\"\n  }\n}",
+      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01KQQ4Q026-QM2X\",\n  \"type\": \"capability\",\n  \"name\": \"Operating System\",\n  \"description\": \"Supported operating system product used to define managed Hosts.\",\n  \"version\": \"1.0.0\",\n  \"catalogStatus\": \"complete\",\n  \"definitionOwner\": {\n    \"provider\": \"draft-framework\",\n    \"team\": \"cloud-architecture\",\n    \"contact\": \"cloud-architecture@example.com\"\n  },\n  \"domain\": \"01KQQ4Q027-ZTHF\",\n  \"implementations\": [],\n  \"_source\": \"framework/configurations/capabilities/capability-operating-system.yaml\"\n}",
       "existsInCatalog": true,
       "outboundRelationships": [],
       "inboundRelationships": []
@@ -5270,10 +5206,7 @@ window.DRAFT_BROWSER_DATA = {
       "vendorSLA": "",
       "authenticationModel": "",
       "incidentNotificationProcess": "",
-      "owner": {
-        "team": "example-architecture",
-        "contact": "architecture@example.com"
-      },
+      "owner": {},
       "definitionOwner": {
         "provider": "draft-framework",
         "team": "cloud-architecture",
@@ -5289,13 +5222,7 @@ window.DRAFT_BROWSER_DATA = {
       "internalComponents": [],
       "notes": {},
       "requirements": [],
-      "implementations": [
-        {
-          "ref": "01KQQ4Q025-MQ3F",
-          "lifecycleStatus": "existing-only",
-          "notes": "Example endpoint security monitoring agent."
-        }
-      ],
+      "implementations": [],
       "appliesTo": {},
       "inherits": "",
       "scalingUnits": [],
@@ -5330,10 +5257,6 @@ window.DRAFT_BROWSER_DATA = {
         {
           "target": "01KSWVZSZ5-GY67",
           "path": "domain"
-        },
-        {
-          "target": "01KQQ4Q025-MQ3F",
-          "path": "implementations[0].ref"
         }
       ],
       "referencedBy": [
@@ -5356,14 +5279,6 @@ window.DRAFT_BROWSER_DATA = {
         {
           "source": "01KQQ4Q027-THYN",
           "path": "requirements[5].relatedCapability"
-        },
-        {
-          "source": "01KQQ4Q026-BQ87",
-          "path": "target"
-        },
-        {
-          "source": "01KQQ4Q025-MQ3F",
-          "path": "capabilities[0]"
         }
       ],
       "editorSchema": {
@@ -5404,7 +5319,7 @@ window.DRAFT_BROWSER_DATA = {
         },
         "schemaPath": "framework/schemas/capability.schema.yaml"
       },
-      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01KQQ4Q026-JW52\",\n  \"type\": \"capability\",\n  \"name\": \"Security Monitoring\",\n  \"description\": \"Threat detection, intrusion detection, security event monitoring, and audit telemetry.\",\n  \"version\": \"1.0.0\",\n  \"catalogStatus\": \"complete\",\n  \"definitionOwner\": {\n    \"provider\": \"draft-framework\",\n    \"team\": \"cloud-architecture\",\n    \"contact\": \"cloud-architecture@example.com\"\n  },\n  \"domain\": \"01KSWVZSZ5-GY67\",\n  \"implementations\": [\n    {\n      \"ref\": \"01KQQ4Q025-MQ3F\",\n      \"lifecycleStatus\": \"existing-only\",\n      \"notes\": \"Example endpoint security monitoring agent.\"\n    }\n  ],\n  \"_source\": \"framework/configurations/capabilities/capability-security-monitoring.yaml\",\n  \"owner\": {\n    \"team\": \"example-architecture\",\n    \"contact\": \"architecture@example.com\"\n  }\n}",
+      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01KQQ4Q026-JW52\",\n  \"type\": \"capability\",\n  \"name\": \"Security Monitoring\",\n  \"description\": \"Threat detection, intrusion detection, security event monitoring, and audit telemetry.\",\n  \"version\": \"1.0.0\",\n  \"catalogStatus\": \"complete\",\n  \"definitionOwner\": {\n    \"provider\": \"draft-framework\",\n    \"team\": \"cloud-architecture\",\n    \"contact\": \"cloud-architecture@example.com\"\n  },\n  \"domain\": \"01KSWVZSZ5-GY67\",\n  \"implementations\": [],\n  \"_source\": \"framework/configurations/capabilities/capability-security-monitoring.yaml\"\n}",
       "existsInCatalog": true,
       "outboundRelationships": [],
       "inboundRelationships": []
@@ -6060,12 +5975,7 @@ window.DRAFT_BROWSER_DATA = {
           "path": "domain"
         }
       ],
-      "referencedBy": [
-        {
-          "source": "01KSF29JTP-8YRX",
-          "path": "capabilities[1]"
-        }
-      ],
+      "referencedBy": [],
       "editorSchema": {
         "requiredFields": [
           "schemaVersion",
@@ -19409,581 +19319,524 @@ window.DRAFT_BROWSER_DATA = {
       "inboundRelationships": []
     },
     {
-      "id": "01KQQ4Q025-X682",
-      "uid": "01KQQ4Q025-X682",
-      "name": "Example capability.compute-platform implementations",
+      "id": "01M15NEKT7-4PZN",
+      "uid": "01M15NEKT7-4PZN",
+      "name": "Enterprise AI Product Security & Acceptable Use Standards",
       "aliases": [],
-      "type": "object_patch",
-      "typeLabel": "Object Patch",
-      "filterType": "object_patch",
+      "type": "requirement_group",
+      "typeLabel": "RequirementGroup",
+      "filterType": "requirement_group",
       "category": "",
       "deliveryModel": "",
       "domain": "",
-      "description": "Example workspace-owned capability implementation mapping.",
+      "description": "Mandatory compliance, governance, and secret management standards for all AI products built by Archie, Switch, or engineering teams.",
       "version": "1.0.0",
-      "catalogStatus": "incomplete",
-      "lifecycleStatus": "existing-only",
-      "status": "",
-      "businessContext": {},
-      "product": "",
-      "runsOn": "",
-      "subtype": "",
-      "vendor": "",
-      "productName": "",
-      "productVersion": "",
-      "classification": "",
-      "platformDependency": "",
-      "capabilities": [],
-      "configurations": [],
-      "networkPlacement": "",
-      "patchingOwner": "",
-      "complianceCerts": [],
-      "requirementGroups": [],
-      "requirementImplementations": [],
-      "dataLeavesInfrastructure": null,
-      "dataResidencyCommitment": "",
-      "dpaNotes": "",
-      "vendorSLA": "",
-      "authenticationModel": "",
-      "incidentNotificationProcess": "",
-      "owner": {},
-      "definitionOwner": {},
-      "provider": {},
-      "authority": {},
-      "shape": "round-rectangle",
-      "color": "#2a6fdb",
-      "source": "examples/configurations/object-patches/patch-compute-platform-implementations.yaml",
-      "tags": [],
-      "ardCategory": "",
-      "internalComponents": [],
-      "notes": {},
-      "requirements": [],
-      "implementations": [],
-      "appliesTo": {},
-      "inherits": "",
-      "scalingUnits": [],
-      "networkZones": [],
-      "sdpConnections": [],
-      "serviceGroups": [],
-      "tierVariants": [],
-      "tierId": "",
-      "purpose": "",
-      "availabilityExpectation": "",
-      "costPosture": "",
-      "complianceScope": [],
-      "parameterSurface": [],
-      "followsReferenceArchitecture": "",
-      "decisionRecords": [],
-      "affectedComponent": "",
-      "impact": "",
-      "mitigationPath": "",
-      "decisionRationale": "",
-      "relatedDecisionRecords": [],
-      "linkedObject": "",
-      "primaryObjectType": "",
-      "primaryObjectUid": "",
-      "generatedObjects": [],
-      "unresolvedQuestions": [],
-      "assumptions": [],
-      "nextSteps": [],
-      "defaultSelection": false,
-      "requirementCount": 0,
-      "hasRiskRef": false,
-      "outboundRefs": [
-        {
-          "target": "01KQQ4Q026-1HZP",
-          "path": "target"
-        },
-        {
-          "target": "01KQQ4Q025-9N4R",
-          "path": "patch.implementations[0].ref"
-        }
-      ],
-      "referencedBy": [],
-      "editorSchema": {
-        "requiredFields": [
-          "schemaVersion",
-          "uid",
-          "type",
-          "name",
-          "target",
-          "patch",
-          "catalogStatus",
-          "lifecycleStatus"
-        ],
-        "optionalFields": [
-          "aliases",
-          "description",
-          "version",
-          "owner",
-          "tags",
-          "notes"
-        ],
-        "fieldTypes": {
-          "aliases": "list",
-          "owner": "dict",
-          "tags": "list",
-          "patch": "dict"
-        },
-        "enumFields": {
-          "catalogStatus": [
-            "stub",
-            "incomplete",
-            "complete"
-          ],
-          "lifecycleStatus": [
-            "candidate",
-            "preferred",
-            "existing-only",
-            "deprecated",
-            "retired"
-          ]
-        },
-        "enumListFields": {},
-        "collectionSchemas": {},
-        "schemaPath": "framework/schemas/object-patch.schema.yaml"
-      },
-      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01KQQ4Q025-X682\",\n  \"type\": \"object_patch\",\n  \"name\": \"Example capability.compute-platform implementations\",\n  \"description\": \"Example workspace-owned capability implementation mapping.\",\n  \"version\": \"1.0.0\",\n  \"catalogStatus\": \"incomplete\",\n  \"lifecycleStatus\": \"existing-only\",\n  \"target\": \"01KQQ4Q026-1HZP\",\n  \"patch\": {\n    \"owner\": {\n      \"team\": \"example-architecture\",\n      \"contact\": \"architecture@example.com\"\n    },\n    \"implementations\": [\n      {\n        \"ref\": \"01KQQ4Q025-9N4R\",\n        \"lifecycleStatus\": \"existing-only\",\n        \"notes\": \"Example workspace maps EC2 to the compute platform capability.\"\n      }\n    ]\n  },\n  \"_source\": \"examples/configurations/object-patches/patch-compute-platform-implementations.yaml\"\n}",
-      "existsInCatalog": true,
-      "outboundRelationships": [],
-      "inboundRelationships": []
-    },
-    {
-      "id": "01KQQ4Q025-5VTH",
-      "uid": "01KQQ4Q025-5VTH",
-      "name": "Example capability.log-management implementations",
-      "aliases": [],
-      "type": "object_patch",
-      "typeLabel": "Object Patch",
-      "filterType": "object_patch",
-      "category": "",
-      "deliveryModel": "",
-      "domain": "",
-      "description": "Example workspace-owned capability implementation mapping.",
-      "version": "1.0.0",
-      "catalogStatus": "incomplete",
-      "lifecycleStatus": "existing-only",
-      "status": "",
-      "businessContext": {},
-      "product": "",
-      "runsOn": "",
-      "subtype": "",
-      "vendor": "",
-      "productName": "",
-      "productVersion": "",
-      "classification": "",
-      "platformDependency": "",
-      "capabilities": [],
-      "configurations": [],
-      "networkPlacement": "",
-      "patchingOwner": "",
-      "complianceCerts": [],
-      "requirementGroups": [],
-      "requirementImplementations": [],
-      "dataLeavesInfrastructure": null,
-      "dataResidencyCommitment": "",
-      "dpaNotes": "",
-      "vendorSLA": "",
-      "authenticationModel": "",
-      "incidentNotificationProcess": "",
-      "owner": {},
-      "definitionOwner": {},
-      "provider": {},
-      "authority": {},
-      "shape": "round-rectangle",
-      "color": "#2a6fdb",
-      "source": "examples/configurations/object-patches/patch-log-management-implementations.yaml",
-      "tags": [],
-      "ardCategory": "",
-      "internalComponents": [],
-      "notes": {},
-      "requirements": [],
-      "implementations": [],
-      "appliesTo": {},
-      "inherits": "",
-      "scalingUnits": [],
-      "networkZones": [],
-      "sdpConnections": [],
-      "serviceGroups": [],
-      "tierVariants": [],
-      "tierId": "",
-      "purpose": "",
-      "availabilityExpectation": "",
-      "costPosture": "",
-      "complianceScope": [],
-      "parameterSurface": [],
-      "followsReferenceArchitecture": "",
-      "decisionRecords": [],
-      "affectedComponent": "",
-      "impact": "",
-      "mitigationPath": "",
-      "decisionRationale": "",
-      "relatedDecisionRecords": [],
-      "linkedObject": "",
-      "primaryObjectType": "",
-      "primaryObjectUid": "",
-      "generatedObjects": [],
-      "unresolvedQuestions": [],
-      "assumptions": [],
-      "nextSteps": [],
-      "defaultSelection": false,
-      "requirementCount": 0,
-      "hasRiskRef": false,
-      "outboundRefs": [
-        {
-          "target": "01KQQ4Q026-D04B",
-          "path": "target"
-        },
-        {
-          "target": "01KQQ4Q025-3HXA",
-          "path": "patch.implementations[0].ref"
-        }
-      ],
-      "referencedBy": [],
-      "editorSchema": {
-        "requiredFields": [
-          "schemaVersion",
-          "uid",
-          "type",
-          "name",
-          "target",
-          "patch",
-          "catalogStatus",
-          "lifecycleStatus"
-        ],
-        "optionalFields": [
-          "aliases",
-          "description",
-          "version",
-          "owner",
-          "tags",
-          "notes"
-        ],
-        "fieldTypes": {
-          "aliases": "list",
-          "owner": "dict",
-          "tags": "list",
-          "patch": "dict"
-        },
-        "enumFields": {
-          "catalogStatus": [
-            "stub",
-            "incomplete",
-            "complete"
-          ],
-          "lifecycleStatus": [
-            "candidate",
-            "preferred",
-            "existing-only",
-            "deprecated",
-            "retired"
-          ]
-        },
-        "enumListFields": {},
-        "collectionSchemas": {},
-        "schemaPath": "framework/schemas/object-patch.schema.yaml"
-      },
-      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01KQQ4Q025-5VTH\",\n  \"type\": \"object_patch\",\n  \"name\": \"Example capability.log-management implementations\",\n  \"description\": \"Example workspace-owned capability implementation mapping.\",\n  \"version\": \"1.0.0\",\n  \"catalogStatus\": \"incomplete\",\n  \"lifecycleStatus\": \"existing-only\",\n  \"target\": \"01KQQ4Q026-D04B\",\n  \"patch\": {\n    \"owner\": {\n      \"team\": \"example-architecture\",\n      \"contact\": \"architecture@example.com\"\n    },\n    \"implementations\": [\n      {\n        \"ref\": \"01KQQ4Q025-3HXA\",\n        \"configuration\": \"centralized-log-forwarding\",\n        \"lifecycleStatus\": \"existing-only\",\n        \"notes\": \"Example OS configuration for centralized log forwarding.\"\n      }\n    ]\n  },\n  \"_source\": \"examples/configurations/object-patches/patch-log-management-implementations.yaml\"\n}",
-      "existsInCatalog": true,
-      "outboundRelationships": [],
-      "inboundRelationships": []
-    },
-    {
-      "id": "01KQQ4Q026-4AYD",
-      "uid": "01KQQ4Q026-4AYD",
-      "name": "Example capability.operating-system implementations",
-      "aliases": [],
-      "type": "object_patch",
-      "typeLabel": "Object Patch",
-      "filterType": "object_patch",
-      "category": "",
-      "deliveryModel": "",
-      "domain": "",
-      "description": "Example workspace-owned capability implementation mapping.",
-      "version": "1.0.0",
-      "catalogStatus": "incomplete",
-      "lifecycleStatus": "existing-only",
-      "status": "",
-      "businessContext": {},
-      "product": "",
-      "runsOn": "",
-      "subtype": "",
-      "vendor": "",
-      "productName": "",
-      "productVersion": "",
-      "classification": "",
-      "platformDependency": "",
-      "capabilities": [],
-      "configurations": [],
-      "networkPlacement": "",
-      "patchingOwner": "",
-      "complianceCerts": [],
-      "requirementGroups": [],
-      "requirementImplementations": [],
-      "dataLeavesInfrastructure": null,
-      "dataResidencyCommitment": "",
-      "dpaNotes": "",
-      "vendorSLA": "",
-      "authenticationModel": "",
-      "incidentNotificationProcess": "",
-      "owner": {},
-      "definitionOwner": {},
-      "provider": {},
-      "authority": {},
-      "shape": "round-rectangle",
-      "color": "#2a6fdb",
-      "source": "examples/configurations/object-patches/patch-operating-system-implementations.yaml",
-      "tags": [],
-      "ardCategory": "",
-      "internalComponents": [],
-      "notes": {},
-      "requirements": [],
-      "implementations": [],
-      "appliesTo": {},
-      "inherits": "",
-      "scalingUnits": [],
-      "networkZones": [],
-      "sdpConnections": [],
-      "serviceGroups": [],
-      "tierVariants": [],
-      "tierId": "",
-      "purpose": "",
-      "availabilityExpectation": "",
-      "costPosture": "",
-      "complianceScope": [],
-      "parameterSurface": [],
-      "followsReferenceArchitecture": "",
-      "decisionRecords": [],
-      "affectedComponent": "",
-      "impact": "",
-      "mitigationPath": "",
-      "decisionRationale": "",
-      "relatedDecisionRecords": [],
-      "linkedObject": "",
-      "primaryObjectType": "",
-      "primaryObjectUid": "",
-      "generatedObjects": [],
-      "unresolvedQuestions": [],
-      "assumptions": [],
-      "nextSteps": [],
-      "defaultSelection": false,
-      "requirementCount": 0,
-      "hasRiskRef": false,
-      "outboundRefs": [
-        {
-          "target": "01KQQ4Q026-QM2X",
-          "path": "target"
-        },
-        {
-          "target": "01KQQ4Q025-3HXA",
-          "path": "patch.implementations[0].ref"
-        }
-      ],
-      "referencedBy": [],
-      "editorSchema": {
-        "requiredFields": [
-          "schemaVersion",
-          "uid",
-          "type",
-          "name",
-          "target",
-          "patch",
-          "catalogStatus",
-          "lifecycleStatus"
-        ],
-        "optionalFields": [
-          "aliases",
-          "description",
-          "version",
-          "owner",
-          "tags",
-          "notes"
-        ],
-        "fieldTypes": {
-          "aliases": "list",
-          "owner": "dict",
-          "tags": "list",
-          "patch": "dict"
-        },
-        "enumFields": {
-          "catalogStatus": [
-            "stub",
-            "incomplete",
-            "complete"
-          ],
-          "lifecycleStatus": [
-            "candidate",
-            "preferred",
-            "existing-only",
-            "deprecated",
-            "retired"
-          ]
-        },
-        "enumListFields": {},
-        "collectionSchemas": {},
-        "schemaPath": "framework/schemas/object-patch.schema.yaml"
-      },
-      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01KQQ4Q026-4AYD\",\n  \"type\": \"object_patch\",\n  \"name\": \"Example capability.operating-system implementations\",\n  \"description\": \"Example workspace-owned capability implementation mapping.\",\n  \"version\": \"1.0.0\",\n  \"catalogStatus\": \"incomplete\",\n  \"lifecycleStatus\": \"existing-only\",\n  \"target\": \"01KQQ4Q026-QM2X\",\n  \"patch\": {\n    \"owner\": {\n      \"team\": \"example-architecture\",\n      \"contact\": \"architecture@example.com\"\n    },\n    \"implementations\": [\n      {\n        \"ref\": \"01KQQ4Q025-3HXA\",\n        \"lifecycleStatus\": \"existing-only\",\n        \"notes\": \"Example operating system implementation.\"\n      }\n    ]\n  },\n  \"_source\": \"examples/configurations/object-patches/patch-operating-system-implementations.yaml\"\n}",
-      "existsInCatalog": true,
-      "outboundRelationships": [],
-      "inboundRelationships": []
-    },
-    {
-      "id": "01KQQ4Q026-BQ87",
-      "uid": "01KQQ4Q026-BQ87",
-      "name": "Example capability.security-monitoring implementations",
-      "aliases": [],
-      "type": "object_patch",
-      "typeLabel": "Object Patch",
-      "filterType": "object_patch",
-      "category": "",
-      "deliveryModel": "",
-      "domain": "",
-      "description": "Example workspace-owned capability implementation mapping.",
-      "version": "1.0.0",
-      "catalogStatus": "incomplete",
-      "lifecycleStatus": "existing-only",
-      "status": "",
-      "businessContext": {},
-      "product": "",
-      "runsOn": "",
-      "subtype": "",
-      "vendor": "",
-      "productName": "",
-      "productVersion": "",
-      "classification": "",
-      "platformDependency": "",
-      "capabilities": [],
-      "configurations": [],
-      "networkPlacement": "",
-      "patchingOwner": "",
-      "complianceCerts": [],
-      "requirementGroups": [],
-      "requirementImplementations": [],
-      "dataLeavesInfrastructure": null,
-      "dataResidencyCommitment": "",
-      "dpaNotes": "",
-      "vendorSLA": "",
-      "authenticationModel": "",
-      "incidentNotificationProcess": "",
-      "owner": {},
-      "definitionOwner": {},
-      "provider": {},
-      "authority": {},
-      "shape": "round-rectangle",
-      "color": "#2a6fdb",
-      "source": "examples/configurations/object-patches/patch-security-monitoring-implementations.yaml",
-      "tags": [],
-      "ardCategory": "",
-      "internalComponents": [],
-      "notes": {},
-      "requirements": [],
-      "implementations": [],
-      "appliesTo": {},
-      "inherits": "",
-      "scalingUnits": [],
-      "networkZones": [],
-      "sdpConnections": [],
-      "serviceGroups": [],
-      "tierVariants": [],
-      "tierId": "",
-      "purpose": "",
-      "availabilityExpectation": "",
-      "costPosture": "",
-      "complianceScope": [],
-      "parameterSurface": [],
-      "followsReferenceArchitecture": "",
-      "decisionRecords": [],
-      "affectedComponent": "",
-      "impact": "",
-      "mitigationPath": "",
-      "decisionRationale": "",
-      "relatedDecisionRecords": [],
-      "linkedObject": "",
-      "primaryObjectType": "",
-      "primaryObjectUid": "",
-      "generatedObjects": [],
-      "unresolvedQuestions": [],
-      "assumptions": [],
-      "nextSteps": [],
-      "defaultSelection": false,
-      "requirementCount": 0,
-      "hasRiskRef": false,
-      "outboundRefs": [
-        {
-          "target": "01KQQ4Q026-JW52",
-          "path": "target"
-        },
-        {
-          "target": "01KQQ4Q025-MQ3F",
-          "path": "patch.implementations[0].ref"
-        }
-      ],
-      "referencedBy": [],
-      "editorSchema": {
-        "requiredFields": [
-          "schemaVersion",
-          "uid",
-          "type",
-          "name",
-          "target",
-          "patch",
-          "catalogStatus",
-          "lifecycleStatus"
-        ],
-        "optionalFields": [
-          "aliases",
-          "description",
-          "version",
-          "owner",
-          "tags",
-          "notes"
-        ],
-        "fieldTypes": {
-          "aliases": "list",
-          "owner": "dict",
-          "tags": "list",
-          "patch": "dict"
-        },
-        "enumFields": {
-          "catalogStatus": [
-            "stub",
-            "incomplete",
-            "complete"
-          ],
-          "lifecycleStatus": [
-            "candidate",
-            "preferred",
-            "existing-only",
-            "deprecated",
-            "retired"
-          ]
-        },
-        "enumListFields": {},
-        "collectionSchemas": {},
-        "schemaPath": "framework/schemas/object-patch.schema.yaml"
-      },
-      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01KQQ4Q026-BQ87\",\n  \"type\": \"object_patch\",\n  \"name\": \"Example capability.security-monitoring implementations\",\n  \"description\": \"Example workspace-owned capability implementation mapping.\",\n  \"version\": \"1.0.0\",\n  \"catalogStatus\": \"incomplete\",\n  \"lifecycleStatus\": \"existing-only\",\n  \"target\": \"01KQQ4Q026-JW52\",\n  \"patch\": {\n    \"owner\": {\n      \"team\": \"example-architecture\",\n      \"contact\": \"architecture@example.com\"\n    },\n    \"implementations\": [\n      {\n        \"ref\": \"01KQQ4Q025-MQ3F\",\n        \"lifecycleStatus\": \"existing-only\",\n        \"notes\": \"Example endpoint security monitoring agent.\"\n      }\n    ]\n  },\n  \"_source\": \"examples/configurations/object-patches/patch-security-monitoring-implementations.yaml\"\n}",
-      "existsInCatalog": true,
-      "outboundRelationships": [],
-      "inboundRelationships": []
-    },
-    {
-      "id": "01KSF29JTP-DRHA",
-      "uid": "01KSF29JTP-DRHA",
-      "name": "HAProxy Load Balancer Operational Architecture",
-      "aliases": [],
-      "type": "decision_record",
-      "typeLabel": "DecisionRecord / decision",
-      "filterType": "decision_record",
-      "category": "decision",
-      "deliveryModel": "",
-      "domain": "",
-      "description": "Documents the operational architecture decisions for the OpenStack API Load Balancer (HAProxy) \u2014 covering authentication delegation, secrets management, logging, health checking, availability, scalability, recoverability, and failure domain.",
-      "version": "",
       "catalogStatus": "complete",
       "lifecycleStatus": "preferred",
-      "status": "accepted",
+      "status": "",
+      "businessContext": {},
+      "product": "",
+      "runsOn": "",
+      "subtype": "",
+      "vendor": "",
+      "productName": "",
+      "productVersion": "",
+      "classification": "",
+      "platformDependency": "",
+      "capabilities": [],
+      "configurations": [],
+      "networkPlacement": "",
+      "patchingOwner": "",
+      "complianceCerts": [],
+      "requirementGroups": [],
+      "requirementImplementations": [],
+      "dataLeavesInfrastructure": null,
+      "dataResidencyCommitment": "",
+      "dpaNotes": "",
+      "vendorSLA": "",
+      "authenticationModel": "",
+      "incidentNotificationProcess": "",
+      "owner": {
+        "team": "platform-ai-team",
+        "contact": "platform-ai@example.com"
+      },
+      "definitionOwner": {},
+      "provider": {},
+      "authority": {
+        "name": "DRAFT Framework",
+        "shortName": "DRAFT",
+        "source": "DRAFT Framework"
+      },
+      "shape": "barrel",
+      "color": "#1f8a5b",
+      "source": "configurations/requirement-groups/requirement-group-ai-product-standards.yaml",
+      "tags": [],
+      "ardCategory": "",
+      "internalComponents": [],
+      "notes": {},
+      "requirements": [
+        {
+          "id": "req-ai-gateway-routing",
+          "description": "AI products MUST route model inference calls through an approved, deployable AiGateway. Direct unmonitored public API calls are forbidden.",
+          "canBeSatisfiedBy": [
+            {
+              "mechanism": "field",
+              "key": "aiGatewayRouting"
+            },
+            {
+              "mechanism": "decisionRecord",
+              "key": "aiGatewayRoutingDecision"
+            }
+          ],
+          "minimumSatisfactions": 1,
+          "requirementMode": "mandatory",
+          "naAllowed": false,
+          "validAnswerTypes": [
+            "field",
+            "decisionRecord"
+          ]
+        },
+        {
+          "id": "req-zero-hardcoded-keys",
+          "description": "API keys and bot tokens MUST be retrieved dynamically from Secret Manager at runtime.",
+          "canBeSatisfiedBy": [
+            {
+              "mechanism": "field",
+              "key": "secretsManagement"
+            },
+            {
+              "mechanism": "decisionRecord",
+              "key": "secretsManagementDecision"
+            }
+          ],
+          "minimumSatisfactions": 1,
+          "requirementMode": "mandatory",
+          "naAllowed": false,
+          "validAnswerTypes": [
+            "field",
+            "decisionRecord"
+          ]
+        },
+        {
+          "id": "req-local-auto-validation",
+          "description": "AI product repositories MUST execute local schema validation (validate.py) prior to committing .draft/sdp.yaml.",
+          "canBeSatisfiedBy": [
+            {
+              "mechanism": "field",
+              "key": "localValidation"
+            },
+            {
+              "mechanism": "decisionRecord",
+              "key": "localValidationDecision"
+            }
+          ],
+          "minimumSatisfactions": 1,
+          "requirementMode": "mandatory",
+          "naAllowed": false,
+          "validAnswerTypes": [
+            "field",
+            "decisionRecord"
+          ]
+        },
+        {
+          "id": "req-product-registration",
+          "description": "Every AI product repo MUST register its repository URL and SDP manifest path in drafting-table.",
+          "canBeSatisfiedBy": [
+            {
+              "mechanism": "field",
+              "key": "productRegistration"
+            },
+            {
+              "mechanism": "decisionRecord",
+              "key": "productRegistrationDecision"
+            }
+          ],
+          "minimumSatisfactions": 1,
+          "requirementMode": "mandatory",
+          "naAllowed": false,
+          "validAnswerTypes": [
+            "field",
+            "decisionRecord"
+          ]
+        },
+        {
+          "id": "req-model-inference-spec",
+          "description": "Model versions, temperature parameters, and token budget limits must be declared in runtimeSpec.",
+          "canBeSatisfiedBy": [
+            {
+              "mechanism": "field",
+              "key": "modelInferenceSpec"
+            },
+            {
+              "mechanism": "decisionRecord",
+              "key": "modelInferenceSpecDecision"
+            }
+          ],
+          "minimumSatisfactions": 1,
+          "requirementMode": "mandatory",
+          "naAllowed": false,
+          "validAnswerTypes": [
+            "field",
+            "decisionRecord"
+          ]
+        }
+      ],
+      "implementations": [],
+      "appliesTo": [
+        "product_component",
+        "software_deployment_pattern"
+      ],
+      "inherits": "",
+      "scalingUnits": [],
+      "networkZones": [],
+      "sdpConnections": [],
+      "serviceGroups": [],
+      "tierVariants": [],
+      "tierId": "",
+      "purpose": "",
+      "availabilityExpectation": "",
+      "costPosture": "",
+      "complianceScope": [],
+      "parameterSurface": [],
+      "followsReferenceArchitecture": "",
+      "decisionRecords": [],
+      "affectedComponent": "",
+      "impact": "",
+      "mitigationPath": "",
+      "decisionRationale": "",
+      "relatedDecisionRecords": [],
+      "linkedObject": "",
+      "primaryObjectType": "",
+      "primaryObjectUid": "",
+      "generatedObjects": [],
+      "unresolvedQuestions": [],
+      "assumptions": [],
+      "nextSteps": [],
+      "defaultSelection": false,
+      "requirementCount": 5,
+      "hasRiskRef": false,
+      "outboundRefs": [],
+      "referencedBy": [],
+      "editorSchema": {
+        "requiredFields": [
+          "schemaVersion",
+          "uid",
+          "type",
+          "name",
+          "description",
+          "catalogStatus",
+          "activation",
+          "appliesTo",
+          "requirements"
+        ],
+        "optionalFields": [
+          "aliases",
+          "version",
+          "tags",
+          "owner",
+          "lifecycleStatus",
+          "provider",
+          "authority",
+          "notes",
+          "inherits",
+          "appliesToQualifiers"
+        ],
+        "fieldTypes": {
+          "aliases": "list",
+          "owner": "dict",
+          "tags": "list",
+          "provider": "dict",
+          "authority": "dict",
+          "appliesTo": "list",
+          "requirements": "list",
+          "appliesToQualifiers": "dict"
+        },
+        "enumFields": {
+          "catalogStatus": [
+            "stub",
+            "incomplete",
+            "complete"
+          ],
+          "activation": [
+            "always",
+            "workspace"
+          ],
+          "lifecycleStatus": [
+            "candidate",
+            "preferred",
+            "existing-only",
+            "deprecated",
+            "retired"
+          ]
+        },
+        "enumListFields": {},
+        "collectionSchemas": {
+          "requirements": "requirement"
+        },
+        "schemaPath": "framework/schemas/requirement-group.schema.yaml"
+      },
+      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M15NEKT7-4PZN\",\n  \"type\": \"requirement_group\",\n  \"name\": \"Enterprise AI Product Security & Acceptable Use Standards\",\n  \"description\": \"Mandatory compliance, governance, and secret management standards for all AI products built by Archie, Switch, or engineering teams.\",\n  \"version\": \"1.0.0\",\n  \"catalogStatus\": \"complete\",\n  \"lifecycleStatus\": \"preferred\",\n  \"activation\": \"always\",\n  \"appliesTo\": [\n    \"product_component\",\n    \"software_deployment_pattern\"\n  ],\n  \"authority\": {\n    \"name\": \"DRAFT Framework\",\n    \"shortName\": \"DRAFT\",\n    \"source\": \"DRAFT Framework\"\n  },\n  \"owner\": {\n    \"team\": \"platform-ai-team\",\n    \"contact\": \"platform-ai@example.com\"\n  },\n  \"requirements\": [\n    {\n      \"id\": \"req-ai-gateway-routing\",\n      \"description\": \"AI products MUST route model inference calls through an approved, deployable AiGateway. Direct unmonitored public API calls are forbidden.\",\n      \"canBeSatisfiedBy\": [\n        {\n          \"mechanism\": \"field\",\n          \"key\": \"aiGatewayRouting\"\n        },\n        {\n          \"mechanism\": \"decisionRecord\",\n          \"key\": \"aiGatewayRoutingDecision\"\n        }\n      ],\n      \"minimumSatisfactions\": 1,\n      \"requirementMode\": \"mandatory\",\n      \"naAllowed\": false,\n      \"validAnswerTypes\": [\n        \"field\",\n        \"decisionRecord\"\n      ]\n    },\n    {\n      \"id\": \"req-zero-hardcoded-keys\",\n      \"description\": \"API keys and bot tokens MUST be retrieved dynamically from Secret Manager at runtime.\",\n      \"canBeSatisfiedBy\": [\n        {\n          \"mechanism\": \"field\",\n          \"key\": \"secretsManagement\"\n        },\n        {\n          \"mechanism\": \"decisionRecord\",\n          \"key\": \"secretsManagementDecision\"\n        }\n      ],\n      \"minimumSatisfactions\": 1,\n      \"requirementMode\": \"mandatory\",\n      \"naAllowed\": false,\n      \"validAnswerTypes\": [\n        \"field\",\n        \"decisionRecord\"\n      ]\n    },\n    {\n      \"id\": \"req-local-auto-validation\",\n      \"description\": \"AI product repositories MUST execute local schema validation (validate.py) prior to committing .draft/sdp.yaml.\",\n      \"canBeSatisfiedBy\": [\n        {\n          \"mechanism\": \"field\",\n          \"key\": \"localValidation\"\n        },\n        {\n          \"mechanism\": \"decisionRecord\",\n          \"key\": \"localValidationDecision\"\n        }\n      ],\n      \"minimumSatisfactions\": 1,\n      \"requirementMode\": \"mandatory\",\n      \"naAllowed\": false,\n      \"validAnswerTypes\": [\n        \"field\",\n        \"decisionRecord\"\n      ]\n    },\n    {\n      \"id\": \"req-product-registration\",\n      \"description\": \"Every AI product repo MUST register its repository URL and SDP manifest path in drafting-table.\",\n      \"canBeSatisfiedBy\": [\n        {\n          \"mechanism\": \"field\",\n          \"key\": \"productRegistration\"\n        },\n        {\n          \"mechanism\": \"decisionRecord\",\n          \"key\": \"productRegistrationDecision\"\n        }\n      ],\n      \"minimumSatisfactions\": 1,\n      \"requirementMode\": \"mandatory\",\n      \"naAllowed\": false,\n      \"validAnswerTypes\": [\n        \"field\",\n        \"decisionRecord\"\n      ]\n    },\n    {\n      \"id\": \"req-model-inference-spec\",\n      \"description\": \"Model versions, temperature parameters, and token budget limits must be declared in runtimeSpec.\",\n      \"canBeSatisfiedBy\": [\n        {\n          \"mechanism\": \"field\",\n          \"key\": \"modelInferenceSpec\"\n        },\n        {\n          \"mechanism\": \"decisionRecord\",\n          \"key\": \"modelInferenceSpecDecision\"\n        }\n      ],\n      \"minimumSatisfactions\": 1,\n      \"requirementMode\": \"mandatory\",\n      \"naAllowed\": false,\n      \"validAnswerTypes\": [\n        \"field\",\n        \"decisionRecord\"\n      ]\n    }\n  ],\n  \"_source\": \"configurations/requirement-groups/requirement-group-ai-product-standards.yaml\"\n}",
+      "existsInCatalog": true,
+      "outboundRelationships": [],
+      "inboundRelationships": []
+    },
+    {
+      "id": "01M162FHHS-XAJQ",
+      "uid": "01M162FHHS-XAJQ",
+      "name": "Aiden Game Platform Architecture & UAT Standards",
+      "aliases": [],
+      "type": "requirement_group",
+      "typeLabel": "RequirementGroup",
+      "filterType": "requirement_group",
+      "category": "",
+      "deliveryModel": "",
+      "domain": "",
+      "description": "Governed architecture standards for Switch to build, scaffold, and deploy games for Aiden (tier classification, persistent storage, auth/user profiles, GitHub Pages / Cloud Run UAT delivery).",
+      "version": "1.0.0",
+      "catalogStatus": "complete",
+      "lifecycleStatus": "preferred",
+      "status": "",
+      "businessContext": {},
+      "product": "",
+      "runsOn": "",
+      "subtype": "",
+      "vendor": "",
+      "productName": "",
+      "productVersion": "",
+      "classification": "",
+      "platformDependency": "",
+      "capabilities": [],
+      "configurations": [],
+      "networkPlacement": "",
+      "patchingOwner": "",
+      "complianceCerts": [],
+      "requirementGroups": [],
+      "requirementImplementations": [],
+      "dataLeavesInfrastructure": null,
+      "dataResidencyCommitment": "",
+      "dpaNotes": "",
+      "vendorSLA": "",
+      "authenticationModel": "",
+      "incidentNotificationProcess": "",
+      "owner": {
+        "team": "switch-product-team",
+        "contact": "switch-team@example.com"
+      },
+      "definitionOwner": {},
+      "provider": {},
+      "authority": {
+        "name": "DRAFT Framework",
+        "shortName": "DRAFT",
+        "source": "DRAFT Framework"
+      },
+      "shape": "barrel",
+      "color": "#1f8a5b",
+      "source": "configurations/requirement-groups/requirement-group-aiden-game-standards.yaml",
+      "tags": [],
+      "ardCategory": "",
+      "internalComponents": [],
+      "notes": {},
+      "requirements": [
+        {
+          "id": "req-game-tier-classification",
+          "description": "Every game built by Switch MUST be classified into Tier 1 (Static Web Game), Tier 2 (Persistent Web Game with Auth/DB), or Tier 3 (Real-Time Multiplayer).",
+          "canBeSatisfiedBy": [
+            {
+              "mechanism": "field",
+              "key": "gameTierClassification"
+            },
+            {
+              "mechanism": "decisionRecord",
+              "key": "gameTierClassificationDecision"
+            }
+          ],
+          "minimumSatisfactions": 1,
+          "requirementMode": "mandatory",
+          "naAllowed": false,
+          "validAnswerTypes": [
+            "field",
+            "decisionRecord"
+          ]
+        },
+        {
+          "id": "req-game-uat-deployment",
+          "description": "Every game MUST include automated CI/CD deployment pipelines providing an accessible UAT link for Aiden to play and test (GitHub Pages for Tier 1, GitHub Pages + Cloud Run for Tier 2).",
+          "canBeSatisfiedBy": [
+            {
+              "mechanism": "field",
+              "key": "gameUatDeployment"
+            },
+            {
+              "mechanism": "decisionRecord",
+              "key": "gameUatDeploymentDecision"
+            }
+          ],
+          "minimumSatisfactions": 1,
+          "requirementMode": "mandatory",
+          "naAllowed": false,
+          "validAnswerTypes": [
+            "field",
+            "decisionRecord"
+          ]
+        },
+        {
+          "id": "req-game-auth-profile-persistence",
+          "description": "Tier 2+ persistent games MUST use standard authentication (JWT / Secret Manager / Auth Provider) and persistent storage (Cloud SQL Postgres / Firestore) for user profiles and saved state.",
+          "canBeSatisfiedBy": [
+            {
+              "mechanism": "field",
+              "key": "gameAuthPersistence"
+            },
+            {
+              "mechanism": "decisionRecord",
+              "key": "gameAuthPersistenceDecision"
+            }
+          ],
+          "minimumSatisfactions": 1,
+          "requirementMode": "mandatory",
+          "naAllowed": true,
+          "validAnswerTypes": [
+            "field",
+            "decisionRecord"
+          ]
+        },
+        {
+          "id": "req-game-repo-scaffolding",
+          "description": "Every game repository created by Switch MUST be bootstrapped with MATURITY.md, AGENTS.md, KPF.md, and .draft/sdp.yaml registered in drafting-table.",
+          "canBeSatisfiedBy": [
+            {
+              "mechanism": "field",
+              "key": "gameRepoScaffolding"
+            },
+            {
+              "mechanism": "decisionRecord",
+              "key": "gameRepoScaffoldingDecision"
+            }
+          ],
+          "minimumSatisfactions": 1,
+          "requirementMode": "mandatory",
+          "naAllowed": false,
+          "validAnswerTypes": [
+            "field",
+            "decisionRecord"
+          ]
+        }
+      ],
+      "implementations": [],
+      "appliesTo": [
+        "product_component",
+        "software_deployment_pattern"
+      ],
+      "inherits": "",
+      "scalingUnits": [],
+      "networkZones": [],
+      "sdpConnections": [],
+      "serviceGroups": [],
+      "tierVariants": [],
+      "tierId": "",
+      "purpose": "",
+      "availabilityExpectation": "",
+      "costPosture": "",
+      "complianceScope": [],
+      "parameterSurface": [],
+      "followsReferenceArchitecture": "",
+      "decisionRecords": [],
+      "affectedComponent": "",
+      "impact": "",
+      "mitigationPath": "",
+      "decisionRationale": "",
+      "relatedDecisionRecords": [],
+      "linkedObject": "",
+      "primaryObjectType": "",
+      "primaryObjectUid": "",
+      "generatedObjects": [],
+      "unresolvedQuestions": [],
+      "assumptions": [],
+      "nextSteps": [],
+      "defaultSelection": false,
+      "requirementCount": 4,
+      "hasRiskRef": false,
+      "outboundRefs": [],
+      "referencedBy": [],
+      "editorSchema": {
+        "requiredFields": [
+          "schemaVersion",
+          "uid",
+          "type",
+          "name",
+          "description",
+          "catalogStatus",
+          "activation",
+          "appliesTo",
+          "requirements"
+        ],
+        "optionalFields": [
+          "aliases",
+          "version",
+          "tags",
+          "owner",
+          "lifecycleStatus",
+          "provider",
+          "authority",
+          "notes",
+          "inherits",
+          "appliesToQualifiers"
+        ],
+        "fieldTypes": {
+          "aliases": "list",
+          "owner": "dict",
+          "tags": "list",
+          "provider": "dict",
+          "authority": "dict",
+          "appliesTo": "list",
+          "requirements": "list",
+          "appliesToQualifiers": "dict"
+        },
+        "enumFields": {
+          "catalogStatus": [
+            "stub",
+            "incomplete",
+            "complete"
+          ],
+          "activation": [
+            "always",
+            "workspace"
+          ],
+          "lifecycleStatus": [
+            "candidate",
+            "preferred",
+            "existing-only",
+            "deprecated",
+            "retired"
+          ]
+        },
+        "enumListFields": {},
+        "collectionSchemas": {
+          "requirements": "requirement"
+        },
+        "schemaPath": "framework/schemas/requirement-group.schema.yaml"
+      },
+      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M162FHHS-XAJQ\",\n  \"type\": \"requirement_group\",\n  \"name\": \"Aiden Game Platform Architecture & UAT Standards\",\n  \"description\": \"Governed architecture standards for Switch to build, scaffold, and deploy games for Aiden (tier classification, persistent storage, auth/user profiles, GitHub Pages / Cloud Run UAT delivery).\",\n  \"version\": \"1.0.0\",\n  \"catalogStatus\": \"complete\",\n  \"lifecycleStatus\": \"preferred\",\n  \"activation\": \"always\",\n  \"appliesTo\": [\n    \"product_component\",\n    \"software_deployment_pattern\"\n  ],\n  \"authority\": {\n    \"name\": \"DRAFT Framework\",\n    \"shortName\": \"DRAFT\",\n    \"source\": \"DRAFT Framework\"\n  },\n  \"owner\": {\n    \"team\": \"switch-product-team\",\n    \"contact\": \"switch-team@example.com\"\n  },\n  \"requirements\": [\n    {\n      \"id\": \"req-game-tier-classification\",\n      \"description\": \"Every game built by Switch MUST be classified into Tier 1 (Static Web Game), Tier 2 (Persistent Web Game with Auth/DB), or Tier 3 (Real-Time Multiplayer).\",\n      \"canBeSatisfiedBy\": [\n        {\n          \"mechanism\": \"field\",\n          \"key\": \"gameTierClassification\"\n        },\n        {\n          \"mechanism\": \"decisionRecord\",\n          \"key\": \"gameTierClassificationDecision\"\n        }\n      ],\n      \"minimumSatisfactions\": 1,\n      \"requirementMode\": \"mandatory\",\n      \"naAllowed\": false,\n      \"validAnswerTypes\": [\n        \"field\",\n        \"decisionRecord\"\n      ]\n    },\n    {\n      \"id\": \"req-game-uat-deployment\",\n      \"description\": \"Every game MUST include automated CI/CD deployment pipelines providing an accessible UAT link for Aiden to play and test (GitHub Pages for Tier 1, GitHub Pages + Cloud Run for Tier 2).\",\n      \"canBeSatisfiedBy\": [\n        {\n          \"mechanism\": \"field\",\n          \"key\": \"gameUatDeployment\"\n        },\n        {\n          \"mechanism\": \"decisionRecord\",\n          \"key\": \"gameUatDeploymentDecision\"\n        }\n      ],\n      \"minimumSatisfactions\": 1,\n      \"requirementMode\": \"mandatory\",\n      \"naAllowed\": false,\n      \"validAnswerTypes\": [\n        \"field\",\n        \"decisionRecord\"\n      ]\n    },\n    {\n      \"id\": \"req-game-auth-profile-persistence\",\n      \"description\": \"Tier 2+ persistent games MUST use standard authentication (JWT / Secret Manager / Auth Provider) and persistent storage (Cloud SQL Postgres / Firestore) for user profiles and saved state.\",\n      \"canBeSatisfiedBy\": [\n        {\n          \"mechanism\": \"field\",\n          \"key\": \"gameAuthPersistence\"\n        },\n        {\n          \"mechanism\": \"decisionRecord\",\n          \"key\": \"gameAuthPersistenceDecision\"\n        }\n      ],\n      \"minimumSatisfactions\": 1,\n      \"requirementMode\": \"mandatory\",\n      \"naAllowed\": true,\n      \"validAnswerTypes\": [\n        \"field\",\n        \"decisionRecord\"\n      ]\n    },\n    {\n      \"id\": \"req-game-repo-scaffolding\",\n      \"description\": \"Every game repository created by Switch MUST be bootstrapped with MATURITY.md, AGENTS.md, KPF.md, and .draft/sdp.yaml registered in drafting-table.\",\n      \"canBeSatisfiedBy\": [\n        {\n          \"mechanism\": \"field\",\n          \"key\": \"gameRepoScaffolding\"\n        },\n        {\n          \"mechanism\": \"decisionRecord\",\n          \"key\": \"gameRepoScaffoldingDecision\"\n        }\n      ],\n      \"minimumSatisfactions\": 1,\n      \"requirementMode\": \"mandatory\",\n      \"naAllowed\": false,\n      \"validAnswerTypes\": [\n        \"field\",\n        \"decisionRecord\"\n      ]\n    }\n  ],\n  \"_source\": \"configurations/requirement-groups/requirement-group-aiden-game-standards.yaml\"\n}",
+      "existsInCatalog": true,
+      "outboundRelationships": [],
+      "inboundRelationships": []
+    },
+    {
+      "id": "01M15WPEFV-ZMA9",
+      "uid": "01M15WPEFV-ZMA9",
+      "name": "Engineering Maturity & Quality Standards (L1-L3)",
+      "aliases": [],
+      "type": "requirement_group",
+      "typeLabel": "RequirementGroup",
+      "filterType": "requirement_group",
+      "category": "",
+      "deliveryModel": "",
+      "domain": "",
+      "description": "Comprehensive engineering maturity standards covering L1 Baseline through L3 Advanced (backward-compatible migrations, 100% composable IaC, zero gate suppressions, synthetic test data, automated zero-downtime rollback, JSON structured logging, SLO error budgets, and ephemeral preview environments).",
+      "version": "1.2.0",
+      "catalogStatus": "complete",
+      "lifecycleStatus": "preferred",
+      "status": "",
       "businessContext": {},
       "product": "",
       "runsOn": "",
@@ -20012,1042 +19865,256 @@ window.DRAFT_BROWSER_DATA = {
       },
       "definitionOwner": {},
       "provider": {},
-      "authority": {},
-      "shape": "round-rectangle",
+      "authority": {
+        "name": "DRAFT Framework",
+        "shortName": "DRAFT",
+        "source": "DRAFT Framework"
+      },
+      "shape": "barrel",
       "color": "#1f8a5b",
-      "source": "examples/catalog/governance/decision-records/dr-haproxy-lb-operational-architecture.yaml",
-      "tags": [
-        "decision-record",
-        "openstack",
-        "load-balancer",
-        "haproxy"
-      ],
-      "ardCategory": "decision",
-      "internalComponents": [],
-      "notes": {},
-      "requirements": [],
-      "implementations": [],
-      "appliesTo": {},
-      "inherits": "",
-      "scalingUnits": [],
-      "networkZones": [],
-      "sdpConnections": [],
-      "serviceGroups": [],
-      "tierVariants": [],
-      "tierId": "",
-      "purpose": "",
-      "availabilityExpectation": "",
-      "costPosture": "",
-      "complianceScope": [],
-      "parameterSurface": [],
-      "followsReferenceArchitecture": "",
-      "decisionRecords": [],
-      "affectedComponent": "",
-      "impact": "Pass-through authentication, Keepalived VIP failover, and Ansible-managed configuration are the operational accountability boundaries for this load balancer. Any future deployment that adds HAProxy-level authentication or secrets holding must revisit this decision.",
-      "mitigationPath": "",
-      "decisionRationale": "HAProxy operates in pass-through mode: it does not authenticate requests itself. Authentication is delegated to backend services (Keystone for API requests, nginx/Django for Horizon). This avoids duplicating token validation logic and keeps the load balancer stateless.\n\nSSL certificates and HAProxy configuration are managed by Ansible configuration management. Certificate private keys reside in the OS certificate store on each controller node. No application-level secrets are held by HAProxy, avoiding a secrets management dependency in the critical request path.\n\nHAProxy performs active health checks on all backends (nova-api, keystone, glance, neutron, cinder, horizon) on a 2-second interval, automatically removing unhealthy backends from rotation. A shared virtual IP (VIP) managed by Keepalived provides a single entry point with 2-second failover if the active master fails.\n\nHAProxy is stateless; horizontal scaling is achieved by adding controller nodes. The process is managed by systemd and restarts automatically on failure. Configuration is reapplied via Ansible within minutes. Loss of all controller nodes renders the control plane unavailable; the data plane (running instances) continues unaffected.",
-      "relatedDecisionRecords": [
-        "01KSE5V73Z-CRZV"
-      ],
-      "linkedObject": "01KSF29JTP-9HYA",
-      "primaryObjectType": "",
-      "primaryObjectUid": "",
-      "generatedObjects": [],
-      "unresolvedQuestions": [],
-      "assumptions": [],
-      "nextSteps": [],
-      "defaultSelection": false,
-      "requirementCount": 0,
-      "hasRiskRef": false,
-      "outboundRefs": [
-        {
-          "target": "01KSF29JTP-9HYA",
-          "path": "linkedObject"
-        }
-      ],
-      "referencedBy": [],
-      "editorSchema": {
-        "requiredFields": [
-          "schemaVersion",
-          "uid",
-          "type",
-          "name",
-          "category",
-          "status",
-          "catalogStatus",
-          "lifecycleStatus"
-        ],
-        "optionalFields": [
-          "aliases",
-          "description",
-          "version",
-          "owner",
-          "tags",
-          "affectedComponent",
-          "impact",
-          "mitigationPath",
-          "decisionRationale",
-          "relatedDecisionRecords",
-          "controlReferences",
-          "linkedObject",
-          "approver",
-          "approvalDate"
-        ],
-        "fieldTypes": {
-          "aliases": "list",
-          "owner": "dict",
-          "tags": "list",
-          "relatedDecisionRecords": "list",
-          "controlReferences": "list",
-          "approver": "str",
-          "approvalDate": "str"
-        },
-        "enumFields": {
-          "catalogStatus": [
-            "stub",
-            "incomplete",
-            "complete"
-          ],
-          "lifecycleStatus": [
-            "candidate",
-            "preferred",
-            "existing-only",
-            "deprecated",
-            "retired"
-          ],
-          "category": [
-            "risk",
-            "decision"
-          ],
-          "status": [
-            "open",
-            "accepted",
-            "mitigated",
-            "resolved"
-          ]
-        },
-        "enumListFields": {},
-        "collectionSchemas": {},
-        "schemaPath": "framework/schemas/decision-record.schema.yaml"
-      },
-      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01KSF29JTP-DRHA\",\n  \"type\": \"decision_record\",\n  \"name\": \"HAProxy Load Balancer Operational Architecture\",\n  \"category\": \"decision\",\n  \"status\": \"accepted\",\n  \"catalogStatus\": \"complete\",\n  \"lifecycleStatus\": \"preferred\",\n  \"owner\": {\n    \"team\": \"platform-engineering\",\n    \"contact\": \"platform-engineering@example.com\"\n  },\n  \"tags\": [\n    \"decision-record\",\n    \"openstack\",\n    \"load-balancer\",\n    \"haproxy\"\n  ],\n  \"linkedObject\": \"01KSF29JTP-9HYA\",\n  \"description\": \"Documents the operational architecture decisions for the OpenStack API Load Balancer (HAProxy) \\u2014 covering authentication delegation, secrets management, logging, health checking, availability, scalability, recoverability, and failure domain.\",\n  \"decisionRationale\": \"HAProxy operates in pass-through mode: it does not authenticate requests itself. Authentication is delegated to backend services (Keystone for API requests, nginx/Django for Horizon). This avoids duplicating token validation logic and keeps the load balancer stateless.\\n\\nSSL certificates and HAProxy configuration are managed by Ansible configuration management. Certificate private keys reside in the OS certificate store on each controller node. No application-level secrets are held by HAProxy, avoiding a secrets management dependency in the critical request path.\\n\\nHAProxy performs active health checks on all backends (nova-api, keystone, glance, neutron, cinder, horizon) on a 2-second interval, automatically removing unhealthy backends from rotation. A shared virtual IP (VIP) managed by Keepalived provides a single entry point with 2-second failover if the active master fails.\\n\\nHAProxy is stateless; horizontal scaling is achieved by adding controller nodes. The process is managed by systemd and restarts automatically on failure. Configuration is reapplied via Ansible within minutes. Loss of all controller nodes renders the control plane unavailable; the data plane (running instances) continues unaffected.\",\n  \"impact\": \"Pass-through authentication, Keepalived VIP failover, and Ansible-managed configuration are the operational accountability boundaries for this load balancer. Any future deployment that adds HAProxy-level authentication or secrets holding must revisit this decision.\",\n  \"relatedDecisionRecords\": [\n    \"01KSE5V73Z-CRZV\"\n  ],\n  \"_source\": \"examples/catalog/governance/decision-records/dr-haproxy-lb-operational-architecture.yaml\"\n}",
-      "existsInCatalog": true,
-      "outboundRelationships": [],
-      "inboundRelationships": []
-    },
-    {
-      "id": "01KT1340H6-X3T5",
-      "uid": "01KT1340H6-X3T5",
-      "name": "AWS Lambda Serverless Host \u2014 Security and Compliance decisions",
-      "aliases": [],
-      "type": "decision_record",
-      "typeLabel": "DecisionRecord / decision",
-      "filterType": "decision_record",
-      "category": "decision",
-      "deliveryModel": "",
-      "domain": "",
-      "description": "",
-      "version": "",
-      "catalogStatus": "complete",
-      "lifecycleStatus": "preferred",
-      "status": "accepted",
-      "businessContext": {},
-      "product": "",
-      "runsOn": "",
-      "subtype": "",
-      "vendor": "",
-      "productName": "",
-      "productVersion": "",
-      "classification": "",
-      "platformDependency": "",
-      "capabilities": [],
-      "configurations": [],
-      "networkPlacement": "",
-      "patchingOwner": "",
-      "complianceCerts": [],
-      "requirementGroups": [],
-      "requirementImplementations": [],
-      "dataLeavesInfrastructure": null,
-      "dataResidencyCommitment": "",
-      "dpaNotes": "",
-      "vendorSLA": "",
-      "authenticationModel": "",
-      "incidentNotificationProcess": "",
-      "owner": {
-        "team": "cloud-architecture",
-        "contact": "cloud-architecture@example.com"
-      },
-      "definitionOwner": {},
-      "provider": {},
-      "authority": {},
-      "shape": "round-rectangle",
-      "color": "#1f8a5b",
-      "source": "examples/catalog/governance/decision-records/dr-host-serverless-lambda-compliance.yaml",
-      "tags": [
-        "decision-record",
-        "example",
-        "compliance"
-      ],
-      "ardCategory": "decision",
-      "internalComponents": [],
-      "notes": {},
-      "requirements": [],
-      "implementations": [],
-      "appliesTo": {},
-      "inherits": "",
-      "scalingUnits": [],
-      "networkZones": [],
-      "sdpConnections": [],
-      "serviceGroups": [],
-      "tierVariants": [],
-      "tierId": "",
-      "purpose": "",
-      "availabilityExpectation": "",
-      "costPosture": "",
-      "complianceScope": [],
-      "parameterSurface": [],
-      "followsReferenceArchitecture": "",
-      "decisionRecords": [],
-      "affectedComponent": "",
-      "impact": "",
-      "mitigationPath": "",
-      "decisionRationale": "Records the security and compliance decisions for AWS Lambda Serverless Host addressing the authentication, health_welfare_monitoring, log_management, patch_management, security_monitoring control requirement(s); supporting detail is documented in this object's notes. This DecisionRecord is the committed answer that satisfies the requirement(s).",
-      "relatedDecisionRecords": [],
-      "linkedObject": "01KQQ4Q025-1XDE",
-      "primaryObjectType": "",
-      "primaryObjectUid": "",
-      "generatedObjects": [],
-      "unresolvedQuestions": [],
-      "assumptions": [],
-      "nextSteps": [],
-      "defaultSelection": false,
-      "requirementCount": 0,
-      "hasRiskRef": false,
-      "outboundRefs": [
-        {
-          "target": "01KQQ4Q025-1XDE",
-          "path": "linkedObject"
-        }
-      ],
-      "referencedBy": [
-        {
-          "source": "01KQQ4Q025-1XDE",
-          "path": "decisionRecords[0].ref"
-        },
-        {
-          "source": "01KQQ4Q025-1XDE",
-          "path": "decisionRecords[1].ref"
-        },
-        {
-          "source": "01KQQ4Q025-1XDE",
-          "path": "decisionRecords[2].ref"
-        },
-        {
-          "source": "01KQQ4Q025-1XDE",
-          "path": "decisionRecords[3].ref"
-        },
-        {
-          "source": "01KQQ4Q025-1XDE",
-          "path": "decisionRecords[4].ref"
-        }
-      ],
-      "editorSchema": {
-        "requiredFields": [
-          "schemaVersion",
-          "uid",
-          "type",
-          "name",
-          "category",
-          "status",
-          "catalogStatus",
-          "lifecycleStatus"
-        ],
-        "optionalFields": [
-          "aliases",
-          "description",
-          "version",
-          "owner",
-          "tags",
-          "affectedComponent",
-          "impact",
-          "mitigationPath",
-          "decisionRationale",
-          "relatedDecisionRecords",
-          "controlReferences",
-          "linkedObject",
-          "approver",
-          "approvalDate"
-        ],
-        "fieldTypes": {
-          "aliases": "list",
-          "owner": "dict",
-          "tags": "list",
-          "relatedDecisionRecords": "list",
-          "controlReferences": "list",
-          "approver": "str",
-          "approvalDate": "str"
-        },
-        "enumFields": {
-          "catalogStatus": [
-            "stub",
-            "incomplete",
-            "complete"
-          ],
-          "lifecycleStatus": [
-            "candidate",
-            "preferred",
-            "existing-only",
-            "deprecated",
-            "retired"
-          ],
-          "category": [
-            "risk",
-            "decision"
-          ],
-          "status": [
-            "open",
-            "accepted",
-            "mitigated",
-            "resolved"
-          ]
-        },
-        "enumListFields": {},
-        "collectionSchemas": {},
-        "schemaPath": "framework/schemas/decision-record.schema.yaml"
-      },
-      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01KT1340H6-X3T5\",\n  \"type\": \"decision_record\",\n  \"name\": \"AWS Lambda Serverless Host \\u2014 Security and Compliance decisions\",\n  \"category\": \"decision\",\n  \"status\": \"accepted\",\n  \"catalogStatus\": \"complete\",\n  \"lifecycleStatus\": \"preferred\",\n  \"owner\": {\n    \"team\": \"cloud-architecture\",\n    \"contact\": \"cloud-architecture@example.com\"\n  },\n  \"linkedObject\": \"01KQQ4Q025-1XDE\",\n  \"tags\": [\n    \"decision-record\",\n    \"example\",\n    \"compliance\"\n  ],\n  \"decisionRationale\": \"Records the security and compliance decisions for AWS Lambda Serverless Host addressing the authentication, health_welfare_monitoring, log_management, patch_management, security_monitoring control requirement(s); supporting detail is documented in this object's notes. This DecisionRecord is the committed answer that satisfies the requirement(s).\",\n  \"_source\": \"examples/catalog/governance/decision-records/dr-host-serverless-lambda-compliance.yaml\"\n}",
-      "existsInCatalog": true,
-      "outboundRelationships": [],
-      "inboundRelationships": []
-    },
-    {
-      "id": "01KSE5V73Z-DRSC",
-      "uid": "01KSE5V73Z-DRSC",
-      "name": "OpenStack Ops Console \u2014 Secrets Injection via Platform Secret Store",
-      "aliases": [],
-      "type": "decision_record",
-      "typeLabel": "DecisionRecord / decision",
-      "filterType": "decision_record",
-      "category": "decision",
-      "deliveryModel": "",
-      "domain": "",
-      "description": "Documents the decision to inject application secrets into the OpenStack Ops Console at deploy time via the platform secret store, with no secrets present in source code or container images.",
-      "version": "",
-      "catalogStatus": "complete",
-      "lifecycleStatus": "preferred",
-      "status": "accepted",
-      "businessContext": {},
-      "product": "",
-      "runsOn": "",
-      "subtype": "",
-      "vendor": "",
-      "productName": "",
-      "productVersion": "",
-      "classification": "",
-      "platformDependency": "",
-      "capabilities": [],
-      "configurations": [],
-      "networkPlacement": "",
-      "patchingOwner": "",
-      "complianceCerts": [],
-      "requirementGroups": [],
-      "requirementImplementations": [],
-      "dataLeavesInfrastructure": null,
-      "dataResidencyCommitment": "",
-      "dpaNotes": "",
-      "vendorSLA": "",
-      "authenticationModel": "",
-      "incidentNotificationProcess": "",
-      "owner": {
-        "team": "platform-engineering",
-        "contact": "platform-engineering@example.com"
-      },
-      "definitionOwner": {},
-      "provider": {},
-      "authority": {},
-      "shape": "round-rectangle",
-      "color": "#1f8a5b",
-      "source": "examples/catalog/governance/decision-records/dr-ops-console-secrets-injection.yaml",
-      "tags": [
-        "decision-record",
-        "openstack",
-        "secrets",
-        "product-component"
-      ],
-      "ardCategory": "decision",
-      "internalComponents": [],
-      "notes": {},
-      "requirements": [],
-      "implementations": [],
-      "appliesTo": {},
-      "inherits": "",
-      "scalingUnits": [],
-      "networkZones": [],
-      "sdpConnections": [],
-      "serviceGroups": [],
-      "tierVariants": [],
-      "tierId": "",
-      "purpose": "",
-      "availabilityExpectation": "",
-      "costPosture": "",
-      "complianceScope": [],
-      "parameterSurface": [],
-      "followsReferenceArchitecture": "",
-      "decisionRecords": [],
-      "affectedComponent": "",
-      "impact": "All sensitive environment variables for the Ops Console must be provisioned in the platform secret store before each deployment. The deploy pipeline must have permission to read those secrets. Rotation requires a re-deployment or hot-reload depending on the secret type.",
-      "mitigationPath": "",
-      "decisionRationale": "The Ops Console requires two sensitive runtime values \u2014 OPS_CONSOLE_SECRET_KEY (session signing key) and SAML IDP credentials. Embedding these in source code or images creates a disclosure risk and complicates rotation. Injecting them at deploy time from the platform secret store keeps the image clean, centralises rotation, and aligns with the CC.SecurityCompliance.04.3.1 secrets management control. The secret store is the single point of truth for all sensitive runtime configuration across the OpenStack platform.",
-      "relatedDecisionRecords": [],
-      "linkedObject": "01KSE5V73Z-Q0A0",
-      "primaryObjectType": "",
-      "primaryObjectUid": "",
-      "generatedObjects": [],
-      "unresolvedQuestions": [],
-      "assumptions": [],
-      "nextSteps": [],
-      "defaultSelection": false,
-      "requirementCount": 0,
-      "hasRiskRef": false,
-      "outboundRefs": [
-        {
-          "target": "01KSE5V73Z-Q0A0",
-          "path": "linkedObject"
-        }
-      ],
-      "referencedBy": [],
-      "editorSchema": {
-        "requiredFields": [
-          "schemaVersion",
-          "uid",
-          "type",
-          "name",
-          "category",
-          "status",
-          "catalogStatus",
-          "lifecycleStatus"
-        ],
-        "optionalFields": [
-          "aliases",
-          "description",
-          "version",
-          "owner",
-          "tags",
-          "affectedComponent",
-          "impact",
-          "mitigationPath",
-          "decisionRationale",
-          "relatedDecisionRecords",
-          "controlReferences",
-          "linkedObject",
-          "approver",
-          "approvalDate"
-        ],
-        "fieldTypes": {
-          "aliases": "list",
-          "owner": "dict",
-          "tags": "list",
-          "relatedDecisionRecords": "list",
-          "controlReferences": "list",
-          "approver": "str",
-          "approvalDate": "str"
-        },
-        "enumFields": {
-          "catalogStatus": [
-            "stub",
-            "incomplete",
-            "complete"
-          ],
-          "lifecycleStatus": [
-            "candidate",
-            "preferred",
-            "existing-only",
-            "deprecated",
-            "retired"
-          ],
-          "category": [
-            "risk",
-            "decision"
-          ],
-          "status": [
-            "open",
-            "accepted",
-            "mitigated",
-            "resolved"
-          ]
-        },
-        "enumListFields": {},
-        "collectionSchemas": {},
-        "schemaPath": "framework/schemas/decision-record.schema.yaml"
-      },
-      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01KSE5V73Z-DRSC\",\n  \"type\": \"decision_record\",\n  \"name\": \"OpenStack Ops Console \\u2014 Secrets Injection via Platform Secret Store\",\n  \"category\": \"decision\",\n  \"status\": \"accepted\",\n  \"catalogStatus\": \"complete\",\n  \"lifecycleStatus\": \"preferred\",\n  \"owner\": {\n    \"team\": \"platform-engineering\",\n    \"contact\": \"platform-engineering@example.com\"\n  },\n  \"tags\": [\n    \"decision-record\",\n    \"openstack\",\n    \"secrets\",\n    \"product-component\"\n  ],\n  \"linkedObject\": \"01KSE5V73Z-Q0A0\",\n  \"description\": \"Documents the decision to inject application secrets into the OpenStack Ops Console at deploy time via the platform secret store, with no secrets present in source code or container images.\",\n  \"decisionRationale\": \"The Ops Console requires two sensitive runtime values \\u2014 OPS_CONSOLE_SECRET_KEY (session signing key) and SAML IDP credentials. Embedding these in source code or images creates a disclosure risk and complicates rotation. Injecting them at deploy time from the platform secret store keeps the image clean, centralises rotation, and aligns with the CC.SecurityCompliance.04.3.1 secrets management control. The secret store is the single point of truth for all sensitive runtime configuration across the OpenStack platform.\",\n  \"impact\": \"All sensitive environment variables for the Ops Console must be provisioned in the platform secret store before each deployment. The deploy pipeline must have permission to read those secrets. Rotation requires a re-deployment or hot-reload depending on the secret type.\",\n  \"relatedDecisionRecords\": [],\n  \"_source\": \"examples/catalog/governance/decision-records/dr-ops-console-secrets-injection.yaml\"\n}",
-      "existsInCatalog": true,
-      "outboundRelationships": [],
-      "inboundRelationships": []
-    },
-    {
-      "id": "01KT1340HF-1HG3",
-      "uid": "01KT1340HF-1HG3",
-      "name": "AWS Lambda Runtime \u2014 Security and Compliance decisions",
-      "aliases": [],
-      "type": "decision_record",
-      "typeLabel": "DecisionRecord / decision",
-      "filterType": "decision_record",
-      "category": "decision",
-      "deliveryModel": "",
-      "domain": "",
-      "description": "",
-      "version": "",
-      "catalogStatus": "complete",
-      "lifecycleStatus": "preferred",
-      "status": "accepted",
-      "businessContext": {},
-      "product": "",
-      "runsOn": "",
-      "subtype": "",
-      "vendor": "",
-      "productName": "",
-      "productVersion": "",
-      "classification": "",
-      "platformDependency": "",
-      "capabilities": [],
-      "configurations": [],
-      "networkPlacement": "",
-      "patchingOwner": "",
-      "complianceCerts": [],
-      "requirementGroups": [],
-      "requirementImplementations": [],
-      "dataLeavesInfrastructure": null,
-      "dataResidencyCommitment": "",
-      "dpaNotes": "",
-      "vendorSLA": "",
-      "authenticationModel": "",
-      "incidentNotificationProcess": "",
-      "owner": {
-        "team": "cloud-architecture",
-        "contact": "cloud-architecture@example.com"
-      },
-      "definitionOwner": {},
-      "provider": {},
-      "authority": {},
-      "shape": "round-rectangle",
-      "color": "#1f8a5b",
-      "source": "examples/catalog/governance/decision-records/dr-runtime-service-aws-lambda-runtime-compliance.yaml",
-      "tags": [
-        "decision-record",
-        "example",
-        "compliance"
-      ],
-      "ardCategory": "decision",
-      "internalComponents": [],
-      "notes": {},
-      "requirements": [],
-      "implementations": [],
-      "appliesTo": {},
-      "inherits": "",
-      "scalingUnits": [],
-      "networkZones": [],
-      "sdpConnections": [],
-      "serviceGroups": [],
-      "tierVariants": [],
-      "tierId": "",
-      "purpose": "",
-      "availabilityExpectation": "",
-      "costPosture": "",
-      "complianceScope": [],
-      "parameterSurface": [],
-      "followsReferenceArchitecture": "",
-      "decisionRecords": [],
-      "affectedComponent": "",
-      "impact": "",
-      "mitigationPath": "",
-      "decisionRationale": "Records the security and compliance decisions for AWS Lambda Runtime addressing the secrets_management control requirement(s); supporting detail is documented in this object's notes. This DecisionRecord is the committed answer that satisfies the requirement(s).",
-      "relatedDecisionRecords": [],
-      "linkedObject": "01KQQ4Q025-T7B7",
-      "primaryObjectType": "",
-      "primaryObjectUid": "",
-      "generatedObjects": [],
-      "unresolvedQuestions": [],
-      "assumptions": [],
-      "nextSteps": [],
-      "defaultSelection": false,
-      "requirementCount": 0,
-      "hasRiskRef": false,
-      "outboundRefs": [
-        {
-          "target": "01KQQ4Q025-T7B7",
-          "path": "linkedObject"
-        }
-      ],
-      "referencedBy": [
-        {
-          "source": "01KQQ4Q025-T7B7",
-          "path": "decisionRecords[3].ref"
-        }
-      ],
-      "editorSchema": {
-        "requiredFields": [
-          "schemaVersion",
-          "uid",
-          "type",
-          "name",
-          "category",
-          "status",
-          "catalogStatus",
-          "lifecycleStatus"
-        ],
-        "optionalFields": [
-          "aliases",
-          "description",
-          "version",
-          "owner",
-          "tags",
-          "affectedComponent",
-          "impact",
-          "mitigationPath",
-          "decisionRationale",
-          "relatedDecisionRecords",
-          "controlReferences",
-          "linkedObject",
-          "approver",
-          "approvalDate"
-        ],
-        "fieldTypes": {
-          "aliases": "list",
-          "owner": "dict",
-          "tags": "list",
-          "relatedDecisionRecords": "list",
-          "controlReferences": "list",
-          "approver": "str",
-          "approvalDate": "str"
-        },
-        "enumFields": {
-          "catalogStatus": [
-            "stub",
-            "incomplete",
-            "complete"
-          ],
-          "lifecycleStatus": [
-            "candidate",
-            "preferred",
-            "existing-only",
-            "deprecated",
-            "retired"
-          ],
-          "category": [
-            "risk",
-            "decision"
-          ],
-          "status": [
-            "open",
-            "accepted",
-            "mitigated",
-            "resolved"
-          ]
-        },
-        "enumListFields": {},
-        "collectionSchemas": {},
-        "schemaPath": "framework/schemas/decision-record.schema.yaml"
-      },
-      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01KT1340HF-1HG3\",\n  \"type\": \"decision_record\",\n  \"name\": \"AWS Lambda Runtime \\u2014 Security and Compliance decisions\",\n  \"category\": \"decision\",\n  \"status\": \"accepted\",\n  \"catalogStatus\": \"complete\",\n  \"lifecycleStatus\": \"preferred\",\n  \"owner\": {\n    \"team\": \"cloud-architecture\",\n    \"contact\": \"cloud-architecture@example.com\"\n  },\n  \"linkedObject\": \"01KQQ4Q025-T7B7\",\n  \"tags\": [\n    \"decision-record\",\n    \"example\",\n    \"compliance\"\n  ],\n  \"decisionRationale\": \"Records the security and compliance decisions for AWS Lambda Runtime addressing the secrets_management control requirement(s); supporting detail is documented in this object's notes. This DecisionRecord is the committed answer that satisfies the requirement(s).\",\n  \"_source\": \"examples/catalog/governance/decision-records/dr-runtime-service-aws-lambda-runtime-compliance.yaml\"\n}",
-      "existsInCatalog": true,
-      "outboundRelationships": [],
-      "inboundRelationships": []
-    },
-    {
-      "id": "01KT11AQX1-55F1",
-      "uid": "01KT11AQX1-55F1",
-      "name": "AWS Lambda Runtime \u2014 Deployment Topology and Qualities",
-      "aliases": [],
-      "type": "decision_record",
-      "typeLabel": "DecisionRecord / decision",
-      "filterType": "decision_record",
-      "category": "decision",
-      "deliveryModel": "",
-      "domain": "",
-      "description": "",
-      "version": "",
-      "catalogStatus": "complete",
-      "lifecycleStatus": "preferred",
-      "status": "accepted",
-      "businessContext": {},
-      "product": "",
-      "runsOn": "",
-      "subtype": "",
-      "vendor": "",
-      "productName": "",
-      "productVersion": "",
-      "classification": "",
-      "platformDependency": "",
-      "capabilities": [],
-      "configurations": [],
-      "networkPlacement": "",
-      "patchingOwner": "",
-      "complianceCerts": [],
-      "requirementGroups": [],
-      "requirementImplementations": [],
-      "dataLeavesInfrastructure": null,
-      "dataResidencyCommitment": "",
-      "dpaNotes": "",
-      "vendorSLA": "",
-      "authenticationModel": "",
-      "incidentNotificationProcess": "",
-      "owner": {
-        "team": "cloud-architecture",
-        "contact": "cloud-architecture@example.com"
-      },
-      "definitionOwner": {},
-      "provider": {},
-      "authority": {},
-      "shape": "round-rectangle",
-      "color": "#1f8a5b",
-      "source": "examples/catalog/governance/decision-records/dr-runtime-service-aws-lambda-runtime-deployment.yaml",
-      "tags": [
-        "decision-record",
-        "example",
-        "deployment"
-      ],
-      "ardCategory": "decision",
-      "internalComponents": [],
-      "notes": {},
-      "requirements": [],
-      "implementations": [],
-      "appliesTo": {},
-      "inherits": "",
-      "scalingUnits": [],
-      "networkZones": [],
-      "sdpConnections": [],
-      "serviceGroups": [],
-      "tierVariants": [],
-      "tierId": "",
-      "purpose": "",
-      "availabilityExpectation": "",
-      "costPosture": "",
-      "complianceScope": [],
-      "parameterSurface": [],
-      "followsReferenceArchitecture": "",
-      "decisionRecords": [],
-      "affectedComponent": "",
-      "impact": "",
-      "mitigationPath": "",
-      "decisionRationale": "Records the deployment topology and qualities decisions for AWS Lambda Runtime. These decisions address the configurableSurface requirement(s); supporting detail is documented in this object's notes. This DecisionRecord is the committed answer that satisfies the requirement(s).",
-      "relatedDecisionRecords": [],
-      "linkedObject": "01KQQ4Q025-T7B7",
-      "primaryObjectType": "",
-      "primaryObjectUid": "",
-      "generatedObjects": [],
-      "unresolvedQuestions": [],
-      "assumptions": [],
-      "nextSteps": [],
-      "defaultSelection": false,
-      "requirementCount": 0,
-      "hasRiskRef": false,
-      "outboundRefs": [
-        {
-          "target": "01KQQ4Q025-T7B7",
-          "path": "linkedObject"
-        }
-      ],
-      "referencedBy": [
-        {
-          "source": "01KQQ4Q025-T7B7",
-          "path": "decisionRecords[0].ref"
-        }
-      ],
-      "editorSchema": {
-        "requiredFields": [
-          "schemaVersion",
-          "uid",
-          "type",
-          "name",
-          "category",
-          "status",
-          "catalogStatus",
-          "lifecycleStatus"
-        ],
-        "optionalFields": [
-          "aliases",
-          "description",
-          "version",
-          "owner",
-          "tags",
-          "affectedComponent",
-          "impact",
-          "mitigationPath",
-          "decisionRationale",
-          "relatedDecisionRecords",
-          "controlReferences",
-          "linkedObject",
-          "approver",
-          "approvalDate"
-        ],
-        "fieldTypes": {
-          "aliases": "list",
-          "owner": "dict",
-          "tags": "list",
-          "relatedDecisionRecords": "list",
-          "controlReferences": "list",
-          "approver": "str",
-          "approvalDate": "str"
-        },
-        "enumFields": {
-          "catalogStatus": [
-            "stub",
-            "incomplete",
-            "complete"
-          ],
-          "lifecycleStatus": [
-            "candidate",
-            "preferred",
-            "existing-only",
-            "deprecated",
-            "retired"
-          ],
-          "category": [
-            "risk",
-            "decision"
-          ],
-          "status": [
-            "open",
-            "accepted",
-            "mitigated",
-            "resolved"
-          ]
-        },
-        "enumListFields": {},
-        "collectionSchemas": {},
-        "schemaPath": "framework/schemas/decision-record.schema.yaml"
-      },
-      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01KT11AQX1-55F1\",\n  \"type\": \"decision_record\",\n  \"name\": \"AWS Lambda Runtime \\u2014 Deployment Topology and Qualities\",\n  \"category\": \"decision\",\n  \"status\": \"accepted\",\n  \"catalogStatus\": \"complete\",\n  \"lifecycleStatus\": \"preferred\",\n  \"owner\": {\n    \"team\": \"cloud-architecture\",\n    \"contact\": \"cloud-architecture@example.com\"\n  },\n  \"linkedObject\": \"01KQQ4Q025-T7B7\",\n  \"tags\": [\n    \"decision-record\",\n    \"example\",\n    \"deployment\"\n  ],\n  \"decisionRationale\": \"Records the deployment topology and qualities decisions for AWS Lambda Runtime. These decisions address the configurableSurface requirement(s); supporting detail is documented in this object's notes. This DecisionRecord is the committed answer that satisfies the requirement(s).\",\n  \"_source\": \"examples/catalog/governance/decision-records/dr-runtime-service-aws-lambda-runtime-deployment.yaml\"\n}",
-      "existsInCatalog": true,
-      "outboundRelationships": [],
-      "inboundRelationships": []
-    },
-    {
-      "id": "01KT11AQX2-STQ4",
-      "uid": "01KT11AQX2-STQ4",
-      "name": "AWS Lambda Runtime \u2014 Resilience and Availability",
-      "aliases": [],
-      "type": "decision_record",
-      "typeLabel": "DecisionRecord / decision",
-      "filterType": "decision_record",
-      "category": "decision",
-      "deliveryModel": "",
-      "domain": "",
-      "description": "",
-      "version": "",
-      "catalogStatus": "complete",
-      "lifecycleStatus": "preferred",
-      "status": "accepted",
-      "businessContext": {},
-      "product": "",
-      "runsOn": "",
-      "subtype": "",
-      "vendor": "",
-      "productName": "",
-      "productVersion": "",
-      "classification": "",
-      "platformDependency": "",
-      "capabilities": [],
-      "configurations": [],
-      "networkPlacement": "",
-      "patchingOwner": "",
-      "complianceCerts": [],
-      "requirementGroups": [],
-      "requirementImplementations": [],
-      "dataLeavesInfrastructure": null,
-      "dataResidencyCommitment": "",
-      "dpaNotes": "",
-      "vendorSLA": "",
-      "authenticationModel": "",
-      "incidentNotificationProcess": "",
-      "owner": {
-        "team": "cloud-architecture",
-        "contact": "cloud-architecture@example.com"
-      },
-      "definitionOwner": {},
-      "provider": {},
-      "authority": {},
-      "shape": "round-rectangle",
-      "color": "#1f8a5b",
-      "source": "examples/catalog/governance/decision-records/dr-runtime-service-aws-lambda-runtime-resilience.yaml",
-      "tags": [
-        "decision-record",
-        "example",
-        "resilience"
-      ],
-      "ardCategory": "decision",
-      "internalComponents": [],
-      "notes": {},
-      "requirements": [],
-      "implementations": [],
-      "appliesTo": {},
-      "inherits": "",
-      "scalingUnits": [],
-      "networkZones": [],
-      "sdpConnections": [],
-      "serviceGroups": [],
-      "tierVariants": [],
-      "tierId": "",
-      "purpose": "",
-      "availabilityExpectation": "",
-      "costPosture": "",
-      "complianceScope": [],
-      "parameterSurface": [],
-      "followsReferenceArchitecture": "",
-      "decisionRecords": [],
-      "affectedComponent": "",
-      "impact": "",
-      "mitigationPath": "",
-      "decisionRationale": "Records the resilience and availability decisions for AWS Lambda Runtime. These decisions address the failureDomain, resilienceModel requirement(s); supporting detail is documented in this object's notes. This DecisionRecord is the committed answer that satisfies the requirement(s).",
-      "relatedDecisionRecords": [],
-      "linkedObject": "01KQQ4Q025-T7B7",
-      "primaryObjectType": "",
-      "primaryObjectUid": "",
-      "generatedObjects": [],
-      "unresolvedQuestions": [],
-      "assumptions": [],
-      "nextSteps": [],
-      "defaultSelection": false,
-      "requirementCount": 0,
-      "hasRiskRef": false,
-      "outboundRefs": [
-        {
-          "target": "01KQQ4Q025-T7B7",
-          "path": "linkedObject"
-        }
-      ],
-      "referencedBy": [
-        {
-          "source": "01KQQ4Q025-T7B7",
-          "path": "decisionRecords[1].ref"
-        },
-        {
-          "source": "01KQQ4Q025-T7B7",
-          "path": "decisionRecords[2].ref"
-        }
-      ],
-      "editorSchema": {
-        "requiredFields": [
-          "schemaVersion",
-          "uid",
-          "type",
-          "name",
-          "category",
-          "status",
-          "catalogStatus",
-          "lifecycleStatus"
-        ],
-        "optionalFields": [
-          "aliases",
-          "description",
-          "version",
-          "owner",
-          "tags",
-          "affectedComponent",
-          "impact",
-          "mitigationPath",
-          "decisionRationale",
-          "relatedDecisionRecords",
-          "controlReferences",
-          "linkedObject",
-          "approver",
-          "approvalDate"
-        ],
-        "fieldTypes": {
-          "aliases": "list",
-          "owner": "dict",
-          "tags": "list",
-          "relatedDecisionRecords": "list",
-          "controlReferences": "list",
-          "approver": "str",
-          "approvalDate": "str"
-        },
-        "enumFields": {
-          "catalogStatus": [
-            "stub",
-            "incomplete",
-            "complete"
-          ],
-          "lifecycleStatus": [
-            "candidate",
-            "preferred",
-            "existing-only",
-            "deprecated",
-            "retired"
-          ],
-          "category": [
-            "risk",
-            "decision"
-          ],
-          "status": [
-            "open",
-            "accepted",
-            "mitigated",
-            "resolved"
-          ]
-        },
-        "enumListFields": {},
-        "collectionSchemas": {},
-        "schemaPath": "framework/schemas/decision-record.schema.yaml"
-      },
-      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01KT11AQX2-STQ4\",\n  \"type\": \"decision_record\",\n  \"name\": \"AWS Lambda Runtime \\u2014 Resilience and Availability\",\n  \"category\": \"decision\",\n  \"status\": \"accepted\",\n  \"catalogStatus\": \"complete\",\n  \"lifecycleStatus\": \"preferred\",\n  \"owner\": {\n    \"team\": \"cloud-architecture\",\n    \"contact\": \"cloud-architecture@example.com\"\n  },\n  \"linkedObject\": \"01KQQ4Q025-T7B7\",\n  \"tags\": [\n    \"decision-record\",\n    \"example\",\n    \"resilience\"\n  ],\n  \"decisionRationale\": \"Records the resilience and availability decisions for AWS Lambda Runtime. These decisions address the failureDomain, resilienceModel requirement(s); supporting detail is documented in this object's notes. This DecisionRecord is the committed answer that satisfies the requirement(s).\",\n  \"_source\": \"examples/catalog/governance/decision-records/dr-runtime-service-aws-lambda-runtime-resilience.yaml\"\n}",
-      "existsInCatalog": true,
-      "outboundRelationships": [],
-      "inboundRelationships": []
-    },
-    {
-      "id": "01KSKWFZZX-NE4F",
-      "uid": "01KSKWFZZX-NE4F",
-      "name": "AWS Lambda Runtime \u2192 Amazon CloudWatch Metrics",
-      "aliases": [],
-      "type": "relationship",
-      "typeLabel": "Relationship",
-      "filterType": "relationship",
-      "category": "",
-      "deliveryModel": "",
-      "domain": "",
-      "description": "",
-      "version": "",
-      "catalogStatus": "stub",
-      "lifecycleStatus": "unknown",
-      "status": "",
-      "businessContext": {},
-      "product": "",
-      "runsOn": "",
-      "subtype": "",
-      "vendor": "",
-      "productName": "",
-      "productVersion": "",
-      "classification": "",
-      "platformDependency": "",
-      "capabilities": [],
-      "configurations": [],
-      "networkPlacement": "",
-      "patchingOwner": "",
-      "complianceCerts": [],
-      "requirementGroups": [],
-      "requirementImplementations": [],
-      "dataLeavesInfrastructure": null,
-      "dataResidencyCommitment": "",
-      "dpaNotes": "",
-      "vendorSLA": "",
-      "authenticationModel": "",
-      "incidentNotificationProcess": "",
-      "owner": {},
-      "definitionOwner": {},
-      "provider": {},
-      "authority": {},
-      "shape": "round-rectangle",
-      "color": "#7a6e60",
-      "source": "examples/catalog/governance/relationships/relationship-aws-lambda-runtime-calls-amazon-cloudwatch-metrics.yaml",
+      "source": "configurations/requirement-groups/requirement-group-engineering-maturity.yaml",
       "tags": [],
       "ardCategory": "",
       "internalComponents": [],
-      "notes": "Runtime health and operational telemetry are observed through CloudWatch metrics and alarms.",
-      "requirements": [],
+      "notes": {},
+      "requirements": [
+        {
+          "id": "req-expand-contract-migrations",
+          "description": "Database schema changes MUST be backward-compatible and decoupled from application code deploys using expand-and-contract patterns.",
+          "canBeSatisfiedBy": [
+            {
+              "mechanism": "field",
+              "key": "databaseMigrationStrategy"
+            },
+            {
+              "mechanism": "decisionRecord",
+              "key": "databaseMigrationStrategyDecision"
+            }
+          ],
+          "minimumSatisfactions": 1,
+          "requirementMode": "mandatory",
+          "naAllowed": true,
+          "validAnswerTypes": [
+            "field",
+            "decisionRecord"
+          ]
+        },
+        {
+          "id": "req-zero-manual-infrastructure",
+          "description": "All infrastructure changes MUST be expressed as version-controlled IaC modules (OpenTofu/Terraform). Undocumented manual steps are prohibited.",
+          "canBeSatisfiedBy": [
+            {
+              "mechanism": "field",
+              "key": "iacAutomation"
+            },
+            {
+              "mechanism": "decisionRecord",
+              "key": "iacAutomationDecision"
+            }
+          ],
+          "minimumSatisfactions": 1,
+          "requirementMode": "mandatory",
+          "naAllowed": false,
+          "validAnswerTypes": [
+            "field",
+            "decisionRecord"
+          ]
+        },
+        {
+          "id": "req-no-gate-suppressions",
+          "description": "CI/CD pipelines MUST NOT introduce suppressions, allowlist entries, or continue-on-error overrides to bypass security or lint gates.",
+          "canBeSatisfiedBy": [
+            {
+              "mechanism": "field",
+              "key": "gateEnforcement"
+            },
+            {
+              "mechanism": "decisionRecord",
+              "key": "gateEnforcementDecision"
+            }
+          ],
+          "minimumSatisfactions": 1,
+          "requirementMode": "mandatory",
+          "naAllowed": false,
+          "validAnswerTypes": [
+            "field",
+            "decisionRecord"
+          ]
+        },
+        {
+          "id": "req-synthetic-test-data",
+          "description": "Real production data or credentials MUST NOT be placed into test fixtures, seeds, or lower environments. Synthetic data is required.",
+          "canBeSatisfiedBy": [
+            {
+              "mechanism": "field",
+              "key": "testDataGovernance"
+            },
+            {
+              "mechanism": "decisionRecord",
+              "key": "testDataGovernanceDecision"
+            }
+          ],
+          "minimumSatisfactions": 1,
+          "requirementMode": "mandatory",
+          "naAllowed": false,
+          "validAnswerTypes": [
+            "field",
+            "decisionRecord"
+          ]
+        },
+        {
+          "id": "req-rollback-mechanism",
+          "description": "Application deployments MUST declare an automated rollback path and zero-downtime deployment strategy.",
+          "canBeSatisfiedBy": [
+            {
+              "mechanism": "field",
+              "key": "rollbackStrategy"
+            },
+            {
+              "mechanism": "decisionRecord",
+              "key": "rollbackStrategyDecision"
+            }
+          ],
+          "minimumSatisfactions": 1,
+          "requirementMode": "mandatory",
+          "naAllowed": false,
+          "validAnswerTypes": [
+            "field",
+            "decisionRecord"
+          ]
+        },
+        {
+          "id": "req-l3-composable-iac",
+          "description": "(L3 Advanced) 100% of compute host, database, cache, gateway, and security infrastructure MUST be provisionable as composable IaC modules.",
+          "canBeSatisfiedBy": [
+            {
+              "mechanism": "field",
+              "key": "composableIac"
+            },
+            {
+              "mechanism": "decisionRecord",
+              "key": "composableIacDecision"
+            }
+          ],
+          "minimumSatisfactions": 1,
+          "requirementMode": "mandatory",
+          "naAllowed": false,
+          "validAnswerTypes": [
+            "field",
+            "decisionRecord"
+          ]
+        },
+        {
+          "id": "req-l3-ephemeral-preview-environments",
+          "description": "(L3 Advanced) Infrastructure IaC MUST support provisioning on-demand, isolated ephemeral preview environments for feature branches with automated teardown.",
+          "canBeSatisfiedBy": [
+            {
+              "mechanism": "field",
+              "key": "previewEnvironments"
+            },
+            {
+              "mechanism": "decisionRecord",
+              "key": "previewEnvironmentsDecision"
+            }
+          ],
+          "minimumSatisfactions": 1,
+          "requirementMode": "mandatory",
+          "naAllowed": true,
+          "validAnswerTypes": [
+            "field",
+            "decisionRecord"
+          ]
+        },
+        {
+          "id": "req-l3-json-structured-logging",
+          "description": "(L3 Advanced) All application and service logs streamed to central log aggregators MUST use structured JSON formatting with distributed trace/span correlation IDs.",
+          "canBeSatisfiedBy": [
+            {
+              "mechanism": "field",
+              "key": "structuredLogging"
+            },
+            {
+              "mechanism": "decisionRecord",
+              "key": "structuredLoggingDecision"
+            }
+          ],
+          "minimumSatisfactions": 1,
+          "requirementMode": "mandatory",
+          "naAllowed": false,
+          "validAnswerTypes": [
+            "field",
+            "decisionRecord"
+          ]
+        },
+        {
+          "id": "req-l3-slo-error-budget",
+          "description": "(L3 Advanced) Service boundaries MUST declare explicit Service Level Objectives (SLO), availability targets, and error budget policies.",
+          "canBeSatisfiedBy": [
+            {
+              "mechanism": "field",
+              "key": "sloPolicy"
+            },
+            {
+              "mechanism": "decisionRecord",
+              "key": "sloPolicyDecision"
+            }
+          ],
+          "minimumSatisfactions": 1,
+          "requirementMode": "mandatory",
+          "naAllowed": false,
+          "validAnswerTypes": [
+            "field",
+            "decisionRecord"
+          ]
+        },
+        {
+          "id": "req-l3-zero-downtime-deployment",
+          "description": "(L3 Advanced) Production deployments MUST use zero-downtime deployment strategies (rolling, canary, blue/green) with automated health probes and auto-rollback.",
+          "canBeSatisfiedBy": [
+            {
+              "mechanism": "field",
+              "key": "zeroDowntimeStrategy"
+            },
+            {
+              "mechanism": "decisionRecord",
+              "key": "zeroDowntimeStrategyDecision"
+            }
+          ],
+          "minimumSatisfactions": 1,
+          "requirementMode": "mandatory",
+          "naAllowed": false,
+          "validAnswerTypes": [
+            "field",
+            "decisionRecord"
+          ]
+        },
+        {
+          "id": "req-l3-automated-security-gates",
+          "description": "(L3 Advanced) CI/CD pipelines MUST enforce automated SAST, secret scanning, dependency vulnerability scanning (SCA), and IaC policy linting as blocking release gates.",
+          "canBeSatisfiedBy": [
+            {
+              "mechanism": "field",
+              "key": "automatedSecurityGates"
+            },
+            {
+              "mechanism": "decisionRecord",
+              "key": "automatedSecurityGatesDecision"
+            }
+          ],
+          "minimumSatisfactions": 1,
+          "requirementMode": "mandatory",
+          "naAllowed": false,
+          "validAnswerTypes": [
+            "field",
+            "decisionRecord"
+          ]
+        }
+      ],
       "implementations": [],
-      "appliesTo": {},
+      "appliesTo": [
+        "product_component",
+        "software_deployment_pattern"
+      ],
       "inherits": "",
       "scalingUnits": [],
       "networkZones": [],
@@ -21075,14 +20142,9 @@ window.DRAFT_BROWSER_DATA = {
       "assumptions": [],
       "nextSteps": [],
       "defaultSelection": false,
-      "requirementCount": 0,
+      "requirementCount": 11,
       "hasRiskRef": false,
-      "outboundRefs": [
-        {
-          "target": "01KQQ4Q025-T7B7",
-          "path": "source"
-        }
-      ],
+      "outboundRefs": [],
       "referencedBy": [],
       "editorSchema": {
         "requiredFields": [
@@ -21090,24 +20152,33 @@ window.DRAFT_BROWSER_DATA = {
           "uid",
           "type",
           "name",
-          "source",
-          "label",
-          "catalogStatus"
+          "description",
+          "catalogStatus",
+          "activation",
+          "appliesTo",
+          "requirements"
         ],
         "optionalFields": [
-          "description",
-          "target",
-          "externalTarget",
-          "technology",
-          "direction",
-          "flow",
-          "capabilities",
+          "aliases",
+          "version",
+          "tags",
+          "owner",
+          "lifecycleStatus",
+          "provider",
+          "authority",
           "notes",
-          "tags"
+          "inherits",
+          "appliesToQualifiers"
         ],
         "fieldTypes": {
+          "aliases": "list",
+          "owner": "dict",
           "tags": "list",
-          "capabilities": "list"
+          "provider": "dict",
+          "authority": "dict",
+          "appliesTo": "list",
+          "requirements": "list",
+          "appliesToQualifiers": "dict"
         },
         "enumFields": {
           "catalogStatus": [
@@ -21115,463 +20186,49 @@ window.DRAFT_BROWSER_DATA = {
             "incomplete",
             "complete"
           ],
-          "direction": [
-            "synchronous",
-            "asynchronous",
-            "event"
+          "activation": [
+            "always",
+            "workspace"
           ],
-          "flow": [
-            "outbound",
-            "inbound",
-            "bidirectional"
+          "lifecycleStatus": [
+            "candidate",
+            "preferred",
+            "existing-only",
+            "deprecated",
+            "retired"
           ]
         },
         "enumListFields": {},
-        "collectionSchemas": {},
-        "schemaPath": "framework/schemas/relationship.schema.yaml"
+        "collectionSchemas": {
+          "requirements": "requirement"
+        },
+        "schemaPath": "framework/schemas/requirement-group.schema.yaml"
       },
-      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"type\": \"relationship\",\n  \"uid\": \"01KSKWFZZX-NE4F\",\n  \"name\": \"AWS Lambda Runtime \\u2192 Amazon CloudWatch Metrics\",\n  \"catalogStatus\": \"stub\",\n  \"source\": \"01KQQ4Q025-T7B7\",\n  \"label\": \"calls\",\n  \"externalTarget\": \"Amazon CloudWatch Metrics\",\n  \"notes\": \"Runtime health and operational telemetry are observed through CloudWatch metrics and alarms.\",\n  \"_source\": \"examples/catalog/governance/relationships/relationship-aws-lambda-runtime-calls-amazon-cloudwatch-metrics.yaml\"\n}",
+      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M15WPEFV-ZMA9\",\n  \"type\": \"requirement_group\",\n  \"name\": \"Engineering Maturity & Quality Standards (L1-L3)\",\n  \"description\": \"Comprehensive engineering maturity standards covering L1 Baseline through L3 Advanced (backward-compatible migrations, 100% composable IaC, zero gate suppressions, synthetic test data, automated zero-downtime rollback, JSON structured logging, SLO error budgets, and ephemeral preview environments).\",\n  \"version\": \"1.2.0\",\n  \"catalogStatus\": \"complete\",\n  \"lifecycleStatus\": \"preferred\",\n  \"activation\": \"always\",\n  \"appliesTo\": [\n    \"product_component\",\n    \"software_deployment_pattern\"\n  ],\n  \"authority\": {\n    \"name\": \"DRAFT Framework\",\n    \"shortName\": \"DRAFT\",\n    \"source\": \"DRAFT Framework\"\n  },\n  \"owner\": {\n    \"team\": \"platform-engineering\",\n    \"contact\": \"platform-engineering@example.com\"\n  },\n  \"requirements\": [\n    {\n      \"id\": \"req-expand-contract-migrations\",\n      \"description\": \"Database schema changes MUST be backward-compatible and decoupled from application code deploys using expand-and-contract patterns.\",\n      \"canBeSatisfiedBy\": [\n        {\n          \"mechanism\": \"field\",\n          \"key\": \"databaseMigrationStrategy\"\n        },\n        {\n          \"mechanism\": \"decisionRecord\",\n          \"key\": \"databaseMigrationStrategyDecision\"\n        }\n      ],\n      \"minimumSatisfactions\": 1,\n      \"requirementMode\": \"mandatory\",\n      \"naAllowed\": true,\n      \"validAnswerTypes\": [\n        \"field\",\n        \"decisionRecord\"\n      ]\n    },\n    {\n      \"id\": \"req-zero-manual-infrastructure\",\n      \"description\": \"All infrastructure changes MUST be expressed as version-controlled IaC modules (OpenTofu/Terraform). Undocumented manual steps are prohibited.\",\n      \"canBeSatisfiedBy\": [\n        {\n          \"mechanism\": \"field\",\n          \"key\": \"iacAutomation\"\n        },\n        {\n          \"mechanism\": \"decisionRecord\",\n          \"key\": \"iacAutomationDecision\"\n        }\n      ],\n      \"minimumSatisfactions\": 1,\n      \"requirementMode\": \"mandatory\",\n      \"naAllowed\": false,\n      \"validAnswerTypes\": [\n        \"field\",\n        \"decisionRecord\"\n      ]\n    },\n    {\n      \"id\": \"req-no-gate-suppressions\",\n      \"description\": \"CI/CD pipelines MUST NOT introduce suppressions, allowlist entries, or continue-on-error overrides to bypass security or lint gates.\",\n      \"canBeSatisfiedBy\": [\n        {\n          \"mechanism\": \"field\",\n          \"key\": \"gateEnforcement\"\n        },\n        {\n          \"mechanism\": \"decisionRecord\",\n          \"key\": \"gateEnforcementDecision\"\n        }\n      ],\n      \"minimumSatisfactions\": 1,\n      \"requirementMode\": \"mandatory\",\n      \"naAllowed\": false,\n      \"validAnswerTypes\": [\n        \"field\",\n        \"decisionRecord\"\n      ]\n    },\n    {\n      \"id\": \"req-synthetic-test-data\",\n      \"description\": \"Real production data or credentials MUST NOT be placed into test fixtures, seeds, or lower environments. Synthetic data is required.\",\n      \"canBeSatisfiedBy\": [\n        {\n          \"mechanism\": \"field\",\n          \"key\": \"testDataGovernance\"\n        },\n        {\n          \"mechanism\": \"decisionRecord\",\n          \"key\": \"testDataGovernanceDecision\"\n        }\n      ],\n      \"minimumSatisfactions\": 1,\n      \"requirementMode\": \"mandatory\",\n      \"naAllowed\": false,\n      \"validAnswerTypes\": [\n        \"field\",\n        \"decisionRecord\"\n      ]\n    },\n    {\n      \"id\": \"req-rollback-mechanism\",\n      \"description\": \"Application deployments MUST declare an automated rollback path and zero-downtime deployment strategy.\",\n      \"canBeSatisfiedBy\": [\n        {\n          \"mechanism\": \"field\",\n          \"key\": \"rollbackStrategy\"\n        },\n        {\n          \"mechanism\": \"decisionRecord\",\n          \"key\": \"rollbackStrategyDecision\"\n        }\n      ],\n      \"minimumSatisfactions\": 1,\n      \"requirementMode\": \"mandatory\",\n      \"naAllowed\": false,\n      \"validAnswerTypes\": [\n        \"field\",\n        \"decisionRecord\"\n      ]\n    },\n    {\n      \"id\": \"req-l3-composable-iac\",\n      \"description\": \"(L3 Advanced) 100% of compute host, database, cache, gateway, and security infrastructure MUST be provisionable as composable IaC modules.\",\n      \"canBeSatisfiedBy\": [\n        {\n          \"mechanism\": \"field\",\n          \"key\": \"composableIac\"\n        },\n        {\n          \"mechanism\": \"decisionRecord\",\n          \"key\": \"composableIacDecision\"\n        }\n      ],\n      \"minimumSatisfactions\": 1,\n      \"requirementMode\": \"mandatory\",\n      \"naAllowed\": false,\n      \"validAnswerTypes\": [\n        \"field\",\n        \"decisionRecord\"\n      ]\n    },\n    {\n      \"id\": \"req-l3-ephemeral-preview-environments\",\n      \"description\": \"(L3 Advanced) Infrastructure IaC MUST support provisioning on-demand, isolated ephemeral preview environments for feature branches with automated teardown.\",\n      \"canBeSatisfiedBy\": [\n        {\n          \"mechanism\": \"field\",\n          \"key\": \"previewEnvironments\"\n        },\n        {\n          \"mechanism\": \"decisionRecord\",\n          \"key\": \"previewEnvironmentsDecision\"\n        }\n      ],\n      \"minimumSatisfactions\": 1,\n      \"requirementMode\": \"mandatory\",\n      \"naAllowed\": true,\n      \"validAnswerTypes\": [\n        \"field\",\n        \"decisionRecord\"\n      ]\n    },\n    {\n      \"id\": \"req-l3-json-structured-logging\",\n      \"description\": \"(L3 Advanced) All application and service logs streamed to central log aggregators MUST use structured JSON formatting with distributed trace/span correlation IDs.\",\n      \"canBeSatisfiedBy\": [\n        {\n          \"mechanism\": \"field\",\n          \"key\": \"structuredLogging\"\n        },\n        {\n          \"mechanism\": \"decisionRecord\",\n          \"key\": \"structuredLoggingDecision\"\n        }\n      ],\n      \"minimumSatisfactions\": 1,\n      \"requirementMode\": \"mandatory\",\n      \"naAllowed\": false,\n      \"validAnswerTypes\": [\n        \"field\",\n        \"decisionRecord\"\n      ]\n    },\n    {\n      \"id\": \"req-l3-slo-error-budget\",\n      \"description\": \"(L3 Advanced) Service boundaries MUST declare explicit Service Level Objectives (SLO), availability targets, and error budget policies.\",\n      \"canBeSatisfiedBy\": [\n        {\n          \"mechanism\": \"field\",\n          \"key\": \"sloPolicy\"\n        },\n        {\n          \"mechanism\": \"decisionRecord\",\n          \"key\": \"sloPolicyDecision\"\n        }\n      ],\n      \"minimumSatisfactions\": 1,\n      \"requirementMode\": \"mandatory\",\n      \"naAllowed\": false,\n      \"validAnswerTypes\": [\n        \"field\",\n        \"decisionRecord\"\n      ]\n    },\n    {\n      \"id\": \"req-l3-zero-downtime-deployment\",\n      \"description\": \"(L3 Advanced) Production deployments MUST use zero-downtime deployment strategies (rolling, canary, blue/green) with automated health probes and auto-rollback.\",\n      \"canBeSatisfiedBy\": [\n        {\n          \"mechanism\": \"field\",\n          \"key\": \"zeroDowntimeStrategy\"\n        },\n        {\n          \"mechanism\": \"decisionRecord\",\n          \"key\": \"zeroDowntimeStrategyDecision\"\n        }\n      ],\n      \"minimumSatisfactions\": 1,\n      \"requirementMode\": \"mandatory\",\n      \"naAllowed\": false,\n      \"validAnswerTypes\": [\n        \"field\",\n        \"decisionRecord\"\n      ]\n    },\n    {\n      \"id\": \"req-l3-automated-security-gates\",\n      \"description\": \"(L3 Advanced) CI/CD pipelines MUST enforce automated SAST, secret scanning, dependency vulnerability scanning (SCA), and IaC policy linting as blocking release gates.\",\n      \"canBeSatisfiedBy\": [\n        {\n          \"mechanism\": \"field\",\n          \"key\": \"automatedSecurityGates\"\n        },\n        {\n          \"mechanism\": \"decisionRecord\",\n          \"key\": \"automatedSecurityGatesDecision\"\n        }\n      ],\n      \"minimumSatisfactions\": 1,\n      \"requirementMode\": \"mandatory\",\n      \"naAllowed\": false,\n      \"validAnswerTypes\": [\n        \"field\",\n        \"decisionRecord\"\n      ]\n    }\n  ],\n  \"_source\": \"configurations/requirement-groups/requirement-group-engineering-maturity.yaml\"\n}",
       "existsInCatalog": true,
       "outboundRelationships": [],
       "inboundRelationships": []
     },
     {
-      "id": "01KSKWFZZX-34KP",
-      "uid": "01KSKWFZZX-34KP",
-      "name": "AWS Lambda Runtime \u2192 AWS IAM",
+      "id": "01M15XYZXT-KTJA",
+      "uid": "01M15XYZXT-KTJA",
+      "name": "OWASP ASVS & Secure Coding Standards",
       "aliases": [],
-      "type": "relationship",
-      "typeLabel": "Relationship",
-      "filterType": "relationship",
+      "type": "requirement_group",
+      "typeLabel": "RequirementGroup",
+      "filterType": "requirement_group",
       "category": "",
       "deliveryModel": "",
       "domain": "",
-      "description": "",
-      "version": "",
-      "catalogStatus": "stub",
-      "lifecycleStatus": "unknown",
-      "status": "",
-      "businessContext": {},
-      "product": "",
-      "runsOn": "",
-      "subtype": "",
-      "vendor": "",
-      "productName": "",
-      "productVersion": "",
-      "classification": "",
-      "platformDependency": "",
-      "capabilities": [],
-      "configurations": [],
-      "networkPlacement": "",
-      "patchingOwner": "",
-      "complianceCerts": [],
-      "requirementGroups": [],
-      "requirementImplementations": [],
-      "dataLeavesInfrastructure": null,
-      "dataResidencyCommitment": "",
-      "dpaNotes": "",
-      "vendorSLA": "",
-      "authenticationModel": "",
-      "incidentNotificationProcess": "",
-      "owner": {},
-      "definitionOwner": {},
-      "provider": {},
-      "authority": {},
-      "shape": "round-rectangle",
-      "color": "#7a6e60",
-      "source": "examples/catalog/governance/relationships/relationship-aws-lambda-runtime-calls-aws-iam.yaml",
-      "tags": [],
-      "ardCategory": "",
-      "internalComponents": [],
-      "notes": "Lambda function and administrative access is controlled through AWS IAM.",
-      "requirements": [],
-      "implementations": [],
-      "appliesTo": {},
-      "inherits": "",
-      "scalingUnits": [],
-      "networkZones": [],
-      "sdpConnections": [],
-      "serviceGroups": [],
-      "tierVariants": [],
-      "tierId": "",
-      "purpose": "",
-      "availabilityExpectation": "",
-      "costPosture": "",
-      "complianceScope": [],
-      "parameterSurface": [],
-      "followsReferenceArchitecture": "",
-      "decisionRecords": [],
-      "affectedComponent": "",
-      "impact": "",
-      "mitigationPath": "",
-      "decisionRationale": "",
-      "relatedDecisionRecords": [],
-      "linkedObject": "",
-      "primaryObjectType": "",
-      "primaryObjectUid": "",
-      "generatedObjects": [],
-      "unresolvedQuestions": [],
-      "assumptions": [],
-      "nextSteps": [],
-      "defaultSelection": false,
-      "requirementCount": 0,
-      "hasRiskRef": false,
-      "outboundRefs": [
-        {
-          "target": "01KQQ4Q025-T7B7",
-          "path": "source"
-        }
-      ],
-      "referencedBy": [],
-      "editorSchema": {
-        "requiredFields": [
-          "schemaVersion",
-          "uid",
-          "type",
-          "name",
-          "source",
-          "label",
-          "catalogStatus"
-        ],
-        "optionalFields": [
-          "description",
-          "target",
-          "externalTarget",
-          "technology",
-          "direction",
-          "flow",
-          "capabilities",
-          "notes",
-          "tags"
-        ],
-        "fieldTypes": {
-          "tags": "list",
-          "capabilities": "list"
-        },
-        "enumFields": {
-          "catalogStatus": [
-            "stub",
-            "incomplete",
-            "complete"
-          ],
-          "direction": [
-            "synchronous",
-            "asynchronous",
-            "event"
-          ],
-          "flow": [
-            "outbound",
-            "inbound",
-            "bidirectional"
-          ]
-        },
-        "enumListFields": {},
-        "collectionSchemas": {},
-        "schemaPath": "framework/schemas/relationship.schema.yaml"
-      },
-      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"type\": \"relationship\",\n  \"uid\": \"01KSKWFZZX-34KP\",\n  \"name\": \"AWS Lambda Runtime \\u2192 AWS IAM\",\n  \"catalogStatus\": \"stub\",\n  \"source\": \"01KQQ4Q025-T7B7\",\n  \"label\": \"calls\",\n  \"externalTarget\": \"AWS IAM\",\n  \"notes\": \"Lambda function and administrative access is controlled through AWS IAM.\",\n  \"_source\": \"examples/catalog/governance/relationships/relationship-aws-lambda-runtime-calls-aws-iam.yaml\"\n}",
-      "existsInCatalog": true,
-      "outboundRelationships": [],
-      "inboundRelationships": []
-    },
-    {
-      "id": "01KSKWFZZX-JWP6",
-      "uid": "01KSKWFZZX-JWP6",
-      "name": "AWS Lambda Runtime \u2192 Amazon CloudWatch Logs",
-      "aliases": [],
-      "type": "relationship",
-      "typeLabel": "Relationship",
-      "filterType": "relationship",
-      "category": "",
-      "deliveryModel": "",
-      "domain": "",
-      "description": "",
-      "version": "",
-      "catalogStatus": "stub",
-      "lifecycleStatus": "unknown",
-      "status": "",
-      "businessContext": {},
-      "product": "",
-      "runsOn": "",
-      "subtype": "",
-      "vendor": "",
-      "productName": "",
-      "productVersion": "",
-      "classification": "",
-      "platformDependency": "",
-      "capabilities": [],
-      "configurations": [],
-      "networkPlacement": "",
-      "patchingOwner": "",
-      "complianceCerts": [],
-      "requirementGroups": [],
-      "requirementImplementations": [],
-      "dataLeavesInfrastructure": null,
-      "dataResidencyCommitment": "",
-      "dpaNotes": "",
-      "vendorSLA": "",
-      "authenticationModel": "",
-      "incidentNotificationProcess": "",
-      "owner": {},
-      "definitionOwner": {},
-      "provider": {},
-      "authority": {},
-      "shape": "round-rectangle",
-      "color": "#7a6e60",
-      "source": "examples/catalog/governance/relationships/relationship-aws-lambda-runtime-sends-events-to-amazon-cloudwatch-logs.yaml",
-      "tags": [],
-      "ardCategory": "",
-      "internalComponents": [],
-      "notes": "Function logs are emitted to CloudWatch Logs for adopter visibility.",
-      "requirements": [],
-      "implementations": [],
-      "appliesTo": {},
-      "inherits": "",
-      "scalingUnits": [],
-      "networkZones": [],
-      "sdpConnections": [],
-      "serviceGroups": [],
-      "tierVariants": [],
-      "tierId": "",
-      "purpose": "",
-      "availabilityExpectation": "",
-      "costPosture": "",
-      "complianceScope": [],
-      "parameterSurface": [],
-      "followsReferenceArchitecture": "",
-      "decisionRecords": [],
-      "affectedComponent": "",
-      "impact": "",
-      "mitigationPath": "",
-      "decisionRationale": "",
-      "relatedDecisionRecords": [],
-      "linkedObject": "",
-      "primaryObjectType": "",
-      "primaryObjectUid": "",
-      "generatedObjects": [],
-      "unresolvedQuestions": [],
-      "assumptions": [],
-      "nextSteps": [],
-      "defaultSelection": false,
-      "requirementCount": 0,
-      "hasRiskRef": false,
-      "outboundRefs": [
-        {
-          "target": "01KQQ4Q025-T7B7",
-          "path": "source"
-        }
-      ],
-      "referencedBy": [],
-      "editorSchema": {
-        "requiredFields": [
-          "schemaVersion",
-          "uid",
-          "type",
-          "name",
-          "source",
-          "label",
-          "catalogStatus"
-        ],
-        "optionalFields": [
-          "description",
-          "target",
-          "externalTarget",
-          "technology",
-          "direction",
-          "flow",
-          "capabilities",
-          "notes",
-          "tags"
-        ],
-        "fieldTypes": {
-          "tags": "list",
-          "capabilities": "list"
-        },
-        "enumFields": {
-          "catalogStatus": [
-            "stub",
-            "incomplete",
-            "complete"
-          ],
-          "direction": [
-            "synchronous",
-            "asynchronous",
-            "event"
-          ],
-          "flow": [
-            "outbound",
-            "inbound",
-            "bidirectional"
-          ]
-        },
-        "enumListFields": {},
-        "collectionSchemas": {},
-        "schemaPath": "framework/schemas/relationship.schema.yaml"
-      },
-      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"type\": \"relationship\",\n  \"uid\": \"01KSKWFZZX-JWP6\",\n  \"name\": \"AWS Lambda Runtime \\u2192 Amazon CloudWatch Logs\",\n  \"catalogStatus\": \"stub\",\n  \"source\": \"01KQQ4Q025-T7B7\",\n  \"label\": \"sends events to\",\n  \"externalTarget\": \"Amazon CloudWatch Logs\",\n  \"notes\": \"Function logs are emitted to CloudWatch Logs for adopter visibility.\",\n  \"_source\": \"examples/catalog/governance/relationships/relationship-aws-lambda-runtime-sends-events-to-amazon-cloudwatch-logs.yaml\"\n}",
-      "existsInCatalog": true,
-      "outboundRelationships": [],
-      "inboundRelationships": []
-    },
-    {
-      "id": "01KSKWFZZW-ZEKF",
-      "uid": "01KSKWFZZW-ZEKF",
-      "name": "AWS Lambda Serverless Host \u2192 AWS Lambda Service",
-      "aliases": [],
-      "type": "relationship",
-      "typeLabel": "Relationship",
-      "filterType": "relationship",
-      "category": "",
-      "deliveryModel": "",
-      "domain": "",
-      "description": "",
-      "version": "",
-      "catalogStatus": "stub",
-      "lifecycleStatus": "unknown",
-      "status": "",
-      "businessContext": {},
-      "product": "",
-      "runsOn": "",
-      "subtype": "",
-      "vendor": "",
-      "productName": "",
-      "productVersion": "",
-      "classification": "",
-      "platformDependency": "",
-      "capabilities": [],
-      "configurations": [],
-      "networkPlacement": "",
-      "patchingOwner": "",
-      "complianceCerts": [],
-      "requirementGroups": [],
-      "requirementImplementations": [],
-      "dataLeavesInfrastructure": null,
-      "dataResidencyCommitment": "",
-      "dpaNotes": "",
-      "vendorSLA": "",
-      "authenticationModel": "",
-      "incidentNotificationProcess": "",
-      "owner": {},
-      "definitionOwner": {},
-      "provider": {},
-      "authority": {},
-      "shape": "round-rectangle",
-      "color": "#7a6e60",
-      "source": "examples/catalog/governance/relationships/relationship-aws-lambda-serverless-host-calls-aws-lambda-service.yaml",
-      "tags": [],
-      "ardCategory": "",
-      "internalComponents": [],
-      "notes": "The Lambda service itself provides the execution environment.",
-      "requirements": [],
-      "implementations": [],
-      "appliesTo": {},
-      "inherits": "",
-      "scalingUnits": [],
-      "networkZones": [],
-      "sdpConnections": [],
-      "serviceGroups": [],
-      "tierVariants": [],
-      "tierId": "",
-      "purpose": "",
-      "availabilityExpectation": "",
-      "costPosture": "",
-      "complianceScope": [],
-      "parameterSurface": [],
-      "followsReferenceArchitecture": "",
-      "decisionRecords": [],
-      "affectedComponent": "",
-      "impact": "",
-      "mitigationPath": "",
-      "decisionRationale": "",
-      "relatedDecisionRecords": [],
-      "linkedObject": "",
-      "primaryObjectType": "",
-      "primaryObjectUid": "",
-      "generatedObjects": [],
-      "unresolvedQuestions": [],
-      "assumptions": [],
-      "nextSteps": [],
-      "defaultSelection": false,
-      "requirementCount": 0,
-      "hasRiskRef": false,
-      "outboundRefs": [
-        {
-          "target": "01KQQ4Q025-1XDE",
-          "path": "source"
-        }
-      ],
-      "referencedBy": [],
-      "editorSchema": {
-        "requiredFields": [
-          "schemaVersion",
-          "uid",
-          "type",
-          "name",
-          "source",
-          "label",
-          "catalogStatus"
-        ],
-        "optionalFields": [
-          "description",
-          "target",
-          "externalTarget",
-          "technology",
-          "direction",
-          "flow",
-          "capabilities",
-          "notes",
-          "tags"
-        ],
-        "fieldTypes": {
-          "tags": "list",
-          "capabilities": "list"
-        },
-        "enumFields": {
-          "catalogStatus": [
-            "stub",
-            "incomplete",
-            "complete"
-          ],
-          "direction": [
-            "synchronous",
-            "asynchronous",
-            "event"
-          ],
-          "flow": [
-            "outbound",
-            "inbound",
-            "bidirectional"
-          ]
-        },
-        "enumListFields": {},
-        "collectionSchemas": {},
-        "schemaPath": "framework/schemas/relationship.schema.yaml"
-      },
-      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"type\": \"relationship\",\n  \"uid\": \"01KSKWFZZW-ZEKF\",\n  \"name\": \"AWS Lambda Serverless Host \\u2192 AWS Lambda Service\",\n  \"catalogStatus\": \"stub\",\n  \"source\": \"01KQQ4Q025-1XDE\",\n  \"label\": \"calls\",\n  \"externalTarget\": \"AWS Lambda Service\",\n  \"notes\": \"The Lambda service itself provides the execution environment.\",\n  \"_source\": \"examples/catalog/governance/relationships/relationship-aws-lambda-serverless-host-calls-aws-lambda-service.yaml\"\n}",
-      "existsInCatalog": true,
-      "outboundRelationships": [],
-      "inboundRelationships": []
-    },
-    {
-      "id": "01KQQ4Q025-1XDE",
-      "uid": "01KQQ4Q025-1XDE",
-      "name": "AWS Lambda Serverless Host",
-      "aliases": [],
-      "type": "host",
-      "typeLabel": "Host",
-      "filterType": "host",
-      "category": "host",
-      "deliveryModel": "",
-      "domain": "",
-      "description": "Serverless execution environment provided by AWS Lambda. The host is entirely AWS-managed and blackbox to the organization. Function code is deployed as a ProductComponent. No OS management, no agent installation, and no patching responsibility exist at this layer.\n",
+      "description": "Mandatory secure coding and application security verification standards based on OWASP ASVS v4.0 and NIST SSDF.",
       "version": "1.0.0",
-      "catalogStatus": "incomplete",
+      "catalogStatus": "complete",
       "lifecycleStatus": "preferred",
       "status": "",
       "businessContext": {},
       "product": "",
       "runsOn": "",
-      "subtype": "host",
+      "subtype": "",
       "vendor": "",
       "productName": "",
       "productVersion": "",
@@ -21591,44 +20248,307 @@ window.DRAFT_BROWSER_DATA = {
       "authenticationModel": "",
       "incidentNotificationProcess": "",
       "owner": {
-        "team": "cloud-architecture",
-        "contact": "cloud-architecture@example.com"
+        "team": "security-engineering",
+        "contact": "security-engineering@example.com"
+      },
+      "definitionOwner": {},
+      "provider": {},
+      "authority": {
+        "name": "OWASP Application Security Verification Standard",
+        "shortName": "OWASP ASVS",
+        "source": "https://owasp.org/www-project-application-security-verification-standard/"
+      },
+      "shape": "barrel",
+      "color": "#1f8a5b",
+      "source": "configurations/requirement-groups/requirement-group-owasp-asvs-secure-coding.yaml",
+      "tags": [],
+      "ardCategory": "",
+      "internalComponents": [],
+      "notes": {},
+      "requirements": [
+        {
+          "id": "req-asvs-parameterized-queries",
+          "description": "(OWASP ASVS V5 / V13) All database queries MUST use parameterized prepared statements or ORM bindings. Direct string concatenation in queries is strictly prohibited to prevent SQL/NoSQL injection.",
+          "canBeSatisfiedBy": [
+            {
+              "mechanism": "field",
+              "key": "queryParameterization"
+            },
+            {
+              "mechanism": "decisionRecord",
+              "key": "queryParameterizationDecision"
+            }
+          ],
+          "minimumSatisfactions": 1,
+          "requirementMode": "mandatory",
+          "naAllowed": true,
+          "validAnswerTypes": [
+            "field",
+            "decisionRecord"
+          ]
+        },
+        {
+          "id": "req-asvs-broken-object-level-auth",
+          "description": "(OWASP ASVS V4 / OWASP API1) Enforce default-deny, server-side object-level access control (BOLA/RBAC/ABAC) on every API endpoint.",
+          "canBeSatisfiedBy": [
+            {
+              "mechanism": "field",
+              "key": "accessControlModel"
+            },
+            {
+              "mechanism": "decisionRecord",
+              "key": "accessControlModelDecision"
+            }
+          ],
+          "minimumSatisfactions": 1,
+          "requirementMode": "mandatory",
+          "naAllowed": false,
+          "validAnswerTypes": [
+            "field",
+            "decisionRecord"
+          ]
+        },
+        {
+          "id": "req-asvs-strong-cryptography-tls",
+          "description": "(OWASP ASVS V6 / V9) Enforce TLS 1.2+ for data in transit and AES-256/GCM or KMS for data at rest. Weak legacy ciphers (MD5, SHA1, DES) are prohibited.",
+          "canBeSatisfiedBy": [
+            {
+              "mechanism": "field",
+              "key": "cryptographyStandard"
+            },
+            {
+              "mechanism": "decisionRecord",
+              "key": "cryptographyStandardDecision"
+            }
+          ],
+          "minimumSatisfactions": 1,
+          "requirementMode": "mandatory",
+          "naAllowed": false,
+          "validAnswerTypes": [
+            "field",
+            "decisionRecord"
+          ]
+        },
+        {
+          "id": "req-asvs-session-jwt-security",
+          "description": "(OWASP ASVS V2 / V3) Secure session management with short-lived tokens, explicit signature verification, MFA for admin access, and API rate-limiting.",
+          "canBeSatisfiedBy": [
+            {
+              "mechanism": "field",
+              "key": "sessionManagement"
+            },
+            {
+              "mechanism": "decisionRecord",
+              "key": "sessionManagementDecision"
+            }
+          ],
+          "minimumSatisfactions": 1,
+          "requirementMode": "mandatory",
+          "naAllowed": false,
+          "validAnswerTypes": [
+            "field",
+            "decisionRecord"
+          ]
+        },
+        {
+          "id": "req-asvs-error-handling-audit-logging",
+          "description": "(OWASP ASVS V7) Return sanitized, generic error messages to API consumers without leaking stack traces. Stream detailed audit logs for authentication and security events.",
+          "canBeSatisfiedBy": [
+            {
+              "mechanism": "field",
+              "key": "errorHandlingLogging"
+            },
+            {
+              "mechanism": "decisionRecord",
+              "key": "errorHandlingLoggingDecision"
+            }
+          ],
+          "minimumSatisfactions": 1,
+          "requirementMode": "mandatory",
+          "naAllowed": false,
+          "validAnswerTypes": [
+            "field",
+            "decisionRecord"
+          ]
+        },
+        {
+          "id": "req-asvs-third-party-component-security",
+          "description": "(OWASP ASVS V14 / NIST SSDF PW.4) Enforce automated Software Composition Analysis (SCA) in CI pipelines to block third-party dependencies with known High/Critical CVEs.",
+          "canBeSatisfiedBy": [
+            {
+              "mechanism": "field",
+              "key": "dependencySecurity"
+            },
+            {
+              "mechanism": "decisionRecord",
+              "key": "dependencySecurityDecision"
+            }
+          ],
+          "minimumSatisfactions": 1,
+          "requirementMode": "mandatory",
+          "naAllowed": false,
+          "validAnswerTypes": [
+            "field",
+            "decisionRecord"
+          ]
+        }
+      ],
+      "implementations": [],
+      "appliesTo": [
+        "product_component",
+        "software_deployment_pattern"
+      ],
+      "inherits": "",
+      "scalingUnits": [],
+      "networkZones": [],
+      "sdpConnections": [],
+      "serviceGroups": [],
+      "tierVariants": [],
+      "tierId": "",
+      "purpose": "",
+      "availabilityExpectation": "",
+      "costPosture": "",
+      "complianceScope": [],
+      "parameterSurface": [],
+      "followsReferenceArchitecture": "",
+      "decisionRecords": [],
+      "affectedComponent": "",
+      "impact": "",
+      "mitigationPath": "",
+      "decisionRationale": "",
+      "relatedDecisionRecords": [],
+      "linkedObject": "",
+      "primaryObjectType": "",
+      "primaryObjectUid": "",
+      "generatedObjects": [],
+      "unresolvedQuestions": [],
+      "assumptions": [],
+      "nextSteps": [],
+      "defaultSelection": false,
+      "requirementCount": 6,
+      "hasRiskRef": false,
+      "outboundRefs": [],
+      "referencedBy": [],
+      "editorSchema": {
+        "requiredFields": [
+          "schemaVersion",
+          "uid",
+          "type",
+          "name",
+          "description",
+          "catalogStatus",
+          "activation",
+          "appliesTo",
+          "requirements"
+        ],
+        "optionalFields": [
+          "aliases",
+          "version",
+          "tags",
+          "owner",
+          "lifecycleStatus",
+          "provider",
+          "authority",
+          "notes",
+          "inherits",
+          "appliesToQualifiers"
+        ],
+        "fieldTypes": {
+          "aliases": "list",
+          "owner": "dict",
+          "tags": "list",
+          "provider": "dict",
+          "authority": "dict",
+          "appliesTo": "list",
+          "requirements": "list",
+          "appliesToQualifiers": "dict"
+        },
+        "enumFields": {
+          "catalogStatus": [
+            "stub",
+            "incomplete",
+            "complete"
+          ],
+          "activation": [
+            "always",
+            "workspace"
+          ],
+          "lifecycleStatus": [
+            "candidate",
+            "preferred",
+            "existing-only",
+            "deprecated",
+            "retired"
+          ]
+        },
+        "enumListFields": {},
+        "collectionSchemas": {
+          "requirements": "requirement"
+        },
+        "schemaPath": "framework/schemas/requirement-group.schema.yaml"
+      },
+      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M15XYZXT-KTJA\",\n  \"type\": \"requirement_group\",\n  \"name\": \"OWASP ASVS & Secure Coding Standards\",\n  \"description\": \"Mandatory secure coding and application security verification standards based on OWASP ASVS v4.0 and NIST SSDF.\",\n  \"version\": \"1.0.0\",\n  \"catalogStatus\": \"complete\",\n  \"lifecycleStatus\": \"preferred\",\n  \"activation\": \"always\",\n  \"appliesTo\": [\n    \"product_component\",\n    \"software_deployment_pattern\"\n  ],\n  \"authority\": {\n    \"name\": \"OWASP Application Security Verification Standard\",\n    \"shortName\": \"OWASP ASVS\",\n    \"source\": \"https://owasp.org/www-project-application-security-verification-standard/\"\n  },\n  \"owner\": {\n    \"team\": \"security-engineering\",\n    \"contact\": \"security-engineering@example.com\"\n  },\n  \"requirements\": [\n    {\n      \"id\": \"req-asvs-parameterized-queries\",\n      \"description\": \"(OWASP ASVS V5 / V13) All database queries MUST use parameterized prepared statements or ORM bindings. Direct string concatenation in queries is strictly prohibited to prevent SQL/NoSQL injection.\",\n      \"canBeSatisfiedBy\": [\n        {\n          \"mechanism\": \"field\",\n          \"key\": \"queryParameterization\"\n        },\n        {\n          \"mechanism\": \"decisionRecord\",\n          \"key\": \"queryParameterizationDecision\"\n        }\n      ],\n      \"minimumSatisfactions\": 1,\n      \"requirementMode\": \"mandatory\",\n      \"naAllowed\": true,\n      \"validAnswerTypes\": [\n        \"field\",\n        \"decisionRecord\"\n      ]\n    },\n    {\n      \"id\": \"req-asvs-broken-object-level-auth\",\n      \"description\": \"(OWASP ASVS V4 / OWASP API1) Enforce default-deny, server-side object-level access control (BOLA/RBAC/ABAC) on every API endpoint.\",\n      \"canBeSatisfiedBy\": [\n        {\n          \"mechanism\": \"field\",\n          \"key\": \"accessControlModel\"\n        },\n        {\n          \"mechanism\": \"decisionRecord\",\n          \"key\": \"accessControlModelDecision\"\n        }\n      ],\n      \"minimumSatisfactions\": 1,\n      \"requirementMode\": \"mandatory\",\n      \"naAllowed\": false,\n      \"validAnswerTypes\": [\n        \"field\",\n        \"decisionRecord\"\n      ]\n    },\n    {\n      \"id\": \"req-asvs-strong-cryptography-tls\",\n      \"description\": \"(OWASP ASVS V6 / V9) Enforce TLS 1.2+ for data in transit and AES-256/GCM or KMS for data at rest. Weak legacy ciphers (MD5, SHA1, DES) are prohibited.\",\n      \"canBeSatisfiedBy\": [\n        {\n          \"mechanism\": \"field\",\n          \"key\": \"cryptographyStandard\"\n        },\n        {\n          \"mechanism\": \"decisionRecord\",\n          \"key\": \"cryptographyStandardDecision\"\n        }\n      ],\n      \"minimumSatisfactions\": 1,\n      \"requirementMode\": \"mandatory\",\n      \"naAllowed\": false,\n      \"validAnswerTypes\": [\n        \"field\",\n        \"decisionRecord\"\n      ]\n    },\n    {\n      \"id\": \"req-asvs-session-jwt-security\",\n      \"description\": \"(OWASP ASVS V2 / V3) Secure session management with short-lived tokens, explicit signature verification, MFA for admin access, and API rate-limiting.\",\n      \"canBeSatisfiedBy\": [\n        {\n          \"mechanism\": \"field\",\n          \"key\": \"sessionManagement\"\n        },\n        {\n          \"mechanism\": \"decisionRecord\",\n          \"key\": \"sessionManagementDecision\"\n        }\n      ],\n      \"minimumSatisfactions\": 1,\n      \"requirementMode\": \"mandatory\",\n      \"naAllowed\": false,\n      \"validAnswerTypes\": [\n        \"field\",\n        \"decisionRecord\"\n      ]\n    },\n    {\n      \"id\": \"req-asvs-error-handling-audit-logging\",\n      \"description\": \"(OWASP ASVS V7) Return sanitized, generic error messages to API consumers without leaking stack traces. Stream detailed audit logs for authentication and security events.\",\n      \"canBeSatisfiedBy\": [\n        {\n          \"mechanism\": \"field\",\n          \"key\": \"errorHandlingLogging\"\n        },\n        {\n          \"mechanism\": \"decisionRecord\",\n          \"key\": \"errorHandlingLoggingDecision\"\n        }\n      ],\n      \"minimumSatisfactions\": 1,\n      \"requirementMode\": \"mandatory\",\n      \"naAllowed\": false,\n      \"validAnswerTypes\": [\n        \"field\",\n        \"decisionRecord\"\n      ]\n    },\n    {\n      \"id\": \"req-asvs-third-party-component-security\",\n      \"description\": \"(OWASP ASVS V14 / NIST SSDF PW.4) Enforce automated Software Composition Analysis (SCA) in CI pipelines to block third-party dependencies with known High/Critical CVEs.\",\n      \"canBeSatisfiedBy\": [\n        {\n          \"mechanism\": \"field\",\n          \"key\": \"dependencySecurity\"\n        },\n        {\n          \"mechanism\": \"decisionRecord\",\n          \"key\": \"dependencySecurityDecision\"\n        }\n      ],\n      \"minimumSatisfactions\": 1,\n      \"requirementMode\": \"mandatory\",\n      \"naAllowed\": false,\n      \"validAnswerTypes\": [\n        \"field\",\n        \"decisionRecord\"\n      ]\n    }\n  ],\n  \"_source\": \"configurations/requirement-groups/requirement-group-owasp-asvs-secure-coding.yaml\"\n}",
+      "existsInCatalog": true,
+      "outboundRelationships": [],
+      "inboundRelationships": []
+    },
+    {
+      "id": "01M15NEKT7-EKAR",
+      "uid": "01M15NEKT7-EKAR",
+      "name": "Skippy's Submind Agent Runner Container",
+      "aliases": [],
+      "type": "product_component",
+      "typeLabel": "ProductComponent / Worker",
+      "filterType": "product_component",
+      "category": "",
+      "deliveryModel": "",
+      "domain": "",
+      "description": "First-party agent container running LLM reasoning loops, tool dispatch, and DRAFT catalog queries.",
+      "version": "1.2.0",
+      "catalogStatus": "complete",
+      "lifecycleStatus": "preferred",
+      "status": "",
+      "businessContext": {},
+      "product": "",
+      "runsOn": "",
+      "subtype": "",
+      "vendor": "",
+      "productName": "",
+      "productVersion": "",
+      "classification": "worker",
+      "platformDependency": "",
+      "capabilities": [],
+      "configurations": [],
+      "networkPlacement": "",
+      "patchingOwner": "",
+      "complianceCerts": [],
+      "requirementGroups": [],
+      "requirementImplementations": [],
+      "dataLeavesInfrastructure": null,
+      "dataResidencyCommitment": "",
+      "dpaNotes": "",
+      "vendorSLA": "",
+      "authenticationModel": "",
+      "incidentNotificationProcess": "",
+      "owner": {
+        "team": "platform-ai-team",
+        "contact": "platform-ai@example.com"
       },
       "definitionOwner": {},
       "provider": {},
       "authority": {},
       "shape": "round-rectangle",
       "color": "#1f8a5b",
-      "source": "examples/catalog/shared-services/hosts/host-serverless-lambda.yaml",
+      "source": "catalog/engineering/product-components/product-component-skippy-submind-runner.yaml",
       "tags": [
-        "lambda",
-        "serverless"
+        "agent-runner",
+        "python",
+        "containers"
       ],
       "ardCategory": "",
-      "internalComponents": [
-        {
-          "ref": "01KQQ4Q025-T7B7",
-          "role": "managed-runtime",
-          "configuration": "",
-          "notes": "AWS-managed serverless execution environment. Blackbox host."
-        }
-      ],
+      "internalComponents": [],
       "notes": {
-        "authenticationApproach": "IAM-based invocation and execution roles managed by AWS",
-        "loggingApproach": "Function and platform logs emitted to CloudWatch Logs",
-        "securityMonitoringApproach": "AWS-native monitoring and audit integration for the managed runtime",
-        "patchManagementApproach": "Runtime patching is handled by AWS as part of the managed platform",
-        "authentication": "IAM-based invocation and execution roles managed by AWS. No SSH or interactive login; access to the execution environment is not possible. Administrative access to the Lambda configuration is governed by AWS IAM policies.",
-        "log_management": "Function logs and platform runtime logs are emitted to Amazon CloudWatch Logs. Log retention and export are configured per function.",
-        "health_welfare_monitoring": "AWS Lambda provides built-in invocation metrics (duration, errors, throttles, concurrency) via Amazon CloudWatch Metrics. No agent installation is possible; observability is entirely provider-managed.",
-        "security_monitoring": "AWS CloudTrail captures all Lambda API calls for audit. AWS-native security event collection covers the managed runtime boundary.",
-        "patch_management": "Runtime patching is fully managed by AWS as part of the Lambda managed platform. Organization has no patching responsibility at this layer; runtime version selection is the only control available.",
-        "internalComponentRationales": {
-          "01KQQ4Q025-T7B7": "The AWS Lambda Runtime is modeled as the managed execution component that makes the serverless host understandable even though standard host requirements do not apply."
-        },
-        "relationshipRationales": {
-          "AWS Lambda Service": "The AWS Lambda control plane is modeled to show the managed service boundary for the blackbox serverless host."
-        }
+        "security_monitoring": "Cloud Audit Logs enabled."
       },
       "requirements": [],
       "implementations": [],
@@ -21648,24 +20568,112 @@ window.DRAFT_BROWSER_DATA = {
       "followsReferenceArchitecture": "",
       "decisionRecords": [
         {
-          "ref": "01KT1340H6-X3T5",
-          "key": "authentication"
+          "ref": "01M15NFKKN-74NY",
+          "key": "runtimeRequirement"
         },
         {
-          "ref": "01KT1340H6-X3T5",
-          "key": "health_welfare_monitoring"
+          "ref": "01M15NFKKN-74NY",
+          "key": "aiGatewayRoutingDecision"
         },
         {
-          "ref": "01KT1340H6-X3T5",
-          "key": "log_management"
+          "ref": "01M15NFKKN-74NY",
+          "key": "secretsManagementDecision"
         },
         {
-          "ref": "01KT1340H6-X3T5",
-          "key": "patch_management"
+          "ref": "01M15NFKKN-74NY",
+          "key": "localValidationDecision"
         },
         {
-          "ref": "01KT1340H6-X3T5",
-          "key": "security_monitoring"
+          "ref": "01M15NFKKN-74NY",
+          "key": "productRegistrationDecision"
+        },
+        {
+          "ref": "01M15NFKKN-74NY",
+          "key": "modelInferenceSpecDecision"
+        },
+        {
+          "ref": "01M15NFKKN-74NY",
+          "key": "databaseMigrationStrategyDecision"
+        },
+        {
+          "ref": "01M15NFKKN-74NY",
+          "key": "iacAutomationDecision"
+        },
+        {
+          "ref": "01M15NFKKN-74NY",
+          "key": "gateEnforcementDecision"
+        },
+        {
+          "ref": "01M15NFKKN-74NY",
+          "key": "testDataGovernanceDecision"
+        },
+        {
+          "ref": "01M15NFKKN-74NY",
+          "key": "rollbackStrategyDecision"
+        },
+        {
+          "ref": "01M15NFKKN-74NY",
+          "key": "composableIacDecision"
+        },
+        {
+          "ref": "01M15NFKKN-74NY",
+          "key": "previewEnvironmentsDecision"
+        },
+        {
+          "ref": "01M15NFKKN-74NY",
+          "key": "structuredLoggingDecision"
+        },
+        {
+          "ref": "01M15NFKKN-74NY",
+          "key": "sloPolicyDecision"
+        },
+        {
+          "ref": "01M15NFKKN-74NY",
+          "key": "zeroDowntimeStrategyDecision"
+        },
+        {
+          "ref": "01M15NFKKN-74NY",
+          "key": "automatedSecurityGatesDecision"
+        },
+        {
+          "ref": "01M15NFKKN-74NY",
+          "key": "queryParameterizationDecision"
+        },
+        {
+          "ref": "01M15NFKKN-74NY",
+          "key": "accessControlModelDecision"
+        },
+        {
+          "ref": "01M15NFKKN-74NY",
+          "key": "cryptographyStandardDecision"
+        },
+        {
+          "ref": "01M15NFKKN-74NY",
+          "key": "sessionManagementDecision"
+        },
+        {
+          "ref": "01M15NFKKN-74NY",
+          "key": "errorHandlingLoggingDecision"
+        },
+        {
+          "ref": "01M15NFKKN-74NY",
+          "key": "dependencySecurityDecision"
+        },
+        {
+          "ref": "01M15NFKKN-74NY",
+          "key": "gameTierClassificationDecision"
+        },
+        {
+          "ref": "01M15NFKKN-74NY",
+          "key": "gameUatDeploymentDecision"
+        },
+        {
+          "ref": "01M15NFKKN-74NY",
+          "key": "gameAuthPersistenceDecision"
+        },
+        {
+          "ref": "01M15NFKKN-74NY",
+          "key": "gameRepoScaffoldingDecision"
         }
       ],
       "affectedComponent": "",
@@ -21685,40 +20693,856 @@ window.DRAFT_BROWSER_DATA = {
       "hasRiskRef": false,
       "outboundRefs": [
         {
-          "target": "01KQQ4Q025-T7B7",
-          "path": "internalComponents[0].ref"
-        },
-        {
-          "target": "01KT1340H6-X3T5",
+          "target": "01M15NFKKN-74NY",
           "path": "decisionRecords[0].ref"
         },
         {
-          "target": "01KT1340H6-X3T5",
+          "target": "01M15NFKKN-74NY",
           "path": "decisionRecords[1].ref"
         },
         {
-          "target": "01KT1340H6-X3T5",
+          "target": "01M15NFKKN-74NY",
           "path": "decisionRecords[2].ref"
         },
         {
-          "target": "01KT1340H6-X3T5",
+          "target": "01M15NFKKN-74NY",
           "path": "decisionRecords[3].ref"
         },
         {
-          "target": "01KT1340H6-X3T5",
+          "target": "01M15NFKKN-74NY",
           "path": "decisionRecords[4].ref"
-        }
-      ],
-      "referencedBy": [
-        {
-          "source": "01KT1340H6-X3T5",
-          "path": "linkedObject"
         },
         {
-          "source": "01KSKWFZZW-ZEKF",
-          "path": "source"
+          "target": "01M15NFKKN-74NY",
+          "path": "decisionRecords[5].ref"
+        },
+        {
+          "target": "01M15NFKKN-74NY",
+          "path": "decisionRecords[6].ref"
+        },
+        {
+          "target": "01M15NFKKN-74NY",
+          "path": "decisionRecords[7].ref"
+        },
+        {
+          "target": "01M15NFKKN-74NY",
+          "path": "decisionRecords[8].ref"
+        },
+        {
+          "target": "01M15NFKKN-74NY",
+          "path": "decisionRecords[9].ref"
+        },
+        {
+          "target": "01M15NFKKN-74NY",
+          "path": "decisionRecords[10].ref"
+        },
+        {
+          "target": "01M15NFKKN-74NY",
+          "path": "decisionRecords[11].ref"
+        },
+        {
+          "target": "01M15NFKKN-74NY",
+          "path": "decisionRecords[12].ref"
+        },
+        {
+          "target": "01M15NFKKN-74NY",
+          "path": "decisionRecords[13].ref"
+        },
+        {
+          "target": "01M15NFKKN-74NY",
+          "path": "decisionRecords[14].ref"
+        },
+        {
+          "target": "01M15NFKKN-74NY",
+          "path": "decisionRecords[15].ref"
+        },
+        {
+          "target": "01M15NFKKN-74NY",
+          "path": "decisionRecords[16].ref"
+        },
+        {
+          "target": "01M15NFKKN-74NY",
+          "path": "decisionRecords[17].ref"
+        },
+        {
+          "target": "01M15NFKKN-74NY",
+          "path": "decisionRecords[18].ref"
+        },
+        {
+          "target": "01M15NFKKN-74NY",
+          "path": "decisionRecords[19].ref"
+        },
+        {
+          "target": "01M15NFKKN-74NY",
+          "path": "decisionRecords[20].ref"
+        },
+        {
+          "target": "01M15NFKKN-74NY",
+          "path": "decisionRecords[21].ref"
+        },
+        {
+          "target": "01M15NFKKN-74NY",
+          "path": "decisionRecords[22].ref"
+        },
+        {
+          "target": "01M15NFKKN-74NY",
+          "path": "decisionRecords[23].ref"
+        },
+        {
+          "target": "01M15NFKKN-74NY",
+          "path": "decisionRecords[24].ref"
+        },
+        {
+          "target": "01M15NFKKN-74NY",
+          "path": "decisionRecords[25].ref"
+        },
+        {
+          "target": "01M15NFKKN-74NY",
+          "path": "decisionRecords[26].ref"
         }
       ],
+      "referencedBy": [],
+      "editorSchema": {
+        "requiredFields": [
+          "schemaVersion",
+          "uid",
+          "type",
+          "name",
+          "repoUrl",
+          "owner",
+          "classification",
+          "catalogStatus"
+        ],
+        "optionalFields": [
+          "lifecycleStatus",
+          "aliases",
+          "description",
+          "version",
+          "tags",
+          "runsOn",
+          "language",
+          "interfaces",
+          "networkBindings",
+          "environmentConfiguration",
+          "runtimeSpec",
+          "notes",
+          "decisionRecords",
+          "requirementImplementations"
+        ],
+        "fieldTypes": {
+          "aliases": "list",
+          "owner": "dict",
+          "runsOn": "str",
+          "tags": "list",
+          "interfaces": "list",
+          "networkBindings": "list",
+          "environmentConfiguration": "list",
+          "runtimeSpec": "dict",
+          "notes": "dict",
+          "requirementGroups": "list",
+          "decisionRecords": "list",
+          "requirementImplementations": "list"
+        },
+        "enumFields": {
+          "catalogStatus": [
+            "stub",
+            "incomplete",
+            "complete"
+          ],
+          "lifecycleStatus": [
+            "candidate",
+            "preferred",
+            "existing-only",
+            "deprecated",
+            "retired"
+          ],
+          "classification": [
+            "web-application",
+            "api-service",
+            "worker",
+            "library",
+            "cli",
+            "other"
+          ]
+        },
+        "enumListFields": {},
+        "collectionSchemas": {
+          "interfaces": "interface",
+          "networkBindings": "networkBinding",
+          "environmentConfiguration": "environmentVariable",
+          "decisionRecords": "decisionRecordRef",
+          "requirementImplementations": "requirementImplementation"
+        },
+        "schemaPath": "framework/schemas/product-component.schema.yaml"
+      },
+      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M15NEKT7-EKAR\",\n  \"type\": \"product_component\",\n  \"name\": \"Skippy's Submind Agent Runner Container\",\n  \"description\": \"First-party agent container running LLM reasoning loops, tool dispatch, and DRAFT catalog queries.\",\n  \"version\": \"1.2.0\",\n  \"classification\": \"worker\",\n  \"catalogStatus\": \"complete\",\n  \"lifecycleStatus\": \"preferred\",\n  \"repoUrl\": \"https://github.com/dsackr/hermes-gcp-factory\",\n  \"owner\": {\n    \"team\": \"platform-ai-team\",\n    \"contact\": \"platform-ai@example.com\"\n  },\n  \"language\": \"python\",\n  \"tags\": [\n    \"agent-runner\",\n    \"python\",\n    \"containers\"\n  ],\n  \"decisionRecords\": [\n    {\n      \"ref\": \"01M15NFKKN-74NY\",\n      \"key\": \"runtimeRequirement\"\n    },\n    {\n      \"ref\": \"01M15NFKKN-74NY\",\n      \"key\": \"aiGatewayRoutingDecision\"\n    },\n    {\n      \"ref\": \"01M15NFKKN-74NY\",\n      \"key\": \"secretsManagementDecision\"\n    },\n    {\n      \"ref\": \"01M15NFKKN-74NY\",\n      \"key\": \"localValidationDecision\"\n    },\n    {\n      \"ref\": \"01M15NFKKN-74NY\",\n      \"key\": \"productRegistrationDecision\"\n    },\n    {\n      \"ref\": \"01M15NFKKN-74NY\",\n      \"key\": \"modelInferenceSpecDecision\"\n    },\n    {\n      \"ref\": \"01M15NFKKN-74NY\",\n      \"key\": \"databaseMigrationStrategyDecision\"\n    },\n    {\n      \"ref\": \"01M15NFKKN-74NY\",\n      \"key\": \"iacAutomationDecision\"\n    },\n    {\n      \"ref\": \"01M15NFKKN-74NY\",\n      \"key\": \"gateEnforcementDecision\"\n    },\n    {\n      \"ref\": \"01M15NFKKN-74NY\",\n      \"key\": \"testDataGovernanceDecision\"\n    },\n    {\n      \"ref\": \"01M15NFKKN-74NY\",\n      \"key\": \"rollbackStrategyDecision\"\n    },\n    {\n      \"ref\": \"01M15NFKKN-74NY\",\n      \"key\": \"composableIacDecision\"\n    },\n    {\n      \"ref\": \"01M15NFKKN-74NY\",\n      \"key\": \"previewEnvironmentsDecision\"\n    },\n    {\n      \"ref\": \"01M15NFKKN-74NY\",\n      \"key\": \"structuredLoggingDecision\"\n    },\n    {\n      \"ref\": \"01M15NFKKN-74NY\",\n      \"key\": \"sloPolicyDecision\"\n    },\n    {\n      \"ref\": \"01M15NFKKN-74NY\",\n      \"key\": \"zeroDowntimeStrategyDecision\"\n    },\n    {\n      \"ref\": \"01M15NFKKN-74NY\",\n      \"key\": \"automatedSecurityGatesDecision\"\n    },\n    {\n      \"ref\": \"01M15NFKKN-74NY\",\n      \"key\": \"queryParameterizationDecision\"\n    },\n    {\n      \"ref\": \"01M15NFKKN-74NY\",\n      \"key\": \"accessControlModelDecision\"\n    },\n    {\n      \"ref\": \"01M15NFKKN-74NY\",\n      \"key\": \"cryptographyStandardDecision\"\n    },\n    {\n      \"ref\": \"01M15NFKKN-74NY\",\n      \"key\": \"sessionManagementDecision\"\n    },\n    {\n      \"ref\": \"01M15NFKKN-74NY\",\n      \"key\": \"errorHandlingLoggingDecision\"\n    },\n    {\n      \"ref\": \"01M15NFKKN-74NY\",\n      \"key\": \"dependencySecurityDecision\"\n    },\n    {\n      \"ref\": \"01M15NFKKN-74NY\",\n      \"key\": \"gameTierClassificationDecision\"\n    },\n    {\n      \"ref\": \"01M15NFKKN-74NY\",\n      \"key\": \"gameUatDeploymentDecision\"\n    },\n    {\n      \"ref\": \"01M15NFKKN-74NY\",\n      \"key\": \"gameAuthPersistenceDecision\"\n    },\n    {\n      \"ref\": \"01M15NFKKN-74NY\",\n      \"key\": \"gameRepoScaffoldingDecision\"\n    }\n  ],\n  \"notes\": {\n    \"security_monitoring\": \"Cloud Audit Logs enabled.\"\n  },\n  \"_source\": \"catalog/engineering/product-components/product-component-skippy-submind-runner.yaml\"\n}",
+      "existsInCatalog": true,
+      "outboundRelationships": [],
+      "inboundRelationships": []
+    },
+    {
+      "id": "01M15NEKT7-B26W",
+      "uid": "01M15NEKT7-B26W",
+      "name": "Archie AI Assistant Product Registration",
+      "aliases": [],
+      "type": "product_registration",
+      "typeLabel": "Product Registration",
+      "filterType": "product_registration",
+      "category": "",
+      "deliveryModel": "",
+      "domain": "",
+      "description": "",
+      "version": "",
+      "catalogStatus": "complete",
+      "lifecycleStatus": "unknown",
+      "status": "",
+      "businessContext": {},
+      "product": "",
+      "runsOn": "",
+      "subtype": "",
+      "vendor": "",
+      "productName": "",
+      "productVersion": "",
+      "classification": "",
+      "platformDependency": "",
+      "capabilities": [],
+      "configurations": [],
+      "networkPlacement": "",
+      "patchingOwner": "",
+      "complianceCerts": [],
+      "requirementGroups": [],
+      "requirementImplementations": [],
+      "dataLeavesInfrastructure": null,
+      "dataResidencyCommitment": "",
+      "dpaNotes": "",
+      "vendorSLA": "",
+      "authenticationModel": "",
+      "incidentNotificationProcess": "",
+      "owner": {
+        "team": "archie-product-team",
+        "contact": "archie-team@example.com"
+      },
+      "definitionOwner": {},
+      "provider": {},
+      "authority": {},
+      "shape": "round-rectangle",
+      "color": "#7a6e60",
+      "source": "catalog/engineering/product-registrations/product-reg-archie-assistant.yaml",
+      "tags": [],
+      "ardCategory": "",
+      "internalComponents": [],
+      "notes": {},
+      "requirements": [],
+      "implementations": [],
+      "appliesTo": {},
+      "inherits": "",
+      "scalingUnits": [],
+      "networkZones": [],
+      "sdpConnections": [],
+      "serviceGroups": [],
+      "tierVariants": [],
+      "tierId": "",
+      "purpose": "",
+      "availabilityExpectation": "",
+      "costPosture": "",
+      "complianceScope": [],
+      "parameterSurface": [],
+      "followsReferenceArchitecture": "",
+      "decisionRecords": [],
+      "affectedComponent": "",
+      "impact": "",
+      "mitigationPath": "",
+      "decisionRationale": "",
+      "relatedDecisionRecords": [],
+      "linkedObject": "",
+      "primaryObjectType": "",
+      "primaryObjectUid": "",
+      "generatedObjects": [],
+      "unresolvedQuestions": [],
+      "assumptions": [],
+      "nextSteps": [],
+      "defaultSelection": false,
+      "requirementCount": 0,
+      "hasRiskRef": false,
+      "outboundRefs": [],
+      "referencedBy": [],
+      "editorSchema": {
+        "requiredFields": [
+          "schemaVersion",
+          "uid",
+          "type",
+          "name",
+          "owner",
+          "catalogStatus",
+          "repository"
+        ],
+        "optionalFields": [
+          "aliases",
+          "description",
+          "version",
+          "tags",
+          "businessContext",
+          "sdpManifest",
+          "notes",
+          "decisionRecords",
+          "requirementImplementations"
+        ],
+        "fieldTypes": {
+          "aliases": "list",
+          "owner": "dict",
+          "tags": "list",
+          "businessContext": "dict",
+          "repository": "dict",
+          "sdpManifest": "dict",
+          "notes": "dict",
+          "decisionRecords": "list",
+          "requirementImplementations": "list"
+        },
+        "enumFields": {
+          "catalogStatus": [
+            "stub",
+            "incomplete",
+            "complete"
+          ]
+        },
+        "enumListFields": {},
+        "collectionSchemas": {
+          "decisionRecords": "decisionRecordRef",
+          "requirementImplementations": "requirementImplementation"
+        },
+        "schemaPath": "framework/schemas/product-registration.schema.yaml"
+      },
+      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M15NEKT7-B26W\",\n  \"type\": \"product_registration\",\n  \"name\": \"Archie AI Assistant Product Registration\",\n  \"catalogStatus\": \"complete\",\n  \"owner\": {\n    \"team\": \"archie-product-team\",\n    \"contact\": \"archie-team@example.com\"\n  },\n  \"repository\": {\n    \"url\": \"https://github.com/company/archie-assistant\",\n    \"provider\": \"github\",\n    \"defaultBranch\": \"main\"\n  },\n  \"sdpManifest\": {\n    \"mode\": \"git\",\n    \"path\": \".draft/sdp.yaml\"\n  },\n  \"_source\": \"catalog/engineering/product-registrations/product-reg-archie-assistant.yaml\"\n}",
+      "existsInCatalog": true,
+      "outboundRelationships": [],
+      "inboundRelationships": []
+    },
+    {
+      "id": "01M15NEKT7-FMMC",
+      "uid": "01M15NEKT7-FMMC",
+      "name": "Switch AI Gateway Product Registration",
+      "aliases": [],
+      "type": "product_registration",
+      "typeLabel": "Product Registration",
+      "filterType": "product_registration",
+      "category": "",
+      "deliveryModel": "",
+      "domain": "",
+      "description": "",
+      "version": "",
+      "catalogStatus": "complete",
+      "lifecycleStatus": "unknown",
+      "status": "",
+      "businessContext": {},
+      "product": "",
+      "runsOn": "",
+      "subtype": "",
+      "vendor": "",
+      "productName": "",
+      "productVersion": "",
+      "classification": "",
+      "platformDependency": "",
+      "capabilities": [],
+      "configurations": [],
+      "networkPlacement": "",
+      "patchingOwner": "",
+      "complianceCerts": [],
+      "requirementGroups": [],
+      "requirementImplementations": [],
+      "dataLeavesInfrastructure": null,
+      "dataResidencyCommitment": "",
+      "dpaNotes": "",
+      "vendorSLA": "",
+      "authenticationModel": "",
+      "incidentNotificationProcess": "",
+      "owner": {
+        "team": "switch-product-team",
+        "contact": "switch-team@example.com"
+      },
+      "definitionOwner": {},
+      "provider": {},
+      "authority": {},
+      "shape": "round-rectangle",
+      "color": "#7a6e60",
+      "source": "catalog/engineering/product-registrations/product-reg-switch-gateway.yaml",
+      "tags": [],
+      "ardCategory": "",
+      "internalComponents": [],
+      "notes": {},
+      "requirements": [],
+      "implementations": [],
+      "appliesTo": {},
+      "inherits": "",
+      "scalingUnits": [],
+      "networkZones": [],
+      "sdpConnections": [],
+      "serviceGroups": [],
+      "tierVariants": [],
+      "tierId": "",
+      "purpose": "",
+      "availabilityExpectation": "",
+      "costPosture": "",
+      "complianceScope": [],
+      "parameterSurface": [],
+      "followsReferenceArchitecture": "",
+      "decisionRecords": [],
+      "affectedComponent": "",
+      "impact": "",
+      "mitigationPath": "",
+      "decisionRationale": "",
+      "relatedDecisionRecords": [],
+      "linkedObject": "",
+      "primaryObjectType": "",
+      "primaryObjectUid": "",
+      "generatedObjects": [],
+      "unresolvedQuestions": [],
+      "assumptions": [],
+      "nextSteps": [],
+      "defaultSelection": false,
+      "requirementCount": 0,
+      "hasRiskRef": false,
+      "outboundRefs": [],
+      "referencedBy": [],
+      "editorSchema": {
+        "requiredFields": [
+          "schemaVersion",
+          "uid",
+          "type",
+          "name",
+          "owner",
+          "catalogStatus",
+          "repository"
+        ],
+        "optionalFields": [
+          "aliases",
+          "description",
+          "version",
+          "tags",
+          "businessContext",
+          "sdpManifest",
+          "notes",
+          "decisionRecords",
+          "requirementImplementations"
+        ],
+        "fieldTypes": {
+          "aliases": "list",
+          "owner": "dict",
+          "tags": "list",
+          "businessContext": "dict",
+          "repository": "dict",
+          "sdpManifest": "dict",
+          "notes": "dict",
+          "decisionRecords": "list",
+          "requirementImplementations": "list"
+        },
+        "enumFields": {
+          "catalogStatus": [
+            "stub",
+            "incomplete",
+            "complete"
+          ]
+        },
+        "enumListFields": {},
+        "collectionSchemas": {
+          "decisionRecords": "decisionRecordRef",
+          "requirementImplementations": "requirementImplementation"
+        },
+        "schemaPath": "framework/schemas/product-registration.schema.yaml"
+      },
+      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M15NEKT7-FMMC\",\n  \"type\": \"product_registration\",\n  \"name\": \"Switch AI Gateway Product Registration\",\n  \"catalogStatus\": \"complete\",\n  \"owner\": {\n    \"team\": \"switch-product-team\",\n    \"contact\": \"switch-team@example.com\"\n  },\n  \"repository\": {\n    \"url\": \"https://github.com/company/switch-gateway\",\n    \"provider\": \"github\",\n    \"defaultBranch\": \"main\"\n  },\n  \"sdpManifest\": {\n    \"mode\": \"git\",\n    \"path\": \".draft/sdp.yaml\"\n  },\n  \"_source\": \"catalog/engineering/product-registrations/product-reg-switch-gateway.yaml\"\n}",
+      "existsInCatalog": true,
+      "outboundRelationships": [],
+      "inboundRelationships": []
+    },
+    {
+      "id": "01M15NEKT7-S14J",
+      "uid": "01M15NEKT7-S14J",
+      "name": "Skippy's Submind Agent Factory Deployment Pattern",
+      "aliases": [],
+      "type": "software_deployment_pattern",
+      "typeLabel": "SoftwareDeploymentPattern",
+      "filterType": "software_deployment_pattern",
+      "category": "",
+      "deliveryModel": "",
+      "domain": "",
+      "description": "Serverless containerized agent factory deployment pattern on GCP Cloud Run with Secret Manager IAM bindings and Cloud SQL datastores.",
+      "version": "1.2.0",
+      "catalogStatus": "complete",
+      "lifecycleStatus": "preferred",
+      "status": "",
+      "businessContext": {},
+      "product": "",
+      "runsOn": "",
+      "subtype": "",
+      "vendor": "",
+      "productName": "",
+      "productVersion": "",
+      "classification": "",
+      "platformDependency": "",
+      "capabilities": [],
+      "configurations": [],
+      "networkPlacement": "",
+      "patchingOwner": "",
+      "complianceCerts": [],
+      "requirementGroups": [],
+      "requirementImplementations": [],
+      "dataLeavesInfrastructure": null,
+      "dataResidencyCommitment": "",
+      "dpaNotes": "",
+      "vendorSLA": "",
+      "authenticationModel": "",
+      "incidentNotificationProcess": "",
+      "owner": {
+        "team": "platform-ai-team",
+        "contact": "platform-ai@example.com"
+      },
+      "definitionOwner": {},
+      "provider": {},
+      "authority": {},
+      "shape": "star",
+      "color": "#1f8a5b",
+      "source": "catalog/engineering/software-deployment-patterns/sdp-skippys-submind.yaml",
+      "tags": [
+        "software-deployment-pattern",
+        "agent-factory",
+        "gcp",
+        "cloud-run"
+      ],
+      "ardCategory": "",
+      "internalComponents": [],
+      "notes": {
+        "availabilityTarget": "99.9%",
+        "availabilityRequirement": "Active-active container execution on GCP Cloud Run",
+        "dataClassification": "Internal",
+        "deploymentTargets": "GCP Cloud Run Serverless Substrate in us-central1",
+        "failureDomain": "Cloud Run regional availability domain",
+        "patternDeviations": "none",
+        "externalDependencies": "GCP Secret Manager and Cloud SQL Postgres",
+        "localValidation": "Pre-commit validation executed",
+        "productRegistration": "Registered in drafting-table",
+        "modelInferenceSpec": "Claude 3.5 Sonnet / Claude 3 Haiku specs declared",
+        "aiGatewayRouting": "Routed via Skippy Submind AI Gateway",
+        "secretsManagement": "Dynamic GCP Secret Manager resolution"
+      },
+      "requirements": [],
+      "implementations": [],
+      "appliesTo": {},
+      "inherits": "",
+      "scalingUnits": [],
+      "networkZones": [],
+      "sdpConnections": [],
+      "serviceGroups": [
+        {
+          "id": "agent-factory-group",
+          "name": "Agent Factory Processing Group",
+          "deploymentTarget": "GCP Cloud Run Serverless Substrate in us-central1",
+          "components": [
+            {
+              "productComponent": "01M15NEKT7-EKAR"
+            }
+          ]
+        }
+      ],
+      "tierVariants": [],
+      "tierId": "",
+      "purpose": "",
+      "availabilityExpectation": "",
+      "costPosture": "",
+      "complianceScope": [],
+      "parameterSurface": [],
+      "followsReferenceArchitecture": "",
+      "decisionRecords": [
+        {
+          "ref": "01M15NFKKN-74NY",
+          "key": "noApplicablePattern"
+        },
+        {
+          "ref": "01M15NFKKN-74NY",
+          "key": "interServiceConnections"
+        },
+        {
+          "ref": "01M15NFKKN-74NY",
+          "key": "deploymentTargets"
+        },
+        {
+          "ref": "01M15NFKKN-74NY",
+          "key": "availabilityRequirement"
+        },
+        {
+          "ref": "01M15NFKKN-74NY",
+          "key": "externalDependencies"
+        },
+        {
+          "ref": "01M15NFKKN-74NY",
+          "key": "dataClassification"
+        },
+        {
+          "ref": "01M15NFKKN-74NY",
+          "key": "failureDomain"
+        },
+        {
+          "ref": "01M15NFKKN-74NY",
+          "key": "patternDeviations"
+        },
+        {
+          "ref": "01M15NFKKN-74NY",
+          "key": "localValidationDecision"
+        },
+        {
+          "ref": "01M15NFKKN-74NY",
+          "key": "productRegistrationDecision"
+        },
+        {
+          "ref": "01M15NFKKN-74NY",
+          "key": "modelInferenceSpecDecision"
+        },
+        {
+          "ref": "01M15NFKKN-74NY",
+          "key": "aiGatewayRoutingDecision"
+        },
+        {
+          "ref": "01M15NFKKN-74NY",
+          "key": "secretsManagementDecision"
+        },
+        {
+          "ref": "01M15NFKKN-74NY",
+          "key": "databaseMigrationStrategyDecision"
+        },
+        {
+          "ref": "01M15NFKKN-74NY",
+          "key": "iacAutomationDecision"
+        },
+        {
+          "ref": "01M15NFKKN-74NY",
+          "key": "gateEnforcementDecision"
+        },
+        {
+          "ref": "01M15NFKKN-74NY",
+          "key": "testDataGovernanceDecision"
+        },
+        {
+          "ref": "01M15NFKKN-74NY",
+          "key": "rollbackStrategyDecision"
+        },
+        {
+          "ref": "01M15NFKKN-74NY",
+          "key": "composableIacDecision"
+        },
+        {
+          "ref": "01M15NFKKN-74NY",
+          "key": "previewEnvironmentsDecision"
+        },
+        {
+          "ref": "01M15NFKKN-74NY",
+          "key": "structuredLoggingDecision"
+        },
+        {
+          "ref": "01M15NFKKN-74NY",
+          "key": "sloPolicyDecision"
+        },
+        {
+          "ref": "01M15NFKKN-74NY",
+          "key": "zeroDowntimeStrategyDecision"
+        },
+        {
+          "ref": "01M15NFKKN-74NY",
+          "key": "automatedSecurityGatesDecision"
+        },
+        {
+          "ref": "01M15NFKKN-74NY",
+          "key": "queryParameterizationDecision"
+        },
+        {
+          "ref": "01M15NFKKN-74NY",
+          "key": "accessControlModelDecision"
+        },
+        {
+          "ref": "01M15NFKKN-74NY",
+          "key": "cryptographyStandardDecision"
+        },
+        {
+          "ref": "01M15NFKKN-74NY",
+          "key": "sessionManagementDecision"
+        },
+        {
+          "ref": "01M15NFKKN-74NY",
+          "key": "errorHandlingLoggingDecision"
+        },
+        {
+          "ref": "01M15NFKKN-74NY",
+          "key": "dependencySecurityDecision"
+        },
+        {
+          "ref": "01M15NFKKN-74NY",
+          "key": "gameTierClassificationDecision"
+        },
+        {
+          "ref": "01M15NFKKN-74NY",
+          "key": "gameUatDeploymentDecision"
+        },
+        {
+          "ref": "01M15NFKKN-74NY",
+          "key": "gameAuthPersistenceDecision"
+        },
+        {
+          "ref": "01M15NFKKN-74NY",
+          "key": "gameRepoScaffoldingDecision"
+        }
+      ],
+      "affectedComponent": "",
+      "impact": "",
+      "mitigationPath": "",
+      "decisionRationale": "",
+      "relatedDecisionRecords": [],
+      "linkedObject": "",
+      "primaryObjectType": "",
+      "primaryObjectUid": "",
+      "generatedObjects": [],
+      "unresolvedQuestions": [],
+      "assumptions": [],
+      "nextSteps": [],
+      "defaultSelection": false,
+      "requirementCount": 0,
+      "hasRiskRef": false,
+      "outboundRefs": [
+        {
+          "target": "01M15NFKKN-74NY",
+          "path": "decisionRecords[0].ref"
+        },
+        {
+          "target": "01M15NFKKN-74NY",
+          "path": "decisionRecords[1].ref"
+        },
+        {
+          "target": "01M15NFKKN-74NY",
+          "path": "decisionRecords[2].ref"
+        },
+        {
+          "target": "01M15NFKKN-74NY",
+          "path": "decisionRecords[3].ref"
+        },
+        {
+          "target": "01M15NFKKN-74NY",
+          "path": "decisionRecords[4].ref"
+        },
+        {
+          "target": "01M15NFKKN-74NY",
+          "path": "decisionRecords[5].ref"
+        },
+        {
+          "target": "01M15NFKKN-74NY",
+          "path": "decisionRecords[6].ref"
+        },
+        {
+          "target": "01M15NFKKN-74NY",
+          "path": "decisionRecords[7].ref"
+        },
+        {
+          "target": "01M15NFKKN-74NY",
+          "path": "decisionRecords[8].ref"
+        },
+        {
+          "target": "01M15NFKKN-74NY",
+          "path": "decisionRecords[9].ref"
+        },
+        {
+          "target": "01M15NFKKN-74NY",
+          "path": "decisionRecords[10].ref"
+        },
+        {
+          "target": "01M15NFKKN-74NY",
+          "path": "decisionRecords[11].ref"
+        },
+        {
+          "target": "01M15NFKKN-74NY",
+          "path": "decisionRecords[12].ref"
+        },
+        {
+          "target": "01M15NFKKN-74NY",
+          "path": "decisionRecords[13].ref"
+        },
+        {
+          "target": "01M15NFKKN-74NY",
+          "path": "decisionRecords[14].ref"
+        },
+        {
+          "target": "01M15NFKKN-74NY",
+          "path": "decisionRecords[15].ref"
+        },
+        {
+          "target": "01M15NFKKN-74NY",
+          "path": "decisionRecords[16].ref"
+        },
+        {
+          "target": "01M15NFKKN-74NY",
+          "path": "decisionRecords[17].ref"
+        },
+        {
+          "target": "01M15NFKKN-74NY",
+          "path": "decisionRecords[18].ref"
+        },
+        {
+          "target": "01M15NFKKN-74NY",
+          "path": "decisionRecords[19].ref"
+        },
+        {
+          "target": "01M15NFKKN-74NY",
+          "path": "decisionRecords[20].ref"
+        },
+        {
+          "target": "01M15NFKKN-74NY",
+          "path": "decisionRecords[21].ref"
+        },
+        {
+          "target": "01M15NFKKN-74NY",
+          "path": "decisionRecords[22].ref"
+        },
+        {
+          "target": "01M15NFKKN-74NY",
+          "path": "decisionRecords[23].ref"
+        },
+        {
+          "target": "01M15NFKKN-74NY",
+          "path": "decisionRecords[24].ref"
+        },
+        {
+          "target": "01M15NFKKN-74NY",
+          "path": "decisionRecords[25].ref"
+        },
+        {
+          "target": "01M15NFKKN-74NY",
+          "path": "decisionRecords[26].ref"
+        },
+        {
+          "target": "01M15NFKKN-74NY",
+          "path": "decisionRecords[27].ref"
+        },
+        {
+          "target": "01M15NFKKN-74NY",
+          "path": "decisionRecords[28].ref"
+        },
+        {
+          "target": "01M15NFKKN-74NY",
+          "path": "decisionRecords[29].ref"
+        },
+        {
+          "target": "01M15NFKKN-74NY",
+          "path": "decisionRecords[30].ref"
+        },
+        {
+          "target": "01M15NFKKN-74NY",
+          "path": "decisionRecords[31].ref"
+        },
+        {
+          "target": "01M15NFKKN-74NY",
+          "path": "decisionRecords[32].ref"
+        },
+        {
+          "target": "01M15NFKKN-74NY",
+          "path": "decisionRecords[33].ref"
+        }
+      ],
+      "referencedBy": [],
       "editorSchema": {
         "requiredFields": [
           "schemaVersion",
@@ -21734,32 +21558,25 @@ window.DRAFT_BROWSER_DATA = {
           "version",
           "owner",
           "tags",
+          "businessContext",
+          "followsReferenceArchitecture",
           "notes",
-          "operatingSystemComponent",
-          "computePlatformComponent",
-          "internalComponents",
-          "deploymentConfigurations",
-          "provisioningModel",
-          "deployablePackage",
+          "scalingUnits",
+          "networkZones",
+          "serviceGroups",
           "decisionRecords",
-          "requirementImplementations"
+          "requirementImplementations",
+          "tierVariants"
         ],
         "fieldTypes": {
           "aliases": "list",
           "owner": "dict",
           "tags": "list",
-          "notes": "dict",
-          "internalComponents": "list",
-          "deploymentConfigurations": "list",
-          "requirementGroups": "list",
-          "decisionRecords": "list",
-          "requirementImplementations": "list"
+          "businessContext": "dict",
+          "followsReferenceArchitecture": "str",
+          "notes": "dict"
         },
         "enumFields": {
-          "provisioningModel": [
-            "deployable",
-            "reference-only"
-          ],
           "catalogStatus": [
             "stub",
             "incomplete",
@@ -21774,56 +21591,710 @@ window.DRAFT_BROWSER_DATA = {
           ]
         },
         "enumListFields": {},
-        "collectionSchemas": {},
-        "schemaPath": "framework/schemas/host.schema.yaml"
+        "collectionSchemas": {
+          "scalingUnits": "scalingUnit",
+          "networkZones": "networkZone",
+          "serviceGroups": "serviceGroup",
+          "decisionRecords": "decisionRecordRef",
+          "requirementImplementations": "requirementImplementation",
+          "tierVariants": "tierVariant"
+        },
+        "schemaPath": "framework/schemas/software-deployment-pattern.schema.yaml"
       },
-      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01KQQ4Q025-1XDE\",\n  \"type\": \"host\",\n  \"category\": \"host\",\n  \"subtype\": \"host\",\n  \"name\": \"AWS Lambda Serverless Host\",\n  \"description\": \"Serverless execution environment provided by AWS Lambda. The host is entirely AWS-managed and blackbox to the organization. Function code is deployed as a ProductComponent. No OS management, no agent installation, and no patching responsibility exist at this layer.\\n\",\n  \"version\": \"1.0.0\",\n  \"catalogStatus\": \"incomplete\",\n  \"lifecycleStatus\": \"preferred\",\n  \"owner\": {\n    \"team\": \"cloud-architecture\",\n    \"contact\": \"cloud-architecture@example.com\"\n  },\n  \"tags\": [\n    \"lambda\",\n    \"serverless\"\n  ],\n  \"notes\": {\n    \"authenticationApproach\": \"IAM-based invocation and execution roles managed by AWS\",\n    \"loggingApproach\": \"Function and platform logs emitted to CloudWatch Logs\",\n    \"securityMonitoringApproach\": \"AWS-native monitoring and audit integration for the managed runtime\",\n    \"patchManagementApproach\": \"Runtime patching is handled by AWS as part of the managed platform\",\n    \"authentication\": \"IAM-based invocation and execution roles managed by AWS. No SSH or interactive login; access to the execution environment is not possible. Administrative access to the Lambda configuration is governed by AWS IAM policies.\",\n    \"log_management\": \"Function logs and platform runtime logs are emitted to Amazon CloudWatch Logs. Log retention and export are configured per function.\",\n    \"health_welfare_monitoring\": \"AWS Lambda provides built-in invocation metrics (duration, errors, throttles, concurrency) via Amazon CloudWatch Metrics. No agent installation is possible; observability is entirely provider-managed.\",\n    \"security_monitoring\": \"AWS CloudTrail captures all Lambda API calls for audit. AWS-native security event collection covers the managed runtime boundary.\",\n    \"patch_management\": \"Runtime patching is fully managed by AWS as part of the Lambda managed platform. Organization has no patching responsibility at this layer; runtime version selection is the only control available.\",\n    \"internalComponentRationales\": {\n      \"01KQQ4Q025-T7B7\": \"The AWS Lambda Runtime is modeled as the managed execution component that makes the serverless host understandable even though standard host requirements do not apply.\"\n    },\n    \"relationshipRationales\": {\n      \"AWS Lambda Service\": \"The AWS Lambda control plane is modeled to show the managed service boundary for the blackbox serverless host.\"\n    }\n  },\n  \"internalComponents\": [\n    {\n      \"ref\": \"01KQQ4Q025-T7B7\",\n      \"role\": \"managed-runtime\",\n      \"notes\": \"AWS-managed serverless execution environment. Blackbox host.\"\n    }\n  ],\n  \"decisionRecords\": [\n    {\n      \"ref\": \"01KT1340H6-X3T5\",\n      \"key\": \"authentication\"\n    },\n    {\n      \"ref\": \"01KT1340H6-X3T5\",\n      \"key\": \"health_welfare_monitoring\"\n    },\n    {\n      \"ref\": \"01KT1340H6-X3T5\",\n      \"key\": \"log_management\"\n    },\n    {\n      \"ref\": \"01KT1340H6-X3T5\",\n      \"key\": \"patch_management\"\n    },\n    {\n      \"ref\": \"01KT1340H6-X3T5\",\n      \"key\": \"security_monitoring\"\n    }\n  ],\n  \"provisioningModel\": \"deployable\",\n  \"deployablePackage\": {\n    \"registry\": \"github\",\n    \"source\": \"company-infrastructure/terraform-01KQQ4Q025-1XDE\",\n    \"version\": \"v1.0.0\"\n  },\n  \"_source\": \"examples/catalog/shared-services/hosts/host-serverless-lambda.yaml\"\n}",
+      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M15NEKT7-S14J\",\n  \"type\": \"software_deployment_pattern\",\n  \"name\": \"Skippy's Submind Agent Factory Deployment Pattern\",\n  \"description\": \"Serverless containerized agent factory deployment pattern on GCP Cloud Run with Secret Manager IAM bindings and Cloud SQL datastores.\",\n  \"version\": \"1.2.0\",\n  \"catalogStatus\": \"complete\",\n  \"lifecycleStatus\": \"preferred\",\n  \"owner\": {\n    \"team\": \"platform-ai-team\",\n    \"contact\": \"platform-ai@example.com\"\n  },\n  \"tags\": [\n    \"software-deployment-pattern\",\n    \"agent-factory\",\n    \"gcp\",\n    \"cloud-run\"\n  ],\n  \"serviceGroups\": [\n    {\n      \"id\": \"agent-factory-group\",\n      \"name\": \"Agent Factory Processing Group\",\n      \"deploymentTarget\": \"GCP Cloud Run Serverless Substrate in us-central1\",\n      \"components\": [\n        {\n          \"productComponent\": \"01M15NEKT7-EKAR\"\n        }\n      ]\n    }\n  ],\n  \"deployableObjects\": [\n    {\n      \"dataStoreService\": \"01M15NEKT7-H42Y\"\n    },\n    {\n      \"aiGateway\": \"01M15NEKT7-QKPW\"\n    }\n  ],\n  \"decisionRecords\": [\n    {\n      \"ref\": \"01M15NFKKN-74NY\",\n      \"key\": \"noApplicablePattern\"\n    },\n    {\n      \"ref\": \"01M15NFKKN-74NY\",\n      \"key\": \"interServiceConnections\"\n    },\n    {\n      \"ref\": \"01M15NFKKN-74NY\",\n      \"key\": \"deploymentTargets\"\n    },\n    {\n      \"ref\": \"01M15NFKKN-74NY\",\n      \"key\": \"availabilityRequirement\"\n    },\n    {\n      \"ref\": \"01M15NFKKN-74NY\",\n      \"key\": \"externalDependencies\"\n    },\n    {\n      \"ref\": \"01M15NFKKN-74NY\",\n      \"key\": \"dataClassification\"\n    },\n    {\n      \"ref\": \"01M15NFKKN-74NY\",\n      \"key\": \"failureDomain\"\n    },\n    {\n      \"ref\": \"01M15NFKKN-74NY\",\n      \"key\": \"patternDeviations\"\n    },\n    {\n      \"ref\": \"01M15NFKKN-74NY\",\n      \"key\": \"localValidationDecision\"\n    },\n    {\n      \"ref\": \"01M15NFKKN-74NY\",\n      \"key\": \"productRegistrationDecision\"\n    },\n    {\n      \"ref\": \"01M15NFKKN-74NY\",\n      \"key\": \"modelInferenceSpecDecision\"\n    },\n    {\n      \"ref\": \"01M15NFKKN-74NY\",\n      \"key\": \"aiGatewayRoutingDecision\"\n    },\n    {\n      \"ref\": \"01M15NFKKN-74NY\",\n      \"key\": \"secretsManagementDecision\"\n    },\n    {\n      \"ref\": \"01M15NFKKN-74NY\",\n      \"key\": \"databaseMigrationStrategyDecision\"\n    },\n    {\n      \"ref\": \"01M15NFKKN-74NY\",\n      \"key\": \"iacAutomationDecision\"\n    },\n    {\n      \"ref\": \"01M15NFKKN-74NY\",\n      \"key\": \"gateEnforcementDecision\"\n    },\n    {\n      \"ref\": \"01M15NFKKN-74NY\",\n      \"key\": \"testDataGovernanceDecision\"\n    },\n    {\n      \"ref\": \"01M15NFKKN-74NY\",\n      \"key\": \"rollbackStrategyDecision\"\n    },\n    {\n      \"ref\": \"01M15NFKKN-74NY\",\n      \"key\": \"composableIacDecision\"\n    },\n    {\n      \"ref\": \"01M15NFKKN-74NY\",\n      \"key\": \"previewEnvironmentsDecision\"\n    },\n    {\n      \"ref\": \"01M15NFKKN-74NY\",\n      \"key\": \"structuredLoggingDecision\"\n    },\n    {\n      \"ref\": \"01M15NFKKN-74NY\",\n      \"key\": \"sloPolicyDecision\"\n    },\n    {\n      \"ref\": \"01M15NFKKN-74NY\",\n      \"key\": \"zeroDowntimeStrategyDecision\"\n    },\n    {\n      \"ref\": \"01M15NFKKN-74NY\",\n      \"key\": \"automatedSecurityGatesDecision\"\n    },\n    {\n      \"ref\": \"01M15NFKKN-74NY\",\n      \"key\": \"queryParameterizationDecision\"\n    },\n    {\n      \"ref\": \"01M15NFKKN-74NY\",\n      \"key\": \"accessControlModelDecision\"\n    },\n    {\n      \"ref\": \"01M15NFKKN-74NY\",\n      \"key\": \"cryptographyStandardDecision\"\n    },\n    {\n      \"ref\": \"01M15NFKKN-74NY\",\n      \"key\": \"sessionManagementDecision\"\n    },\n    {\n      \"ref\": \"01M15NFKKN-74NY\",\n      \"key\": \"errorHandlingLoggingDecision\"\n    },\n    {\n      \"ref\": \"01M15NFKKN-74NY\",\n      \"key\": \"dependencySecurityDecision\"\n    },\n    {\n      \"ref\": \"01M15NFKKN-74NY\",\n      \"key\": \"gameTierClassificationDecision\"\n    },\n    {\n      \"ref\": \"01M15NFKKN-74NY\",\n      \"key\": \"gameUatDeploymentDecision\"\n    },\n    {\n      \"ref\": \"01M15NFKKN-74NY\",\n      \"key\": \"gameAuthPersistenceDecision\"\n    },\n    {\n      \"ref\": \"01M15NFKKN-74NY\",\n      \"key\": \"gameRepoScaffoldingDecision\"\n    }\n  ],\n  \"notes\": {\n    \"availabilityTarget\": \"99.9%\",\n    \"availabilityRequirement\": \"Active-active container execution on GCP Cloud Run\",\n    \"dataClassification\": \"Internal\",\n    \"deploymentTargets\": \"GCP Cloud Run Serverless Substrate in us-central1\",\n    \"failureDomain\": \"Cloud Run regional availability domain\",\n    \"patternDeviations\": \"none\",\n    \"externalDependencies\": \"GCP Secret Manager and Cloud SQL Postgres\",\n    \"localValidation\": \"Pre-commit validation executed\",\n    \"productRegistration\": \"Registered in drafting-table\",\n    \"modelInferenceSpec\": \"Claude 3.5 Sonnet / Claude 3 Haiku specs declared\",\n    \"aiGatewayRouting\": \"Routed via Skippy Submind AI Gateway\",\n    \"secretsManagement\": \"Dynamic GCP Secret Manager resolution\"\n  },\n  \"_source\": \"catalog/engineering/software-deployment-patterns/sdp-skippys-submind.yaml\"\n}",
       "existsInCatalog": true,
-      "outboundRelationships": [
-        {
-          "uid": "01KSKWFZZW-ZEKF",
-          "name": "AWS Lambda Serverless Host \u2192 AWS Lambda Service",
-          "label": "calls",
-          "technology": "",
-          "direction": "",
-          "targetUid": "",
-          "targetName": "AWS Lambda Service",
-          "capabilities": []
-        }
-      ],
+      "outboundRelationships": [],
       "inboundRelationships": []
     },
     {
-      "id": "01KQQ4Q025-T7B7",
-      "uid": "01KQQ4Q025-T7B7",
-      "name": "AWS Lambda Runtime",
+      "id": "01M15NFKKN-74NY",
+      "uid": "01M15NFKKN-74NY",
+      "name": "Agent Factory Platform Architecture Decisions",
       "aliases": [],
-      "type": "runtime_service",
-      "typeLabel": "RuntimeService / Paas",
-      "filterType": "runtime_service",
+      "type": "decision_record",
+      "typeLabel": "DecisionRecord / decision",
+      "filterType": "decision_record",
+      "category": "decision",
+      "deliveryModel": "",
+      "domain": "",
+      "description": "Architecture decision record capturing operational decisions, resilience models, logging, security controls, and L1-L3 engineering maturity standards for the Agent Factory platform.",
+      "version": "1.2.0",
+      "catalogStatus": "complete",
+      "lifecycleStatus": "preferred",
+      "status": "accepted",
+      "businessContext": {},
+      "product": "",
+      "runsOn": "",
+      "subtype": "",
+      "vendor": "",
+      "productName": "",
+      "productVersion": "",
+      "classification": "",
+      "platformDependency": "",
+      "capabilities": [],
+      "configurations": [],
+      "networkPlacement": "",
+      "patchingOwner": "",
+      "complianceCerts": [],
+      "requirementGroups": [],
+      "requirementImplementations": [],
+      "dataLeavesInfrastructure": null,
+      "dataResidencyCommitment": "",
+      "dpaNotes": "",
+      "vendorSLA": "",
+      "authenticationModel": "",
+      "incidentNotificationProcess": "",
+      "owner": {
+        "team": "platform-ai-team",
+        "contact": "platform-ai@example.com"
+      },
+      "definitionOwner": {},
+      "provider": {},
+      "authority": {},
+      "shape": "round-rectangle",
+      "color": "#1f8a5b",
+      "source": "catalog/governance/decision-records/dr-agent-factory-decisions.yaml",
+      "tags": [],
+      "ardCategory": "decision",
+      "internalComponents": [],
+      "notes": {},
+      "requirements": [],
+      "implementations": [],
+      "appliesTo": {},
+      "inherits": "",
+      "scalingUnits": [],
+      "networkZones": [],
+      "sdpConnections": [],
+      "serviceGroups": [],
+      "tierVariants": [],
+      "tierId": "",
+      "purpose": "",
+      "availabilityExpectation": "",
+      "costPosture": "",
+      "complianceScope": [],
+      "parameterSurface": [],
+      "followsReferenceArchitecture": "",
+      "decisionRecords": [],
+      "affectedComponent": "",
+      "impact": "",
+      "mitigationPath": "",
+      "decisionRationale": "Standardized GCP Cloud Run, Secret Manager, Cloud SQL, and DRAFT L3 Advanced engineering maturity standards.",
+      "relatedDecisionRecords": [],
+      "linkedObject": "",
+      "primaryObjectType": "",
+      "primaryObjectUid": "",
+      "generatedObjects": [],
+      "unresolvedQuestions": [],
+      "assumptions": [],
+      "nextSteps": [],
+      "defaultSelection": false,
+      "requirementCount": 0,
+      "hasRiskRef": false,
+      "outboundRefs": [],
+      "referencedBy": [
+        {
+          "source": "01M15NEKT7-EKAR",
+          "path": "decisionRecords[0].ref"
+        },
+        {
+          "source": "01M15NEKT7-EKAR",
+          "path": "decisionRecords[1].ref"
+        },
+        {
+          "source": "01M15NEKT7-EKAR",
+          "path": "decisionRecords[2].ref"
+        },
+        {
+          "source": "01M15NEKT7-EKAR",
+          "path": "decisionRecords[3].ref"
+        },
+        {
+          "source": "01M15NEKT7-EKAR",
+          "path": "decisionRecords[4].ref"
+        },
+        {
+          "source": "01M15NEKT7-EKAR",
+          "path": "decisionRecords[5].ref"
+        },
+        {
+          "source": "01M15NEKT7-EKAR",
+          "path": "decisionRecords[6].ref"
+        },
+        {
+          "source": "01M15NEKT7-EKAR",
+          "path": "decisionRecords[7].ref"
+        },
+        {
+          "source": "01M15NEKT7-EKAR",
+          "path": "decisionRecords[8].ref"
+        },
+        {
+          "source": "01M15NEKT7-EKAR",
+          "path": "decisionRecords[9].ref"
+        },
+        {
+          "source": "01M15NEKT7-EKAR",
+          "path": "decisionRecords[10].ref"
+        },
+        {
+          "source": "01M15NEKT7-EKAR",
+          "path": "decisionRecords[11].ref"
+        },
+        {
+          "source": "01M15NEKT7-EKAR",
+          "path": "decisionRecords[12].ref"
+        },
+        {
+          "source": "01M15NEKT7-EKAR",
+          "path": "decisionRecords[13].ref"
+        },
+        {
+          "source": "01M15NEKT7-EKAR",
+          "path": "decisionRecords[14].ref"
+        },
+        {
+          "source": "01M15NEKT7-EKAR",
+          "path": "decisionRecords[15].ref"
+        },
+        {
+          "source": "01M15NEKT7-EKAR",
+          "path": "decisionRecords[16].ref"
+        },
+        {
+          "source": "01M15NEKT7-EKAR",
+          "path": "decisionRecords[17].ref"
+        },
+        {
+          "source": "01M15NEKT7-EKAR",
+          "path": "decisionRecords[18].ref"
+        },
+        {
+          "source": "01M15NEKT7-EKAR",
+          "path": "decisionRecords[19].ref"
+        },
+        {
+          "source": "01M15NEKT7-EKAR",
+          "path": "decisionRecords[20].ref"
+        },
+        {
+          "source": "01M15NEKT7-EKAR",
+          "path": "decisionRecords[21].ref"
+        },
+        {
+          "source": "01M15NEKT7-EKAR",
+          "path": "decisionRecords[22].ref"
+        },
+        {
+          "source": "01M15NEKT7-EKAR",
+          "path": "decisionRecords[23].ref"
+        },
+        {
+          "source": "01M15NEKT7-EKAR",
+          "path": "decisionRecords[24].ref"
+        },
+        {
+          "source": "01M15NEKT7-EKAR",
+          "path": "decisionRecords[25].ref"
+        },
+        {
+          "source": "01M15NEKT7-EKAR",
+          "path": "decisionRecords[26].ref"
+        },
+        {
+          "source": "01M15NEKT7-S14J",
+          "path": "decisionRecords[0].ref"
+        },
+        {
+          "source": "01M15NEKT7-S14J",
+          "path": "decisionRecords[1].ref"
+        },
+        {
+          "source": "01M15NEKT7-S14J",
+          "path": "decisionRecords[2].ref"
+        },
+        {
+          "source": "01M15NEKT7-S14J",
+          "path": "decisionRecords[3].ref"
+        },
+        {
+          "source": "01M15NEKT7-S14J",
+          "path": "decisionRecords[4].ref"
+        },
+        {
+          "source": "01M15NEKT7-S14J",
+          "path": "decisionRecords[5].ref"
+        },
+        {
+          "source": "01M15NEKT7-S14J",
+          "path": "decisionRecords[6].ref"
+        },
+        {
+          "source": "01M15NEKT7-S14J",
+          "path": "decisionRecords[7].ref"
+        },
+        {
+          "source": "01M15NEKT7-S14J",
+          "path": "decisionRecords[8].ref"
+        },
+        {
+          "source": "01M15NEKT7-S14J",
+          "path": "decisionRecords[9].ref"
+        },
+        {
+          "source": "01M15NEKT7-S14J",
+          "path": "decisionRecords[10].ref"
+        },
+        {
+          "source": "01M15NEKT7-S14J",
+          "path": "decisionRecords[11].ref"
+        },
+        {
+          "source": "01M15NEKT7-S14J",
+          "path": "decisionRecords[12].ref"
+        },
+        {
+          "source": "01M15NEKT7-S14J",
+          "path": "decisionRecords[13].ref"
+        },
+        {
+          "source": "01M15NEKT7-S14J",
+          "path": "decisionRecords[14].ref"
+        },
+        {
+          "source": "01M15NEKT7-S14J",
+          "path": "decisionRecords[15].ref"
+        },
+        {
+          "source": "01M15NEKT7-S14J",
+          "path": "decisionRecords[16].ref"
+        },
+        {
+          "source": "01M15NEKT7-S14J",
+          "path": "decisionRecords[17].ref"
+        },
+        {
+          "source": "01M15NEKT7-S14J",
+          "path": "decisionRecords[18].ref"
+        },
+        {
+          "source": "01M15NEKT7-S14J",
+          "path": "decisionRecords[19].ref"
+        },
+        {
+          "source": "01M15NEKT7-S14J",
+          "path": "decisionRecords[20].ref"
+        },
+        {
+          "source": "01M15NEKT7-S14J",
+          "path": "decisionRecords[21].ref"
+        },
+        {
+          "source": "01M15NEKT7-S14J",
+          "path": "decisionRecords[22].ref"
+        },
+        {
+          "source": "01M15NEKT7-S14J",
+          "path": "decisionRecords[23].ref"
+        },
+        {
+          "source": "01M15NEKT7-S14J",
+          "path": "decisionRecords[24].ref"
+        },
+        {
+          "source": "01M15NEKT7-S14J",
+          "path": "decisionRecords[25].ref"
+        },
+        {
+          "source": "01M15NEKT7-S14J",
+          "path": "decisionRecords[26].ref"
+        },
+        {
+          "source": "01M15NEKT7-S14J",
+          "path": "decisionRecords[27].ref"
+        },
+        {
+          "source": "01M15NEKT7-S14J",
+          "path": "decisionRecords[28].ref"
+        },
+        {
+          "source": "01M15NEKT7-S14J",
+          "path": "decisionRecords[29].ref"
+        },
+        {
+          "source": "01M15NEKT7-S14J",
+          "path": "decisionRecords[30].ref"
+        },
+        {
+          "source": "01M15NEKT7-S14J",
+          "path": "decisionRecords[31].ref"
+        },
+        {
+          "source": "01M15NEKT7-S14J",
+          "path": "decisionRecords[32].ref"
+        },
+        {
+          "source": "01M15NEKT7-S14J",
+          "path": "decisionRecords[33].ref"
+        },
+        {
+          "source": "01M15NEKT7-QKPW",
+          "path": "decisionRecords[0].ref"
+        },
+        {
+          "source": "01M15NEKT7-QKPW",
+          "path": "decisionRecords[1].ref"
+        },
+        {
+          "source": "01M15NEKT7-QKPW",
+          "path": "decisionRecords[2].ref"
+        },
+        {
+          "source": "01M15NEKT7-QKPW",
+          "path": "decisionRecords[3].ref"
+        },
+        {
+          "source": "01M15NEKT7-H42Y",
+          "path": "decisionRecords[0].ref"
+        },
+        {
+          "source": "01M15NEKT7-H42Y",
+          "path": "decisionRecords[1].ref"
+        },
+        {
+          "source": "01M15NEKT7-H42Y",
+          "path": "decisionRecords[2].ref"
+        }
+      ],
+      "editorSchema": {
+        "requiredFields": [
+          "schemaVersion",
+          "uid",
+          "type",
+          "name",
+          "category",
+          "status",
+          "catalogStatus",
+          "lifecycleStatus"
+        ],
+        "optionalFields": [
+          "aliases",
+          "description",
+          "version",
+          "owner",
+          "tags",
+          "affectedComponent",
+          "impact",
+          "mitigationPath",
+          "decisionRationale",
+          "relatedDecisionRecords",
+          "controlReferences",
+          "linkedObject",
+          "approver",
+          "approvalDate"
+        ],
+        "fieldTypes": {
+          "aliases": "list",
+          "owner": "dict",
+          "tags": "list",
+          "relatedDecisionRecords": "list",
+          "controlReferences": "list",
+          "approver": "str",
+          "approvalDate": "str"
+        },
+        "enumFields": {
+          "catalogStatus": [
+            "stub",
+            "incomplete",
+            "complete"
+          ],
+          "lifecycleStatus": [
+            "candidate",
+            "preferred",
+            "existing-only",
+            "deprecated",
+            "retired"
+          ],
+          "category": [
+            "risk",
+            "decision"
+          ],
+          "status": [
+            "open",
+            "accepted",
+            "mitigated",
+            "resolved"
+          ]
+        },
+        "enumListFields": {},
+        "collectionSchemas": {},
+        "schemaPath": "framework/schemas/decision-record.schema.yaml"
+      },
+      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M15NFKKN-74NY\",\n  \"type\": \"decision_record\",\n  \"name\": \"Agent Factory Platform Architecture Decisions\",\n  \"description\": \"Architecture decision record capturing operational decisions, resilience models, logging, security controls, and L1-L3 engineering maturity standards for the Agent Factory platform.\",\n  \"version\": \"1.2.0\",\n  \"category\": \"decision\",\n  \"status\": \"accepted\",\n  \"catalogStatus\": \"complete\",\n  \"lifecycleStatus\": \"preferred\",\n  \"decisionRationale\": \"Standardized GCP Cloud Run, Secret Manager, Cloud SQL, and DRAFT L3 Advanced engineering maturity standards.\",\n  \"owner\": {\n    \"team\": \"platform-ai-team\",\n    \"contact\": \"platform-ai@example.com\"\n  },\n  \"_source\": \"catalog/governance/decision-records/dr-agent-factory-decisions.yaml\"\n}",
+      "existsInCatalog": true,
+      "outboundRelationships": [],
+      "inboundRelationships": []
+    },
+    {
+      "id": "01M15NEKT7-QKPW",
+      "uid": "01M15NEKT7-QKPW",
+      "name": "Skippy's Submind AI Agent Factory Gateway",
+      "aliases": [],
+      "type": "ai_gateway",
+      "typeLabel": "Ai Gateway",
+      "filterType": "ai_gateway",
       "category": "",
       "deliveryModel": "paas",
       "domain": "",
-      "description": "AWS Lambda serverless execution environment. Runs organization-authored function code without requiring host management. Scales automatically. Host infrastructure is entirely blackbox.\n",
+      "description": "Factory-deployed agent execution gateway providing LLM reasoning, C4 diagramming, and catalog search.",
       "version": "1.0.0",
-      "catalogStatus": "incomplete",
+      "catalogStatus": "complete",
       "lifecycleStatus": "preferred",
       "status": "",
       "businessContext": {},
       "product": "",
       "runsOn": "",
       "subtype": "",
-      "vendor": "Amazon Web Services",
-      "productName": "AWS Lambda Runtime",
-      "productVersion": "managed",
+      "vendor": "GCP",
+      "productName": "Skippy Submind Gateway",
+      "productVersion": "1.2.0",
+      "classification": "",
+      "platformDependency": "",
+      "capabilities": [],
+      "configurations": [],
+      "networkPlacement": "",
+      "patchingOwner": "",
+      "complianceCerts": [],
+      "requirementGroups": [],
+      "requirementImplementations": [],
+      "dataLeavesInfrastructure": null,
+      "dataResidencyCommitment": "",
+      "dpaNotes": "",
+      "vendorSLA": "",
+      "authenticationModel": "",
+      "incidentNotificationProcess": "",
+      "owner": {
+        "team": "platform-ai-team",
+        "contact": "platform-ai@example.com"
+      },
+      "definitionOwner": {},
+      "provider": {},
+      "authority": {},
+      "shape": "round-rectangle",
+      "color": "#1f8a5b",
+      "source": "catalog/shared-services/ai-gateways/ai-gateway-skippys-submind.yaml",
+      "tags": [
+        "ai-gateway",
+        "agent-factory",
+        "gcp",
+        "submind"
+      ],
+      "ardCategory": "",
+      "internalComponents": [],
+      "notes": {
+        "modelRouting": "Multi-model routing to Anthropic (Claude 3.5 Sonnet, Claude 3 Haiku)",
+        "modelRoutingApproach": "Multi-model routing to Anthropic endpoints",
+        "rateLimitingApproach": "Token rate limiting managed via GCP Cloud Run concurrency & API quotas",
+        "dataProtectionApproach": "PII filtering and zero-data-retention compliance",
+        "loggingApproach": "Centralized prompt and response audit logs streamed to GCP Cloud Logging",
+        "security_monitoring": "Prompt logging and audit events routed to Cloud Logging.",
+        "secrets_management": "API keys retrieved dynamically from GCP Secret Manager."
+      },
+      "requirements": [],
+      "implementations": [],
+      "appliesTo": {},
+      "inherits": "",
+      "scalingUnits": [],
+      "networkZones": [],
+      "sdpConnections": [],
+      "serviceGroups": [],
+      "tierVariants": [],
+      "tierId": "",
+      "purpose": "",
+      "availabilityExpectation": "",
+      "costPosture": "",
+      "complianceScope": [],
+      "parameterSurface": [],
+      "followsReferenceArchitecture": "",
+      "decisionRecords": [
+        {
+          "ref": "01M15NFKKN-74NY",
+          "key": "modelRoutingApproach"
+        },
+        {
+          "ref": "01M15NFKKN-74NY",
+          "key": "rateLimitingApproach"
+        },
+        {
+          "ref": "01M15NFKKN-74NY",
+          "key": "dataProtectionApproach"
+        },
+        {
+          "ref": "01M15NFKKN-74NY",
+          "key": "loggingApproach"
+        }
+      ],
+      "affectedComponent": "",
+      "impact": "",
+      "mitigationPath": "",
+      "decisionRationale": "",
+      "relatedDecisionRecords": [],
+      "linkedObject": "",
+      "primaryObjectType": "",
+      "primaryObjectUid": "",
+      "generatedObjects": [],
+      "unresolvedQuestions": [],
+      "assumptions": [],
+      "nextSteps": [],
+      "defaultSelection": false,
+      "requirementCount": 0,
+      "hasRiskRef": false,
+      "outboundRefs": [
+        {
+          "target": "01M15NFKKN-74NY",
+          "path": "decisionRecords[0].ref"
+        },
+        {
+          "target": "01M15NFKKN-74NY",
+          "path": "decisionRecords[1].ref"
+        },
+        {
+          "target": "01M15NFKKN-74NY",
+          "path": "decisionRecords[2].ref"
+        },
+        {
+          "target": "01M15NFKKN-74NY",
+          "path": "decisionRecords[3].ref"
+        }
+      ],
+      "referencedBy": [],
+      "editorSchema": {
+        "requiredFields": [
+          "schemaVersion",
+          "uid",
+          "type",
+          "name",
+          "deliveryModel",
+          "catalogStatus",
+          "lifecycleStatus"
+        ],
+        "optionalFields": [
+          "aliases",
+          "description",
+          "version",
+          "owner",
+          "tags",
+          "host",
+          "primaryTechnologyComponent",
+          "internalComponents",
+          "deploymentConfigurations",
+          "vendor",
+          "productName",
+          "productVersion",
+          "capabilities",
+          "configurations",
+          "authenticationModel",
+          "patchingOwner",
+          "vendorGovernance",
+          "notes",
+          "decisionRecords",
+          "requirementImplementations"
+        ],
+        "fieldTypes": {
+          "aliases": "list",
+          "owner": "dict",
+          "tags": "list",
+          "internalComponents": "list",
+          "deploymentConfigurations": "list",
+          "capabilities": "list",
+          "configurations": "list",
+          "notes": "dict",
+          "vendorGovernance": "dict",
+          "requirementGroups": "list",
+          "decisionRecords": "list",
+          "requirementImplementations": "list"
+        },
+        "enumFields": {
+          "catalogStatus": [
+            "stub",
+            "incomplete",
+            "complete"
+          ],
+          "lifecycleStatus": [
+            "candidate",
+            "preferred",
+            "existing-only",
+            "deprecated",
+            "retired"
+          ],
+          "deliveryModel": [
+            "self-managed",
+            "paas",
+            "saas",
+            "appliance"
+          ],
+          "patchingOwner": [
+            "provider-managed",
+            "organization-scheduled",
+            "vendor-managed",
+            "aws-managed"
+          ],
+          "authenticationModel": [
+            "iam",
+            "api-key",
+            "oauth",
+            "saml",
+            "other",
+            "TBD"
+          ]
+        },
+        "enumListFields": {},
+        "collectionSchemas": {
+          "internalComponents": "internalComponent",
+          "deploymentConfigurations": "deploymentConfiguration",
+          "configurations": "configuration",
+          "decisionRecords": "decisionRecordRef",
+          "requirementImplementations": "requirementImplementation"
+        },
+        "schemaPath": "framework/schemas/ai-gateway.schema.yaml"
+      },
+      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M15NEKT7-QKPW\",\n  \"type\": \"ai_gateway\",\n  \"name\": \"Skippy's Submind AI Agent Factory Gateway\",\n  \"description\": \"Factory-deployed agent execution gateway providing LLM reasoning, C4 diagramming, and catalog search.\",\n  \"version\": \"1.0.0\",\n  \"deliveryModel\": \"paas\",\n  \"vendor\": \"GCP\",\n  \"productName\": \"Skippy Submind Gateway\",\n  \"productVersion\": \"1.2.0\",\n  \"catalogStatus\": \"complete\",\n  \"lifecycleStatus\": \"preferred\",\n  \"owner\": {\n    \"team\": \"platform-ai-team\",\n    \"contact\": \"platform-ai@example.com\"\n  },\n  \"tags\": [\n    \"ai-gateway\",\n    \"agent-factory\",\n    \"gcp\",\n    \"submind\"\n  ],\n  \"provisioningModel\": \"deployable\",\n  \"deployablePackage\": {\n    \"registry\": \"github\",\n    \"source\": \"company-infrastructure/hermes-gcp-factory\",\n    \"version\": \"v1.2.0\",\n    \"modulePath\": \"modules/hermes_agent\"\n  },\n  \"decisionRecords\": [\n    {\n      \"ref\": \"01M15NFKKN-74NY\",\n      \"key\": \"modelRoutingApproach\"\n    },\n    {\n      \"ref\": \"01M15NFKKN-74NY\",\n      \"key\": \"rateLimitingApproach\"\n    },\n    {\n      \"ref\": \"01M15NFKKN-74NY\",\n      \"key\": \"dataProtectionApproach\"\n    },\n    {\n      \"ref\": \"01M15NFKKN-74NY\",\n      \"key\": \"loggingApproach\"\n    }\n  ],\n  \"notes\": {\n    \"modelRouting\": \"Multi-model routing to Anthropic (Claude 3.5 Sonnet, Claude 3 Haiku)\",\n    \"modelRoutingApproach\": \"Multi-model routing to Anthropic endpoints\",\n    \"rateLimitingApproach\": \"Token rate limiting managed via GCP Cloud Run concurrency & API quotas\",\n    \"dataProtectionApproach\": \"PII filtering and zero-data-retention compliance\",\n    \"loggingApproach\": \"Centralized prompt and response audit logs streamed to GCP Cloud Logging\",\n    \"security_monitoring\": \"Prompt logging and audit events routed to Cloud Logging.\",\n    \"secrets_management\": \"API keys retrieved dynamically from GCP Secret Manager.\"\n  },\n  \"_source\": \"catalog/shared-services/ai-gateways/ai-gateway-skippys-submind.yaml\"\n}",
+      "existsInCatalog": true,
+      "outboundRelationships": [],
+      "inboundRelationships": []
+    },
+    {
+      "id": "01M15NEKT7-H42Y",
+      "uid": "01M15NEKT7-H42Y",
+      "name": "Standard GCP Cloud SQL PostgreSQL Database",
+      "aliases": [],
+      "type": "data_store_service",
+      "typeLabel": "DataStoreService / Paas",
+      "filterType": "data_store_service",
+      "category": "",
+      "deliveryModel": "paas",
+      "domain": "",
+      "description": "Managed PostgreSQL database service on GCP with automated backups, IAM database authentication, and SSL encryption.",
+      "version": "1.0.0",
+      "catalogStatus": "complete",
+      "lifecycleStatus": "preferred",
+      "status": "",
+      "businessContext": {},
+      "product": "",
+      "runsOn": "",
+      "subtype": "",
+      "vendor": "GCP",
+      "productName": "GCP Cloud SQL PostgreSQL",
+      "productVersion": "15",
       "classification": "",
       "platformDependency": "",
       "capabilities": [
-        "01KQQ4Q026-1HZP"
+        "capability-data-persistence",
+        "capability-data-resilience",
+        "capability-encryption-at-rest"
       ],
       "configurations": [],
-      "networkPlacement": "vpc-private",
-      "patchingOwner": "provider-managed",
+      "networkPlacement": "",
+      "patchingOwner": "",
       "complianceCerts": [],
       "requirementGroups": [],
       "requirementImplementations": [],
@@ -21834,32 +22305,26 @@ window.DRAFT_BROWSER_DATA = {
       "authenticationModel": "iam",
       "incidentNotificationProcess": "",
       "owner": {
-        "team": "cloud-architecture",
-        "contact": "cloud-architecture@example.com"
+        "team": "data-engineering",
+        "contact": "data-engineering@example.com"
       },
       "definitionOwner": {},
       "provider": {},
       "authority": {},
       "shape": "diamond",
       "color": "#1f8a5b",
-      "source": "examples/catalog/shared-services/runtime-services/runtime-service-aws-lambda-runtime.yaml",
+      "source": "catalog/shared-services/data-store-services/data-store-service-gcp-postgres.yaml",
       "tags": [
-        "serverless",
-        "lambda"
+        "database",
+        "gcp",
+        "postgresql",
+        "cloud-sql"
       ],
       "ardCategory": "",
       "internalComponents": [],
       "notes": {
-        "resilienceModel": "Inherently multi-tenant and highly available within the AWS Lambda managed execution fabric.",
-        "authenticationAccessModel": "AWS IAM controls administrative access, function execution roles, and service-to-service authorization.",
-        "configurableSurface": "The adopter controls function configuration, IAM bindings, concurrency settings, environment variables, and event-source mappings.",
-        "failureDomain": "Shared serverless runtime dependency for the functions bound to this Lambda execution environment.",
-        "relationshipRationales": {
-          "AWS IAM": "IAM is modeled as an external dependency because it controls Lambda access even though the PaaS requirement is satisfied by authenticationModel.",
-          "Amazon CloudWatch Logs": "CloudWatch Logs is modeled to show adopter-visible function log delivery outside the core PaaS function requirement.",
-          "Amazon CloudWatch Metrics": "CloudWatch Metrics is modeled to show operational telemetry for Lambda even though this managed runtime is governed by PaaS delivery requirements."
-        },
-        "secrets_management": "AWS Lambda Runtime credentials stored in service configuration managed by Ansible."
+        "data_resilience": "Daily automated backups retained for 30 days.",
+        "encryption_at_rest": "Encrypted using GCP managed keys (GCMK) or KMS."
       },
       "requirements": [],
       "implementations": [],
@@ -21879,20 +22344,16 @@ window.DRAFT_BROWSER_DATA = {
       "followsReferenceArchitecture": "",
       "decisionRecords": [
         {
-          "ref": "01KT11AQX1-55F1",
-          "key": "configurableSurface"
-        },
-        {
-          "ref": "01KT11AQX2-STQ4",
-          "key": "failureDomain"
-        },
-        {
-          "ref": "01KT11AQX2-STQ4",
+          "ref": "01M15NFKKN-74NY",
           "key": "resilienceModel"
         },
         {
-          "ref": "01KT1340HF-1HG3",
-          "key": "secrets_management"
+          "ref": "01M15NFKKN-74NY",
+          "key": "configurableSurface"
+        },
+        {
+          "ref": "01M15NFKKN-74NY",
+          "key": "failureDomain"
         }
       ],
       "affectedComponent": "",
@@ -21912,56 +22373,19 @@ window.DRAFT_BROWSER_DATA = {
       "hasRiskRef": false,
       "outboundRefs": [
         {
-          "target": "01KQQ4Q026-1HZP",
-          "path": "capabilities[0]"
-        },
-        {
-          "target": "01KT11AQX1-55F1",
+          "target": "01M15NFKKN-74NY",
           "path": "decisionRecords[0].ref"
         },
         {
-          "target": "01KT11AQX2-STQ4",
+          "target": "01M15NFKKN-74NY",
           "path": "decisionRecords[1].ref"
         },
         {
-          "target": "01KT11AQX2-STQ4",
+          "target": "01M15NFKKN-74NY",
           "path": "decisionRecords[2].ref"
-        },
-        {
-          "target": "01KT1340HF-1HG3",
-          "path": "decisionRecords[3].ref"
         }
       ],
-      "referencedBy": [
-        {
-          "source": "01KT1340HF-1HG3",
-          "path": "linkedObject"
-        },
-        {
-          "source": "01KT11AQX1-55F1",
-          "path": "linkedObject"
-        },
-        {
-          "source": "01KT11AQX2-STQ4",
-          "path": "linkedObject"
-        },
-        {
-          "source": "01KSKWFZZX-NE4F",
-          "path": "source"
-        },
-        {
-          "source": "01KSKWFZZX-34KP",
-          "path": "source"
-        },
-        {
-          "source": "01KSKWFZZX-JWP6",
-          "path": "source"
-        },
-        {
-          "source": "01KQQ4Q025-1XDE",
-          "path": "internalComponents[0].ref"
-        }
-      ],
+      "referencedBy": [],
       "editorSchema": {
         "requiredFields": [
           "schemaVersion",
@@ -22062,402 +22486,39 @@ window.DRAFT_BROWSER_DATA = {
           "decisionRecords": "decisionRecordRef",
           "requirementImplementations": "requirementImplementation"
         },
-        "schemaPath": "framework/schemas/runtime-service.schema.yaml"
+        "schemaPath": "framework/schemas/data-store-service.schema.yaml"
       },
-      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01KQQ4Q025-T7B7\",\n  \"type\": \"runtime_service\",\n  \"name\": \"AWS Lambda Runtime\",\n  \"description\": \"AWS Lambda serverless execution environment. Runs organization-authored function code without requiring host management. Scales automatically. Host infrastructure is entirely blackbox.\\n\",\n  \"version\": \"1.0.0\",\n  \"catalogStatus\": \"incomplete\",\n  \"lifecycleStatus\": \"preferred\",\n  \"owner\": {\n    \"team\": \"cloud-architecture\",\n    \"contact\": \"cloud-architecture@example.com\"\n  },\n  \"tags\": [\n    \"serverless\",\n    \"lambda\"\n  ],\n  \"deliveryModel\": \"paas\",\n  \"vendor\": \"Amazon Web Services\",\n  \"productName\": \"AWS Lambda Runtime\",\n  \"productVersion\": \"managed\",\n  \"networkPlacement\": \"vpc-private\",\n  \"patchingOwner\": \"provider-managed\",\n  \"authenticationModel\": \"iam\",\n  \"notes\": {\n    \"resilienceModel\": \"Inherently multi-tenant and highly available within the AWS Lambda managed execution fabric.\",\n    \"authenticationAccessModel\": \"AWS IAM controls administrative access, function execution roles, and service-to-service authorization.\",\n    \"configurableSurface\": \"The adopter controls function configuration, IAM bindings, concurrency settings, environment variables, and event-source mappings.\",\n    \"failureDomain\": \"Shared serverless runtime dependency for the functions bound to this Lambda execution environment.\",\n    \"relationshipRationales\": {\n      \"AWS IAM\": \"IAM is modeled as an external dependency because it controls Lambda access even though the PaaS requirement is satisfied by authenticationModel.\",\n      \"Amazon CloudWatch Logs\": \"CloudWatch Logs is modeled to show adopter-visible function log delivery outside the core PaaS function requirement.\",\n      \"Amazon CloudWatch Metrics\": \"CloudWatch Metrics is modeled to show operational telemetry for Lambda even though this managed runtime is governed by PaaS delivery requirements.\"\n    },\n    \"secrets_management\": \"AWS Lambda Runtime credentials stored in service configuration managed by Ansible.\"\n  },\n  \"capabilities\": [\n    \"01KQQ4Q026-1HZP\"\n  ],\n  \"decisionRecords\": [\n    {\n      \"ref\": \"01KT11AQX1-55F1\",\n      \"key\": \"configurableSurface\"\n    },\n    {\n      \"ref\": \"01KT11AQX2-STQ4\",\n      \"key\": \"failureDomain\"\n    },\n    {\n      \"ref\": \"01KT11AQX2-STQ4\",\n      \"key\": \"resilienceModel\"\n    },\n    {\n      \"ref\": \"01KT1340HF-1HG3\",\n      \"key\": \"secrets_management\"\n    }\n  ],\n  \"provisioningModel\": \"deployable\",\n  \"deployablePackage\": {\n    \"registry\": \"github\",\n    \"source\": \"company-infrastructure/terraform-01KQQ4Q025-T7B7\",\n    \"version\": \"v1.0.0\"\n  },\n  \"_source\": \"examples/catalog/shared-services/runtime-services/runtime-service-aws-lambda-runtime.yaml\"\n}",
-      "existsInCatalog": true,
-      "outboundRelationships": [
-        {
-          "uid": "01KSKWFZZX-NE4F",
-          "name": "AWS Lambda Runtime \u2192 Amazon CloudWatch Metrics",
-          "label": "calls",
-          "technology": "",
-          "direction": "",
-          "targetUid": "",
-          "targetName": "Amazon CloudWatch Metrics",
-          "capabilities": []
-        },
-        {
-          "uid": "01KSKWFZZX-34KP",
-          "name": "AWS Lambda Runtime \u2192 AWS IAM",
-          "label": "calls",
-          "technology": "",
-          "direction": "",
-          "targetUid": "",
-          "targetName": "AWS IAM",
-          "capabilities": []
-        },
-        {
-          "uid": "01KSKWFZZX-JWP6",
-          "name": "AWS Lambda Runtime \u2192 Amazon CloudWatch Logs",
-          "label": "sends events to",
-          "technology": "",
-          "direction": "",
-          "targetUid": "",
-          "targetName": "Amazon CloudWatch Logs",
-          "capabilities": []
-        }
-      ],
-      "inboundRelationships": []
-    },
-    {
-      "id": "01KQQ4Q025-MQ3F",
-      "uid": "01KQQ4Q025-MQ3F",
-      "name": "CrowdStrike Falcon Agent",
-      "aliases": [],
-      "type": "technology_component",
-      "typeLabel": "TechnologyComponent / Agent",
-      "filterType": "technology_component",
-      "category": "",
-      "deliveryModel": "",
-      "domain": "",
-      "description": "Endpoint security agent installed locally on a host that requires communication with the CrowdStrike Falcon platform.\n",
-      "version": "1.0.0",
-      "catalogStatus": "incomplete",
-      "lifecycleStatus": "",
-      "status": "",
-      "businessContext": {},
-      "product": "",
-      "runsOn": "",
-      "subtype": "",
-      "vendor": "CrowdStrike",
-      "productName": "Falcon Sensor",
-      "productVersion": "current",
-      "classification": "agent",
-      "platformDependency": "CrowdStrike Falcon Platform",
-      "capabilities": [
-        "01KQQ4Q026-JW52"
-      ],
-      "configurations": [],
-      "networkPlacement": "",
-      "patchingOwner": "",
-      "complianceCerts": [],
-      "requirementGroups": [],
-      "requirementImplementations": [],
-      "dataLeavesInfrastructure": null,
-      "dataResidencyCommitment": "",
-      "dpaNotes": "",
-      "vendorSLA": "",
-      "authenticationModel": "",
-      "incidentNotificationProcess": "",
-      "owner": {
-        "team": "cloud-architecture",
-        "contact": "cloud-architecture@example.com"
-      },
-      "definitionOwner": {},
-      "provider": {},
-      "authority": {},
-      "shape": "ellipse",
-      "color": "#64748b",
-      "source": "examples/catalog/shared-services/technology-components/technology-agent-crowdstrike-falcon.yaml",
-      "tags": [
-        "technology-component",
-        "agent"
-      ],
-      "ardCategory": "",
-      "internalComponents": [],
-      "notes": {},
-      "requirements": [],
-      "implementations": [],
-      "appliesTo": {},
-      "inherits": "",
-      "scalingUnits": [],
-      "networkZones": [],
-      "sdpConnections": [],
-      "serviceGroups": [],
-      "tierVariants": [],
-      "tierId": "",
-      "purpose": "",
-      "availabilityExpectation": "",
-      "costPosture": "",
-      "complianceScope": [],
-      "parameterSurface": [],
-      "followsReferenceArchitecture": "",
-      "decisionRecords": [],
-      "affectedComponent": "",
-      "impact": "",
-      "mitigationPath": "",
-      "decisionRationale": "",
-      "relatedDecisionRecords": [],
-      "linkedObject": "",
-      "primaryObjectType": "",
-      "primaryObjectUid": "",
-      "generatedObjects": [],
-      "unresolvedQuestions": [],
-      "assumptions": [],
-      "nextSteps": [],
-      "defaultSelection": false,
-      "requirementCount": 0,
-      "hasRiskRef": false,
-      "outboundRefs": [
-        {
-          "target": "01KQQ4Q026-JW52",
-          "path": "capabilities[0]"
-        }
-      ],
-      "referencedBy": [
-        {
-          "source": "01KQQ4Q026-JW52",
-          "path": "implementations[0].ref"
-        },
-        {
-          "source": "01KQQ4Q026-BQ87",
-          "path": "patch.implementations[0].ref"
-        }
-      ],
-      "editorSchema": {
-        "requiredFields": [
-          "schemaVersion",
-          "uid",
-          "type",
-          "name",
-          "vendor",
-          "productName",
-          "productVersion",
-          "classification",
-          "catalogStatus"
-        ],
-        "optionalFields": [
-          "aliases",
-          "description",
-          "version",
-          "owner",
-          "tags",
-          "subtype",
-          "vendorLifecycle",
-          "platformDependency",
-          "capabilities",
-          "configurations",
-          "networkPlacement",
-          "patchingOwner",
-          "complianceCerts",
-          "controlReferences",
-          "notes"
-        ],
-        "fieldTypes": {
-          "aliases": "list",
-          "owner": "dict",
-          "tags": "list",
-          "vendorLifecycle": "dict",
-          "capabilities": "list",
-          "configurations": "list",
-          "complianceCerts": "list",
-          "controlReferences": "list"
-        },
-        "enumFields": {
-          "catalogStatus": [
-            "stub",
-            "incomplete",
-            "complete"
-          ],
-          "classification": [
-            "operating-system",
-            "compute-platform",
-            "software",
-            "agent"
-          ]
-        },
-        "enumListFields": {},
-        "collectionSchemas": {
-          "configurations": "configuration"
-        },
-        "schemaPath": "framework/schemas/technology-component.schema.yaml"
-      },
-      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01KQQ4Q025-MQ3F\",\n  \"type\": \"technology_component\",\n  \"name\": \"CrowdStrike Falcon Agent\",\n  \"description\": \"Endpoint security agent installed locally on a host that requires communication with the CrowdStrike Falcon platform.\\n\",\n  \"version\": \"1.0.0\",\n  \"catalogStatus\": \"incomplete\",\n  \"owner\": {\n    \"team\": \"cloud-architecture\",\n    \"contact\": \"cloud-architecture@example.com\"\n  },\n  \"tags\": [\n    \"technology-component\",\n    \"agent\"\n  ],\n  \"vendor\": \"CrowdStrike\",\n  \"productName\": \"Falcon Sensor\",\n  \"productVersion\": \"current\",\n  \"classification\": \"agent\",\n  \"platformDependency\": \"CrowdStrike Falcon Platform\",\n  \"capabilities\": [\n    \"01KQQ4Q026-JW52\"\n  ],\n  \"_source\": \"examples/catalog/shared-services/technology-components/technology-agent-crowdstrike-falcon.yaml\"\n}",
+      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M15NEKT7-H42Y\",\n  \"type\": \"data_store_service\",\n  \"name\": \"Standard GCP Cloud SQL PostgreSQL Database\",\n  \"description\": \"Managed PostgreSQL database service on GCP with automated backups, IAM database authentication, and SSL encryption.\",\n  \"version\": \"1.0.0\",\n  \"deliveryModel\": \"paas\",\n  \"vendor\": \"GCP\",\n  \"productName\": \"GCP Cloud SQL PostgreSQL\",\n  \"productVersion\": \"15\",\n  \"catalogStatus\": \"complete\",\n  \"lifecycleStatus\": \"preferred\",\n  \"authenticationModel\": \"iam\",\n  \"capabilities\": [\n    \"capability-data-persistence\",\n    \"capability-data-resilience\",\n    \"capability-encryption-at-rest\"\n  ],\n  \"owner\": {\n    \"team\": \"data-engineering\",\n    \"contact\": \"data-engineering@example.com\"\n  },\n  \"tags\": [\n    \"database\",\n    \"gcp\",\n    \"postgresql\",\n    \"cloud-sql\"\n  ],\n  \"targetEngine\": \"postgres\",\n  \"decisionRecords\": [\n    {\n      \"ref\": \"01M15NFKKN-74NY\",\n      \"key\": \"resilienceModel\"\n    },\n    {\n      \"ref\": \"01M15NFKKN-74NY\",\n      \"key\": \"configurableSurface\"\n    },\n    {\n      \"ref\": \"01M15NFKKN-74NY\",\n      \"key\": \"failureDomain\"\n    }\n  ],\n  \"provisioningModel\": \"deployable\",\n  \"deployablePackage\": {\n    \"registry\": \"github\",\n    \"source\": \"company-infrastructure/platform-iac-data\",\n    \"version\": \"v1.0.0\",\n    \"modulePath\": \"modules/cloud-sql-postgres\"\n  },\n  \"notes\": {\n    \"data_resilience\": \"Daily automated backups retained for 30 days.\",\n    \"encryption_at_rest\": \"Encrypted using GCP managed keys (GCMK) or KMS.\"\n  },\n  \"_source\": \"catalog/shared-services/data-store-services/data-store-service-gcp-postgres.yaml\"\n}",
       "existsInCatalog": true,
       "outboundRelationships": [],
       "inboundRelationships": []
     },
     {
-      "id": "01KQQ4Q025-9N4R",
-      "uid": "01KQQ4Q025-9N4R",
-      "name": "Amazon EC2 Standard Compute Platform",
+      "id": "01M15NEKT7-1SN8",
+      "uid": "01M15NEKT7-1SN8",
+      "name": "Standard GCP Cloud Run Serverless Substrate",
       "aliases": [],
-      "type": "technology_component",
-      "typeLabel": "TechnologyComponent / Compute Platform",
-      "filterType": "technology_component",
+      "type": "host",
+      "typeLabel": "Host",
+      "filterType": "host",
       "category": "",
       "deliveryModel": "",
       "domain": "",
-      "description": "Standard Amazon EC2 virtual machine substrate used for general-purpose host patterns.\n",
-      "version": "1.0.0",
-      "catalogStatus": "incomplete",
-      "lifecycleStatus": "",
-      "status": "",
-      "businessContext": {},
-      "product": "",
-      "runsOn": "",
-      "subtype": "",
-      "vendor": "Amazon Web Services",
-      "productName": "Amazon EC2",
-      "productVersion": "standard",
-      "classification": "compute-platform",
-      "platformDependency": "",
-      "capabilities": [],
-      "configurations": [],
-      "networkPlacement": "",
-      "patchingOwner": "",
-      "complianceCerts": [],
-      "requirementGroups": [],
-      "requirementImplementations": [],
-      "dataLeavesInfrastructure": null,
-      "dataResidencyCommitment": "",
-      "dpaNotes": "",
-      "vendorSLA": "",
-      "authenticationModel": "",
-      "incidentNotificationProcess": "",
-      "owner": {
-        "team": "cloud-architecture",
-        "contact": "cloud-architecture@example.com"
-      },
-      "definitionOwner": {},
-      "provider": {},
-      "authority": {},
-      "shape": "ellipse",
-      "color": "#64748b",
-      "source": "examples/catalog/shared-services/technology-components/technology-compute-amazon-ec2-standard.yaml",
-      "tags": [
-        "technology-component",
-        "compute-platform"
-      ],
-      "ardCategory": "",
-      "internalComponents": [],
-      "notes": {},
-      "requirements": [],
-      "implementations": [],
-      "appliesTo": {},
-      "inherits": "",
-      "scalingUnits": [],
-      "networkZones": [],
-      "sdpConnections": [],
-      "serviceGroups": [],
-      "tierVariants": [],
-      "tierId": "",
-      "purpose": "",
-      "availabilityExpectation": "",
-      "costPosture": "",
-      "complianceScope": [],
-      "parameterSurface": [],
-      "followsReferenceArchitecture": "",
-      "decisionRecords": [],
-      "affectedComponent": "",
-      "impact": "",
-      "mitigationPath": "",
-      "decisionRationale": "",
-      "relatedDecisionRecords": [],
-      "linkedObject": "",
-      "primaryObjectType": "",
-      "primaryObjectUid": "",
-      "generatedObjects": [],
-      "unresolvedQuestions": [],
-      "assumptions": [],
-      "nextSteps": [],
-      "defaultSelection": false,
-      "requirementCount": 0,
-      "hasRiskRef": false,
-      "outboundRefs": [],
-      "referencedBy": [
-        {
-          "source": "01KQQ4Q026-1HZP",
-          "path": "implementations[0].ref"
-        },
-        {
-          "source": "01KQQ4Q025-X682",
-          "path": "patch.implementations[0].ref"
-        }
-      ],
-      "editorSchema": {
-        "requiredFields": [
-          "schemaVersion",
-          "uid",
-          "type",
-          "name",
-          "vendor",
-          "productName",
-          "productVersion",
-          "classification",
-          "catalogStatus"
-        ],
-        "optionalFields": [
-          "aliases",
-          "description",
-          "version",
-          "owner",
-          "tags",
-          "subtype",
-          "vendorLifecycle",
-          "platformDependency",
-          "capabilities",
-          "configurations",
-          "networkPlacement",
-          "patchingOwner",
-          "complianceCerts",
-          "controlReferences",
-          "notes"
-        ],
-        "fieldTypes": {
-          "aliases": "list",
-          "owner": "dict",
-          "tags": "list",
-          "vendorLifecycle": "dict",
-          "capabilities": "list",
-          "configurations": "list",
-          "complianceCerts": "list",
-          "controlReferences": "list"
-        },
-        "enumFields": {
-          "catalogStatus": [
-            "stub",
-            "incomplete",
-            "complete"
-          ],
-          "classification": [
-            "operating-system",
-            "compute-platform",
-            "software",
-            "agent"
-          ]
-        },
-        "enumListFields": {},
-        "collectionSchemas": {
-          "configurations": "configuration"
-        },
-        "schemaPath": "framework/schemas/technology-component.schema.yaml"
-      },
-      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01KQQ4Q025-9N4R\",\n  \"type\": \"technology_component\",\n  \"name\": \"Amazon EC2 Standard Compute Platform\",\n  \"description\": \"Standard Amazon EC2 virtual machine substrate used for general-purpose host patterns.\\n\",\n  \"version\": \"1.0.0\",\n  \"catalogStatus\": \"incomplete\",\n  \"owner\": {\n    \"team\": \"cloud-architecture\",\n    \"contact\": \"cloud-architecture@example.com\"\n  },\n  \"tags\": [\n    \"technology-component\",\n    \"compute-platform\"\n  ],\n  \"vendor\": \"Amazon Web Services\",\n  \"productName\": \"Amazon EC2\",\n  \"productVersion\": \"standard\",\n  \"classification\": \"compute-platform\",\n  \"_source\": \"examples/catalog/shared-services/technology-components/technology-compute-amazon-ec2-standard.yaml\"\n}",
-      "existsInCatalog": true,
-      "outboundRelationships": [],
-      "inboundRelationships": []
-    },
-    {
-      "id": "01KSF29JTP-8YRX",
-      "uid": "01KSF29JTP-8YRX",
-      "name": "HAProxy 2.9",
-      "aliases": [],
-      "type": "technology_component",
-      "typeLabel": "TechnologyComponent / Software",
-      "filterType": "technology_component",
-      "category": "",
-      "deliveryModel": "",
-      "domain": "",
-      "description": "Open-source TCP/HTTP load balancer and proxy server. Provides high-availability request distribution, health checking, connection pooling, and SSL termination. Used as the primary load balancer for the OpenStack control plane API endpoints.",
+      "description": "Fully managed serverless container host platform for stateless services and agent runners on Google Cloud Platform.",
       "version": "1.0.0",
       "catalogStatus": "complete",
-      "lifecycleStatus": "",
+      "lifecycleStatus": "preferred",
       "status": "",
       "businessContext": {},
       "product": "",
       "runsOn": "",
       "subtype": "",
-      "vendor": "HAProxy Technologies",
-      "productName": "HAProxy Community Edition",
-      "productVersion": "2.9",
-      "classification": "software",
+      "vendor": "",
+      "productName": "",
+      "productVersion": "",
+      "classification": "",
       "platformDependency": "",
-      "capabilities": [
-        "01KQQ4Q026-98VD",
-        "01KSWVZSZ5-M0FR"
-      ],
+      "capabilities": [],
       "configurations": [],
       "networkPlacement": "",
       "patchingOwner": "",
@@ -22477,362 +22538,21 @@ window.DRAFT_BROWSER_DATA = {
       "definitionOwner": {},
       "provider": {},
       "authority": {},
-      "shape": "ellipse",
-      "color": "#64748b",
-      "source": "examples/catalog/shared-services/technology-components/technology-haproxy-29.yaml",
+      "shape": "round-rectangle",
+      "color": "#1f8a5b",
+      "source": "catalog/shared-services/hosts/host-gcp-cloud-run.yaml",
       "tags": [
-        "technology-component",
-        "load-balancer",
-        "haproxy",
-        "openstack"
+        "host",
+        "gcp",
+        "cloud-run",
+        "serverless"
       ],
       "ardCategory": "",
       "internalComponents": [],
-      "notes": {},
-      "requirements": [],
-      "implementations": [],
-      "appliesTo": {},
-      "inherits": "",
-      "scalingUnits": [],
-      "networkZones": [],
-      "sdpConnections": [],
-      "serviceGroups": [],
-      "tierVariants": [],
-      "tierId": "",
-      "purpose": "",
-      "availabilityExpectation": "",
-      "costPosture": "",
-      "complianceScope": [],
-      "parameterSurface": [],
-      "followsReferenceArchitecture": "",
-      "decisionRecords": [],
-      "affectedComponent": "",
-      "impact": "",
-      "mitigationPath": "",
-      "decisionRationale": "",
-      "relatedDecisionRecords": [],
-      "linkedObject": "",
-      "primaryObjectType": "",
-      "primaryObjectUid": "",
-      "generatedObjects": [],
-      "unresolvedQuestions": [],
-      "assumptions": [],
-      "nextSteps": [],
-      "defaultSelection": false,
-      "requirementCount": 0,
-      "hasRiskRef": false,
-      "outboundRefs": [
-        {
-          "target": "01KQQ4Q026-98VD",
-          "path": "capabilities[0]"
-        },
-        {
-          "target": "01KSWVZSZ5-M0FR",
-          "path": "capabilities[1]"
-        }
-      ],
-      "referencedBy": [],
-      "editorSchema": {
-        "requiredFields": [
-          "schemaVersion",
-          "uid",
-          "type",
-          "name",
-          "vendor",
-          "productName",
-          "productVersion",
-          "classification",
-          "catalogStatus"
-        ],
-        "optionalFields": [
-          "aliases",
-          "description",
-          "version",
-          "owner",
-          "tags",
-          "subtype",
-          "vendorLifecycle",
-          "platformDependency",
-          "capabilities",
-          "configurations",
-          "networkPlacement",
-          "patchingOwner",
-          "complianceCerts",
-          "controlReferences",
-          "notes"
-        ],
-        "fieldTypes": {
-          "aliases": "list",
-          "owner": "dict",
-          "tags": "list",
-          "vendorLifecycle": "dict",
-          "capabilities": "list",
-          "configurations": "list",
-          "complianceCerts": "list",
-          "controlReferences": "list"
-        },
-        "enumFields": {
-          "catalogStatus": [
-            "stub",
-            "incomplete",
-            "complete"
-          ],
-          "classification": [
-            "operating-system",
-            "compute-platform",
-            "software",
-            "agent"
-          ]
-        },
-        "enumListFields": {},
-        "collectionSchemas": {
-          "configurations": "configuration"
-        },
-        "schemaPath": "framework/schemas/technology-component.schema.yaml"
+      "notes": {
+        "security_monitoring": "Native GCP Cloud Audit Logs and VPC Service Controls integration.",
+        "log_management": "Application stdout/stderr streamed to Cloud Logging."
       },
-      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01KSF29JTP-8YRX\",\n  \"type\": \"technology_component\",\n  \"name\": \"HAProxy 2.9\",\n  \"description\": \"Open-source TCP/HTTP load balancer and proxy server. Provides high-availability request distribution, health checking, connection pooling, and SSL termination. Used as the primary load balancer for the OpenStack control plane API endpoints.\",\n  \"version\": \"1.0.0\",\n  \"catalogStatus\": \"complete\",\n  \"lifecycleStatus\": \"preferred\",\n  \"owner\": {\n    \"team\": \"platform-engineering\",\n    \"contact\": \"platform-engineering@example.com\"\n  },\n  \"tags\": [\n    \"technology-component\",\n    \"load-balancer\",\n    \"haproxy\",\n    \"openstack\"\n  ],\n  \"vendor\": \"HAProxy Technologies\",\n  \"productName\": \"HAProxy Community Edition\",\n  \"productVersion\": \"2.9\",\n  \"classification\": \"software\",\n  \"vendorLifecycle\": {\n    \"mainstreamSupportEnd\": \"2026-12-31\",\n    \"extendedSupportEnd\": \"2027-12-31\"\n  },\n  \"capabilities\": [\n    \"01KQQ4Q026-98VD\",\n    \"01KSWVZSZ5-M0FR\"\n  ],\n  \"_source\": \"examples/catalog/shared-services/technology-components/technology-haproxy-29.yaml\"\n}",
-      "existsInCatalog": true,
-      "outboundRelationships": [],
-      "inboundRelationships": []
-    },
-    {
-      "id": "01KQQ4Q025-3HXA",
-      "uid": "01KQQ4Q025-3HXA",
-      "name": "Ubuntu 22.04 LTS",
-      "aliases": [],
-      "type": "technology_component",
-      "typeLabel": "TechnologyComponent / Operating System",
-      "filterType": "technology_component",
-      "category": "",
-      "deliveryModel": "",
-      "domain": "",
-      "description": "Canonical Ubuntu Server 22.04 LTS operating system product definition for Linux host patterns.\n",
-      "version": "1.0.0",
-      "catalogStatus": "incomplete",
-      "lifecycleStatus": "",
-      "status": "",
-      "businessContext": {},
-      "product": "",
-      "runsOn": "",
-      "subtype": "",
-      "vendor": "Canonical",
-      "productName": "Ubuntu Server",
-      "productVersion": "22.04 LTS",
-      "classification": "operating-system",
-      "platformDependency": "",
-      "capabilities": [],
-      "configurations": [
-        {
-          "id": "centralized-log-forwarding",
-          "name": "Centralized Log Forwarding",
-          "description": "Standard operating system logging configuration that forwards host logs to the centralized logging destination.\n",
-          "capabilities": [
-            "01KQQ4Q026-D04B"
-          ]
-        }
-      ],
-      "networkPlacement": "",
-      "patchingOwner": "",
-      "complianceCerts": [],
-      "requirementGroups": [],
-      "requirementImplementations": [],
-      "dataLeavesInfrastructure": null,
-      "dataResidencyCommitment": "",
-      "dpaNotes": "",
-      "vendorSLA": "",
-      "authenticationModel": "",
-      "incidentNotificationProcess": "",
-      "owner": {
-        "team": "cloud-architecture",
-        "contact": "cloud-architecture@example.com"
-      },
-      "definitionOwner": {},
-      "provider": {},
-      "authority": {},
-      "shape": "ellipse",
-      "color": "#64748b",
-      "source": "examples/catalog/shared-services/technology-components/technology-os-canonical-ubuntu-2204.yaml",
-      "tags": [
-        "technology-component",
-        "operating-system"
-      ],
-      "ardCategory": "",
-      "internalComponents": [],
-      "notes": {},
-      "requirements": [],
-      "implementations": [],
-      "appliesTo": {},
-      "inherits": "",
-      "scalingUnits": [],
-      "networkZones": [],
-      "sdpConnections": [],
-      "serviceGroups": [],
-      "tierVariants": [],
-      "tierId": "",
-      "purpose": "",
-      "availabilityExpectation": "",
-      "costPosture": "",
-      "complianceScope": [],
-      "parameterSurface": [],
-      "followsReferenceArchitecture": "",
-      "decisionRecords": [],
-      "affectedComponent": "",
-      "impact": "",
-      "mitigationPath": "",
-      "decisionRationale": "",
-      "relatedDecisionRecords": [],
-      "linkedObject": "",
-      "primaryObjectType": "",
-      "primaryObjectUid": "",
-      "generatedObjects": [],
-      "unresolvedQuestions": [],
-      "assumptions": [],
-      "nextSteps": [],
-      "defaultSelection": false,
-      "requirementCount": 0,
-      "hasRiskRef": false,
-      "outboundRefs": [
-        {
-          "target": "01KQQ4Q026-D04B",
-          "path": "configurations[0].capabilities[0]"
-        }
-      ],
-      "referencedBy": [
-        {
-          "source": "01KQQ4Q026-D04B",
-          "path": "implementations[0].ref"
-        },
-        {
-          "source": "01KQQ4Q026-QM2X",
-          "path": "implementations[0].ref"
-        },
-        {
-          "source": "01KQQ4Q025-5VTH",
-          "path": "patch.implementations[0].ref"
-        },
-        {
-          "source": "01KQQ4Q026-4AYD",
-          "path": "patch.implementations[0].ref"
-        }
-      ],
-      "editorSchema": {
-        "requiredFields": [
-          "schemaVersion",
-          "uid",
-          "type",
-          "name",
-          "vendor",
-          "productName",
-          "productVersion",
-          "classification",
-          "catalogStatus"
-        ],
-        "optionalFields": [
-          "aliases",
-          "description",
-          "version",
-          "owner",
-          "tags",
-          "subtype",
-          "vendorLifecycle",
-          "platformDependency",
-          "capabilities",
-          "configurations",
-          "networkPlacement",
-          "patchingOwner",
-          "complianceCerts",
-          "controlReferences",
-          "notes"
-        ],
-        "fieldTypes": {
-          "aliases": "list",
-          "owner": "dict",
-          "tags": "list",
-          "vendorLifecycle": "dict",
-          "capabilities": "list",
-          "configurations": "list",
-          "complianceCerts": "list",
-          "controlReferences": "list"
-        },
-        "enumFields": {
-          "catalogStatus": [
-            "stub",
-            "incomplete",
-            "complete"
-          ],
-          "classification": [
-            "operating-system",
-            "compute-platform",
-            "software",
-            "agent"
-          ]
-        },
-        "enumListFields": {},
-        "collectionSchemas": {
-          "configurations": "configuration"
-        },
-        "schemaPath": "framework/schemas/technology-component.schema.yaml"
-      },
-      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01KQQ4Q025-3HXA\",\n  \"type\": \"technology_component\",\n  \"name\": \"Ubuntu 22.04 LTS\",\n  \"description\": \"Canonical Ubuntu Server 22.04 LTS operating system product definition for Linux host patterns.\\n\",\n  \"version\": \"1.0.0\",\n  \"catalogStatus\": \"incomplete\",\n  \"owner\": {\n    \"team\": \"cloud-architecture\",\n    \"contact\": \"cloud-architecture@example.com\"\n  },\n  \"tags\": [\n    \"technology-component\",\n    \"operating-system\"\n  ],\n  \"vendor\": \"Canonical\",\n  \"productName\": \"Ubuntu Server\",\n  \"productVersion\": \"22.04 LTS\",\n  \"classification\": \"operating-system\",\n  \"configurations\": [\n    {\n      \"id\": \"centralized-log-forwarding\",\n      \"name\": \"Centralized Log Forwarding\",\n      \"description\": \"Standard operating system logging configuration that forwards host logs to the centralized logging destination.\\n\",\n      \"capabilities\": [\n        \"01KQQ4Q026-D04B\"\n      ]\n    }\n  ],\n  \"_source\": \"examples/catalog/shared-services/technology-components/technology-os-canonical-ubuntu-2204.yaml\"\n}",
-      "existsInCatalog": true,
-      "outboundRelationships": [],
-      "inboundRelationships": []
-    },
-    {
-      "id": "01KQQ4Q025-Z042",
-      "uid": "01KQQ4Q025-Z042",
-      "name": "nginx 1.26",
-      "aliases": [],
-      "type": "technology_component",
-      "typeLabel": "TechnologyComponent / Software",
-      "filterType": "technology_component",
-      "category": "",
-      "deliveryModel": "",
-      "domain": "",
-      "description": "nginx web server software installed locally on a managed host and used without a required vendor platform interaction.\n",
-      "version": "1.0.0",
-      "catalogStatus": "incomplete",
-      "lifecycleStatus": "",
-      "status": "",
-      "businessContext": {},
-      "product": "",
-      "runsOn": "",
-      "subtype": "",
-      "vendor": "F5 NGINX",
-      "productName": "nginx",
-      "productVersion": "1.26",
-      "classification": "software",
-      "platformDependency": "",
-      "capabilities": [],
-      "configurations": [],
-      "networkPlacement": "",
-      "patchingOwner": "",
-      "complianceCerts": [],
-      "requirementGroups": [],
-      "requirementImplementations": [],
-      "dataLeavesInfrastructure": null,
-      "dataResidencyCommitment": "",
-      "dpaNotes": "",
-      "vendorSLA": "",
-      "authenticationModel": "",
-      "incidentNotificationProcess": "",
-      "owner": {
-        "team": "cloud-architecture",
-        "contact": "cloud-architecture@example.com"
-      },
-      "definitionOwner": {},
-      "provider": {},
-      "authority": {},
-      "shape": "ellipse",
-      "color": "#64748b",
-      "source": "examples/catalog/shared-services/technology-components/technology-software-nginx-126.yaml",
-      "tags": [
-        "technology-component",
-        "software"
-      ],
-      "ardCategory": "",
-      "internalComponents": [],
-      "notes": {},
       "requirements": [],
       "implementations": [],
       "appliesTo": {},
@@ -22873,11 +22593,8 @@ window.DRAFT_BROWSER_DATA = {
           "uid",
           "type",
           "name",
-          "vendor",
-          "productName",
-          "productVersion",
-          "classification",
-          "catalogStatus"
+          "catalogStatus",
+          "lifecycleStatus"
         ],
         "optionalFields": [
           "aliases",
@@ -22885,47 +22602,207 @@ window.DRAFT_BROWSER_DATA = {
           "version",
           "owner",
           "tags",
-          "subtype",
-          "vendorLifecycle",
-          "platformDependency",
-          "capabilities",
-          "configurations",
-          "networkPlacement",
-          "patchingOwner",
-          "complianceCerts",
-          "controlReferences",
-          "notes"
+          "notes",
+          "operatingSystemComponent",
+          "computePlatformComponent",
+          "internalComponents",
+          "deploymentConfigurations",
+          "provisioningModel",
+          "deployablePackage",
+          "decisionRecords",
+          "requirementImplementations"
         ],
         "fieldTypes": {
           "aliases": "list",
           "owner": "dict",
           "tags": "list",
-          "vendorLifecycle": "dict",
-          "capabilities": "list",
-          "configurations": "list",
-          "complianceCerts": "list",
-          "controlReferences": "list"
+          "notes": "dict",
+          "internalComponents": "list",
+          "deploymentConfigurations": "list",
+          "requirementGroups": "list",
+          "decisionRecords": "list",
+          "requirementImplementations": "list"
         },
         "enumFields": {
+          "provisioningModel": [
+            "deployable",
+            "reference-only"
+          ],
           "catalogStatus": [
             "stub",
             "incomplete",
             "complete"
           ],
-          "classification": [
-            "operating-system",
-            "compute-platform",
-            "software",
-            "agent"
+          "lifecycleStatus": [
+            "candidate",
+            "preferred",
+            "existing-only",
+            "deprecated",
+            "retired"
           ]
         },
         "enumListFields": {},
-        "collectionSchemas": {
-          "configurations": "configuration"
-        },
-        "schemaPath": "framework/schemas/technology-component.schema.yaml"
+        "collectionSchemas": {},
+        "schemaPath": "framework/schemas/host.schema.yaml"
       },
-      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01KQQ4Q025-Z042\",\n  \"type\": \"technology_component\",\n  \"name\": \"nginx 1.26\",\n  \"description\": \"nginx web server software installed locally on a managed host and used without a required vendor platform interaction.\\n\",\n  \"version\": \"1.0.0\",\n  \"catalogStatus\": \"incomplete\",\n  \"owner\": {\n    \"team\": \"cloud-architecture\",\n    \"contact\": \"cloud-architecture@example.com\"\n  },\n  \"tags\": [\n    \"technology-component\",\n    \"software\"\n  ],\n  \"vendor\": \"F5 NGINX\",\n  \"productName\": \"nginx\",\n  \"productVersion\": \"1.26\",\n  \"classification\": \"software\",\n  \"_source\": \"examples/catalog/shared-services/technology-components/technology-software-nginx-126.yaml\"\n}",
+      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M15NEKT7-1SN8\",\n  \"type\": \"host\",\n  \"name\": \"Standard GCP Cloud Run Serverless Substrate\",\n  \"description\": \"Fully managed serverless container host platform for stateless services and agent runners on Google Cloud Platform.\",\n  \"version\": \"1.0.0\",\n  \"catalogStatus\": \"complete\",\n  \"lifecycleStatus\": \"preferred\",\n  \"owner\": {\n    \"team\": \"platform-engineering\",\n    \"contact\": \"platform-engineering@example.com\"\n  },\n  \"tags\": [\n    \"host\",\n    \"gcp\",\n    \"cloud-run\",\n    \"serverless\"\n  ],\n  \"provisioningModel\": \"deployable\",\n  \"deployablePackage\": {\n    \"registry\": \"github\",\n    \"source\": \"company-infrastructure/platform-iac-compute\",\n    \"version\": \"v1.0.0\",\n    \"modulePath\": \"modules/cloud-run\"\n  },\n  \"notes\": {\n    \"security_monitoring\": \"Native GCP Cloud Audit Logs and VPC Service Controls integration.\",\n    \"log_management\": \"Application stdout/stderr streamed to Cloud Logging.\"\n  },\n  \"_source\": \"catalog/shared-services/hosts/host-gcp-cloud-run.yaml\"\n}",
+      "existsInCatalog": true,
+      "outboundRelationships": [],
+      "inboundRelationships": []
+    },
+    {
+      "id": "01M162FHHS-3STQ",
+      "uid": "01M162FHHS-3STQ",
+      "name": "GitHub Pages Static Web Game Host",
+      "aliases": [],
+      "type": "host",
+      "typeLabel": "Host",
+      "filterType": "host",
+      "category": "",
+      "deliveryModel": "",
+      "domain": "",
+      "description": "Managed static hosting edge on GitHub Pages for hosting client-side HTML5/JS canvas games and UAT web apps.",
+      "version": "1.0.0",
+      "catalogStatus": "complete",
+      "lifecycleStatus": "preferred",
+      "status": "",
+      "businessContext": {},
+      "product": "",
+      "runsOn": "",
+      "subtype": "",
+      "vendor": "GitHub",
+      "productName": "GitHub Pages",
+      "productVersion": "1.0.0",
+      "classification": "",
+      "platformDependency": "",
+      "capabilities": [],
+      "configurations": [],
+      "networkPlacement": "",
+      "patchingOwner": "",
+      "complianceCerts": [],
+      "requirementGroups": [],
+      "requirementImplementations": [],
+      "dataLeavesInfrastructure": null,
+      "dataResidencyCommitment": "",
+      "dpaNotes": "",
+      "vendorSLA": "",
+      "authenticationModel": "",
+      "incidentNotificationProcess": "",
+      "owner": {
+        "team": "platform-engineering",
+        "contact": "platform-engineering@example.com"
+      },
+      "definitionOwner": {},
+      "provider": {},
+      "authority": {},
+      "shape": "round-rectangle",
+      "color": "#1f8a5b",
+      "source": "catalog/shared-services/hosts/host-github-pages.yaml",
+      "tags": [
+        "host",
+        "github-pages",
+        "static-hosting",
+        "uat"
+      ],
+      "ardCategory": "",
+      "internalComponents": [],
+      "notes": {
+        "security_monitoring": "HTTPS enforced on custom domain or github.io.",
+        "log_management": "Web analytics and build deployment logs in GitHub Actions."
+      },
+      "requirements": [],
+      "implementations": [],
+      "appliesTo": {},
+      "inherits": "",
+      "scalingUnits": [],
+      "networkZones": [],
+      "sdpConnections": [],
+      "serviceGroups": [],
+      "tierVariants": [],
+      "tierId": "",
+      "purpose": "",
+      "availabilityExpectation": "",
+      "costPosture": "",
+      "complianceScope": [],
+      "parameterSurface": [],
+      "followsReferenceArchitecture": "",
+      "decisionRecords": [],
+      "affectedComponent": "",
+      "impact": "",
+      "mitigationPath": "",
+      "decisionRationale": "",
+      "relatedDecisionRecords": [],
+      "linkedObject": "",
+      "primaryObjectType": "",
+      "primaryObjectUid": "",
+      "generatedObjects": [],
+      "unresolvedQuestions": [],
+      "assumptions": [],
+      "nextSteps": [],
+      "defaultSelection": false,
+      "requirementCount": 0,
+      "hasRiskRef": false,
+      "outboundRefs": [],
+      "referencedBy": [],
+      "editorSchema": {
+        "requiredFields": [
+          "schemaVersion",
+          "uid",
+          "type",
+          "name",
+          "catalogStatus",
+          "lifecycleStatus"
+        ],
+        "optionalFields": [
+          "aliases",
+          "description",
+          "version",
+          "owner",
+          "tags",
+          "notes",
+          "operatingSystemComponent",
+          "computePlatformComponent",
+          "internalComponents",
+          "deploymentConfigurations",
+          "provisioningModel",
+          "deployablePackage",
+          "decisionRecords",
+          "requirementImplementations"
+        ],
+        "fieldTypes": {
+          "aliases": "list",
+          "owner": "dict",
+          "tags": "list",
+          "notes": "dict",
+          "internalComponents": "list",
+          "deploymentConfigurations": "list",
+          "requirementGroups": "list",
+          "decisionRecords": "list",
+          "requirementImplementations": "list"
+        },
+        "enumFields": {
+          "provisioningModel": [
+            "deployable",
+            "reference-only"
+          ],
+          "catalogStatus": [
+            "stub",
+            "incomplete",
+            "complete"
+          ],
+          "lifecycleStatus": [
+            "candidate",
+            "preferred",
+            "existing-only",
+            "deprecated",
+            "retired"
+          ]
+        },
+        "enumListFields": {},
+        "collectionSchemas": {},
+        "schemaPath": "framework/schemas/host.schema.yaml"
+      },
+      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M162FHHS-3STQ\",\n  \"type\": \"host\",\n  \"name\": \"GitHub Pages Static Web Game Host\",\n  \"description\": \"Managed static hosting edge on GitHub Pages for hosting client-side HTML5/JS canvas games and UAT web apps.\",\n  \"version\": \"1.0.0\",\n  \"catalogStatus\": \"complete\",\n  \"lifecycleStatus\": \"preferred\",\n  \"vendor\": \"GitHub\",\n  \"productName\": \"GitHub Pages\",\n  \"productVersion\": \"1.0.0\",\n  \"owner\": {\n    \"team\": \"platform-engineering\",\n    \"contact\": \"platform-engineering@example.com\"\n  },\n  \"tags\": [\n    \"host\",\n    \"github-pages\",\n    \"static-hosting\",\n    \"uat\"\n  ],\n  \"provisioningModel\": \"deployable\",\n  \"deployablePackage\": {\n    \"registry\": \"github\",\n    \"source\": \"company-infrastructure/platform-iac-compute\",\n    \"version\": \"v1.0.0\",\n    \"modulePath\": \"modules/github-pages\"\n  },\n  \"notes\": {\n    \"security_monitoring\": \"HTTPS enforced on custom domain or github.io.\",\n    \"log_management\": \"Web analytics and build deployment logs in GitHub Actions.\"\n  },\n  \"_source\": \"catalog/shared-services/hosts/host-github-pages.yaml\"\n}",
       "existsInCatalog": true,
       "outboundRelationships": [],
       "inboundRelationships": []
@@ -24689,10 +24566,7 @@ window.DRAFT_BROWSER_DATA = {
       "vendorSLA": "",
       "authenticationModel": "",
       "incidentNotificationProcess": "",
-      "owner": {
-        "team": "example-architecture",
-        "contact": "architecture@example.com"
-      },
+      "owner": {},
       "definitionOwner": {
         "provider": "draft-framework",
         "team": "cloud-architecture",
@@ -24708,13 +24582,7 @@ window.DRAFT_BROWSER_DATA = {
       "internalComponents": [],
       "notes": {},
       "requirements": [],
-      "implementations": [
-        {
-          "ref": "01KQQ4Q025-9N4R",
-          "lifecycleStatus": "existing-only",
-          "notes": "Example workspace maps EC2 to the compute platform capability."
-        }
-      ],
+      "implementations": [],
       "appliesTo": {},
       "inherits": "",
       "scalingUnits": [],
@@ -24749,10 +24617,6 @@ window.DRAFT_BROWSER_DATA = {
         {
           "target": "01KQQ4Q027-ZTHF",
           "path": "domain"
-        },
-        {
-          "target": "01KQQ4Q025-9N4R",
-          "path": "implementations[0].ref"
         }
       ],
       "referencedBy": [
@@ -24763,14 +24627,6 @@ window.DRAFT_BROWSER_DATA = {
         {
           "source": "01KQQ4Q027-THYN",
           "path": "requirements[1].relatedCapability"
-        },
-        {
-          "source": "01KQQ4Q025-X682",
-          "path": "target"
-        },
-        {
-          "source": "01KQQ4Q025-T7B7",
-          "path": "capabilities[0]"
         }
       ],
       "editorSchema": {
@@ -24811,7 +24667,7 @@ window.DRAFT_BROWSER_DATA = {
         },
         "schemaPath": "framework/schemas/capability.schema.yaml"
       },
-      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01KQQ4Q026-1HZP\",\n  \"type\": \"capability\",\n  \"name\": \"Compute Platform\",\n  \"description\": \"Compute substrate or virtualized platform used to run Hosts.\",\n  \"version\": \"1.0.0\",\n  \"catalogStatus\": \"complete\",\n  \"definitionOwner\": {\n    \"provider\": \"draft-framework\",\n    \"team\": \"cloud-architecture\",\n    \"contact\": \"cloud-architecture@example.com\"\n  },\n  \"domain\": \"01KQQ4Q027-ZTHF\",\n  \"implementations\": [\n    {\n      \"ref\": \"01KQQ4Q025-9N4R\",\n      \"lifecycleStatus\": \"existing-only\",\n      \"notes\": \"Example workspace maps EC2 to the compute platform capability.\"\n    }\n  ],\n  \"_source\": \"framework/configurations/capabilities/capability-compute-platform.yaml\",\n  \"owner\": {\n    \"team\": \"example-architecture\",\n    \"contact\": \"architecture@example.com\"\n  }\n}",
+      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01KQQ4Q026-1HZP\",\n  \"type\": \"capability\",\n  \"name\": \"Compute Platform\",\n  \"description\": \"Compute substrate or virtualized platform used to run Hosts.\",\n  \"version\": \"1.0.0\",\n  \"catalogStatus\": \"complete\",\n  \"definitionOwner\": {\n    \"provider\": \"draft-framework\",\n    \"team\": \"cloud-architecture\",\n    \"contact\": \"cloud-architecture@example.com\"\n  },\n  \"domain\": \"01KQQ4Q027-ZTHF\",\n  \"implementations\": [],\n  \"_source\": \"framework/configurations/capabilities/capability-compute-platform.yaml\"\n}",
       "existsInCatalog": true,
       "outboundRelationships": [],
       "inboundRelationships": []
@@ -26359,10 +26215,6 @@ window.DRAFT_BROWSER_DATA = {
         {
           "source": "01KQQ4Q027-K5DR",
           "path": "requirements[5].relatedCapability"
-        },
-        {
-          "source": "01KSF29JTP-8YRX",
-          "path": "capabilities[0]"
         }
       ],
       "editorSchema": {
@@ -26446,10 +26298,7 @@ window.DRAFT_BROWSER_DATA = {
       "vendorSLA": "",
       "authenticationModel": "",
       "incidentNotificationProcess": "",
-      "owner": {
-        "team": "example-architecture",
-        "contact": "architecture@example.com"
-      },
+      "owner": {},
       "definitionOwner": {
         "provider": "draft-framework",
         "team": "cloud-architecture",
@@ -26465,14 +26314,7 @@ window.DRAFT_BROWSER_DATA = {
       "internalComponents": [],
       "notes": {},
       "requirements": [],
-      "implementations": [
-        {
-          "ref": "01KQQ4Q025-3HXA",
-          "configuration": "centralized-log-forwarding",
-          "lifecycleStatus": "existing-only",
-          "notes": "Example OS configuration for centralized log forwarding."
-        }
-      ],
+      "implementations": [],
       "appliesTo": {},
       "inherits": "",
       "scalingUnits": [],
@@ -26507,10 +26349,6 @@ window.DRAFT_BROWSER_DATA = {
         {
           "target": "01KQQ4Q027-C213",
           "path": "domain"
-        },
-        {
-          "target": "01KQQ4Q025-3HXA",
-          "path": "implementations[0].ref"
         }
       ],
       "referencedBy": [
@@ -26533,14 +26371,6 @@ window.DRAFT_BROWSER_DATA = {
         {
           "source": "01KQQ4Q027-THYN",
           "path": "requirements[3].relatedCapability"
-        },
-        {
-          "source": "01KQQ4Q025-5VTH",
-          "path": "target"
-        },
-        {
-          "source": "01KQQ4Q025-3HXA",
-          "path": "configurations[0].capabilities[0]"
         }
       ],
       "editorSchema": {
@@ -26581,7 +26411,7 @@ window.DRAFT_BROWSER_DATA = {
         },
         "schemaPath": "framework/schemas/capability.schema.yaml"
       },
-      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01KQQ4Q026-D04B\",\n  \"type\": \"capability\",\n  \"name\": \"Log Management\",\n  \"description\": \"Aggregation, retention, searchability, and forwarding of system or application logs.\",\n  \"version\": \"1.0.0\",\n  \"catalogStatus\": \"complete\",\n  \"definitionOwner\": {\n    \"provider\": \"draft-framework\",\n    \"team\": \"cloud-architecture\",\n    \"contact\": \"cloud-architecture@example.com\"\n  },\n  \"domain\": \"01KQQ4Q027-C213\",\n  \"implementations\": [\n    {\n      \"ref\": \"01KQQ4Q025-3HXA\",\n      \"configuration\": \"centralized-log-forwarding\",\n      \"lifecycleStatus\": \"existing-only\",\n      \"notes\": \"Example OS configuration for centralized log forwarding.\"\n    }\n  ],\n  \"_source\": \"framework/configurations/capabilities/capability-log-management.yaml\",\n  \"owner\": {\n    \"team\": \"example-architecture\",\n    \"contact\": \"architecture@example.com\"\n  }\n}",
+      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01KQQ4Q026-D04B\",\n  \"type\": \"capability\",\n  \"name\": \"Log Management\",\n  \"description\": \"Aggregation, retention, searchability, and forwarding of system or application logs.\",\n  \"version\": \"1.0.0\",\n  \"catalogStatus\": \"complete\",\n  \"definitionOwner\": {\n    \"provider\": \"draft-framework\",\n    \"team\": \"cloud-architecture\",\n    \"contact\": \"cloud-architecture@example.com\"\n  },\n  \"domain\": \"01KQQ4Q027-C213\",\n  \"implementations\": [],\n  \"_source\": \"framework/configurations/capabilities/capability-log-management.yaml\"\n}",
       "existsInCatalog": true,
       "outboundRelationships": [],
       "inboundRelationships": []
@@ -27309,10 +27139,7 @@ window.DRAFT_BROWSER_DATA = {
       "vendorSLA": "",
       "authenticationModel": "",
       "incidentNotificationProcess": "",
-      "owner": {
-        "team": "example-architecture",
-        "contact": "architecture@example.com"
-      },
+      "owner": {},
       "definitionOwner": {
         "provider": "draft-framework",
         "team": "cloud-architecture",
@@ -27328,13 +27155,7 @@ window.DRAFT_BROWSER_DATA = {
       "internalComponents": [],
       "notes": {},
       "requirements": [],
-      "implementations": [
-        {
-          "ref": "01KQQ4Q025-3HXA",
-          "lifecycleStatus": "existing-only",
-          "notes": "Example operating system implementation."
-        }
-      ],
+      "implementations": [],
       "appliesTo": {},
       "inherits": "",
       "scalingUnits": [],
@@ -27369,20 +27190,12 @@ window.DRAFT_BROWSER_DATA = {
         {
           "target": "01KQQ4Q027-ZTHF",
           "path": "domain"
-        },
-        {
-          "target": "01KQQ4Q025-3HXA",
-          "path": "implementations[0].ref"
         }
       ],
       "referencedBy": [
         {
           "source": "01KQQ4Q027-THYN",
           "path": "requirements[0].relatedCapability"
-        },
-        {
-          "source": "01KQQ4Q026-4AYD",
-          "path": "target"
         }
       ],
       "editorSchema": {
@@ -27423,7 +27236,7 @@ window.DRAFT_BROWSER_DATA = {
         },
         "schemaPath": "framework/schemas/capability.schema.yaml"
       },
-      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01KQQ4Q026-QM2X\",\n  \"type\": \"capability\",\n  \"name\": \"Operating System\",\n  \"description\": \"Supported operating system product used to define managed Hosts.\",\n  \"version\": \"1.0.0\",\n  \"catalogStatus\": \"complete\",\n  \"definitionOwner\": {\n    \"provider\": \"draft-framework\",\n    \"team\": \"cloud-architecture\",\n    \"contact\": \"cloud-architecture@example.com\"\n  },\n  \"domain\": \"01KQQ4Q027-ZTHF\",\n  \"implementations\": [\n    {\n      \"ref\": \"01KQQ4Q025-3HXA\",\n      \"lifecycleStatus\": \"existing-only\",\n      \"notes\": \"Example operating system implementation.\"\n    }\n  ],\n  \"_source\": \"framework/configurations/capabilities/capability-operating-system.yaml\",\n  \"owner\": {\n    \"team\": \"example-architecture\",\n    \"contact\": \"architecture@example.com\"\n  }\n}",
+      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01KQQ4Q026-QM2X\",\n  \"type\": \"capability\",\n  \"name\": \"Operating System\",\n  \"description\": \"Supported operating system product used to define managed Hosts.\",\n  \"version\": \"1.0.0\",\n  \"catalogStatus\": \"complete\",\n  \"definitionOwner\": {\n    \"provider\": \"draft-framework\",\n    \"team\": \"cloud-architecture\",\n    \"contact\": \"cloud-architecture@example.com\"\n  },\n  \"domain\": \"01KQQ4Q027-ZTHF\",\n  \"implementations\": [],\n  \"_source\": \"framework/configurations/capabilities/capability-operating-system.yaml\"\n}",
       "existsInCatalog": true,
       "outboundRelationships": [],
       "inboundRelationships": []
@@ -28202,10 +28015,7 @@ window.DRAFT_BROWSER_DATA = {
       "vendorSLA": "",
       "authenticationModel": "",
       "incidentNotificationProcess": "",
-      "owner": {
-        "team": "example-architecture",
-        "contact": "architecture@example.com"
-      },
+      "owner": {},
       "definitionOwner": {
         "provider": "draft-framework",
         "team": "cloud-architecture",
@@ -28221,13 +28031,7 @@ window.DRAFT_BROWSER_DATA = {
       "internalComponents": [],
       "notes": {},
       "requirements": [],
-      "implementations": [
-        {
-          "ref": "01KQQ4Q025-MQ3F",
-          "lifecycleStatus": "existing-only",
-          "notes": "Example endpoint security monitoring agent."
-        }
-      ],
+      "implementations": [],
       "appliesTo": {},
       "inherits": "",
       "scalingUnits": [],
@@ -28262,10 +28066,6 @@ window.DRAFT_BROWSER_DATA = {
         {
           "target": "01KSWVZSZ5-GY67",
           "path": "domain"
-        },
-        {
-          "target": "01KQQ4Q025-MQ3F",
-          "path": "implementations[0].ref"
         }
       ],
       "referencedBy": [
@@ -28288,14 +28088,6 @@ window.DRAFT_BROWSER_DATA = {
         {
           "source": "01KQQ4Q027-THYN",
           "path": "requirements[5].relatedCapability"
-        },
-        {
-          "source": "01KQQ4Q026-BQ87",
-          "path": "target"
-        },
-        {
-          "source": "01KQQ4Q025-MQ3F",
-          "path": "capabilities[0]"
         }
       ],
       "editorSchema": {
@@ -28336,7 +28128,7 @@ window.DRAFT_BROWSER_DATA = {
         },
         "schemaPath": "framework/schemas/capability.schema.yaml"
       },
-      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01KQQ4Q026-JW52\",\n  \"type\": \"capability\",\n  \"name\": \"Security Monitoring\",\n  \"description\": \"Threat detection, intrusion detection, security event monitoring, and audit telemetry.\",\n  \"version\": \"1.0.0\",\n  \"catalogStatus\": \"complete\",\n  \"definitionOwner\": {\n    \"provider\": \"draft-framework\",\n    \"team\": \"cloud-architecture\",\n    \"contact\": \"cloud-architecture@example.com\"\n  },\n  \"domain\": \"01KSWVZSZ5-GY67\",\n  \"implementations\": [\n    {\n      \"ref\": \"01KQQ4Q025-MQ3F\",\n      \"lifecycleStatus\": \"existing-only\",\n      \"notes\": \"Example endpoint security monitoring agent.\"\n    }\n  ],\n  \"_source\": \"framework/configurations/capabilities/capability-security-monitoring.yaml\",\n  \"owner\": {\n    \"team\": \"example-architecture\",\n    \"contact\": \"architecture@example.com\"\n  }\n}",
+      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01KQQ4Q026-JW52\",\n  \"type\": \"capability\",\n  \"name\": \"Security Monitoring\",\n  \"description\": \"Threat detection, intrusion detection, security event monitoring, and audit telemetry.\",\n  \"version\": \"1.0.0\",\n  \"catalogStatus\": \"complete\",\n  \"definitionOwner\": {\n    \"provider\": \"draft-framework\",\n    \"team\": \"cloud-architecture\",\n    \"contact\": \"cloud-architecture@example.com\"\n  },\n  \"domain\": \"01KSWVZSZ5-GY67\",\n  \"implementations\": [],\n  \"_source\": \"framework/configurations/capabilities/capability-security-monitoring.yaml\"\n}",
       "existsInCatalog": true,
       "outboundRelationships": [],
       "inboundRelationships": []
@@ -28992,12 +28784,7 @@ window.DRAFT_BROWSER_DATA = {
           "path": "domain"
         }
       ],
-      "referencedBy": [
-        {
-          "source": "01KSF29JTP-8YRX",
-          "path": "capabilities[1]"
-        }
-      ],
+      "referencedBy": [],
       "editorSchema": {
         "requiredFields": [
           "schemaVersion",
@@ -42340,582 +42127,525 @@ window.DRAFT_BROWSER_DATA = {
       "outboundRelationships": [],
       "inboundRelationships": []
     },
-    "01KQQ4Q025-X682": {
-      "id": "01KQQ4Q025-X682",
-      "uid": "01KQQ4Q025-X682",
-      "name": "Example capability.compute-platform implementations",
+    "01M15NEKT7-4PZN": {
+      "id": "01M15NEKT7-4PZN",
+      "uid": "01M15NEKT7-4PZN",
+      "name": "Enterprise AI Product Security & Acceptable Use Standards",
       "aliases": [],
-      "type": "object_patch",
-      "typeLabel": "Object Patch",
-      "filterType": "object_patch",
+      "type": "requirement_group",
+      "typeLabel": "RequirementGroup",
+      "filterType": "requirement_group",
       "category": "",
       "deliveryModel": "",
       "domain": "",
-      "description": "Example workspace-owned capability implementation mapping.",
+      "description": "Mandatory compliance, governance, and secret management standards for all AI products built by Archie, Switch, or engineering teams.",
       "version": "1.0.0",
-      "catalogStatus": "incomplete",
-      "lifecycleStatus": "existing-only",
-      "status": "",
-      "businessContext": {},
-      "product": "",
-      "runsOn": "",
-      "subtype": "",
-      "vendor": "",
-      "productName": "",
-      "productVersion": "",
-      "classification": "",
-      "platformDependency": "",
-      "capabilities": [],
-      "configurations": [],
-      "networkPlacement": "",
-      "patchingOwner": "",
-      "complianceCerts": [],
-      "requirementGroups": [],
-      "requirementImplementations": [],
-      "dataLeavesInfrastructure": null,
-      "dataResidencyCommitment": "",
-      "dpaNotes": "",
-      "vendorSLA": "",
-      "authenticationModel": "",
-      "incidentNotificationProcess": "",
-      "owner": {},
-      "definitionOwner": {},
-      "provider": {},
-      "authority": {},
-      "shape": "round-rectangle",
-      "color": "#2a6fdb",
-      "source": "examples/configurations/object-patches/patch-compute-platform-implementations.yaml",
-      "tags": [],
-      "ardCategory": "",
-      "internalComponents": [],
-      "notes": {},
-      "requirements": [],
-      "implementations": [],
-      "appliesTo": {},
-      "inherits": "",
-      "scalingUnits": [],
-      "networkZones": [],
-      "sdpConnections": [],
-      "serviceGroups": [],
-      "tierVariants": [],
-      "tierId": "",
-      "purpose": "",
-      "availabilityExpectation": "",
-      "costPosture": "",
-      "complianceScope": [],
-      "parameterSurface": [],
-      "followsReferenceArchitecture": "",
-      "decisionRecords": [],
-      "affectedComponent": "",
-      "impact": "",
-      "mitigationPath": "",
-      "decisionRationale": "",
-      "relatedDecisionRecords": [],
-      "linkedObject": "",
-      "primaryObjectType": "",
-      "primaryObjectUid": "",
-      "generatedObjects": [],
-      "unresolvedQuestions": [],
-      "assumptions": [],
-      "nextSteps": [],
-      "defaultSelection": false,
-      "requirementCount": 0,
-      "hasRiskRef": false,
-      "outboundRefs": [
-        {
-          "target": "01KQQ4Q026-1HZP",
-          "path": "target"
-        },
-        {
-          "target": "01KQQ4Q025-9N4R",
-          "path": "patch.implementations[0].ref"
-        }
-      ],
-      "referencedBy": [],
-      "editorSchema": {
-        "requiredFields": [
-          "schemaVersion",
-          "uid",
-          "type",
-          "name",
-          "target",
-          "patch",
-          "catalogStatus",
-          "lifecycleStatus"
-        ],
-        "optionalFields": [
-          "aliases",
-          "description",
-          "version",
-          "owner",
-          "tags",
-          "notes"
-        ],
-        "fieldTypes": {
-          "aliases": "list",
-          "owner": "dict",
-          "tags": "list",
-          "patch": "dict"
-        },
-        "enumFields": {
-          "catalogStatus": [
-            "stub",
-            "incomplete",
-            "complete"
-          ],
-          "lifecycleStatus": [
-            "candidate",
-            "preferred",
-            "existing-only",
-            "deprecated",
-            "retired"
-          ]
-        },
-        "enumListFields": {},
-        "collectionSchemas": {},
-        "schemaPath": "framework/schemas/object-patch.schema.yaml"
-      },
-      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01KQQ4Q025-X682\",\n  \"type\": \"object_patch\",\n  \"name\": \"Example capability.compute-platform implementations\",\n  \"description\": \"Example workspace-owned capability implementation mapping.\",\n  \"version\": \"1.0.0\",\n  \"catalogStatus\": \"incomplete\",\n  \"lifecycleStatus\": \"existing-only\",\n  \"target\": \"01KQQ4Q026-1HZP\",\n  \"patch\": {\n    \"owner\": {\n      \"team\": \"example-architecture\",\n      \"contact\": \"architecture@example.com\"\n    },\n    \"implementations\": [\n      {\n        \"ref\": \"01KQQ4Q025-9N4R\",\n        \"lifecycleStatus\": \"existing-only\",\n        \"notes\": \"Example workspace maps EC2 to the compute platform capability.\"\n      }\n    ]\n  },\n  \"_source\": \"examples/configurations/object-patches/patch-compute-platform-implementations.yaml\"\n}",
-      "existsInCatalog": true,
-      "outboundRelationships": [],
-      "inboundRelationships": []
-    },
-    "01KQQ4Q025-5VTH": {
-      "id": "01KQQ4Q025-5VTH",
-      "uid": "01KQQ4Q025-5VTH",
-      "name": "Example capability.log-management implementations",
-      "aliases": [],
-      "type": "object_patch",
-      "typeLabel": "Object Patch",
-      "filterType": "object_patch",
-      "category": "",
-      "deliveryModel": "",
-      "domain": "",
-      "description": "Example workspace-owned capability implementation mapping.",
-      "version": "1.0.0",
-      "catalogStatus": "incomplete",
-      "lifecycleStatus": "existing-only",
-      "status": "",
-      "businessContext": {},
-      "product": "",
-      "runsOn": "",
-      "subtype": "",
-      "vendor": "",
-      "productName": "",
-      "productVersion": "",
-      "classification": "",
-      "platformDependency": "",
-      "capabilities": [],
-      "configurations": [],
-      "networkPlacement": "",
-      "patchingOwner": "",
-      "complianceCerts": [],
-      "requirementGroups": [],
-      "requirementImplementations": [],
-      "dataLeavesInfrastructure": null,
-      "dataResidencyCommitment": "",
-      "dpaNotes": "",
-      "vendorSLA": "",
-      "authenticationModel": "",
-      "incidentNotificationProcess": "",
-      "owner": {},
-      "definitionOwner": {},
-      "provider": {},
-      "authority": {},
-      "shape": "round-rectangle",
-      "color": "#2a6fdb",
-      "source": "examples/configurations/object-patches/patch-log-management-implementations.yaml",
-      "tags": [],
-      "ardCategory": "",
-      "internalComponents": [],
-      "notes": {},
-      "requirements": [],
-      "implementations": [],
-      "appliesTo": {},
-      "inherits": "",
-      "scalingUnits": [],
-      "networkZones": [],
-      "sdpConnections": [],
-      "serviceGroups": [],
-      "tierVariants": [],
-      "tierId": "",
-      "purpose": "",
-      "availabilityExpectation": "",
-      "costPosture": "",
-      "complianceScope": [],
-      "parameterSurface": [],
-      "followsReferenceArchitecture": "",
-      "decisionRecords": [],
-      "affectedComponent": "",
-      "impact": "",
-      "mitigationPath": "",
-      "decisionRationale": "",
-      "relatedDecisionRecords": [],
-      "linkedObject": "",
-      "primaryObjectType": "",
-      "primaryObjectUid": "",
-      "generatedObjects": [],
-      "unresolvedQuestions": [],
-      "assumptions": [],
-      "nextSteps": [],
-      "defaultSelection": false,
-      "requirementCount": 0,
-      "hasRiskRef": false,
-      "outboundRefs": [
-        {
-          "target": "01KQQ4Q026-D04B",
-          "path": "target"
-        },
-        {
-          "target": "01KQQ4Q025-3HXA",
-          "path": "patch.implementations[0].ref"
-        }
-      ],
-      "referencedBy": [],
-      "editorSchema": {
-        "requiredFields": [
-          "schemaVersion",
-          "uid",
-          "type",
-          "name",
-          "target",
-          "patch",
-          "catalogStatus",
-          "lifecycleStatus"
-        ],
-        "optionalFields": [
-          "aliases",
-          "description",
-          "version",
-          "owner",
-          "tags",
-          "notes"
-        ],
-        "fieldTypes": {
-          "aliases": "list",
-          "owner": "dict",
-          "tags": "list",
-          "patch": "dict"
-        },
-        "enumFields": {
-          "catalogStatus": [
-            "stub",
-            "incomplete",
-            "complete"
-          ],
-          "lifecycleStatus": [
-            "candidate",
-            "preferred",
-            "existing-only",
-            "deprecated",
-            "retired"
-          ]
-        },
-        "enumListFields": {},
-        "collectionSchemas": {},
-        "schemaPath": "framework/schemas/object-patch.schema.yaml"
-      },
-      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01KQQ4Q025-5VTH\",\n  \"type\": \"object_patch\",\n  \"name\": \"Example capability.log-management implementations\",\n  \"description\": \"Example workspace-owned capability implementation mapping.\",\n  \"version\": \"1.0.0\",\n  \"catalogStatus\": \"incomplete\",\n  \"lifecycleStatus\": \"existing-only\",\n  \"target\": \"01KQQ4Q026-D04B\",\n  \"patch\": {\n    \"owner\": {\n      \"team\": \"example-architecture\",\n      \"contact\": \"architecture@example.com\"\n    },\n    \"implementations\": [\n      {\n        \"ref\": \"01KQQ4Q025-3HXA\",\n        \"configuration\": \"centralized-log-forwarding\",\n        \"lifecycleStatus\": \"existing-only\",\n        \"notes\": \"Example OS configuration for centralized log forwarding.\"\n      }\n    ]\n  },\n  \"_source\": \"examples/configurations/object-patches/patch-log-management-implementations.yaml\"\n}",
-      "existsInCatalog": true,
-      "outboundRelationships": [],
-      "inboundRelationships": []
-    },
-    "01KQQ4Q026-4AYD": {
-      "id": "01KQQ4Q026-4AYD",
-      "uid": "01KQQ4Q026-4AYD",
-      "name": "Example capability.operating-system implementations",
-      "aliases": [],
-      "type": "object_patch",
-      "typeLabel": "Object Patch",
-      "filterType": "object_patch",
-      "category": "",
-      "deliveryModel": "",
-      "domain": "",
-      "description": "Example workspace-owned capability implementation mapping.",
-      "version": "1.0.0",
-      "catalogStatus": "incomplete",
-      "lifecycleStatus": "existing-only",
-      "status": "",
-      "businessContext": {},
-      "product": "",
-      "runsOn": "",
-      "subtype": "",
-      "vendor": "",
-      "productName": "",
-      "productVersion": "",
-      "classification": "",
-      "platformDependency": "",
-      "capabilities": [],
-      "configurations": [],
-      "networkPlacement": "",
-      "patchingOwner": "",
-      "complianceCerts": [],
-      "requirementGroups": [],
-      "requirementImplementations": [],
-      "dataLeavesInfrastructure": null,
-      "dataResidencyCommitment": "",
-      "dpaNotes": "",
-      "vendorSLA": "",
-      "authenticationModel": "",
-      "incidentNotificationProcess": "",
-      "owner": {},
-      "definitionOwner": {},
-      "provider": {},
-      "authority": {},
-      "shape": "round-rectangle",
-      "color": "#2a6fdb",
-      "source": "examples/configurations/object-patches/patch-operating-system-implementations.yaml",
-      "tags": [],
-      "ardCategory": "",
-      "internalComponents": [],
-      "notes": {},
-      "requirements": [],
-      "implementations": [],
-      "appliesTo": {},
-      "inherits": "",
-      "scalingUnits": [],
-      "networkZones": [],
-      "sdpConnections": [],
-      "serviceGroups": [],
-      "tierVariants": [],
-      "tierId": "",
-      "purpose": "",
-      "availabilityExpectation": "",
-      "costPosture": "",
-      "complianceScope": [],
-      "parameterSurface": [],
-      "followsReferenceArchitecture": "",
-      "decisionRecords": [],
-      "affectedComponent": "",
-      "impact": "",
-      "mitigationPath": "",
-      "decisionRationale": "",
-      "relatedDecisionRecords": [],
-      "linkedObject": "",
-      "primaryObjectType": "",
-      "primaryObjectUid": "",
-      "generatedObjects": [],
-      "unresolvedQuestions": [],
-      "assumptions": [],
-      "nextSteps": [],
-      "defaultSelection": false,
-      "requirementCount": 0,
-      "hasRiskRef": false,
-      "outboundRefs": [
-        {
-          "target": "01KQQ4Q026-QM2X",
-          "path": "target"
-        },
-        {
-          "target": "01KQQ4Q025-3HXA",
-          "path": "patch.implementations[0].ref"
-        }
-      ],
-      "referencedBy": [],
-      "editorSchema": {
-        "requiredFields": [
-          "schemaVersion",
-          "uid",
-          "type",
-          "name",
-          "target",
-          "patch",
-          "catalogStatus",
-          "lifecycleStatus"
-        ],
-        "optionalFields": [
-          "aliases",
-          "description",
-          "version",
-          "owner",
-          "tags",
-          "notes"
-        ],
-        "fieldTypes": {
-          "aliases": "list",
-          "owner": "dict",
-          "tags": "list",
-          "patch": "dict"
-        },
-        "enumFields": {
-          "catalogStatus": [
-            "stub",
-            "incomplete",
-            "complete"
-          ],
-          "lifecycleStatus": [
-            "candidate",
-            "preferred",
-            "existing-only",
-            "deprecated",
-            "retired"
-          ]
-        },
-        "enumListFields": {},
-        "collectionSchemas": {},
-        "schemaPath": "framework/schemas/object-patch.schema.yaml"
-      },
-      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01KQQ4Q026-4AYD\",\n  \"type\": \"object_patch\",\n  \"name\": \"Example capability.operating-system implementations\",\n  \"description\": \"Example workspace-owned capability implementation mapping.\",\n  \"version\": \"1.0.0\",\n  \"catalogStatus\": \"incomplete\",\n  \"lifecycleStatus\": \"existing-only\",\n  \"target\": \"01KQQ4Q026-QM2X\",\n  \"patch\": {\n    \"owner\": {\n      \"team\": \"example-architecture\",\n      \"contact\": \"architecture@example.com\"\n    },\n    \"implementations\": [\n      {\n        \"ref\": \"01KQQ4Q025-3HXA\",\n        \"lifecycleStatus\": \"existing-only\",\n        \"notes\": \"Example operating system implementation.\"\n      }\n    ]\n  },\n  \"_source\": \"examples/configurations/object-patches/patch-operating-system-implementations.yaml\"\n}",
-      "existsInCatalog": true,
-      "outboundRelationships": [],
-      "inboundRelationships": []
-    },
-    "01KQQ4Q026-BQ87": {
-      "id": "01KQQ4Q026-BQ87",
-      "uid": "01KQQ4Q026-BQ87",
-      "name": "Example capability.security-monitoring implementations",
-      "aliases": [],
-      "type": "object_patch",
-      "typeLabel": "Object Patch",
-      "filterType": "object_patch",
-      "category": "",
-      "deliveryModel": "",
-      "domain": "",
-      "description": "Example workspace-owned capability implementation mapping.",
-      "version": "1.0.0",
-      "catalogStatus": "incomplete",
-      "lifecycleStatus": "existing-only",
-      "status": "",
-      "businessContext": {},
-      "product": "",
-      "runsOn": "",
-      "subtype": "",
-      "vendor": "",
-      "productName": "",
-      "productVersion": "",
-      "classification": "",
-      "platformDependency": "",
-      "capabilities": [],
-      "configurations": [],
-      "networkPlacement": "",
-      "patchingOwner": "",
-      "complianceCerts": [],
-      "requirementGroups": [],
-      "requirementImplementations": [],
-      "dataLeavesInfrastructure": null,
-      "dataResidencyCommitment": "",
-      "dpaNotes": "",
-      "vendorSLA": "",
-      "authenticationModel": "",
-      "incidentNotificationProcess": "",
-      "owner": {},
-      "definitionOwner": {},
-      "provider": {},
-      "authority": {},
-      "shape": "round-rectangle",
-      "color": "#2a6fdb",
-      "source": "examples/configurations/object-patches/patch-security-monitoring-implementations.yaml",
-      "tags": [],
-      "ardCategory": "",
-      "internalComponents": [],
-      "notes": {},
-      "requirements": [],
-      "implementations": [],
-      "appliesTo": {},
-      "inherits": "",
-      "scalingUnits": [],
-      "networkZones": [],
-      "sdpConnections": [],
-      "serviceGroups": [],
-      "tierVariants": [],
-      "tierId": "",
-      "purpose": "",
-      "availabilityExpectation": "",
-      "costPosture": "",
-      "complianceScope": [],
-      "parameterSurface": [],
-      "followsReferenceArchitecture": "",
-      "decisionRecords": [],
-      "affectedComponent": "",
-      "impact": "",
-      "mitigationPath": "",
-      "decisionRationale": "",
-      "relatedDecisionRecords": [],
-      "linkedObject": "",
-      "primaryObjectType": "",
-      "primaryObjectUid": "",
-      "generatedObjects": [],
-      "unresolvedQuestions": [],
-      "assumptions": [],
-      "nextSteps": [],
-      "defaultSelection": false,
-      "requirementCount": 0,
-      "hasRiskRef": false,
-      "outboundRefs": [
-        {
-          "target": "01KQQ4Q026-JW52",
-          "path": "target"
-        },
-        {
-          "target": "01KQQ4Q025-MQ3F",
-          "path": "patch.implementations[0].ref"
-        }
-      ],
-      "referencedBy": [],
-      "editorSchema": {
-        "requiredFields": [
-          "schemaVersion",
-          "uid",
-          "type",
-          "name",
-          "target",
-          "patch",
-          "catalogStatus",
-          "lifecycleStatus"
-        ],
-        "optionalFields": [
-          "aliases",
-          "description",
-          "version",
-          "owner",
-          "tags",
-          "notes"
-        ],
-        "fieldTypes": {
-          "aliases": "list",
-          "owner": "dict",
-          "tags": "list",
-          "patch": "dict"
-        },
-        "enumFields": {
-          "catalogStatus": [
-            "stub",
-            "incomplete",
-            "complete"
-          ],
-          "lifecycleStatus": [
-            "candidate",
-            "preferred",
-            "existing-only",
-            "deprecated",
-            "retired"
-          ]
-        },
-        "enumListFields": {},
-        "collectionSchemas": {},
-        "schemaPath": "framework/schemas/object-patch.schema.yaml"
-      },
-      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01KQQ4Q026-BQ87\",\n  \"type\": \"object_patch\",\n  \"name\": \"Example capability.security-monitoring implementations\",\n  \"description\": \"Example workspace-owned capability implementation mapping.\",\n  \"version\": \"1.0.0\",\n  \"catalogStatus\": \"incomplete\",\n  \"lifecycleStatus\": \"existing-only\",\n  \"target\": \"01KQQ4Q026-JW52\",\n  \"patch\": {\n    \"owner\": {\n      \"team\": \"example-architecture\",\n      \"contact\": \"architecture@example.com\"\n    },\n    \"implementations\": [\n      {\n        \"ref\": \"01KQQ4Q025-MQ3F\",\n        \"lifecycleStatus\": \"existing-only\",\n        \"notes\": \"Example endpoint security monitoring agent.\"\n      }\n    ]\n  },\n  \"_source\": \"examples/configurations/object-patches/patch-security-monitoring-implementations.yaml\"\n}",
-      "existsInCatalog": true,
-      "outboundRelationships": [],
-      "inboundRelationships": []
-    },
-    "01KSF29JTP-DRHA": {
-      "id": "01KSF29JTP-DRHA",
-      "uid": "01KSF29JTP-DRHA",
-      "name": "HAProxy Load Balancer Operational Architecture",
-      "aliases": [],
-      "type": "decision_record",
-      "typeLabel": "DecisionRecord / decision",
-      "filterType": "decision_record",
-      "category": "decision",
-      "deliveryModel": "",
-      "domain": "",
-      "description": "Documents the operational architecture decisions for the OpenStack API Load Balancer (HAProxy) \u2014 covering authentication delegation, secrets management, logging, health checking, availability, scalability, recoverability, and failure domain.",
-      "version": "",
       "catalogStatus": "complete",
       "lifecycleStatus": "preferred",
-      "status": "accepted",
+      "status": "",
+      "businessContext": {},
+      "product": "",
+      "runsOn": "",
+      "subtype": "",
+      "vendor": "",
+      "productName": "",
+      "productVersion": "",
+      "classification": "",
+      "platformDependency": "",
+      "capabilities": [],
+      "configurations": [],
+      "networkPlacement": "",
+      "patchingOwner": "",
+      "complianceCerts": [],
+      "requirementGroups": [],
+      "requirementImplementations": [],
+      "dataLeavesInfrastructure": null,
+      "dataResidencyCommitment": "",
+      "dpaNotes": "",
+      "vendorSLA": "",
+      "authenticationModel": "",
+      "incidentNotificationProcess": "",
+      "owner": {
+        "team": "platform-ai-team",
+        "contact": "platform-ai@example.com"
+      },
+      "definitionOwner": {},
+      "provider": {},
+      "authority": {
+        "name": "DRAFT Framework",
+        "shortName": "DRAFT",
+        "source": "DRAFT Framework"
+      },
+      "shape": "barrel",
+      "color": "#1f8a5b",
+      "source": "configurations/requirement-groups/requirement-group-ai-product-standards.yaml",
+      "tags": [],
+      "ardCategory": "",
+      "internalComponents": [],
+      "notes": {},
+      "requirements": [
+        {
+          "id": "req-ai-gateway-routing",
+          "description": "AI products MUST route model inference calls through an approved, deployable AiGateway. Direct unmonitored public API calls are forbidden.",
+          "canBeSatisfiedBy": [
+            {
+              "mechanism": "field",
+              "key": "aiGatewayRouting"
+            },
+            {
+              "mechanism": "decisionRecord",
+              "key": "aiGatewayRoutingDecision"
+            }
+          ],
+          "minimumSatisfactions": 1,
+          "requirementMode": "mandatory",
+          "naAllowed": false,
+          "validAnswerTypes": [
+            "field",
+            "decisionRecord"
+          ]
+        },
+        {
+          "id": "req-zero-hardcoded-keys",
+          "description": "API keys and bot tokens MUST be retrieved dynamically from Secret Manager at runtime.",
+          "canBeSatisfiedBy": [
+            {
+              "mechanism": "field",
+              "key": "secretsManagement"
+            },
+            {
+              "mechanism": "decisionRecord",
+              "key": "secretsManagementDecision"
+            }
+          ],
+          "minimumSatisfactions": 1,
+          "requirementMode": "mandatory",
+          "naAllowed": false,
+          "validAnswerTypes": [
+            "field",
+            "decisionRecord"
+          ]
+        },
+        {
+          "id": "req-local-auto-validation",
+          "description": "AI product repositories MUST execute local schema validation (validate.py) prior to committing .draft/sdp.yaml.",
+          "canBeSatisfiedBy": [
+            {
+              "mechanism": "field",
+              "key": "localValidation"
+            },
+            {
+              "mechanism": "decisionRecord",
+              "key": "localValidationDecision"
+            }
+          ],
+          "minimumSatisfactions": 1,
+          "requirementMode": "mandatory",
+          "naAllowed": false,
+          "validAnswerTypes": [
+            "field",
+            "decisionRecord"
+          ]
+        },
+        {
+          "id": "req-product-registration",
+          "description": "Every AI product repo MUST register its repository URL and SDP manifest path in drafting-table.",
+          "canBeSatisfiedBy": [
+            {
+              "mechanism": "field",
+              "key": "productRegistration"
+            },
+            {
+              "mechanism": "decisionRecord",
+              "key": "productRegistrationDecision"
+            }
+          ],
+          "minimumSatisfactions": 1,
+          "requirementMode": "mandatory",
+          "naAllowed": false,
+          "validAnswerTypes": [
+            "field",
+            "decisionRecord"
+          ]
+        },
+        {
+          "id": "req-model-inference-spec",
+          "description": "Model versions, temperature parameters, and token budget limits must be declared in runtimeSpec.",
+          "canBeSatisfiedBy": [
+            {
+              "mechanism": "field",
+              "key": "modelInferenceSpec"
+            },
+            {
+              "mechanism": "decisionRecord",
+              "key": "modelInferenceSpecDecision"
+            }
+          ],
+          "minimumSatisfactions": 1,
+          "requirementMode": "mandatory",
+          "naAllowed": false,
+          "validAnswerTypes": [
+            "field",
+            "decisionRecord"
+          ]
+        }
+      ],
+      "implementations": [],
+      "appliesTo": [
+        "product_component",
+        "software_deployment_pattern"
+      ],
+      "inherits": "",
+      "scalingUnits": [],
+      "networkZones": [],
+      "sdpConnections": [],
+      "serviceGroups": [],
+      "tierVariants": [],
+      "tierId": "",
+      "purpose": "",
+      "availabilityExpectation": "",
+      "costPosture": "",
+      "complianceScope": [],
+      "parameterSurface": [],
+      "followsReferenceArchitecture": "",
+      "decisionRecords": [],
+      "affectedComponent": "",
+      "impact": "",
+      "mitigationPath": "",
+      "decisionRationale": "",
+      "relatedDecisionRecords": [],
+      "linkedObject": "",
+      "primaryObjectType": "",
+      "primaryObjectUid": "",
+      "generatedObjects": [],
+      "unresolvedQuestions": [],
+      "assumptions": [],
+      "nextSteps": [],
+      "defaultSelection": false,
+      "requirementCount": 5,
+      "hasRiskRef": false,
+      "outboundRefs": [],
+      "referencedBy": [],
+      "editorSchema": {
+        "requiredFields": [
+          "schemaVersion",
+          "uid",
+          "type",
+          "name",
+          "description",
+          "catalogStatus",
+          "activation",
+          "appliesTo",
+          "requirements"
+        ],
+        "optionalFields": [
+          "aliases",
+          "version",
+          "tags",
+          "owner",
+          "lifecycleStatus",
+          "provider",
+          "authority",
+          "notes",
+          "inherits",
+          "appliesToQualifiers"
+        ],
+        "fieldTypes": {
+          "aliases": "list",
+          "owner": "dict",
+          "tags": "list",
+          "provider": "dict",
+          "authority": "dict",
+          "appliesTo": "list",
+          "requirements": "list",
+          "appliesToQualifiers": "dict"
+        },
+        "enumFields": {
+          "catalogStatus": [
+            "stub",
+            "incomplete",
+            "complete"
+          ],
+          "activation": [
+            "always",
+            "workspace"
+          ],
+          "lifecycleStatus": [
+            "candidate",
+            "preferred",
+            "existing-only",
+            "deprecated",
+            "retired"
+          ]
+        },
+        "enumListFields": {},
+        "collectionSchemas": {
+          "requirements": "requirement"
+        },
+        "schemaPath": "framework/schemas/requirement-group.schema.yaml"
+      },
+      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M15NEKT7-4PZN\",\n  \"type\": \"requirement_group\",\n  \"name\": \"Enterprise AI Product Security & Acceptable Use Standards\",\n  \"description\": \"Mandatory compliance, governance, and secret management standards for all AI products built by Archie, Switch, or engineering teams.\",\n  \"version\": \"1.0.0\",\n  \"catalogStatus\": \"complete\",\n  \"lifecycleStatus\": \"preferred\",\n  \"activation\": \"always\",\n  \"appliesTo\": [\n    \"product_component\",\n    \"software_deployment_pattern\"\n  ],\n  \"authority\": {\n    \"name\": \"DRAFT Framework\",\n    \"shortName\": \"DRAFT\",\n    \"source\": \"DRAFT Framework\"\n  },\n  \"owner\": {\n    \"team\": \"platform-ai-team\",\n    \"contact\": \"platform-ai@example.com\"\n  },\n  \"requirements\": [\n    {\n      \"id\": \"req-ai-gateway-routing\",\n      \"description\": \"AI products MUST route model inference calls through an approved, deployable AiGateway. Direct unmonitored public API calls are forbidden.\",\n      \"canBeSatisfiedBy\": [\n        {\n          \"mechanism\": \"field\",\n          \"key\": \"aiGatewayRouting\"\n        },\n        {\n          \"mechanism\": \"decisionRecord\",\n          \"key\": \"aiGatewayRoutingDecision\"\n        }\n      ],\n      \"minimumSatisfactions\": 1,\n      \"requirementMode\": \"mandatory\",\n      \"naAllowed\": false,\n      \"validAnswerTypes\": [\n        \"field\",\n        \"decisionRecord\"\n      ]\n    },\n    {\n      \"id\": \"req-zero-hardcoded-keys\",\n      \"description\": \"API keys and bot tokens MUST be retrieved dynamically from Secret Manager at runtime.\",\n      \"canBeSatisfiedBy\": [\n        {\n          \"mechanism\": \"field\",\n          \"key\": \"secretsManagement\"\n        },\n        {\n          \"mechanism\": \"decisionRecord\",\n          \"key\": \"secretsManagementDecision\"\n        }\n      ],\n      \"minimumSatisfactions\": 1,\n      \"requirementMode\": \"mandatory\",\n      \"naAllowed\": false,\n      \"validAnswerTypes\": [\n        \"field\",\n        \"decisionRecord\"\n      ]\n    },\n    {\n      \"id\": \"req-local-auto-validation\",\n      \"description\": \"AI product repositories MUST execute local schema validation (validate.py) prior to committing .draft/sdp.yaml.\",\n      \"canBeSatisfiedBy\": [\n        {\n          \"mechanism\": \"field\",\n          \"key\": \"localValidation\"\n        },\n        {\n          \"mechanism\": \"decisionRecord\",\n          \"key\": \"localValidationDecision\"\n        }\n      ],\n      \"minimumSatisfactions\": 1,\n      \"requirementMode\": \"mandatory\",\n      \"naAllowed\": false,\n      \"validAnswerTypes\": [\n        \"field\",\n        \"decisionRecord\"\n      ]\n    },\n    {\n      \"id\": \"req-product-registration\",\n      \"description\": \"Every AI product repo MUST register its repository URL and SDP manifest path in drafting-table.\",\n      \"canBeSatisfiedBy\": [\n        {\n          \"mechanism\": \"field\",\n          \"key\": \"productRegistration\"\n        },\n        {\n          \"mechanism\": \"decisionRecord\",\n          \"key\": \"productRegistrationDecision\"\n        }\n      ],\n      \"minimumSatisfactions\": 1,\n      \"requirementMode\": \"mandatory\",\n      \"naAllowed\": false,\n      \"validAnswerTypes\": [\n        \"field\",\n        \"decisionRecord\"\n      ]\n    },\n    {\n      \"id\": \"req-model-inference-spec\",\n      \"description\": \"Model versions, temperature parameters, and token budget limits must be declared in runtimeSpec.\",\n      \"canBeSatisfiedBy\": [\n        {\n          \"mechanism\": \"field\",\n          \"key\": \"modelInferenceSpec\"\n        },\n        {\n          \"mechanism\": \"decisionRecord\",\n          \"key\": \"modelInferenceSpecDecision\"\n        }\n      ],\n      \"minimumSatisfactions\": 1,\n      \"requirementMode\": \"mandatory\",\n      \"naAllowed\": false,\n      \"validAnswerTypes\": [\n        \"field\",\n        \"decisionRecord\"\n      ]\n    }\n  ],\n  \"_source\": \"configurations/requirement-groups/requirement-group-ai-product-standards.yaml\"\n}",
+      "existsInCatalog": true,
+      "outboundRelationships": [],
+      "inboundRelationships": []
+    },
+    "01M162FHHS-XAJQ": {
+      "id": "01M162FHHS-XAJQ",
+      "uid": "01M162FHHS-XAJQ",
+      "name": "Aiden Game Platform Architecture & UAT Standards",
+      "aliases": [],
+      "type": "requirement_group",
+      "typeLabel": "RequirementGroup",
+      "filterType": "requirement_group",
+      "category": "",
+      "deliveryModel": "",
+      "domain": "",
+      "description": "Governed architecture standards for Switch to build, scaffold, and deploy games for Aiden (tier classification, persistent storage, auth/user profiles, GitHub Pages / Cloud Run UAT delivery).",
+      "version": "1.0.0",
+      "catalogStatus": "complete",
+      "lifecycleStatus": "preferred",
+      "status": "",
+      "businessContext": {},
+      "product": "",
+      "runsOn": "",
+      "subtype": "",
+      "vendor": "",
+      "productName": "",
+      "productVersion": "",
+      "classification": "",
+      "platformDependency": "",
+      "capabilities": [],
+      "configurations": [],
+      "networkPlacement": "",
+      "patchingOwner": "",
+      "complianceCerts": [],
+      "requirementGroups": [],
+      "requirementImplementations": [],
+      "dataLeavesInfrastructure": null,
+      "dataResidencyCommitment": "",
+      "dpaNotes": "",
+      "vendorSLA": "",
+      "authenticationModel": "",
+      "incidentNotificationProcess": "",
+      "owner": {
+        "team": "switch-product-team",
+        "contact": "switch-team@example.com"
+      },
+      "definitionOwner": {},
+      "provider": {},
+      "authority": {
+        "name": "DRAFT Framework",
+        "shortName": "DRAFT",
+        "source": "DRAFT Framework"
+      },
+      "shape": "barrel",
+      "color": "#1f8a5b",
+      "source": "configurations/requirement-groups/requirement-group-aiden-game-standards.yaml",
+      "tags": [],
+      "ardCategory": "",
+      "internalComponents": [],
+      "notes": {},
+      "requirements": [
+        {
+          "id": "req-game-tier-classification",
+          "description": "Every game built by Switch MUST be classified into Tier 1 (Static Web Game), Tier 2 (Persistent Web Game with Auth/DB), or Tier 3 (Real-Time Multiplayer).",
+          "canBeSatisfiedBy": [
+            {
+              "mechanism": "field",
+              "key": "gameTierClassification"
+            },
+            {
+              "mechanism": "decisionRecord",
+              "key": "gameTierClassificationDecision"
+            }
+          ],
+          "minimumSatisfactions": 1,
+          "requirementMode": "mandatory",
+          "naAllowed": false,
+          "validAnswerTypes": [
+            "field",
+            "decisionRecord"
+          ]
+        },
+        {
+          "id": "req-game-uat-deployment",
+          "description": "Every game MUST include automated CI/CD deployment pipelines providing an accessible UAT link for Aiden to play and test (GitHub Pages for Tier 1, GitHub Pages + Cloud Run for Tier 2).",
+          "canBeSatisfiedBy": [
+            {
+              "mechanism": "field",
+              "key": "gameUatDeployment"
+            },
+            {
+              "mechanism": "decisionRecord",
+              "key": "gameUatDeploymentDecision"
+            }
+          ],
+          "minimumSatisfactions": 1,
+          "requirementMode": "mandatory",
+          "naAllowed": false,
+          "validAnswerTypes": [
+            "field",
+            "decisionRecord"
+          ]
+        },
+        {
+          "id": "req-game-auth-profile-persistence",
+          "description": "Tier 2+ persistent games MUST use standard authentication (JWT / Secret Manager / Auth Provider) and persistent storage (Cloud SQL Postgres / Firestore) for user profiles and saved state.",
+          "canBeSatisfiedBy": [
+            {
+              "mechanism": "field",
+              "key": "gameAuthPersistence"
+            },
+            {
+              "mechanism": "decisionRecord",
+              "key": "gameAuthPersistenceDecision"
+            }
+          ],
+          "minimumSatisfactions": 1,
+          "requirementMode": "mandatory",
+          "naAllowed": true,
+          "validAnswerTypes": [
+            "field",
+            "decisionRecord"
+          ]
+        },
+        {
+          "id": "req-game-repo-scaffolding",
+          "description": "Every game repository created by Switch MUST be bootstrapped with MATURITY.md, AGENTS.md, KPF.md, and .draft/sdp.yaml registered in drafting-table.",
+          "canBeSatisfiedBy": [
+            {
+              "mechanism": "field",
+              "key": "gameRepoScaffolding"
+            },
+            {
+              "mechanism": "decisionRecord",
+              "key": "gameRepoScaffoldingDecision"
+            }
+          ],
+          "minimumSatisfactions": 1,
+          "requirementMode": "mandatory",
+          "naAllowed": false,
+          "validAnswerTypes": [
+            "field",
+            "decisionRecord"
+          ]
+        }
+      ],
+      "implementations": [],
+      "appliesTo": [
+        "product_component",
+        "software_deployment_pattern"
+      ],
+      "inherits": "",
+      "scalingUnits": [],
+      "networkZones": [],
+      "sdpConnections": [],
+      "serviceGroups": [],
+      "tierVariants": [],
+      "tierId": "",
+      "purpose": "",
+      "availabilityExpectation": "",
+      "costPosture": "",
+      "complianceScope": [],
+      "parameterSurface": [],
+      "followsReferenceArchitecture": "",
+      "decisionRecords": [],
+      "affectedComponent": "",
+      "impact": "",
+      "mitigationPath": "",
+      "decisionRationale": "",
+      "relatedDecisionRecords": [],
+      "linkedObject": "",
+      "primaryObjectType": "",
+      "primaryObjectUid": "",
+      "generatedObjects": [],
+      "unresolvedQuestions": [],
+      "assumptions": [],
+      "nextSteps": [],
+      "defaultSelection": false,
+      "requirementCount": 4,
+      "hasRiskRef": false,
+      "outboundRefs": [],
+      "referencedBy": [],
+      "editorSchema": {
+        "requiredFields": [
+          "schemaVersion",
+          "uid",
+          "type",
+          "name",
+          "description",
+          "catalogStatus",
+          "activation",
+          "appliesTo",
+          "requirements"
+        ],
+        "optionalFields": [
+          "aliases",
+          "version",
+          "tags",
+          "owner",
+          "lifecycleStatus",
+          "provider",
+          "authority",
+          "notes",
+          "inherits",
+          "appliesToQualifiers"
+        ],
+        "fieldTypes": {
+          "aliases": "list",
+          "owner": "dict",
+          "tags": "list",
+          "provider": "dict",
+          "authority": "dict",
+          "appliesTo": "list",
+          "requirements": "list",
+          "appliesToQualifiers": "dict"
+        },
+        "enumFields": {
+          "catalogStatus": [
+            "stub",
+            "incomplete",
+            "complete"
+          ],
+          "activation": [
+            "always",
+            "workspace"
+          ],
+          "lifecycleStatus": [
+            "candidate",
+            "preferred",
+            "existing-only",
+            "deprecated",
+            "retired"
+          ]
+        },
+        "enumListFields": {},
+        "collectionSchemas": {
+          "requirements": "requirement"
+        },
+        "schemaPath": "framework/schemas/requirement-group.schema.yaml"
+      },
+      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M162FHHS-XAJQ\",\n  \"type\": \"requirement_group\",\n  \"name\": \"Aiden Game Platform Architecture & UAT Standards\",\n  \"description\": \"Governed architecture standards for Switch to build, scaffold, and deploy games for Aiden (tier classification, persistent storage, auth/user profiles, GitHub Pages / Cloud Run UAT delivery).\",\n  \"version\": \"1.0.0\",\n  \"catalogStatus\": \"complete\",\n  \"lifecycleStatus\": \"preferred\",\n  \"activation\": \"always\",\n  \"appliesTo\": [\n    \"product_component\",\n    \"software_deployment_pattern\"\n  ],\n  \"authority\": {\n    \"name\": \"DRAFT Framework\",\n    \"shortName\": \"DRAFT\",\n    \"source\": \"DRAFT Framework\"\n  },\n  \"owner\": {\n    \"team\": \"switch-product-team\",\n    \"contact\": \"switch-team@example.com\"\n  },\n  \"requirements\": [\n    {\n      \"id\": \"req-game-tier-classification\",\n      \"description\": \"Every game built by Switch MUST be classified into Tier 1 (Static Web Game), Tier 2 (Persistent Web Game with Auth/DB), or Tier 3 (Real-Time Multiplayer).\",\n      \"canBeSatisfiedBy\": [\n        {\n          \"mechanism\": \"field\",\n          \"key\": \"gameTierClassification\"\n        },\n        {\n          \"mechanism\": \"decisionRecord\",\n          \"key\": \"gameTierClassificationDecision\"\n        }\n      ],\n      \"minimumSatisfactions\": 1,\n      \"requirementMode\": \"mandatory\",\n      \"naAllowed\": false,\n      \"validAnswerTypes\": [\n        \"field\",\n        \"decisionRecord\"\n      ]\n    },\n    {\n      \"id\": \"req-game-uat-deployment\",\n      \"description\": \"Every game MUST include automated CI/CD deployment pipelines providing an accessible UAT link for Aiden to play and test (GitHub Pages for Tier 1, GitHub Pages + Cloud Run for Tier 2).\",\n      \"canBeSatisfiedBy\": [\n        {\n          \"mechanism\": \"field\",\n          \"key\": \"gameUatDeployment\"\n        },\n        {\n          \"mechanism\": \"decisionRecord\",\n          \"key\": \"gameUatDeploymentDecision\"\n        }\n      ],\n      \"minimumSatisfactions\": 1,\n      \"requirementMode\": \"mandatory\",\n      \"naAllowed\": false,\n      \"validAnswerTypes\": [\n        \"field\",\n        \"decisionRecord\"\n      ]\n    },\n    {\n      \"id\": \"req-game-auth-profile-persistence\",\n      \"description\": \"Tier 2+ persistent games MUST use standard authentication (JWT / Secret Manager / Auth Provider) and persistent storage (Cloud SQL Postgres / Firestore) for user profiles and saved state.\",\n      \"canBeSatisfiedBy\": [\n        {\n          \"mechanism\": \"field\",\n          \"key\": \"gameAuthPersistence\"\n        },\n        {\n          \"mechanism\": \"decisionRecord\",\n          \"key\": \"gameAuthPersistenceDecision\"\n        }\n      ],\n      \"minimumSatisfactions\": 1,\n      \"requirementMode\": \"mandatory\",\n      \"naAllowed\": true,\n      \"validAnswerTypes\": [\n        \"field\",\n        \"decisionRecord\"\n      ]\n    },\n    {\n      \"id\": \"req-game-repo-scaffolding\",\n      \"description\": \"Every game repository created by Switch MUST be bootstrapped with MATURITY.md, AGENTS.md, KPF.md, and .draft/sdp.yaml registered in drafting-table.\",\n      \"canBeSatisfiedBy\": [\n        {\n          \"mechanism\": \"field\",\n          \"key\": \"gameRepoScaffolding\"\n        },\n        {\n          \"mechanism\": \"decisionRecord\",\n          \"key\": \"gameRepoScaffoldingDecision\"\n        }\n      ],\n      \"minimumSatisfactions\": 1,\n      \"requirementMode\": \"mandatory\",\n      \"naAllowed\": false,\n      \"validAnswerTypes\": [\n        \"field\",\n        \"decisionRecord\"\n      ]\n    }\n  ],\n  \"_source\": \"configurations/requirement-groups/requirement-group-aiden-game-standards.yaml\"\n}",
+      "existsInCatalog": true,
+      "outboundRelationships": [],
+      "inboundRelationships": []
+    },
+    "01M15WPEFV-ZMA9": {
+      "id": "01M15WPEFV-ZMA9",
+      "uid": "01M15WPEFV-ZMA9",
+      "name": "Engineering Maturity & Quality Standards (L1-L3)",
+      "aliases": [],
+      "type": "requirement_group",
+      "typeLabel": "RequirementGroup",
+      "filterType": "requirement_group",
+      "category": "",
+      "deliveryModel": "",
+      "domain": "",
+      "description": "Comprehensive engineering maturity standards covering L1 Baseline through L3 Advanced (backward-compatible migrations, 100% composable IaC, zero gate suppressions, synthetic test data, automated zero-downtime rollback, JSON structured logging, SLO error budgets, and ephemeral preview environments).",
+      "version": "1.2.0",
+      "catalogStatus": "complete",
+      "lifecycleStatus": "preferred",
+      "status": "",
       "businessContext": {},
       "product": "",
       "runsOn": "",
@@ -42944,1042 +42674,256 @@ window.DRAFT_BROWSER_DATA = {
       },
       "definitionOwner": {},
       "provider": {},
-      "authority": {},
-      "shape": "round-rectangle",
+      "authority": {
+        "name": "DRAFT Framework",
+        "shortName": "DRAFT",
+        "source": "DRAFT Framework"
+      },
+      "shape": "barrel",
       "color": "#1f8a5b",
-      "source": "examples/catalog/governance/decision-records/dr-haproxy-lb-operational-architecture.yaml",
-      "tags": [
-        "decision-record",
-        "openstack",
-        "load-balancer",
-        "haproxy"
-      ],
-      "ardCategory": "decision",
-      "internalComponents": [],
-      "notes": {},
-      "requirements": [],
-      "implementations": [],
-      "appliesTo": {},
-      "inherits": "",
-      "scalingUnits": [],
-      "networkZones": [],
-      "sdpConnections": [],
-      "serviceGroups": [],
-      "tierVariants": [],
-      "tierId": "",
-      "purpose": "",
-      "availabilityExpectation": "",
-      "costPosture": "",
-      "complianceScope": [],
-      "parameterSurface": [],
-      "followsReferenceArchitecture": "",
-      "decisionRecords": [],
-      "affectedComponent": "",
-      "impact": "Pass-through authentication, Keepalived VIP failover, and Ansible-managed configuration are the operational accountability boundaries for this load balancer. Any future deployment that adds HAProxy-level authentication or secrets holding must revisit this decision.",
-      "mitigationPath": "",
-      "decisionRationale": "HAProxy operates in pass-through mode: it does not authenticate requests itself. Authentication is delegated to backend services (Keystone for API requests, nginx/Django for Horizon). This avoids duplicating token validation logic and keeps the load balancer stateless.\n\nSSL certificates and HAProxy configuration are managed by Ansible configuration management. Certificate private keys reside in the OS certificate store on each controller node. No application-level secrets are held by HAProxy, avoiding a secrets management dependency in the critical request path.\n\nHAProxy performs active health checks on all backends (nova-api, keystone, glance, neutron, cinder, horizon) on a 2-second interval, automatically removing unhealthy backends from rotation. A shared virtual IP (VIP) managed by Keepalived provides a single entry point with 2-second failover if the active master fails.\n\nHAProxy is stateless; horizontal scaling is achieved by adding controller nodes. The process is managed by systemd and restarts automatically on failure. Configuration is reapplied via Ansible within minutes. Loss of all controller nodes renders the control plane unavailable; the data plane (running instances) continues unaffected.",
-      "relatedDecisionRecords": [
-        "01KSE5V73Z-CRZV"
-      ],
-      "linkedObject": "01KSF29JTP-9HYA",
-      "primaryObjectType": "",
-      "primaryObjectUid": "",
-      "generatedObjects": [],
-      "unresolvedQuestions": [],
-      "assumptions": [],
-      "nextSteps": [],
-      "defaultSelection": false,
-      "requirementCount": 0,
-      "hasRiskRef": false,
-      "outboundRefs": [
-        {
-          "target": "01KSF29JTP-9HYA",
-          "path": "linkedObject"
-        }
-      ],
-      "referencedBy": [],
-      "editorSchema": {
-        "requiredFields": [
-          "schemaVersion",
-          "uid",
-          "type",
-          "name",
-          "category",
-          "status",
-          "catalogStatus",
-          "lifecycleStatus"
-        ],
-        "optionalFields": [
-          "aliases",
-          "description",
-          "version",
-          "owner",
-          "tags",
-          "affectedComponent",
-          "impact",
-          "mitigationPath",
-          "decisionRationale",
-          "relatedDecisionRecords",
-          "controlReferences",
-          "linkedObject",
-          "approver",
-          "approvalDate"
-        ],
-        "fieldTypes": {
-          "aliases": "list",
-          "owner": "dict",
-          "tags": "list",
-          "relatedDecisionRecords": "list",
-          "controlReferences": "list",
-          "approver": "str",
-          "approvalDate": "str"
-        },
-        "enumFields": {
-          "catalogStatus": [
-            "stub",
-            "incomplete",
-            "complete"
-          ],
-          "lifecycleStatus": [
-            "candidate",
-            "preferred",
-            "existing-only",
-            "deprecated",
-            "retired"
-          ],
-          "category": [
-            "risk",
-            "decision"
-          ],
-          "status": [
-            "open",
-            "accepted",
-            "mitigated",
-            "resolved"
-          ]
-        },
-        "enumListFields": {},
-        "collectionSchemas": {},
-        "schemaPath": "framework/schemas/decision-record.schema.yaml"
-      },
-      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01KSF29JTP-DRHA\",\n  \"type\": \"decision_record\",\n  \"name\": \"HAProxy Load Balancer Operational Architecture\",\n  \"category\": \"decision\",\n  \"status\": \"accepted\",\n  \"catalogStatus\": \"complete\",\n  \"lifecycleStatus\": \"preferred\",\n  \"owner\": {\n    \"team\": \"platform-engineering\",\n    \"contact\": \"platform-engineering@example.com\"\n  },\n  \"tags\": [\n    \"decision-record\",\n    \"openstack\",\n    \"load-balancer\",\n    \"haproxy\"\n  ],\n  \"linkedObject\": \"01KSF29JTP-9HYA\",\n  \"description\": \"Documents the operational architecture decisions for the OpenStack API Load Balancer (HAProxy) \\u2014 covering authentication delegation, secrets management, logging, health checking, availability, scalability, recoverability, and failure domain.\",\n  \"decisionRationale\": \"HAProxy operates in pass-through mode: it does not authenticate requests itself. Authentication is delegated to backend services (Keystone for API requests, nginx/Django for Horizon). This avoids duplicating token validation logic and keeps the load balancer stateless.\\n\\nSSL certificates and HAProxy configuration are managed by Ansible configuration management. Certificate private keys reside in the OS certificate store on each controller node. No application-level secrets are held by HAProxy, avoiding a secrets management dependency in the critical request path.\\n\\nHAProxy performs active health checks on all backends (nova-api, keystone, glance, neutron, cinder, horizon) on a 2-second interval, automatically removing unhealthy backends from rotation. A shared virtual IP (VIP) managed by Keepalived provides a single entry point with 2-second failover if the active master fails.\\n\\nHAProxy is stateless; horizontal scaling is achieved by adding controller nodes. The process is managed by systemd and restarts automatically on failure. Configuration is reapplied via Ansible within minutes. Loss of all controller nodes renders the control plane unavailable; the data plane (running instances) continues unaffected.\",\n  \"impact\": \"Pass-through authentication, Keepalived VIP failover, and Ansible-managed configuration are the operational accountability boundaries for this load balancer. Any future deployment that adds HAProxy-level authentication or secrets holding must revisit this decision.\",\n  \"relatedDecisionRecords\": [\n    \"01KSE5V73Z-CRZV\"\n  ],\n  \"_source\": \"examples/catalog/governance/decision-records/dr-haproxy-lb-operational-architecture.yaml\"\n}",
-      "existsInCatalog": true,
-      "outboundRelationships": [],
-      "inboundRelationships": []
-    },
-    "01KT1340H6-X3T5": {
-      "id": "01KT1340H6-X3T5",
-      "uid": "01KT1340H6-X3T5",
-      "name": "AWS Lambda Serverless Host \u2014 Security and Compliance decisions",
-      "aliases": [],
-      "type": "decision_record",
-      "typeLabel": "DecisionRecord / decision",
-      "filterType": "decision_record",
-      "category": "decision",
-      "deliveryModel": "",
-      "domain": "",
-      "description": "",
-      "version": "",
-      "catalogStatus": "complete",
-      "lifecycleStatus": "preferred",
-      "status": "accepted",
-      "businessContext": {},
-      "product": "",
-      "runsOn": "",
-      "subtype": "",
-      "vendor": "",
-      "productName": "",
-      "productVersion": "",
-      "classification": "",
-      "platformDependency": "",
-      "capabilities": [],
-      "configurations": [],
-      "networkPlacement": "",
-      "patchingOwner": "",
-      "complianceCerts": [],
-      "requirementGroups": [],
-      "requirementImplementations": [],
-      "dataLeavesInfrastructure": null,
-      "dataResidencyCommitment": "",
-      "dpaNotes": "",
-      "vendorSLA": "",
-      "authenticationModel": "",
-      "incidentNotificationProcess": "",
-      "owner": {
-        "team": "cloud-architecture",
-        "contact": "cloud-architecture@example.com"
-      },
-      "definitionOwner": {},
-      "provider": {},
-      "authority": {},
-      "shape": "round-rectangle",
-      "color": "#1f8a5b",
-      "source": "examples/catalog/governance/decision-records/dr-host-serverless-lambda-compliance.yaml",
-      "tags": [
-        "decision-record",
-        "example",
-        "compliance"
-      ],
-      "ardCategory": "decision",
-      "internalComponents": [],
-      "notes": {},
-      "requirements": [],
-      "implementations": [],
-      "appliesTo": {},
-      "inherits": "",
-      "scalingUnits": [],
-      "networkZones": [],
-      "sdpConnections": [],
-      "serviceGroups": [],
-      "tierVariants": [],
-      "tierId": "",
-      "purpose": "",
-      "availabilityExpectation": "",
-      "costPosture": "",
-      "complianceScope": [],
-      "parameterSurface": [],
-      "followsReferenceArchitecture": "",
-      "decisionRecords": [],
-      "affectedComponent": "",
-      "impact": "",
-      "mitigationPath": "",
-      "decisionRationale": "Records the security and compliance decisions for AWS Lambda Serverless Host addressing the authentication, health_welfare_monitoring, log_management, patch_management, security_monitoring control requirement(s); supporting detail is documented in this object's notes. This DecisionRecord is the committed answer that satisfies the requirement(s).",
-      "relatedDecisionRecords": [],
-      "linkedObject": "01KQQ4Q025-1XDE",
-      "primaryObjectType": "",
-      "primaryObjectUid": "",
-      "generatedObjects": [],
-      "unresolvedQuestions": [],
-      "assumptions": [],
-      "nextSteps": [],
-      "defaultSelection": false,
-      "requirementCount": 0,
-      "hasRiskRef": false,
-      "outboundRefs": [
-        {
-          "target": "01KQQ4Q025-1XDE",
-          "path": "linkedObject"
-        }
-      ],
-      "referencedBy": [
-        {
-          "source": "01KQQ4Q025-1XDE",
-          "path": "decisionRecords[0].ref"
-        },
-        {
-          "source": "01KQQ4Q025-1XDE",
-          "path": "decisionRecords[1].ref"
-        },
-        {
-          "source": "01KQQ4Q025-1XDE",
-          "path": "decisionRecords[2].ref"
-        },
-        {
-          "source": "01KQQ4Q025-1XDE",
-          "path": "decisionRecords[3].ref"
-        },
-        {
-          "source": "01KQQ4Q025-1XDE",
-          "path": "decisionRecords[4].ref"
-        }
-      ],
-      "editorSchema": {
-        "requiredFields": [
-          "schemaVersion",
-          "uid",
-          "type",
-          "name",
-          "category",
-          "status",
-          "catalogStatus",
-          "lifecycleStatus"
-        ],
-        "optionalFields": [
-          "aliases",
-          "description",
-          "version",
-          "owner",
-          "tags",
-          "affectedComponent",
-          "impact",
-          "mitigationPath",
-          "decisionRationale",
-          "relatedDecisionRecords",
-          "controlReferences",
-          "linkedObject",
-          "approver",
-          "approvalDate"
-        ],
-        "fieldTypes": {
-          "aliases": "list",
-          "owner": "dict",
-          "tags": "list",
-          "relatedDecisionRecords": "list",
-          "controlReferences": "list",
-          "approver": "str",
-          "approvalDate": "str"
-        },
-        "enumFields": {
-          "catalogStatus": [
-            "stub",
-            "incomplete",
-            "complete"
-          ],
-          "lifecycleStatus": [
-            "candidate",
-            "preferred",
-            "existing-only",
-            "deprecated",
-            "retired"
-          ],
-          "category": [
-            "risk",
-            "decision"
-          ],
-          "status": [
-            "open",
-            "accepted",
-            "mitigated",
-            "resolved"
-          ]
-        },
-        "enumListFields": {},
-        "collectionSchemas": {},
-        "schemaPath": "framework/schemas/decision-record.schema.yaml"
-      },
-      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01KT1340H6-X3T5\",\n  \"type\": \"decision_record\",\n  \"name\": \"AWS Lambda Serverless Host \\u2014 Security and Compliance decisions\",\n  \"category\": \"decision\",\n  \"status\": \"accepted\",\n  \"catalogStatus\": \"complete\",\n  \"lifecycleStatus\": \"preferred\",\n  \"owner\": {\n    \"team\": \"cloud-architecture\",\n    \"contact\": \"cloud-architecture@example.com\"\n  },\n  \"linkedObject\": \"01KQQ4Q025-1XDE\",\n  \"tags\": [\n    \"decision-record\",\n    \"example\",\n    \"compliance\"\n  ],\n  \"decisionRationale\": \"Records the security and compliance decisions for AWS Lambda Serverless Host addressing the authentication, health_welfare_monitoring, log_management, patch_management, security_monitoring control requirement(s); supporting detail is documented in this object's notes. This DecisionRecord is the committed answer that satisfies the requirement(s).\",\n  \"_source\": \"examples/catalog/governance/decision-records/dr-host-serverless-lambda-compliance.yaml\"\n}",
-      "existsInCatalog": true,
-      "outboundRelationships": [],
-      "inboundRelationships": []
-    },
-    "01KSE5V73Z-DRSC": {
-      "id": "01KSE5V73Z-DRSC",
-      "uid": "01KSE5V73Z-DRSC",
-      "name": "OpenStack Ops Console \u2014 Secrets Injection via Platform Secret Store",
-      "aliases": [],
-      "type": "decision_record",
-      "typeLabel": "DecisionRecord / decision",
-      "filterType": "decision_record",
-      "category": "decision",
-      "deliveryModel": "",
-      "domain": "",
-      "description": "Documents the decision to inject application secrets into the OpenStack Ops Console at deploy time via the platform secret store, with no secrets present in source code or container images.",
-      "version": "",
-      "catalogStatus": "complete",
-      "lifecycleStatus": "preferred",
-      "status": "accepted",
-      "businessContext": {},
-      "product": "",
-      "runsOn": "",
-      "subtype": "",
-      "vendor": "",
-      "productName": "",
-      "productVersion": "",
-      "classification": "",
-      "platformDependency": "",
-      "capabilities": [],
-      "configurations": [],
-      "networkPlacement": "",
-      "patchingOwner": "",
-      "complianceCerts": [],
-      "requirementGroups": [],
-      "requirementImplementations": [],
-      "dataLeavesInfrastructure": null,
-      "dataResidencyCommitment": "",
-      "dpaNotes": "",
-      "vendorSLA": "",
-      "authenticationModel": "",
-      "incidentNotificationProcess": "",
-      "owner": {
-        "team": "platform-engineering",
-        "contact": "platform-engineering@example.com"
-      },
-      "definitionOwner": {},
-      "provider": {},
-      "authority": {},
-      "shape": "round-rectangle",
-      "color": "#1f8a5b",
-      "source": "examples/catalog/governance/decision-records/dr-ops-console-secrets-injection.yaml",
-      "tags": [
-        "decision-record",
-        "openstack",
-        "secrets",
-        "product-component"
-      ],
-      "ardCategory": "decision",
-      "internalComponents": [],
-      "notes": {},
-      "requirements": [],
-      "implementations": [],
-      "appliesTo": {},
-      "inherits": "",
-      "scalingUnits": [],
-      "networkZones": [],
-      "sdpConnections": [],
-      "serviceGroups": [],
-      "tierVariants": [],
-      "tierId": "",
-      "purpose": "",
-      "availabilityExpectation": "",
-      "costPosture": "",
-      "complianceScope": [],
-      "parameterSurface": [],
-      "followsReferenceArchitecture": "",
-      "decisionRecords": [],
-      "affectedComponent": "",
-      "impact": "All sensitive environment variables for the Ops Console must be provisioned in the platform secret store before each deployment. The deploy pipeline must have permission to read those secrets. Rotation requires a re-deployment or hot-reload depending on the secret type.",
-      "mitigationPath": "",
-      "decisionRationale": "The Ops Console requires two sensitive runtime values \u2014 OPS_CONSOLE_SECRET_KEY (session signing key) and SAML IDP credentials. Embedding these in source code or images creates a disclosure risk and complicates rotation. Injecting them at deploy time from the platform secret store keeps the image clean, centralises rotation, and aligns with the CC.SecurityCompliance.04.3.1 secrets management control. The secret store is the single point of truth for all sensitive runtime configuration across the OpenStack platform.",
-      "relatedDecisionRecords": [],
-      "linkedObject": "01KSE5V73Z-Q0A0",
-      "primaryObjectType": "",
-      "primaryObjectUid": "",
-      "generatedObjects": [],
-      "unresolvedQuestions": [],
-      "assumptions": [],
-      "nextSteps": [],
-      "defaultSelection": false,
-      "requirementCount": 0,
-      "hasRiskRef": false,
-      "outboundRefs": [
-        {
-          "target": "01KSE5V73Z-Q0A0",
-          "path": "linkedObject"
-        }
-      ],
-      "referencedBy": [],
-      "editorSchema": {
-        "requiredFields": [
-          "schemaVersion",
-          "uid",
-          "type",
-          "name",
-          "category",
-          "status",
-          "catalogStatus",
-          "lifecycleStatus"
-        ],
-        "optionalFields": [
-          "aliases",
-          "description",
-          "version",
-          "owner",
-          "tags",
-          "affectedComponent",
-          "impact",
-          "mitigationPath",
-          "decisionRationale",
-          "relatedDecisionRecords",
-          "controlReferences",
-          "linkedObject",
-          "approver",
-          "approvalDate"
-        ],
-        "fieldTypes": {
-          "aliases": "list",
-          "owner": "dict",
-          "tags": "list",
-          "relatedDecisionRecords": "list",
-          "controlReferences": "list",
-          "approver": "str",
-          "approvalDate": "str"
-        },
-        "enumFields": {
-          "catalogStatus": [
-            "stub",
-            "incomplete",
-            "complete"
-          ],
-          "lifecycleStatus": [
-            "candidate",
-            "preferred",
-            "existing-only",
-            "deprecated",
-            "retired"
-          ],
-          "category": [
-            "risk",
-            "decision"
-          ],
-          "status": [
-            "open",
-            "accepted",
-            "mitigated",
-            "resolved"
-          ]
-        },
-        "enumListFields": {},
-        "collectionSchemas": {},
-        "schemaPath": "framework/schemas/decision-record.schema.yaml"
-      },
-      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01KSE5V73Z-DRSC\",\n  \"type\": \"decision_record\",\n  \"name\": \"OpenStack Ops Console \\u2014 Secrets Injection via Platform Secret Store\",\n  \"category\": \"decision\",\n  \"status\": \"accepted\",\n  \"catalogStatus\": \"complete\",\n  \"lifecycleStatus\": \"preferred\",\n  \"owner\": {\n    \"team\": \"platform-engineering\",\n    \"contact\": \"platform-engineering@example.com\"\n  },\n  \"tags\": [\n    \"decision-record\",\n    \"openstack\",\n    \"secrets\",\n    \"product-component\"\n  ],\n  \"linkedObject\": \"01KSE5V73Z-Q0A0\",\n  \"description\": \"Documents the decision to inject application secrets into the OpenStack Ops Console at deploy time via the platform secret store, with no secrets present in source code or container images.\",\n  \"decisionRationale\": \"The Ops Console requires two sensitive runtime values \\u2014 OPS_CONSOLE_SECRET_KEY (session signing key) and SAML IDP credentials. Embedding these in source code or images creates a disclosure risk and complicates rotation. Injecting them at deploy time from the platform secret store keeps the image clean, centralises rotation, and aligns with the CC.SecurityCompliance.04.3.1 secrets management control. The secret store is the single point of truth for all sensitive runtime configuration across the OpenStack platform.\",\n  \"impact\": \"All sensitive environment variables for the Ops Console must be provisioned in the platform secret store before each deployment. The deploy pipeline must have permission to read those secrets. Rotation requires a re-deployment or hot-reload depending on the secret type.\",\n  \"relatedDecisionRecords\": [],\n  \"_source\": \"examples/catalog/governance/decision-records/dr-ops-console-secrets-injection.yaml\"\n}",
-      "existsInCatalog": true,
-      "outboundRelationships": [],
-      "inboundRelationships": []
-    },
-    "01KT1340HF-1HG3": {
-      "id": "01KT1340HF-1HG3",
-      "uid": "01KT1340HF-1HG3",
-      "name": "AWS Lambda Runtime \u2014 Security and Compliance decisions",
-      "aliases": [],
-      "type": "decision_record",
-      "typeLabel": "DecisionRecord / decision",
-      "filterType": "decision_record",
-      "category": "decision",
-      "deliveryModel": "",
-      "domain": "",
-      "description": "",
-      "version": "",
-      "catalogStatus": "complete",
-      "lifecycleStatus": "preferred",
-      "status": "accepted",
-      "businessContext": {},
-      "product": "",
-      "runsOn": "",
-      "subtype": "",
-      "vendor": "",
-      "productName": "",
-      "productVersion": "",
-      "classification": "",
-      "platformDependency": "",
-      "capabilities": [],
-      "configurations": [],
-      "networkPlacement": "",
-      "patchingOwner": "",
-      "complianceCerts": [],
-      "requirementGroups": [],
-      "requirementImplementations": [],
-      "dataLeavesInfrastructure": null,
-      "dataResidencyCommitment": "",
-      "dpaNotes": "",
-      "vendorSLA": "",
-      "authenticationModel": "",
-      "incidentNotificationProcess": "",
-      "owner": {
-        "team": "cloud-architecture",
-        "contact": "cloud-architecture@example.com"
-      },
-      "definitionOwner": {},
-      "provider": {},
-      "authority": {},
-      "shape": "round-rectangle",
-      "color": "#1f8a5b",
-      "source": "examples/catalog/governance/decision-records/dr-runtime-service-aws-lambda-runtime-compliance.yaml",
-      "tags": [
-        "decision-record",
-        "example",
-        "compliance"
-      ],
-      "ardCategory": "decision",
-      "internalComponents": [],
-      "notes": {},
-      "requirements": [],
-      "implementations": [],
-      "appliesTo": {},
-      "inherits": "",
-      "scalingUnits": [],
-      "networkZones": [],
-      "sdpConnections": [],
-      "serviceGroups": [],
-      "tierVariants": [],
-      "tierId": "",
-      "purpose": "",
-      "availabilityExpectation": "",
-      "costPosture": "",
-      "complianceScope": [],
-      "parameterSurface": [],
-      "followsReferenceArchitecture": "",
-      "decisionRecords": [],
-      "affectedComponent": "",
-      "impact": "",
-      "mitigationPath": "",
-      "decisionRationale": "Records the security and compliance decisions for AWS Lambda Runtime addressing the secrets_management control requirement(s); supporting detail is documented in this object's notes. This DecisionRecord is the committed answer that satisfies the requirement(s).",
-      "relatedDecisionRecords": [],
-      "linkedObject": "01KQQ4Q025-T7B7",
-      "primaryObjectType": "",
-      "primaryObjectUid": "",
-      "generatedObjects": [],
-      "unresolvedQuestions": [],
-      "assumptions": [],
-      "nextSteps": [],
-      "defaultSelection": false,
-      "requirementCount": 0,
-      "hasRiskRef": false,
-      "outboundRefs": [
-        {
-          "target": "01KQQ4Q025-T7B7",
-          "path": "linkedObject"
-        }
-      ],
-      "referencedBy": [
-        {
-          "source": "01KQQ4Q025-T7B7",
-          "path": "decisionRecords[3].ref"
-        }
-      ],
-      "editorSchema": {
-        "requiredFields": [
-          "schemaVersion",
-          "uid",
-          "type",
-          "name",
-          "category",
-          "status",
-          "catalogStatus",
-          "lifecycleStatus"
-        ],
-        "optionalFields": [
-          "aliases",
-          "description",
-          "version",
-          "owner",
-          "tags",
-          "affectedComponent",
-          "impact",
-          "mitigationPath",
-          "decisionRationale",
-          "relatedDecisionRecords",
-          "controlReferences",
-          "linkedObject",
-          "approver",
-          "approvalDate"
-        ],
-        "fieldTypes": {
-          "aliases": "list",
-          "owner": "dict",
-          "tags": "list",
-          "relatedDecisionRecords": "list",
-          "controlReferences": "list",
-          "approver": "str",
-          "approvalDate": "str"
-        },
-        "enumFields": {
-          "catalogStatus": [
-            "stub",
-            "incomplete",
-            "complete"
-          ],
-          "lifecycleStatus": [
-            "candidate",
-            "preferred",
-            "existing-only",
-            "deprecated",
-            "retired"
-          ],
-          "category": [
-            "risk",
-            "decision"
-          ],
-          "status": [
-            "open",
-            "accepted",
-            "mitigated",
-            "resolved"
-          ]
-        },
-        "enumListFields": {},
-        "collectionSchemas": {},
-        "schemaPath": "framework/schemas/decision-record.schema.yaml"
-      },
-      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01KT1340HF-1HG3\",\n  \"type\": \"decision_record\",\n  \"name\": \"AWS Lambda Runtime \\u2014 Security and Compliance decisions\",\n  \"category\": \"decision\",\n  \"status\": \"accepted\",\n  \"catalogStatus\": \"complete\",\n  \"lifecycleStatus\": \"preferred\",\n  \"owner\": {\n    \"team\": \"cloud-architecture\",\n    \"contact\": \"cloud-architecture@example.com\"\n  },\n  \"linkedObject\": \"01KQQ4Q025-T7B7\",\n  \"tags\": [\n    \"decision-record\",\n    \"example\",\n    \"compliance\"\n  ],\n  \"decisionRationale\": \"Records the security and compliance decisions for AWS Lambda Runtime addressing the secrets_management control requirement(s); supporting detail is documented in this object's notes. This DecisionRecord is the committed answer that satisfies the requirement(s).\",\n  \"_source\": \"examples/catalog/governance/decision-records/dr-runtime-service-aws-lambda-runtime-compliance.yaml\"\n}",
-      "existsInCatalog": true,
-      "outboundRelationships": [],
-      "inboundRelationships": []
-    },
-    "01KT11AQX1-55F1": {
-      "id": "01KT11AQX1-55F1",
-      "uid": "01KT11AQX1-55F1",
-      "name": "AWS Lambda Runtime \u2014 Deployment Topology and Qualities",
-      "aliases": [],
-      "type": "decision_record",
-      "typeLabel": "DecisionRecord / decision",
-      "filterType": "decision_record",
-      "category": "decision",
-      "deliveryModel": "",
-      "domain": "",
-      "description": "",
-      "version": "",
-      "catalogStatus": "complete",
-      "lifecycleStatus": "preferred",
-      "status": "accepted",
-      "businessContext": {},
-      "product": "",
-      "runsOn": "",
-      "subtype": "",
-      "vendor": "",
-      "productName": "",
-      "productVersion": "",
-      "classification": "",
-      "platformDependency": "",
-      "capabilities": [],
-      "configurations": [],
-      "networkPlacement": "",
-      "patchingOwner": "",
-      "complianceCerts": [],
-      "requirementGroups": [],
-      "requirementImplementations": [],
-      "dataLeavesInfrastructure": null,
-      "dataResidencyCommitment": "",
-      "dpaNotes": "",
-      "vendorSLA": "",
-      "authenticationModel": "",
-      "incidentNotificationProcess": "",
-      "owner": {
-        "team": "cloud-architecture",
-        "contact": "cloud-architecture@example.com"
-      },
-      "definitionOwner": {},
-      "provider": {},
-      "authority": {},
-      "shape": "round-rectangle",
-      "color": "#1f8a5b",
-      "source": "examples/catalog/governance/decision-records/dr-runtime-service-aws-lambda-runtime-deployment.yaml",
-      "tags": [
-        "decision-record",
-        "example",
-        "deployment"
-      ],
-      "ardCategory": "decision",
-      "internalComponents": [],
-      "notes": {},
-      "requirements": [],
-      "implementations": [],
-      "appliesTo": {},
-      "inherits": "",
-      "scalingUnits": [],
-      "networkZones": [],
-      "sdpConnections": [],
-      "serviceGroups": [],
-      "tierVariants": [],
-      "tierId": "",
-      "purpose": "",
-      "availabilityExpectation": "",
-      "costPosture": "",
-      "complianceScope": [],
-      "parameterSurface": [],
-      "followsReferenceArchitecture": "",
-      "decisionRecords": [],
-      "affectedComponent": "",
-      "impact": "",
-      "mitigationPath": "",
-      "decisionRationale": "Records the deployment topology and qualities decisions for AWS Lambda Runtime. These decisions address the configurableSurface requirement(s); supporting detail is documented in this object's notes. This DecisionRecord is the committed answer that satisfies the requirement(s).",
-      "relatedDecisionRecords": [],
-      "linkedObject": "01KQQ4Q025-T7B7",
-      "primaryObjectType": "",
-      "primaryObjectUid": "",
-      "generatedObjects": [],
-      "unresolvedQuestions": [],
-      "assumptions": [],
-      "nextSteps": [],
-      "defaultSelection": false,
-      "requirementCount": 0,
-      "hasRiskRef": false,
-      "outboundRefs": [
-        {
-          "target": "01KQQ4Q025-T7B7",
-          "path": "linkedObject"
-        }
-      ],
-      "referencedBy": [
-        {
-          "source": "01KQQ4Q025-T7B7",
-          "path": "decisionRecords[0].ref"
-        }
-      ],
-      "editorSchema": {
-        "requiredFields": [
-          "schemaVersion",
-          "uid",
-          "type",
-          "name",
-          "category",
-          "status",
-          "catalogStatus",
-          "lifecycleStatus"
-        ],
-        "optionalFields": [
-          "aliases",
-          "description",
-          "version",
-          "owner",
-          "tags",
-          "affectedComponent",
-          "impact",
-          "mitigationPath",
-          "decisionRationale",
-          "relatedDecisionRecords",
-          "controlReferences",
-          "linkedObject",
-          "approver",
-          "approvalDate"
-        ],
-        "fieldTypes": {
-          "aliases": "list",
-          "owner": "dict",
-          "tags": "list",
-          "relatedDecisionRecords": "list",
-          "controlReferences": "list",
-          "approver": "str",
-          "approvalDate": "str"
-        },
-        "enumFields": {
-          "catalogStatus": [
-            "stub",
-            "incomplete",
-            "complete"
-          ],
-          "lifecycleStatus": [
-            "candidate",
-            "preferred",
-            "existing-only",
-            "deprecated",
-            "retired"
-          ],
-          "category": [
-            "risk",
-            "decision"
-          ],
-          "status": [
-            "open",
-            "accepted",
-            "mitigated",
-            "resolved"
-          ]
-        },
-        "enumListFields": {},
-        "collectionSchemas": {},
-        "schemaPath": "framework/schemas/decision-record.schema.yaml"
-      },
-      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01KT11AQX1-55F1\",\n  \"type\": \"decision_record\",\n  \"name\": \"AWS Lambda Runtime \\u2014 Deployment Topology and Qualities\",\n  \"category\": \"decision\",\n  \"status\": \"accepted\",\n  \"catalogStatus\": \"complete\",\n  \"lifecycleStatus\": \"preferred\",\n  \"owner\": {\n    \"team\": \"cloud-architecture\",\n    \"contact\": \"cloud-architecture@example.com\"\n  },\n  \"linkedObject\": \"01KQQ4Q025-T7B7\",\n  \"tags\": [\n    \"decision-record\",\n    \"example\",\n    \"deployment\"\n  ],\n  \"decisionRationale\": \"Records the deployment topology and qualities decisions for AWS Lambda Runtime. These decisions address the configurableSurface requirement(s); supporting detail is documented in this object's notes. This DecisionRecord is the committed answer that satisfies the requirement(s).\",\n  \"_source\": \"examples/catalog/governance/decision-records/dr-runtime-service-aws-lambda-runtime-deployment.yaml\"\n}",
-      "existsInCatalog": true,
-      "outboundRelationships": [],
-      "inboundRelationships": []
-    },
-    "01KT11AQX2-STQ4": {
-      "id": "01KT11AQX2-STQ4",
-      "uid": "01KT11AQX2-STQ4",
-      "name": "AWS Lambda Runtime \u2014 Resilience and Availability",
-      "aliases": [],
-      "type": "decision_record",
-      "typeLabel": "DecisionRecord / decision",
-      "filterType": "decision_record",
-      "category": "decision",
-      "deliveryModel": "",
-      "domain": "",
-      "description": "",
-      "version": "",
-      "catalogStatus": "complete",
-      "lifecycleStatus": "preferred",
-      "status": "accepted",
-      "businessContext": {},
-      "product": "",
-      "runsOn": "",
-      "subtype": "",
-      "vendor": "",
-      "productName": "",
-      "productVersion": "",
-      "classification": "",
-      "platformDependency": "",
-      "capabilities": [],
-      "configurations": [],
-      "networkPlacement": "",
-      "patchingOwner": "",
-      "complianceCerts": [],
-      "requirementGroups": [],
-      "requirementImplementations": [],
-      "dataLeavesInfrastructure": null,
-      "dataResidencyCommitment": "",
-      "dpaNotes": "",
-      "vendorSLA": "",
-      "authenticationModel": "",
-      "incidentNotificationProcess": "",
-      "owner": {
-        "team": "cloud-architecture",
-        "contact": "cloud-architecture@example.com"
-      },
-      "definitionOwner": {},
-      "provider": {},
-      "authority": {},
-      "shape": "round-rectangle",
-      "color": "#1f8a5b",
-      "source": "examples/catalog/governance/decision-records/dr-runtime-service-aws-lambda-runtime-resilience.yaml",
-      "tags": [
-        "decision-record",
-        "example",
-        "resilience"
-      ],
-      "ardCategory": "decision",
-      "internalComponents": [],
-      "notes": {},
-      "requirements": [],
-      "implementations": [],
-      "appliesTo": {},
-      "inherits": "",
-      "scalingUnits": [],
-      "networkZones": [],
-      "sdpConnections": [],
-      "serviceGroups": [],
-      "tierVariants": [],
-      "tierId": "",
-      "purpose": "",
-      "availabilityExpectation": "",
-      "costPosture": "",
-      "complianceScope": [],
-      "parameterSurface": [],
-      "followsReferenceArchitecture": "",
-      "decisionRecords": [],
-      "affectedComponent": "",
-      "impact": "",
-      "mitigationPath": "",
-      "decisionRationale": "Records the resilience and availability decisions for AWS Lambda Runtime. These decisions address the failureDomain, resilienceModel requirement(s); supporting detail is documented in this object's notes. This DecisionRecord is the committed answer that satisfies the requirement(s).",
-      "relatedDecisionRecords": [],
-      "linkedObject": "01KQQ4Q025-T7B7",
-      "primaryObjectType": "",
-      "primaryObjectUid": "",
-      "generatedObjects": [],
-      "unresolvedQuestions": [],
-      "assumptions": [],
-      "nextSteps": [],
-      "defaultSelection": false,
-      "requirementCount": 0,
-      "hasRiskRef": false,
-      "outboundRefs": [
-        {
-          "target": "01KQQ4Q025-T7B7",
-          "path": "linkedObject"
-        }
-      ],
-      "referencedBy": [
-        {
-          "source": "01KQQ4Q025-T7B7",
-          "path": "decisionRecords[1].ref"
-        },
-        {
-          "source": "01KQQ4Q025-T7B7",
-          "path": "decisionRecords[2].ref"
-        }
-      ],
-      "editorSchema": {
-        "requiredFields": [
-          "schemaVersion",
-          "uid",
-          "type",
-          "name",
-          "category",
-          "status",
-          "catalogStatus",
-          "lifecycleStatus"
-        ],
-        "optionalFields": [
-          "aliases",
-          "description",
-          "version",
-          "owner",
-          "tags",
-          "affectedComponent",
-          "impact",
-          "mitigationPath",
-          "decisionRationale",
-          "relatedDecisionRecords",
-          "controlReferences",
-          "linkedObject",
-          "approver",
-          "approvalDate"
-        ],
-        "fieldTypes": {
-          "aliases": "list",
-          "owner": "dict",
-          "tags": "list",
-          "relatedDecisionRecords": "list",
-          "controlReferences": "list",
-          "approver": "str",
-          "approvalDate": "str"
-        },
-        "enumFields": {
-          "catalogStatus": [
-            "stub",
-            "incomplete",
-            "complete"
-          ],
-          "lifecycleStatus": [
-            "candidate",
-            "preferred",
-            "existing-only",
-            "deprecated",
-            "retired"
-          ],
-          "category": [
-            "risk",
-            "decision"
-          ],
-          "status": [
-            "open",
-            "accepted",
-            "mitigated",
-            "resolved"
-          ]
-        },
-        "enumListFields": {},
-        "collectionSchemas": {},
-        "schemaPath": "framework/schemas/decision-record.schema.yaml"
-      },
-      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01KT11AQX2-STQ4\",\n  \"type\": \"decision_record\",\n  \"name\": \"AWS Lambda Runtime \\u2014 Resilience and Availability\",\n  \"category\": \"decision\",\n  \"status\": \"accepted\",\n  \"catalogStatus\": \"complete\",\n  \"lifecycleStatus\": \"preferred\",\n  \"owner\": {\n    \"team\": \"cloud-architecture\",\n    \"contact\": \"cloud-architecture@example.com\"\n  },\n  \"linkedObject\": \"01KQQ4Q025-T7B7\",\n  \"tags\": [\n    \"decision-record\",\n    \"example\",\n    \"resilience\"\n  ],\n  \"decisionRationale\": \"Records the resilience and availability decisions for AWS Lambda Runtime. These decisions address the failureDomain, resilienceModel requirement(s); supporting detail is documented in this object's notes. This DecisionRecord is the committed answer that satisfies the requirement(s).\",\n  \"_source\": \"examples/catalog/governance/decision-records/dr-runtime-service-aws-lambda-runtime-resilience.yaml\"\n}",
-      "existsInCatalog": true,
-      "outboundRelationships": [],
-      "inboundRelationships": []
-    },
-    "01KSKWFZZX-NE4F": {
-      "id": "01KSKWFZZX-NE4F",
-      "uid": "01KSKWFZZX-NE4F",
-      "name": "AWS Lambda Runtime \u2192 Amazon CloudWatch Metrics",
-      "aliases": [],
-      "type": "relationship",
-      "typeLabel": "Relationship",
-      "filterType": "relationship",
-      "category": "",
-      "deliveryModel": "",
-      "domain": "",
-      "description": "",
-      "version": "",
-      "catalogStatus": "stub",
-      "lifecycleStatus": "unknown",
-      "status": "",
-      "businessContext": {},
-      "product": "",
-      "runsOn": "",
-      "subtype": "",
-      "vendor": "",
-      "productName": "",
-      "productVersion": "",
-      "classification": "",
-      "platformDependency": "",
-      "capabilities": [],
-      "configurations": [],
-      "networkPlacement": "",
-      "patchingOwner": "",
-      "complianceCerts": [],
-      "requirementGroups": [],
-      "requirementImplementations": [],
-      "dataLeavesInfrastructure": null,
-      "dataResidencyCommitment": "",
-      "dpaNotes": "",
-      "vendorSLA": "",
-      "authenticationModel": "",
-      "incidentNotificationProcess": "",
-      "owner": {},
-      "definitionOwner": {},
-      "provider": {},
-      "authority": {},
-      "shape": "round-rectangle",
-      "color": "#7a6e60",
-      "source": "examples/catalog/governance/relationships/relationship-aws-lambda-runtime-calls-amazon-cloudwatch-metrics.yaml",
+      "source": "configurations/requirement-groups/requirement-group-engineering-maturity.yaml",
       "tags": [],
       "ardCategory": "",
       "internalComponents": [],
-      "notes": "Runtime health and operational telemetry are observed through CloudWatch metrics and alarms.",
-      "requirements": [],
+      "notes": {},
+      "requirements": [
+        {
+          "id": "req-expand-contract-migrations",
+          "description": "Database schema changes MUST be backward-compatible and decoupled from application code deploys using expand-and-contract patterns.",
+          "canBeSatisfiedBy": [
+            {
+              "mechanism": "field",
+              "key": "databaseMigrationStrategy"
+            },
+            {
+              "mechanism": "decisionRecord",
+              "key": "databaseMigrationStrategyDecision"
+            }
+          ],
+          "minimumSatisfactions": 1,
+          "requirementMode": "mandatory",
+          "naAllowed": true,
+          "validAnswerTypes": [
+            "field",
+            "decisionRecord"
+          ]
+        },
+        {
+          "id": "req-zero-manual-infrastructure",
+          "description": "All infrastructure changes MUST be expressed as version-controlled IaC modules (OpenTofu/Terraform). Undocumented manual steps are prohibited.",
+          "canBeSatisfiedBy": [
+            {
+              "mechanism": "field",
+              "key": "iacAutomation"
+            },
+            {
+              "mechanism": "decisionRecord",
+              "key": "iacAutomationDecision"
+            }
+          ],
+          "minimumSatisfactions": 1,
+          "requirementMode": "mandatory",
+          "naAllowed": false,
+          "validAnswerTypes": [
+            "field",
+            "decisionRecord"
+          ]
+        },
+        {
+          "id": "req-no-gate-suppressions",
+          "description": "CI/CD pipelines MUST NOT introduce suppressions, allowlist entries, or continue-on-error overrides to bypass security or lint gates.",
+          "canBeSatisfiedBy": [
+            {
+              "mechanism": "field",
+              "key": "gateEnforcement"
+            },
+            {
+              "mechanism": "decisionRecord",
+              "key": "gateEnforcementDecision"
+            }
+          ],
+          "minimumSatisfactions": 1,
+          "requirementMode": "mandatory",
+          "naAllowed": false,
+          "validAnswerTypes": [
+            "field",
+            "decisionRecord"
+          ]
+        },
+        {
+          "id": "req-synthetic-test-data",
+          "description": "Real production data or credentials MUST NOT be placed into test fixtures, seeds, or lower environments. Synthetic data is required.",
+          "canBeSatisfiedBy": [
+            {
+              "mechanism": "field",
+              "key": "testDataGovernance"
+            },
+            {
+              "mechanism": "decisionRecord",
+              "key": "testDataGovernanceDecision"
+            }
+          ],
+          "minimumSatisfactions": 1,
+          "requirementMode": "mandatory",
+          "naAllowed": false,
+          "validAnswerTypes": [
+            "field",
+            "decisionRecord"
+          ]
+        },
+        {
+          "id": "req-rollback-mechanism",
+          "description": "Application deployments MUST declare an automated rollback path and zero-downtime deployment strategy.",
+          "canBeSatisfiedBy": [
+            {
+              "mechanism": "field",
+              "key": "rollbackStrategy"
+            },
+            {
+              "mechanism": "decisionRecord",
+              "key": "rollbackStrategyDecision"
+            }
+          ],
+          "minimumSatisfactions": 1,
+          "requirementMode": "mandatory",
+          "naAllowed": false,
+          "validAnswerTypes": [
+            "field",
+            "decisionRecord"
+          ]
+        },
+        {
+          "id": "req-l3-composable-iac",
+          "description": "(L3 Advanced) 100% of compute host, database, cache, gateway, and security infrastructure MUST be provisionable as composable IaC modules.",
+          "canBeSatisfiedBy": [
+            {
+              "mechanism": "field",
+              "key": "composableIac"
+            },
+            {
+              "mechanism": "decisionRecord",
+              "key": "composableIacDecision"
+            }
+          ],
+          "minimumSatisfactions": 1,
+          "requirementMode": "mandatory",
+          "naAllowed": false,
+          "validAnswerTypes": [
+            "field",
+            "decisionRecord"
+          ]
+        },
+        {
+          "id": "req-l3-ephemeral-preview-environments",
+          "description": "(L3 Advanced) Infrastructure IaC MUST support provisioning on-demand, isolated ephemeral preview environments for feature branches with automated teardown.",
+          "canBeSatisfiedBy": [
+            {
+              "mechanism": "field",
+              "key": "previewEnvironments"
+            },
+            {
+              "mechanism": "decisionRecord",
+              "key": "previewEnvironmentsDecision"
+            }
+          ],
+          "minimumSatisfactions": 1,
+          "requirementMode": "mandatory",
+          "naAllowed": true,
+          "validAnswerTypes": [
+            "field",
+            "decisionRecord"
+          ]
+        },
+        {
+          "id": "req-l3-json-structured-logging",
+          "description": "(L3 Advanced) All application and service logs streamed to central log aggregators MUST use structured JSON formatting with distributed trace/span correlation IDs.",
+          "canBeSatisfiedBy": [
+            {
+              "mechanism": "field",
+              "key": "structuredLogging"
+            },
+            {
+              "mechanism": "decisionRecord",
+              "key": "structuredLoggingDecision"
+            }
+          ],
+          "minimumSatisfactions": 1,
+          "requirementMode": "mandatory",
+          "naAllowed": false,
+          "validAnswerTypes": [
+            "field",
+            "decisionRecord"
+          ]
+        },
+        {
+          "id": "req-l3-slo-error-budget",
+          "description": "(L3 Advanced) Service boundaries MUST declare explicit Service Level Objectives (SLO), availability targets, and error budget policies.",
+          "canBeSatisfiedBy": [
+            {
+              "mechanism": "field",
+              "key": "sloPolicy"
+            },
+            {
+              "mechanism": "decisionRecord",
+              "key": "sloPolicyDecision"
+            }
+          ],
+          "minimumSatisfactions": 1,
+          "requirementMode": "mandatory",
+          "naAllowed": false,
+          "validAnswerTypes": [
+            "field",
+            "decisionRecord"
+          ]
+        },
+        {
+          "id": "req-l3-zero-downtime-deployment",
+          "description": "(L3 Advanced) Production deployments MUST use zero-downtime deployment strategies (rolling, canary, blue/green) with automated health probes and auto-rollback.",
+          "canBeSatisfiedBy": [
+            {
+              "mechanism": "field",
+              "key": "zeroDowntimeStrategy"
+            },
+            {
+              "mechanism": "decisionRecord",
+              "key": "zeroDowntimeStrategyDecision"
+            }
+          ],
+          "minimumSatisfactions": 1,
+          "requirementMode": "mandatory",
+          "naAllowed": false,
+          "validAnswerTypes": [
+            "field",
+            "decisionRecord"
+          ]
+        },
+        {
+          "id": "req-l3-automated-security-gates",
+          "description": "(L3 Advanced) CI/CD pipelines MUST enforce automated SAST, secret scanning, dependency vulnerability scanning (SCA), and IaC policy linting as blocking release gates.",
+          "canBeSatisfiedBy": [
+            {
+              "mechanism": "field",
+              "key": "automatedSecurityGates"
+            },
+            {
+              "mechanism": "decisionRecord",
+              "key": "automatedSecurityGatesDecision"
+            }
+          ],
+          "minimumSatisfactions": 1,
+          "requirementMode": "mandatory",
+          "naAllowed": false,
+          "validAnswerTypes": [
+            "field",
+            "decisionRecord"
+          ]
+        }
+      ],
       "implementations": [],
-      "appliesTo": {},
+      "appliesTo": [
+        "product_component",
+        "software_deployment_pattern"
+      ],
       "inherits": "",
       "scalingUnits": [],
       "networkZones": [],
@@ -44007,14 +42951,9 @@ window.DRAFT_BROWSER_DATA = {
       "assumptions": [],
       "nextSteps": [],
       "defaultSelection": false,
-      "requirementCount": 0,
+      "requirementCount": 11,
       "hasRiskRef": false,
-      "outboundRefs": [
-        {
-          "target": "01KQQ4Q025-T7B7",
-          "path": "source"
-        }
-      ],
+      "outboundRefs": [],
       "referencedBy": [],
       "editorSchema": {
         "requiredFields": [
@@ -44022,24 +42961,33 @@ window.DRAFT_BROWSER_DATA = {
           "uid",
           "type",
           "name",
-          "source",
-          "label",
-          "catalogStatus"
+          "description",
+          "catalogStatus",
+          "activation",
+          "appliesTo",
+          "requirements"
         ],
         "optionalFields": [
-          "description",
-          "target",
-          "externalTarget",
-          "technology",
-          "direction",
-          "flow",
-          "capabilities",
+          "aliases",
+          "version",
+          "tags",
+          "owner",
+          "lifecycleStatus",
+          "provider",
+          "authority",
           "notes",
-          "tags"
+          "inherits",
+          "appliesToQualifiers"
         ],
         "fieldTypes": {
+          "aliases": "list",
+          "owner": "dict",
           "tags": "list",
-          "capabilities": "list"
+          "provider": "dict",
+          "authority": "dict",
+          "appliesTo": "list",
+          "requirements": "list",
+          "appliesToQualifiers": "dict"
         },
         "enumFields": {
           "catalogStatus": [
@@ -44047,463 +42995,49 @@ window.DRAFT_BROWSER_DATA = {
             "incomplete",
             "complete"
           ],
-          "direction": [
-            "synchronous",
-            "asynchronous",
-            "event"
+          "activation": [
+            "always",
+            "workspace"
           ],
-          "flow": [
-            "outbound",
-            "inbound",
-            "bidirectional"
+          "lifecycleStatus": [
+            "candidate",
+            "preferred",
+            "existing-only",
+            "deprecated",
+            "retired"
           ]
         },
         "enumListFields": {},
-        "collectionSchemas": {},
-        "schemaPath": "framework/schemas/relationship.schema.yaml"
+        "collectionSchemas": {
+          "requirements": "requirement"
+        },
+        "schemaPath": "framework/schemas/requirement-group.schema.yaml"
       },
-      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"type\": \"relationship\",\n  \"uid\": \"01KSKWFZZX-NE4F\",\n  \"name\": \"AWS Lambda Runtime \\u2192 Amazon CloudWatch Metrics\",\n  \"catalogStatus\": \"stub\",\n  \"source\": \"01KQQ4Q025-T7B7\",\n  \"label\": \"calls\",\n  \"externalTarget\": \"Amazon CloudWatch Metrics\",\n  \"notes\": \"Runtime health and operational telemetry are observed through CloudWatch metrics and alarms.\",\n  \"_source\": \"examples/catalog/governance/relationships/relationship-aws-lambda-runtime-calls-amazon-cloudwatch-metrics.yaml\"\n}",
+      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M15WPEFV-ZMA9\",\n  \"type\": \"requirement_group\",\n  \"name\": \"Engineering Maturity & Quality Standards (L1-L3)\",\n  \"description\": \"Comprehensive engineering maturity standards covering L1 Baseline through L3 Advanced (backward-compatible migrations, 100% composable IaC, zero gate suppressions, synthetic test data, automated zero-downtime rollback, JSON structured logging, SLO error budgets, and ephemeral preview environments).\",\n  \"version\": \"1.2.0\",\n  \"catalogStatus\": \"complete\",\n  \"lifecycleStatus\": \"preferred\",\n  \"activation\": \"always\",\n  \"appliesTo\": [\n    \"product_component\",\n    \"software_deployment_pattern\"\n  ],\n  \"authority\": {\n    \"name\": \"DRAFT Framework\",\n    \"shortName\": \"DRAFT\",\n    \"source\": \"DRAFT Framework\"\n  },\n  \"owner\": {\n    \"team\": \"platform-engineering\",\n    \"contact\": \"platform-engineering@example.com\"\n  },\n  \"requirements\": [\n    {\n      \"id\": \"req-expand-contract-migrations\",\n      \"description\": \"Database schema changes MUST be backward-compatible and decoupled from application code deploys using expand-and-contract patterns.\",\n      \"canBeSatisfiedBy\": [\n        {\n          \"mechanism\": \"field\",\n          \"key\": \"databaseMigrationStrategy\"\n        },\n        {\n          \"mechanism\": \"decisionRecord\",\n          \"key\": \"databaseMigrationStrategyDecision\"\n        }\n      ],\n      \"minimumSatisfactions\": 1,\n      \"requirementMode\": \"mandatory\",\n      \"naAllowed\": true,\n      \"validAnswerTypes\": [\n        \"field\",\n        \"decisionRecord\"\n      ]\n    },\n    {\n      \"id\": \"req-zero-manual-infrastructure\",\n      \"description\": \"All infrastructure changes MUST be expressed as version-controlled IaC modules (OpenTofu/Terraform). Undocumented manual steps are prohibited.\",\n      \"canBeSatisfiedBy\": [\n        {\n          \"mechanism\": \"field\",\n          \"key\": \"iacAutomation\"\n        },\n        {\n          \"mechanism\": \"decisionRecord\",\n          \"key\": \"iacAutomationDecision\"\n        }\n      ],\n      \"minimumSatisfactions\": 1,\n      \"requirementMode\": \"mandatory\",\n      \"naAllowed\": false,\n      \"validAnswerTypes\": [\n        \"field\",\n        \"decisionRecord\"\n      ]\n    },\n    {\n      \"id\": \"req-no-gate-suppressions\",\n      \"description\": \"CI/CD pipelines MUST NOT introduce suppressions, allowlist entries, or continue-on-error overrides to bypass security or lint gates.\",\n      \"canBeSatisfiedBy\": [\n        {\n          \"mechanism\": \"field\",\n          \"key\": \"gateEnforcement\"\n        },\n        {\n          \"mechanism\": \"decisionRecord\",\n          \"key\": \"gateEnforcementDecision\"\n        }\n      ],\n      \"minimumSatisfactions\": 1,\n      \"requirementMode\": \"mandatory\",\n      \"naAllowed\": false,\n      \"validAnswerTypes\": [\n        \"field\",\n        \"decisionRecord\"\n      ]\n    },\n    {\n      \"id\": \"req-synthetic-test-data\",\n      \"description\": \"Real production data or credentials MUST NOT be placed into test fixtures, seeds, or lower environments. Synthetic data is required.\",\n      \"canBeSatisfiedBy\": [\n        {\n          \"mechanism\": \"field\",\n          \"key\": \"testDataGovernance\"\n        },\n        {\n          \"mechanism\": \"decisionRecord\",\n          \"key\": \"testDataGovernanceDecision\"\n        }\n      ],\n      \"minimumSatisfactions\": 1,\n      \"requirementMode\": \"mandatory\",\n      \"naAllowed\": false,\n      \"validAnswerTypes\": [\n        \"field\",\n        \"decisionRecord\"\n      ]\n    },\n    {\n      \"id\": \"req-rollback-mechanism\",\n      \"description\": \"Application deployments MUST declare an automated rollback path and zero-downtime deployment strategy.\",\n      \"canBeSatisfiedBy\": [\n        {\n          \"mechanism\": \"field\",\n          \"key\": \"rollbackStrategy\"\n        },\n        {\n          \"mechanism\": \"decisionRecord\",\n          \"key\": \"rollbackStrategyDecision\"\n        }\n      ],\n      \"minimumSatisfactions\": 1,\n      \"requirementMode\": \"mandatory\",\n      \"naAllowed\": false,\n      \"validAnswerTypes\": [\n        \"field\",\n        \"decisionRecord\"\n      ]\n    },\n    {\n      \"id\": \"req-l3-composable-iac\",\n      \"description\": \"(L3 Advanced) 100% of compute host, database, cache, gateway, and security infrastructure MUST be provisionable as composable IaC modules.\",\n      \"canBeSatisfiedBy\": [\n        {\n          \"mechanism\": \"field\",\n          \"key\": \"composableIac\"\n        },\n        {\n          \"mechanism\": \"decisionRecord\",\n          \"key\": \"composableIacDecision\"\n        }\n      ],\n      \"minimumSatisfactions\": 1,\n      \"requirementMode\": \"mandatory\",\n      \"naAllowed\": false,\n      \"validAnswerTypes\": [\n        \"field\",\n        \"decisionRecord\"\n      ]\n    },\n    {\n      \"id\": \"req-l3-ephemeral-preview-environments\",\n      \"description\": \"(L3 Advanced) Infrastructure IaC MUST support provisioning on-demand, isolated ephemeral preview environments for feature branches with automated teardown.\",\n      \"canBeSatisfiedBy\": [\n        {\n          \"mechanism\": \"field\",\n          \"key\": \"previewEnvironments\"\n        },\n        {\n          \"mechanism\": \"decisionRecord\",\n          \"key\": \"previewEnvironmentsDecision\"\n        }\n      ],\n      \"minimumSatisfactions\": 1,\n      \"requirementMode\": \"mandatory\",\n      \"naAllowed\": true,\n      \"validAnswerTypes\": [\n        \"field\",\n        \"decisionRecord\"\n      ]\n    },\n    {\n      \"id\": \"req-l3-json-structured-logging\",\n      \"description\": \"(L3 Advanced) All application and service logs streamed to central log aggregators MUST use structured JSON formatting with distributed trace/span correlation IDs.\",\n      \"canBeSatisfiedBy\": [\n        {\n          \"mechanism\": \"field\",\n          \"key\": \"structuredLogging\"\n        },\n        {\n          \"mechanism\": \"decisionRecord\",\n          \"key\": \"structuredLoggingDecision\"\n        }\n      ],\n      \"minimumSatisfactions\": 1,\n      \"requirementMode\": \"mandatory\",\n      \"naAllowed\": false,\n      \"validAnswerTypes\": [\n        \"field\",\n        \"decisionRecord\"\n      ]\n    },\n    {\n      \"id\": \"req-l3-slo-error-budget\",\n      \"description\": \"(L3 Advanced) Service boundaries MUST declare explicit Service Level Objectives (SLO), availability targets, and error budget policies.\",\n      \"canBeSatisfiedBy\": [\n        {\n          \"mechanism\": \"field\",\n          \"key\": \"sloPolicy\"\n        },\n        {\n          \"mechanism\": \"decisionRecord\",\n          \"key\": \"sloPolicyDecision\"\n        }\n      ],\n      \"minimumSatisfactions\": 1,\n      \"requirementMode\": \"mandatory\",\n      \"naAllowed\": false,\n      \"validAnswerTypes\": [\n        \"field\",\n        \"decisionRecord\"\n      ]\n    },\n    {\n      \"id\": \"req-l3-zero-downtime-deployment\",\n      \"description\": \"(L3 Advanced) Production deployments MUST use zero-downtime deployment strategies (rolling, canary, blue/green) with automated health probes and auto-rollback.\",\n      \"canBeSatisfiedBy\": [\n        {\n          \"mechanism\": \"field\",\n          \"key\": \"zeroDowntimeStrategy\"\n        },\n        {\n          \"mechanism\": \"decisionRecord\",\n          \"key\": \"zeroDowntimeStrategyDecision\"\n        }\n      ],\n      \"minimumSatisfactions\": 1,\n      \"requirementMode\": \"mandatory\",\n      \"naAllowed\": false,\n      \"validAnswerTypes\": [\n        \"field\",\n        \"decisionRecord\"\n      ]\n    },\n    {\n      \"id\": \"req-l3-automated-security-gates\",\n      \"description\": \"(L3 Advanced) CI/CD pipelines MUST enforce automated SAST, secret scanning, dependency vulnerability scanning (SCA), and IaC policy linting as blocking release gates.\",\n      \"canBeSatisfiedBy\": [\n        {\n          \"mechanism\": \"field\",\n          \"key\": \"automatedSecurityGates\"\n        },\n        {\n          \"mechanism\": \"decisionRecord\",\n          \"key\": \"automatedSecurityGatesDecision\"\n        }\n      ],\n      \"minimumSatisfactions\": 1,\n      \"requirementMode\": \"mandatory\",\n      \"naAllowed\": false,\n      \"validAnswerTypes\": [\n        \"field\",\n        \"decisionRecord\"\n      ]\n    }\n  ],\n  \"_source\": \"configurations/requirement-groups/requirement-group-engineering-maturity.yaml\"\n}",
       "existsInCatalog": true,
       "outboundRelationships": [],
       "inboundRelationships": []
     },
-    "01KSKWFZZX-34KP": {
-      "id": "01KSKWFZZX-34KP",
-      "uid": "01KSKWFZZX-34KP",
-      "name": "AWS Lambda Runtime \u2192 AWS IAM",
+    "01M15XYZXT-KTJA": {
+      "id": "01M15XYZXT-KTJA",
+      "uid": "01M15XYZXT-KTJA",
+      "name": "OWASP ASVS & Secure Coding Standards",
       "aliases": [],
-      "type": "relationship",
-      "typeLabel": "Relationship",
-      "filterType": "relationship",
+      "type": "requirement_group",
+      "typeLabel": "RequirementGroup",
+      "filterType": "requirement_group",
       "category": "",
       "deliveryModel": "",
       "domain": "",
-      "description": "",
-      "version": "",
-      "catalogStatus": "stub",
-      "lifecycleStatus": "unknown",
-      "status": "",
-      "businessContext": {},
-      "product": "",
-      "runsOn": "",
-      "subtype": "",
-      "vendor": "",
-      "productName": "",
-      "productVersion": "",
-      "classification": "",
-      "platformDependency": "",
-      "capabilities": [],
-      "configurations": [],
-      "networkPlacement": "",
-      "patchingOwner": "",
-      "complianceCerts": [],
-      "requirementGroups": [],
-      "requirementImplementations": [],
-      "dataLeavesInfrastructure": null,
-      "dataResidencyCommitment": "",
-      "dpaNotes": "",
-      "vendorSLA": "",
-      "authenticationModel": "",
-      "incidentNotificationProcess": "",
-      "owner": {},
-      "definitionOwner": {},
-      "provider": {},
-      "authority": {},
-      "shape": "round-rectangle",
-      "color": "#7a6e60",
-      "source": "examples/catalog/governance/relationships/relationship-aws-lambda-runtime-calls-aws-iam.yaml",
-      "tags": [],
-      "ardCategory": "",
-      "internalComponents": [],
-      "notes": "Lambda function and administrative access is controlled through AWS IAM.",
-      "requirements": [],
-      "implementations": [],
-      "appliesTo": {},
-      "inherits": "",
-      "scalingUnits": [],
-      "networkZones": [],
-      "sdpConnections": [],
-      "serviceGroups": [],
-      "tierVariants": [],
-      "tierId": "",
-      "purpose": "",
-      "availabilityExpectation": "",
-      "costPosture": "",
-      "complianceScope": [],
-      "parameterSurface": [],
-      "followsReferenceArchitecture": "",
-      "decisionRecords": [],
-      "affectedComponent": "",
-      "impact": "",
-      "mitigationPath": "",
-      "decisionRationale": "",
-      "relatedDecisionRecords": [],
-      "linkedObject": "",
-      "primaryObjectType": "",
-      "primaryObjectUid": "",
-      "generatedObjects": [],
-      "unresolvedQuestions": [],
-      "assumptions": [],
-      "nextSteps": [],
-      "defaultSelection": false,
-      "requirementCount": 0,
-      "hasRiskRef": false,
-      "outboundRefs": [
-        {
-          "target": "01KQQ4Q025-T7B7",
-          "path": "source"
-        }
-      ],
-      "referencedBy": [],
-      "editorSchema": {
-        "requiredFields": [
-          "schemaVersion",
-          "uid",
-          "type",
-          "name",
-          "source",
-          "label",
-          "catalogStatus"
-        ],
-        "optionalFields": [
-          "description",
-          "target",
-          "externalTarget",
-          "technology",
-          "direction",
-          "flow",
-          "capabilities",
-          "notes",
-          "tags"
-        ],
-        "fieldTypes": {
-          "tags": "list",
-          "capabilities": "list"
-        },
-        "enumFields": {
-          "catalogStatus": [
-            "stub",
-            "incomplete",
-            "complete"
-          ],
-          "direction": [
-            "synchronous",
-            "asynchronous",
-            "event"
-          ],
-          "flow": [
-            "outbound",
-            "inbound",
-            "bidirectional"
-          ]
-        },
-        "enumListFields": {},
-        "collectionSchemas": {},
-        "schemaPath": "framework/schemas/relationship.schema.yaml"
-      },
-      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"type\": \"relationship\",\n  \"uid\": \"01KSKWFZZX-34KP\",\n  \"name\": \"AWS Lambda Runtime \\u2192 AWS IAM\",\n  \"catalogStatus\": \"stub\",\n  \"source\": \"01KQQ4Q025-T7B7\",\n  \"label\": \"calls\",\n  \"externalTarget\": \"AWS IAM\",\n  \"notes\": \"Lambda function and administrative access is controlled through AWS IAM.\",\n  \"_source\": \"examples/catalog/governance/relationships/relationship-aws-lambda-runtime-calls-aws-iam.yaml\"\n}",
-      "existsInCatalog": true,
-      "outboundRelationships": [],
-      "inboundRelationships": []
-    },
-    "01KSKWFZZX-JWP6": {
-      "id": "01KSKWFZZX-JWP6",
-      "uid": "01KSKWFZZX-JWP6",
-      "name": "AWS Lambda Runtime \u2192 Amazon CloudWatch Logs",
-      "aliases": [],
-      "type": "relationship",
-      "typeLabel": "Relationship",
-      "filterType": "relationship",
-      "category": "",
-      "deliveryModel": "",
-      "domain": "",
-      "description": "",
-      "version": "",
-      "catalogStatus": "stub",
-      "lifecycleStatus": "unknown",
-      "status": "",
-      "businessContext": {},
-      "product": "",
-      "runsOn": "",
-      "subtype": "",
-      "vendor": "",
-      "productName": "",
-      "productVersion": "",
-      "classification": "",
-      "platformDependency": "",
-      "capabilities": [],
-      "configurations": [],
-      "networkPlacement": "",
-      "patchingOwner": "",
-      "complianceCerts": [],
-      "requirementGroups": [],
-      "requirementImplementations": [],
-      "dataLeavesInfrastructure": null,
-      "dataResidencyCommitment": "",
-      "dpaNotes": "",
-      "vendorSLA": "",
-      "authenticationModel": "",
-      "incidentNotificationProcess": "",
-      "owner": {},
-      "definitionOwner": {},
-      "provider": {},
-      "authority": {},
-      "shape": "round-rectangle",
-      "color": "#7a6e60",
-      "source": "examples/catalog/governance/relationships/relationship-aws-lambda-runtime-sends-events-to-amazon-cloudwatch-logs.yaml",
-      "tags": [],
-      "ardCategory": "",
-      "internalComponents": [],
-      "notes": "Function logs are emitted to CloudWatch Logs for adopter visibility.",
-      "requirements": [],
-      "implementations": [],
-      "appliesTo": {},
-      "inherits": "",
-      "scalingUnits": [],
-      "networkZones": [],
-      "sdpConnections": [],
-      "serviceGroups": [],
-      "tierVariants": [],
-      "tierId": "",
-      "purpose": "",
-      "availabilityExpectation": "",
-      "costPosture": "",
-      "complianceScope": [],
-      "parameterSurface": [],
-      "followsReferenceArchitecture": "",
-      "decisionRecords": [],
-      "affectedComponent": "",
-      "impact": "",
-      "mitigationPath": "",
-      "decisionRationale": "",
-      "relatedDecisionRecords": [],
-      "linkedObject": "",
-      "primaryObjectType": "",
-      "primaryObjectUid": "",
-      "generatedObjects": [],
-      "unresolvedQuestions": [],
-      "assumptions": [],
-      "nextSteps": [],
-      "defaultSelection": false,
-      "requirementCount": 0,
-      "hasRiskRef": false,
-      "outboundRefs": [
-        {
-          "target": "01KQQ4Q025-T7B7",
-          "path": "source"
-        }
-      ],
-      "referencedBy": [],
-      "editorSchema": {
-        "requiredFields": [
-          "schemaVersion",
-          "uid",
-          "type",
-          "name",
-          "source",
-          "label",
-          "catalogStatus"
-        ],
-        "optionalFields": [
-          "description",
-          "target",
-          "externalTarget",
-          "technology",
-          "direction",
-          "flow",
-          "capabilities",
-          "notes",
-          "tags"
-        ],
-        "fieldTypes": {
-          "tags": "list",
-          "capabilities": "list"
-        },
-        "enumFields": {
-          "catalogStatus": [
-            "stub",
-            "incomplete",
-            "complete"
-          ],
-          "direction": [
-            "synchronous",
-            "asynchronous",
-            "event"
-          ],
-          "flow": [
-            "outbound",
-            "inbound",
-            "bidirectional"
-          ]
-        },
-        "enumListFields": {},
-        "collectionSchemas": {},
-        "schemaPath": "framework/schemas/relationship.schema.yaml"
-      },
-      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"type\": \"relationship\",\n  \"uid\": \"01KSKWFZZX-JWP6\",\n  \"name\": \"AWS Lambda Runtime \\u2192 Amazon CloudWatch Logs\",\n  \"catalogStatus\": \"stub\",\n  \"source\": \"01KQQ4Q025-T7B7\",\n  \"label\": \"sends events to\",\n  \"externalTarget\": \"Amazon CloudWatch Logs\",\n  \"notes\": \"Function logs are emitted to CloudWatch Logs for adopter visibility.\",\n  \"_source\": \"examples/catalog/governance/relationships/relationship-aws-lambda-runtime-sends-events-to-amazon-cloudwatch-logs.yaml\"\n}",
-      "existsInCatalog": true,
-      "outboundRelationships": [],
-      "inboundRelationships": []
-    },
-    "01KSKWFZZW-ZEKF": {
-      "id": "01KSKWFZZW-ZEKF",
-      "uid": "01KSKWFZZW-ZEKF",
-      "name": "AWS Lambda Serverless Host \u2192 AWS Lambda Service",
-      "aliases": [],
-      "type": "relationship",
-      "typeLabel": "Relationship",
-      "filterType": "relationship",
-      "category": "",
-      "deliveryModel": "",
-      "domain": "",
-      "description": "",
-      "version": "",
-      "catalogStatus": "stub",
-      "lifecycleStatus": "unknown",
-      "status": "",
-      "businessContext": {},
-      "product": "",
-      "runsOn": "",
-      "subtype": "",
-      "vendor": "",
-      "productName": "",
-      "productVersion": "",
-      "classification": "",
-      "platformDependency": "",
-      "capabilities": [],
-      "configurations": [],
-      "networkPlacement": "",
-      "patchingOwner": "",
-      "complianceCerts": [],
-      "requirementGroups": [],
-      "requirementImplementations": [],
-      "dataLeavesInfrastructure": null,
-      "dataResidencyCommitment": "",
-      "dpaNotes": "",
-      "vendorSLA": "",
-      "authenticationModel": "",
-      "incidentNotificationProcess": "",
-      "owner": {},
-      "definitionOwner": {},
-      "provider": {},
-      "authority": {},
-      "shape": "round-rectangle",
-      "color": "#7a6e60",
-      "source": "examples/catalog/governance/relationships/relationship-aws-lambda-serverless-host-calls-aws-lambda-service.yaml",
-      "tags": [],
-      "ardCategory": "",
-      "internalComponents": [],
-      "notes": "The Lambda service itself provides the execution environment.",
-      "requirements": [],
-      "implementations": [],
-      "appliesTo": {},
-      "inherits": "",
-      "scalingUnits": [],
-      "networkZones": [],
-      "sdpConnections": [],
-      "serviceGroups": [],
-      "tierVariants": [],
-      "tierId": "",
-      "purpose": "",
-      "availabilityExpectation": "",
-      "costPosture": "",
-      "complianceScope": [],
-      "parameterSurface": [],
-      "followsReferenceArchitecture": "",
-      "decisionRecords": [],
-      "affectedComponent": "",
-      "impact": "",
-      "mitigationPath": "",
-      "decisionRationale": "",
-      "relatedDecisionRecords": [],
-      "linkedObject": "",
-      "primaryObjectType": "",
-      "primaryObjectUid": "",
-      "generatedObjects": [],
-      "unresolvedQuestions": [],
-      "assumptions": [],
-      "nextSteps": [],
-      "defaultSelection": false,
-      "requirementCount": 0,
-      "hasRiskRef": false,
-      "outboundRefs": [
-        {
-          "target": "01KQQ4Q025-1XDE",
-          "path": "source"
-        }
-      ],
-      "referencedBy": [],
-      "editorSchema": {
-        "requiredFields": [
-          "schemaVersion",
-          "uid",
-          "type",
-          "name",
-          "source",
-          "label",
-          "catalogStatus"
-        ],
-        "optionalFields": [
-          "description",
-          "target",
-          "externalTarget",
-          "technology",
-          "direction",
-          "flow",
-          "capabilities",
-          "notes",
-          "tags"
-        ],
-        "fieldTypes": {
-          "tags": "list",
-          "capabilities": "list"
-        },
-        "enumFields": {
-          "catalogStatus": [
-            "stub",
-            "incomplete",
-            "complete"
-          ],
-          "direction": [
-            "synchronous",
-            "asynchronous",
-            "event"
-          ],
-          "flow": [
-            "outbound",
-            "inbound",
-            "bidirectional"
-          ]
-        },
-        "enumListFields": {},
-        "collectionSchemas": {},
-        "schemaPath": "framework/schemas/relationship.schema.yaml"
-      },
-      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"type\": \"relationship\",\n  \"uid\": \"01KSKWFZZW-ZEKF\",\n  \"name\": \"AWS Lambda Serverless Host \\u2192 AWS Lambda Service\",\n  \"catalogStatus\": \"stub\",\n  \"source\": \"01KQQ4Q025-1XDE\",\n  \"label\": \"calls\",\n  \"externalTarget\": \"AWS Lambda Service\",\n  \"notes\": \"The Lambda service itself provides the execution environment.\",\n  \"_source\": \"examples/catalog/governance/relationships/relationship-aws-lambda-serverless-host-calls-aws-lambda-service.yaml\"\n}",
-      "existsInCatalog": true,
-      "outboundRelationships": [],
-      "inboundRelationships": []
-    },
-    "01KQQ4Q025-1XDE": {
-      "id": "01KQQ4Q025-1XDE",
-      "uid": "01KQQ4Q025-1XDE",
-      "name": "AWS Lambda Serverless Host",
-      "aliases": [],
-      "type": "host",
-      "typeLabel": "Host",
-      "filterType": "host",
-      "category": "host",
-      "deliveryModel": "",
-      "domain": "",
-      "description": "Serverless execution environment provided by AWS Lambda. The host is entirely AWS-managed and blackbox to the organization. Function code is deployed as a ProductComponent. No OS management, no agent installation, and no patching responsibility exist at this layer.\n",
+      "description": "Mandatory secure coding and application security verification standards based on OWASP ASVS v4.0 and NIST SSDF.",
       "version": "1.0.0",
-      "catalogStatus": "incomplete",
+      "catalogStatus": "complete",
       "lifecycleStatus": "preferred",
       "status": "",
       "businessContext": {},
       "product": "",
       "runsOn": "",
-      "subtype": "host",
+      "subtype": "",
       "vendor": "",
       "productName": "",
       "productVersion": "",
@@ -44523,44 +43057,307 @@ window.DRAFT_BROWSER_DATA = {
       "authenticationModel": "",
       "incidentNotificationProcess": "",
       "owner": {
-        "team": "cloud-architecture",
-        "contact": "cloud-architecture@example.com"
+        "team": "security-engineering",
+        "contact": "security-engineering@example.com"
+      },
+      "definitionOwner": {},
+      "provider": {},
+      "authority": {
+        "name": "OWASP Application Security Verification Standard",
+        "shortName": "OWASP ASVS",
+        "source": "https://owasp.org/www-project-application-security-verification-standard/"
+      },
+      "shape": "barrel",
+      "color": "#1f8a5b",
+      "source": "configurations/requirement-groups/requirement-group-owasp-asvs-secure-coding.yaml",
+      "tags": [],
+      "ardCategory": "",
+      "internalComponents": [],
+      "notes": {},
+      "requirements": [
+        {
+          "id": "req-asvs-parameterized-queries",
+          "description": "(OWASP ASVS V5 / V13) All database queries MUST use parameterized prepared statements or ORM bindings. Direct string concatenation in queries is strictly prohibited to prevent SQL/NoSQL injection.",
+          "canBeSatisfiedBy": [
+            {
+              "mechanism": "field",
+              "key": "queryParameterization"
+            },
+            {
+              "mechanism": "decisionRecord",
+              "key": "queryParameterizationDecision"
+            }
+          ],
+          "minimumSatisfactions": 1,
+          "requirementMode": "mandatory",
+          "naAllowed": true,
+          "validAnswerTypes": [
+            "field",
+            "decisionRecord"
+          ]
+        },
+        {
+          "id": "req-asvs-broken-object-level-auth",
+          "description": "(OWASP ASVS V4 / OWASP API1) Enforce default-deny, server-side object-level access control (BOLA/RBAC/ABAC) on every API endpoint.",
+          "canBeSatisfiedBy": [
+            {
+              "mechanism": "field",
+              "key": "accessControlModel"
+            },
+            {
+              "mechanism": "decisionRecord",
+              "key": "accessControlModelDecision"
+            }
+          ],
+          "minimumSatisfactions": 1,
+          "requirementMode": "mandatory",
+          "naAllowed": false,
+          "validAnswerTypes": [
+            "field",
+            "decisionRecord"
+          ]
+        },
+        {
+          "id": "req-asvs-strong-cryptography-tls",
+          "description": "(OWASP ASVS V6 / V9) Enforce TLS 1.2+ for data in transit and AES-256/GCM or KMS for data at rest. Weak legacy ciphers (MD5, SHA1, DES) are prohibited.",
+          "canBeSatisfiedBy": [
+            {
+              "mechanism": "field",
+              "key": "cryptographyStandard"
+            },
+            {
+              "mechanism": "decisionRecord",
+              "key": "cryptographyStandardDecision"
+            }
+          ],
+          "minimumSatisfactions": 1,
+          "requirementMode": "mandatory",
+          "naAllowed": false,
+          "validAnswerTypes": [
+            "field",
+            "decisionRecord"
+          ]
+        },
+        {
+          "id": "req-asvs-session-jwt-security",
+          "description": "(OWASP ASVS V2 / V3) Secure session management with short-lived tokens, explicit signature verification, MFA for admin access, and API rate-limiting.",
+          "canBeSatisfiedBy": [
+            {
+              "mechanism": "field",
+              "key": "sessionManagement"
+            },
+            {
+              "mechanism": "decisionRecord",
+              "key": "sessionManagementDecision"
+            }
+          ],
+          "minimumSatisfactions": 1,
+          "requirementMode": "mandatory",
+          "naAllowed": false,
+          "validAnswerTypes": [
+            "field",
+            "decisionRecord"
+          ]
+        },
+        {
+          "id": "req-asvs-error-handling-audit-logging",
+          "description": "(OWASP ASVS V7) Return sanitized, generic error messages to API consumers without leaking stack traces. Stream detailed audit logs for authentication and security events.",
+          "canBeSatisfiedBy": [
+            {
+              "mechanism": "field",
+              "key": "errorHandlingLogging"
+            },
+            {
+              "mechanism": "decisionRecord",
+              "key": "errorHandlingLoggingDecision"
+            }
+          ],
+          "minimumSatisfactions": 1,
+          "requirementMode": "mandatory",
+          "naAllowed": false,
+          "validAnswerTypes": [
+            "field",
+            "decisionRecord"
+          ]
+        },
+        {
+          "id": "req-asvs-third-party-component-security",
+          "description": "(OWASP ASVS V14 / NIST SSDF PW.4) Enforce automated Software Composition Analysis (SCA) in CI pipelines to block third-party dependencies with known High/Critical CVEs.",
+          "canBeSatisfiedBy": [
+            {
+              "mechanism": "field",
+              "key": "dependencySecurity"
+            },
+            {
+              "mechanism": "decisionRecord",
+              "key": "dependencySecurityDecision"
+            }
+          ],
+          "minimumSatisfactions": 1,
+          "requirementMode": "mandatory",
+          "naAllowed": false,
+          "validAnswerTypes": [
+            "field",
+            "decisionRecord"
+          ]
+        }
+      ],
+      "implementations": [],
+      "appliesTo": [
+        "product_component",
+        "software_deployment_pattern"
+      ],
+      "inherits": "",
+      "scalingUnits": [],
+      "networkZones": [],
+      "sdpConnections": [],
+      "serviceGroups": [],
+      "tierVariants": [],
+      "tierId": "",
+      "purpose": "",
+      "availabilityExpectation": "",
+      "costPosture": "",
+      "complianceScope": [],
+      "parameterSurface": [],
+      "followsReferenceArchitecture": "",
+      "decisionRecords": [],
+      "affectedComponent": "",
+      "impact": "",
+      "mitigationPath": "",
+      "decisionRationale": "",
+      "relatedDecisionRecords": [],
+      "linkedObject": "",
+      "primaryObjectType": "",
+      "primaryObjectUid": "",
+      "generatedObjects": [],
+      "unresolvedQuestions": [],
+      "assumptions": [],
+      "nextSteps": [],
+      "defaultSelection": false,
+      "requirementCount": 6,
+      "hasRiskRef": false,
+      "outboundRefs": [],
+      "referencedBy": [],
+      "editorSchema": {
+        "requiredFields": [
+          "schemaVersion",
+          "uid",
+          "type",
+          "name",
+          "description",
+          "catalogStatus",
+          "activation",
+          "appliesTo",
+          "requirements"
+        ],
+        "optionalFields": [
+          "aliases",
+          "version",
+          "tags",
+          "owner",
+          "lifecycleStatus",
+          "provider",
+          "authority",
+          "notes",
+          "inherits",
+          "appliesToQualifiers"
+        ],
+        "fieldTypes": {
+          "aliases": "list",
+          "owner": "dict",
+          "tags": "list",
+          "provider": "dict",
+          "authority": "dict",
+          "appliesTo": "list",
+          "requirements": "list",
+          "appliesToQualifiers": "dict"
+        },
+        "enumFields": {
+          "catalogStatus": [
+            "stub",
+            "incomplete",
+            "complete"
+          ],
+          "activation": [
+            "always",
+            "workspace"
+          ],
+          "lifecycleStatus": [
+            "candidate",
+            "preferred",
+            "existing-only",
+            "deprecated",
+            "retired"
+          ]
+        },
+        "enumListFields": {},
+        "collectionSchemas": {
+          "requirements": "requirement"
+        },
+        "schemaPath": "framework/schemas/requirement-group.schema.yaml"
+      },
+      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M15XYZXT-KTJA\",\n  \"type\": \"requirement_group\",\n  \"name\": \"OWASP ASVS & Secure Coding Standards\",\n  \"description\": \"Mandatory secure coding and application security verification standards based on OWASP ASVS v4.0 and NIST SSDF.\",\n  \"version\": \"1.0.0\",\n  \"catalogStatus\": \"complete\",\n  \"lifecycleStatus\": \"preferred\",\n  \"activation\": \"always\",\n  \"appliesTo\": [\n    \"product_component\",\n    \"software_deployment_pattern\"\n  ],\n  \"authority\": {\n    \"name\": \"OWASP Application Security Verification Standard\",\n    \"shortName\": \"OWASP ASVS\",\n    \"source\": \"https://owasp.org/www-project-application-security-verification-standard/\"\n  },\n  \"owner\": {\n    \"team\": \"security-engineering\",\n    \"contact\": \"security-engineering@example.com\"\n  },\n  \"requirements\": [\n    {\n      \"id\": \"req-asvs-parameterized-queries\",\n      \"description\": \"(OWASP ASVS V5 / V13) All database queries MUST use parameterized prepared statements or ORM bindings. Direct string concatenation in queries is strictly prohibited to prevent SQL/NoSQL injection.\",\n      \"canBeSatisfiedBy\": [\n        {\n          \"mechanism\": \"field\",\n          \"key\": \"queryParameterization\"\n        },\n        {\n          \"mechanism\": \"decisionRecord\",\n          \"key\": \"queryParameterizationDecision\"\n        }\n      ],\n      \"minimumSatisfactions\": 1,\n      \"requirementMode\": \"mandatory\",\n      \"naAllowed\": true,\n      \"validAnswerTypes\": [\n        \"field\",\n        \"decisionRecord\"\n      ]\n    },\n    {\n      \"id\": \"req-asvs-broken-object-level-auth\",\n      \"description\": \"(OWASP ASVS V4 / OWASP API1) Enforce default-deny, server-side object-level access control (BOLA/RBAC/ABAC) on every API endpoint.\",\n      \"canBeSatisfiedBy\": [\n        {\n          \"mechanism\": \"field\",\n          \"key\": \"accessControlModel\"\n        },\n        {\n          \"mechanism\": \"decisionRecord\",\n          \"key\": \"accessControlModelDecision\"\n        }\n      ],\n      \"minimumSatisfactions\": 1,\n      \"requirementMode\": \"mandatory\",\n      \"naAllowed\": false,\n      \"validAnswerTypes\": [\n        \"field\",\n        \"decisionRecord\"\n      ]\n    },\n    {\n      \"id\": \"req-asvs-strong-cryptography-tls\",\n      \"description\": \"(OWASP ASVS V6 / V9) Enforce TLS 1.2+ for data in transit and AES-256/GCM or KMS for data at rest. Weak legacy ciphers (MD5, SHA1, DES) are prohibited.\",\n      \"canBeSatisfiedBy\": [\n        {\n          \"mechanism\": \"field\",\n          \"key\": \"cryptographyStandard\"\n        },\n        {\n          \"mechanism\": \"decisionRecord\",\n          \"key\": \"cryptographyStandardDecision\"\n        }\n      ],\n      \"minimumSatisfactions\": 1,\n      \"requirementMode\": \"mandatory\",\n      \"naAllowed\": false,\n      \"validAnswerTypes\": [\n        \"field\",\n        \"decisionRecord\"\n      ]\n    },\n    {\n      \"id\": \"req-asvs-session-jwt-security\",\n      \"description\": \"(OWASP ASVS V2 / V3) Secure session management with short-lived tokens, explicit signature verification, MFA for admin access, and API rate-limiting.\",\n      \"canBeSatisfiedBy\": [\n        {\n          \"mechanism\": \"field\",\n          \"key\": \"sessionManagement\"\n        },\n        {\n          \"mechanism\": \"decisionRecord\",\n          \"key\": \"sessionManagementDecision\"\n        }\n      ],\n      \"minimumSatisfactions\": 1,\n      \"requirementMode\": \"mandatory\",\n      \"naAllowed\": false,\n      \"validAnswerTypes\": [\n        \"field\",\n        \"decisionRecord\"\n      ]\n    },\n    {\n      \"id\": \"req-asvs-error-handling-audit-logging\",\n      \"description\": \"(OWASP ASVS V7) Return sanitized, generic error messages to API consumers without leaking stack traces. Stream detailed audit logs for authentication and security events.\",\n      \"canBeSatisfiedBy\": [\n        {\n          \"mechanism\": \"field\",\n          \"key\": \"errorHandlingLogging\"\n        },\n        {\n          \"mechanism\": \"decisionRecord\",\n          \"key\": \"errorHandlingLoggingDecision\"\n        }\n      ],\n      \"minimumSatisfactions\": 1,\n      \"requirementMode\": \"mandatory\",\n      \"naAllowed\": false,\n      \"validAnswerTypes\": [\n        \"field\",\n        \"decisionRecord\"\n      ]\n    },\n    {\n      \"id\": \"req-asvs-third-party-component-security\",\n      \"description\": \"(OWASP ASVS V14 / NIST SSDF PW.4) Enforce automated Software Composition Analysis (SCA) in CI pipelines to block third-party dependencies with known High/Critical CVEs.\",\n      \"canBeSatisfiedBy\": [\n        {\n          \"mechanism\": \"field\",\n          \"key\": \"dependencySecurity\"\n        },\n        {\n          \"mechanism\": \"decisionRecord\",\n          \"key\": \"dependencySecurityDecision\"\n        }\n      ],\n      \"minimumSatisfactions\": 1,\n      \"requirementMode\": \"mandatory\",\n      \"naAllowed\": false,\n      \"validAnswerTypes\": [\n        \"field\",\n        \"decisionRecord\"\n      ]\n    }\n  ],\n  \"_source\": \"configurations/requirement-groups/requirement-group-owasp-asvs-secure-coding.yaml\"\n}",
+      "existsInCatalog": true,
+      "outboundRelationships": [],
+      "inboundRelationships": []
+    },
+    "01M15NEKT7-EKAR": {
+      "id": "01M15NEKT7-EKAR",
+      "uid": "01M15NEKT7-EKAR",
+      "name": "Skippy's Submind Agent Runner Container",
+      "aliases": [],
+      "type": "product_component",
+      "typeLabel": "ProductComponent / Worker",
+      "filterType": "product_component",
+      "category": "",
+      "deliveryModel": "",
+      "domain": "",
+      "description": "First-party agent container running LLM reasoning loops, tool dispatch, and DRAFT catalog queries.",
+      "version": "1.2.0",
+      "catalogStatus": "complete",
+      "lifecycleStatus": "preferred",
+      "status": "",
+      "businessContext": {},
+      "product": "",
+      "runsOn": "",
+      "subtype": "",
+      "vendor": "",
+      "productName": "",
+      "productVersion": "",
+      "classification": "worker",
+      "platformDependency": "",
+      "capabilities": [],
+      "configurations": [],
+      "networkPlacement": "",
+      "patchingOwner": "",
+      "complianceCerts": [],
+      "requirementGroups": [],
+      "requirementImplementations": [],
+      "dataLeavesInfrastructure": null,
+      "dataResidencyCommitment": "",
+      "dpaNotes": "",
+      "vendorSLA": "",
+      "authenticationModel": "",
+      "incidentNotificationProcess": "",
+      "owner": {
+        "team": "platform-ai-team",
+        "contact": "platform-ai@example.com"
       },
       "definitionOwner": {},
       "provider": {},
       "authority": {},
       "shape": "round-rectangle",
       "color": "#1f8a5b",
-      "source": "examples/catalog/shared-services/hosts/host-serverless-lambda.yaml",
+      "source": "catalog/engineering/product-components/product-component-skippy-submind-runner.yaml",
       "tags": [
-        "lambda",
-        "serverless"
+        "agent-runner",
+        "python",
+        "containers"
       ],
       "ardCategory": "",
-      "internalComponents": [
-        {
-          "ref": "01KQQ4Q025-T7B7",
-          "role": "managed-runtime",
-          "configuration": "",
-          "notes": "AWS-managed serverless execution environment. Blackbox host."
-        }
-      ],
+      "internalComponents": [],
       "notes": {
-        "authenticationApproach": "IAM-based invocation and execution roles managed by AWS",
-        "loggingApproach": "Function and platform logs emitted to CloudWatch Logs",
-        "securityMonitoringApproach": "AWS-native monitoring and audit integration for the managed runtime",
-        "patchManagementApproach": "Runtime patching is handled by AWS as part of the managed platform",
-        "authentication": "IAM-based invocation and execution roles managed by AWS. No SSH or interactive login; access to the execution environment is not possible. Administrative access to the Lambda configuration is governed by AWS IAM policies.",
-        "log_management": "Function logs and platform runtime logs are emitted to Amazon CloudWatch Logs. Log retention and export are configured per function.",
-        "health_welfare_monitoring": "AWS Lambda provides built-in invocation metrics (duration, errors, throttles, concurrency) via Amazon CloudWatch Metrics. No agent installation is possible; observability is entirely provider-managed.",
-        "security_monitoring": "AWS CloudTrail captures all Lambda API calls for audit. AWS-native security event collection covers the managed runtime boundary.",
-        "patch_management": "Runtime patching is fully managed by AWS as part of the Lambda managed platform. Organization has no patching responsibility at this layer; runtime version selection is the only control available.",
-        "internalComponentRationales": {
-          "01KQQ4Q025-T7B7": "The AWS Lambda Runtime is modeled as the managed execution component that makes the serverless host understandable even though standard host requirements do not apply."
-        },
-        "relationshipRationales": {
-          "AWS Lambda Service": "The AWS Lambda control plane is modeled to show the managed service boundary for the blackbox serverless host."
-        }
+        "security_monitoring": "Cloud Audit Logs enabled."
       },
       "requirements": [],
       "implementations": [],
@@ -44580,24 +43377,112 @@ window.DRAFT_BROWSER_DATA = {
       "followsReferenceArchitecture": "",
       "decisionRecords": [
         {
-          "ref": "01KT1340H6-X3T5",
-          "key": "authentication"
+          "ref": "01M15NFKKN-74NY",
+          "key": "runtimeRequirement"
         },
         {
-          "ref": "01KT1340H6-X3T5",
-          "key": "health_welfare_monitoring"
+          "ref": "01M15NFKKN-74NY",
+          "key": "aiGatewayRoutingDecision"
         },
         {
-          "ref": "01KT1340H6-X3T5",
-          "key": "log_management"
+          "ref": "01M15NFKKN-74NY",
+          "key": "secretsManagementDecision"
         },
         {
-          "ref": "01KT1340H6-X3T5",
-          "key": "patch_management"
+          "ref": "01M15NFKKN-74NY",
+          "key": "localValidationDecision"
         },
         {
-          "ref": "01KT1340H6-X3T5",
-          "key": "security_monitoring"
+          "ref": "01M15NFKKN-74NY",
+          "key": "productRegistrationDecision"
+        },
+        {
+          "ref": "01M15NFKKN-74NY",
+          "key": "modelInferenceSpecDecision"
+        },
+        {
+          "ref": "01M15NFKKN-74NY",
+          "key": "databaseMigrationStrategyDecision"
+        },
+        {
+          "ref": "01M15NFKKN-74NY",
+          "key": "iacAutomationDecision"
+        },
+        {
+          "ref": "01M15NFKKN-74NY",
+          "key": "gateEnforcementDecision"
+        },
+        {
+          "ref": "01M15NFKKN-74NY",
+          "key": "testDataGovernanceDecision"
+        },
+        {
+          "ref": "01M15NFKKN-74NY",
+          "key": "rollbackStrategyDecision"
+        },
+        {
+          "ref": "01M15NFKKN-74NY",
+          "key": "composableIacDecision"
+        },
+        {
+          "ref": "01M15NFKKN-74NY",
+          "key": "previewEnvironmentsDecision"
+        },
+        {
+          "ref": "01M15NFKKN-74NY",
+          "key": "structuredLoggingDecision"
+        },
+        {
+          "ref": "01M15NFKKN-74NY",
+          "key": "sloPolicyDecision"
+        },
+        {
+          "ref": "01M15NFKKN-74NY",
+          "key": "zeroDowntimeStrategyDecision"
+        },
+        {
+          "ref": "01M15NFKKN-74NY",
+          "key": "automatedSecurityGatesDecision"
+        },
+        {
+          "ref": "01M15NFKKN-74NY",
+          "key": "queryParameterizationDecision"
+        },
+        {
+          "ref": "01M15NFKKN-74NY",
+          "key": "accessControlModelDecision"
+        },
+        {
+          "ref": "01M15NFKKN-74NY",
+          "key": "cryptographyStandardDecision"
+        },
+        {
+          "ref": "01M15NFKKN-74NY",
+          "key": "sessionManagementDecision"
+        },
+        {
+          "ref": "01M15NFKKN-74NY",
+          "key": "errorHandlingLoggingDecision"
+        },
+        {
+          "ref": "01M15NFKKN-74NY",
+          "key": "dependencySecurityDecision"
+        },
+        {
+          "ref": "01M15NFKKN-74NY",
+          "key": "gameTierClassificationDecision"
+        },
+        {
+          "ref": "01M15NFKKN-74NY",
+          "key": "gameUatDeploymentDecision"
+        },
+        {
+          "ref": "01M15NFKKN-74NY",
+          "key": "gameAuthPersistenceDecision"
+        },
+        {
+          "ref": "01M15NFKKN-74NY",
+          "key": "gameRepoScaffoldingDecision"
         }
       ],
       "affectedComponent": "",
@@ -44617,40 +43502,856 @@ window.DRAFT_BROWSER_DATA = {
       "hasRiskRef": false,
       "outboundRefs": [
         {
-          "target": "01KQQ4Q025-T7B7",
-          "path": "internalComponents[0].ref"
-        },
-        {
-          "target": "01KT1340H6-X3T5",
+          "target": "01M15NFKKN-74NY",
           "path": "decisionRecords[0].ref"
         },
         {
-          "target": "01KT1340H6-X3T5",
+          "target": "01M15NFKKN-74NY",
           "path": "decisionRecords[1].ref"
         },
         {
-          "target": "01KT1340H6-X3T5",
+          "target": "01M15NFKKN-74NY",
           "path": "decisionRecords[2].ref"
         },
         {
-          "target": "01KT1340H6-X3T5",
+          "target": "01M15NFKKN-74NY",
           "path": "decisionRecords[3].ref"
         },
         {
-          "target": "01KT1340H6-X3T5",
+          "target": "01M15NFKKN-74NY",
           "path": "decisionRecords[4].ref"
-        }
-      ],
-      "referencedBy": [
-        {
-          "source": "01KT1340H6-X3T5",
-          "path": "linkedObject"
         },
         {
-          "source": "01KSKWFZZW-ZEKF",
-          "path": "source"
+          "target": "01M15NFKKN-74NY",
+          "path": "decisionRecords[5].ref"
+        },
+        {
+          "target": "01M15NFKKN-74NY",
+          "path": "decisionRecords[6].ref"
+        },
+        {
+          "target": "01M15NFKKN-74NY",
+          "path": "decisionRecords[7].ref"
+        },
+        {
+          "target": "01M15NFKKN-74NY",
+          "path": "decisionRecords[8].ref"
+        },
+        {
+          "target": "01M15NFKKN-74NY",
+          "path": "decisionRecords[9].ref"
+        },
+        {
+          "target": "01M15NFKKN-74NY",
+          "path": "decisionRecords[10].ref"
+        },
+        {
+          "target": "01M15NFKKN-74NY",
+          "path": "decisionRecords[11].ref"
+        },
+        {
+          "target": "01M15NFKKN-74NY",
+          "path": "decisionRecords[12].ref"
+        },
+        {
+          "target": "01M15NFKKN-74NY",
+          "path": "decisionRecords[13].ref"
+        },
+        {
+          "target": "01M15NFKKN-74NY",
+          "path": "decisionRecords[14].ref"
+        },
+        {
+          "target": "01M15NFKKN-74NY",
+          "path": "decisionRecords[15].ref"
+        },
+        {
+          "target": "01M15NFKKN-74NY",
+          "path": "decisionRecords[16].ref"
+        },
+        {
+          "target": "01M15NFKKN-74NY",
+          "path": "decisionRecords[17].ref"
+        },
+        {
+          "target": "01M15NFKKN-74NY",
+          "path": "decisionRecords[18].ref"
+        },
+        {
+          "target": "01M15NFKKN-74NY",
+          "path": "decisionRecords[19].ref"
+        },
+        {
+          "target": "01M15NFKKN-74NY",
+          "path": "decisionRecords[20].ref"
+        },
+        {
+          "target": "01M15NFKKN-74NY",
+          "path": "decisionRecords[21].ref"
+        },
+        {
+          "target": "01M15NFKKN-74NY",
+          "path": "decisionRecords[22].ref"
+        },
+        {
+          "target": "01M15NFKKN-74NY",
+          "path": "decisionRecords[23].ref"
+        },
+        {
+          "target": "01M15NFKKN-74NY",
+          "path": "decisionRecords[24].ref"
+        },
+        {
+          "target": "01M15NFKKN-74NY",
+          "path": "decisionRecords[25].ref"
+        },
+        {
+          "target": "01M15NFKKN-74NY",
+          "path": "decisionRecords[26].ref"
         }
       ],
+      "referencedBy": [],
+      "editorSchema": {
+        "requiredFields": [
+          "schemaVersion",
+          "uid",
+          "type",
+          "name",
+          "repoUrl",
+          "owner",
+          "classification",
+          "catalogStatus"
+        ],
+        "optionalFields": [
+          "lifecycleStatus",
+          "aliases",
+          "description",
+          "version",
+          "tags",
+          "runsOn",
+          "language",
+          "interfaces",
+          "networkBindings",
+          "environmentConfiguration",
+          "runtimeSpec",
+          "notes",
+          "decisionRecords",
+          "requirementImplementations"
+        ],
+        "fieldTypes": {
+          "aliases": "list",
+          "owner": "dict",
+          "runsOn": "str",
+          "tags": "list",
+          "interfaces": "list",
+          "networkBindings": "list",
+          "environmentConfiguration": "list",
+          "runtimeSpec": "dict",
+          "notes": "dict",
+          "requirementGroups": "list",
+          "decisionRecords": "list",
+          "requirementImplementations": "list"
+        },
+        "enumFields": {
+          "catalogStatus": [
+            "stub",
+            "incomplete",
+            "complete"
+          ],
+          "lifecycleStatus": [
+            "candidate",
+            "preferred",
+            "existing-only",
+            "deprecated",
+            "retired"
+          ],
+          "classification": [
+            "web-application",
+            "api-service",
+            "worker",
+            "library",
+            "cli",
+            "other"
+          ]
+        },
+        "enumListFields": {},
+        "collectionSchemas": {
+          "interfaces": "interface",
+          "networkBindings": "networkBinding",
+          "environmentConfiguration": "environmentVariable",
+          "decisionRecords": "decisionRecordRef",
+          "requirementImplementations": "requirementImplementation"
+        },
+        "schemaPath": "framework/schemas/product-component.schema.yaml"
+      },
+      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M15NEKT7-EKAR\",\n  \"type\": \"product_component\",\n  \"name\": \"Skippy's Submind Agent Runner Container\",\n  \"description\": \"First-party agent container running LLM reasoning loops, tool dispatch, and DRAFT catalog queries.\",\n  \"version\": \"1.2.0\",\n  \"classification\": \"worker\",\n  \"catalogStatus\": \"complete\",\n  \"lifecycleStatus\": \"preferred\",\n  \"repoUrl\": \"https://github.com/dsackr/hermes-gcp-factory\",\n  \"owner\": {\n    \"team\": \"platform-ai-team\",\n    \"contact\": \"platform-ai@example.com\"\n  },\n  \"language\": \"python\",\n  \"tags\": [\n    \"agent-runner\",\n    \"python\",\n    \"containers\"\n  ],\n  \"decisionRecords\": [\n    {\n      \"ref\": \"01M15NFKKN-74NY\",\n      \"key\": \"runtimeRequirement\"\n    },\n    {\n      \"ref\": \"01M15NFKKN-74NY\",\n      \"key\": \"aiGatewayRoutingDecision\"\n    },\n    {\n      \"ref\": \"01M15NFKKN-74NY\",\n      \"key\": \"secretsManagementDecision\"\n    },\n    {\n      \"ref\": \"01M15NFKKN-74NY\",\n      \"key\": \"localValidationDecision\"\n    },\n    {\n      \"ref\": \"01M15NFKKN-74NY\",\n      \"key\": \"productRegistrationDecision\"\n    },\n    {\n      \"ref\": \"01M15NFKKN-74NY\",\n      \"key\": \"modelInferenceSpecDecision\"\n    },\n    {\n      \"ref\": \"01M15NFKKN-74NY\",\n      \"key\": \"databaseMigrationStrategyDecision\"\n    },\n    {\n      \"ref\": \"01M15NFKKN-74NY\",\n      \"key\": \"iacAutomationDecision\"\n    },\n    {\n      \"ref\": \"01M15NFKKN-74NY\",\n      \"key\": \"gateEnforcementDecision\"\n    },\n    {\n      \"ref\": \"01M15NFKKN-74NY\",\n      \"key\": \"testDataGovernanceDecision\"\n    },\n    {\n      \"ref\": \"01M15NFKKN-74NY\",\n      \"key\": \"rollbackStrategyDecision\"\n    },\n    {\n      \"ref\": \"01M15NFKKN-74NY\",\n      \"key\": \"composableIacDecision\"\n    },\n    {\n      \"ref\": \"01M15NFKKN-74NY\",\n      \"key\": \"previewEnvironmentsDecision\"\n    },\n    {\n      \"ref\": \"01M15NFKKN-74NY\",\n      \"key\": \"structuredLoggingDecision\"\n    },\n    {\n      \"ref\": \"01M15NFKKN-74NY\",\n      \"key\": \"sloPolicyDecision\"\n    },\n    {\n      \"ref\": \"01M15NFKKN-74NY\",\n      \"key\": \"zeroDowntimeStrategyDecision\"\n    },\n    {\n      \"ref\": \"01M15NFKKN-74NY\",\n      \"key\": \"automatedSecurityGatesDecision\"\n    },\n    {\n      \"ref\": \"01M15NFKKN-74NY\",\n      \"key\": \"queryParameterizationDecision\"\n    },\n    {\n      \"ref\": \"01M15NFKKN-74NY\",\n      \"key\": \"accessControlModelDecision\"\n    },\n    {\n      \"ref\": \"01M15NFKKN-74NY\",\n      \"key\": \"cryptographyStandardDecision\"\n    },\n    {\n      \"ref\": \"01M15NFKKN-74NY\",\n      \"key\": \"sessionManagementDecision\"\n    },\n    {\n      \"ref\": \"01M15NFKKN-74NY\",\n      \"key\": \"errorHandlingLoggingDecision\"\n    },\n    {\n      \"ref\": \"01M15NFKKN-74NY\",\n      \"key\": \"dependencySecurityDecision\"\n    },\n    {\n      \"ref\": \"01M15NFKKN-74NY\",\n      \"key\": \"gameTierClassificationDecision\"\n    },\n    {\n      \"ref\": \"01M15NFKKN-74NY\",\n      \"key\": \"gameUatDeploymentDecision\"\n    },\n    {\n      \"ref\": \"01M15NFKKN-74NY\",\n      \"key\": \"gameAuthPersistenceDecision\"\n    },\n    {\n      \"ref\": \"01M15NFKKN-74NY\",\n      \"key\": \"gameRepoScaffoldingDecision\"\n    }\n  ],\n  \"notes\": {\n    \"security_monitoring\": \"Cloud Audit Logs enabled.\"\n  },\n  \"_source\": \"catalog/engineering/product-components/product-component-skippy-submind-runner.yaml\"\n}",
+      "existsInCatalog": true,
+      "outboundRelationships": [],
+      "inboundRelationships": []
+    },
+    "01M15NEKT7-B26W": {
+      "id": "01M15NEKT7-B26W",
+      "uid": "01M15NEKT7-B26W",
+      "name": "Archie AI Assistant Product Registration",
+      "aliases": [],
+      "type": "product_registration",
+      "typeLabel": "Product Registration",
+      "filterType": "product_registration",
+      "category": "",
+      "deliveryModel": "",
+      "domain": "",
+      "description": "",
+      "version": "",
+      "catalogStatus": "complete",
+      "lifecycleStatus": "unknown",
+      "status": "",
+      "businessContext": {},
+      "product": "",
+      "runsOn": "",
+      "subtype": "",
+      "vendor": "",
+      "productName": "",
+      "productVersion": "",
+      "classification": "",
+      "platformDependency": "",
+      "capabilities": [],
+      "configurations": [],
+      "networkPlacement": "",
+      "patchingOwner": "",
+      "complianceCerts": [],
+      "requirementGroups": [],
+      "requirementImplementations": [],
+      "dataLeavesInfrastructure": null,
+      "dataResidencyCommitment": "",
+      "dpaNotes": "",
+      "vendorSLA": "",
+      "authenticationModel": "",
+      "incidentNotificationProcess": "",
+      "owner": {
+        "team": "archie-product-team",
+        "contact": "archie-team@example.com"
+      },
+      "definitionOwner": {},
+      "provider": {},
+      "authority": {},
+      "shape": "round-rectangle",
+      "color": "#7a6e60",
+      "source": "catalog/engineering/product-registrations/product-reg-archie-assistant.yaml",
+      "tags": [],
+      "ardCategory": "",
+      "internalComponents": [],
+      "notes": {},
+      "requirements": [],
+      "implementations": [],
+      "appliesTo": {},
+      "inherits": "",
+      "scalingUnits": [],
+      "networkZones": [],
+      "sdpConnections": [],
+      "serviceGroups": [],
+      "tierVariants": [],
+      "tierId": "",
+      "purpose": "",
+      "availabilityExpectation": "",
+      "costPosture": "",
+      "complianceScope": [],
+      "parameterSurface": [],
+      "followsReferenceArchitecture": "",
+      "decisionRecords": [],
+      "affectedComponent": "",
+      "impact": "",
+      "mitigationPath": "",
+      "decisionRationale": "",
+      "relatedDecisionRecords": [],
+      "linkedObject": "",
+      "primaryObjectType": "",
+      "primaryObjectUid": "",
+      "generatedObjects": [],
+      "unresolvedQuestions": [],
+      "assumptions": [],
+      "nextSteps": [],
+      "defaultSelection": false,
+      "requirementCount": 0,
+      "hasRiskRef": false,
+      "outboundRefs": [],
+      "referencedBy": [],
+      "editorSchema": {
+        "requiredFields": [
+          "schemaVersion",
+          "uid",
+          "type",
+          "name",
+          "owner",
+          "catalogStatus",
+          "repository"
+        ],
+        "optionalFields": [
+          "aliases",
+          "description",
+          "version",
+          "tags",
+          "businessContext",
+          "sdpManifest",
+          "notes",
+          "decisionRecords",
+          "requirementImplementations"
+        ],
+        "fieldTypes": {
+          "aliases": "list",
+          "owner": "dict",
+          "tags": "list",
+          "businessContext": "dict",
+          "repository": "dict",
+          "sdpManifest": "dict",
+          "notes": "dict",
+          "decisionRecords": "list",
+          "requirementImplementations": "list"
+        },
+        "enumFields": {
+          "catalogStatus": [
+            "stub",
+            "incomplete",
+            "complete"
+          ]
+        },
+        "enumListFields": {},
+        "collectionSchemas": {
+          "decisionRecords": "decisionRecordRef",
+          "requirementImplementations": "requirementImplementation"
+        },
+        "schemaPath": "framework/schemas/product-registration.schema.yaml"
+      },
+      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M15NEKT7-B26W\",\n  \"type\": \"product_registration\",\n  \"name\": \"Archie AI Assistant Product Registration\",\n  \"catalogStatus\": \"complete\",\n  \"owner\": {\n    \"team\": \"archie-product-team\",\n    \"contact\": \"archie-team@example.com\"\n  },\n  \"repository\": {\n    \"url\": \"https://github.com/company/archie-assistant\",\n    \"provider\": \"github\",\n    \"defaultBranch\": \"main\"\n  },\n  \"sdpManifest\": {\n    \"mode\": \"git\",\n    \"path\": \".draft/sdp.yaml\"\n  },\n  \"_source\": \"catalog/engineering/product-registrations/product-reg-archie-assistant.yaml\"\n}",
+      "existsInCatalog": true,
+      "outboundRelationships": [],
+      "inboundRelationships": []
+    },
+    "01M15NEKT7-FMMC": {
+      "id": "01M15NEKT7-FMMC",
+      "uid": "01M15NEKT7-FMMC",
+      "name": "Switch AI Gateway Product Registration",
+      "aliases": [],
+      "type": "product_registration",
+      "typeLabel": "Product Registration",
+      "filterType": "product_registration",
+      "category": "",
+      "deliveryModel": "",
+      "domain": "",
+      "description": "",
+      "version": "",
+      "catalogStatus": "complete",
+      "lifecycleStatus": "unknown",
+      "status": "",
+      "businessContext": {},
+      "product": "",
+      "runsOn": "",
+      "subtype": "",
+      "vendor": "",
+      "productName": "",
+      "productVersion": "",
+      "classification": "",
+      "platformDependency": "",
+      "capabilities": [],
+      "configurations": [],
+      "networkPlacement": "",
+      "patchingOwner": "",
+      "complianceCerts": [],
+      "requirementGroups": [],
+      "requirementImplementations": [],
+      "dataLeavesInfrastructure": null,
+      "dataResidencyCommitment": "",
+      "dpaNotes": "",
+      "vendorSLA": "",
+      "authenticationModel": "",
+      "incidentNotificationProcess": "",
+      "owner": {
+        "team": "switch-product-team",
+        "contact": "switch-team@example.com"
+      },
+      "definitionOwner": {},
+      "provider": {},
+      "authority": {},
+      "shape": "round-rectangle",
+      "color": "#7a6e60",
+      "source": "catalog/engineering/product-registrations/product-reg-switch-gateway.yaml",
+      "tags": [],
+      "ardCategory": "",
+      "internalComponents": [],
+      "notes": {},
+      "requirements": [],
+      "implementations": [],
+      "appliesTo": {},
+      "inherits": "",
+      "scalingUnits": [],
+      "networkZones": [],
+      "sdpConnections": [],
+      "serviceGroups": [],
+      "tierVariants": [],
+      "tierId": "",
+      "purpose": "",
+      "availabilityExpectation": "",
+      "costPosture": "",
+      "complianceScope": [],
+      "parameterSurface": [],
+      "followsReferenceArchitecture": "",
+      "decisionRecords": [],
+      "affectedComponent": "",
+      "impact": "",
+      "mitigationPath": "",
+      "decisionRationale": "",
+      "relatedDecisionRecords": [],
+      "linkedObject": "",
+      "primaryObjectType": "",
+      "primaryObjectUid": "",
+      "generatedObjects": [],
+      "unresolvedQuestions": [],
+      "assumptions": [],
+      "nextSteps": [],
+      "defaultSelection": false,
+      "requirementCount": 0,
+      "hasRiskRef": false,
+      "outboundRefs": [],
+      "referencedBy": [],
+      "editorSchema": {
+        "requiredFields": [
+          "schemaVersion",
+          "uid",
+          "type",
+          "name",
+          "owner",
+          "catalogStatus",
+          "repository"
+        ],
+        "optionalFields": [
+          "aliases",
+          "description",
+          "version",
+          "tags",
+          "businessContext",
+          "sdpManifest",
+          "notes",
+          "decisionRecords",
+          "requirementImplementations"
+        ],
+        "fieldTypes": {
+          "aliases": "list",
+          "owner": "dict",
+          "tags": "list",
+          "businessContext": "dict",
+          "repository": "dict",
+          "sdpManifest": "dict",
+          "notes": "dict",
+          "decisionRecords": "list",
+          "requirementImplementations": "list"
+        },
+        "enumFields": {
+          "catalogStatus": [
+            "stub",
+            "incomplete",
+            "complete"
+          ]
+        },
+        "enumListFields": {},
+        "collectionSchemas": {
+          "decisionRecords": "decisionRecordRef",
+          "requirementImplementations": "requirementImplementation"
+        },
+        "schemaPath": "framework/schemas/product-registration.schema.yaml"
+      },
+      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M15NEKT7-FMMC\",\n  \"type\": \"product_registration\",\n  \"name\": \"Switch AI Gateway Product Registration\",\n  \"catalogStatus\": \"complete\",\n  \"owner\": {\n    \"team\": \"switch-product-team\",\n    \"contact\": \"switch-team@example.com\"\n  },\n  \"repository\": {\n    \"url\": \"https://github.com/company/switch-gateway\",\n    \"provider\": \"github\",\n    \"defaultBranch\": \"main\"\n  },\n  \"sdpManifest\": {\n    \"mode\": \"git\",\n    \"path\": \".draft/sdp.yaml\"\n  },\n  \"_source\": \"catalog/engineering/product-registrations/product-reg-switch-gateway.yaml\"\n}",
+      "existsInCatalog": true,
+      "outboundRelationships": [],
+      "inboundRelationships": []
+    },
+    "01M15NEKT7-S14J": {
+      "id": "01M15NEKT7-S14J",
+      "uid": "01M15NEKT7-S14J",
+      "name": "Skippy's Submind Agent Factory Deployment Pattern",
+      "aliases": [],
+      "type": "software_deployment_pattern",
+      "typeLabel": "SoftwareDeploymentPattern",
+      "filterType": "software_deployment_pattern",
+      "category": "",
+      "deliveryModel": "",
+      "domain": "",
+      "description": "Serverless containerized agent factory deployment pattern on GCP Cloud Run with Secret Manager IAM bindings and Cloud SQL datastores.",
+      "version": "1.2.0",
+      "catalogStatus": "complete",
+      "lifecycleStatus": "preferred",
+      "status": "",
+      "businessContext": {},
+      "product": "",
+      "runsOn": "",
+      "subtype": "",
+      "vendor": "",
+      "productName": "",
+      "productVersion": "",
+      "classification": "",
+      "platformDependency": "",
+      "capabilities": [],
+      "configurations": [],
+      "networkPlacement": "",
+      "patchingOwner": "",
+      "complianceCerts": [],
+      "requirementGroups": [],
+      "requirementImplementations": [],
+      "dataLeavesInfrastructure": null,
+      "dataResidencyCommitment": "",
+      "dpaNotes": "",
+      "vendorSLA": "",
+      "authenticationModel": "",
+      "incidentNotificationProcess": "",
+      "owner": {
+        "team": "platform-ai-team",
+        "contact": "platform-ai@example.com"
+      },
+      "definitionOwner": {},
+      "provider": {},
+      "authority": {},
+      "shape": "star",
+      "color": "#1f8a5b",
+      "source": "catalog/engineering/software-deployment-patterns/sdp-skippys-submind.yaml",
+      "tags": [
+        "software-deployment-pattern",
+        "agent-factory",
+        "gcp",
+        "cloud-run"
+      ],
+      "ardCategory": "",
+      "internalComponents": [],
+      "notes": {
+        "availabilityTarget": "99.9%",
+        "availabilityRequirement": "Active-active container execution on GCP Cloud Run",
+        "dataClassification": "Internal",
+        "deploymentTargets": "GCP Cloud Run Serverless Substrate in us-central1",
+        "failureDomain": "Cloud Run regional availability domain",
+        "patternDeviations": "none",
+        "externalDependencies": "GCP Secret Manager and Cloud SQL Postgres",
+        "localValidation": "Pre-commit validation executed",
+        "productRegistration": "Registered in drafting-table",
+        "modelInferenceSpec": "Claude 3.5 Sonnet / Claude 3 Haiku specs declared",
+        "aiGatewayRouting": "Routed via Skippy Submind AI Gateway",
+        "secretsManagement": "Dynamic GCP Secret Manager resolution"
+      },
+      "requirements": [],
+      "implementations": [],
+      "appliesTo": {},
+      "inherits": "",
+      "scalingUnits": [],
+      "networkZones": [],
+      "sdpConnections": [],
+      "serviceGroups": [
+        {
+          "id": "agent-factory-group",
+          "name": "Agent Factory Processing Group",
+          "deploymentTarget": "GCP Cloud Run Serverless Substrate in us-central1",
+          "components": [
+            {
+              "productComponent": "01M15NEKT7-EKAR"
+            }
+          ]
+        }
+      ],
+      "tierVariants": [],
+      "tierId": "",
+      "purpose": "",
+      "availabilityExpectation": "",
+      "costPosture": "",
+      "complianceScope": [],
+      "parameterSurface": [],
+      "followsReferenceArchitecture": "",
+      "decisionRecords": [
+        {
+          "ref": "01M15NFKKN-74NY",
+          "key": "noApplicablePattern"
+        },
+        {
+          "ref": "01M15NFKKN-74NY",
+          "key": "interServiceConnections"
+        },
+        {
+          "ref": "01M15NFKKN-74NY",
+          "key": "deploymentTargets"
+        },
+        {
+          "ref": "01M15NFKKN-74NY",
+          "key": "availabilityRequirement"
+        },
+        {
+          "ref": "01M15NFKKN-74NY",
+          "key": "externalDependencies"
+        },
+        {
+          "ref": "01M15NFKKN-74NY",
+          "key": "dataClassification"
+        },
+        {
+          "ref": "01M15NFKKN-74NY",
+          "key": "failureDomain"
+        },
+        {
+          "ref": "01M15NFKKN-74NY",
+          "key": "patternDeviations"
+        },
+        {
+          "ref": "01M15NFKKN-74NY",
+          "key": "localValidationDecision"
+        },
+        {
+          "ref": "01M15NFKKN-74NY",
+          "key": "productRegistrationDecision"
+        },
+        {
+          "ref": "01M15NFKKN-74NY",
+          "key": "modelInferenceSpecDecision"
+        },
+        {
+          "ref": "01M15NFKKN-74NY",
+          "key": "aiGatewayRoutingDecision"
+        },
+        {
+          "ref": "01M15NFKKN-74NY",
+          "key": "secretsManagementDecision"
+        },
+        {
+          "ref": "01M15NFKKN-74NY",
+          "key": "databaseMigrationStrategyDecision"
+        },
+        {
+          "ref": "01M15NFKKN-74NY",
+          "key": "iacAutomationDecision"
+        },
+        {
+          "ref": "01M15NFKKN-74NY",
+          "key": "gateEnforcementDecision"
+        },
+        {
+          "ref": "01M15NFKKN-74NY",
+          "key": "testDataGovernanceDecision"
+        },
+        {
+          "ref": "01M15NFKKN-74NY",
+          "key": "rollbackStrategyDecision"
+        },
+        {
+          "ref": "01M15NFKKN-74NY",
+          "key": "composableIacDecision"
+        },
+        {
+          "ref": "01M15NFKKN-74NY",
+          "key": "previewEnvironmentsDecision"
+        },
+        {
+          "ref": "01M15NFKKN-74NY",
+          "key": "structuredLoggingDecision"
+        },
+        {
+          "ref": "01M15NFKKN-74NY",
+          "key": "sloPolicyDecision"
+        },
+        {
+          "ref": "01M15NFKKN-74NY",
+          "key": "zeroDowntimeStrategyDecision"
+        },
+        {
+          "ref": "01M15NFKKN-74NY",
+          "key": "automatedSecurityGatesDecision"
+        },
+        {
+          "ref": "01M15NFKKN-74NY",
+          "key": "queryParameterizationDecision"
+        },
+        {
+          "ref": "01M15NFKKN-74NY",
+          "key": "accessControlModelDecision"
+        },
+        {
+          "ref": "01M15NFKKN-74NY",
+          "key": "cryptographyStandardDecision"
+        },
+        {
+          "ref": "01M15NFKKN-74NY",
+          "key": "sessionManagementDecision"
+        },
+        {
+          "ref": "01M15NFKKN-74NY",
+          "key": "errorHandlingLoggingDecision"
+        },
+        {
+          "ref": "01M15NFKKN-74NY",
+          "key": "dependencySecurityDecision"
+        },
+        {
+          "ref": "01M15NFKKN-74NY",
+          "key": "gameTierClassificationDecision"
+        },
+        {
+          "ref": "01M15NFKKN-74NY",
+          "key": "gameUatDeploymentDecision"
+        },
+        {
+          "ref": "01M15NFKKN-74NY",
+          "key": "gameAuthPersistenceDecision"
+        },
+        {
+          "ref": "01M15NFKKN-74NY",
+          "key": "gameRepoScaffoldingDecision"
+        }
+      ],
+      "affectedComponent": "",
+      "impact": "",
+      "mitigationPath": "",
+      "decisionRationale": "",
+      "relatedDecisionRecords": [],
+      "linkedObject": "",
+      "primaryObjectType": "",
+      "primaryObjectUid": "",
+      "generatedObjects": [],
+      "unresolvedQuestions": [],
+      "assumptions": [],
+      "nextSteps": [],
+      "defaultSelection": false,
+      "requirementCount": 0,
+      "hasRiskRef": false,
+      "outboundRefs": [
+        {
+          "target": "01M15NFKKN-74NY",
+          "path": "decisionRecords[0].ref"
+        },
+        {
+          "target": "01M15NFKKN-74NY",
+          "path": "decisionRecords[1].ref"
+        },
+        {
+          "target": "01M15NFKKN-74NY",
+          "path": "decisionRecords[2].ref"
+        },
+        {
+          "target": "01M15NFKKN-74NY",
+          "path": "decisionRecords[3].ref"
+        },
+        {
+          "target": "01M15NFKKN-74NY",
+          "path": "decisionRecords[4].ref"
+        },
+        {
+          "target": "01M15NFKKN-74NY",
+          "path": "decisionRecords[5].ref"
+        },
+        {
+          "target": "01M15NFKKN-74NY",
+          "path": "decisionRecords[6].ref"
+        },
+        {
+          "target": "01M15NFKKN-74NY",
+          "path": "decisionRecords[7].ref"
+        },
+        {
+          "target": "01M15NFKKN-74NY",
+          "path": "decisionRecords[8].ref"
+        },
+        {
+          "target": "01M15NFKKN-74NY",
+          "path": "decisionRecords[9].ref"
+        },
+        {
+          "target": "01M15NFKKN-74NY",
+          "path": "decisionRecords[10].ref"
+        },
+        {
+          "target": "01M15NFKKN-74NY",
+          "path": "decisionRecords[11].ref"
+        },
+        {
+          "target": "01M15NFKKN-74NY",
+          "path": "decisionRecords[12].ref"
+        },
+        {
+          "target": "01M15NFKKN-74NY",
+          "path": "decisionRecords[13].ref"
+        },
+        {
+          "target": "01M15NFKKN-74NY",
+          "path": "decisionRecords[14].ref"
+        },
+        {
+          "target": "01M15NFKKN-74NY",
+          "path": "decisionRecords[15].ref"
+        },
+        {
+          "target": "01M15NFKKN-74NY",
+          "path": "decisionRecords[16].ref"
+        },
+        {
+          "target": "01M15NFKKN-74NY",
+          "path": "decisionRecords[17].ref"
+        },
+        {
+          "target": "01M15NFKKN-74NY",
+          "path": "decisionRecords[18].ref"
+        },
+        {
+          "target": "01M15NFKKN-74NY",
+          "path": "decisionRecords[19].ref"
+        },
+        {
+          "target": "01M15NFKKN-74NY",
+          "path": "decisionRecords[20].ref"
+        },
+        {
+          "target": "01M15NFKKN-74NY",
+          "path": "decisionRecords[21].ref"
+        },
+        {
+          "target": "01M15NFKKN-74NY",
+          "path": "decisionRecords[22].ref"
+        },
+        {
+          "target": "01M15NFKKN-74NY",
+          "path": "decisionRecords[23].ref"
+        },
+        {
+          "target": "01M15NFKKN-74NY",
+          "path": "decisionRecords[24].ref"
+        },
+        {
+          "target": "01M15NFKKN-74NY",
+          "path": "decisionRecords[25].ref"
+        },
+        {
+          "target": "01M15NFKKN-74NY",
+          "path": "decisionRecords[26].ref"
+        },
+        {
+          "target": "01M15NFKKN-74NY",
+          "path": "decisionRecords[27].ref"
+        },
+        {
+          "target": "01M15NFKKN-74NY",
+          "path": "decisionRecords[28].ref"
+        },
+        {
+          "target": "01M15NFKKN-74NY",
+          "path": "decisionRecords[29].ref"
+        },
+        {
+          "target": "01M15NFKKN-74NY",
+          "path": "decisionRecords[30].ref"
+        },
+        {
+          "target": "01M15NFKKN-74NY",
+          "path": "decisionRecords[31].ref"
+        },
+        {
+          "target": "01M15NFKKN-74NY",
+          "path": "decisionRecords[32].ref"
+        },
+        {
+          "target": "01M15NFKKN-74NY",
+          "path": "decisionRecords[33].ref"
+        }
+      ],
+      "referencedBy": [],
       "editorSchema": {
         "requiredFields": [
           "schemaVersion",
@@ -44666,32 +44367,25 @@ window.DRAFT_BROWSER_DATA = {
           "version",
           "owner",
           "tags",
+          "businessContext",
+          "followsReferenceArchitecture",
           "notes",
-          "operatingSystemComponent",
-          "computePlatformComponent",
-          "internalComponents",
-          "deploymentConfigurations",
-          "provisioningModel",
-          "deployablePackage",
+          "scalingUnits",
+          "networkZones",
+          "serviceGroups",
           "decisionRecords",
-          "requirementImplementations"
+          "requirementImplementations",
+          "tierVariants"
         ],
         "fieldTypes": {
           "aliases": "list",
           "owner": "dict",
           "tags": "list",
-          "notes": "dict",
-          "internalComponents": "list",
-          "deploymentConfigurations": "list",
-          "requirementGroups": "list",
-          "decisionRecords": "list",
-          "requirementImplementations": "list"
+          "businessContext": "dict",
+          "followsReferenceArchitecture": "str",
+          "notes": "dict"
         },
         "enumFields": {
-          "provisioningModel": [
-            "deployable",
-            "reference-only"
-          ],
           "catalogStatus": [
             "stub",
             "incomplete",
@@ -44706,56 +44400,710 @@ window.DRAFT_BROWSER_DATA = {
           ]
         },
         "enumListFields": {},
-        "collectionSchemas": {},
-        "schemaPath": "framework/schemas/host.schema.yaml"
+        "collectionSchemas": {
+          "scalingUnits": "scalingUnit",
+          "networkZones": "networkZone",
+          "serviceGroups": "serviceGroup",
+          "decisionRecords": "decisionRecordRef",
+          "requirementImplementations": "requirementImplementation",
+          "tierVariants": "tierVariant"
+        },
+        "schemaPath": "framework/schemas/software-deployment-pattern.schema.yaml"
       },
-      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01KQQ4Q025-1XDE\",\n  \"type\": \"host\",\n  \"category\": \"host\",\n  \"subtype\": \"host\",\n  \"name\": \"AWS Lambda Serverless Host\",\n  \"description\": \"Serverless execution environment provided by AWS Lambda. The host is entirely AWS-managed and blackbox to the organization. Function code is deployed as a ProductComponent. No OS management, no agent installation, and no patching responsibility exist at this layer.\\n\",\n  \"version\": \"1.0.0\",\n  \"catalogStatus\": \"incomplete\",\n  \"lifecycleStatus\": \"preferred\",\n  \"owner\": {\n    \"team\": \"cloud-architecture\",\n    \"contact\": \"cloud-architecture@example.com\"\n  },\n  \"tags\": [\n    \"lambda\",\n    \"serverless\"\n  ],\n  \"notes\": {\n    \"authenticationApproach\": \"IAM-based invocation and execution roles managed by AWS\",\n    \"loggingApproach\": \"Function and platform logs emitted to CloudWatch Logs\",\n    \"securityMonitoringApproach\": \"AWS-native monitoring and audit integration for the managed runtime\",\n    \"patchManagementApproach\": \"Runtime patching is handled by AWS as part of the managed platform\",\n    \"authentication\": \"IAM-based invocation and execution roles managed by AWS. No SSH or interactive login; access to the execution environment is not possible. Administrative access to the Lambda configuration is governed by AWS IAM policies.\",\n    \"log_management\": \"Function logs and platform runtime logs are emitted to Amazon CloudWatch Logs. Log retention and export are configured per function.\",\n    \"health_welfare_monitoring\": \"AWS Lambda provides built-in invocation metrics (duration, errors, throttles, concurrency) via Amazon CloudWatch Metrics. No agent installation is possible; observability is entirely provider-managed.\",\n    \"security_monitoring\": \"AWS CloudTrail captures all Lambda API calls for audit. AWS-native security event collection covers the managed runtime boundary.\",\n    \"patch_management\": \"Runtime patching is fully managed by AWS as part of the Lambda managed platform. Organization has no patching responsibility at this layer; runtime version selection is the only control available.\",\n    \"internalComponentRationales\": {\n      \"01KQQ4Q025-T7B7\": \"The AWS Lambda Runtime is modeled as the managed execution component that makes the serverless host understandable even though standard host requirements do not apply.\"\n    },\n    \"relationshipRationales\": {\n      \"AWS Lambda Service\": \"The AWS Lambda control plane is modeled to show the managed service boundary for the blackbox serverless host.\"\n    }\n  },\n  \"internalComponents\": [\n    {\n      \"ref\": \"01KQQ4Q025-T7B7\",\n      \"role\": \"managed-runtime\",\n      \"notes\": \"AWS-managed serverless execution environment. Blackbox host.\"\n    }\n  ],\n  \"decisionRecords\": [\n    {\n      \"ref\": \"01KT1340H6-X3T5\",\n      \"key\": \"authentication\"\n    },\n    {\n      \"ref\": \"01KT1340H6-X3T5\",\n      \"key\": \"health_welfare_monitoring\"\n    },\n    {\n      \"ref\": \"01KT1340H6-X3T5\",\n      \"key\": \"log_management\"\n    },\n    {\n      \"ref\": \"01KT1340H6-X3T5\",\n      \"key\": \"patch_management\"\n    },\n    {\n      \"ref\": \"01KT1340H6-X3T5\",\n      \"key\": \"security_monitoring\"\n    }\n  ],\n  \"provisioningModel\": \"deployable\",\n  \"deployablePackage\": {\n    \"registry\": \"github\",\n    \"source\": \"company-infrastructure/terraform-01KQQ4Q025-1XDE\",\n    \"version\": \"v1.0.0\"\n  },\n  \"_source\": \"examples/catalog/shared-services/hosts/host-serverless-lambda.yaml\"\n}",
+      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M15NEKT7-S14J\",\n  \"type\": \"software_deployment_pattern\",\n  \"name\": \"Skippy's Submind Agent Factory Deployment Pattern\",\n  \"description\": \"Serverless containerized agent factory deployment pattern on GCP Cloud Run with Secret Manager IAM bindings and Cloud SQL datastores.\",\n  \"version\": \"1.2.0\",\n  \"catalogStatus\": \"complete\",\n  \"lifecycleStatus\": \"preferred\",\n  \"owner\": {\n    \"team\": \"platform-ai-team\",\n    \"contact\": \"platform-ai@example.com\"\n  },\n  \"tags\": [\n    \"software-deployment-pattern\",\n    \"agent-factory\",\n    \"gcp\",\n    \"cloud-run\"\n  ],\n  \"serviceGroups\": [\n    {\n      \"id\": \"agent-factory-group\",\n      \"name\": \"Agent Factory Processing Group\",\n      \"deploymentTarget\": \"GCP Cloud Run Serverless Substrate in us-central1\",\n      \"components\": [\n        {\n          \"productComponent\": \"01M15NEKT7-EKAR\"\n        }\n      ]\n    }\n  ],\n  \"deployableObjects\": [\n    {\n      \"dataStoreService\": \"01M15NEKT7-H42Y\"\n    },\n    {\n      \"aiGateway\": \"01M15NEKT7-QKPW\"\n    }\n  ],\n  \"decisionRecords\": [\n    {\n      \"ref\": \"01M15NFKKN-74NY\",\n      \"key\": \"noApplicablePattern\"\n    },\n    {\n      \"ref\": \"01M15NFKKN-74NY\",\n      \"key\": \"interServiceConnections\"\n    },\n    {\n      \"ref\": \"01M15NFKKN-74NY\",\n      \"key\": \"deploymentTargets\"\n    },\n    {\n      \"ref\": \"01M15NFKKN-74NY\",\n      \"key\": \"availabilityRequirement\"\n    },\n    {\n      \"ref\": \"01M15NFKKN-74NY\",\n      \"key\": \"externalDependencies\"\n    },\n    {\n      \"ref\": \"01M15NFKKN-74NY\",\n      \"key\": \"dataClassification\"\n    },\n    {\n      \"ref\": \"01M15NFKKN-74NY\",\n      \"key\": \"failureDomain\"\n    },\n    {\n      \"ref\": \"01M15NFKKN-74NY\",\n      \"key\": \"patternDeviations\"\n    },\n    {\n      \"ref\": \"01M15NFKKN-74NY\",\n      \"key\": \"localValidationDecision\"\n    },\n    {\n      \"ref\": \"01M15NFKKN-74NY\",\n      \"key\": \"productRegistrationDecision\"\n    },\n    {\n      \"ref\": \"01M15NFKKN-74NY\",\n      \"key\": \"modelInferenceSpecDecision\"\n    },\n    {\n      \"ref\": \"01M15NFKKN-74NY\",\n      \"key\": \"aiGatewayRoutingDecision\"\n    },\n    {\n      \"ref\": \"01M15NFKKN-74NY\",\n      \"key\": \"secretsManagementDecision\"\n    },\n    {\n      \"ref\": \"01M15NFKKN-74NY\",\n      \"key\": \"databaseMigrationStrategyDecision\"\n    },\n    {\n      \"ref\": \"01M15NFKKN-74NY\",\n      \"key\": \"iacAutomationDecision\"\n    },\n    {\n      \"ref\": \"01M15NFKKN-74NY\",\n      \"key\": \"gateEnforcementDecision\"\n    },\n    {\n      \"ref\": \"01M15NFKKN-74NY\",\n      \"key\": \"testDataGovernanceDecision\"\n    },\n    {\n      \"ref\": \"01M15NFKKN-74NY\",\n      \"key\": \"rollbackStrategyDecision\"\n    },\n    {\n      \"ref\": \"01M15NFKKN-74NY\",\n      \"key\": \"composableIacDecision\"\n    },\n    {\n      \"ref\": \"01M15NFKKN-74NY\",\n      \"key\": \"previewEnvironmentsDecision\"\n    },\n    {\n      \"ref\": \"01M15NFKKN-74NY\",\n      \"key\": \"structuredLoggingDecision\"\n    },\n    {\n      \"ref\": \"01M15NFKKN-74NY\",\n      \"key\": \"sloPolicyDecision\"\n    },\n    {\n      \"ref\": \"01M15NFKKN-74NY\",\n      \"key\": \"zeroDowntimeStrategyDecision\"\n    },\n    {\n      \"ref\": \"01M15NFKKN-74NY\",\n      \"key\": \"automatedSecurityGatesDecision\"\n    },\n    {\n      \"ref\": \"01M15NFKKN-74NY\",\n      \"key\": \"queryParameterizationDecision\"\n    },\n    {\n      \"ref\": \"01M15NFKKN-74NY\",\n      \"key\": \"accessControlModelDecision\"\n    },\n    {\n      \"ref\": \"01M15NFKKN-74NY\",\n      \"key\": \"cryptographyStandardDecision\"\n    },\n    {\n      \"ref\": \"01M15NFKKN-74NY\",\n      \"key\": \"sessionManagementDecision\"\n    },\n    {\n      \"ref\": \"01M15NFKKN-74NY\",\n      \"key\": \"errorHandlingLoggingDecision\"\n    },\n    {\n      \"ref\": \"01M15NFKKN-74NY\",\n      \"key\": \"dependencySecurityDecision\"\n    },\n    {\n      \"ref\": \"01M15NFKKN-74NY\",\n      \"key\": \"gameTierClassificationDecision\"\n    },\n    {\n      \"ref\": \"01M15NFKKN-74NY\",\n      \"key\": \"gameUatDeploymentDecision\"\n    },\n    {\n      \"ref\": \"01M15NFKKN-74NY\",\n      \"key\": \"gameAuthPersistenceDecision\"\n    },\n    {\n      \"ref\": \"01M15NFKKN-74NY\",\n      \"key\": \"gameRepoScaffoldingDecision\"\n    }\n  ],\n  \"notes\": {\n    \"availabilityTarget\": \"99.9%\",\n    \"availabilityRequirement\": \"Active-active container execution on GCP Cloud Run\",\n    \"dataClassification\": \"Internal\",\n    \"deploymentTargets\": \"GCP Cloud Run Serverless Substrate in us-central1\",\n    \"failureDomain\": \"Cloud Run regional availability domain\",\n    \"patternDeviations\": \"none\",\n    \"externalDependencies\": \"GCP Secret Manager and Cloud SQL Postgres\",\n    \"localValidation\": \"Pre-commit validation executed\",\n    \"productRegistration\": \"Registered in drafting-table\",\n    \"modelInferenceSpec\": \"Claude 3.5 Sonnet / Claude 3 Haiku specs declared\",\n    \"aiGatewayRouting\": \"Routed via Skippy Submind AI Gateway\",\n    \"secretsManagement\": \"Dynamic GCP Secret Manager resolution\"\n  },\n  \"_source\": \"catalog/engineering/software-deployment-patterns/sdp-skippys-submind.yaml\"\n}",
       "existsInCatalog": true,
-      "outboundRelationships": [
-        {
-          "uid": "01KSKWFZZW-ZEKF",
-          "name": "AWS Lambda Serverless Host \u2192 AWS Lambda Service",
-          "label": "calls",
-          "technology": "",
-          "direction": "",
-          "targetUid": "",
-          "targetName": "AWS Lambda Service",
-          "capabilities": []
-        }
-      ],
+      "outboundRelationships": [],
       "inboundRelationships": []
     },
-    "01KQQ4Q025-T7B7": {
-      "id": "01KQQ4Q025-T7B7",
-      "uid": "01KQQ4Q025-T7B7",
-      "name": "AWS Lambda Runtime",
+    "01M15NFKKN-74NY": {
+      "id": "01M15NFKKN-74NY",
+      "uid": "01M15NFKKN-74NY",
+      "name": "Agent Factory Platform Architecture Decisions",
       "aliases": [],
-      "type": "runtime_service",
-      "typeLabel": "RuntimeService / Paas",
-      "filterType": "runtime_service",
+      "type": "decision_record",
+      "typeLabel": "DecisionRecord / decision",
+      "filterType": "decision_record",
+      "category": "decision",
+      "deliveryModel": "",
+      "domain": "",
+      "description": "Architecture decision record capturing operational decisions, resilience models, logging, security controls, and L1-L3 engineering maturity standards for the Agent Factory platform.",
+      "version": "1.2.0",
+      "catalogStatus": "complete",
+      "lifecycleStatus": "preferred",
+      "status": "accepted",
+      "businessContext": {},
+      "product": "",
+      "runsOn": "",
+      "subtype": "",
+      "vendor": "",
+      "productName": "",
+      "productVersion": "",
+      "classification": "",
+      "platformDependency": "",
+      "capabilities": [],
+      "configurations": [],
+      "networkPlacement": "",
+      "patchingOwner": "",
+      "complianceCerts": [],
+      "requirementGroups": [],
+      "requirementImplementations": [],
+      "dataLeavesInfrastructure": null,
+      "dataResidencyCommitment": "",
+      "dpaNotes": "",
+      "vendorSLA": "",
+      "authenticationModel": "",
+      "incidentNotificationProcess": "",
+      "owner": {
+        "team": "platform-ai-team",
+        "contact": "platform-ai@example.com"
+      },
+      "definitionOwner": {},
+      "provider": {},
+      "authority": {},
+      "shape": "round-rectangle",
+      "color": "#1f8a5b",
+      "source": "catalog/governance/decision-records/dr-agent-factory-decisions.yaml",
+      "tags": [],
+      "ardCategory": "decision",
+      "internalComponents": [],
+      "notes": {},
+      "requirements": [],
+      "implementations": [],
+      "appliesTo": {},
+      "inherits": "",
+      "scalingUnits": [],
+      "networkZones": [],
+      "sdpConnections": [],
+      "serviceGroups": [],
+      "tierVariants": [],
+      "tierId": "",
+      "purpose": "",
+      "availabilityExpectation": "",
+      "costPosture": "",
+      "complianceScope": [],
+      "parameterSurface": [],
+      "followsReferenceArchitecture": "",
+      "decisionRecords": [],
+      "affectedComponent": "",
+      "impact": "",
+      "mitigationPath": "",
+      "decisionRationale": "Standardized GCP Cloud Run, Secret Manager, Cloud SQL, and DRAFT L3 Advanced engineering maturity standards.",
+      "relatedDecisionRecords": [],
+      "linkedObject": "",
+      "primaryObjectType": "",
+      "primaryObjectUid": "",
+      "generatedObjects": [],
+      "unresolvedQuestions": [],
+      "assumptions": [],
+      "nextSteps": [],
+      "defaultSelection": false,
+      "requirementCount": 0,
+      "hasRiskRef": false,
+      "outboundRefs": [],
+      "referencedBy": [
+        {
+          "source": "01M15NEKT7-EKAR",
+          "path": "decisionRecords[0].ref"
+        },
+        {
+          "source": "01M15NEKT7-EKAR",
+          "path": "decisionRecords[1].ref"
+        },
+        {
+          "source": "01M15NEKT7-EKAR",
+          "path": "decisionRecords[2].ref"
+        },
+        {
+          "source": "01M15NEKT7-EKAR",
+          "path": "decisionRecords[3].ref"
+        },
+        {
+          "source": "01M15NEKT7-EKAR",
+          "path": "decisionRecords[4].ref"
+        },
+        {
+          "source": "01M15NEKT7-EKAR",
+          "path": "decisionRecords[5].ref"
+        },
+        {
+          "source": "01M15NEKT7-EKAR",
+          "path": "decisionRecords[6].ref"
+        },
+        {
+          "source": "01M15NEKT7-EKAR",
+          "path": "decisionRecords[7].ref"
+        },
+        {
+          "source": "01M15NEKT7-EKAR",
+          "path": "decisionRecords[8].ref"
+        },
+        {
+          "source": "01M15NEKT7-EKAR",
+          "path": "decisionRecords[9].ref"
+        },
+        {
+          "source": "01M15NEKT7-EKAR",
+          "path": "decisionRecords[10].ref"
+        },
+        {
+          "source": "01M15NEKT7-EKAR",
+          "path": "decisionRecords[11].ref"
+        },
+        {
+          "source": "01M15NEKT7-EKAR",
+          "path": "decisionRecords[12].ref"
+        },
+        {
+          "source": "01M15NEKT7-EKAR",
+          "path": "decisionRecords[13].ref"
+        },
+        {
+          "source": "01M15NEKT7-EKAR",
+          "path": "decisionRecords[14].ref"
+        },
+        {
+          "source": "01M15NEKT7-EKAR",
+          "path": "decisionRecords[15].ref"
+        },
+        {
+          "source": "01M15NEKT7-EKAR",
+          "path": "decisionRecords[16].ref"
+        },
+        {
+          "source": "01M15NEKT7-EKAR",
+          "path": "decisionRecords[17].ref"
+        },
+        {
+          "source": "01M15NEKT7-EKAR",
+          "path": "decisionRecords[18].ref"
+        },
+        {
+          "source": "01M15NEKT7-EKAR",
+          "path": "decisionRecords[19].ref"
+        },
+        {
+          "source": "01M15NEKT7-EKAR",
+          "path": "decisionRecords[20].ref"
+        },
+        {
+          "source": "01M15NEKT7-EKAR",
+          "path": "decisionRecords[21].ref"
+        },
+        {
+          "source": "01M15NEKT7-EKAR",
+          "path": "decisionRecords[22].ref"
+        },
+        {
+          "source": "01M15NEKT7-EKAR",
+          "path": "decisionRecords[23].ref"
+        },
+        {
+          "source": "01M15NEKT7-EKAR",
+          "path": "decisionRecords[24].ref"
+        },
+        {
+          "source": "01M15NEKT7-EKAR",
+          "path": "decisionRecords[25].ref"
+        },
+        {
+          "source": "01M15NEKT7-EKAR",
+          "path": "decisionRecords[26].ref"
+        },
+        {
+          "source": "01M15NEKT7-S14J",
+          "path": "decisionRecords[0].ref"
+        },
+        {
+          "source": "01M15NEKT7-S14J",
+          "path": "decisionRecords[1].ref"
+        },
+        {
+          "source": "01M15NEKT7-S14J",
+          "path": "decisionRecords[2].ref"
+        },
+        {
+          "source": "01M15NEKT7-S14J",
+          "path": "decisionRecords[3].ref"
+        },
+        {
+          "source": "01M15NEKT7-S14J",
+          "path": "decisionRecords[4].ref"
+        },
+        {
+          "source": "01M15NEKT7-S14J",
+          "path": "decisionRecords[5].ref"
+        },
+        {
+          "source": "01M15NEKT7-S14J",
+          "path": "decisionRecords[6].ref"
+        },
+        {
+          "source": "01M15NEKT7-S14J",
+          "path": "decisionRecords[7].ref"
+        },
+        {
+          "source": "01M15NEKT7-S14J",
+          "path": "decisionRecords[8].ref"
+        },
+        {
+          "source": "01M15NEKT7-S14J",
+          "path": "decisionRecords[9].ref"
+        },
+        {
+          "source": "01M15NEKT7-S14J",
+          "path": "decisionRecords[10].ref"
+        },
+        {
+          "source": "01M15NEKT7-S14J",
+          "path": "decisionRecords[11].ref"
+        },
+        {
+          "source": "01M15NEKT7-S14J",
+          "path": "decisionRecords[12].ref"
+        },
+        {
+          "source": "01M15NEKT7-S14J",
+          "path": "decisionRecords[13].ref"
+        },
+        {
+          "source": "01M15NEKT7-S14J",
+          "path": "decisionRecords[14].ref"
+        },
+        {
+          "source": "01M15NEKT7-S14J",
+          "path": "decisionRecords[15].ref"
+        },
+        {
+          "source": "01M15NEKT7-S14J",
+          "path": "decisionRecords[16].ref"
+        },
+        {
+          "source": "01M15NEKT7-S14J",
+          "path": "decisionRecords[17].ref"
+        },
+        {
+          "source": "01M15NEKT7-S14J",
+          "path": "decisionRecords[18].ref"
+        },
+        {
+          "source": "01M15NEKT7-S14J",
+          "path": "decisionRecords[19].ref"
+        },
+        {
+          "source": "01M15NEKT7-S14J",
+          "path": "decisionRecords[20].ref"
+        },
+        {
+          "source": "01M15NEKT7-S14J",
+          "path": "decisionRecords[21].ref"
+        },
+        {
+          "source": "01M15NEKT7-S14J",
+          "path": "decisionRecords[22].ref"
+        },
+        {
+          "source": "01M15NEKT7-S14J",
+          "path": "decisionRecords[23].ref"
+        },
+        {
+          "source": "01M15NEKT7-S14J",
+          "path": "decisionRecords[24].ref"
+        },
+        {
+          "source": "01M15NEKT7-S14J",
+          "path": "decisionRecords[25].ref"
+        },
+        {
+          "source": "01M15NEKT7-S14J",
+          "path": "decisionRecords[26].ref"
+        },
+        {
+          "source": "01M15NEKT7-S14J",
+          "path": "decisionRecords[27].ref"
+        },
+        {
+          "source": "01M15NEKT7-S14J",
+          "path": "decisionRecords[28].ref"
+        },
+        {
+          "source": "01M15NEKT7-S14J",
+          "path": "decisionRecords[29].ref"
+        },
+        {
+          "source": "01M15NEKT7-S14J",
+          "path": "decisionRecords[30].ref"
+        },
+        {
+          "source": "01M15NEKT7-S14J",
+          "path": "decisionRecords[31].ref"
+        },
+        {
+          "source": "01M15NEKT7-S14J",
+          "path": "decisionRecords[32].ref"
+        },
+        {
+          "source": "01M15NEKT7-S14J",
+          "path": "decisionRecords[33].ref"
+        },
+        {
+          "source": "01M15NEKT7-QKPW",
+          "path": "decisionRecords[0].ref"
+        },
+        {
+          "source": "01M15NEKT7-QKPW",
+          "path": "decisionRecords[1].ref"
+        },
+        {
+          "source": "01M15NEKT7-QKPW",
+          "path": "decisionRecords[2].ref"
+        },
+        {
+          "source": "01M15NEKT7-QKPW",
+          "path": "decisionRecords[3].ref"
+        },
+        {
+          "source": "01M15NEKT7-H42Y",
+          "path": "decisionRecords[0].ref"
+        },
+        {
+          "source": "01M15NEKT7-H42Y",
+          "path": "decisionRecords[1].ref"
+        },
+        {
+          "source": "01M15NEKT7-H42Y",
+          "path": "decisionRecords[2].ref"
+        }
+      ],
+      "editorSchema": {
+        "requiredFields": [
+          "schemaVersion",
+          "uid",
+          "type",
+          "name",
+          "category",
+          "status",
+          "catalogStatus",
+          "lifecycleStatus"
+        ],
+        "optionalFields": [
+          "aliases",
+          "description",
+          "version",
+          "owner",
+          "tags",
+          "affectedComponent",
+          "impact",
+          "mitigationPath",
+          "decisionRationale",
+          "relatedDecisionRecords",
+          "controlReferences",
+          "linkedObject",
+          "approver",
+          "approvalDate"
+        ],
+        "fieldTypes": {
+          "aliases": "list",
+          "owner": "dict",
+          "tags": "list",
+          "relatedDecisionRecords": "list",
+          "controlReferences": "list",
+          "approver": "str",
+          "approvalDate": "str"
+        },
+        "enumFields": {
+          "catalogStatus": [
+            "stub",
+            "incomplete",
+            "complete"
+          ],
+          "lifecycleStatus": [
+            "candidate",
+            "preferred",
+            "existing-only",
+            "deprecated",
+            "retired"
+          ],
+          "category": [
+            "risk",
+            "decision"
+          ],
+          "status": [
+            "open",
+            "accepted",
+            "mitigated",
+            "resolved"
+          ]
+        },
+        "enumListFields": {},
+        "collectionSchemas": {},
+        "schemaPath": "framework/schemas/decision-record.schema.yaml"
+      },
+      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M15NFKKN-74NY\",\n  \"type\": \"decision_record\",\n  \"name\": \"Agent Factory Platform Architecture Decisions\",\n  \"description\": \"Architecture decision record capturing operational decisions, resilience models, logging, security controls, and L1-L3 engineering maturity standards for the Agent Factory platform.\",\n  \"version\": \"1.2.0\",\n  \"category\": \"decision\",\n  \"status\": \"accepted\",\n  \"catalogStatus\": \"complete\",\n  \"lifecycleStatus\": \"preferred\",\n  \"decisionRationale\": \"Standardized GCP Cloud Run, Secret Manager, Cloud SQL, and DRAFT L3 Advanced engineering maturity standards.\",\n  \"owner\": {\n    \"team\": \"platform-ai-team\",\n    \"contact\": \"platform-ai@example.com\"\n  },\n  \"_source\": \"catalog/governance/decision-records/dr-agent-factory-decisions.yaml\"\n}",
+      "existsInCatalog": true,
+      "outboundRelationships": [],
+      "inboundRelationships": []
+    },
+    "01M15NEKT7-QKPW": {
+      "id": "01M15NEKT7-QKPW",
+      "uid": "01M15NEKT7-QKPW",
+      "name": "Skippy's Submind AI Agent Factory Gateway",
+      "aliases": [],
+      "type": "ai_gateway",
+      "typeLabel": "Ai Gateway",
+      "filterType": "ai_gateway",
       "category": "",
       "deliveryModel": "paas",
       "domain": "",
-      "description": "AWS Lambda serverless execution environment. Runs organization-authored function code without requiring host management. Scales automatically. Host infrastructure is entirely blackbox.\n",
+      "description": "Factory-deployed agent execution gateway providing LLM reasoning, C4 diagramming, and catalog search.",
       "version": "1.0.0",
-      "catalogStatus": "incomplete",
+      "catalogStatus": "complete",
       "lifecycleStatus": "preferred",
       "status": "",
       "businessContext": {},
       "product": "",
       "runsOn": "",
       "subtype": "",
-      "vendor": "Amazon Web Services",
-      "productName": "AWS Lambda Runtime",
-      "productVersion": "managed",
+      "vendor": "GCP",
+      "productName": "Skippy Submind Gateway",
+      "productVersion": "1.2.0",
+      "classification": "",
+      "platformDependency": "",
+      "capabilities": [],
+      "configurations": [],
+      "networkPlacement": "",
+      "patchingOwner": "",
+      "complianceCerts": [],
+      "requirementGroups": [],
+      "requirementImplementations": [],
+      "dataLeavesInfrastructure": null,
+      "dataResidencyCommitment": "",
+      "dpaNotes": "",
+      "vendorSLA": "",
+      "authenticationModel": "",
+      "incidentNotificationProcess": "",
+      "owner": {
+        "team": "platform-ai-team",
+        "contact": "platform-ai@example.com"
+      },
+      "definitionOwner": {},
+      "provider": {},
+      "authority": {},
+      "shape": "round-rectangle",
+      "color": "#1f8a5b",
+      "source": "catalog/shared-services/ai-gateways/ai-gateway-skippys-submind.yaml",
+      "tags": [
+        "ai-gateway",
+        "agent-factory",
+        "gcp",
+        "submind"
+      ],
+      "ardCategory": "",
+      "internalComponents": [],
+      "notes": {
+        "modelRouting": "Multi-model routing to Anthropic (Claude 3.5 Sonnet, Claude 3 Haiku)",
+        "modelRoutingApproach": "Multi-model routing to Anthropic endpoints",
+        "rateLimitingApproach": "Token rate limiting managed via GCP Cloud Run concurrency & API quotas",
+        "dataProtectionApproach": "PII filtering and zero-data-retention compliance",
+        "loggingApproach": "Centralized prompt and response audit logs streamed to GCP Cloud Logging",
+        "security_monitoring": "Prompt logging and audit events routed to Cloud Logging.",
+        "secrets_management": "API keys retrieved dynamically from GCP Secret Manager."
+      },
+      "requirements": [],
+      "implementations": [],
+      "appliesTo": {},
+      "inherits": "",
+      "scalingUnits": [],
+      "networkZones": [],
+      "sdpConnections": [],
+      "serviceGroups": [],
+      "tierVariants": [],
+      "tierId": "",
+      "purpose": "",
+      "availabilityExpectation": "",
+      "costPosture": "",
+      "complianceScope": [],
+      "parameterSurface": [],
+      "followsReferenceArchitecture": "",
+      "decisionRecords": [
+        {
+          "ref": "01M15NFKKN-74NY",
+          "key": "modelRoutingApproach"
+        },
+        {
+          "ref": "01M15NFKKN-74NY",
+          "key": "rateLimitingApproach"
+        },
+        {
+          "ref": "01M15NFKKN-74NY",
+          "key": "dataProtectionApproach"
+        },
+        {
+          "ref": "01M15NFKKN-74NY",
+          "key": "loggingApproach"
+        }
+      ],
+      "affectedComponent": "",
+      "impact": "",
+      "mitigationPath": "",
+      "decisionRationale": "",
+      "relatedDecisionRecords": [],
+      "linkedObject": "",
+      "primaryObjectType": "",
+      "primaryObjectUid": "",
+      "generatedObjects": [],
+      "unresolvedQuestions": [],
+      "assumptions": [],
+      "nextSteps": [],
+      "defaultSelection": false,
+      "requirementCount": 0,
+      "hasRiskRef": false,
+      "outboundRefs": [
+        {
+          "target": "01M15NFKKN-74NY",
+          "path": "decisionRecords[0].ref"
+        },
+        {
+          "target": "01M15NFKKN-74NY",
+          "path": "decisionRecords[1].ref"
+        },
+        {
+          "target": "01M15NFKKN-74NY",
+          "path": "decisionRecords[2].ref"
+        },
+        {
+          "target": "01M15NFKKN-74NY",
+          "path": "decisionRecords[3].ref"
+        }
+      ],
+      "referencedBy": [],
+      "editorSchema": {
+        "requiredFields": [
+          "schemaVersion",
+          "uid",
+          "type",
+          "name",
+          "deliveryModel",
+          "catalogStatus",
+          "lifecycleStatus"
+        ],
+        "optionalFields": [
+          "aliases",
+          "description",
+          "version",
+          "owner",
+          "tags",
+          "host",
+          "primaryTechnologyComponent",
+          "internalComponents",
+          "deploymentConfigurations",
+          "vendor",
+          "productName",
+          "productVersion",
+          "capabilities",
+          "configurations",
+          "authenticationModel",
+          "patchingOwner",
+          "vendorGovernance",
+          "notes",
+          "decisionRecords",
+          "requirementImplementations"
+        ],
+        "fieldTypes": {
+          "aliases": "list",
+          "owner": "dict",
+          "tags": "list",
+          "internalComponents": "list",
+          "deploymentConfigurations": "list",
+          "capabilities": "list",
+          "configurations": "list",
+          "notes": "dict",
+          "vendorGovernance": "dict",
+          "requirementGroups": "list",
+          "decisionRecords": "list",
+          "requirementImplementations": "list"
+        },
+        "enumFields": {
+          "catalogStatus": [
+            "stub",
+            "incomplete",
+            "complete"
+          ],
+          "lifecycleStatus": [
+            "candidate",
+            "preferred",
+            "existing-only",
+            "deprecated",
+            "retired"
+          ],
+          "deliveryModel": [
+            "self-managed",
+            "paas",
+            "saas",
+            "appliance"
+          ],
+          "patchingOwner": [
+            "provider-managed",
+            "organization-scheduled",
+            "vendor-managed",
+            "aws-managed"
+          ],
+          "authenticationModel": [
+            "iam",
+            "api-key",
+            "oauth",
+            "saml",
+            "other",
+            "TBD"
+          ]
+        },
+        "enumListFields": {},
+        "collectionSchemas": {
+          "internalComponents": "internalComponent",
+          "deploymentConfigurations": "deploymentConfiguration",
+          "configurations": "configuration",
+          "decisionRecords": "decisionRecordRef",
+          "requirementImplementations": "requirementImplementation"
+        },
+        "schemaPath": "framework/schemas/ai-gateway.schema.yaml"
+      },
+      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M15NEKT7-QKPW\",\n  \"type\": \"ai_gateway\",\n  \"name\": \"Skippy's Submind AI Agent Factory Gateway\",\n  \"description\": \"Factory-deployed agent execution gateway providing LLM reasoning, C4 diagramming, and catalog search.\",\n  \"version\": \"1.0.0\",\n  \"deliveryModel\": \"paas\",\n  \"vendor\": \"GCP\",\n  \"productName\": \"Skippy Submind Gateway\",\n  \"productVersion\": \"1.2.0\",\n  \"catalogStatus\": \"complete\",\n  \"lifecycleStatus\": \"preferred\",\n  \"owner\": {\n    \"team\": \"platform-ai-team\",\n    \"contact\": \"platform-ai@example.com\"\n  },\n  \"tags\": [\n    \"ai-gateway\",\n    \"agent-factory\",\n    \"gcp\",\n    \"submind\"\n  ],\n  \"provisioningModel\": \"deployable\",\n  \"deployablePackage\": {\n    \"registry\": \"github\",\n    \"source\": \"company-infrastructure/hermes-gcp-factory\",\n    \"version\": \"v1.2.0\",\n    \"modulePath\": \"modules/hermes_agent\"\n  },\n  \"decisionRecords\": [\n    {\n      \"ref\": \"01M15NFKKN-74NY\",\n      \"key\": \"modelRoutingApproach\"\n    },\n    {\n      \"ref\": \"01M15NFKKN-74NY\",\n      \"key\": \"rateLimitingApproach\"\n    },\n    {\n      \"ref\": \"01M15NFKKN-74NY\",\n      \"key\": \"dataProtectionApproach\"\n    },\n    {\n      \"ref\": \"01M15NFKKN-74NY\",\n      \"key\": \"loggingApproach\"\n    }\n  ],\n  \"notes\": {\n    \"modelRouting\": \"Multi-model routing to Anthropic (Claude 3.5 Sonnet, Claude 3 Haiku)\",\n    \"modelRoutingApproach\": \"Multi-model routing to Anthropic endpoints\",\n    \"rateLimitingApproach\": \"Token rate limiting managed via GCP Cloud Run concurrency & API quotas\",\n    \"dataProtectionApproach\": \"PII filtering and zero-data-retention compliance\",\n    \"loggingApproach\": \"Centralized prompt and response audit logs streamed to GCP Cloud Logging\",\n    \"security_monitoring\": \"Prompt logging and audit events routed to Cloud Logging.\",\n    \"secrets_management\": \"API keys retrieved dynamically from GCP Secret Manager.\"\n  },\n  \"_source\": \"catalog/shared-services/ai-gateways/ai-gateway-skippys-submind.yaml\"\n}",
+      "existsInCatalog": true,
+      "outboundRelationships": [],
+      "inboundRelationships": []
+    },
+    "01M15NEKT7-H42Y": {
+      "id": "01M15NEKT7-H42Y",
+      "uid": "01M15NEKT7-H42Y",
+      "name": "Standard GCP Cloud SQL PostgreSQL Database",
+      "aliases": [],
+      "type": "data_store_service",
+      "typeLabel": "DataStoreService / Paas",
+      "filterType": "data_store_service",
+      "category": "",
+      "deliveryModel": "paas",
+      "domain": "",
+      "description": "Managed PostgreSQL database service on GCP with automated backups, IAM database authentication, and SSL encryption.",
+      "version": "1.0.0",
+      "catalogStatus": "complete",
+      "lifecycleStatus": "preferred",
+      "status": "",
+      "businessContext": {},
+      "product": "",
+      "runsOn": "",
+      "subtype": "",
+      "vendor": "GCP",
+      "productName": "GCP Cloud SQL PostgreSQL",
+      "productVersion": "15",
       "classification": "",
       "platformDependency": "",
       "capabilities": [
-        "01KQQ4Q026-1HZP"
+        "capability-data-persistence",
+        "capability-data-resilience",
+        "capability-encryption-at-rest"
       ],
       "configurations": [],
-      "networkPlacement": "vpc-private",
-      "patchingOwner": "provider-managed",
+      "networkPlacement": "",
+      "patchingOwner": "",
       "complianceCerts": [],
       "requirementGroups": [],
       "requirementImplementations": [],
@@ -44766,32 +45114,26 @@ window.DRAFT_BROWSER_DATA = {
       "authenticationModel": "iam",
       "incidentNotificationProcess": "",
       "owner": {
-        "team": "cloud-architecture",
-        "contact": "cloud-architecture@example.com"
+        "team": "data-engineering",
+        "contact": "data-engineering@example.com"
       },
       "definitionOwner": {},
       "provider": {},
       "authority": {},
       "shape": "diamond",
       "color": "#1f8a5b",
-      "source": "examples/catalog/shared-services/runtime-services/runtime-service-aws-lambda-runtime.yaml",
+      "source": "catalog/shared-services/data-store-services/data-store-service-gcp-postgres.yaml",
       "tags": [
-        "serverless",
-        "lambda"
+        "database",
+        "gcp",
+        "postgresql",
+        "cloud-sql"
       ],
       "ardCategory": "",
       "internalComponents": [],
       "notes": {
-        "resilienceModel": "Inherently multi-tenant and highly available within the AWS Lambda managed execution fabric.",
-        "authenticationAccessModel": "AWS IAM controls administrative access, function execution roles, and service-to-service authorization.",
-        "configurableSurface": "The adopter controls function configuration, IAM bindings, concurrency settings, environment variables, and event-source mappings.",
-        "failureDomain": "Shared serverless runtime dependency for the functions bound to this Lambda execution environment.",
-        "relationshipRationales": {
-          "AWS IAM": "IAM is modeled as an external dependency because it controls Lambda access even though the PaaS requirement is satisfied by authenticationModel.",
-          "Amazon CloudWatch Logs": "CloudWatch Logs is modeled to show adopter-visible function log delivery outside the core PaaS function requirement.",
-          "Amazon CloudWatch Metrics": "CloudWatch Metrics is modeled to show operational telemetry for Lambda even though this managed runtime is governed by PaaS delivery requirements."
-        },
-        "secrets_management": "AWS Lambda Runtime credentials stored in service configuration managed by Ansible."
+        "data_resilience": "Daily automated backups retained for 30 days.",
+        "encryption_at_rest": "Encrypted using GCP managed keys (GCMK) or KMS."
       },
       "requirements": [],
       "implementations": [],
@@ -44811,20 +45153,16 @@ window.DRAFT_BROWSER_DATA = {
       "followsReferenceArchitecture": "",
       "decisionRecords": [
         {
-          "ref": "01KT11AQX1-55F1",
-          "key": "configurableSurface"
-        },
-        {
-          "ref": "01KT11AQX2-STQ4",
-          "key": "failureDomain"
-        },
-        {
-          "ref": "01KT11AQX2-STQ4",
+          "ref": "01M15NFKKN-74NY",
           "key": "resilienceModel"
         },
         {
-          "ref": "01KT1340HF-1HG3",
-          "key": "secrets_management"
+          "ref": "01M15NFKKN-74NY",
+          "key": "configurableSurface"
+        },
+        {
+          "ref": "01M15NFKKN-74NY",
+          "key": "failureDomain"
         }
       ],
       "affectedComponent": "",
@@ -44844,56 +45182,19 @@ window.DRAFT_BROWSER_DATA = {
       "hasRiskRef": false,
       "outboundRefs": [
         {
-          "target": "01KQQ4Q026-1HZP",
-          "path": "capabilities[0]"
-        },
-        {
-          "target": "01KT11AQX1-55F1",
+          "target": "01M15NFKKN-74NY",
           "path": "decisionRecords[0].ref"
         },
         {
-          "target": "01KT11AQX2-STQ4",
+          "target": "01M15NFKKN-74NY",
           "path": "decisionRecords[1].ref"
         },
         {
-          "target": "01KT11AQX2-STQ4",
+          "target": "01M15NFKKN-74NY",
           "path": "decisionRecords[2].ref"
-        },
-        {
-          "target": "01KT1340HF-1HG3",
-          "path": "decisionRecords[3].ref"
         }
       ],
-      "referencedBy": [
-        {
-          "source": "01KT1340HF-1HG3",
-          "path": "linkedObject"
-        },
-        {
-          "source": "01KT11AQX1-55F1",
-          "path": "linkedObject"
-        },
-        {
-          "source": "01KT11AQX2-STQ4",
-          "path": "linkedObject"
-        },
-        {
-          "source": "01KSKWFZZX-NE4F",
-          "path": "source"
-        },
-        {
-          "source": "01KSKWFZZX-34KP",
-          "path": "source"
-        },
-        {
-          "source": "01KSKWFZZX-JWP6",
-          "path": "source"
-        },
-        {
-          "source": "01KQQ4Q025-1XDE",
-          "path": "internalComponents[0].ref"
-        }
-      ],
+      "referencedBy": [],
       "editorSchema": {
         "requiredFields": [
           "schemaVersion",
@@ -44994,402 +45295,39 @@ window.DRAFT_BROWSER_DATA = {
           "decisionRecords": "decisionRecordRef",
           "requirementImplementations": "requirementImplementation"
         },
-        "schemaPath": "framework/schemas/runtime-service.schema.yaml"
+        "schemaPath": "framework/schemas/data-store-service.schema.yaml"
       },
-      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01KQQ4Q025-T7B7\",\n  \"type\": \"runtime_service\",\n  \"name\": \"AWS Lambda Runtime\",\n  \"description\": \"AWS Lambda serverless execution environment. Runs organization-authored function code without requiring host management. Scales automatically. Host infrastructure is entirely blackbox.\\n\",\n  \"version\": \"1.0.0\",\n  \"catalogStatus\": \"incomplete\",\n  \"lifecycleStatus\": \"preferred\",\n  \"owner\": {\n    \"team\": \"cloud-architecture\",\n    \"contact\": \"cloud-architecture@example.com\"\n  },\n  \"tags\": [\n    \"serverless\",\n    \"lambda\"\n  ],\n  \"deliveryModel\": \"paas\",\n  \"vendor\": \"Amazon Web Services\",\n  \"productName\": \"AWS Lambda Runtime\",\n  \"productVersion\": \"managed\",\n  \"networkPlacement\": \"vpc-private\",\n  \"patchingOwner\": \"provider-managed\",\n  \"authenticationModel\": \"iam\",\n  \"notes\": {\n    \"resilienceModel\": \"Inherently multi-tenant and highly available within the AWS Lambda managed execution fabric.\",\n    \"authenticationAccessModel\": \"AWS IAM controls administrative access, function execution roles, and service-to-service authorization.\",\n    \"configurableSurface\": \"The adopter controls function configuration, IAM bindings, concurrency settings, environment variables, and event-source mappings.\",\n    \"failureDomain\": \"Shared serverless runtime dependency for the functions bound to this Lambda execution environment.\",\n    \"relationshipRationales\": {\n      \"AWS IAM\": \"IAM is modeled as an external dependency because it controls Lambda access even though the PaaS requirement is satisfied by authenticationModel.\",\n      \"Amazon CloudWatch Logs\": \"CloudWatch Logs is modeled to show adopter-visible function log delivery outside the core PaaS function requirement.\",\n      \"Amazon CloudWatch Metrics\": \"CloudWatch Metrics is modeled to show operational telemetry for Lambda even though this managed runtime is governed by PaaS delivery requirements.\"\n    },\n    \"secrets_management\": \"AWS Lambda Runtime credentials stored in service configuration managed by Ansible.\"\n  },\n  \"capabilities\": [\n    \"01KQQ4Q026-1HZP\"\n  ],\n  \"decisionRecords\": [\n    {\n      \"ref\": \"01KT11AQX1-55F1\",\n      \"key\": \"configurableSurface\"\n    },\n    {\n      \"ref\": \"01KT11AQX2-STQ4\",\n      \"key\": \"failureDomain\"\n    },\n    {\n      \"ref\": \"01KT11AQX2-STQ4\",\n      \"key\": \"resilienceModel\"\n    },\n    {\n      \"ref\": \"01KT1340HF-1HG3\",\n      \"key\": \"secrets_management\"\n    }\n  ],\n  \"provisioningModel\": \"deployable\",\n  \"deployablePackage\": {\n    \"registry\": \"github\",\n    \"source\": \"company-infrastructure/terraform-01KQQ4Q025-T7B7\",\n    \"version\": \"v1.0.0\"\n  },\n  \"_source\": \"examples/catalog/shared-services/runtime-services/runtime-service-aws-lambda-runtime.yaml\"\n}",
-      "existsInCatalog": true,
-      "outboundRelationships": [
-        {
-          "uid": "01KSKWFZZX-NE4F",
-          "name": "AWS Lambda Runtime \u2192 Amazon CloudWatch Metrics",
-          "label": "calls",
-          "technology": "",
-          "direction": "",
-          "targetUid": "",
-          "targetName": "Amazon CloudWatch Metrics",
-          "capabilities": []
-        },
-        {
-          "uid": "01KSKWFZZX-34KP",
-          "name": "AWS Lambda Runtime \u2192 AWS IAM",
-          "label": "calls",
-          "technology": "",
-          "direction": "",
-          "targetUid": "",
-          "targetName": "AWS IAM",
-          "capabilities": []
-        },
-        {
-          "uid": "01KSKWFZZX-JWP6",
-          "name": "AWS Lambda Runtime \u2192 Amazon CloudWatch Logs",
-          "label": "sends events to",
-          "technology": "",
-          "direction": "",
-          "targetUid": "",
-          "targetName": "Amazon CloudWatch Logs",
-          "capabilities": []
-        }
-      ],
-      "inboundRelationships": []
-    },
-    "01KQQ4Q025-MQ3F": {
-      "id": "01KQQ4Q025-MQ3F",
-      "uid": "01KQQ4Q025-MQ3F",
-      "name": "CrowdStrike Falcon Agent",
-      "aliases": [],
-      "type": "technology_component",
-      "typeLabel": "TechnologyComponent / Agent",
-      "filterType": "technology_component",
-      "category": "",
-      "deliveryModel": "",
-      "domain": "",
-      "description": "Endpoint security agent installed locally on a host that requires communication with the CrowdStrike Falcon platform.\n",
-      "version": "1.0.0",
-      "catalogStatus": "incomplete",
-      "lifecycleStatus": "",
-      "status": "",
-      "businessContext": {},
-      "product": "",
-      "runsOn": "",
-      "subtype": "",
-      "vendor": "CrowdStrike",
-      "productName": "Falcon Sensor",
-      "productVersion": "current",
-      "classification": "agent",
-      "platformDependency": "CrowdStrike Falcon Platform",
-      "capabilities": [
-        "01KQQ4Q026-JW52"
-      ],
-      "configurations": [],
-      "networkPlacement": "",
-      "patchingOwner": "",
-      "complianceCerts": [],
-      "requirementGroups": [],
-      "requirementImplementations": [],
-      "dataLeavesInfrastructure": null,
-      "dataResidencyCommitment": "",
-      "dpaNotes": "",
-      "vendorSLA": "",
-      "authenticationModel": "",
-      "incidentNotificationProcess": "",
-      "owner": {
-        "team": "cloud-architecture",
-        "contact": "cloud-architecture@example.com"
-      },
-      "definitionOwner": {},
-      "provider": {},
-      "authority": {},
-      "shape": "ellipse",
-      "color": "#64748b",
-      "source": "examples/catalog/shared-services/technology-components/technology-agent-crowdstrike-falcon.yaml",
-      "tags": [
-        "technology-component",
-        "agent"
-      ],
-      "ardCategory": "",
-      "internalComponents": [],
-      "notes": {},
-      "requirements": [],
-      "implementations": [],
-      "appliesTo": {},
-      "inherits": "",
-      "scalingUnits": [],
-      "networkZones": [],
-      "sdpConnections": [],
-      "serviceGroups": [],
-      "tierVariants": [],
-      "tierId": "",
-      "purpose": "",
-      "availabilityExpectation": "",
-      "costPosture": "",
-      "complianceScope": [],
-      "parameterSurface": [],
-      "followsReferenceArchitecture": "",
-      "decisionRecords": [],
-      "affectedComponent": "",
-      "impact": "",
-      "mitigationPath": "",
-      "decisionRationale": "",
-      "relatedDecisionRecords": [],
-      "linkedObject": "",
-      "primaryObjectType": "",
-      "primaryObjectUid": "",
-      "generatedObjects": [],
-      "unresolvedQuestions": [],
-      "assumptions": [],
-      "nextSteps": [],
-      "defaultSelection": false,
-      "requirementCount": 0,
-      "hasRiskRef": false,
-      "outboundRefs": [
-        {
-          "target": "01KQQ4Q026-JW52",
-          "path": "capabilities[0]"
-        }
-      ],
-      "referencedBy": [
-        {
-          "source": "01KQQ4Q026-JW52",
-          "path": "implementations[0].ref"
-        },
-        {
-          "source": "01KQQ4Q026-BQ87",
-          "path": "patch.implementations[0].ref"
-        }
-      ],
-      "editorSchema": {
-        "requiredFields": [
-          "schemaVersion",
-          "uid",
-          "type",
-          "name",
-          "vendor",
-          "productName",
-          "productVersion",
-          "classification",
-          "catalogStatus"
-        ],
-        "optionalFields": [
-          "aliases",
-          "description",
-          "version",
-          "owner",
-          "tags",
-          "subtype",
-          "vendorLifecycle",
-          "platformDependency",
-          "capabilities",
-          "configurations",
-          "networkPlacement",
-          "patchingOwner",
-          "complianceCerts",
-          "controlReferences",
-          "notes"
-        ],
-        "fieldTypes": {
-          "aliases": "list",
-          "owner": "dict",
-          "tags": "list",
-          "vendorLifecycle": "dict",
-          "capabilities": "list",
-          "configurations": "list",
-          "complianceCerts": "list",
-          "controlReferences": "list"
-        },
-        "enumFields": {
-          "catalogStatus": [
-            "stub",
-            "incomplete",
-            "complete"
-          ],
-          "classification": [
-            "operating-system",
-            "compute-platform",
-            "software",
-            "agent"
-          ]
-        },
-        "enumListFields": {},
-        "collectionSchemas": {
-          "configurations": "configuration"
-        },
-        "schemaPath": "framework/schemas/technology-component.schema.yaml"
-      },
-      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01KQQ4Q025-MQ3F\",\n  \"type\": \"technology_component\",\n  \"name\": \"CrowdStrike Falcon Agent\",\n  \"description\": \"Endpoint security agent installed locally on a host that requires communication with the CrowdStrike Falcon platform.\\n\",\n  \"version\": \"1.0.0\",\n  \"catalogStatus\": \"incomplete\",\n  \"owner\": {\n    \"team\": \"cloud-architecture\",\n    \"contact\": \"cloud-architecture@example.com\"\n  },\n  \"tags\": [\n    \"technology-component\",\n    \"agent\"\n  ],\n  \"vendor\": \"CrowdStrike\",\n  \"productName\": \"Falcon Sensor\",\n  \"productVersion\": \"current\",\n  \"classification\": \"agent\",\n  \"platformDependency\": \"CrowdStrike Falcon Platform\",\n  \"capabilities\": [\n    \"01KQQ4Q026-JW52\"\n  ],\n  \"_source\": \"examples/catalog/shared-services/technology-components/technology-agent-crowdstrike-falcon.yaml\"\n}",
+      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M15NEKT7-H42Y\",\n  \"type\": \"data_store_service\",\n  \"name\": \"Standard GCP Cloud SQL PostgreSQL Database\",\n  \"description\": \"Managed PostgreSQL database service on GCP with automated backups, IAM database authentication, and SSL encryption.\",\n  \"version\": \"1.0.0\",\n  \"deliveryModel\": \"paas\",\n  \"vendor\": \"GCP\",\n  \"productName\": \"GCP Cloud SQL PostgreSQL\",\n  \"productVersion\": \"15\",\n  \"catalogStatus\": \"complete\",\n  \"lifecycleStatus\": \"preferred\",\n  \"authenticationModel\": \"iam\",\n  \"capabilities\": [\n    \"capability-data-persistence\",\n    \"capability-data-resilience\",\n    \"capability-encryption-at-rest\"\n  ],\n  \"owner\": {\n    \"team\": \"data-engineering\",\n    \"contact\": \"data-engineering@example.com\"\n  },\n  \"tags\": [\n    \"database\",\n    \"gcp\",\n    \"postgresql\",\n    \"cloud-sql\"\n  ],\n  \"targetEngine\": \"postgres\",\n  \"decisionRecords\": [\n    {\n      \"ref\": \"01M15NFKKN-74NY\",\n      \"key\": \"resilienceModel\"\n    },\n    {\n      \"ref\": \"01M15NFKKN-74NY\",\n      \"key\": \"configurableSurface\"\n    },\n    {\n      \"ref\": \"01M15NFKKN-74NY\",\n      \"key\": \"failureDomain\"\n    }\n  ],\n  \"provisioningModel\": \"deployable\",\n  \"deployablePackage\": {\n    \"registry\": \"github\",\n    \"source\": \"company-infrastructure/platform-iac-data\",\n    \"version\": \"v1.0.0\",\n    \"modulePath\": \"modules/cloud-sql-postgres\"\n  },\n  \"notes\": {\n    \"data_resilience\": \"Daily automated backups retained for 30 days.\",\n    \"encryption_at_rest\": \"Encrypted using GCP managed keys (GCMK) or KMS.\"\n  },\n  \"_source\": \"catalog/shared-services/data-store-services/data-store-service-gcp-postgres.yaml\"\n}",
       "existsInCatalog": true,
       "outboundRelationships": [],
       "inboundRelationships": []
     },
-    "01KQQ4Q025-9N4R": {
-      "id": "01KQQ4Q025-9N4R",
-      "uid": "01KQQ4Q025-9N4R",
-      "name": "Amazon EC2 Standard Compute Platform",
+    "01M15NEKT7-1SN8": {
+      "id": "01M15NEKT7-1SN8",
+      "uid": "01M15NEKT7-1SN8",
+      "name": "Standard GCP Cloud Run Serverless Substrate",
       "aliases": [],
-      "type": "technology_component",
-      "typeLabel": "TechnologyComponent / Compute Platform",
-      "filterType": "technology_component",
+      "type": "host",
+      "typeLabel": "Host",
+      "filterType": "host",
       "category": "",
       "deliveryModel": "",
       "domain": "",
-      "description": "Standard Amazon EC2 virtual machine substrate used for general-purpose host patterns.\n",
-      "version": "1.0.0",
-      "catalogStatus": "incomplete",
-      "lifecycleStatus": "",
-      "status": "",
-      "businessContext": {},
-      "product": "",
-      "runsOn": "",
-      "subtype": "",
-      "vendor": "Amazon Web Services",
-      "productName": "Amazon EC2",
-      "productVersion": "standard",
-      "classification": "compute-platform",
-      "platformDependency": "",
-      "capabilities": [],
-      "configurations": [],
-      "networkPlacement": "",
-      "patchingOwner": "",
-      "complianceCerts": [],
-      "requirementGroups": [],
-      "requirementImplementations": [],
-      "dataLeavesInfrastructure": null,
-      "dataResidencyCommitment": "",
-      "dpaNotes": "",
-      "vendorSLA": "",
-      "authenticationModel": "",
-      "incidentNotificationProcess": "",
-      "owner": {
-        "team": "cloud-architecture",
-        "contact": "cloud-architecture@example.com"
-      },
-      "definitionOwner": {},
-      "provider": {},
-      "authority": {},
-      "shape": "ellipse",
-      "color": "#64748b",
-      "source": "examples/catalog/shared-services/technology-components/technology-compute-amazon-ec2-standard.yaml",
-      "tags": [
-        "technology-component",
-        "compute-platform"
-      ],
-      "ardCategory": "",
-      "internalComponents": [],
-      "notes": {},
-      "requirements": [],
-      "implementations": [],
-      "appliesTo": {},
-      "inherits": "",
-      "scalingUnits": [],
-      "networkZones": [],
-      "sdpConnections": [],
-      "serviceGroups": [],
-      "tierVariants": [],
-      "tierId": "",
-      "purpose": "",
-      "availabilityExpectation": "",
-      "costPosture": "",
-      "complianceScope": [],
-      "parameterSurface": [],
-      "followsReferenceArchitecture": "",
-      "decisionRecords": [],
-      "affectedComponent": "",
-      "impact": "",
-      "mitigationPath": "",
-      "decisionRationale": "",
-      "relatedDecisionRecords": [],
-      "linkedObject": "",
-      "primaryObjectType": "",
-      "primaryObjectUid": "",
-      "generatedObjects": [],
-      "unresolvedQuestions": [],
-      "assumptions": [],
-      "nextSteps": [],
-      "defaultSelection": false,
-      "requirementCount": 0,
-      "hasRiskRef": false,
-      "outboundRefs": [],
-      "referencedBy": [
-        {
-          "source": "01KQQ4Q026-1HZP",
-          "path": "implementations[0].ref"
-        },
-        {
-          "source": "01KQQ4Q025-X682",
-          "path": "patch.implementations[0].ref"
-        }
-      ],
-      "editorSchema": {
-        "requiredFields": [
-          "schemaVersion",
-          "uid",
-          "type",
-          "name",
-          "vendor",
-          "productName",
-          "productVersion",
-          "classification",
-          "catalogStatus"
-        ],
-        "optionalFields": [
-          "aliases",
-          "description",
-          "version",
-          "owner",
-          "tags",
-          "subtype",
-          "vendorLifecycle",
-          "platformDependency",
-          "capabilities",
-          "configurations",
-          "networkPlacement",
-          "patchingOwner",
-          "complianceCerts",
-          "controlReferences",
-          "notes"
-        ],
-        "fieldTypes": {
-          "aliases": "list",
-          "owner": "dict",
-          "tags": "list",
-          "vendorLifecycle": "dict",
-          "capabilities": "list",
-          "configurations": "list",
-          "complianceCerts": "list",
-          "controlReferences": "list"
-        },
-        "enumFields": {
-          "catalogStatus": [
-            "stub",
-            "incomplete",
-            "complete"
-          ],
-          "classification": [
-            "operating-system",
-            "compute-platform",
-            "software",
-            "agent"
-          ]
-        },
-        "enumListFields": {},
-        "collectionSchemas": {
-          "configurations": "configuration"
-        },
-        "schemaPath": "framework/schemas/technology-component.schema.yaml"
-      },
-      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01KQQ4Q025-9N4R\",\n  \"type\": \"technology_component\",\n  \"name\": \"Amazon EC2 Standard Compute Platform\",\n  \"description\": \"Standard Amazon EC2 virtual machine substrate used for general-purpose host patterns.\\n\",\n  \"version\": \"1.0.0\",\n  \"catalogStatus\": \"incomplete\",\n  \"owner\": {\n    \"team\": \"cloud-architecture\",\n    \"contact\": \"cloud-architecture@example.com\"\n  },\n  \"tags\": [\n    \"technology-component\",\n    \"compute-platform\"\n  ],\n  \"vendor\": \"Amazon Web Services\",\n  \"productName\": \"Amazon EC2\",\n  \"productVersion\": \"standard\",\n  \"classification\": \"compute-platform\",\n  \"_source\": \"examples/catalog/shared-services/technology-components/technology-compute-amazon-ec2-standard.yaml\"\n}",
-      "existsInCatalog": true,
-      "outboundRelationships": [],
-      "inboundRelationships": []
-    },
-    "01KSF29JTP-8YRX": {
-      "id": "01KSF29JTP-8YRX",
-      "uid": "01KSF29JTP-8YRX",
-      "name": "HAProxy 2.9",
-      "aliases": [],
-      "type": "technology_component",
-      "typeLabel": "TechnologyComponent / Software",
-      "filterType": "technology_component",
-      "category": "",
-      "deliveryModel": "",
-      "domain": "",
-      "description": "Open-source TCP/HTTP load balancer and proxy server. Provides high-availability request distribution, health checking, connection pooling, and SSL termination. Used as the primary load balancer for the OpenStack control plane API endpoints.",
+      "description": "Fully managed serverless container host platform for stateless services and agent runners on Google Cloud Platform.",
       "version": "1.0.0",
       "catalogStatus": "complete",
-      "lifecycleStatus": "",
+      "lifecycleStatus": "preferred",
       "status": "",
       "businessContext": {},
       "product": "",
       "runsOn": "",
       "subtype": "",
-      "vendor": "HAProxy Technologies",
-      "productName": "HAProxy Community Edition",
-      "productVersion": "2.9",
-      "classification": "software",
+      "vendor": "",
+      "productName": "",
+      "productVersion": "",
+      "classification": "",
       "platformDependency": "",
-      "capabilities": [
-        "01KQQ4Q026-98VD",
-        "01KSWVZSZ5-M0FR"
-      ],
+      "capabilities": [],
       "configurations": [],
       "networkPlacement": "",
       "patchingOwner": "",
@@ -45409,362 +45347,21 @@ window.DRAFT_BROWSER_DATA = {
       "definitionOwner": {},
       "provider": {},
       "authority": {},
-      "shape": "ellipse",
-      "color": "#64748b",
-      "source": "examples/catalog/shared-services/technology-components/technology-haproxy-29.yaml",
+      "shape": "round-rectangle",
+      "color": "#1f8a5b",
+      "source": "catalog/shared-services/hosts/host-gcp-cloud-run.yaml",
       "tags": [
-        "technology-component",
-        "load-balancer",
-        "haproxy",
-        "openstack"
+        "host",
+        "gcp",
+        "cloud-run",
+        "serverless"
       ],
       "ardCategory": "",
       "internalComponents": [],
-      "notes": {},
-      "requirements": [],
-      "implementations": [],
-      "appliesTo": {},
-      "inherits": "",
-      "scalingUnits": [],
-      "networkZones": [],
-      "sdpConnections": [],
-      "serviceGroups": [],
-      "tierVariants": [],
-      "tierId": "",
-      "purpose": "",
-      "availabilityExpectation": "",
-      "costPosture": "",
-      "complianceScope": [],
-      "parameterSurface": [],
-      "followsReferenceArchitecture": "",
-      "decisionRecords": [],
-      "affectedComponent": "",
-      "impact": "",
-      "mitigationPath": "",
-      "decisionRationale": "",
-      "relatedDecisionRecords": [],
-      "linkedObject": "",
-      "primaryObjectType": "",
-      "primaryObjectUid": "",
-      "generatedObjects": [],
-      "unresolvedQuestions": [],
-      "assumptions": [],
-      "nextSteps": [],
-      "defaultSelection": false,
-      "requirementCount": 0,
-      "hasRiskRef": false,
-      "outboundRefs": [
-        {
-          "target": "01KQQ4Q026-98VD",
-          "path": "capabilities[0]"
-        },
-        {
-          "target": "01KSWVZSZ5-M0FR",
-          "path": "capabilities[1]"
-        }
-      ],
-      "referencedBy": [],
-      "editorSchema": {
-        "requiredFields": [
-          "schemaVersion",
-          "uid",
-          "type",
-          "name",
-          "vendor",
-          "productName",
-          "productVersion",
-          "classification",
-          "catalogStatus"
-        ],
-        "optionalFields": [
-          "aliases",
-          "description",
-          "version",
-          "owner",
-          "tags",
-          "subtype",
-          "vendorLifecycle",
-          "platformDependency",
-          "capabilities",
-          "configurations",
-          "networkPlacement",
-          "patchingOwner",
-          "complianceCerts",
-          "controlReferences",
-          "notes"
-        ],
-        "fieldTypes": {
-          "aliases": "list",
-          "owner": "dict",
-          "tags": "list",
-          "vendorLifecycle": "dict",
-          "capabilities": "list",
-          "configurations": "list",
-          "complianceCerts": "list",
-          "controlReferences": "list"
-        },
-        "enumFields": {
-          "catalogStatus": [
-            "stub",
-            "incomplete",
-            "complete"
-          ],
-          "classification": [
-            "operating-system",
-            "compute-platform",
-            "software",
-            "agent"
-          ]
-        },
-        "enumListFields": {},
-        "collectionSchemas": {
-          "configurations": "configuration"
-        },
-        "schemaPath": "framework/schemas/technology-component.schema.yaml"
+      "notes": {
+        "security_monitoring": "Native GCP Cloud Audit Logs and VPC Service Controls integration.",
+        "log_management": "Application stdout/stderr streamed to Cloud Logging."
       },
-      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01KSF29JTP-8YRX\",\n  \"type\": \"technology_component\",\n  \"name\": \"HAProxy 2.9\",\n  \"description\": \"Open-source TCP/HTTP load balancer and proxy server. Provides high-availability request distribution, health checking, connection pooling, and SSL termination. Used as the primary load balancer for the OpenStack control plane API endpoints.\",\n  \"version\": \"1.0.0\",\n  \"catalogStatus\": \"complete\",\n  \"lifecycleStatus\": \"preferred\",\n  \"owner\": {\n    \"team\": \"platform-engineering\",\n    \"contact\": \"platform-engineering@example.com\"\n  },\n  \"tags\": [\n    \"technology-component\",\n    \"load-balancer\",\n    \"haproxy\",\n    \"openstack\"\n  ],\n  \"vendor\": \"HAProxy Technologies\",\n  \"productName\": \"HAProxy Community Edition\",\n  \"productVersion\": \"2.9\",\n  \"classification\": \"software\",\n  \"vendorLifecycle\": {\n    \"mainstreamSupportEnd\": \"2026-12-31\",\n    \"extendedSupportEnd\": \"2027-12-31\"\n  },\n  \"capabilities\": [\n    \"01KQQ4Q026-98VD\",\n    \"01KSWVZSZ5-M0FR\"\n  ],\n  \"_source\": \"examples/catalog/shared-services/technology-components/technology-haproxy-29.yaml\"\n}",
-      "existsInCatalog": true,
-      "outboundRelationships": [],
-      "inboundRelationships": []
-    },
-    "01KQQ4Q025-3HXA": {
-      "id": "01KQQ4Q025-3HXA",
-      "uid": "01KQQ4Q025-3HXA",
-      "name": "Ubuntu 22.04 LTS",
-      "aliases": [],
-      "type": "technology_component",
-      "typeLabel": "TechnologyComponent / Operating System",
-      "filterType": "technology_component",
-      "category": "",
-      "deliveryModel": "",
-      "domain": "",
-      "description": "Canonical Ubuntu Server 22.04 LTS operating system product definition for Linux host patterns.\n",
-      "version": "1.0.0",
-      "catalogStatus": "incomplete",
-      "lifecycleStatus": "",
-      "status": "",
-      "businessContext": {},
-      "product": "",
-      "runsOn": "",
-      "subtype": "",
-      "vendor": "Canonical",
-      "productName": "Ubuntu Server",
-      "productVersion": "22.04 LTS",
-      "classification": "operating-system",
-      "platformDependency": "",
-      "capabilities": [],
-      "configurations": [
-        {
-          "id": "centralized-log-forwarding",
-          "name": "Centralized Log Forwarding",
-          "description": "Standard operating system logging configuration that forwards host logs to the centralized logging destination.\n",
-          "capabilities": [
-            "01KQQ4Q026-D04B"
-          ]
-        }
-      ],
-      "networkPlacement": "",
-      "patchingOwner": "",
-      "complianceCerts": [],
-      "requirementGroups": [],
-      "requirementImplementations": [],
-      "dataLeavesInfrastructure": null,
-      "dataResidencyCommitment": "",
-      "dpaNotes": "",
-      "vendorSLA": "",
-      "authenticationModel": "",
-      "incidentNotificationProcess": "",
-      "owner": {
-        "team": "cloud-architecture",
-        "contact": "cloud-architecture@example.com"
-      },
-      "definitionOwner": {},
-      "provider": {},
-      "authority": {},
-      "shape": "ellipse",
-      "color": "#64748b",
-      "source": "examples/catalog/shared-services/technology-components/technology-os-canonical-ubuntu-2204.yaml",
-      "tags": [
-        "technology-component",
-        "operating-system"
-      ],
-      "ardCategory": "",
-      "internalComponents": [],
-      "notes": {},
-      "requirements": [],
-      "implementations": [],
-      "appliesTo": {},
-      "inherits": "",
-      "scalingUnits": [],
-      "networkZones": [],
-      "sdpConnections": [],
-      "serviceGroups": [],
-      "tierVariants": [],
-      "tierId": "",
-      "purpose": "",
-      "availabilityExpectation": "",
-      "costPosture": "",
-      "complianceScope": [],
-      "parameterSurface": [],
-      "followsReferenceArchitecture": "",
-      "decisionRecords": [],
-      "affectedComponent": "",
-      "impact": "",
-      "mitigationPath": "",
-      "decisionRationale": "",
-      "relatedDecisionRecords": [],
-      "linkedObject": "",
-      "primaryObjectType": "",
-      "primaryObjectUid": "",
-      "generatedObjects": [],
-      "unresolvedQuestions": [],
-      "assumptions": [],
-      "nextSteps": [],
-      "defaultSelection": false,
-      "requirementCount": 0,
-      "hasRiskRef": false,
-      "outboundRefs": [
-        {
-          "target": "01KQQ4Q026-D04B",
-          "path": "configurations[0].capabilities[0]"
-        }
-      ],
-      "referencedBy": [
-        {
-          "source": "01KQQ4Q026-D04B",
-          "path": "implementations[0].ref"
-        },
-        {
-          "source": "01KQQ4Q026-QM2X",
-          "path": "implementations[0].ref"
-        },
-        {
-          "source": "01KQQ4Q025-5VTH",
-          "path": "patch.implementations[0].ref"
-        },
-        {
-          "source": "01KQQ4Q026-4AYD",
-          "path": "patch.implementations[0].ref"
-        }
-      ],
-      "editorSchema": {
-        "requiredFields": [
-          "schemaVersion",
-          "uid",
-          "type",
-          "name",
-          "vendor",
-          "productName",
-          "productVersion",
-          "classification",
-          "catalogStatus"
-        ],
-        "optionalFields": [
-          "aliases",
-          "description",
-          "version",
-          "owner",
-          "tags",
-          "subtype",
-          "vendorLifecycle",
-          "platformDependency",
-          "capabilities",
-          "configurations",
-          "networkPlacement",
-          "patchingOwner",
-          "complianceCerts",
-          "controlReferences",
-          "notes"
-        ],
-        "fieldTypes": {
-          "aliases": "list",
-          "owner": "dict",
-          "tags": "list",
-          "vendorLifecycle": "dict",
-          "capabilities": "list",
-          "configurations": "list",
-          "complianceCerts": "list",
-          "controlReferences": "list"
-        },
-        "enumFields": {
-          "catalogStatus": [
-            "stub",
-            "incomplete",
-            "complete"
-          ],
-          "classification": [
-            "operating-system",
-            "compute-platform",
-            "software",
-            "agent"
-          ]
-        },
-        "enumListFields": {},
-        "collectionSchemas": {
-          "configurations": "configuration"
-        },
-        "schemaPath": "framework/schemas/technology-component.schema.yaml"
-      },
-      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01KQQ4Q025-3HXA\",\n  \"type\": \"technology_component\",\n  \"name\": \"Ubuntu 22.04 LTS\",\n  \"description\": \"Canonical Ubuntu Server 22.04 LTS operating system product definition for Linux host patterns.\\n\",\n  \"version\": \"1.0.0\",\n  \"catalogStatus\": \"incomplete\",\n  \"owner\": {\n    \"team\": \"cloud-architecture\",\n    \"contact\": \"cloud-architecture@example.com\"\n  },\n  \"tags\": [\n    \"technology-component\",\n    \"operating-system\"\n  ],\n  \"vendor\": \"Canonical\",\n  \"productName\": \"Ubuntu Server\",\n  \"productVersion\": \"22.04 LTS\",\n  \"classification\": \"operating-system\",\n  \"configurations\": [\n    {\n      \"id\": \"centralized-log-forwarding\",\n      \"name\": \"Centralized Log Forwarding\",\n      \"description\": \"Standard operating system logging configuration that forwards host logs to the centralized logging destination.\\n\",\n      \"capabilities\": [\n        \"01KQQ4Q026-D04B\"\n      ]\n    }\n  ],\n  \"_source\": \"examples/catalog/shared-services/technology-components/technology-os-canonical-ubuntu-2204.yaml\"\n}",
-      "existsInCatalog": true,
-      "outboundRelationships": [],
-      "inboundRelationships": []
-    },
-    "01KQQ4Q025-Z042": {
-      "id": "01KQQ4Q025-Z042",
-      "uid": "01KQQ4Q025-Z042",
-      "name": "nginx 1.26",
-      "aliases": [],
-      "type": "technology_component",
-      "typeLabel": "TechnologyComponent / Software",
-      "filterType": "technology_component",
-      "category": "",
-      "deliveryModel": "",
-      "domain": "",
-      "description": "nginx web server software installed locally on a managed host and used without a required vendor platform interaction.\n",
-      "version": "1.0.0",
-      "catalogStatus": "incomplete",
-      "lifecycleStatus": "",
-      "status": "",
-      "businessContext": {},
-      "product": "",
-      "runsOn": "",
-      "subtype": "",
-      "vendor": "F5 NGINX",
-      "productName": "nginx",
-      "productVersion": "1.26",
-      "classification": "software",
-      "platformDependency": "",
-      "capabilities": [],
-      "configurations": [],
-      "networkPlacement": "",
-      "patchingOwner": "",
-      "complianceCerts": [],
-      "requirementGroups": [],
-      "requirementImplementations": [],
-      "dataLeavesInfrastructure": null,
-      "dataResidencyCommitment": "",
-      "dpaNotes": "",
-      "vendorSLA": "",
-      "authenticationModel": "",
-      "incidentNotificationProcess": "",
-      "owner": {
-        "team": "cloud-architecture",
-        "contact": "cloud-architecture@example.com"
-      },
-      "definitionOwner": {},
-      "provider": {},
-      "authority": {},
-      "shape": "ellipse",
-      "color": "#64748b",
-      "source": "examples/catalog/shared-services/technology-components/technology-software-nginx-126.yaml",
-      "tags": [
-        "technology-component",
-        "software"
-      ],
-      "ardCategory": "",
-      "internalComponents": [],
-      "notes": {},
       "requirements": [],
       "implementations": [],
       "appliesTo": {},
@@ -45805,11 +45402,8 @@ window.DRAFT_BROWSER_DATA = {
           "uid",
           "type",
           "name",
-          "vendor",
-          "productName",
-          "productVersion",
-          "classification",
-          "catalogStatus"
+          "catalogStatus",
+          "lifecycleStatus"
         ],
         "optionalFields": [
           "aliases",
@@ -45817,47 +45411,207 @@ window.DRAFT_BROWSER_DATA = {
           "version",
           "owner",
           "tags",
-          "subtype",
-          "vendorLifecycle",
-          "platformDependency",
-          "capabilities",
-          "configurations",
-          "networkPlacement",
-          "patchingOwner",
-          "complianceCerts",
-          "controlReferences",
-          "notes"
+          "notes",
+          "operatingSystemComponent",
+          "computePlatformComponent",
+          "internalComponents",
+          "deploymentConfigurations",
+          "provisioningModel",
+          "deployablePackage",
+          "decisionRecords",
+          "requirementImplementations"
         ],
         "fieldTypes": {
           "aliases": "list",
           "owner": "dict",
           "tags": "list",
-          "vendorLifecycle": "dict",
-          "capabilities": "list",
-          "configurations": "list",
-          "complianceCerts": "list",
-          "controlReferences": "list"
+          "notes": "dict",
+          "internalComponents": "list",
+          "deploymentConfigurations": "list",
+          "requirementGroups": "list",
+          "decisionRecords": "list",
+          "requirementImplementations": "list"
         },
         "enumFields": {
+          "provisioningModel": [
+            "deployable",
+            "reference-only"
+          ],
           "catalogStatus": [
             "stub",
             "incomplete",
             "complete"
           ],
-          "classification": [
-            "operating-system",
-            "compute-platform",
-            "software",
-            "agent"
+          "lifecycleStatus": [
+            "candidate",
+            "preferred",
+            "existing-only",
+            "deprecated",
+            "retired"
           ]
         },
         "enumListFields": {},
-        "collectionSchemas": {
-          "configurations": "configuration"
-        },
-        "schemaPath": "framework/schemas/technology-component.schema.yaml"
+        "collectionSchemas": {},
+        "schemaPath": "framework/schemas/host.schema.yaml"
       },
-      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01KQQ4Q025-Z042\",\n  \"type\": \"technology_component\",\n  \"name\": \"nginx 1.26\",\n  \"description\": \"nginx web server software installed locally on a managed host and used without a required vendor platform interaction.\\n\",\n  \"version\": \"1.0.0\",\n  \"catalogStatus\": \"incomplete\",\n  \"owner\": {\n    \"team\": \"cloud-architecture\",\n    \"contact\": \"cloud-architecture@example.com\"\n  },\n  \"tags\": [\n    \"technology-component\",\n    \"software\"\n  ],\n  \"vendor\": \"F5 NGINX\",\n  \"productName\": \"nginx\",\n  \"productVersion\": \"1.26\",\n  \"classification\": \"software\",\n  \"_source\": \"examples/catalog/shared-services/technology-components/technology-software-nginx-126.yaml\"\n}",
+      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M15NEKT7-1SN8\",\n  \"type\": \"host\",\n  \"name\": \"Standard GCP Cloud Run Serverless Substrate\",\n  \"description\": \"Fully managed serverless container host platform for stateless services and agent runners on Google Cloud Platform.\",\n  \"version\": \"1.0.0\",\n  \"catalogStatus\": \"complete\",\n  \"lifecycleStatus\": \"preferred\",\n  \"owner\": {\n    \"team\": \"platform-engineering\",\n    \"contact\": \"platform-engineering@example.com\"\n  },\n  \"tags\": [\n    \"host\",\n    \"gcp\",\n    \"cloud-run\",\n    \"serverless\"\n  ],\n  \"provisioningModel\": \"deployable\",\n  \"deployablePackage\": {\n    \"registry\": \"github\",\n    \"source\": \"company-infrastructure/platform-iac-compute\",\n    \"version\": \"v1.0.0\",\n    \"modulePath\": \"modules/cloud-run\"\n  },\n  \"notes\": {\n    \"security_monitoring\": \"Native GCP Cloud Audit Logs and VPC Service Controls integration.\",\n    \"log_management\": \"Application stdout/stderr streamed to Cloud Logging.\"\n  },\n  \"_source\": \"catalog/shared-services/hosts/host-gcp-cloud-run.yaml\"\n}",
+      "existsInCatalog": true,
+      "outboundRelationships": [],
+      "inboundRelationships": []
+    },
+    "01M162FHHS-3STQ": {
+      "id": "01M162FHHS-3STQ",
+      "uid": "01M162FHHS-3STQ",
+      "name": "GitHub Pages Static Web Game Host",
+      "aliases": [],
+      "type": "host",
+      "typeLabel": "Host",
+      "filterType": "host",
+      "category": "",
+      "deliveryModel": "",
+      "domain": "",
+      "description": "Managed static hosting edge on GitHub Pages for hosting client-side HTML5/JS canvas games and UAT web apps.",
+      "version": "1.0.0",
+      "catalogStatus": "complete",
+      "lifecycleStatus": "preferred",
+      "status": "",
+      "businessContext": {},
+      "product": "",
+      "runsOn": "",
+      "subtype": "",
+      "vendor": "GitHub",
+      "productName": "GitHub Pages",
+      "productVersion": "1.0.0",
+      "classification": "",
+      "platformDependency": "",
+      "capabilities": [],
+      "configurations": [],
+      "networkPlacement": "",
+      "patchingOwner": "",
+      "complianceCerts": [],
+      "requirementGroups": [],
+      "requirementImplementations": [],
+      "dataLeavesInfrastructure": null,
+      "dataResidencyCommitment": "",
+      "dpaNotes": "",
+      "vendorSLA": "",
+      "authenticationModel": "",
+      "incidentNotificationProcess": "",
+      "owner": {
+        "team": "platform-engineering",
+        "contact": "platform-engineering@example.com"
+      },
+      "definitionOwner": {},
+      "provider": {},
+      "authority": {},
+      "shape": "round-rectangle",
+      "color": "#1f8a5b",
+      "source": "catalog/shared-services/hosts/host-github-pages.yaml",
+      "tags": [
+        "host",
+        "github-pages",
+        "static-hosting",
+        "uat"
+      ],
+      "ardCategory": "",
+      "internalComponents": [],
+      "notes": {
+        "security_monitoring": "HTTPS enforced on custom domain or github.io.",
+        "log_management": "Web analytics and build deployment logs in GitHub Actions."
+      },
+      "requirements": [],
+      "implementations": [],
+      "appliesTo": {},
+      "inherits": "",
+      "scalingUnits": [],
+      "networkZones": [],
+      "sdpConnections": [],
+      "serviceGroups": [],
+      "tierVariants": [],
+      "tierId": "",
+      "purpose": "",
+      "availabilityExpectation": "",
+      "costPosture": "",
+      "complianceScope": [],
+      "parameterSurface": [],
+      "followsReferenceArchitecture": "",
+      "decisionRecords": [],
+      "affectedComponent": "",
+      "impact": "",
+      "mitigationPath": "",
+      "decisionRationale": "",
+      "relatedDecisionRecords": [],
+      "linkedObject": "",
+      "primaryObjectType": "",
+      "primaryObjectUid": "",
+      "generatedObjects": [],
+      "unresolvedQuestions": [],
+      "assumptions": [],
+      "nextSteps": [],
+      "defaultSelection": false,
+      "requirementCount": 0,
+      "hasRiskRef": false,
+      "outboundRefs": [],
+      "referencedBy": [],
+      "editorSchema": {
+        "requiredFields": [
+          "schemaVersion",
+          "uid",
+          "type",
+          "name",
+          "catalogStatus",
+          "lifecycleStatus"
+        ],
+        "optionalFields": [
+          "aliases",
+          "description",
+          "version",
+          "owner",
+          "tags",
+          "notes",
+          "operatingSystemComponent",
+          "computePlatformComponent",
+          "internalComponents",
+          "deploymentConfigurations",
+          "provisioningModel",
+          "deployablePackage",
+          "decisionRecords",
+          "requirementImplementations"
+        ],
+        "fieldTypes": {
+          "aliases": "list",
+          "owner": "dict",
+          "tags": "list",
+          "notes": "dict",
+          "internalComponents": "list",
+          "deploymentConfigurations": "list",
+          "requirementGroups": "list",
+          "decisionRecords": "list",
+          "requirementImplementations": "list"
+        },
+        "enumFields": {
+          "provisioningModel": [
+            "deployable",
+            "reference-only"
+          ],
+          "catalogStatus": [
+            "stub",
+            "incomplete",
+            "complete"
+          ],
+          "lifecycleStatus": [
+            "candidate",
+            "preferred",
+            "existing-only",
+            "deprecated",
+            "retired"
+          ]
+        },
+        "enumListFields": {},
+        "collectionSchemas": {},
+        "schemaPath": "framework/schemas/host.schema.yaml"
+      },
+      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M162FHHS-3STQ\",\n  \"type\": \"host\",\n  \"name\": \"GitHub Pages Static Web Game Host\",\n  \"description\": \"Managed static hosting edge on GitHub Pages for hosting client-side HTML5/JS canvas games and UAT web apps.\",\n  \"version\": \"1.0.0\",\n  \"catalogStatus\": \"complete\",\n  \"lifecycleStatus\": \"preferred\",\n  \"vendor\": \"GitHub\",\n  \"productName\": \"GitHub Pages\",\n  \"productVersion\": \"1.0.0\",\n  \"owner\": {\n    \"team\": \"platform-engineering\",\n    \"contact\": \"platform-engineering@example.com\"\n  },\n  \"tags\": [\n    \"host\",\n    \"github-pages\",\n    \"static-hosting\",\n    \"uat\"\n  ],\n  \"provisioningModel\": \"deployable\",\n  \"deployablePackage\": {\n    \"registry\": \"github\",\n    \"source\": \"company-infrastructure/platform-iac-compute\",\n    \"version\": \"v1.0.0\",\n    \"modulePath\": \"modules/github-pages\"\n  },\n  \"notes\": {\n    \"security_monitoring\": \"HTTPS enforced on custom domain or github.io.\",\n    \"log_management\": \"Web analytics and build deployment logs in GitHub Actions.\"\n  },\n  \"_source\": \"catalog/shared-services/hosts/host-github-pages.yaml\"\n}",
       "existsInCatalog": true,
       "outboundRelationships": [],
       "inboundRelationships": []
@@ -45872,16 +45626,17 @@ window.DRAFT_BROWSER_DATA = {
     "unknown": "7a6e60"
   },
   "filterValues": [
+    "ai_gateway",
     "capability",
+    "data_store_service",
     "decision_record",
     "domain",
     "host",
-    "object_patch",
+    "product_component",
+    "product_registration",
     "reference_architecture",
-    "relationship",
     "requirement_group",
-    "runtime_service",
-    "technology_component",
+    "software_deployment_pattern",
     "vocabulary"
   ],
   "lifecycleValues": [
@@ -46033,16 +45788,6 @@ window.DRAFT_BROWSER_DATA = {
         "path": "domain"
       }
     ],
-    "01KQQ4Q025-9N4R": [
-      {
-        "source": "01KQQ4Q026-1HZP",
-        "path": "implementations[0].ref"
-      },
-      {
-        "source": "01KQQ4Q025-X682",
-        "path": "patch.implementations[0].ref"
-      }
-    ],
     "01KT0XNZEY-QY0Y": [
       {
         "source": "01KT0XNZEY-DENJ",
@@ -46079,24 +45824,6 @@ window.DRAFT_BROWSER_DATA = {
         "path": "domain"
       }
     ],
-    "01KQQ4Q025-3HXA": [
-      {
-        "source": "01KQQ4Q026-D04B",
-        "path": "implementations[0].ref"
-      },
-      {
-        "source": "01KQQ4Q026-QM2X",
-        "path": "implementations[0].ref"
-      },
-      {
-        "source": "01KQQ4Q025-5VTH",
-        "path": "patch.implementations[0].ref"
-      },
-      {
-        "source": "01KQQ4Q026-4AYD",
-        "path": "patch.implementations[0].ref"
-      }
-    ],
     "01KQQ4Q027-SGHR": [
       {
         "source": "01KQQ4Q026-S5J6",
@@ -46113,16 +45840,6 @@ window.DRAFT_BROWSER_DATA = {
       {
         "source": "01KQQ4Q026-58Q3",
         "path": "domain"
-      }
-    ],
-    "01KQQ4Q025-MQ3F": [
-      {
-        "source": "01KQQ4Q026-JW52",
-        "path": "implementations[0].ref"
-      },
-      {
-        "source": "01KQQ4Q026-BQ87",
-        "path": "patch.implementations[0].ref"
       }
     ],
     "01KQQ4Q026-7T2H": [
@@ -46251,14 +45968,6 @@ window.DRAFT_BROWSER_DATA = {
       {
         "source": "01KQQ4Q027-THYN",
         "path": "requirements[3].relatedCapability"
-      },
-      {
-        "source": "01KQQ4Q025-5VTH",
-        "path": "target"
-      },
-      {
-        "source": "01KQQ4Q025-3HXA",
-        "path": "configurations[0].capabilities[0]"
       }
     ],
     "01KQQ4Q026-98VD": [
@@ -46281,10 +45990,6 @@ window.DRAFT_BROWSER_DATA = {
       {
         "source": "01KQQ4Q027-K5DR",
         "path": "requirements[5].relatedCapability"
-      },
-      {
-        "source": "01KSF29JTP-8YRX",
-        "path": "capabilities[0]"
       }
     ],
     "01KQQ4Q026-JW52": [
@@ -46307,14 +46012,6 @@ window.DRAFT_BROWSER_DATA = {
       {
         "source": "01KQQ4Q027-THYN",
         "path": "requirements[5].relatedCapability"
-      },
-      {
-        "source": "01KQQ4Q026-BQ87",
-        "path": "target"
-      },
-      {
-        "source": "01KQQ4Q025-MQ3F",
-        "path": "capabilities[0]"
       }
     ],
     "01KQQ4Q026-BH6E": [
@@ -46397,24 +46094,12 @@ window.DRAFT_BROWSER_DATA = {
       {
         "source": "01KQQ4Q027-THYN",
         "path": "requirements[1].relatedCapability"
-      },
-      {
-        "source": "01KQQ4Q025-X682",
-        "path": "target"
-      },
-      {
-        "source": "01KQQ4Q025-T7B7",
-        "path": "capabilities[0]"
       }
     ],
     "01KQQ4Q026-QM2X": [
       {
         "source": "01KQQ4Q027-THYN",
         "path": "requirements[0].relatedCapability"
-      },
-      {
-        "source": "01KQQ4Q026-4AYD",
-        "path": "target"
       }
     ],
     "01KT0V5MCV-3A6F": [
@@ -46555,111 +46240,290 @@ window.DRAFT_BROWSER_DATA = {
         "path": "requirements[2].relatedCapability"
       }
     ],
-    "01KSF29JTP-9HYA": [
+    "01M15NFKKN-74NY": [
       {
-        "source": "01KSF29JTP-DRHA",
-        "path": "linkedObject"
-      }
-    ],
-    "01KQQ4Q025-1XDE": [
-      {
-        "source": "01KT1340H6-X3T5",
-        "path": "linkedObject"
-      },
-      {
-        "source": "01KSKWFZZW-ZEKF",
-        "path": "source"
-      }
-    ],
-    "01KSE5V73Z-Q0A0": [
-      {
-        "source": "01KSE5V73Z-DRSC",
-        "path": "linkedObject"
-      }
-    ],
-    "01KQQ4Q025-T7B7": [
-      {
-        "source": "01KT1340HF-1HG3",
-        "path": "linkedObject"
-      },
-      {
-        "source": "01KT11AQX1-55F1",
-        "path": "linkedObject"
-      },
-      {
-        "source": "01KT11AQX2-STQ4",
-        "path": "linkedObject"
-      },
-      {
-        "source": "01KSKWFZZX-NE4F",
-        "path": "source"
-      },
-      {
-        "source": "01KSKWFZZX-34KP",
-        "path": "source"
-      },
-      {
-        "source": "01KSKWFZZX-JWP6",
-        "path": "source"
-      },
-      {
-        "source": "01KQQ4Q025-1XDE",
-        "path": "internalComponents[0].ref"
-      }
-    ],
-    "01KT1340H6-X3T5": [
-      {
-        "source": "01KQQ4Q025-1XDE",
+        "source": "01M15NEKT7-EKAR",
         "path": "decisionRecords[0].ref"
       },
       {
-        "source": "01KQQ4Q025-1XDE",
+        "source": "01M15NEKT7-EKAR",
         "path": "decisionRecords[1].ref"
       },
       {
-        "source": "01KQQ4Q025-1XDE",
+        "source": "01M15NEKT7-EKAR",
         "path": "decisionRecords[2].ref"
       },
       {
-        "source": "01KQQ4Q025-1XDE",
+        "source": "01M15NEKT7-EKAR",
         "path": "decisionRecords[3].ref"
       },
       {
-        "source": "01KQQ4Q025-1XDE",
+        "source": "01M15NEKT7-EKAR",
         "path": "decisionRecords[4].ref"
-      }
-    ],
-    "01KT11AQX1-55F1": [
+      },
       {
-        "source": "01KQQ4Q025-T7B7",
+        "source": "01M15NEKT7-EKAR",
+        "path": "decisionRecords[5].ref"
+      },
+      {
+        "source": "01M15NEKT7-EKAR",
+        "path": "decisionRecords[6].ref"
+      },
+      {
+        "source": "01M15NEKT7-EKAR",
+        "path": "decisionRecords[7].ref"
+      },
+      {
+        "source": "01M15NEKT7-EKAR",
+        "path": "decisionRecords[8].ref"
+      },
+      {
+        "source": "01M15NEKT7-EKAR",
+        "path": "decisionRecords[9].ref"
+      },
+      {
+        "source": "01M15NEKT7-EKAR",
+        "path": "decisionRecords[10].ref"
+      },
+      {
+        "source": "01M15NEKT7-EKAR",
+        "path": "decisionRecords[11].ref"
+      },
+      {
+        "source": "01M15NEKT7-EKAR",
+        "path": "decisionRecords[12].ref"
+      },
+      {
+        "source": "01M15NEKT7-EKAR",
+        "path": "decisionRecords[13].ref"
+      },
+      {
+        "source": "01M15NEKT7-EKAR",
+        "path": "decisionRecords[14].ref"
+      },
+      {
+        "source": "01M15NEKT7-EKAR",
+        "path": "decisionRecords[15].ref"
+      },
+      {
+        "source": "01M15NEKT7-EKAR",
+        "path": "decisionRecords[16].ref"
+      },
+      {
+        "source": "01M15NEKT7-EKAR",
+        "path": "decisionRecords[17].ref"
+      },
+      {
+        "source": "01M15NEKT7-EKAR",
+        "path": "decisionRecords[18].ref"
+      },
+      {
+        "source": "01M15NEKT7-EKAR",
+        "path": "decisionRecords[19].ref"
+      },
+      {
+        "source": "01M15NEKT7-EKAR",
+        "path": "decisionRecords[20].ref"
+      },
+      {
+        "source": "01M15NEKT7-EKAR",
+        "path": "decisionRecords[21].ref"
+      },
+      {
+        "source": "01M15NEKT7-EKAR",
+        "path": "decisionRecords[22].ref"
+      },
+      {
+        "source": "01M15NEKT7-EKAR",
+        "path": "decisionRecords[23].ref"
+      },
+      {
+        "source": "01M15NEKT7-EKAR",
+        "path": "decisionRecords[24].ref"
+      },
+      {
+        "source": "01M15NEKT7-EKAR",
+        "path": "decisionRecords[25].ref"
+      },
+      {
+        "source": "01M15NEKT7-EKAR",
+        "path": "decisionRecords[26].ref"
+      },
+      {
+        "source": "01M15NEKT7-S14J",
         "path": "decisionRecords[0].ref"
-      }
-    ],
-    "01KT11AQX2-STQ4": [
+      },
       {
-        "source": "01KQQ4Q025-T7B7",
+        "source": "01M15NEKT7-S14J",
         "path": "decisionRecords[1].ref"
       },
       {
-        "source": "01KQQ4Q025-T7B7",
+        "source": "01M15NEKT7-S14J",
         "path": "decisionRecords[2].ref"
-      }
-    ],
-    "01KT1340HF-1HG3": [
+      },
       {
-        "source": "01KQQ4Q025-T7B7",
+        "source": "01M15NEKT7-S14J",
         "path": "decisionRecords[3].ref"
-      }
-    ],
-    "01KSWVZSZ5-M0FR": [
+      },
       {
-        "source": "01KSF29JTP-8YRX",
-        "path": "capabilities[1]"
+        "source": "01M15NEKT7-S14J",
+        "path": "decisionRecords[4].ref"
+      },
+      {
+        "source": "01M15NEKT7-S14J",
+        "path": "decisionRecords[5].ref"
+      },
+      {
+        "source": "01M15NEKT7-S14J",
+        "path": "decisionRecords[6].ref"
+      },
+      {
+        "source": "01M15NEKT7-S14J",
+        "path": "decisionRecords[7].ref"
+      },
+      {
+        "source": "01M15NEKT7-S14J",
+        "path": "decisionRecords[8].ref"
+      },
+      {
+        "source": "01M15NEKT7-S14J",
+        "path": "decisionRecords[9].ref"
+      },
+      {
+        "source": "01M15NEKT7-S14J",
+        "path": "decisionRecords[10].ref"
+      },
+      {
+        "source": "01M15NEKT7-S14J",
+        "path": "decisionRecords[11].ref"
+      },
+      {
+        "source": "01M15NEKT7-S14J",
+        "path": "decisionRecords[12].ref"
+      },
+      {
+        "source": "01M15NEKT7-S14J",
+        "path": "decisionRecords[13].ref"
+      },
+      {
+        "source": "01M15NEKT7-S14J",
+        "path": "decisionRecords[14].ref"
+      },
+      {
+        "source": "01M15NEKT7-S14J",
+        "path": "decisionRecords[15].ref"
+      },
+      {
+        "source": "01M15NEKT7-S14J",
+        "path": "decisionRecords[16].ref"
+      },
+      {
+        "source": "01M15NEKT7-S14J",
+        "path": "decisionRecords[17].ref"
+      },
+      {
+        "source": "01M15NEKT7-S14J",
+        "path": "decisionRecords[18].ref"
+      },
+      {
+        "source": "01M15NEKT7-S14J",
+        "path": "decisionRecords[19].ref"
+      },
+      {
+        "source": "01M15NEKT7-S14J",
+        "path": "decisionRecords[20].ref"
+      },
+      {
+        "source": "01M15NEKT7-S14J",
+        "path": "decisionRecords[21].ref"
+      },
+      {
+        "source": "01M15NEKT7-S14J",
+        "path": "decisionRecords[22].ref"
+      },
+      {
+        "source": "01M15NEKT7-S14J",
+        "path": "decisionRecords[23].ref"
+      },
+      {
+        "source": "01M15NEKT7-S14J",
+        "path": "decisionRecords[24].ref"
+      },
+      {
+        "source": "01M15NEKT7-S14J",
+        "path": "decisionRecords[25].ref"
+      },
+      {
+        "source": "01M15NEKT7-S14J",
+        "path": "decisionRecords[26].ref"
+      },
+      {
+        "source": "01M15NEKT7-S14J",
+        "path": "decisionRecords[27].ref"
+      },
+      {
+        "source": "01M15NEKT7-S14J",
+        "path": "decisionRecords[28].ref"
+      },
+      {
+        "source": "01M15NEKT7-S14J",
+        "path": "decisionRecords[29].ref"
+      },
+      {
+        "source": "01M15NEKT7-S14J",
+        "path": "decisionRecords[30].ref"
+      },
+      {
+        "source": "01M15NEKT7-S14J",
+        "path": "decisionRecords[31].ref"
+      },
+      {
+        "source": "01M15NEKT7-S14J",
+        "path": "decisionRecords[32].ref"
+      },
+      {
+        "source": "01M15NEKT7-S14J",
+        "path": "decisionRecords[33].ref"
+      },
+      {
+        "source": "01M15NEKT7-QKPW",
+        "path": "decisionRecords[0].ref"
+      },
+      {
+        "source": "01M15NEKT7-QKPW",
+        "path": "decisionRecords[1].ref"
+      },
+      {
+        "source": "01M15NEKT7-QKPW",
+        "path": "decisionRecords[2].ref"
+      },
+      {
+        "source": "01M15NEKT7-QKPW",
+        "path": "decisionRecords[3].ref"
+      },
+      {
+        "source": "01M15NEKT7-H42Y",
+        "path": "decisionRecords[0].ref"
+      },
+      {
+        "source": "01M15NEKT7-H42Y",
+        "path": "decisionRecords[1].ref"
+      },
+      {
+        "source": "01M15NEKT7-H42Y",
+        "path": "decisionRecords[2].ref"
       }
     ]
   },
   "indexes": {
     "objects": [
+      {
+        "uid": "01M15NEKT7-QKPW",
+        "name": "Skippy's Submind AI Agent Factory Gateway",
+        "type": "ai_gateway",
+        "catalogStatus": "complete",
+        "description": "Factory-deployed agent execution gateway providing LLM reasoning, C4 diagramming, and catalog search."
+      },
       {
         "uid": "01KTWS3D6T-5TAZ",
         "name": "AI Gateway",
@@ -47013,42 +46877,18 @@ window.DRAFT_BROWSER_DATA = {
         "domain": "01KSWVZSZ5-4WKE"
       },
       {
-        "uid": "01KT11AQX1-55F1",
-        "name": "AWS Lambda Runtime \u2014 Deployment Topology and Qualities",
-        "type": "decision_record",
-        "catalogStatus": "complete"
+        "uid": "01M15NEKT7-H42Y",
+        "name": "Standard GCP Cloud SQL PostgreSQL Database",
+        "type": "data_store_service",
+        "catalogStatus": "complete",
+        "description": "Managed PostgreSQL database service on GCP with automated backups, IAM database authentication, and SSL encryption."
       },
       {
-        "uid": "01KT11AQX2-STQ4",
-        "name": "AWS Lambda Runtime \u2014 Resilience and Availability",
-        "type": "decision_record",
-        "catalogStatus": "complete"
-      },
-      {
-        "uid": "01KT1340HF-1HG3",
-        "name": "AWS Lambda Runtime \u2014 Security and Compliance decisions",
-        "type": "decision_record",
-        "catalogStatus": "complete"
-      },
-      {
-        "uid": "01KT1340H6-X3T5",
-        "name": "AWS Lambda Serverless Host \u2014 Security and Compliance decisions",
-        "type": "decision_record",
-        "catalogStatus": "complete"
-      },
-      {
-        "uid": "01KSF29JTP-DRHA",
-        "name": "HAProxy Load Balancer Operational Architecture",
+        "uid": "01M15NFKKN-74NY",
+        "name": "Agent Factory Platform Architecture Decisions",
         "type": "decision_record",
         "catalogStatus": "complete",
-        "description": "Documents the operational architecture decisions for the OpenStack API Load Balancer (HAProxy) \u2014 covering authentication delegation, secrets management, logging, health checking, availability, scalability, recoverability, and failure domain."
-      },
-      {
-        "uid": "01KSE5V73Z-DRSC",
-        "name": "OpenStack Ops Console \u2014 Secrets Injection via Platform Secret Store",
-        "type": "decision_record",
-        "catalogStatus": "complete",
-        "description": "Documents the decision to inject application secrets into the OpenStack Ops Console at deploy time via the platform secret store, with no secrets present in source code or container images."
+        "description": "Architecture decision record capturing operational decisions, resilience models, logging, security controls, and L1-L3 engineering maturity standards for the Agent Factory platform."
       },
       {
         "uid": "01KTWS3D6T-ABD1",
@@ -47117,43 +46957,37 @@ window.DRAFT_BROWSER_DATA = {
         "description": "Strategic domain covering all aspects of software testing, quality assurance, and release gates.\n"
       },
       {
-        "uid": "01KQQ4Q025-1XDE",
-        "name": "AWS Lambda Serverless Host",
+        "uid": "01M162FHHS-3STQ",
+        "name": "GitHub Pages Static Web Game Host",
         "type": "host",
-        "catalogStatus": "incomplete",
-        "description": "Serverless execution environment provided by AWS Lambda. The host is entirely AWS-managed and blackbox to the organization. Function code is deployed as a ProductComponent. No OS management, no agent installation, and no patching responsibility exist at this layer.\n"
+        "catalogStatus": "complete",
+        "description": "Managed static hosting edge on GitHub Pages for hosting client-side HTML5/JS canvas games and UAT web apps."
       },
       {
-        "uid": "01KQQ4Q025-X682",
-        "name": "Example capability.compute-platform implementations",
-        "type": "object_patch",
-        "catalogStatus": "incomplete",
-        "description": "Example workspace-owned capability implementation mapping.",
-        "target": "01KQQ4Q026-1HZP"
+        "uid": "01M15NEKT7-1SN8",
+        "name": "Standard GCP Cloud Run Serverless Substrate",
+        "type": "host",
+        "catalogStatus": "complete",
+        "description": "Fully managed serverless container host platform for stateless services and agent runners on Google Cloud Platform."
       },
       {
-        "uid": "01KQQ4Q025-5VTH",
-        "name": "Example capability.log-management implementations",
-        "type": "object_patch",
-        "catalogStatus": "incomplete",
-        "description": "Example workspace-owned capability implementation mapping.",
-        "target": "01KQQ4Q026-D04B"
+        "uid": "01M15NEKT7-EKAR",
+        "name": "Skippy's Submind Agent Runner Container",
+        "type": "product_component",
+        "catalogStatus": "complete",
+        "description": "First-party agent container running LLM reasoning loops, tool dispatch, and DRAFT catalog queries."
       },
       {
-        "uid": "01KQQ4Q026-4AYD",
-        "name": "Example capability.operating-system implementations",
-        "type": "object_patch",
-        "catalogStatus": "incomplete",
-        "description": "Example workspace-owned capability implementation mapping.",
-        "target": "01KQQ4Q026-QM2X"
+        "uid": "01M15NEKT7-B26W",
+        "name": "Archie AI Assistant Product Registration",
+        "type": "product_registration",
+        "catalogStatus": "complete"
       },
       {
-        "uid": "01KQQ4Q026-BQ87",
-        "name": "Example capability.security-monitoring implementations",
-        "type": "object_patch",
-        "catalogStatus": "incomplete",
-        "description": "Example workspace-owned capability implementation mapping.",
-        "target": "01KQQ4Q026-JW52"
+        "uid": "01M15NEKT7-FMMC",
+        "name": "Switch AI Gateway Product Registration",
+        "type": "product_registration",
+        "catalogStatus": "complete"
       },
       {
         "uid": "01KTWYEE98-D3QV",
@@ -47240,43 +47074,18 @@ window.DRAFT_BROWSER_DATA = {
         "description": "Deployment pattern for simple applications where a client or static presentation layer talks directly to a managed data service without a separately operated application runtime tier. Use this for static sites, thick clients, reporting front ends, or low-code applications whose business logic is primarily in the client and managed data platform."
       },
       {
-        "uid": "01KSKWFZZX-34KP",
-        "name": "AWS Lambda Runtime \u2192 AWS IAM",
-        "type": "relationship",
-        "catalogStatus": "stub",
-        "source": "01KQQ4Q025-T7B7",
-        "label": "calls"
-      },
-      {
-        "uid": "01KSKWFZZX-JWP6",
-        "name": "AWS Lambda Runtime \u2192 Amazon CloudWatch Logs",
-        "type": "relationship",
-        "catalogStatus": "stub",
-        "source": "01KQQ4Q025-T7B7",
-        "label": "sends events to"
-      },
-      {
-        "uid": "01KSKWFZZX-NE4F",
-        "name": "AWS Lambda Runtime \u2192 Amazon CloudWatch Metrics",
-        "type": "relationship",
-        "catalogStatus": "stub",
-        "source": "01KQQ4Q025-T7B7",
-        "label": "calls"
-      },
-      {
-        "uid": "01KSKWFZZW-ZEKF",
-        "name": "AWS Lambda Serverless Host \u2192 AWS Lambda Service",
-        "type": "relationship",
-        "catalogStatus": "stub",
-        "source": "01KQQ4Q025-1XDE",
-        "label": "calls"
-      },
-      {
         "uid": "01KTWS3D6T-NB0E",
         "name": "AI Gateway RequirementGroup",
         "type": "requirement_group",
         "catalogStatus": "complete",
         "description": "Structured checklist of required questions and answers used to define a complete and correct AI Gateway."
+      },
+      {
+        "uid": "01M162FHHS-XAJQ",
+        "name": "Aiden Game Platform Architecture & UAT Standards",
+        "type": "requirement_group",
+        "catalogStatus": "complete",
+        "description": "Governed architecture standards for Switch to build, scaffold, and deploy games for Aiden (tier classification, persistent storage, auth/user profiles, GitHub Pages / Cloud Run UAT delivery)."
       },
       {
         "uid": "01KQQ4Q027-DSDD",
@@ -47307,11 +47116,25 @@ window.DRAFT_BROWSER_DATA = {
         "description": "Structured checklist used to capture partial architecture-authoring sessions, generated outputs, and unresolved follow-up questions in a machine-readable way."
       },
       {
+        "uid": "01M15WPEFV-ZMA9",
+        "name": "Engineering Maturity & Quality Standards (L1-L3)",
+        "type": "requirement_group",
+        "catalogStatus": "complete",
+        "description": "Comprehensive engineering maturity standards covering L1 Baseline through L3 Advanced (backward-compatible migrations, 100% composable IaC, zero gate suppressions, synthetic test data, automated zero-downtime rollback, JSON structured logging, SLO error budgets, and ephemeral preview environments)."
+      },
+      {
         "uid": "01KSF4NHSP-8HPP",
         "name": "Engineering Quality RequirementGroup",
         "type": "requirement_group",
         "catalogStatus": "complete",
         "description": "Optional checklist for ProductComponents covering build quality, test coverage, and performance validation practices. Activated per workspace; does not fire automatically."
+      },
+      {
+        "uid": "01M15NEKT7-4PZN",
+        "name": "Enterprise AI Product Security & Acceptable Use Standards",
+        "type": "requirement_group",
+        "catalogStatus": "complete",
+        "description": "Mandatory compliance, governance, and secret management standards for all AI products built by Archie, Switch, or engineering teams."
       },
       {
         "uid": "01KSF4NHSP-HCPX",
@@ -47340,6 +47163,13 @@ window.DRAFT_BROWSER_DATA = {
         "type": "requirement_group",
         "catalogStatus": "complete",
         "description": "Base requirements for NetworkService objects covering network function declaration, topology definition, and protocol governance. Delivery model requirement groups (Appliance Delivery, SaaS Delivery, Service Behavior) apply on top of these base requirements based on how the network service is operated.\n"
+      },
+      {
+        "uid": "01M15XYZXT-KTJA",
+        "name": "OWASP ASVS & Secure Coding Standards",
+        "type": "requirement_group",
+        "catalogStatus": "complete",
+        "description": "Mandatory secure coding and application security verification standards based on OWASP ASVS v4.0 and NIST SSDF."
       },
       {
         "uid": "01KQQ4Q027-TPWG",
@@ -47419,46 +47249,11 @@ window.DRAFT_BROWSER_DATA = {
         "description": "Starter TX-RAMP requirement group for DRAFT. This file is intended to map TX-RAMP control expectations onto the unified DRAFT requirement model.\n"
       },
       {
-        "uid": "01KQQ4Q025-T7B7",
-        "name": "AWS Lambda Runtime",
-        "type": "runtime_service",
-        "catalogStatus": "incomplete",
-        "description": "AWS Lambda serverless execution environment. Runs organization-authored function code without requiring host management. Scales automatically. Host infrastructure is entirely blackbox.\n"
-      },
-      {
-        "uid": "01KQQ4Q025-9N4R",
-        "name": "Amazon EC2 Standard Compute Platform",
-        "type": "technology_component",
-        "catalogStatus": "incomplete",
-        "description": "Standard Amazon EC2 virtual machine substrate used for general-purpose host patterns.\n"
-      },
-      {
-        "uid": "01KQQ4Q025-MQ3F",
-        "name": "CrowdStrike Falcon Agent",
-        "type": "technology_component",
-        "catalogStatus": "incomplete",
-        "description": "Endpoint security agent installed locally on a host that requires communication with the CrowdStrike Falcon platform.\n"
-      },
-      {
-        "uid": "01KSF29JTP-8YRX",
-        "name": "HAProxy 2.9",
-        "type": "technology_component",
+        "uid": "01M15NEKT7-S14J",
+        "name": "Skippy's Submind Agent Factory Deployment Pattern",
+        "type": "software_deployment_pattern",
         "catalogStatus": "complete",
-        "description": "Open-source TCP/HTTP load balancer and proxy server. Provides high-availability request distribution, health checking, connection pooling, and SSL termination. Used as the primary load balancer for the OpenStack control plane API endpoints."
-      },
-      {
-        "uid": "01KQQ4Q025-3HXA",
-        "name": "Ubuntu 22.04 LTS",
-        "type": "technology_component",
-        "catalogStatus": "incomplete",
-        "description": "Canonical Ubuntu Server 22.04 LTS operating system product definition for Linux host patterns.\n"
-      },
-      {
-        "uid": "01KQQ4Q025-Z042",
-        "name": "nginx 1.26",
-        "type": "technology_component",
-        "catalogStatus": "incomplete",
-        "description": "nginx web server software installed locally on a managed host and used without a required vendor platform interaction.\n"
+        "description": "Serverless containerized agent factory deployment pattern on GCP Cloud Run with Secret Manager IAM bindings and Cloud SQL datastores."
       },
       {
         "uid": "01KS7ZZ1C5-1PFR",
@@ -47558,19 +47353,9 @@ window.DRAFT_BROWSER_DATA = {
               "uid": "01KQQ4Q026-1HZP",
               "name": "Compute Platform",
               "description": "Compute substrate or virtualized platform used to run Hosts.",
-              "owner": {
-                "team": "example-architecture",
-                "contact": "architecture@example.com"
-              },
-              "implementationCount": 1,
-              "implementations": [
-                {
-                  "ref": "01KQQ4Q025-9N4R",
-                  "lifecycleStatus": "existing-only",
-                  "configuration": "",
-                  "notes": "Example workspace maps EC2 to the compute platform capability."
-                }
-              ]
+              "owner": {},
+              "implementationCount": 0,
+              "implementations": []
             },
             {
               "id": "01KQQ4Q026-GW5D",
@@ -47595,19 +47380,9 @@ window.DRAFT_BROWSER_DATA = {
               "uid": "01KQQ4Q026-QM2X",
               "name": "Operating System",
               "description": "Supported operating system product used to define managed Hosts.",
-              "owner": {
-                "team": "example-architecture",
-                "contact": "architecture@example.com"
-              },
-              "implementationCount": 1,
-              "implementations": [
-                {
-                  "ref": "01KQQ4Q025-3HXA",
-                  "lifecycleStatus": "existing-only",
-                  "configuration": "",
-                  "notes": "Example operating system implementation."
-                }
-              ]
+              "owner": {},
+              "implementationCount": 0,
+              "implementations": []
             },
             {
               "id": "01KQQ4Q026-BH6E",
@@ -47861,19 +47636,9 @@ window.DRAFT_BROWSER_DATA = {
               "uid": "01KQQ4Q026-D04B",
               "name": "Log Management",
               "description": "Aggregation, retention, searchability, and forwarding of system or application logs.",
-              "owner": {
-                "team": "example-architecture",
-                "contact": "architecture@example.com"
-              },
-              "implementationCount": 1,
-              "implementations": [
-                {
-                  "ref": "01KQQ4Q025-3HXA",
-                  "lifecycleStatus": "existing-only",
-                  "configuration": "centralized-log-forwarding",
-                  "notes": "Example OS configuration for centralized log forwarding."
-                }
-              ]
+              "owner": {},
+              "implementationCount": 0,
+              "implementations": []
             }
           ]
         },
@@ -47906,19 +47671,9 @@ window.DRAFT_BROWSER_DATA = {
               "uid": "01KQQ4Q026-JW52",
               "name": "Security Monitoring",
               "description": "Threat detection, intrusion detection, security event monitoring, and audit telemetry.",
-              "owner": {
-                "team": "example-architecture",
-                "contact": "architecture@example.com"
-              },
-              "implementationCount": 1,
-              "implementations": [
-                {
-                  "ref": "01KQQ4Q025-MQ3F",
-                  "lifecycleStatus": "existing-only",
-                  "configuration": "",
-                  "notes": "Example endpoint security monitoring agent."
-                }
-              ]
+              "owner": {},
+              "implementationCount": 0,
+              "implementations": []
             }
           ]
         },
@@ -48124,10 +47879,7 @@ window.DRAFT_BROWSER_DATA = {
     },
     "unassignedCapabilities": []
   },
-  "warnings": [
-    "Warning: 01KSF29JTP-DRHA references missing object '01KSF29JTP-9HYA' via linkedObject",
-    "Warning: 01KSE5V73Z-DRSC references missing object '01KSE5V73Z-Q0A0' via linkedObject"
-  ],
+  "warnings": [],
   "requirements": {
     "groups": [
       {
@@ -48144,6 +47896,22 @@ window.DRAFT_BROWSER_DATA = {
         },
         "active": true,
         "description": "Structured checklist of required questions and answers used to define a complete and correct AI Gateway.",
+        "requirementCount": 4
+      },
+      {
+        "id": "01M162FHHS-XAJQ",
+        "uid": "01M162FHHS-XAJQ",
+        "name": "Aiden Game Platform Architecture & UAT Standards",
+        "activation": "always",
+        "catalogStatus": "complete",
+        "provider": {},
+        "authority": {
+          "name": "DRAFT Framework",
+          "shortName": "DRAFT",
+          "source": "DRAFT Framework"
+        },
+        "active": true,
+        "description": "Governed architecture standards for Switch to build, scaffold, and deploy games for Aiden (tier classification, persistent storage, auth/user profiles, GitHub Pages / Cloud Run UAT delivery).",
         "requirementCount": 4
       },
       {
@@ -48211,6 +47979,22 @@ window.DRAFT_BROWSER_DATA = {
         "requirementCount": 5
       },
       {
+        "id": "01M15WPEFV-ZMA9",
+        "uid": "01M15WPEFV-ZMA9",
+        "name": "Engineering Maturity & Quality Standards (L1-L3)",
+        "activation": "always",
+        "catalogStatus": "complete",
+        "provider": {},
+        "authority": {
+          "name": "DRAFT Framework",
+          "shortName": "DRAFT",
+          "source": "DRAFT Framework"
+        },
+        "active": true,
+        "description": "Comprehensive engineering maturity standards covering L1 Baseline through L3 Advanced (backward-compatible migrations, 100% composable IaC, zero gate suppressions, synthetic test data, automated zero-downtime rollback, JSON structured logging, SLO error budgets, and ephemeral preview environments).",
+        "requirementCount": 11
+      },
+      {
         "id": "01KSF4NHSP-8HPP",
         "uid": "01KSF4NHSP-8HPP",
         "name": "Engineering Quality RequirementGroup",
@@ -48225,6 +48009,22 @@ window.DRAFT_BROWSER_DATA = {
         "active": false,
         "description": "Optional checklist for ProductComponents covering build quality, test coverage, and performance validation practices. Activated per workspace; does not fire automatically.",
         "requirementCount": 4
+      },
+      {
+        "id": "01M15NEKT7-4PZN",
+        "uid": "01M15NEKT7-4PZN",
+        "name": "Enterprise AI Product Security & Acceptable Use Standards",
+        "activation": "always",
+        "catalogStatus": "complete",
+        "provider": {},
+        "authority": {
+          "name": "DRAFT Framework",
+          "shortName": "DRAFT",
+          "source": "DRAFT Framework"
+        },
+        "active": true,
+        "description": "Mandatory compliance, governance, and secret management standards for all AI products built by Archie, Switch, or engineering teams.",
+        "requirementCount": 5
       },
       {
         "id": "01KSF4NHSP-HCPX",
@@ -48293,6 +48093,22 @@ window.DRAFT_BROWSER_DATA = {
         "active": true,
         "description": "Base requirements for NetworkService objects covering network function declaration, topology definition, and protocol governance. Delivery model requirement groups (Appliance Delivery, SaaS Delivery, Service Behavior) apply on top of these base requirements based on how the network service is operated.\n",
         "requirementCount": 3
+      },
+      {
+        "id": "01M15XYZXT-KTJA",
+        "uid": "01M15XYZXT-KTJA",
+        "name": "OWASP ASVS & Secure Coding Standards",
+        "activation": "always",
+        "catalogStatus": "complete",
+        "provider": {},
+        "authority": {
+          "name": "OWASP Application Security Verification Standard",
+          "shortName": "OWASP ASVS",
+          "source": "https://owasp.org/www-project-application-security-verification-standard/"
+        },
+        "active": true,
+        "description": "Mandatory secure coding and application security verification standards based on OWASP ASVS v4.0 and NIST SSDF.",
+        "requirementCount": 6
       },
       {
         "id": "01KQQ4Q027-TPWG",
@@ -48394,7 +48210,7 @@ window.DRAFT_BROWSER_DATA = {
           "shortName": "DRAFT Security",
           "source": "Security Compliance Requirements"
         },
-        "active": true,
+        "active": false,
         "description": "Baseline security and compliance requirement group bundled with DRAFT. Requirements are applied to matching object types based on their target scope.\n",
         "requirementCount": 16
       },
@@ -48483,152 +48299,12 @@ window.DRAFT_BROWSER_DATA = {
         "requirementCount": 12
       }
     ],
-    "activeRequirementGroups": [
-      "01KQQ4Q027-T3CA"
-    ],
-    "requireActiveRequirementGroupDisposition": true
+    "activeRequirementGroups": [],
+    "requireActiveRequirementGroupDisposition": false
   },
-  "vocabulary": {
-    "deploymentTargets": {
-      "values": [
-        {
-          "id": "aws-us-east-1",
-          "name": "AWS US East 1",
-          "provider": "aws",
-          "type": "cloud-region",
-          "status": "approved",
-          "lat": 38.95,
-          "lon": -77.45,
-          "region": "Virginia, US",
-          "notes": "Primary production region, multi-AZ."
-        },
-        {
-          "id": "aws-us-east-2",
-          "name": "AWS US East 2",
-          "provider": "aws",
-          "type": "cloud-region",
-          "status": "approved",
-          "lat": 40.42,
-          "lon": -82.91,
-          "region": "Ohio, US",
-          "notes": "Secondary region for disaster recovery."
-        },
-        {
-          "id": "aws-us-west-2",
-          "name": "AWS US West 2",
-          "provider": "aws",
-          "type": "cloud-region",
-          "status": "approved",
-          "lat": 45.84,
-          "lon": -119.7,
-          "region": "Oregon, US",
-          "notes": "Active-active pair with us-east-1 for tier-1 services."
-        },
-        {
-          "id": "aws-eu-west-1",
-          "name": "AWS EU West 1",
-          "provider": "aws",
-          "type": "cloud-region",
-          "status": "approved",
-          "lat": 53.41,
-          "lon": -8.24,
-          "region": "Ireland",
-          "notes": "EU data-residency primary."
-        },
-        {
-          "id": "aws-ap-southeast-1",
-          "name": "AWS AP Southeast 1",
-          "provider": "aws",
-          "type": "cloud-region",
-          "status": "approved",
-          "lat": 1.35,
-          "lon": 103.82,
-          "region": "Singapore",
-          "notes": "APAC anchor region."
-        },
-        {
-          "id": "aws-ap-northeast-1",
-          "name": "AWS AP Northeast 1",
-          "provider": "aws",
-          "type": "cloud-region",
-          "status": "proposed",
-          "lat": 35.68,
-          "lon": 139.65,
-          "region": "Tokyo, JP",
-          "notes": "Japan data residency \u2014 under review."
-        },
-        {
-          "id": "gcp-us-central1",
-          "name": "GCP US Central 1",
-          "provider": "gcp",
-          "type": "cloud-region",
-          "status": "approved",
-          "lat": 41.26,
-          "lon": -95.86,
-          "region": "Iowa, US",
-          "notes": "Analytics workloads and BigQuery."
-        },
-        {
-          "id": "azure-eastus",
-          "name": "Azure East US",
-          "provider": "azure",
-          "type": "cloud-region",
-          "status": "approved",
-          "lat": 37.32,
-          "lon": -78.1,
-          "region": "Virginia, US",
-          "notes": "ML platform and acquired workloads."
-        },
-        {
-          "id": "openstack-controller",
-          "name": "OpenStack Controller",
-          "provider": "onprem",
-          "type": "on-prem",
-          "status": "approved",
-          "lat": 39.95,
-          "lon": -83.05,
-          "region": "Columbus, OH",
-          "notes": "Self-managed OpenStack control and data plane."
-        },
-        {
-          "id": "colo-ohio-mcocne",
-          "name": "Ohio Colo MCOCNE",
-          "provider": "colocation",
-          "type": "colocation",
-          "status": "approved",
-          "lat": 39.96,
-          "lon": -82.99,
-          "region": "Columbus, OH",
-          "notes": "Primary US data center."
-        },
-        {
-          "id": "snowflake-prod",
-          "name": "Snowflake Production",
-          "provider": "saas",
-          "type": "saas-tenant",
-          "status": "approved",
-          "region": "Multi-region (vendor-managed)",
-          "notes": "Primary analytics warehouse tenant."
-        },
-        {
-          "id": "okta-corp",
-          "name": "Okta Corporate",
-          "provider": "saas",
-          "type": "saas-tenant",
-          "status": "approved",
-          "region": "Multi-region (vendor-managed)",
-          "notes": "Workforce identity provider."
-        }
-      ]
-    }
-  },
+  "vocabulary": {},
   "businessTaxonomy": {
-    "pillars": [
-      {
-        "id": "business-pillar.infrastructure",
-        "name": "Infrastructure"
-      }
-    ],
+    "pillars": [],
     "hierarchy": [],
     "requireSoftwareDeploymentPatternPillar": false
   },
