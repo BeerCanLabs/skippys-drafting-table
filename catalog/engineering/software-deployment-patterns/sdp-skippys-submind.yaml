@@ -15,11 +15,14 @@ tags:
 - gcp
 - cloud-run
 serviceGroups:
-- id: agent-factory-group
-  name: Agent Factory Processing Group
+- id: agent-factory-platform
+  name: Agent Factory Platform Substrate
   deploymentTarget: GCP Cloud Run Serverless Substrate in us-central1
   components:
-  - productComponent: 01M15NEKT7-EKAR
+  - productComponent: doorman-proxy
+  - productComponent: mcp-gateway
+  - productComponent: oauth-auth-server
+  - productComponent: persona-publisher-pipeline
 deployableObjects:
 - dataStoreService: 01M15NEKT7-H42Y
 - aiGateway: 01M15NEKT7-QKPW
