@@ -1,0 +1,16 @@
+schemaVersion: '1.0'
+uid: 01M1N137Q4-BNT8
+type: product_registration
+name: Closing Climb Web UI
+catalogStatus: complete
+owner:
+  team: real-estate-solutions
+  contact: stephanie@example.com
+
+repository:
+  provider: github
+  url: https://github.com/BeerCanLabs/closing-climb-web
+  defaultBranch: main
+sdpManifest:
+  mode: git
+  path: .draft/sdp.yaml

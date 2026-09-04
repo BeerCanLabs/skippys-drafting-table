@@ -1,0 +1,16 @@
+schemaVersion: '1.0'
+uid: 01M1N137Q4-RF6M
+type: product_registration
+name: Skippy Matrix Agent Factory Platform
+catalogStatus: complete
+owner:
+  team: platform-ai-team
+  contact: platform-ai@example.com
+
+repository:
+  provider: github
+  url: https://github.com/BeerCanLabs/skippy-matrix
+  defaultBranch: main
+sdpManifest:
+  mode: git
+  path: .draft/sdp.yaml
