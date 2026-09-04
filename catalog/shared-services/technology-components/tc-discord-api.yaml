@@ -1,0 +1,30 @@
+schemaVersion: '1.0'
+uid: 01HBC-TC-DIS-003
+type: technology_component
+name: Discord Bot API & Gateway
+aliases:
+- discord-api
+- discord-doorman
+description: >
+  Managed real-time messaging, bot API, and WebSocket gateway platform provided by Discord. 
+  Used by Discord Doorman and agent proxy services for user interaction.
+version: 1.0.0
+catalogStatus: documentation
+provisioningModel: reference-only
+owner:
+  team: Agent Factory Platform
+  contact: agent-factory@beercanlabs.com
+tags:
+- technology-component
+- messaging
+- reference-only
+vendor: Discord
+productName: Discord API
+productVersion: v10
+classification: software
+vendorLifecycle:
+  mainstreamSupportEnd: Active
+  extendedSupportEnd: Active
+  notes: External SaaS API provider platform.
+capabilities:
+- 01KTWS3D6T-AB29 # capability-messaging

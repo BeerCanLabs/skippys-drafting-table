@@ -1,0 +1,9 @@
+schemaVersion: '1.0'
+uid: 01HBC-DOMAIN-AG-001
+type: domain
+name: Agent Factory
+description: >
+  Strategic domain covering the Agent Factory platform substrate (Doorman Proxy, 
+  MCP Gateway, OAuth Auth Server, Persona Publisher Pipeline) and all published 
+  AI Agent Personas and SOUL configurations.
+ownerContact: agent-factory-team@beercanlabs.com

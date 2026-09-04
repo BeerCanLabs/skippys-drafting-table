@@ -1,0 +1,30 @@
+schemaVersion: '1.0'
+uid: 01HBC-TC-GFS-001
+type: technology_component
+name: Google Cloud Firestore
+aliases:
+- firestore
+- gcp-firestore
+description: >
+  Fully managed serverless NoSQL document database offered by Google Cloud Platform. 
+  Used for fast, scalable state persistence across web applications (e.g. closing-climb-web).
+version: 1.0.0
+catalogStatus: documentation
+provisioningModel: reference-only
+owner:
+  team: Infrastructure Platform
+  contact: infra@beercanlabs.com
+tags:
+- technology-component
+- data-store
+- reference-only
+vendor: Google Cloud
+productName: Cloud Firestore
+productVersion: Managed
+classification: software
+vendorLifecycle:
+  mainstreamSupportEnd: Active
+  extendedSupportEnd: Active
+  notes: External managed cloud service. No local IaC module required.
+capabilities:
+- 01KTWS3D6T-ABD4 # capability-data-persistence

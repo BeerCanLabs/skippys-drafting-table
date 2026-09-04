@@ -1,0 +1,8 @@
+schemaVersion: '1.0'
+uid: 01HBC-DOMAIN-LB-003
+type: domain
+name: Labs
+description: >
+  Innovation and experimental labs domain covering gaming engines, prototypes, 
+  and experimental repositories authored by Aiden and the Labs team.
+ownerContact: labs-team@beercanlabs.com

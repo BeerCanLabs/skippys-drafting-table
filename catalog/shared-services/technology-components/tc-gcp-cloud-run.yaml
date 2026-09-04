@@ -1,0 +1,30 @@
+schemaVersion: '1.0'
+uid: 01HBC-TC-GCR-002
+type: technology_component
+name: Google Cloud Run
+aliases:
+- cloud-run
+- gcp-cloud-run
+description: >
+  Managed serverless compute platform that enables running stateless containers 
+  invoked via HTTP requests. Used for hosting API gateways, microservices, and web frontends.
+version: 1.0.0
+catalogStatus: documentation
+provisioningModel: reference-only
+owner:
+  team: Infrastructure Platform
+  contact: infra@beercanlabs.com
+tags:
+- technology-component
+- compute-platform
+- reference-only
+vendor: Google Cloud
+productName: Cloud Run
+productVersion: Managed
+classification: compute-platform
+vendorLifecycle:
+  mainstreamSupportEnd: Active
+  extendedSupportEnd: Active
+  notes: External managed serverless container runtime.
+capabilities:
+- 01KTWS3D6T-ABD3 # capability-compute-platform

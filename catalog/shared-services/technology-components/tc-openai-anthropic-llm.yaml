@@ -1,0 +1,31 @@
+schemaVersion: '1.0'
+uid: 01HBC-TC-LLM-004
+type: technology_component
+name: LLM Inference APIs (OpenAI / Anthropic)
+aliases:
+- llm-api
+- openai-api
+- anthropic-api
+description: >
+  Managed frontier Large Language Model inference endpoints (OpenAI GPT-4o, Anthropic Claude 3.5 Sonnet) 
+  accessed via HTTPS / MCP gateways for AI Agent execution.
+version: 1.0.0
+catalogStatus: documentation
+provisioningModel: reference-only
+owner:
+  team: Agent Factory Platform
+  contact: agent-factory@beercanlabs.com
+tags:
+- technology-component
+- ai-inference
+- reference-only
+vendor: OpenAI / Anthropic
+productName: LLM APIs
+productVersion: Managed
+classification: software
+vendorLifecycle:
+  mainstreamSupportEnd: Active
+  extendedSupportEnd: Active
+  notes: External managed AI model inference endpoints.
+capabilities:
+- 01KTWS3D6T-AB30 # capability-model-inference

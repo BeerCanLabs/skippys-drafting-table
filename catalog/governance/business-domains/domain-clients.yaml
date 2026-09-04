@@ -1,0 +1,8 @@
+schemaVersion: '1.0'
+uid: 01HBC-DOMAIN-CL-002
+type: domain
+name: Clients
+description: >
+  Business domain covering client-facing applications, customer experiences, 
+  and web applications (e.g. alc-kellogg, closing-climb-web).
+ownerContact: clients-team@beercanlabs.com
