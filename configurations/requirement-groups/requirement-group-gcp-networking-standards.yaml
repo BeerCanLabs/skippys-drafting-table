@@ -1,0 +1,34 @@
+schemaVersion: '1.0'
+uid: 01J89X0NET-GCP-NETWK
+type: requirement_group
+name: Public Web Infrastructure & Load Balancing Requirements
+description: Governed requirement group defining mandatory architectural requirements for public web services and endpoints.
+version: 1.0.0
+catalogStatus: complete
+lifecycleStatus: preferred
+activation: always
+appliesTo:
+- software_deployment_pattern
+- product_component
+- network_service
+authority:
+  name: Geordi (Chief Engineer)
+  shortName: Geordi
+  source: Skippy Submind Architecture Governance
+owner:
+  team: engineering-platform
+  contact: dale.sackrider+geordi@gmail.com
+requirements:
+- id: req-external-alb-mandatory
+  description: Every public website or web service MUST be fronted by an External Application Load Balancer. Direct bare host mappings (such as ghs.googlehosted.com) without an external load balancer are strictly prohibited.
+  canBeSatisfiedBy:
+  - mechanism: field
+    key: networkService
+  - mechanism: decisionRecord
+    key: externalAlbDecision
+  minimumSatisfactions: 1
+  requirementMode: mandatory
+  naAllowed: false
+  validAnswerTypes:
+  - field
+  - decisionRecord
