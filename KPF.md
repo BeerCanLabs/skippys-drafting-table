@@ -1,4 +1,4 @@
-# Key Product Functionalities (KPF) — Drafting Table
+# Key Product Functionalities (KPF) — Draftsman Framework
 
 **Source of truth for product functionality & test mappings.**
 
