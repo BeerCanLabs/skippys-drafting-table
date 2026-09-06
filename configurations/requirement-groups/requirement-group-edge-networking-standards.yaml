@@ -1,9 +1,9 @@
 schemaVersion: '1.0'
-uid: 01J89X0NET-GCP-NETWK
+uid: 01J89X0NET-EDGE-NETWK
 type: requirement_group
-name: Public Web Infrastructure & Load Balancing Requirements
+name: Public Web Infrastructure & Edge Proxy Requirements
 description: Governed requirement group defining mandatory architectural requirements for public web services and endpoints.
-version: 1.0.0
+version: 1.1.0
 catalogStatus: complete
 lifecycleStatus: preferred
 activation: always
@@ -19,13 +19,13 @@ owner:
   team: engineering-platform
   contact: dale.sackrider+geordi@gmail.com
 requirements:
-- id: req-external-alb-mandatory
-  description: Every public website or web service MUST be fronted by an External Application Load Balancer. Direct bare host mappings (such as ghs.googlehosted.com) without an external load balancer are strictly prohibited.
+- id: req-edge-proxy-mandatory
+  description: Every public website or web service MUST be fronted by an External Anycast Edge Proxy Service (Cloudflare Free Tier or compliant Managed Edge Proxy). Direct bare host mappings (such as ghs.googlehosted.com) without ALPN-compliant edge TLS proxying are strictly prohibited.
   canBeSatisfiedBy:
   - mechanism: field
     key: networkService
   - mechanism: decisionRecord
-    key: externalAlbDecision
+    key: edgeProxyDecision
   minimumSatisfactions: 1
   requirementMode: mandatory
   naAllowed: false

@@ -1,0 +1,39 @@
+schemaVersion: '1.0'
+uid: 01J89X0NET-CLOUDFLARE-EDGE
+type: network_service
+name: Cloudflare Global Anycast Edge Proxy Service
+description: Registration object for Geordi's Cloudflare Global Anycast Edge Proxy network service providing ingress routing, Orange Cloud DNS proxying, SSL Full TLS termination, 301 URL redirects, and ALPN negotiation compatibility under Netskope SSL inspection.
+deliveryModel: saas
+catalogStatus: complete
+lifecycleStatus: preferred
+vendor: Cloudflare
+productName: Cloudflare Managed DNS & Edge Proxy
+productVersion: Free Tier Anycast Edge Network
+networkFunction: Ingress traffic control, HTTPS termination, HTTP/1.1 and HTTP/2 ALPN negotiation, Orange Cloud DNS proxying, and 301 URL redirects.
+provisioningModel: deployable
+deployablePackage:
+  registry: github
+  source: BeerCanLabs/skippy-matrix
+  version: main
+  modulePath: terraform/modules/cloudflare-edge-proxy
+protocols:
+- HTTPS
+- HTTP/2
+- HTTP/1.1
+owner:
+  team: engineering-platform
+  contact: dale.sackrider+geordi@gmail.com
+  resourceOwner: Geordi
+  serviceProviderRole: Network Domain Service Provider
+vendorGovernance:
+  dataLeavesInfrastructure: false
+  dataResidencyCommitment: Global Anycast Edge with regional origin processing
+  vendorSLA: 100% SLA commitment
+  acceptableUsePolicy: Mandatory for all public web endpoints across Submind and client workloads. Bare GHS CNAME mappings are strictly non-compliant.
+requirementImplementations:
+- requirementGroup: 01J89X0NET-EDGE-NETWK
+  requirementId: req-edge-proxy-mandatory
+  status: satisfied
+  mechanism: field
+  key: networkService
+  notes: Satisfied by Geordi's Cloudflare Global Anycast Edge Proxy service module deployed via BeerCanLabs/skippy-matrix.
