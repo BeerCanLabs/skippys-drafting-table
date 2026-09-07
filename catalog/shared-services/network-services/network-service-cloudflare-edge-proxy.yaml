@@ -29,7 +29,7 @@ vendorGovernance:
   dataLeavesInfrastructure: false
   dataResidencyCommitment: Global Anycast Edge with regional origin processing
   vendorSLA: 100% SLA commitment
-  acceptableUsePolicy: Mandatory for all public web endpoints across Submind and client workloads. Bare GHS CNAME mappings are strictly non-compliant.
+  acceptableUsePolicy: Mandatory for all public web endpoints across Submind and client workloads. Bare GHS CNAME mappings are strictly non-compliant. All traffic must route through Cloudflare Anycast Edge with Full SSL encryption enabled.
 requirementImplementations:
 - requirementGroup: 01J89X0NET-EDGE-NETWK
   requirementId: req-edge-proxy-mandatory

@@ -1,0 +1,16 @@
+schemaVersion: '1.0'
+uid: 01J89X0DR-EDGE-NETWK
+type: decision_record
+name: Edge Proxy Architecture & Acceptable Use Decision
+description: Architecture decision record formally adopting Cloudflare Global Anycast Edge Proxy ($0 Free Tier) as the mandatory network service for all Submind and client public web applications.
+version: 1.0.0
+category: decision
+status: accepted
+catalogStatus: complete
+lifecycleStatus: preferred
+decisionRationale: Adopted Cloudflare Global Anycast Edge Proxy to resolve Netskope SSL inspection ALPN stream drops, eliminate GCP Load Balancer recurring charges ($0/month billing), and enforce Full SSL encryption and edge 301 redirects across all workloads.
+owner:
+  team: engineering-platform
+  contact: dale.sackrider+geordi@gmail.com
+  resourceOwner: Geordi
+  serviceProviderRole: Network Domain Service Provider

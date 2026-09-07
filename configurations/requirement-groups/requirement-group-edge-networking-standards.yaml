@@ -2,7 +2,7 @@ schemaVersion: '1.0'
 uid: 01J89X0NET-EDGE-NETWK
 type: requirement_group
 name: Public Web Infrastructure & Edge Proxy Requirements
-description: Governed requirement group defining mandatory architectural requirements for public web services and endpoints.
+description: Governed requirement group defining mandatory architectural requirements and acceptable use policy for public web services and endpoints.
 version: 1.1.0
 catalogStatus: complete
 lifecycleStatus: preferred
@@ -18,6 +18,9 @@ authority:
 owner:
   team: engineering-platform
   contact: dale.sackrider+geordi@gmail.com
+acceptableUsePolicy:
+  mandatory: true
+  policy: All public web endpoints across Submind and client workloads MUST be fronted by Cloudflare Global Anycast Edge Proxy ($0 Free Tier). Bare GHS CNAME mappings and unproxied origin endpoints are strictly non-compliant.
 requirements:
 - id: req-edge-proxy-mandatory
   description: Every public website or web service MUST be fronted by an External Anycast Edge Proxy Service (Cloudflare Free Tier or compliant Managed Edge Proxy). Direct bare host mappings (such as ghs.googlehosted.com) without ALPN-compliant edge TLS proxying are strictly prohibited.
