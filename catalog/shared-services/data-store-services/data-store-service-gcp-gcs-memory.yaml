@@ -1,0 +1,26 @@
+schemaVersion: '1.0'
+uid: 01J89X0DS-GCS-MEMORY
+type: data_store_service
+name: Submind GCS Memory & Backup Storage Service
+description: Persistent Google Cloud Storage object storage service backing agent memory state buckets (submind-matrix-sm-*-memory), Litestream SQLite snapshots, and BCP backups.
+deliveryModel: paas
+catalogStatus: complete
+lifecycleStatus: preferred
+vendor: Google Cloud
+productName: Google Cloud Storage
+productVersion: Standard Object Storage
+dataStoreType: Object Storage
+provisioningModel: managed
+protocols:
+- HTTPS
+- gRPC
+owner:
+  team: engineering-platform
+  contact: dale.sackrider+archie@gmail.com
+  resourceOwner: Archie
+  serviceProviderRole: State & Memory Storage Provider
+vendorGovernance:
+  dataLeavesInfrastructure: false
+  dataResidencyCommitment: Regional GCS storage with customer-managed IAM access control
+  vendorSLA: 99.9% uptime commitment
+  acceptableUsePolicy: Mandatory long-term memory state and database backup vault for all submind personas.

@@ -1,0 +1,32 @@
+schemaVersion: '1.0'
+uid: 01J89X0APP-HOME-PRINT
+type: appliance_service
+name: Household Print Queue & Spooler Service
+description: Asynchronous document printing service backed by GCS bucket (submind-matrix-print-queue) and local CUPS print daemon for Higgins & Donna estate automation.
+deliveryModel: hybrid
+catalogStatus: complete
+lifecycleStatus: preferred
+vendor: Custom / CUPS
+productName: Skippy Home Print Service
+productVersion: 1.0.0
+applianceFunction: Asynchronous document rendering, PDF conversion, print spooling, and physical printer dispatch.
+provisioningModel: deployable
+deployablePackage:
+  registry: github
+  source: BeerCanLabs/SM-higgins
+  version: main
+  modulePath: skills/home-print
+protocols:
+- HTTPS
+- IPP
+- LPD
+owner:
+  team: estate-management
+  contact: dale.sackrider+higgins@gmail.com
+  resourceOwner: Higgins
+  serviceProviderRole: Appliance Domain Service Provider
+vendorGovernance:
+  dataLeavesInfrastructure: false
+  dataResidencyCommitment: Local LAN spooling with GCS queue transit
+  vendorSLA: Best effort household availability
+  acceptableUsePolicy: Authorized print queue for household estate management, daily briefings, and administrative document dispatch.

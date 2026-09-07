@@ -1,0 +1,31 @@
+schemaVersion: '1.0'
+uid: 01J89X0MCP-GATEWAY
+type: mcp_gateway
+name: Skippy Submind MCP Router & Gateway Service
+description: Central Model Context Protocol (MCP) router hosting agent tool registrations, dynamic skill execution, and cross-agent tool invocation across the Submind matrix.
+deliveryModel: paas
+catalogStatus: complete
+lifecycleStatus: preferred
+vendor: Google Cloud / Custom
+productName: Skippy Submind MCP Gateway
+productVersion: 1.0.0
+networkFunction: Tool routing, skill dispatch, authorization enforcement, and cross-agent communication.
+provisioningModel: deployable
+deployablePackage:
+  registry: github
+  source: BeerCanLabs/skippy-matrix
+  version: main
+  modulePath: docker/server.py
+protocols:
+- HTTPS
+- JSON-RPC 2.0
+owner:
+  team: engineering-platform
+  contact: dale.sackrider+geordi@gmail.com
+  resourceOwner: Geordi
+  serviceProviderRole: Platform Service Provider
+vendorGovernance:
+  dataLeavesInfrastructure: false
+  dataResidencyCommitment: Regional GCP Cloud Run instance with encrypted payload transit
+  vendorSLA: 99.9% uptime commitment
+  acceptableUsePolicy: Mandatory tool router for all submind and external vendor agent skill invocations.

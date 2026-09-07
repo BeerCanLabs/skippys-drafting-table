@@ -1,0 +1,26 @@
+schemaVersion: '1.0'
+uid: 01J89X0SCHED-CLOUD-SCHEDULER
+type: scheduler_service
+name: GCP Cloud Scheduler Cron Dispatch Service
+description: Managed cron scheduling service driving automated triggers for Higgins' Daily 25 briefings, Donna's morning/evening Kanban reviews, Switch's CI triage, and Archie's issue triage.
+deliveryModel: paas
+catalogStatus: complete
+lifecycleStatus: preferred
+vendor: Google Cloud
+productName: Google Cloud Scheduler
+productVersion: Cloud Scheduler API v1
+schedulerFunction: Periodic cron job scheduling, OIDC token authentication, and HTTP endpoint invocation.
+provisioningModel: managed
+protocols:
+- HTTPS
+- OIDC
+owner:
+  team: engineering-platform
+  contact: dale.sackrider+switch@gmail.com
+  resourceOwner: Switch
+  serviceProviderRole: Automation & Cron Service Provider
+vendorGovernance:
+  dataLeavesInfrastructure: false
+  dataResidencyCommitment: Regional GCP Cloud Scheduler execution
+  vendorSLA: 99.9% uptime commitment
+  acceptableUsePolicy: Mandatory cron automation provider for all scheduled submind tasks and background jobs.

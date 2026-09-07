@@ -1,0 +1,26 @@
+schemaVersion: '1.0'
+uid: 01J89X0DS-FIRESTORE
+type: data_store_service
+name: GCP Firestore NoSQL Document Data Store Service
+description: Managed NoSQL document database service storing live deal pipeline entries (climb_entries), Referral Maker client rosters (climb_clients), and submind metadata.
+deliveryModel: paas
+catalogStatus: complete
+lifecycleStatus: preferred
+vendor: Google Cloud
+productName: Google Cloud Firestore
+productVersion: Native Mode Document DB
+dataStoreType: NoSQL Document Store
+provisioningModel: managed
+protocols:
+- HTTPS
+- gRPC
+owner:
+  team: engineering-platform
+  contact: dale.sackrider+higgins@gmail.com
+  resourceOwner: Higgins
+  serviceProviderRole: Data Store Provider
+vendorGovernance:
+  dataLeavesInfrastructure: false
+  dataResidencyCommitment: Multi-region US Central storage with automatic encryption at rest
+  vendorSLA: 99.999% uptime commitment
+  acceptableUsePolicy: Primary transactional document store for Closing Climb and Referral Maker roster synchronization.
