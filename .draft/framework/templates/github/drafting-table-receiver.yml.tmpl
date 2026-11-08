@@ -1,0 +1,52 @@
+# DRAFT Framework 1.0 — Central Receiver GitHub Action
+# This workflow listens for decentralized SDP updates sent by engineering product repos,
+# validates the payload, updates local cache, and regenerates central AI/browser indexes.
+name: DRAFT Decentralized SDP Receiver
+
+on:
+  repository_dispatch:
+    types: [ sdp_updated ]
+
+permissions:
+  contents: write
+
+jobs:
+  sync_sdp:
+    name: Ingest & Validate Decentralized SDP
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Workspace
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install Dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install pyyaml
+
+      - name: Store Decentralized SDP Payload
+        run: |
+          mkdir -p .draft/external_sdps
+          PRODUCT_ID="${{ github.event.client_payload.product_id }}"
+          # Clean payload filename
+          SAFE_ID=$(echo "$PRODUCT_ID" | tr '/' '_')
+          echo '${{ toJson(github.event.client_payload.sdp_content) }}' > ".draft/external_sdps/${SAFE_ID}.yaml"
+
+      - name: Validate Workspace Architecture
+        run: |
+          python3 .draft/framework/tools/validate.py --workspace .
+
+      - name: Regenerate Machine Indexes & AI Map
+        run: |
+          python3 .draft/framework/tools/generate_indexes.py --workspace .
+          python3 .draft/framework/tools/generate_ai_index.py
+
+      - name: Commit Updated Index & Cache
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "chore(draft): sync decentralized SDP for ${{ github.event.client_payload.product_id }}"

@@ -1,0 +1,144 @@
+schemaVersion: '1.0'
+type: product_registration
+requiredFields:
+- schemaVersion
+- uid
+- type
+- name
+- owner
+- catalogStatus
+- repository
+defaultOwnerRole: engineering
+optionalFields:
+- aliases
+- description
+- version
+- tags
+- businessContext
+- sdpManifest
+- notes
+- decisionRecords
+- requirementImplementations
+enumFields:
+  catalogStatus:
+  - stub
+  - incomplete
+  - complete
+fieldTypes:
+  aliases: list
+  owner: dict
+  tags: list
+  businessContext: dict
+  repository: dict
+  sdpManifest: dict
+  notes: dict
+  decisionRecords: list
+  requirementImplementations: list
+collectionSchemas:
+  decisionRecords: decisionRecordRef
+  requirementImplementations: requirementImplementation
+dictSubSchemas:
+  businessContext: businessContext
+  repository: productRepository
+  sdpManifest: sdpManifestSpec
+businessContext:
+  optionalFields:
+  - pillar
+  - additionalPillars
+  - productFamily
+  - ownerNode
+  - notes
+  fieldTypes:
+    pillar: str
+    additionalPillars: list
+    productFamily: str
+    ownerNode: str
+    notes: str
+  fieldDescriptions:
+    pillar: Reference the top-level business pillar ID (e.g. business-pillar.people-solutions).
+    additionalPillars: List of additional business pillar IDs that apply to this product.
+    productFamily: Text name of the product family this registered product belongs to.
+    ownerNode: ID of a node in the hierarchical business taxonomy.
+    notes: Additional context about the business ownership or context.
+productRepository:
+  requiredFields:
+  - url
+  optionalFields:
+  - provider
+  - owner
+  - name
+  - defaultBranch
+  enumFields:
+    provider:
+    - github
+    - gitlab
+    - bitbucket
+    - azure-devops
+    - other
+  fieldTypes:
+    url: str
+    provider: str
+    owner: str
+    name: str
+    defaultBranch: str
+  fieldDescriptions:
+    url: Full web URL of the product source repository (e.g. https://github.com/company/absence-service).
+    provider: Repository host platform (github, gitlab, bitbucket, azure-devops, other).
+    owner: Organization or account owner of the repository.
+    name: Repository name.
+    defaultBranch: Default git branch (e.g. main, master).
+sdpManifest:
+  optionalFields:
+  - mode
+  - path
+  - branch
+  enumFields:
+    mode:
+    - git
+    - local_path
+    - inline
+  fieldTypes:
+    mode: str
+    path: str
+    branch: str
+  fieldDescriptions:
+    mode: How the decentralized SDP is linked (git = remote product repo manifest, local_path = path relative to workspace, inline = legacy catalog reference).
+    path: Path to the SDP manifest within the product repo (defaults to .draft/sdp.yaml).
+    branch: Git branch where the SDP manifest is maintained (defaults to main).
+decisionRecordRef:
+  requiredFields:
+  - ref
+requirementImplementation:
+  requiredFields:
+  - requirementGroup
+  - requirementId
+  - status
+  optionalFields:
+  - mechanism
+  - key
+  - equals
+  - criteria
+  - ref
+  - notes
+  enumFields:
+    status:
+    - satisfied
+    - not-applicable
+    - not-compliant
+  fieldTypes:
+    criteria: dict
+aiHint: >
+  A ProductRegistration advertises the central registration contract for an engineering product.
+  It links a named product owned by an engineering team to its source repository and its
+  decentralized SoftwareDeploymentPattern manifest (.draft/sdp.yaml).
+fieldDescriptions:
+  schemaVersion: Use the schema version string supported by this framework release, normally "1.0".
+  type: Use product_registration.
+  uid: Generated opaque UID for product registration identity.
+  name: Human-readable name of the registered product.
+  owner: Team and contact responsible for this registered product.
+  catalogStatus: Use stub, incomplete, or complete to describe registration maturity.
+  businessContext: Workspace business taxonomy mapping for portfolio and pillar grouping.
+  repository: Source repository details including web URL and default branch.
+  sdpManifest: Location and linkage mode of the product's decentralized SDP manifest (.draft/sdp.yaml).
+uidPattern: ^[0-9A-HJKMNP-TV-Z]{10}-[0-9A-HJKMNP-TV-Z]{4}$
