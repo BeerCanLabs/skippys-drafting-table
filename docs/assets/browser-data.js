@@ -119,6 +119,10 @@ window.DRAFT_BROWSER_DATA = {
         {
           "source": "01KQQ4Q027-1GHC",
           "path": "requirements[5].relatedCapability"
+        },
+        {
+          "source": "01M7GWTG2T-VA2G",
+          "path": "capabilities[1]"
         }
       ],
       "editorSchema": {
@@ -674,6 +678,10 @@ window.DRAFT_BROWSER_DATA = {
         {
           "source": "01KSF29JTP-SRVE",
           "path": "requirements[0].relatedCapability"
+        },
+        {
+          "source": "01M7GWTG2S-W2BR",
+          "path": "capabilities[0]"
         }
       ],
       "editorSchema": {
@@ -814,6 +822,10 @@ window.DRAFT_BROWSER_DATA = {
         {
           "source": "01KT0VM061-CRN7",
           "path": "requirements[4].relatedCapability"
+        },
+        {
+          "source": "01M7GWTG2S-AC3R",
+          "path": "capabilities[2]"
         }
       ],
       "editorSchema": {
@@ -954,6 +966,10 @@ window.DRAFT_BROWSER_DATA = {
         {
           "source": "01KT0VM061-CRN7",
           "path": "requirements[12].relatedCapability"
+        },
+        {
+          "source": "01M7GWTG2T-0NKZ",
+          "path": "capabilities[0]"
         }
       ],
       "editorSchema": {
@@ -1114,6 +1130,10 @@ window.DRAFT_BROWSER_DATA = {
         {
           "source": "01KQQ4Q027-THYN",
           "path": "requirements[2].relatedCapability"
+        },
+        {
+          "source": "01M7GWTG2T-VA2G",
+          "path": "capabilities[0]"
         }
       ],
       "editorSchema": {
@@ -1534,6 +1554,10 @@ window.DRAFT_BROWSER_DATA = {
         {
           "source": "01KT0VM061-CRN7",
           "path": "requirements[19].relatedCapability"
+        },
+        {
+          "source": "01M7GWTG2T-M2Q0",
+          "path": "capabilities[1]"
         }
       ],
       "editorSchema": {
@@ -1820,6 +1844,14 @@ window.DRAFT_BROWSER_DATA = {
           "path": "requirements[1].relatedCapability"
         },
         {
+          "source": "01M7GWTG2S-AC3R",
+          "path": "capabilities[0]"
+        },
+        {
+          "source": "01M7GWTG2S-ZT0V",
+          "path": "capabilities[0]"
+        },
+        {
           "source": "01M7GTBMQT-6QYP",
           "path": "capabilities[0]"
         }
@@ -2102,6 +2134,14 @@ window.DRAFT_BROWSER_DATA = {
         {
           "source": "01KSF29JTP-SRVE",
           "path": "requirements[1].relatedCapability"
+        },
+        {
+          "source": "01M7GWTG2S-AC3R",
+          "path": "capabilities[1]"
+        },
+        {
+          "source": "01M7GWTG2S-ZT0V",
+          "path": "capabilities[1]"
         }
       ],
       "editorSchema": {
@@ -2384,6 +2424,22 @@ window.DRAFT_BROWSER_DATA = {
           "path": "requirements[8].relatedCapability"
         },
         {
+          "source": "01M7GWTG2T-7D9P",
+          "path": "capabilities[0]"
+        },
+        {
+          "source": "01M7GWTG2T-KR1Y",
+          "path": "capabilities[1]"
+        },
+        {
+          "source": "01M7GWTG2T-GYW1",
+          "path": "capabilities[1]"
+        },
+        {
+          "source": "01M7GWTG2T-F1WG",
+          "path": "capabilities[1]"
+        },
+        {
           "source": "01M7GTBMQT-3P47",
           "path": "capabilities[0]"
         }
@@ -2546,6 +2602,14 @@ window.DRAFT_BROWSER_DATA = {
         {
           "source": "01KQQ4Q027-1GHC",
           "path": "requirements[6].relatedCapability"
+        },
+        {
+          "source": "01M7GWTG2T-7D9P",
+          "path": "capabilities[1]"
+        },
+        {
+          "source": "01M7GWTG2T-F1WG",
+          "path": "capabilities[2]"
         }
       ],
       "editorSchema": {
@@ -2686,6 +2750,10 @@ window.DRAFT_BROWSER_DATA = {
         {
           "source": "01KT0VM061-CRN7",
           "path": "requirements[1].relatedCapability"
+        },
+        {
+          "source": "01M7GWTG2T-8A54",
+          "path": "capabilities[0]"
         }
       ],
       "editorSchema": {
@@ -2978,6 +3046,14 @@ window.DRAFT_BROWSER_DATA = {
         {
           "source": "01KQQ4Q027-1GHC",
           "path": "requirements[4].relatedCapability"
+        },
+        {
+          "source": "01M7GWTG2T-KR1Y",
+          "path": "capabilities[2]"
+        },
+        {
+          "source": "01M7GWTG2T-JHTR",
+          "path": "capabilities[0]"
         }
       ],
       "editorSchema": {
@@ -3118,6 +3194,10 @@ window.DRAFT_BROWSER_DATA = {
         {
           "source": "01KT0VM061-CRN7",
           "path": "requirements[10].relatedCapability"
+        },
+        {
+          "source": "01M7GWTG2T-KR1Y",
+          "path": "capabilities[0]"
         }
       ],
       "editorSchema": {
@@ -3414,6 +3494,10 @@ window.DRAFT_BROWSER_DATA = {
         {
           "source": "01KQQ4Q027-K5DR",
           "path": "requirements[5].relatedCapability"
+        },
+        {
+          "source": "01M7GWTG2T-TQEB",
+          "path": "capabilities[1]"
         }
       ],
       "editorSchema": {
@@ -3570,6 +3654,10 @@ window.DRAFT_BROWSER_DATA = {
         {
           "source": "01KQQ4Q027-THYN",
           "path": "requirements[3].relatedCapability"
+        },
+        {
+          "source": "01M7GWTG2T-TQEB",
+          "path": "capabilities[0]"
         }
       ],
       "editorSchema": {
@@ -3710,6 +3798,14 @@ window.DRAFT_BROWSER_DATA = {
         {
           "source": "01KT0VM061-CRN7",
           "path": "requirements[7].relatedCapability"
+        },
+        {
+          "source": "01M7GWTG2T-M5GD",
+          "path": "capabilities[0]"
+        },
+        {
+          "source": "01M7GWTG2T-M07S",
+          "path": "capabilities[0]"
         },
         {
           "source": "01M7GTBMQT-TFSM",
@@ -4264,6 +4360,14 @@ window.DRAFT_BROWSER_DATA = {
         {
           "source": "01KT0VM061-CRN7",
           "path": "requirements[9].relatedCapability"
+        },
+        {
+          "source": "01M7GWTG2T-GYW1",
+          "path": "capabilities[0]"
+        },
+        {
+          "source": "01M7GWTG2T-F1WG",
+          "path": "capabilities[0]"
         }
       ],
       "editorSchema": {
@@ -5142,6 +5246,10 @@ window.DRAFT_BROWSER_DATA = {
           "path": "requirements[3].relatedCapability"
         },
         {
+          "source": "01M7GWTG2T-3PQY",
+          "path": "capabilities[0]"
+        },
+        {
           "source": "01M7GTBMQT-F262",
           "path": "capabilities[0]"
         }
@@ -5996,7 +6104,12 @@ window.DRAFT_BROWSER_DATA = {
           "path": "domain"
         }
       ],
-      "referencedBy": [],
+      "referencedBy": [
+        {
+          "source": "01M7GWTG2T-M2Q0",
+          "path": "capabilities[0]"
+        }
+      ],
       "editorSchema": {
         "requiredFields": [
           "schemaVersion",
@@ -23654,6 +23767,898 @@ window.DRAFT_BROWSER_DATA = {
       "inboundRelationships": []
     },
     {
+      "id": "01M7GWTG2T-7D9P",
+      "uid": "01M7GWTG2T-7D9P",
+      "name": "Amazon DynamoDB - closing-climb-prod",
+      "aliases": [],
+      "type": "data_store_service",
+      "typeLabel": "DataStoreService / Paas",
+      "filterType": "data_store_service",
+      "category": "",
+      "deliveryModel": "paas",
+      "domain": "",
+      "description": "DynamoDB table that holds Closing Climb application data (migrated from Firestore).",
+      "version": "",
+      "catalogStatus": "incomplete",
+      "lifecycleStatus": "preferred",
+      "status": "",
+      "businessContext": {},
+      "product": "",
+      "runsOn": "",
+      "subtype": "",
+      "vendor": "Amazon Web Services",
+      "productName": "Amazon DynamoDB",
+      "productVersion": "managed",
+      "classification": "",
+      "platformDependency": "",
+      "capabilities": [
+        "01KT0V5MCV-VD0Y",
+        "01KQQ4Q026-7T2H"
+      ],
+      "configurations": [],
+      "networkPlacement": "",
+      "patchingOwner": "aws-managed",
+      "complianceCerts": [],
+      "requirementGroups": [],
+      "requirementImplementations": [],
+      "dataLeavesInfrastructure": null,
+      "dataResidencyCommitment": "",
+      "dpaNotes": "",
+      "vendorSLA": "",
+      "authenticationModel": "iam",
+      "incidentNotificationProcess": "",
+      "owner": {
+        "team": "platform-ai-team",
+        "contact": "platform-ai@example.com"
+      },
+      "definitionOwner": {},
+      "provider": {},
+      "authority": {},
+      "shape": "diamond",
+      "color": "#1f8a5b",
+      "source": "catalog/shared-services/data-store-services/data-store-service-aws-dynamodb-closing-climb.yaml",
+      "tags": [
+        "aws",
+        "dynamodb",
+        "closing-climb"
+      ],
+      "ardCategory": "",
+      "internalComponents": [],
+      "notes": {
+        "verification": "Verified read-only from AWS account ending 2296 (us-east-1) on 2026-11-15 (America/Phoenix).",
+        "table": "closing-climb-prod: ACTIVE, on-demand (PAY_PER_REQUEST), key schema pk (hash) / sk (range), no GSIs, SSE type KMS, point-in-time recovery ENABLED.",
+        "migration": "BeerCanLabs/closing-climb-web contains scripts/migrate_firestore_to_dynamodb.py and app/store.py uses DynamoDB.",
+        "provisioning": "Provisioned by Terraform in BeerCanLabs/closing-climb-web infra/aws/main.tf; not yet packaged as a DRAFT deployablePackage.",
+        "incomplete": "Not cross-checked against the GCP Firestore entry, which is left in place pending Dale's decision."
+      },
+      "requirements": [],
+      "implementations": [],
+      "appliesTo": {},
+      "inherits": "",
+      "scalingUnits": [],
+      "networkZones": [],
+      "sdpConnections": [],
+      "serviceGroups": [],
+      "tierVariants": [],
+      "tierId": "",
+      "purpose": "",
+      "availabilityExpectation": "",
+      "costPosture": "",
+      "complianceScope": [],
+      "parameterSurface": [],
+      "followsReferenceArchitecture": "",
+      "decisionRecords": [],
+      "affectedComponent": "",
+      "impact": "",
+      "mitigationPath": "",
+      "decisionRationale": "",
+      "relatedDecisionRecords": [],
+      "linkedObject": "",
+      "primaryObjectType": "",
+      "primaryObjectUid": "",
+      "generatedObjects": [],
+      "unresolvedQuestions": [],
+      "assumptions": [],
+      "nextSteps": [],
+      "defaultSelection": false,
+      "requirementCount": 0,
+      "hasRiskRef": false,
+      "outboundRefs": [
+        {
+          "target": "01KT0V5MCV-VD0Y",
+          "path": "capabilities[0]"
+        },
+        {
+          "target": "01KQQ4Q026-7T2H",
+          "path": "capabilities[1]"
+        }
+      ],
+      "referencedBy": [],
+      "editorSchema": {
+        "requiredFields": [
+          "schemaVersion",
+          "uid",
+          "type",
+          "name",
+          "deliveryModel",
+          "catalogStatus",
+          "lifecycleStatus"
+        ],
+        "optionalFields": [
+          "aliases",
+          "description",
+          "version",
+          "owner",
+          "tags",
+          "serviceRole",
+          "host",
+          "primaryTechnologyComponent",
+          "internalComponents",
+          "deploymentConfigurations",
+          "vendor",
+          "productName",
+          "productVersion",
+          "capabilities",
+          "configurations",
+          "networkPlacement",
+          "patchingOwner",
+          "authenticationModel",
+          "vendorGovernance",
+          "provisioningModel",
+          "deployablePackage",
+          "notes",
+          "decisionRecords",
+          "requirementImplementations"
+        ],
+        "fieldTypes": {
+          "aliases": "list",
+          "owner": "dict",
+          "tags": "list",
+          "internalComponents": "list",
+          "deploymentConfigurations": "list",
+          "capabilities": "list",
+          "configurations": "list",
+          "notes": "dict",
+          "vendorGovernance": "dict",
+          "requirementGroups": "list",
+          "decisionRecords": "list",
+          "requirementImplementations": "list"
+        },
+        "enumFields": {
+          "serviceRole": [
+            "definition",
+            "instance"
+          ],
+          "provisioningModel": [
+            "deployable",
+            "reference-only"
+          ],
+          "catalogStatus": [
+            "stub",
+            "incomplete",
+            "complete"
+          ],
+          "lifecycleStatus": [
+            "candidate",
+            "preferred",
+            "existing-only",
+            "deprecated",
+            "retired"
+          ],
+          "deliveryModel": [
+            "self-managed",
+            "paas",
+            "saas",
+            "appliance"
+          ],
+          "networkPlacement": [
+            "public-facing",
+            "internal",
+            "vpc-private"
+          ],
+          "patchingOwner": [
+            "provider-managed",
+            "organization-scheduled",
+            "vendor-managed",
+            "aws-managed"
+          ],
+          "authenticationModel": [
+            "iam",
+            "api-key",
+            "oauth",
+            "saml",
+            "other",
+            "TBD"
+          ]
+        },
+        "enumListFields": {},
+        "collectionSchemas": {
+          "internalComponents": "internalComponent",
+          "deploymentConfigurations": "deploymentConfiguration",
+          "configurations": "configuration",
+          "decisionRecords": "decisionRecordRef",
+          "requirementImplementations": "requirementImplementation"
+        },
+        "schemaPath": "framework/schemas/data-store-service.schema.yaml"
+      },
+      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M7GWTG2T-7D9P\",\n  \"type\": \"data_store_service\",\n  \"name\": \"Amazon DynamoDB - closing-climb-prod\",\n  \"description\": \"DynamoDB table that holds Closing Climb application data (migrated from Firestore).\",\n  \"catalogStatus\": \"incomplete\",\n  \"lifecycleStatus\": \"preferred\",\n  \"owner\": {\n    \"team\": \"platform-ai-team\",\n    \"contact\": \"platform-ai@example.com\"\n  },\n  \"tags\": [\n    \"aws\",\n    \"dynamodb\",\n    \"closing-climb\"\n  ],\n  \"deliveryModel\": \"paas\",\n  \"vendor\": \"Amazon Web Services\",\n  \"productName\": \"Amazon DynamoDB\",\n  \"productVersion\": \"managed\",\n  \"patchingOwner\": \"aws-managed\",\n  \"authenticationModel\": \"iam\",\n  \"capabilities\": [\n    \"01KT0V5MCV-VD0Y\",\n    \"01KQQ4Q026-7T2H\"\n  ],\n  \"provisioningModel\": \"reference-only\",\n  \"notes\": {\n    \"verification\": \"Verified read-only from AWS account ending 2296 (us-east-1) on 2026-11-15 (America/Phoenix).\",\n    \"table\": \"closing-climb-prod: ACTIVE, on-demand (PAY_PER_REQUEST), key schema pk (hash) / sk (range), no GSIs, SSE type KMS, point-in-time recovery ENABLED.\",\n    \"migration\": \"BeerCanLabs/closing-climb-web contains scripts/migrate_firestore_to_dynamodb.py and app/store.py uses DynamoDB.\",\n    \"provisioning\": \"Provisioned by Terraform in BeerCanLabs/closing-climb-web infra/aws/main.tf; not yet packaged as a DRAFT deployablePackage.\",\n    \"incomplete\": \"Not cross-checked against the GCP Firestore entry, which is left in place pending Dale's decision.\"\n  },\n  \"_source\": \"catalog/shared-services/data-store-services/data-store-service-aws-dynamodb-closing-climb.yaml\"\n}",
+      "existsInCatalog": true,
+      "outboundRelationships": [],
+      "inboundRelationships": []
+    },
+    {
+      "id": "01M7GWTG2T-KR1Y",
+      "uid": "01M7GWTG2T-KR1Y",
+      "name": "Amazon EFS - factory-prod-ledger",
+      "aliases": [],
+      "type": "data_store_service",
+      "typeLabel": "DataStoreService / Paas",
+      "filterType": "data_store_service",
+      "category": "",
+      "deliveryModel": "paas",
+      "domain": "",
+      "description": "Encrypted EFS file system mounted by the Agent Factory control plane for the live execution ledger.",
+      "version": "",
+      "catalogStatus": "incomplete",
+      "lifecycleStatus": "preferred",
+      "status": "",
+      "businessContext": {},
+      "product": "",
+      "runsOn": "",
+      "subtype": "",
+      "vendor": "Amazon Web Services",
+      "productName": "Amazon Elastic File System",
+      "productVersion": "managed",
+      "classification": "",
+      "platformDependency": "",
+      "capabilities": [
+        "01KT0V5MCV-924J",
+        "01KT0V5MCV-VD0Y",
+        "01KQQ4Q026-H3B5"
+      ],
+      "configurations": [],
+      "networkPlacement": "",
+      "patchingOwner": "aws-managed",
+      "complianceCerts": [],
+      "requirementGroups": [],
+      "requirementImplementations": [],
+      "dataLeavesInfrastructure": null,
+      "dataResidencyCommitment": "",
+      "dpaNotes": "",
+      "vendorSLA": "",
+      "authenticationModel": "iam",
+      "incidentNotificationProcess": "",
+      "owner": {
+        "team": "platform-ai-team",
+        "contact": "platform-ai@example.com"
+      },
+      "definitionOwner": {},
+      "provider": {},
+      "authority": {},
+      "shape": "diamond",
+      "color": "#1f8a5b",
+      "source": "catalog/shared-services/data-store-services/data-store-service-aws-efs-factory-ledger.yaml",
+      "tags": [
+        "aws",
+        "efs",
+        "ledger",
+        "agent-factory"
+      ],
+      "ardCategory": "",
+      "internalComponents": [],
+      "notes": {
+        "verification": "Verified read-only from AWS account ending 2296 (us-east-1) on 2026-11-15 (America/Phoenix).",
+        "fileSystem": "factory-prod-ledger: encrypted at rest; the control-plane task mounts it as volume data with transit encryption, IAM authorization and an access point.",
+        "provisioning": "Provisioned by Terraform in BeerCanLabs/agent-factory landing-zones/aws (S3 backend); module not yet packaged as a DRAFT deployablePackage.",
+        "incomplete": "Backup policy and throughput mode were not reviewed."
+      },
+      "requirements": [],
+      "implementations": [],
+      "appliesTo": {},
+      "inherits": "",
+      "scalingUnits": [],
+      "networkZones": [],
+      "sdpConnections": [],
+      "serviceGroups": [],
+      "tierVariants": [],
+      "tierId": "",
+      "purpose": "",
+      "availabilityExpectation": "",
+      "costPosture": "",
+      "complianceScope": [],
+      "parameterSurface": [],
+      "followsReferenceArchitecture": "",
+      "decisionRecords": [],
+      "affectedComponent": "",
+      "impact": "",
+      "mitigationPath": "",
+      "decisionRationale": "",
+      "relatedDecisionRecords": [],
+      "linkedObject": "",
+      "primaryObjectType": "",
+      "primaryObjectUid": "",
+      "generatedObjects": [],
+      "unresolvedQuestions": [],
+      "assumptions": [],
+      "nextSteps": [],
+      "defaultSelection": false,
+      "requirementCount": 0,
+      "hasRiskRef": false,
+      "outboundRefs": [
+        {
+          "target": "01KT0V5MCV-924J",
+          "path": "capabilities[0]"
+        },
+        {
+          "target": "01KT0V5MCV-VD0Y",
+          "path": "capabilities[1]"
+        },
+        {
+          "target": "01KQQ4Q026-H3B5",
+          "path": "capabilities[2]"
+        }
+      ],
+      "referencedBy": [],
+      "editorSchema": {
+        "requiredFields": [
+          "schemaVersion",
+          "uid",
+          "type",
+          "name",
+          "deliveryModel",
+          "catalogStatus",
+          "lifecycleStatus"
+        ],
+        "optionalFields": [
+          "aliases",
+          "description",
+          "version",
+          "owner",
+          "tags",
+          "serviceRole",
+          "host",
+          "primaryTechnologyComponent",
+          "internalComponents",
+          "deploymentConfigurations",
+          "vendor",
+          "productName",
+          "productVersion",
+          "capabilities",
+          "configurations",
+          "networkPlacement",
+          "patchingOwner",
+          "authenticationModel",
+          "vendorGovernance",
+          "provisioningModel",
+          "deployablePackage",
+          "notes",
+          "decisionRecords",
+          "requirementImplementations"
+        ],
+        "fieldTypes": {
+          "aliases": "list",
+          "owner": "dict",
+          "tags": "list",
+          "internalComponents": "list",
+          "deploymentConfigurations": "list",
+          "capabilities": "list",
+          "configurations": "list",
+          "notes": "dict",
+          "vendorGovernance": "dict",
+          "requirementGroups": "list",
+          "decisionRecords": "list",
+          "requirementImplementations": "list"
+        },
+        "enumFields": {
+          "serviceRole": [
+            "definition",
+            "instance"
+          ],
+          "provisioningModel": [
+            "deployable",
+            "reference-only"
+          ],
+          "catalogStatus": [
+            "stub",
+            "incomplete",
+            "complete"
+          ],
+          "lifecycleStatus": [
+            "candidate",
+            "preferred",
+            "existing-only",
+            "deprecated",
+            "retired"
+          ],
+          "deliveryModel": [
+            "self-managed",
+            "paas",
+            "saas",
+            "appliance"
+          ],
+          "networkPlacement": [
+            "public-facing",
+            "internal",
+            "vpc-private"
+          ],
+          "patchingOwner": [
+            "provider-managed",
+            "organization-scheduled",
+            "vendor-managed",
+            "aws-managed"
+          ],
+          "authenticationModel": [
+            "iam",
+            "api-key",
+            "oauth",
+            "saml",
+            "other",
+            "TBD"
+          ]
+        },
+        "enumListFields": {},
+        "collectionSchemas": {
+          "internalComponents": "internalComponent",
+          "deploymentConfigurations": "deploymentConfiguration",
+          "configurations": "configuration",
+          "decisionRecords": "decisionRecordRef",
+          "requirementImplementations": "requirementImplementation"
+        },
+        "schemaPath": "framework/schemas/data-store-service.schema.yaml"
+      },
+      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M7GWTG2T-KR1Y\",\n  \"type\": \"data_store_service\",\n  \"name\": \"Amazon EFS - factory-prod-ledger\",\n  \"description\": \"Encrypted EFS file system mounted by the Agent Factory control plane for the live execution ledger.\",\n  \"catalogStatus\": \"incomplete\",\n  \"lifecycleStatus\": \"preferred\",\n  \"owner\": {\n    \"team\": \"platform-ai-team\",\n    \"contact\": \"platform-ai@example.com\"\n  },\n  \"tags\": [\n    \"aws\",\n    \"efs\",\n    \"ledger\",\n    \"agent-factory\"\n  ],\n  \"deliveryModel\": \"paas\",\n  \"vendor\": \"Amazon Web Services\",\n  \"productName\": \"Amazon Elastic File System\",\n  \"productVersion\": \"managed\",\n  \"patchingOwner\": \"aws-managed\",\n  \"authenticationModel\": \"iam\",\n  \"capabilities\": [\n    \"01KT0V5MCV-924J\",\n    \"01KT0V5MCV-VD0Y\",\n    \"01KQQ4Q026-H3B5\"\n  ],\n  \"provisioningModel\": \"reference-only\",\n  \"notes\": {\n    \"verification\": \"Verified read-only from AWS account ending 2296 (us-east-1) on 2026-11-15 (America/Phoenix).\",\n    \"fileSystem\": \"factory-prod-ledger: encrypted at rest; the control-plane task mounts it as volume data with transit encryption, IAM authorization and an access point.\",\n    \"provisioning\": \"Provisioned by Terraform in BeerCanLabs/agent-factory landing-zones/aws (S3 backend); module not yet packaged as a DRAFT deployablePackage.\",\n    \"incomplete\": \"Backup policy and throughput mode were not reviewed.\"\n  },\n  \"_source\": \"catalog/shared-services/data-store-services/data-store-service-aws-efs-factory-ledger.yaml\"\n}",
+      "existsInCatalog": true,
+      "outboundRelationships": [],
+      "inboundRelationships": []
+    },
+    {
+      "id": "01M7GWTG2T-GYW1",
+      "uid": "01M7GWTG2T-GYW1",
+      "name": "Amazon S3 - Agent Factory Mind Bucket",
+      "aliases": [],
+      "type": "data_store_service",
+      "typeLabel": "DataStoreService / Paas",
+      "filterType": "data_store_service",
+      "category": "",
+      "deliveryModel": "paas",
+      "domain": "",
+      "description": "S3 bucket that holds agent mind (memory) state for the Agent Factory.",
+      "version": "",
+      "catalogStatus": "incomplete",
+      "lifecycleStatus": "preferred",
+      "status": "",
+      "businessContext": {},
+      "product": "",
+      "runsOn": "",
+      "subtype": "",
+      "vendor": "Amazon Web Services",
+      "productName": "Amazon S3",
+      "productVersion": "managed",
+      "classification": "",
+      "platformDependency": "",
+      "capabilities": [
+        "01KT0V5MCV-E9TN",
+        "01KT0V5MCV-VD0Y"
+      ],
+      "configurations": [],
+      "networkPlacement": "",
+      "patchingOwner": "aws-managed",
+      "complianceCerts": [],
+      "requirementGroups": [],
+      "requirementImplementations": [],
+      "dataLeavesInfrastructure": null,
+      "dataResidencyCommitment": "",
+      "dpaNotes": "",
+      "vendorSLA": "",
+      "authenticationModel": "iam",
+      "incidentNotificationProcess": "",
+      "owner": {
+        "team": "platform-ai-team",
+        "contact": "platform-ai@example.com"
+      },
+      "definitionOwner": {},
+      "provider": {},
+      "authority": {},
+      "shape": "diamond",
+      "color": "#1f8a5b",
+      "source": "catalog/shared-services/data-store-services/data-store-service-aws-s3-factory-mind.yaml",
+      "tags": [
+        "aws",
+        "s3",
+        "mind",
+        "agent-factory"
+      ],
+      "ardCategory": "",
+      "internalComponents": [],
+      "notes": {
+        "verification": "Verified read-only from AWS account ending 2296 (us-east-1) on 2026-11-15 (America/Phoenix).",
+        "bucket": "agent-factory-mind-prod-924cfefd: SSE-S3 (AES256), versioning Enabled, all four Block Public Access settings on, no Object Lock.",
+        "provisioning": "Provisioned by Terraform in BeerCanLabs/agent-factory landing-zones/aws (S3 backend); module not yet packaged as a DRAFT deployablePackage.",
+        "incomplete": "Lifecycle rules, replication and bucket policy were not reviewed."
+      },
+      "requirements": [],
+      "implementations": [],
+      "appliesTo": {},
+      "inherits": "",
+      "scalingUnits": [],
+      "networkZones": [],
+      "sdpConnections": [],
+      "serviceGroups": [],
+      "tierVariants": [],
+      "tierId": "",
+      "purpose": "",
+      "availabilityExpectation": "",
+      "costPosture": "",
+      "complianceScope": [],
+      "parameterSurface": [],
+      "followsReferenceArchitecture": "",
+      "decisionRecords": [],
+      "affectedComponent": "",
+      "impact": "",
+      "mitigationPath": "",
+      "decisionRationale": "",
+      "relatedDecisionRecords": [],
+      "linkedObject": "",
+      "primaryObjectType": "",
+      "primaryObjectUid": "",
+      "generatedObjects": [],
+      "unresolvedQuestions": [],
+      "assumptions": [],
+      "nextSteps": [],
+      "defaultSelection": false,
+      "requirementCount": 0,
+      "hasRiskRef": false,
+      "outboundRefs": [
+        {
+          "target": "01KT0V5MCV-E9TN",
+          "path": "capabilities[0]"
+        },
+        {
+          "target": "01KT0V5MCV-VD0Y",
+          "path": "capabilities[1]"
+        }
+      ],
+      "referencedBy": [],
+      "editorSchema": {
+        "requiredFields": [
+          "schemaVersion",
+          "uid",
+          "type",
+          "name",
+          "deliveryModel",
+          "catalogStatus",
+          "lifecycleStatus"
+        ],
+        "optionalFields": [
+          "aliases",
+          "description",
+          "version",
+          "owner",
+          "tags",
+          "serviceRole",
+          "host",
+          "primaryTechnologyComponent",
+          "internalComponents",
+          "deploymentConfigurations",
+          "vendor",
+          "productName",
+          "productVersion",
+          "capabilities",
+          "configurations",
+          "networkPlacement",
+          "patchingOwner",
+          "authenticationModel",
+          "vendorGovernance",
+          "provisioningModel",
+          "deployablePackage",
+          "notes",
+          "decisionRecords",
+          "requirementImplementations"
+        ],
+        "fieldTypes": {
+          "aliases": "list",
+          "owner": "dict",
+          "tags": "list",
+          "internalComponents": "list",
+          "deploymentConfigurations": "list",
+          "capabilities": "list",
+          "configurations": "list",
+          "notes": "dict",
+          "vendorGovernance": "dict",
+          "requirementGroups": "list",
+          "decisionRecords": "list",
+          "requirementImplementations": "list"
+        },
+        "enumFields": {
+          "serviceRole": [
+            "definition",
+            "instance"
+          ],
+          "provisioningModel": [
+            "deployable",
+            "reference-only"
+          ],
+          "catalogStatus": [
+            "stub",
+            "incomplete",
+            "complete"
+          ],
+          "lifecycleStatus": [
+            "candidate",
+            "preferred",
+            "existing-only",
+            "deprecated",
+            "retired"
+          ],
+          "deliveryModel": [
+            "self-managed",
+            "paas",
+            "saas",
+            "appliance"
+          ],
+          "networkPlacement": [
+            "public-facing",
+            "internal",
+            "vpc-private"
+          ],
+          "patchingOwner": [
+            "provider-managed",
+            "organization-scheduled",
+            "vendor-managed",
+            "aws-managed"
+          ],
+          "authenticationModel": [
+            "iam",
+            "api-key",
+            "oauth",
+            "saml",
+            "other",
+            "TBD"
+          ]
+        },
+        "enumListFields": {},
+        "collectionSchemas": {
+          "internalComponents": "internalComponent",
+          "deploymentConfigurations": "deploymentConfiguration",
+          "configurations": "configuration",
+          "decisionRecords": "decisionRecordRef",
+          "requirementImplementations": "requirementImplementation"
+        },
+        "schemaPath": "framework/schemas/data-store-service.schema.yaml"
+      },
+      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M7GWTG2T-GYW1\",\n  \"type\": \"data_store_service\",\n  \"name\": \"Amazon S3 - Agent Factory Mind Bucket\",\n  \"description\": \"S3 bucket that holds agent mind (memory) state for the Agent Factory.\",\n  \"catalogStatus\": \"incomplete\",\n  \"lifecycleStatus\": \"preferred\",\n  \"owner\": {\n    \"team\": \"platform-ai-team\",\n    \"contact\": \"platform-ai@example.com\"\n  },\n  \"tags\": [\n    \"aws\",\n    \"s3\",\n    \"mind\",\n    \"agent-factory\"\n  ],\n  \"deliveryModel\": \"paas\",\n  \"vendor\": \"Amazon Web Services\",\n  \"productName\": \"Amazon S3\",\n  \"productVersion\": \"managed\",\n  \"patchingOwner\": \"aws-managed\",\n  \"authenticationModel\": \"iam\",\n  \"capabilities\": [\n    \"01KT0V5MCV-E9TN\",\n    \"01KT0V5MCV-VD0Y\"\n  ],\n  \"provisioningModel\": \"reference-only\",\n  \"notes\": {\n    \"verification\": \"Verified read-only from AWS account ending 2296 (us-east-1) on 2026-11-15 (America/Phoenix).\",\n    \"bucket\": \"agent-factory-mind-prod-924cfefd: SSE-S3 (AES256), versioning Enabled, all four Block Public Access settings on, no Object Lock.\",\n    \"provisioning\": \"Provisioned by Terraform in BeerCanLabs/agent-factory landing-zones/aws (S3 backend); module not yet packaged as a DRAFT deployablePackage.\",\n    \"incomplete\": \"Lifecycle rules, replication and bucket policy were not reviewed.\"\n  },\n  \"_source\": \"catalog/shared-services/data-store-services/data-store-service-aws-s3-factory-mind.yaml\"\n}",
+      "existsInCatalog": true,
+      "outboundRelationships": [],
+      "inboundRelationships": []
+    },
+    {
+      "id": "01M7GWTG2T-F1WG",
+      "uid": "01M7GWTG2T-F1WG",
+      "name": "Amazon S3 - Agent Factory Config, Ledger and Package Buckets",
+      "aliases": [],
+      "type": "data_store_service",
+      "typeLabel": "DataStoreService / Paas",
+      "filterType": "data_store_service",
+      "category": "",
+      "deliveryModel": "paas",
+      "domain": "",
+      "description": "S3 buckets for Agent Factory configuration, the WORM ledger archive and skill packages.",
+      "version": "",
+      "catalogStatus": "incomplete",
+      "lifecycleStatus": "preferred",
+      "status": "",
+      "businessContext": {},
+      "product": "",
+      "runsOn": "",
+      "subtype": "",
+      "vendor": "Amazon Web Services",
+      "productName": "Amazon S3",
+      "productVersion": "managed",
+      "classification": "",
+      "platformDependency": "",
+      "capabilities": [
+        "01KT0V5MCV-E9TN",
+        "01KT0V5MCV-VD0Y",
+        "01KQQ4Q026-7T2H"
+      ],
+      "configurations": [],
+      "networkPlacement": "",
+      "patchingOwner": "aws-managed",
+      "complianceCerts": [],
+      "requirementGroups": [],
+      "requirementImplementations": [],
+      "dataLeavesInfrastructure": null,
+      "dataResidencyCommitment": "",
+      "dpaNotes": "",
+      "vendorSLA": "",
+      "authenticationModel": "iam",
+      "incidentNotificationProcess": "",
+      "owner": {
+        "team": "platform-ai-team",
+        "contact": "platform-ai@example.com"
+      },
+      "definitionOwner": {},
+      "provider": {},
+      "authority": {},
+      "shape": "diamond",
+      "color": "#1f8a5b",
+      "source": "catalog/shared-services/data-store-services/data-store-service-aws-s3-factory-support.yaml",
+      "tags": [
+        "aws",
+        "s3",
+        "ledger",
+        "agent-factory"
+      ],
+      "ardCategory": "",
+      "internalComponents": [],
+      "notes": {
+        "verification": "Verified read-only from AWS account ending 2296 (us-east-1) on 2026-11-15 (America/Phoenix).",
+        "buckets": "agent-factory-config-prod-924cfefd, agent-factory-ledger-prod-924cfefd and agent-factory-packages-prod-924cfefd. All SSE-S3 (AES256) with versioning Enabled.",
+        "ledgerWorm": "The ledger bucket has S3 Object Lock in COMPLIANCE mode with 365-day default retention and all Block Public Access settings on.",
+        "terraformState": "Terraform state lives in a separate bucket agent-factory-tfstate-<account-id> (SSE-S3, versioned); it is infrastructure state, not product data.",
+        "provisioning": "Provisioned by Terraform in BeerCanLabs/agent-factory landing-zones/aws (S3 backend); module not yet packaged as a DRAFT deployablePackage.",
+        "incomplete": "Block Public Access was checked only on the ledger bucket; lifecycle and bucket policies were not reviewed."
+      },
+      "requirements": [],
+      "implementations": [],
+      "appliesTo": {},
+      "inherits": "",
+      "scalingUnits": [],
+      "networkZones": [],
+      "sdpConnections": [],
+      "serviceGroups": [],
+      "tierVariants": [],
+      "tierId": "",
+      "purpose": "",
+      "availabilityExpectation": "",
+      "costPosture": "",
+      "complianceScope": [],
+      "parameterSurface": [],
+      "followsReferenceArchitecture": "",
+      "decisionRecords": [],
+      "affectedComponent": "",
+      "impact": "",
+      "mitigationPath": "",
+      "decisionRationale": "",
+      "relatedDecisionRecords": [],
+      "linkedObject": "",
+      "primaryObjectType": "",
+      "primaryObjectUid": "",
+      "generatedObjects": [],
+      "unresolvedQuestions": [],
+      "assumptions": [],
+      "nextSteps": [],
+      "defaultSelection": false,
+      "requirementCount": 0,
+      "hasRiskRef": false,
+      "outboundRefs": [
+        {
+          "target": "01KT0V5MCV-E9TN",
+          "path": "capabilities[0]"
+        },
+        {
+          "target": "01KT0V5MCV-VD0Y",
+          "path": "capabilities[1]"
+        },
+        {
+          "target": "01KQQ4Q026-7T2H",
+          "path": "capabilities[2]"
+        }
+      ],
+      "referencedBy": [],
+      "editorSchema": {
+        "requiredFields": [
+          "schemaVersion",
+          "uid",
+          "type",
+          "name",
+          "deliveryModel",
+          "catalogStatus",
+          "lifecycleStatus"
+        ],
+        "optionalFields": [
+          "aliases",
+          "description",
+          "version",
+          "owner",
+          "tags",
+          "serviceRole",
+          "host",
+          "primaryTechnologyComponent",
+          "internalComponents",
+          "deploymentConfigurations",
+          "vendor",
+          "productName",
+          "productVersion",
+          "capabilities",
+          "configurations",
+          "networkPlacement",
+          "patchingOwner",
+          "authenticationModel",
+          "vendorGovernance",
+          "provisioningModel",
+          "deployablePackage",
+          "notes",
+          "decisionRecords",
+          "requirementImplementations"
+        ],
+        "fieldTypes": {
+          "aliases": "list",
+          "owner": "dict",
+          "tags": "list",
+          "internalComponents": "list",
+          "deploymentConfigurations": "list",
+          "capabilities": "list",
+          "configurations": "list",
+          "notes": "dict",
+          "vendorGovernance": "dict",
+          "requirementGroups": "list",
+          "decisionRecords": "list",
+          "requirementImplementations": "list"
+        },
+        "enumFields": {
+          "serviceRole": [
+            "definition",
+            "instance"
+          ],
+          "provisioningModel": [
+            "deployable",
+            "reference-only"
+          ],
+          "catalogStatus": [
+            "stub",
+            "incomplete",
+            "complete"
+          ],
+          "lifecycleStatus": [
+            "candidate",
+            "preferred",
+            "existing-only",
+            "deprecated",
+            "retired"
+          ],
+          "deliveryModel": [
+            "self-managed",
+            "paas",
+            "saas",
+            "appliance"
+          ],
+          "networkPlacement": [
+            "public-facing",
+            "internal",
+            "vpc-private"
+          ],
+          "patchingOwner": [
+            "provider-managed",
+            "organization-scheduled",
+            "vendor-managed",
+            "aws-managed"
+          ],
+          "authenticationModel": [
+            "iam",
+            "api-key",
+            "oauth",
+            "saml",
+            "other",
+            "TBD"
+          ]
+        },
+        "enumListFields": {},
+        "collectionSchemas": {
+          "internalComponents": "internalComponent",
+          "deploymentConfigurations": "deploymentConfiguration",
+          "configurations": "configuration",
+          "decisionRecords": "decisionRecordRef",
+          "requirementImplementations": "requirementImplementation"
+        },
+        "schemaPath": "framework/schemas/data-store-service.schema.yaml"
+      },
+      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M7GWTG2T-F1WG\",\n  \"type\": \"data_store_service\",\n  \"name\": \"Amazon S3 - Agent Factory Config, Ledger and Package Buckets\",\n  \"description\": \"S3 buckets for Agent Factory configuration, the WORM ledger archive and skill packages.\",\n  \"catalogStatus\": \"incomplete\",\n  \"lifecycleStatus\": \"preferred\",\n  \"owner\": {\n    \"team\": \"platform-ai-team\",\n    \"contact\": \"platform-ai@example.com\"\n  },\n  \"tags\": [\n    \"aws\",\n    \"s3\",\n    \"ledger\",\n    \"agent-factory\"\n  ],\n  \"deliveryModel\": \"paas\",\n  \"vendor\": \"Amazon Web Services\",\n  \"productName\": \"Amazon S3\",\n  \"productVersion\": \"managed\",\n  \"patchingOwner\": \"aws-managed\",\n  \"authenticationModel\": \"iam\",\n  \"capabilities\": [\n    \"01KT0V5MCV-E9TN\",\n    \"01KT0V5MCV-VD0Y\",\n    \"01KQQ4Q026-7T2H\"\n  ],\n  \"provisioningModel\": \"reference-only\",\n  \"notes\": {\n    \"verification\": \"Verified read-only from AWS account ending 2296 (us-east-1) on 2026-11-15 (America/Phoenix).\",\n    \"buckets\": \"agent-factory-config-prod-924cfefd, agent-factory-ledger-prod-924cfefd and agent-factory-packages-prod-924cfefd. All SSE-S3 (AES256) with versioning Enabled.\",\n    \"ledgerWorm\": \"The ledger bucket has S3 Object Lock in COMPLIANCE mode with 365-day default retention and all Block Public Access settings on.\",\n    \"terraformState\": \"Terraform state lives in a separate bucket agent-factory-tfstate-<account-id> (SSE-S3, versioned); it is infrastructure state, not product data.\",\n    \"provisioning\": \"Provisioned by Terraform in BeerCanLabs/agent-factory landing-zones/aws (S3 backend); module not yet packaged as a DRAFT deployablePackage.\",\n    \"incomplete\": \"Block Public Access was checked only on the ledger bucket; lifecycle and bucket policies were not reviewed.\"\n  },\n  \"_source\": \"catalog/shared-services/data-store-services/data-store-service-aws-s3-factory-support.yaml\"\n}",
+      "existsInCatalog": true,
+      "outboundRelationships": [],
+      "inboundRelationships": []
+    },
+    {
       "id": "01M7GTBMQS-9E05",
       "uid": "01M7GTBMQS-9E05",
       "name": "GCP Firestore NoSQL Document Data Store Service",
@@ -24285,6 +25290,369 @@ window.DRAFT_BROWSER_DATA = {
         "schemaPath": "framework/schemas/data-store-service.schema.yaml"
       },
       "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M15NEKT7-H42Y\",\n  \"type\": \"data_store_service\",\n  \"name\": \"Standard GCP Cloud SQL PostgreSQL Database\",\n  \"description\": \"Managed PostgreSQL database service on GCP with automated backups, IAM database authentication, and SSL encryption.\",\n  \"version\": \"1.0.0\",\n  \"deliveryModel\": \"paas\",\n  \"vendor\": \"GCP\",\n  \"productName\": \"GCP Cloud SQL PostgreSQL\",\n  \"productVersion\": \"15\",\n  \"catalogStatus\": \"complete\",\n  \"lifecycleStatus\": \"preferred\",\n  \"authenticationModel\": \"iam\",\n  \"capabilities\": [\n    \"capability-data-persistence\",\n    \"capability-data-resilience\",\n    \"capability-encryption-at-rest\"\n  ],\n  \"owner\": {\n    \"team\": \"data-engineering\",\n    \"contact\": \"data-engineering@example.com\"\n  },\n  \"tags\": [\n    \"database\",\n    \"gcp\",\n    \"postgresql\",\n    \"cloud-sql\"\n  ],\n  \"targetEngine\": \"postgres\",\n  \"decisionRecords\": [\n    {\n      \"ref\": \"01M15NFKKN-74NY\",\n      \"key\": \"resilienceModel\"\n    },\n    {\n      \"ref\": \"01M15NFKKN-74NY\",\n      \"key\": \"configurableSurface\"\n    },\n    {\n      \"ref\": \"01M15NFKKN-74NY\",\n      \"key\": \"failureDomain\"\n    }\n  ],\n  \"provisioningModel\": \"deployable\",\n  \"deployablePackage\": {\n    \"registry\": \"github\",\n    \"source\": \"company-infrastructure/platform-iac-data\",\n    \"version\": \"v1.0.0\",\n    \"modulePath\": \"modules/cloud-sql-postgres\"\n  },\n  \"notes\": {\n    \"data_resilience\": \"Daily automated backups retained for 30 days.\",\n    \"encryption_at_rest\": \"Encrypted using GCP managed keys (GCMK) or KMS.\"\n  },\n  \"_source\": \"catalog/shared-services/data-store-services/data-store-service-gcp-postgres.yaml\"\n}",
+      "existsInCatalog": true,
+      "outboundRelationships": [],
+      "inboundRelationships": []
+    },
+    {
+      "id": "01M7GWTG2S-X9V8",
+      "uid": "01M7GWTG2S-X9V8",
+      "name": "AWS Fargate factory-prod ECS Cluster Host (us-east-1)",
+      "aliases": [],
+      "type": "host",
+      "typeLabel": "Host",
+      "filterType": "host",
+      "category": "",
+      "deliveryModel": "",
+      "domain": "",
+      "description": "Managed serverless container host for the factory-prod ECS cluster. AWS owns the OS and the compute fabric.",
+      "version": "",
+      "catalogStatus": "incomplete",
+      "lifecycleStatus": "preferred",
+      "status": "",
+      "businessContext": {},
+      "product": "",
+      "runsOn": "",
+      "subtype": "",
+      "vendor": "",
+      "productName": "",
+      "productVersion": "",
+      "classification": "",
+      "platformDependency": "",
+      "capabilities": [],
+      "configurations": [],
+      "networkPlacement": "",
+      "patchingOwner": "",
+      "complianceCerts": [],
+      "requirementGroups": [],
+      "requirementImplementations": [],
+      "dataLeavesInfrastructure": null,
+      "dataResidencyCommitment": "",
+      "dpaNotes": "",
+      "vendorSLA": "",
+      "authenticationModel": "",
+      "incidentNotificationProcess": "",
+      "owner": {
+        "team": "platform-ai-team",
+        "contact": "platform-ai@example.com"
+      },
+      "definitionOwner": {},
+      "provider": {},
+      "authority": {},
+      "shape": "round-rectangle",
+      "color": "#1f8a5b",
+      "source": "catalog/shared-services/hosts/host-aws-fargate-factory-prod.yaml",
+      "tags": [
+        "host",
+        "aws",
+        "us-east-1",
+        "serverless",
+        "container",
+        "factory-prod"
+      ],
+      "ardCategory": "",
+      "internalComponents": [
+        {
+          "ref": "01M7GWTG2S-ZT0V",
+          "role": "hardware",
+          "configuration": "",
+          "notes": ""
+        }
+      ],
+      "notes": {
+        "verification": "Verified read-only from AWS account ending 2296 (us-east-1) on 2026-11-15 (America/Phoenix).",
+        "cluster": "ECS cluster factory-prod, status ACTIVE, Container Insights enabled.",
+        "provisioning": "Provisioned by Terraform in BeerCanLabs/agent-factory landing-zones/aws (S3 backend); module not yet packaged as a DRAFT deployablePackage."
+      },
+      "requirements": [],
+      "implementations": [],
+      "appliesTo": {},
+      "inherits": "",
+      "scalingUnits": [],
+      "networkZones": [],
+      "sdpConnections": [],
+      "serviceGroups": [],
+      "tierVariants": [],
+      "tierId": "",
+      "purpose": "",
+      "availabilityExpectation": "",
+      "costPosture": "",
+      "complianceScope": [],
+      "parameterSurface": [],
+      "followsReferenceArchitecture": "",
+      "decisionRecords": [],
+      "affectedComponent": "",
+      "impact": "",
+      "mitigationPath": "",
+      "decisionRationale": "",
+      "relatedDecisionRecords": [],
+      "linkedObject": "",
+      "primaryObjectType": "",
+      "primaryObjectUid": "",
+      "generatedObjects": [],
+      "unresolvedQuestions": [],
+      "assumptions": [],
+      "nextSteps": [],
+      "defaultSelection": false,
+      "requirementCount": 0,
+      "hasRiskRef": false,
+      "outboundRefs": [
+        {
+          "target": "01M7GWTG2S-ZT0V",
+          "path": "computePlatformComponent"
+        }
+      ],
+      "referencedBy": [
+        {
+          "source": "01M7GWTG2S-AC3R",
+          "path": "host"
+        },
+        {
+          "source": "VP8VB5X0E7-7FJC",
+          "path": "target"
+        }
+      ],
+      "editorSchema": {
+        "requiredFields": [
+          "schemaVersion",
+          "uid",
+          "type",
+          "name",
+          "catalogStatus",
+          "lifecycleStatus"
+        ],
+        "optionalFields": [
+          "aliases",
+          "description",
+          "version",
+          "owner",
+          "tags",
+          "serviceRole",
+          "notes",
+          "operatingSystemComponent",
+          "computePlatformComponent",
+          "internalComponents",
+          "deploymentConfigurations",
+          "provisioningModel",
+          "deployablePackage",
+          "decisionRecords",
+          "requirementImplementations"
+        ],
+        "fieldTypes": {
+          "aliases": "list",
+          "owner": "dict",
+          "tags": "list",
+          "notes": "dict",
+          "internalComponents": "list",
+          "deploymentConfigurations": "list",
+          "requirementGroups": "list",
+          "decisionRecords": "list",
+          "requirementImplementations": "list"
+        },
+        "enumFields": {
+          "serviceRole": [
+            "definition",
+            "instance"
+          ],
+          "provisioningModel": [
+            "deployable",
+            "reference-only"
+          ],
+          "catalogStatus": [
+            "stub",
+            "incomplete",
+            "complete"
+          ],
+          "lifecycleStatus": [
+            "candidate",
+            "preferred",
+            "existing-only",
+            "deprecated",
+            "retired"
+          ]
+        },
+        "enumListFields": {},
+        "collectionSchemas": {},
+        "schemaPath": "framework/schemas/host.schema.yaml"
+      },
+      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M7GWTG2S-X9V8\",\n  \"type\": \"host\",\n  \"name\": \"AWS Fargate factory-prod ECS Cluster Host (us-east-1)\",\n  \"description\": \"Managed serverless container host for the factory-prod ECS cluster. AWS owns the OS and the compute fabric.\",\n  \"catalogStatus\": \"incomplete\",\n  \"lifecycleStatus\": \"preferred\",\n  \"owner\": {\n    \"team\": \"platform-ai-team\",\n    \"contact\": \"platform-ai@example.com\"\n  },\n  \"tags\": [\n    \"host\",\n    \"aws\",\n    \"us-east-1\",\n    \"serverless\",\n    \"container\",\n    \"factory-prod\"\n  ],\n  \"serviceRole\": \"instance\",\n  \"computePlatformComponent\": \"01M7GWTG2S-ZT0V\",\n  \"provisioningModel\": \"reference-only\",\n  \"notes\": {\n    \"verification\": \"Verified read-only from AWS account ending 2296 (us-east-1) on 2026-11-15 (America/Phoenix).\",\n    \"cluster\": \"ECS cluster factory-prod, status ACTIVE, Container Insights enabled.\",\n    \"provisioning\": \"Provisioned by Terraform in BeerCanLabs/agent-factory landing-zones/aws (S3 backend); module not yet packaged as a DRAFT deployablePackage.\"\n  },\n  \"_source\": \"catalog/shared-services/hosts/host-aws-fargate-factory-prod.yaml\"\n}",
+      "existsInCatalog": true,
+      "outboundRelationships": [],
+      "inboundRelationships": [
+        {
+          "uid": "VP8VB5X0E7-7FJC",
+          "name": "AWS ECS Fargate Runtime - factory-prod \u2192 AWS Fargate factory-prod ECS Cluster Host (us-east-1)",
+          "label": "runs on",
+          "technology": "",
+          "direction": "",
+          "targetUid": "01M7GWTG2S-X9V8",
+          "targetName": "AWS Fargate factory-prod ECS Cluster Host (us-east-1)",
+          "capabilities": [],
+          "sourceUid": "01M7GWTG2S-AC3R",
+          "sourceName": "AWS ECS Fargate Runtime - factory-prod"
+        }
+      ]
+    },
+    {
+      "id": "01M7GWTG2S-G6RH",
+      "uid": "01M7GWTG2S-G6RH",
+      "name": "Cloudflare Pages Static Host (beercanlabs-knowledge)",
+      "aliases": [],
+      "type": "host",
+      "typeLabel": "Host",
+      "filterType": "host",
+      "category": "",
+      "deliveryModel": "",
+      "domain": "",
+      "description": "Managed static site hosting on Cloudflare Pages. Serves knowledge.beercanlabs.ai behind Cloudflare Access.",
+      "version": "",
+      "catalogStatus": "incomplete",
+      "lifecycleStatus": "preferred",
+      "status": "",
+      "businessContext": {},
+      "product": "",
+      "runsOn": "",
+      "subtype": "",
+      "vendor": "",
+      "productName": "",
+      "productVersion": "",
+      "classification": "",
+      "platformDependency": "",
+      "capabilities": [],
+      "configurations": [],
+      "networkPlacement": "",
+      "patchingOwner": "",
+      "complianceCerts": [],
+      "requirementGroups": [],
+      "requirementImplementations": [],
+      "dataLeavesInfrastructure": null,
+      "dataResidencyCommitment": "",
+      "dpaNotes": "",
+      "vendorSLA": "",
+      "authenticationModel": "",
+      "incidentNotificationProcess": "",
+      "owner": {
+        "team": "platform-ai-team",
+        "contact": "platform-ai@example.com"
+      },
+      "definitionOwner": {},
+      "provider": {},
+      "authority": {},
+      "shape": "round-rectangle",
+      "color": "#1f8a5b",
+      "source": "catalog/shared-services/hosts/host-cloudflare-pages-knowledge.yaml",
+      "tags": [
+        "host",
+        "cloudflare",
+        "cloudflare-pages",
+        "static-hosting",
+        "serverless"
+      ],
+      "ardCategory": "",
+      "internalComponents": [],
+      "notes": {
+        "verification": "Deploy workflow read from BeerCanLabs/knowledge .github/workflows/deploy.yml (wrangler pages deploy, project beercanlabs-knowledge). HTTPS probe on 2026-11-15 returned server cloudflare and a 302 to the beercanlabs Cloudflare Access login.",
+        "correction": "The knowledge site is on Cloudflare Pages, not GitHub Pages (the repository has no GitHub Pages site).",
+        "incomplete": "Cloudflare Pages project settings, build config and custom-domain records were not read (no Cloudflare API access used)."
+      },
+      "requirements": [],
+      "implementations": [],
+      "appliesTo": {},
+      "inherits": "",
+      "scalingUnits": [],
+      "networkZones": [],
+      "sdpConnections": [],
+      "serviceGroups": [],
+      "tierVariants": [],
+      "tierId": "",
+      "purpose": "",
+      "availabilityExpectation": "",
+      "costPosture": "",
+      "complianceScope": [],
+      "parameterSurface": [],
+      "followsReferenceArchitecture": "",
+      "decisionRecords": [],
+      "affectedComponent": "",
+      "impact": "",
+      "mitigationPath": "",
+      "decisionRationale": "",
+      "relatedDecisionRecords": [],
+      "linkedObject": "",
+      "primaryObjectType": "",
+      "primaryObjectUid": "",
+      "generatedObjects": [],
+      "unresolvedQuestions": [],
+      "assumptions": [],
+      "nextSteps": [],
+      "defaultSelection": false,
+      "requirementCount": 0,
+      "hasRiskRef": false,
+      "outboundRefs": [],
+      "referencedBy": [],
+      "editorSchema": {
+        "requiredFields": [
+          "schemaVersion",
+          "uid",
+          "type",
+          "name",
+          "catalogStatus",
+          "lifecycleStatus"
+        ],
+        "optionalFields": [
+          "aliases",
+          "description",
+          "version",
+          "owner",
+          "tags",
+          "serviceRole",
+          "notes",
+          "operatingSystemComponent",
+          "computePlatformComponent",
+          "internalComponents",
+          "deploymentConfigurations",
+          "provisioningModel",
+          "deployablePackage",
+          "decisionRecords",
+          "requirementImplementations"
+        ],
+        "fieldTypes": {
+          "aliases": "list",
+          "owner": "dict",
+          "tags": "list",
+          "notes": "dict",
+          "internalComponents": "list",
+          "deploymentConfigurations": "list",
+          "requirementGroups": "list",
+          "decisionRecords": "list",
+          "requirementImplementations": "list"
+        },
+        "enumFields": {
+          "serviceRole": [
+            "definition",
+            "instance"
+          ],
+          "provisioningModel": [
+            "deployable",
+            "reference-only"
+          ],
+          "catalogStatus": [
+            "stub",
+            "incomplete",
+            "complete"
+          ],
+          "lifecycleStatus": [
+            "candidate",
+            "preferred",
+            "existing-only",
+            "deprecated",
+            "retired"
+          ]
+        },
+        "enumListFields": {},
+        "collectionSchemas": {},
+        "schemaPath": "framework/schemas/host.schema.yaml"
+      },
+      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M7GWTG2S-G6RH\",\n  \"type\": \"host\",\n  \"name\": \"Cloudflare Pages Static Host (beercanlabs-knowledge)\",\n  \"description\": \"Managed static site hosting on Cloudflare Pages. Serves knowledge.beercanlabs.ai behind Cloudflare Access.\",\n  \"catalogStatus\": \"incomplete\",\n  \"lifecycleStatus\": \"preferred\",\n  \"owner\": {\n    \"team\": \"platform-ai-team\",\n    \"contact\": \"platform-ai@example.com\"\n  },\n  \"tags\": [\n    \"host\",\n    \"cloudflare\",\n    \"cloudflare-pages\",\n    \"static-hosting\",\n    \"serverless\"\n  ],\n  \"serviceRole\": \"instance\",\n  \"provisioningModel\": \"reference-only\",\n  \"notes\": {\n    \"verification\": \"Deploy workflow read from BeerCanLabs/knowledge .github/workflows/deploy.yml (wrangler pages deploy, project beercanlabs-knowledge). HTTPS probe on 2026-11-15 returned server cloudflare and a 302 to the beercanlabs Cloudflare Access login.\",\n    \"correction\": \"The knowledge site is on Cloudflare Pages, not GitHub Pages (the repository has no GitHub Pages site).\",\n    \"incomplete\": \"Cloudflare Pages project settings, build config and custom-domain records were not read (no Cloudflare API access used).\"\n  },\n  \"_source\": \"catalog/shared-services/hosts/host-cloudflare-pages-knowledge.yaml\"\n}",
       "existsInCatalog": true,
       "outboundRelationships": [],
       "inboundRelationships": []
@@ -25400,6 +26768,443 @@ window.DRAFT_BROWSER_DATA = {
       "inboundRelationships": []
     },
     {
+      "id": "01M7GWTG2T-M2Q0",
+      "uid": "01M7GWTG2T-M2Q0",
+      "name": "AWS Application Load Balancer - factory-prod",
+      "aliases": [],
+      "type": "network_service",
+      "typeLabel": "NetworkService / Paas",
+      "filterType": "network_service",
+      "category": "",
+      "deliveryModel": "paas",
+      "domain": "",
+      "description": "Internet-facing ALB that is the AWS origin behind the Cloudflare edge for Agent Factory and Closing Climb hostnames.",
+      "version": "",
+      "catalogStatus": "incomplete",
+      "lifecycleStatus": "preferred",
+      "status": "",
+      "businessContext": {},
+      "product": "",
+      "runsOn": "",
+      "subtype": "",
+      "vendor": "Amazon Web Services",
+      "productName": "Elastic Load Balancing Application Load Balancer",
+      "productVersion": "managed",
+      "classification": "",
+      "platformDependency": "",
+      "capabilities": [
+        "01KSWVZSZ5-M0FR",
+        "01KT0XNZEY-RVTG"
+      ],
+      "configurations": [],
+      "networkPlacement": "",
+      "patchingOwner": "aws-managed",
+      "complianceCerts": [],
+      "requirementGroups": [],
+      "requirementImplementations": [],
+      "dataLeavesInfrastructure": null,
+      "dataResidencyCommitment": "",
+      "dpaNotes": "",
+      "vendorSLA": "",
+      "authenticationModel": "iam",
+      "incidentNotificationProcess": "",
+      "owner": {
+        "team": "platform-ai-team",
+        "contact": "platform-ai@example.com"
+      },
+      "definitionOwner": {},
+      "provider": {},
+      "authority": {},
+      "shape": "diamond",
+      "color": "#1f8a5b",
+      "source": "catalog/shared-services/network-services/network-service-aws-alb-factory-prod.yaml",
+      "tags": [
+        "aws",
+        "alb",
+        "load-balancer",
+        "ingress",
+        "agent-factory",
+        "closing-climb"
+      ],
+      "ardCategory": "",
+      "internalComponents": [],
+      "notes": {
+        "verification": "Verified read-only from AWS account ending 2296 (us-east-1) on 2026-11-15 (America/Phoenix).",
+        "listeners": "HTTP 80 and HTTPS 443.",
+        "routing": "Host rules: factory-dashboard.dalesackrider.com -> console; garrison.dalesackrider.com -> garrison; cc.dalesackrider.com -> closing-climb-prod; default -> control-plane (factory-prod-cp).",
+        "certificates": "ACM certificates for *.dalesackrider.com, submind-aws.dalesackrider.com and agent-factory.beercanlabs.com.",
+        "edge": "Every listed hostname answered through Cloudflare (server: cloudflare) on 2026-11-15. Cloudflare DNS origin records were not read.",
+        "provisioning": "Provisioned by Terraform in BeerCanLabs/agent-factory landing-zones/aws (S3 backend); module not yet packaged as a DRAFT deployablePackage.",
+        "incomplete": "Security group rules, WAF association and HTTP-to-HTTPS redirect behavior were not reviewed."
+      },
+      "requirements": [],
+      "implementations": [],
+      "appliesTo": {},
+      "inherits": "",
+      "scalingUnits": [],
+      "networkZones": [],
+      "sdpConnections": [],
+      "serviceGroups": [],
+      "tierVariants": [],
+      "tierId": "",
+      "purpose": "",
+      "availabilityExpectation": "",
+      "costPosture": "",
+      "complianceScope": [],
+      "parameterSurface": [],
+      "followsReferenceArchitecture": "",
+      "decisionRecords": [],
+      "affectedComponent": "",
+      "impact": "",
+      "mitigationPath": "",
+      "decisionRationale": "",
+      "relatedDecisionRecords": [],
+      "linkedObject": "",
+      "primaryObjectType": "",
+      "primaryObjectUid": "",
+      "generatedObjects": [],
+      "unresolvedQuestions": [],
+      "assumptions": [],
+      "nextSteps": [],
+      "defaultSelection": false,
+      "requirementCount": 0,
+      "hasRiskRef": false,
+      "outboundRefs": [
+        {
+          "target": "01KSWVZSZ5-M0FR",
+          "path": "capabilities[0]"
+        },
+        {
+          "target": "01KT0XNZEY-RVTG",
+          "path": "capabilities[1]"
+        }
+      ],
+      "referencedBy": [],
+      "editorSchema": {
+        "requiredFields": [
+          "schemaVersion",
+          "uid",
+          "type",
+          "name",
+          "deliveryModel",
+          "catalogStatus",
+          "lifecycleStatus"
+        ],
+        "optionalFields": [
+          "aliases",
+          "description",
+          "version",
+          "owner",
+          "tags",
+          "serviceRole",
+          "host",
+          "primaryTechnologyComponent",
+          "internalComponents",
+          "deploymentConfigurations",
+          "vendor",
+          "productName",
+          "productVersion",
+          "capabilities",
+          "configurations",
+          "networkFunction",
+          "networkTopology",
+          "protocols",
+          "authenticationModel",
+          "patchingOwner",
+          "vendorGovernance",
+          "provisioningModel",
+          "deployablePackage",
+          "notes",
+          "decisionRecords",
+          "requirementImplementations"
+        ],
+        "fieldTypes": {
+          "aliases": "list",
+          "owner": "dict",
+          "tags": "list",
+          "capabilities": "list",
+          "internalComponents": "list",
+          "deploymentConfigurations": "list",
+          "requirementGroups": "list",
+          "decisionRecords": "list",
+          "requirementImplementations": "list",
+          "vendorGovernance": "dict",
+          "protocols": "list",
+          "notes": "dict",
+          "configurations": "list"
+        },
+        "enumFields": {
+          "serviceRole": [
+            "definition",
+            "instance"
+          ],
+          "provisioningModel": [
+            "deployable",
+            "reference-only"
+          ],
+          "catalogStatus": [
+            "stub",
+            "incomplete",
+            "complete"
+          ],
+          "lifecycleStatus": [
+            "candidate",
+            "preferred",
+            "existing-only",
+            "deprecated",
+            "retired"
+          ],
+          "deliveryModel": [
+            "self-managed",
+            "paas",
+            "saas",
+            "appliance"
+          ],
+          "patchingOwner": [
+            "provider-managed",
+            "organization-scheduled",
+            "vendor-managed",
+            "aws-managed"
+          ],
+          "authenticationModel": [
+            "iam",
+            "api-key",
+            "oauth",
+            "saml",
+            "other",
+            "TBD"
+          ]
+        },
+        "enumListFields": {},
+        "collectionSchemas": {
+          "internalComponents": "internalComponent",
+          "deploymentConfigurations": "deploymentConfiguration",
+          "configurations": "configuration",
+          "decisionRecords": "decisionRecordRef",
+          "requirementImplementations": "requirementImplementation"
+        },
+        "schemaPath": "framework/schemas/network-service.schema.yaml"
+      },
+      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M7GWTG2T-M2Q0\",\n  \"type\": \"network_service\",\n  \"name\": \"AWS Application Load Balancer - factory-prod\",\n  \"description\": \"Internet-facing ALB that is the AWS origin behind the Cloudflare edge for Agent Factory and Closing Climb hostnames.\",\n  \"catalogStatus\": \"incomplete\",\n  \"lifecycleStatus\": \"preferred\",\n  \"owner\": {\n    \"team\": \"platform-ai-team\",\n    \"contact\": \"platform-ai@example.com\"\n  },\n  \"tags\": [\n    \"aws\",\n    \"alb\",\n    \"load-balancer\",\n    \"ingress\",\n    \"agent-factory\",\n    \"closing-climb\"\n  ],\n  \"deliveryModel\": \"paas\",\n  \"vendor\": \"Amazon Web Services\",\n  \"productName\": \"Elastic Load Balancing Application Load Balancer\",\n  \"productVersion\": \"managed\",\n  \"patchingOwner\": \"aws-managed\",\n  \"authenticationModel\": \"iam\",\n  \"networkFunction\": \"Layer 7 host-based routing and TLS termination for the factory-prod ECS services.\",\n  \"protocols\": [\n    \"HTTPS\",\n    \"HTTP\"\n  ],\n  \"capabilities\": [\n    \"01KSWVZSZ5-M0FR\",\n    \"01KT0XNZEY-RVTG\"\n  ],\n  \"provisioningModel\": \"reference-only\",\n  \"notes\": {\n    \"verification\": \"Verified read-only from AWS account ending 2296 (us-east-1) on 2026-11-15 (America/Phoenix).\",\n    \"listeners\": \"HTTP 80 and HTTPS 443.\",\n    \"routing\": \"Host rules: factory-dashboard.dalesackrider.com -> console; garrison.dalesackrider.com -> garrison; cc.dalesackrider.com -> closing-climb-prod; default -> control-plane (factory-prod-cp).\",\n    \"certificates\": \"ACM certificates for *.dalesackrider.com, submind-aws.dalesackrider.com and agent-factory.beercanlabs.com.\",\n    \"edge\": \"Every listed hostname answered through Cloudflare (server: cloudflare) on 2026-11-15. Cloudflare DNS origin records were not read.\",\n    \"provisioning\": \"Provisioned by Terraform in BeerCanLabs/agent-factory landing-zones/aws (S3 backend); module not yet packaged as a DRAFT deployablePackage.\",\n    \"incomplete\": \"Security group rules, WAF association and HTTP-to-HTTPS redirect behavior were not reviewed.\"\n  },\n  \"_source\": \"catalog/shared-services/network-services/network-service-aws-alb-factory-prod.yaml\"\n}",
+      "existsInCatalog": true,
+      "outboundRelationships": [],
+      "inboundRelationships": []
+    },
+    {
+      "id": "01M7GWTG2T-8A54",
+      "uid": "01M7GWTG2T-8A54",
+      "name": "AWS Cloud Map - factory.internal",
+      "aliases": [],
+      "type": "network_service",
+      "typeLabel": "NetworkService / Paas",
+      "filterType": "network_service",
+      "category": "",
+      "deliveryModel": "paas",
+      "domain": "",
+      "description": "Private DNS namespace for service discovery between factory-prod ECS services.",
+      "version": "",
+      "catalogStatus": "incomplete",
+      "lifecycleStatus": "preferred",
+      "status": "",
+      "businessContext": {},
+      "product": "",
+      "runsOn": "",
+      "subtype": "",
+      "vendor": "Amazon Web Services",
+      "productName": "AWS Cloud Map",
+      "productVersion": "managed",
+      "classification": "",
+      "platformDependency": "",
+      "capabilities": [
+        "01KT0V5MCV-GJBH"
+      ],
+      "configurations": [],
+      "networkPlacement": "",
+      "patchingOwner": "aws-managed",
+      "complianceCerts": [],
+      "requirementGroups": [],
+      "requirementImplementations": [],
+      "dataLeavesInfrastructure": null,
+      "dataResidencyCommitment": "",
+      "dpaNotes": "",
+      "vendorSLA": "",
+      "authenticationModel": "iam",
+      "incidentNotificationProcess": "",
+      "owner": {
+        "team": "platform-ai-team",
+        "contact": "platform-ai@example.com"
+      },
+      "definitionOwner": {},
+      "provider": {},
+      "authority": {},
+      "shape": "diamond",
+      "color": "#1f8a5b",
+      "source": "catalog/shared-services/network-services/network-service-aws-cloud-map-factory-internal.yaml",
+      "tags": [
+        "aws",
+        "cloud-map",
+        "service-discovery",
+        "dns",
+        "agent-factory"
+      ],
+      "ardCategory": "",
+      "internalComponents": [],
+      "notes": {
+        "verification": "Verified read-only from AWS account ending 2296 (us-east-1) on 2026-11-15 (America/Phoenix).",
+        "namespace": "Private DNS namespace factory.internal.",
+        "registrations": "control-plane, gatekeeper-ingress, gatekeeper-egress and garrison are registered.",
+        "provisioning": "Provisioned by Terraform in BeerCanLabs/agent-factory landing-zones/aws (S3 backend); module not yet packaged as a DRAFT deployablePackage."
+      },
+      "requirements": [],
+      "implementations": [],
+      "appliesTo": {},
+      "inherits": "",
+      "scalingUnits": [],
+      "networkZones": [],
+      "sdpConnections": [],
+      "serviceGroups": [],
+      "tierVariants": [],
+      "tierId": "",
+      "purpose": "",
+      "availabilityExpectation": "",
+      "costPosture": "",
+      "complianceScope": [],
+      "parameterSurface": [],
+      "followsReferenceArchitecture": "",
+      "decisionRecords": [],
+      "affectedComponent": "",
+      "impact": "",
+      "mitigationPath": "",
+      "decisionRationale": "",
+      "relatedDecisionRecords": [],
+      "linkedObject": "",
+      "primaryObjectType": "",
+      "primaryObjectUid": "",
+      "generatedObjects": [],
+      "unresolvedQuestions": [],
+      "assumptions": [],
+      "nextSteps": [],
+      "defaultSelection": false,
+      "requirementCount": 0,
+      "hasRiskRef": false,
+      "outboundRefs": [
+        {
+          "target": "01KT0V5MCV-GJBH",
+          "path": "capabilities[0]"
+        }
+      ],
+      "referencedBy": [],
+      "editorSchema": {
+        "requiredFields": [
+          "schemaVersion",
+          "uid",
+          "type",
+          "name",
+          "deliveryModel",
+          "catalogStatus",
+          "lifecycleStatus"
+        ],
+        "optionalFields": [
+          "aliases",
+          "description",
+          "version",
+          "owner",
+          "tags",
+          "serviceRole",
+          "host",
+          "primaryTechnologyComponent",
+          "internalComponents",
+          "deploymentConfigurations",
+          "vendor",
+          "productName",
+          "productVersion",
+          "capabilities",
+          "configurations",
+          "networkFunction",
+          "networkTopology",
+          "protocols",
+          "authenticationModel",
+          "patchingOwner",
+          "vendorGovernance",
+          "provisioningModel",
+          "deployablePackage",
+          "notes",
+          "decisionRecords",
+          "requirementImplementations"
+        ],
+        "fieldTypes": {
+          "aliases": "list",
+          "owner": "dict",
+          "tags": "list",
+          "capabilities": "list",
+          "internalComponents": "list",
+          "deploymentConfigurations": "list",
+          "requirementGroups": "list",
+          "decisionRecords": "list",
+          "requirementImplementations": "list",
+          "vendorGovernance": "dict",
+          "protocols": "list",
+          "notes": "dict",
+          "configurations": "list"
+        },
+        "enumFields": {
+          "serviceRole": [
+            "definition",
+            "instance"
+          ],
+          "provisioningModel": [
+            "deployable",
+            "reference-only"
+          ],
+          "catalogStatus": [
+            "stub",
+            "incomplete",
+            "complete"
+          ],
+          "lifecycleStatus": [
+            "candidate",
+            "preferred",
+            "existing-only",
+            "deprecated",
+            "retired"
+          ],
+          "deliveryModel": [
+            "self-managed",
+            "paas",
+            "saas",
+            "appliance"
+          ],
+          "patchingOwner": [
+            "provider-managed",
+            "organization-scheduled",
+            "vendor-managed",
+            "aws-managed"
+          ],
+          "authenticationModel": [
+            "iam",
+            "api-key",
+            "oauth",
+            "saml",
+            "other",
+            "TBD"
+          ]
+        },
+        "enumListFields": {},
+        "collectionSchemas": {
+          "internalComponents": "internalComponent",
+          "deploymentConfigurations": "deploymentConfiguration",
+          "configurations": "configuration",
+          "decisionRecords": "decisionRecordRef",
+          "requirementImplementations": "requirementImplementation"
+        },
+        "schemaPath": "framework/schemas/network-service.schema.yaml"
+      },
+      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M7GWTG2T-8A54\",\n  \"type\": \"network_service\",\n  \"name\": \"AWS Cloud Map - factory.internal\",\n  \"description\": \"Private DNS namespace for service discovery between factory-prod ECS services.\",\n  \"catalogStatus\": \"incomplete\",\n  \"lifecycleStatus\": \"preferred\",\n  \"owner\": {\n    \"team\": \"platform-ai-team\",\n    \"contact\": \"platform-ai@example.com\"\n  },\n  \"tags\": [\n    \"aws\",\n    \"cloud-map\",\n    \"service-discovery\",\n    \"dns\",\n    \"agent-factory\"\n  ],\n  \"deliveryModel\": \"paas\",\n  \"vendor\": \"Amazon Web Services\",\n  \"productName\": \"AWS Cloud Map\",\n  \"productVersion\": \"managed\",\n  \"patchingOwner\": \"aws-managed\",\n  \"authenticationModel\": \"iam\",\n  \"networkFunction\": \"Private DNS service discovery inside the factory VPC.\",\n  \"protocols\": [\n    \"DNS\"\n  ],\n  \"capabilities\": [\n    \"01KT0V5MCV-GJBH\"\n  ],\n  \"provisioningModel\": \"reference-only\",\n  \"notes\": {\n    \"verification\": \"Verified read-only from AWS account ending 2296 (us-east-1) on 2026-11-15 (America/Phoenix).\",\n    \"namespace\": \"Private DNS namespace factory.internal.\",\n    \"registrations\": \"control-plane, gatekeeper-ingress, gatekeeper-egress and garrison are registered.\",\n    \"provisioning\": \"Provisioned by Terraform in BeerCanLabs/agent-factory landing-zones/aws (S3 backend); module not yet packaged as a DRAFT deployablePackage.\"\n  },\n  \"_source\": \"catalog/shared-services/network-services/network-service-aws-cloud-map-factory-internal.yaml\"\n}",
+      "existsInCatalog": true,
+      "outboundRelationships": [],
+      "inboundRelationships": []
+    },
+    {
       "id": "01M7GTBMQS-YRGF",
       "uid": "01M7GTBMQS-YRGF",
       "name": "Cloudflare Global Anycast Edge Proxy Service",
@@ -25616,6 +27421,1986 @@ window.DRAFT_BROWSER_DATA = {
         "schemaPath": "framework/schemas/network-service.schema.yaml"
       },
       "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M7GTBMQS-YRGF\",\n  \"type\": \"network_service\",\n  \"name\": \"Cloudflare Global Anycast Edge Proxy Service\",\n  \"description\": \"Registration object for Geordi's Cloudflare Global Anycast Edge Proxy network service providing ingress routing, Orange Cloud DNS proxying, SSL Full TLS termination, 301 URL redirects, and ALPN negotiation compatibility under Netskope SSL inspection.\",\n  \"deliveryModel\": \"saas\",\n  \"catalogStatus\": \"incomplete\",\n  \"lifecycleStatus\": \"preferred\",\n  \"vendor\": \"Cloudflare\",\n  \"productName\": \"Cloudflare Managed DNS & Edge Proxy\",\n  \"productVersion\": \"Free Tier Anycast Edge Network\",\n  \"networkFunction\": \"Ingress traffic control, HTTPS termination, HTTP/1.1 and HTTP/2 ALPN negotiation, Orange Cloud DNS proxying, and 301 URL redirects.\",\n  \"provisioningModel\": \"deployable\",\n  \"deployablePackage\": {\n    \"registry\": \"github\",\n    \"source\": \"BeerCanLabs/skippy-matrix\",\n    \"version\": \"main\",\n    \"modulePath\": \"terraform/modules/cloudflare-edge-proxy\"\n  },\n  \"protocols\": [\n    \"HTTPS\",\n    \"HTTP/2\",\n    \"HTTP/1.1\"\n  ],\n  \"owner\": {\n    \"team\": \"engineering-platform\",\n    \"contact\": \"dale.sackrider+geordi@gmail.com\",\n    \"resourceOwner\": \"Geordi\",\n    \"serviceProviderRole\": \"Network Domain Service Provider\"\n  },\n  \"vendorGovernance\": {\n    \"dataLeavesInfrastructure\": false,\n    \"dataResidencyCommitment\": \"Global Anycast Edge with regional origin processing\",\n    \"vendorSLA\": \"100% SLA commitment\",\n    \"acceptableUsePolicy\": \"Mandatory for all public web endpoints across Submind and client workloads. Bare GHS CNAME mappings are strictly non-compliant. All traffic must route through Cloudflare Anycast Edge with Full SSL encryption enabled.\"\n  },\n  \"decisionRecords\": [\n    {\n      \"ref\": \"01M7GTBMQS-SZBH\",\n      \"key\": \"edgeProxyDecision\"\n    }\n  ],\n  \"requirementImplementations\": [\n    {\n      \"requirementGroup\": \"01M7GTBMQT-H66V\",\n      \"requirementId\": \"req-edge-proxy-mandatory\",\n      \"status\": \"satisfied\",\n      \"mechanism\": \"decisionRecord\",\n      \"key\": \"edgeProxyDecision\",\n      \"notes\": \"Satisfied by the Edge Proxy Architecture & Acceptable Use Decision; this object is Geordi's Cloudflare Global Anycast Edge Proxy service module deployed via BeerCanLabs/skippy-matrix.\"\n    }\n  ],\n  \"_source\": \"catalog/shared-services/network-services/network-service-cloudflare-edge-proxy.yaml\"\n}",
+      "existsInCatalog": true,
+      "outboundRelationships": [],
+      "inboundRelationships": []
+    },
+    {
+      "id": "01M7GWTG2T-TQEB",
+      "uid": "01M7GWTG2T-TQEB",
+      "name": "Amazon CloudWatch - Agent Factory",
+      "aliases": [],
+      "type": "runtime_service",
+      "typeLabel": "RuntimeService / Paas",
+      "filterType": "runtime_service",
+      "category": "",
+      "deliveryModel": "paas",
+      "domain": "",
+      "description": "CloudWatch Logs and Container Insights for the factory-prod ECS cluster, and alarms for Closing Climb jobs.",
+      "version": "",
+      "catalogStatus": "incomplete",
+      "lifecycleStatus": "preferred",
+      "status": "",
+      "businessContext": {},
+      "product": "",
+      "runsOn": "",
+      "subtype": "",
+      "vendor": "Amazon Web Services",
+      "productName": "Amazon CloudWatch",
+      "productVersion": "managed",
+      "classification": "",
+      "platformDependency": "",
+      "capabilities": [
+        "01KQQ4Q026-D04B",
+        "01KQQ4Q026-98VD"
+      ],
+      "configurations": [],
+      "networkPlacement": "",
+      "patchingOwner": "aws-managed",
+      "complianceCerts": [],
+      "requirementGroups": [],
+      "requirementImplementations": [],
+      "dataLeavesInfrastructure": null,
+      "dataResidencyCommitment": "",
+      "dpaNotes": "",
+      "vendorSLA": "",
+      "authenticationModel": "iam",
+      "incidentNotificationProcess": "",
+      "owner": {
+        "team": "platform-ai-team",
+        "contact": "platform-ai@example.com"
+      },
+      "definitionOwner": {},
+      "provider": {},
+      "authority": {},
+      "shape": "diamond",
+      "color": "#1f8a5b",
+      "source": "catalog/shared-services/runtime-services/runtime-service-amazon-cloudwatch.yaml",
+      "tags": [
+        "aws",
+        "cloudwatch",
+        "observability",
+        "agent-factory",
+        "closing-climb"
+      ],
+      "ardCategory": "",
+      "internalComponents": [],
+      "notes": {
+        "verification": "Verified read-only from AWS account ending 2296 (us-east-1) on 2026-11-15 (America/Phoenix).",
+        "logGroups": "/ecs/factory-prod (30 days), /ecs/closing-climb-prod (30 days), /aws/ecs/containerinsights/factory-prod/performance (1 day), /aws/ecs/application/metrics, and CodeBuild log groups for factory-agent-builder, factory-skill-checker and factory-skills-builder.",
+        "alarms": "7 metric alarms, all for Closing Climb: buffini-sync failed, empty-category, rank-unresolved and stale (namespace ClosingClimb); scheduler DLQ visible messages (AWS/SQS); weekly25 build failed and print failed.",
+        "incomplete": "No CloudWatch dashboards exist and no Agent Factory alarms were found; alerting coverage for factory services is unmodeled."
+      },
+      "requirements": [],
+      "implementations": [],
+      "appliesTo": {},
+      "inherits": "",
+      "scalingUnits": [],
+      "networkZones": [],
+      "sdpConnections": [],
+      "serviceGroups": [],
+      "tierVariants": [],
+      "tierId": "",
+      "purpose": "",
+      "availabilityExpectation": "",
+      "costPosture": "",
+      "complianceScope": [],
+      "parameterSurface": [],
+      "followsReferenceArchitecture": "",
+      "decisionRecords": [],
+      "affectedComponent": "",
+      "impact": "",
+      "mitigationPath": "",
+      "decisionRationale": "",
+      "relatedDecisionRecords": [],
+      "linkedObject": "",
+      "primaryObjectType": "",
+      "primaryObjectUid": "",
+      "generatedObjects": [],
+      "unresolvedQuestions": [],
+      "assumptions": [],
+      "nextSteps": [],
+      "defaultSelection": false,
+      "requirementCount": 0,
+      "hasRiskRef": false,
+      "outboundRefs": [
+        {
+          "target": "01KQQ4Q026-D04B",
+          "path": "capabilities[0]"
+        },
+        {
+          "target": "01KQQ4Q026-98VD",
+          "path": "capabilities[1]"
+        }
+      ],
+      "referencedBy": [],
+      "editorSchema": {
+        "requiredFields": [
+          "schemaVersion",
+          "uid",
+          "type",
+          "name",
+          "deliveryModel",
+          "catalogStatus",
+          "lifecycleStatus"
+        ],
+        "optionalFields": [
+          "aliases",
+          "description",
+          "version",
+          "owner",
+          "tags",
+          "serviceRole",
+          "host",
+          "primaryTechnologyComponent",
+          "internalComponents",
+          "deploymentConfigurations",
+          "vendor",
+          "productName",
+          "productVersion",
+          "capabilities",
+          "configurations",
+          "networkPlacement",
+          "patchingOwner",
+          "authenticationModel",
+          "vendorGovernance",
+          "provisioningModel",
+          "deployablePackage",
+          "notes",
+          "decisionRecords",
+          "requirementImplementations"
+        ],
+        "fieldTypes": {
+          "aliases": "list",
+          "owner": "dict",
+          "tags": "list",
+          "internalComponents": "list",
+          "deploymentConfigurations": "list",
+          "capabilities": "list",
+          "configurations": "list",
+          "notes": "dict",
+          "vendorGovernance": "dict",
+          "requirementGroups": "list",
+          "decisionRecords": "list",
+          "requirementImplementations": "list"
+        },
+        "enumFields": {
+          "serviceRole": [
+            "definition",
+            "instance"
+          ],
+          "provisioningModel": [
+            "deployable",
+            "reference-only"
+          ],
+          "catalogStatus": [
+            "stub",
+            "incomplete",
+            "complete"
+          ],
+          "lifecycleStatus": [
+            "candidate",
+            "preferred",
+            "existing-only",
+            "deprecated",
+            "retired"
+          ],
+          "deliveryModel": [
+            "self-managed",
+            "paas",
+            "saas",
+            "appliance"
+          ],
+          "networkPlacement": [
+            "public-facing",
+            "internal",
+            "vpc-private"
+          ],
+          "patchingOwner": [
+            "provider-managed",
+            "organization-scheduled",
+            "vendor-managed",
+            "aws-managed"
+          ],
+          "authenticationModel": [
+            "iam",
+            "api-key",
+            "oauth",
+            "saml",
+            "other",
+            "TBD"
+          ]
+        },
+        "enumListFields": {},
+        "collectionSchemas": {
+          "internalComponents": "internalComponent",
+          "deploymentConfigurations": "deploymentConfiguration",
+          "configurations": "configuration",
+          "decisionRecords": "decisionRecordRef",
+          "requirementImplementations": "requirementImplementation"
+        },
+        "schemaPath": "framework/schemas/runtime-service.schema.yaml"
+      },
+      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M7GWTG2T-TQEB\",\n  \"type\": \"runtime_service\",\n  \"name\": \"Amazon CloudWatch - Agent Factory\",\n  \"description\": \"CloudWatch Logs and Container Insights for the factory-prod ECS cluster, and alarms for Closing Climb jobs.\",\n  \"catalogStatus\": \"incomplete\",\n  \"lifecycleStatus\": \"preferred\",\n  \"owner\": {\n    \"team\": \"platform-ai-team\",\n    \"contact\": \"platform-ai@example.com\"\n  },\n  \"tags\": [\n    \"aws\",\n    \"cloudwatch\",\n    \"observability\",\n    \"agent-factory\",\n    \"closing-climb\"\n  ],\n  \"deliveryModel\": \"paas\",\n  \"vendor\": \"Amazon Web Services\",\n  \"productName\": \"Amazon CloudWatch\",\n  \"productVersion\": \"managed\",\n  \"patchingOwner\": \"aws-managed\",\n  \"authenticationModel\": \"iam\",\n  \"capabilities\": [\n    \"01KQQ4Q026-D04B\",\n    \"01KQQ4Q026-98VD\"\n  ],\n  \"provisioningModel\": \"reference-only\",\n  \"notes\": {\n    \"verification\": \"Verified read-only from AWS account ending 2296 (us-east-1) on 2026-11-15 (America/Phoenix).\",\n    \"logGroups\": \"/ecs/factory-prod (30 days), /ecs/closing-climb-prod (30 days), /aws/ecs/containerinsights/factory-prod/performance (1 day), /aws/ecs/application/metrics, and CodeBuild log groups for factory-agent-builder, factory-skill-checker and factory-skills-builder.\",\n    \"alarms\": \"7 metric alarms, all for Closing Climb: buffini-sync failed, empty-category, rank-unresolved and stale (namespace ClosingClimb); scheduler DLQ visible messages (AWS/SQS); weekly25 build failed and print failed.\",\n    \"incomplete\": \"No CloudWatch dashboards exist and no Agent Factory alarms were found; alerting coverage for factory services is unmodeled.\"\n  },\n  \"_source\": \"catalog/shared-services/runtime-services/runtime-service-amazon-cloudwatch.yaml\"\n}",
+      "existsInCatalog": true,
+      "outboundRelationships": [],
+      "inboundRelationships": []
+    },
+    {
+      "id": "01M7GWTG2T-0NKZ",
+      "uid": "01M7GWTG2T-0NKZ",
+      "name": "Amazon ECR - Agent Factory Images",
+      "aliases": [],
+      "type": "runtime_service",
+      "typeLabel": "RuntimeService / Paas",
+      "filterType": "runtime_service",
+      "category": "",
+      "deliveryModel": "paas",
+      "domain": "",
+      "description": "Private container registry for Agent Factory, agent cartridge and Closing Climb images.",
+      "version": "",
+      "catalogStatus": "incomplete",
+      "lifecycleStatus": "preferred",
+      "status": "",
+      "businessContext": {},
+      "product": "",
+      "runsOn": "",
+      "subtype": "",
+      "vendor": "Amazon Web Services",
+      "productName": "Amazon Elastic Container Registry",
+      "productVersion": "managed",
+      "classification": "",
+      "platformDependency": "",
+      "capabilities": [
+        "01KT0XNZEY-7HWQ"
+      ],
+      "configurations": [],
+      "networkPlacement": "",
+      "patchingOwner": "aws-managed",
+      "complianceCerts": [],
+      "requirementGroups": [],
+      "requirementImplementations": [],
+      "dataLeavesInfrastructure": null,
+      "dataResidencyCommitment": "",
+      "dpaNotes": "",
+      "vendorSLA": "",
+      "authenticationModel": "iam",
+      "incidentNotificationProcess": "",
+      "owner": {
+        "team": "platform-ai-team",
+        "contact": "platform-ai@example.com"
+      },
+      "definitionOwner": {},
+      "provider": {},
+      "authority": {},
+      "shape": "diamond",
+      "color": "#1f8a5b",
+      "source": "catalog/shared-services/runtime-services/runtime-service-amazon-ecr.yaml",
+      "tags": [
+        "aws",
+        "ecr",
+        "container-registry",
+        "agent-factory",
+        "closing-climb"
+      ],
+      "ardCategory": "",
+      "internalComponents": [],
+      "notes": {
+        "verification": "Verified read-only from AWS account ending 2296 (us-east-1) on 2026-11-15 (America/Phoenix).",
+        "repositories": "factory-control-plane, factory-gatekeeper-ingress, factory-gatekeeper-egress, factory-console, factory-garrison, factory-agent-runtime, factory-dynamic-agents, factory-agent-llm-summarizer, factory-agent-echo-agent, closing-climb-web.",
+        "builds": "CodeBuild projects factory-agent-builder, factory-skills-builder and factory-skill-checker exist in the account.",
+        "incomplete": "Image scanning and lifecycle policies were not reviewed (closing-climb-web has a lifecycle policy in Terraform)."
+      },
+      "requirements": [],
+      "implementations": [],
+      "appliesTo": {},
+      "inherits": "",
+      "scalingUnits": [],
+      "networkZones": [],
+      "sdpConnections": [],
+      "serviceGroups": [],
+      "tierVariants": [],
+      "tierId": "",
+      "purpose": "",
+      "availabilityExpectation": "",
+      "costPosture": "",
+      "complianceScope": [],
+      "parameterSurface": [],
+      "followsReferenceArchitecture": "",
+      "decisionRecords": [],
+      "affectedComponent": "",
+      "impact": "",
+      "mitigationPath": "",
+      "decisionRationale": "",
+      "relatedDecisionRecords": [],
+      "linkedObject": "",
+      "primaryObjectType": "",
+      "primaryObjectUid": "",
+      "generatedObjects": [],
+      "unresolvedQuestions": [],
+      "assumptions": [],
+      "nextSteps": [],
+      "defaultSelection": false,
+      "requirementCount": 0,
+      "hasRiskRef": false,
+      "outboundRefs": [
+        {
+          "target": "01KT0XNZEY-7HWQ",
+          "path": "capabilities[0]"
+        }
+      ],
+      "referencedBy": [],
+      "editorSchema": {
+        "requiredFields": [
+          "schemaVersion",
+          "uid",
+          "type",
+          "name",
+          "deliveryModel",
+          "catalogStatus",
+          "lifecycleStatus"
+        ],
+        "optionalFields": [
+          "aliases",
+          "description",
+          "version",
+          "owner",
+          "tags",
+          "serviceRole",
+          "host",
+          "primaryTechnologyComponent",
+          "internalComponents",
+          "deploymentConfigurations",
+          "vendor",
+          "productName",
+          "productVersion",
+          "capabilities",
+          "configurations",
+          "networkPlacement",
+          "patchingOwner",
+          "authenticationModel",
+          "vendorGovernance",
+          "provisioningModel",
+          "deployablePackage",
+          "notes",
+          "decisionRecords",
+          "requirementImplementations"
+        ],
+        "fieldTypes": {
+          "aliases": "list",
+          "owner": "dict",
+          "tags": "list",
+          "internalComponents": "list",
+          "deploymentConfigurations": "list",
+          "capabilities": "list",
+          "configurations": "list",
+          "notes": "dict",
+          "vendorGovernance": "dict",
+          "requirementGroups": "list",
+          "decisionRecords": "list",
+          "requirementImplementations": "list"
+        },
+        "enumFields": {
+          "serviceRole": [
+            "definition",
+            "instance"
+          ],
+          "provisioningModel": [
+            "deployable",
+            "reference-only"
+          ],
+          "catalogStatus": [
+            "stub",
+            "incomplete",
+            "complete"
+          ],
+          "lifecycleStatus": [
+            "candidate",
+            "preferred",
+            "existing-only",
+            "deprecated",
+            "retired"
+          ],
+          "deliveryModel": [
+            "self-managed",
+            "paas",
+            "saas",
+            "appliance"
+          ],
+          "networkPlacement": [
+            "public-facing",
+            "internal",
+            "vpc-private"
+          ],
+          "patchingOwner": [
+            "provider-managed",
+            "organization-scheduled",
+            "vendor-managed",
+            "aws-managed"
+          ],
+          "authenticationModel": [
+            "iam",
+            "api-key",
+            "oauth",
+            "saml",
+            "other",
+            "TBD"
+          ]
+        },
+        "enumListFields": {},
+        "collectionSchemas": {
+          "internalComponents": "internalComponent",
+          "deploymentConfigurations": "deploymentConfiguration",
+          "configurations": "configuration",
+          "decisionRecords": "decisionRecordRef",
+          "requirementImplementations": "requirementImplementation"
+        },
+        "schemaPath": "framework/schemas/runtime-service.schema.yaml"
+      },
+      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M7GWTG2T-0NKZ\",\n  \"type\": \"runtime_service\",\n  \"name\": \"Amazon ECR - Agent Factory Images\",\n  \"description\": \"Private container registry for Agent Factory, agent cartridge and Closing Climb images.\",\n  \"catalogStatus\": \"incomplete\",\n  \"lifecycleStatus\": \"preferred\",\n  \"owner\": {\n    \"team\": \"platform-ai-team\",\n    \"contact\": \"platform-ai@example.com\"\n  },\n  \"tags\": [\n    \"aws\",\n    \"ecr\",\n    \"container-registry\",\n    \"agent-factory\",\n    \"closing-climb\"\n  ],\n  \"deliveryModel\": \"paas\",\n  \"vendor\": \"Amazon Web Services\",\n  \"productName\": \"Amazon Elastic Container Registry\",\n  \"productVersion\": \"managed\",\n  \"patchingOwner\": \"aws-managed\",\n  \"authenticationModel\": \"iam\",\n  \"capabilities\": [\n    \"01KT0XNZEY-7HWQ\"\n  ],\n  \"provisioningModel\": \"reference-only\",\n  \"notes\": {\n    \"verification\": \"Verified read-only from AWS account ending 2296 (us-east-1) on 2026-11-15 (America/Phoenix).\",\n    \"repositories\": \"factory-control-plane, factory-gatekeeper-ingress, factory-gatekeeper-egress, factory-console, factory-garrison, factory-agent-runtime, factory-dynamic-agents, factory-agent-llm-summarizer, factory-agent-echo-agent, closing-climb-web.\",\n    \"builds\": \"CodeBuild projects factory-agent-builder, factory-skills-builder and factory-skill-checker exist in the account.\",\n    \"incomplete\": \"Image scanning and lifecycle policies were not reviewed (closing-climb-web has a lifecycle policy in Terraform).\"\n  },\n  \"_source\": \"catalog/shared-services/runtime-services/runtime-service-amazon-ecr.yaml\"\n}",
+      "existsInCatalog": true,
+      "outboundRelationships": [],
+      "inboundRelationships": []
+    },
+    {
+      "id": "01M7GWTG2T-M5GD",
+      "uid": "01M7GWTG2T-M5GD",
+      "name": "Amazon SNS - Closing Climb Alerts",
+      "aliases": [],
+      "type": "runtime_service",
+      "typeLabel": "RuntimeService / Paas",
+      "filterType": "runtime_service",
+      "category": "",
+      "deliveryModel": "paas",
+      "domain": "",
+      "description": "SNS topic that receives all Closing Climb alarms (Buffini sync, weekly25 and the scheduler DLQ) and the EventBridge scheduled-task nonzero-exit rule.",
+      "version": "",
+      "catalogStatus": "incomplete",
+      "lifecycleStatus": "preferred",
+      "status": "",
+      "businessContext": {},
+      "product": "",
+      "runsOn": "",
+      "subtype": "",
+      "vendor": "Amazon Web Services",
+      "productName": "Amazon Simple Notification Service",
+      "productVersion": "managed",
+      "classification": "",
+      "platformDependency": "",
+      "capabilities": [
+        "01KT0V5MCV-KT72"
+      ],
+      "configurations": [],
+      "networkPlacement": "",
+      "patchingOwner": "aws-managed",
+      "complianceCerts": [],
+      "requirementGroups": [],
+      "requirementImplementations": [],
+      "dataLeavesInfrastructure": null,
+      "dataResidencyCommitment": "",
+      "dpaNotes": "",
+      "vendorSLA": "",
+      "authenticationModel": "iam",
+      "incidentNotificationProcess": "",
+      "owner": {
+        "team": "platform-ai-team",
+        "contact": "platform-ai@example.com"
+      },
+      "definitionOwner": {},
+      "provider": {},
+      "authority": {},
+      "shape": "diamond",
+      "color": "#1f8a5b",
+      "source": "catalog/shared-services/runtime-services/runtime-service-amazon-sns.yaml",
+      "tags": [
+        "aws",
+        "sns",
+        "alerting",
+        "closing-climb"
+      ],
+      "ardCategory": "",
+      "internalComponents": [],
+      "notes": {
+        "verification": "Verified read-only from AWS account ending 2296 (us-east-1) on 2026-11-15 (America/Phoenix).",
+        "topics": "1 topic: closing-climb-prod-buffini-sync-alerts with 1 email subscription (endpoint not recorded here).",
+        "provisioning": "Provisioned by Terraform in BeerCanLabs/closing-climb-web infra/aws/main.tf; not yet packaged as a DRAFT deployablePackage."
+      },
+      "requirements": [],
+      "implementations": [],
+      "appliesTo": {},
+      "inherits": "",
+      "scalingUnits": [],
+      "networkZones": [],
+      "sdpConnections": [],
+      "serviceGroups": [],
+      "tierVariants": [],
+      "tierId": "",
+      "purpose": "",
+      "availabilityExpectation": "",
+      "costPosture": "",
+      "complianceScope": [],
+      "parameterSurface": [],
+      "followsReferenceArchitecture": "",
+      "decisionRecords": [],
+      "affectedComponent": "",
+      "impact": "",
+      "mitigationPath": "",
+      "decisionRationale": "",
+      "relatedDecisionRecords": [],
+      "linkedObject": "",
+      "primaryObjectType": "",
+      "primaryObjectUid": "",
+      "generatedObjects": [],
+      "unresolvedQuestions": [],
+      "assumptions": [],
+      "nextSteps": [],
+      "defaultSelection": false,
+      "requirementCount": 0,
+      "hasRiskRef": false,
+      "outboundRefs": [
+        {
+          "target": "01KT0V5MCV-KT72",
+          "path": "capabilities[0]"
+        }
+      ],
+      "referencedBy": [],
+      "editorSchema": {
+        "requiredFields": [
+          "schemaVersion",
+          "uid",
+          "type",
+          "name",
+          "deliveryModel",
+          "catalogStatus",
+          "lifecycleStatus"
+        ],
+        "optionalFields": [
+          "aliases",
+          "description",
+          "version",
+          "owner",
+          "tags",
+          "serviceRole",
+          "host",
+          "primaryTechnologyComponent",
+          "internalComponents",
+          "deploymentConfigurations",
+          "vendor",
+          "productName",
+          "productVersion",
+          "capabilities",
+          "configurations",
+          "networkPlacement",
+          "patchingOwner",
+          "authenticationModel",
+          "vendorGovernance",
+          "provisioningModel",
+          "deployablePackage",
+          "notes",
+          "decisionRecords",
+          "requirementImplementations"
+        ],
+        "fieldTypes": {
+          "aliases": "list",
+          "owner": "dict",
+          "tags": "list",
+          "internalComponents": "list",
+          "deploymentConfigurations": "list",
+          "capabilities": "list",
+          "configurations": "list",
+          "notes": "dict",
+          "vendorGovernance": "dict",
+          "requirementGroups": "list",
+          "decisionRecords": "list",
+          "requirementImplementations": "list"
+        },
+        "enumFields": {
+          "serviceRole": [
+            "definition",
+            "instance"
+          ],
+          "provisioningModel": [
+            "deployable",
+            "reference-only"
+          ],
+          "catalogStatus": [
+            "stub",
+            "incomplete",
+            "complete"
+          ],
+          "lifecycleStatus": [
+            "candidate",
+            "preferred",
+            "existing-only",
+            "deprecated",
+            "retired"
+          ],
+          "deliveryModel": [
+            "self-managed",
+            "paas",
+            "saas",
+            "appliance"
+          ],
+          "networkPlacement": [
+            "public-facing",
+            "internal",
+            "vpc-private"
+          ],
+          "patchingOwner": [
+            "provider-managed",
+            "organization-scheduled",
+            "vendor-managed",
+            "aws-managed"
+          ],
+          "authenticationModel": [
+            "iam",
+            "api-key",
+            "oauth",
+            "saml",
+            "other",
+            "TBD"
+          ]
+        },
+        "enumListFields": {},
+        "collectionSchemas": {
+          "internalComponents": "internalComponent",
+          "deploymentConfigurations": "deploymentConfiguration",
+          "configurations": "configuration",
+          "decisionRecords": "decisionRecordRef",
+          "requirementImplementations": "requirementImplementation"
+        },
+        "schemaPath": "framework/schemas/runtime-service.schema.yaml"
+      },
+      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M7GWTG2T-M5GD\",\n  \"type\": \"runtime_service\",\n  \"name\": \"Amazon SNS - Closing Climb Alerts\",\n  \"description\": \"SNS topic that receives all Closing Climb alarms (Buffini sync, weekly25 and the scheduler DLQ) and the EventBridge scheduled-task nonzero-exit rule.\",\n  \"catalogStatus\": \"incomplete\",\n  \"lifecycleStatus\": \"preferred\",\n  \"owner\": {\n    \"team\": \"platform-ai-team\",\n    \"contact\": \"platform-ai@example.com\"\n  },\n  \"tags\": [\n    \"aws\",\n    \"sns\",\n    \"alerting\",\n    \"closing-climb\"\n  ],\n  \"deliveryModel\": \"paas\",\n  \"vendor\": \"Amazon Web Services\",\n  \"productName\": \"Amazon Simple Notification Service\",\n  \"productVersion\": \"managed\",\n  \"patchingOwner\": \"aws-managed\",\n  \"authenticationModel\": \"iam\",\n  \"capabilities\": [\n    \"01KT0V5MCV-KT72\"\n  ],\n  \"provisioningModel\": \"reference-only\",\n  \"notes\": {\n    \"verification\": \"Verified read-only from AWS account ending 2296 (us-east-1) on 2026-11-15 (America/Phoenix).\",\n    \"topics\": \"1 topic: closing-climb-prod-buffini-sync-alerts with 1 email subscription (endpoint not recorded here).\",\n    \"provisioning\": \"Provisioned by Terraform in BeerCanLabs/closing-climb-web infra/aws/main.tf; not yet packaged as a DRAFT deployablePackage.\"\n  },\n  \"_source\": \"catalog/shared-services/runtime-services/runtime-service-amazon-sns.yaml\"\n}",
+      "existsInCatalog": true,
+      "outboundRelationships": [],
+      "inboundRelationships": []
+    },
+    {
+      "id": "01M7GWTG2T-M07S",
+      "uid": "01M7GWTG2T-M07S",
+      "name": "Amazon SQS - Closing Climb Scheduler DLQ",
+      "aliases": [],
+      "type": "runtime_service",
+      "typeLabel": "RuntimeService / Paas",
+      "filterType": "runtime_service",
+      "category": "",
+      "deliveryModel": "paas",
+      "domain": "",
+      "description": "SQS dead-letter queue for failed Closing Climb EventBridge Scheduler invocations.",
+      "version": "",
+      "catalogStatus": "incomplete",
+      "lifecycleStatus": "preferred",
+      "status": "",
+      "businessContext": {},
+      "product": "",
+      "runsOn": "",
+      "subtype": "",
+      "vendor": "Amazon Web Services",
+      "productName": "Amazon Simple Queue Service",
+      "productVersion": "managed",
+      "classification": "",
+      "platformDependency": "",
+      "capabilities": [
+        "01KT0V5MCV-KT72"
+      ],
+      "configurations": [],
+      "networkPlacement": "",
+      "patchingOwner": "aws-managed",
+      "complianceCerts": [],
+      "requirementGroups": [],
+      "requirementImplementations": [],
+      "dataLeavesInfrastructure": null,
+      "dataResidencyCommitment": "",
+      "dpaNotes": "",
+      "vendorSLA": "",
+      "authenticationModel": "iam",
+      "incidentNotificationProcess": "",
+      "owner": {
+        "team": "platform-ai-team",
+        "contact": "platform-ai@example.com"
+      },
+      "definitionOwner": {},
+      "provider": {},
+      "authority": {},
+      "shape": "diamond",
+      "color": "#1f8a5b",
+      "source": "catalog/shared-services/runtime-services/runtime-service-amazon-sqs.yaml",
+      "tags": [
+        "aws",
+        "sqs",
+        "dead-letter-queue",
+        "closing-climb"
+      ],
+      "ardCategory": "",
+      "internalComponents": [],
+      "notes": {
+        "verification": "Verified read-only from AWS account ending 2296 (us-east-1) on 2026-11-15 (America/Phoenix).",
+        "queues": "1 queue: closing-climb-prod-scheduler-dlq, watched by alarm closing-climb-prod-scheduler-dlq-visible.",
+        "provisioning": "Provisioned by Terraform in BeerCanLabs/closing-climb-web infra/aws/main.tf; not yet packaged as a DRAFT deployablePackage."
+      },
+      "requirements": [],
+      "implementations": [],
+      "appliesTo": {},
+      "inherits": "",
+      "scalingUnits": [],
+      "networkZones": [],
+      "sdpConnections": [],
+      "serviceGroups": [],
+      "tierVariants": [],
+      "tierId": "",
+      "purpose": "",
+      "availabilityExpectation": "",
+      "costPosture": "",
+      "complianceScope": [],
+      "parameterSurface": [],
+      "followsReferenceArchitecture": "",
+      "decisionRecords": [],
+      "affectedComponent": "",
+      "impact": "",
+      "mitigationPath": "",
+      "decisionRationale": "",
+      "relatedDecisionRecords": [],
+      "linkedObject": "",
+      "primaryObjectType": "",
+      "primaryObjectUid": "",
+      "generatedObjects": [],
+      "unresolvedQuestions": [],
+      "assumptions": [],
+      "nextSteps": [],
+      "defaultSelection": false,
+      "requirementCount": 0,
+      "hasRiskRef": false,
+      "outboundRefs": [
+        {
+          "target": "01KT0V5MCV-KT72",
+          "path": "capabilities[0]"
+        }
+      ],
+      "referencedBy": [],
+      "editorSchema": {
+        "requiredFields": [
+          "schemaVersion",
+          "uid",
+          "type",
+          "name",
+          "deliveryModel",
+          "catalogStatus",
+          "lifecycleStatus"
+        ],
+        "optionalFields": [
+          "aliases",
+          "description",
+          "version",
+          "owner",
+          "tags",
+          "serviceRole",
+          "host",
+          "primaryTechnologyComponent",
+          "internalComponents",
+          "deploymentConfigurations",
+          "vendor",
+          "productName",
+          "productVersion",
+          "capabilities",
+          "configurations",
+          "networkPlacement",
+          "patchingOwner",
+          "authenticationModel",
+          "vendorGovernance",
+          "provisioningModel",
+          "deployablePackage",
+          "notes",
+          "decisionRecords",
+          "requirementImplementations"
+        ],
+        "fieldTypes": {
+          "aliases": "list",
+          "owner": "dict",
+          "tags": "list",
+          "internalComponents": "list",
+          "deploymentConfigurations": "list",
+          "capabilities": "list",
+          "configurations": "list",
+          "notes": "dict",
+          "vendorGovernance": "dict",
+          "requirementGroups": "list",
+          "decisionRecords": "list",
+          "requirementImplementations": "list"
+        },
+        "enumFields": {
+          "serviceRole": [
+            "definition",
+            "instance"
+          ],
+          "provisioningModel": [
+            "deployable",
+            "reference-only"
+          ],
+          "catalogStatus": [
+            "stub",
+            "incomplete",
+            "complete"
+          ],
+          "lifecycleStatus": [
+            "candidate",
+            "preferred",
+            "existing-only",
+            "deprecated",
+            "retired"
+          ],
+          "deliveryModel": [
+            "self-managed",
+            "paas",
+            "saas",
+            "appliance"
+          ],
+          "networkPlacement": [
+            "public-facing",
+            "internal",
+            "vpc-private"
+          ],
+          "patchingOwner": [
+            "provider-managed",
+            "organization-scheduled",
+            "vendor-managed",
+            "aws-managed"
+          ],
+          "authenticationModel": [
+            "iam",
+            "api-key",
+            "oauth",
+            "saml",
+            "other",
+            "TBD"
+          ]
+        },
+        "enumListFields": {},
+        "collectionSchemas": {
+          "internalComponents": "internalComponent",
+          "deploymentConfigurations": "deploymentConfiguration",
+          "configurations": "configuration",
+          "decisionRecords": "decisionRecordRef",
+          "requirementImplementations": "requirementImplementation"
+        },
+        "schemaPath": "framework/schemas/runtime-service.schema.yaml"
+      },
+      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M7GWTG2T-M07S\",\n  \"type\": \"runtime_service\",\n  \"name\": \"Amazon SQS - Closing Climb Scheduler DLQ\",\n  \"description\": \"SQS dead-letter queue for failed Closing Climb EventBridge Scheduler invocations.\",\n  \"catalogStatus\": \"incomplete\",\n  \"lifecycleStatus\": \"preferred\",\n  \"owner\": {\n    \"team\": \"platform-ai-team\",\n    \"contact\": \"platform-ai@example.com\"\n  },\n  \"tags\": [\n    \"aws\",\n    \"sqs\",\n    \"dead-letter-queue\",\n    \"closing-climb\"\n  ],\n  \"deliveryModel\": \"paas\",\n  \"vendor\": \"Amazon Web Services\",\n  \"productName\": \"Amazon Simple Queue Service\",\n  \"productVersion\": \"managed\",\n  \"patchingOwner\": \"aws-managed\",\n  \"authenticationModel\": \"iam\",\n  \"capabilities\": [\n    \"01KT0V5MCV-KT72\"\n  ],\n  \"provisioningModel\": \"reference-only\",\n  \"notes\": {\n    \"verification\": \"Verified read-only from AWS account ending 2296 (us-east-1) on 2026-11-15 (America/Phoenix).\",\n    \"queues\": \"1 queue: closing-climb-prod-scheduler-dlq, watched by alarm closing-climb-prod-scheduler-dlq-visible.\",\n    \"provisioning\": \"Provisioned by Terraform in BeerCanLabs/closing-climb-web infra/aws/main.tf; not yet packaged as a DRAFT deployablePackage.\"\n  },\n  \"_source\": \"catalog/shared-services/runtime-services/runtime-service-amazon-sqs.yaml\"\n}",
+      "existsInCatalog": true,
+      "outboundRelationships": [],
+      "inboundRelationships": []
+    },
+    {
+      "id": "01M7GWTG2S-AC3R",
+      "uid": "01M7GWTG2S-AC3R",
+      "name": "AWS ECS Fargate Runtime - factory-prod",
+      "aliases": [],
+      "type": "runtime_service",
+      "typeLabel": "RuntimeService / Paas",
+      "filterType": "runtime_service",
+      "category": "",
+      "deliveryModel": "paas",
+      "domain": "",
+      "description": "Amazon ECS on Fargate runtime for the BeerCanLabs Agent Factory and Closing Climb in us-east-1. Long-running services plus on-demand agent tasks.",
+      "version": "",
+      "catalogStatus": "incomplete",
+      "lifecycleStatus": "preferred",
+      "status": "",
+      "businessContext": {},
+      "product": "",
+      "runsOn": "",
+      "subtype": "",
+      "vendor": "Amazon Web Services",
+      "productName": "Amazon ECS on AWS Fargate",
+      "productVersion": "managed",
+      "classification": "",
+      "platformDependency": "",
+      "capabilities": [
+        "01KQQ4Q026-1HZP",
+        "01KQQ4Q026-GW5D",
+        "01KT0V5MCV-RZV0"
+      ],
+      "configurations": [],
+      "networkPlacement": "",
+      "patchingOwner": "aws-managed",
+      "complianceCerts": [],
+      "requirementGroups": [],
+      "requirementImplementations": [],
+      "dataLeavesInfrastructure": null,
+      "dataResidencyCommitment": "",
+      "dpaNotes": "",
+      "vendorSLA": "",
+      "authenticationModel": "iam",
+      "incidentNotificationProcess": "",
+      "owner": {
+        "team": "platform-ai-team",
+        "contact": "platform-ai@example.com"
+      },
+      "definitionOwner": {},
+      "provider": {},
+      "authority": {},
+      "shape": "diamond",
+      "color": "#1f8a5b",
+      "source": "catalog/shared-services/runtime-services/runtime-service-aws-ecs-fargate-factory-prod.yaml",
+      "tags": [
+        "aws",
+        "ecs",
+        "fargate",
+        "agent-factory",
+        "closing-climb",
+        "factory-prod"
+      ],
+      "ardCategory": "",
+      "internalComponents": [
+        {
+          "ref": "01M7GWTG2S-X9V8",
+          "role": "host",
+          "configuration": "",
+          "notes": ""
+        }
+      ],
+      "notes": {
+        "verification": "Verified read-only from AWS account ending 2296 (us-east-1) on 2026-11-15 (America/Phoenix).",
+        "services": "Six ECS services, each desired 1 / running 1, assignPublicIp ENABLED: control-plane (FARGATE, 512 CPU/1024 MB, ports 8088/8089, EFS ledger volume, otel sidecar); gatekeeper-ingress (FARGATE, 256/512, port 8090); gatekeeper-egress (FARGATE_SPOT, 512/1024, port 8081, otel sidecar); console (FARGATE, 512/1024, port 3000); garrison (FARGATE_SPOT, 1024/2048, port 3000); closing-climb-web (FARGATE, 256/512, port 8080).",
+        "onDemandTasks": "Agent cartridges run as on-demand ECS tasks (256 CPU/512 MB, FARGATE) from per-agent task definition families such as agent-higgins, agent-archie, agent-beercanlabs-coder, agent-beercanlabs-conductor and agent-beercanlabs-pr-reviewer, using images from ECR repository factory-dynamic-agents. closing-climb-prod-buffini-sync runs on a schedule.",
+        "imageVersions": "Factory service images were tagged 01720b2 (BeerCanLabs/agent-factory commit) and closing-climb-web a576c3a at verification time.",
+        "provisioning": "Provisioned by Terraform in BeerCanLabs/agent-factory landing-zones/aws (S3 backend); module not yet packaged as a DRAFT deployablePackage. Closing Climb resources: Provisioned by Terraform in BeerCanLabs/closing-climb-web infra/aws/main.tf; not yet packaged as a DRAFT deployablePackage.",
+        "incomplete": "Autoscaling, deployment circuit breaker settings and task IAM role scopes were not reviewed."
+      },
+      "requirements": [],
+      "implementations": [],
+      "appliesTo": {},
+      "inherits": "",
+      "scalingUnits": [],
+      "networkZones": [],
+      "sdpConnections": [],
+      "serviceGroups": [],
+      "tierVariants": [],
+      "tierId": "",
+      "purpose": "",
+      "availabilityExpectation": "",
+      "costPosture": "",
+      "complianceScope": [],
+      "parameterSurface": [],
+      "followsReferenceArchitecture": "",
+      "decisionRecords": [],
+      "affectedComponent": "",
+      "impact": "",
+      "mitigationPath": "",
+      "decisionRationale": "",
+      "relatedDecisionRecords": [],
+      "linkedObject": "",
+      "primaryObjectType": "",
+      "primaryObjectUid": "",
+      "generatedObjects": [],
+      "unresolvedQuestions": [],
+      "assumptions": [],
+      "nextSteps": [],
+      "defaultSelection": false,
+      "requirementCount": 0,
+      "hasRiskRef": false,
+      "outboundRefs": [
+        {
+          "target": "01M7GWTG2S-X9V8",
+          "path": "host"
+        },
+        {
+          "target": "01KQQ4Q026-1HZP",
+          "path": "capabilities[0]"
+        },
+        {
+          "target": "01KQQ4Q026-GW5D",
+          "path": "capabilities[1]"
+        },
+        {
+          "target": "01KT0V5MCV-RZV0",
+          "path": "capabilities[2]"
+        }
+      ],
+      "referencedBy": [
+        {
+          "source": "VP8VB5X0E7-7FJC",
+          "path": "source"
+        }
+      ],
+      "editorSchema": {
+        "requiredFields": [
+          "schemaVersion",
+          "uid",
+          "type",
+          "name",
+          "deliveryModel",
+          "catalogStatus",
+          "lifecycleStatus"
+        ],
+        "optionalFields": [
+          "aliases",
+          "description",
+          "version",
+          "owner",
+          "tags",
+          "serviceRole",
+          "host",
+          "primaryTechnologyComponent",
+          "internalComponents",
+          "deploymentConfigurations",
+          "vendor",
+          "productName",
+          "productVersion",
+          "capabilities",
+          "configurations",
+          "networkPlacement",
+          "patchingOwner",
+          "authenticationModel",
+          "vendorGovernance",
+          "provisioningModel",
+          "deployablePackage",
+          "notes",
+          "decisionRecords",
+          "requirementImplementations"
+        ],
+        "fieldTypes": {
+          "aliases": "list",
+          "owner": "dict",
+          "tags": "list",
+          "internalComponents": "list",
+          "deploymentConfigurations": "list",
+          "capabilities": "list",
+          "configurations": "list",
+          "notes": "dict",
+          "vendorGovernance": "dict",
+          "requirementGroups": "list",
+          "decisionRecords": "list",
+          "requirementImplementations": "list"
+        },
+        "enumFields": {
+          "serviceRole": [
+            "definition",
+            "instance"
+          ],
+          "provisioningModel": [
+            "deployable",
+            "reference-only"
+          ],
+          "catalogStatus": [
+            "stub",
+            "incomplete",
+            "complete"
+          ],
+          "lifecycleStatus": [
+            "candidate",
+            "preferred",
+            "existing-only",
+            "deprecated",
+            "retired"
+          ],
+          "deliveryModel": [
+            "self-managed",
+            "paas",
+            "saas",
+            "appliance"
+          ],
+          "networkPlacement": [
+            "public-facing",
+            "internal",
+            "vpc-private"
+          ],
+          "patchingOwner": [
+            "provider-managed",
+            "organization-scheduled",
+            "vendor-managed",
+            "aws-managed"
+          ],
+          "authenticationModel": [
+            "iam",
+            "api-key",
+            "oauth",
+            "saml",
+            "other",
+            "TBD"
+          ]
+        },
+        "enumListFields": {},
+        "collectionSchemas": {
+          "internalComponents": "internalComponent",
+          "deploymentConfigurations": "deploymentConfiguration",
+          "configurations": "configuration",
+          "decisionRecords": "decisionRecordRef",
+          "requirementImplementations": "requirementImplementation"
+        },
+        "schemaPath": "framework/schemas/runtime-service.schema.yaml"
+      },
+      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M7GWTG2S-AC3R\",\n  \"type\": \"runtime_service\",\n  \"name\": \"AWS ECS Fargate Runtime - factory-prod\",\n  \"description\": \"Amazon ECS on Fargate runtime for the BeerCanLabs Agent Factory and Closing Climb in us-east-1. Long-running services plus on-demand agent tasks.\",\n  \"catalogStatus\": \"incomplete\",\n  \"lifecycleStatus\": \"preferred\",\n  \"owner\": {\n    \"team\": \"platform-ai-team\",\n    \"contact\": \"platform-ai@example.com\"\n  },\n  \"tags\": [\n    \"aws\",\n    \"ecs\",\n    \"fargate\",\n    \"agent-factory\",\n    \"closing-climb\",\n    \"factory-prod\"\n  ],\n  \"deliveryModel\": \"paas\",\n  \"vendor\": \"Amazon Web Services\",\n  \"productName\": \"Amazon ECS on AWS Fargate\",\n  \"productVersion\": \"managed\",\n  \"patchingOwner\": \"aws-managed\",\n  \"authenticationModel\": \"iam\",\n  \"host\": \"01M7GWTG2S-X9V8\",\n  \"capabilities\": [\n    \"01KQQ4Q026-1HZP\",\n    \"01KQQ4Q026-GW5D\",\n    \"01KT0V5MCV-RZV0\"\n  ],\n  \"provisioningModel\": \"reference-only\",\n  \"notes\": {\n    \"verification\": \"Verified read-only from AWS account ending 2296 (us-east-1) on 2026-11-15 (America/Phoenix).\",\n    \"services\": \"Six ECS services, each desired 1 / running 1, assignPublicIp ENABLED: control-plane (FARGATE, 512 CPU/1024 MB, ports 8088/8089, EFS ledger volume, otel sidecar); gatekeeper-ingress (FARGATE, 256/512, port 8090); gatekeeper-egress (FARGATE_SPOT, 512/1024, port 8081, otel sidecar); console (FARGATE, 512/1024, port 3000); garrison (FARGATE_SPOT, 1024/2048, port 3000); closing-climb-web (FARGATE, 256/512, port 8080).\",\n    \"onDemandTasks\": \"Agent cartridges run as on-demand ECS tasks (256 CPU/512 MB, FARGATE) from per-agent task definition families such as agent-higgins, agent-archie, agent-beercanlabs-coder, agent-beercanlabs-conductor and agent-beercanlabs-pr-reviewer, using images from ECR repository factory-dynamic-agents. closing-climb-prod-buffini-sync runs on a schedule.\",\n    \"imageVersions\": \"Factory service images were tagged 01720b2 (BeerCanLabs/agent-factory commit) and closing-climb-web a576c3a at verification time.\",\n    \"provisioning\": \"Provisioned by Terraform in BeerCanLabs/agent-factory landing-zones/aws (S3 backend); module not yet packaged as a DRAFT deployablePackage. Closing Climb resources: Provisioned by Terraform in BeerCanLabs/closing-climb-web infra/aws/main.tf; not yet packaged as a DRAFT deployablePackage.\",\n    \"incomplete\": \"Autoscaling, deployment circuit breaker settings and task IAM role scopes were not reviewed.\"\n  },\n  \"_source\": \"catalog/shared-services/runtime-services/runtime-service-aws-ecs-fargate-factory-prod.yaml\"\n}",
+      "existsInCatalog": true,
+      "outboundRelationships": [
+        {
+          "uid": "VP8VB5X0E7-7FJC",
+          "name": "AWS ECS Fargate Runtime - factory-prod \u2192 AWS Fargate factory-prod ECS Cluster Host (us-east-1)",
+          "label": "runs on",
+          "technology": "",
+          "direction": "",
+          "targetUid": "01M7GWTG2S-X9V8",
+          "targetName": "AWS Fargate factory-prod ECS Cluster Host (us-east-1)",
+          "capabilities": []
+        }
+      ],
+      "inboundRelationships": []
+    },
+    {
+      "id": "01M7GWTG2T-XKK0",
+      "uid": "01M7GWTG2T-XKK0",
+      "name": "Amazon EventBridge Scheduler - Closing Climb",
+      "aliases": [],
+      "type": "runtime_service",
+      "typeLabel": "RuntimeService / Paas",
+      "filterType": "runtime_service",
+      "category": "",
+      "deliveryModel": "paas",
+      "domain": "",
+      "description": "EventBridge Scheduler schedules that launch Closing Climb ECS tasks in the factory-prod cluster.",
+      "version": "",
+      "catalogStatus": "incomplete",
+      "lifecycleStatus": "preferred",
+      "status": "",
+      "businessContext": {},
+      "product": "",
+      "runsOn": "",
+      "subtype": "",
+      "vendor": "Amazon Web Services",
+      "productName": "Amazon EventBridge Scheduler",
+      "productVersion": "managed",
+      "classification": "",
+      "platformDependency": "",
+      "capabilities": [],
+      "configurations": [],
+      "networkPlacement": "",
+      "patchingOwner": "aws-managed",
+      "complianceCerts": [],
+      "requirementGroups": [],
+      "requirementImplementations": [],
+      "dataLeavesInfrastructure": null,
+      "dataResidencyCommitment": "",
+      "dpaNotes": "",
+      "vendorSLA": "",
+      "authenticationModel": "iam",
+      "incidentNotificationProcess": "",
+      "owner": {
+        "team": "platform-ai-team",
+        "contact": "platform-ai@example.com"
+      },
+      "definitionOwner": {},
+      "provider": {},
+      "authority": {},
+      "shape": "diamond",
+      "color": "#1f8a5b",
+      "source": "catalog/shared-services/runtime-services/runtime-service-aws-eventbridge-scheduler.yaml",
+      "tags": [
+        "aws",
+        "eventbridge",
+        "scheduler",
+        "closing-climb"
+      ],
+      "ardCategory": "",
+      "internalComponents": [],
+      "notes": {
+        "verification": "Verified read-only from AWS account ending 2296 (us-east-1) on 2026-11-15 (America/Phoenix).",
+        "schedules": "closing-climb-prod-buffini-sync-nightly cron(0 2 * * ? *) runs task definition closing-climb-prod-buffini-sync; closing-climb-prod-weekly25-sunday cron(0 6 ? * SUN *) runs task definition closing-climb-prod. Both use timezone America/Phoenix.",
+        "failureHandling": "EventBridge rule closing-climb-prod-scheduled-task-nonzero-exit and SQS dead-letter queue closing-climb-prod-scheduler-dlq.",
+        "provisioning": "Provisioned by Terraform in BeerCanLabs/closing-climb-web infra/aws/main.tf; not yet packaged as a DRAFT deployablePackage.",
+        "incomplete": "Agent Factory timekeeper schedules (if any) were not found in EventBridge Scheduler and are unmodeled."
+      },
+      "requirements": [],
+      "implementations": [],
+      "appliesTo": {},
+      "inherits": "",
+      "scalingUnits": [],
+      "networkZones": [],
+      "sdpConnections": [],
+      "serviceGroups": [],
+      "tierVariants": [],
+      "tierId": "",
+      "purpose": "",
+      "availabilityExpectation": "",
+      "costPosture": "",
+      "complianceScope": [],
+      "parameterSurface": [],
+      "followsReferenceArchitecture": "",
+      "decisionRecords": [],
+      "affectedComponent": "",
+      "impact": "",
+      "mitigationPath": "",
+      "decisionRationale": "",
+      "relatedDecisionRecords": [],
+      "linkedObject": "",
+      "primaryObjectType": "",
+      "primaryObjectUid": "",
+      "generatedObjects": [],
+      "unresolvedQuestions": [],
+      "assumptions": [],
+      "nextSteps": [],
+      "defaultSelection": false,
+      "requirementCount": 0,
+      "hasRiskRef": false,
+      "outboundRefs": [],
+      "referencedBy": [],
+      "editorSchema": {
+        "requiredFields": [
+          "schemaVersion",
+          "uid",
+          "type",
+          "name",
+          "deliveryModel",
+          "catalogStatus",
+          "lifecycleStatus"
+        ],
+        "optionalFields": [
+          "aliases",
+          "description",
+          "version",
+          "owner",
+          "tags",
+          "serviceRole",
+          "host",
+          "primaryTechnologyComponent",
+          "internalComponents",
+          "deploymentConfigurations",
+          "vendor",
+          "productName",
+          "productVersion",
+          "capabilities",
+          "configurations",
+          "networkPlacement",
+          "patchingOwner",
+          "authenticationModel",
+          "vendorGovernance",
+          "provisioningModel",
+          "deployablePackage",
+          "notes",
+          "decisionRecords",
+          "requirementImplementations"
+        ],
+        "fieldTypes": {
+          "aliases": "list",
+          "owner": "dict",
+          "tags": "list",
+          "internalComponents": "list",
+          "deploymentConfigurations": "list",
+          "capabilities": "list",
+          "configurations": "list",
+          "notes": "dict",
+          "vendorGovernance": "dict",
+          "requirementGroups": "list",
+          "decisionRecords": "list",
+          "requirementImplementations": "list"
+        },
+        "enumFields": {
+          "serviceRole": [
+            "definition",
+            "instance"
+          ],
+          "provisioningModel": [
+            "deployable",
+            "reference-only"
+          ],
+          "catalogStatus": [
+            "stub",
+            "incomplete",
+            "complete"
+          ],
+          "lifecycleStatus": [
+            "candidate",
+            "preferred",
+            "existing-only",
+            "deprecated",
+            "retired"
+          ],
+          "deliveryModel": [
+            "self-managed",
+            "paas",
+            "saas",
+            "appliance"
+          ],
+          "networkPlacement": [
+            "public-facing",
+            "internal",
+            "vpc-private"
+          ],
+          "patchingOwner": [
+            "provider-managed",
+            "organization-scheduled",
+            "vendor-managed",
+            "aws-managed"
+          ],
+          "authenticationModel": [
+            "iam",
+            "api-key",
+            "oauth",
+            "saml",
+            "other",
+            "TBD"
+          ]
+        },
+        "enumListFields": {},
+        "collectionSchemas": {
+          "internalComponents": "internalComponent",
+          "deploymentConfigurations": "deploymentConfiguration",
+          "configurations": "configuration",
+          "decisionRecords": "decisionRecordRef",
+          "requirementImplementations": "requirementImplementation"
+        },
+        "schemaPath": "framework/schemas/runtime-service.schema.yaml"
+      },
+      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M7GWTG2T-XKK0\",\n  \"type\": \"runtime_service\",\n  \"name\": \"Amazon EventBridge Scheduler - Closing Climb\",\n  \"description\": \"EventBridge Scheduler schedules that launch Closing Climb ECS tasks in the factory-prod cluster.\",\n  \"catalogStatus\": \"incomplete\",\n  \"lifecycleStatus\": \"preferred\",\n  \"owner\": {\n    \"team\": \"platform-ai-team\",\n    \"contact\": \"platform-ai@example.com\"\n  },\n  \"tags\": [\n    \"aws\",\n    \"eventbridge\",\n    \"scheduler\",\n    \"closing-climb\"\n  ],\n  \"deliveryModel\": \"paas\",\n  \"vendor\": \"Amazon Web Services\",\n  \"productName\": \"Amazon EventBridge Scheduler\",\n  \"productVersion\": \"managed\",\n  \"patchingOwner\": \"aws-managed\",\n  \"authenticationModel\": \"iam\",\n  \"capabilities\": [],\n  \"provisioningModel\": \"reference-only\",\n  \"notes\": {\n    \"verification\": \"Verified read-only from AWS account ending 2296 (us-east-1) on 2026-11-15 (America/Phoenix).\",\n    \"schedules\": \"closing-climb-prod-buffini-sync-nightly cron(0 2 * * ? *) runs task definition closing-climb-prod-buffini-sync; closing-climb-prod-weekly25-sunday cron(0 6 ? * SUN *) runs task definition closing-climb-prod. Both use timezone America/Phoenix.\",\n    \"failureHandling\": \"EventBridge rule closing-climb-prod-scheduled-task-nonzero-exit and SQS dead-letter queue closing-climb-prod-scheduler-dlq.\",\n    \"provisioning\": \"Provisioned by Terraform in BeerCanLabs/closing-climb-web infra/aws/main.tf; not yet packaged as a DRAFT deployablePackage.\",\n    \"incomplete\": \"Agent Factory timekeeper schedules (if any) were not found in EventBridge Scheduler and are unmodeled.\"\n  },\n  \"_source\": \"catalog/shared-services/runtime-services/runtime-service-aws-eventbridge-scheduler.yaml\"\n}",
+      "existsInCatalog": true,
+      "outboundRelationships": [],
+      "inboundRelationships": []
+    },
+    {
+      "id": "01M7GWTG2T-JHTR",
+      "uid": "01M7GWTG2T-JHTR",
+      "name": "AWS KMS (AWS-managed keys) - Agent Factory",
+      "aliases": [],
+      "type": "runtime_service",
+      "typeLabel": "RuntimeService / Paas",
+      "filterType": "runtime_service",
+      "category": "",
+      "deliveryModel": "paas",
+      "domain": "",
+      "description": "AWS Key Management Service as used by the Agent Factory account. Only AWS-managed service keys are in use.",
+      "version": "",
+      "catalogStatus": "incomplete",
+      "lifecycleStatus": "preferred",
+      "status": "",
+      "businessContext": {},
+      "product": "",
+      "runsOn": "",
+      "subtype": "",
+      "vendor": "Amazon Web Services",
+      "productName": "AWS Key Management Service",
+      "productVersion": "managed",
+      "classification": "",
+      "platformDependency": "",
+      "capabilities": [
+        "01KQQ4Q026-H3B5"
+      ],
+      "configurations": [],
+      "networkPlacement": "",
+      "patchingOwner": "aws-managed",
+      "complianceCerts": [],
+      "requirementGroups": [],
+      "requirementImplementations": [],
+      "dataLeavesInfrastructure": null,
+      "dataResidencyCommitment": "",
+      "dpaNotes": "",
+      "vendorSLA": "",
+      "authenticationModel": "iam",
+      "incidentNotificationProcess": "",
+      "owner": {
+        "team": "platform-ai-team",
+        "contact": "platform-ai@example.com"
+      },
+      "definitionOwner": {},
+      "provider": {},
+      "authority": {},
+      "shape": "diamond",
+      "color": "#1f8a5b",
+      "source": "catalog/shared-services/runtime-services/runtime-service-aws-kms.yaml",
+      "tags": [
+        "aws",
+        "kms",
+        "encryption"
+      ],
+      "ardCategory": "",
+      "internalComponents": [],
+      "notes": {
+        "verification": "Verified read-only from AWS account ending 2296 (us-east-1) on 2026-11-15 (America/Phoenix).",
+        "keys": "AWS-managed keys only (for EFS, DynamoDB, ACM, Backup and Secrets Manager). No customer-managed keys exist.",
+        "usage": "S3 buckets use SSE-S3 (AES256), not KMS. DynamoDB table closing-climb-prod uses SSE type KMS. The EFS ledger is encrypted.",
+        "incomplete": "No customer-managed key policy or rotation decision is recorded."
+      },
+      "requirements": [],
+      "implementations": [],
+      "appliesTo": {},
+      "inherits": "",
+      "scalingUnits": [],
+      "networkZones": [],
+      "sdpConnections": [],
+      "serviceGroups": [],
+      "tierVariants": [],
+      "tierId": "",
+      "purpose": "",
+      "availabilityExpectation": "",
+      "costPosture": "",
+      "complianceScope": [],
+      "parameterSurface": [],
+      "followsReferenceArchitecture": "",
+      "decisionRecords": [],
+      "affectedComponent": "",
+      "impact": "",
+      "mitigationPath": "",
+      "decisionRationale": "",
+      "relatedDecisionRecords": [],
+      "linkedObject": "",
+      "primaryObjectType": "",
+      "primaryObjectUid": "",
+      "generatedObjects": [],
+      "unresolvedQuestions": [],
+      "assumptions": [],
+      "nextSteps": [],
+      "defaultSelection": false,
+      "requirementCount": 0,
+      "hasRiskRef": false,
+      "outboundRefs": [
+        {
+          "target": "01KQQ4Q026-H3B5",
+          "path": "capabilities[0]"
+        }
+      ],
+      "referencedBy": [],
+      "editorSchema": {
+        "requiredFields": [
+          "schemaVersion",
+          "uid",
+          "type",
+          "name",
+          "deliveryModel",
+          "catalogStatus",
+          "lifecycleStatus"
+        ],
+        "optionalFields": [
+          "aliases",
+          "description",
+          "version",
+          "owner",
+          "tags",
+          "serviceRole",
+          "host",
+          "primaryTechnologyComponent",
+          "internalComponents",
+          "deploymentConfigurations",
+          "vendor",
+          "productName",
+          "productVersion",
+          "capabilities",
+          "configurations",
+          "networkPlacement",
+          "patchingOwner",
+          "authenticationModel",
+          "vendorGovernance",
+          "provisioningModel",
+          "deployablePackage",
+          "notes",
+          "decisionRecords",
+          "requirementImplementations"
+        ],
+        "fieldTypes": {
+          "aliases": "list",
+          "owner": "dict",
+          "tags": "list",
+          "internalComponents": "list",
+          "deploymentConfigurations": "list",
+          "capabilities": "list",
+          "configurations": "list",
+          "notes": "dict",
+          "vendorGovernance": "dict",
+          "requirementGroups": "list",
+          "decisionRecords": "list",
+          "requirementImplementations": "list"
+        },
+        "enumFields": {
+          "serviceRole": [
+            "definition",
+            "instance"
+          ],
+          "provisioningModel": [
+            "deployable",
+            "reference-only"
+          ],
+          "catalogStatus": [
+            "stub",
+            "incomplete",
+            "complete"
+          ],
+          "lifecycleStatus": [
+            "candidate",
+            "preferred",
+            "existing-only",
+            "deprecated",
+            "retired"
+          ],
+          "deliveryModel": [
+            "self-managed",
+            "paas",
+            "saas",
+            "appliance"
+          ],
+          "networkPlacement": [
+            "public-facing",
+            "internal",
+            "vpc-private"
+          ],
+          "patchingOwner": [
+            "provider-managed",
+            "organization-scheduled",
+            "vendor-managed",
+            "aws-managed"
+          ],
+          "authenticationModel": [
+            "iam",
+            "api-key",
+            "oauth",
+            "saml",
+            "other",
+            "TBD"
+          ]
+        },
+        "enumListFields": {},
+        "collectionSchemas": {
+          "internalComponents": "internalComponent",
+          "deploymentConfigurations": "deploymentConfiguration",
+          "configurations": "configuration",
+          "decisionRecords": "decisionRecordRef",
+          "requirementImplementations": "requirementImplementation"
+        },
+        "schemaPath": "framework/schemas/runtime-service.schema.yaml"
+      },
+      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M7GWTG2T-JHTR\",\n  \"type\": \"runtime_service\",\n  \"name\": \"AWS KMS (AWS-managed keys) - Agent Factory\",\n  \"description\": \"AWS Key Management Service as used by the Agent Factory account. Only AWS-managed service keys are in use.\",\n  \"catalogStatus\": \"incomplete\",\n  \"lifecycleStatus\": \"preferred\",\n  \"owner\": {\n    \"team\": \"platform-ai-team\",\n    \"contact\": \"platform-ai@example.com\"\n  },\n  \"tags\": [\n    \"aws\",\n    \"kms\",\n    \"encryption\"\n  ],\n  \"deliveryModel\": \"paas\",\n  \"vendor\": \"Amazon Web Services\",\n  \"productName\": \"AWS Key Management Service\",\n  \"productVersion\": \"managed\",\n  \"patchingOwner\": \"aws-managed\",\n  \"authenticationModel\": \"iam\",\n  \"capabilities\": [\n    \"01KQQ4Q026-H3B5\"\n  ],\n  \"provisioningModel\": \"reference-only\",\n  \"notes\": {\n    \"verification\": \"Verified read-only from AWS account ending 2296 (us-east-1) on 2026-11-15 (America/Phoenix).\",\n    \"keys\": \"AWS-managed keys only (for EFS, DynamoDB, ACM, Backup and Secrets Manager). No customer-managed keys exist.\",\n    \"usage\": \"S3 buckets use SSE-S3 (AES256), not KMS. DynamoDB table closing-climb-prod uses SSE type KMS. The EFS ledger is encrypted.\",\n    \"incomplete\": \"No customer-managed key policy or rotation decision is recorded.\"\n  },\n  \"_source\": \"catalog/shared-services/runtime-services/runtime-service-aws-kms.yaml\"\n}",
+      "existsInCatalog": true,
+      "outboundRelationships": [],
+      "inboundRelationships": []
+    },
+    {
+      "id": "01M7GWTG2T-3PQY",
+      "uid": "01M7GWTG2T-3PQY",
+      "name": "AWS Secrets Manager - Agent Factory",
+      "aliases": [],
+      "type": "runtime_service",
+      "typeLabel": "RuntimeService / Paas",
+      "filterType": "runtime_service",
+      "category": "",
+      "deliveryModel": "paas",
+      "domain": "",
+      "description": "AWS Secrets Manager in us-east-1 holding Agent Factory and Closing Climb secrets, injected into ECS tasks as container secrets.",
+      "version": "",
+      "catalogStatus": "incomplete",
+      "lifecycleStatus": "preferred",
+      "status": "",
+      "businessContext": {},
+      "product": "",
+      "runsOn": "",
+      "subtype": "",
+      "vendor": "Amazon Web Services",
+      "productName": "AWS Secrets Manager",
+      "productVersion": "managed",
+      "classification": "",
+      "platformDependency": "",
+      "capabilities": [
+        "01KQQ4Q026-DTJJ"
+      ],
+      "configurations": [],
+      "networkPlacement": "",
+      "patchingOwner": "aws-managed",
+      "complianceCerts": [],
+      "requirementGroups": [],
+      "requirementImplementations": [],
+      "dataLeavesInfrastructure": null,
+      "dataResidencyCommitment": "",
+      "dpaNotes": "",
+      "vendorSLA": "",
+      "authenticationModel": "iam",
+      "incidentNotificationProcess": "",
+      "owner": {
+        "team": "platform-ai-team",
+        "contact": "platform-ai@example.com"
+      },
+      "definitionOwner": {},
+      "provider": {},
+      "authority": {},
+      "shape": "diamond",
+      "color": "#1f8a5b",
+      "source": "catalog/shared-services/runtime-services/runtime-service-aws-secrets-manager.yaml",
+      "tags": [
+        "aws",
+        "secrets-manager",
+        "agent-factory",
+        "closing-climb"
+      ],
+      "ardCategory": "",
+      "internalComponents": [],
+      "notes": {
+        "verification": "Verified read-only from AWS account ending 2296 (us-east-1) on 2026-11-15 (America/Phoenix). Secret names and counts only; no values were read.",
+        "inventory": "96 secrets: 5 under closing-climb/prod/, 91 under factory/prod/ (including factory/prod/connections/* and factory/prod/shared/*).",
+        "consumers": "ECS container secret references per task definition (not exhaustive), including: closing-climb-web 8, control-plane 6, gatekeeper-egress 2, gatekeeper-ingress 2, garrison 1, console 0, agent-higgins 2, closing-climb-prod-buffini-sync 2.",
+        "encryption": "Encrypted with the AWS-managed aws/secretsmanager key (no customer-managed KMS keys exist).",
+        "incomplete": "Rotation configuration and resource policies were not reviewed."
+      },
+      "requirements": [],
+      "implementations": [],
+      "appliesTo": {},
+      "inherits": "",
+      "scalingUnits": [],
+      "networkZones": [],
+      "sdpConnections": [],
+      "serviceGroups": [],
+      "tierVariants": [],
+      "tierId": "",
+      "purpose": "",
+      "availabilityExpectation": "",
+      "costPosture": "",
+      "complianceScope": [],
+      "parameterSurface": [],
+      "followsReferenceArchitecture": "",
+      "decisionRecords": [],
+      "affectedComponent": "",
+      "impact": "",
+      "mitigationPath": "",
+      "decisionRationale": "",
+      "relatedDecisionRecords": [],
+      "linkedObject": "",
+      "primaryObjectType": "",
+      "primaryObjectUid": "",
+      "generatedObjects": [],
+      "unresolvedQuestions": [],
+      "assumptions": [],
+      "nextSteps": [],
+      "defaultSelection": false,
+      "requirementCount": 0,
+      "hasRiskRef": false,
+      "outboundRefs": [
+        {
+          "target": "01KQQ4Q026-DTJJ",
+          "path": "capabilities[0]"
+        }
+      ],
+      "referencedBy": [],
+      "editorSchema": {
+        "requiredFields": [
+          "schemaVersion",
+          "uid",
+          "type",
+          "name",
+          "deliveryModel",
+          "catalogStatus",
+          "lifecycleStatus"
+        ],
+        "optionalFields": [
+          "aliases",
+          "description",
+          "version",
+          "owner",
+          "tags",
+          "serviceRole",
+          "host",
+          "primaryTechnologyComponent",
+          "internalComponents",
+          "deploymentConfigurations",
+          "vendor",
+          "productName",
+          "productVersion",
+          "capabilities",
+          "configurations",
+          "networkPlacement",
+          "patchingOwner",
+          "authenticationModel",
+          "vendorGovernance",
+          "provisioningModel",
+          "deployablePackage",
+          "notes",
+          "decisionRecords",
+          "requirementImplementations"
+        ],
+        "fieldTypes": {
+          "aliases": "list",
+          "owner": "dict",
+          "tags": "list",
+          "internalComponents": "list",
+          "deploymentConfigurations": "list",
+          "capabilities": "list",
+          "configurations": "list",
+          "notes": "dict",
+          "vendorGovernance": "dict",
+          "requirementGroups": "list",
+          "decisionRecords": "list",
+          "requirementImplementations": "list"
+        },
+        "enumFields": {
+          "serviceRole": [
+            "definition",
+            "instance"
+          ],
+          "provisioningModel": [
+            "deployable",
+            "reference-only"
+          ],
+          "catalogStatus": [
+            "stub",
+            "incomplete",
+            "complete"
+          ],
+          "lifecycleStatus": [
+            "candidate",
+            "preferred",
+            "existing-only",
+            "deprecated",
+            "retired"
+          ],
+          "deliveryModel": [
+            "self-managed",
+            "paas",
+            "saas",
+            "appliance"
+          ],
+          "networkPlacement": [
+            "public-facing",
+            "internal",
+            "vpc-private"
+          ],
+          "patchingOwner": [
+            "provider-managed",
+            "organization-scheduled",
+            "vendor-managed",
+            "aws-managed"
+          ],
+          "authenticationModel": [
+            "iam",
+            "api-key",
+            "oauth",
+            "saml",
+            "other",
+            "TBD"
+          ]
+        },
+        "enumListFields": {},
+        "collectionSchemas": {
+          "internalComponents": "internalComponent",
+          "deploymentConfigurations": "deploymentConfiguration",
+          "configurations": "configuration",
+          "decisionRecords": "decisionRecordRef",
+          "requirementImplementations": "requirementImplementation"
+        },
+        "schemaPath": "framework/schemas/runtime-service.schema.yaml"
+      },
+      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M7GWTG2T-3PQY\",\n  \"type\": \"runtime_service\",\n  \"name\": \"AWS Secrets Manager - Agent Factory\",\n  \"description\": \"AWS Secrets Manager in us-east-1 holding Agent Factory and Closing Climb secrets, injected into ECS tasks as container secrets.\",\n  \"catalogStatus\": \"incomplete\",\n  \"lifecycleStatus\": \"preferred\",\n  \"owner\": {\n    \"team\": \"platform-ai-team\",\n    \"contact\": \"platform-ai@example.com\"\n  },\n  \"tags\": [\n    \"aws\",\n    \"secrets-manager\",\n    \"agent-factory\",\n    \"closing-climb\"\n  ],\n  \"deliveryModel\": \"paas\",\n  \"vendor\": \"Amazon Web Services\",\n  \"productName\": \"AWS Secrets Manager\",\n  \"productVersion\": \"managed\",\n  \"patchingOwner\": \"aws-managed\",\n  \"authenticationModel\": \"iam\",\n  \"capabilities\": [\n    \"01KQQ4Q026-DTJJ\"\n  ],\n  \"provisioningModel\": \"reference-only\",\n  \"notes\": {\n    \"verification\": \"Verified read-only from AWS account ending 2296 (us-east-1) on 2026-11-15 (America/Phoenix). Secret names and counts only; no values were read.\",\n    \"inventory\": \"96 secrets: 5 under closing-climb/prod/, 91 under factory/prod/ (including factory/prod/connections/* and factory/prod/shared/*).\",\n    \"consumers\": \"ECS container secret references per task definition (not exhaustive), including: closing-climb-web 8, control-plane 6, gatekeeper-egress 2, gatekeeper-ingress 2, garrison 1, console 0, agent-higgins 2, closing-climb-prod-buffini-sync 2.\",\n    \"encryption\": \"Encrypted with the AWS-managed aws/secretsmanager key (no customer-managed KMS keys exist).\",\n    \"incomplete\": \"Rotation configuration and resource policies were not reviewed.\"\n  },\n  \"_source\": \"catalog/shared-services/runtime-services/runtime-service-aws-secrets-manager.yaml\"\n}",
+      "existsInCatalog": true,
+      "outboundRelationships": [],
+      "inboundRelationships": []
+    },
+    {
+      "id": "01M7GWTG2T-VA2G",
+      "uid": "01M7GWTG2T-VA2G",
+      "name": "Cloudflare Access - BeerCanLabs Front Door",
+      "aliases": [],
+      "type": "runtime_service",
+      "typeLabel": "RuntimeService / Saas",
+      "filterType": "runtime_service",
+      "category": "",
+      "deliveryModel": "saas",
+      "domain": "",
+      "description": "Cloudflare Zero Trust Access in front of Agent Factory and BeerCanLabs web hostnames.",
+      "version": "",
+      "catalogStatus": "incomplete",
+      "lifecycleStatus": "preferred",
+      "status": "",
+      "businessContext": {},
+      "product": "",
+      "runsOn": "",
+      "subtype": "",
+      "vendor": "Cloudflare",
+      "productName": "Cloudflare Zero Trust Access",
+      "productVersion": "managed",
+      "classification": "",
+      "platformDependency": "",
+      "capabilities": [
+        "01KQQ4Q026-MHJM",
+        "01KQQ4Q026-4JR6"
+      ],
+      "configurations": [],
+      "networkPlacement": "",
+      "patchingOwner": "vendor-managed",
+      "complianceCerts": [],
+      "requirementGroups": [],
+      "requirementImplementations": [],
+      "dataLeavesInfrastructure": null,
+      "dataResidencyCommitment": "",
+      "dpaNotes": "",
+      "vendorSLA": "",
+      "authenticationModel": "oauth",
+      "incidentNotificationProcess": "",
+      "owner": {
+        "team": "platform-ai-team",
+        "contact": "platform-ai@example.com"
+      },
+      "definitionOwner": {},
+      "provider": {},
+      "authority": {},
+      "shape": "diamond",
+      "color": "#1f8a5b",
+      "source": "catalog/shared-services/runtime-services/runtime-service-cloudflare-access.yaml",
+      "tags": [
+        "cloudflare",
+        "zero-trust",
+        "access",
+        "front-door",
+        "agent-factory"
+      ],
+      "ardCategory": "",
+      "internalComponents": [],
+      "notes": {
+        "verification": "HTTPS probes on 2026-11-15: agent-factory.beercanlabs.com, garrison.dalesackrider.com and knowledge.beercanlabs.ai return 302 to the beercanlabs Cloudflare Access team login; submind-aws.dalesackrider.com returns 401 from Cloudflare.",
+        "definition": "Access applications (factory front door, signature-verified webhooks bypass, API-key bypass) are defined in BeerCanLabs/agent-factory landing-zones/aws/cloudflare.tf. closing-climb-web validates Cloudflare Access OIDC tokens.",
+        "incomplete": "Access policies, identity providers and service tokens were not read (no Cloudflare API access used)."
+      },
+      "requirements": [],
+      "implementations": [],
+      "appliesTo": {},
+      "inherits": "",
+      "scalingUnits": [],
+      "networkZones": [],
+      "sdpConnections": [],
+      "serviceGroups": [],
+      "tierVariants": [],
+      "tierId": "",
+      "purpose": "",
+      "availabilityExpectation": "",
+      "costPosture": "",
+      "complianceScope": [],
+      "parameterSurface": [],
+      "followsReferenceArchitecture": "",
+      "decisionRecords": [],
+      "affectedComponent": "",
+      "impact": "",
+      "mitigationPath": "",
+      "decisionRationale": "",
+      "relatedDecisionRecords": [],
+      "linkedObject": "",
+      "primaryObjectType": "",
+      "primaryObjectUid": "",
+      "generatedObjects": [],
+      "unresolvedQuestions": [],
+      "assumptions": [],
+      "nextSteps": [],
+      "defaultSelection": false,
+      "requirementCount": 0,
+      "hasRiskRef": false,
+      "outboundRefs": [
+        {
+          "target": "01KQQ4Q026-MHJM",
+          "path": "capabilities[0]"
+        },
+        {
+          "target": "01KQQ4Q026-4JR6",
+          "path": "capabilities[1]"
+        }
+      ],
+      "referencedBy": [],
+      "editorSchema": {
+        "requiredFields": [
+          "schemaVersion",
+          "uid",
+          "type",
+          "name",
+          "deliveryModel",
+          "catalogStatus",
+          "lifecycleStatus"
+        ],
+        "optionalFields": [
+          "aliases",
+          "description",
+          "version",
+          "owner",
+          "tags",
+          "serviceRole",
+          "host",
+          "primaryTechnologyComponent",
+          "internalComponents",
+          "deploymentConfigurations",
+          "vendor",
+          "productName",
+          "productVersion",
+          "capabilities",
+          "configurations",
+          "networkPlacement",
+          "patchingOwner",
+          "authenticationModel",
+          "vendorGovernance",
+          "provisioningModel",
+          "deployablePackage",
+          "notes",
+          "decisionRecords",
+          "requirementImplementations"
+        ],
+        "fieldTypes": {
+          "aliases": "list",
+          "owner": "dict",
+          "tags": "list",
+          "internalComponents": "list",
+          "deploymentConfigurations": "list",
+          "capabilities": "list",
+          "configurations": "list",
+          "notes": "dict",
+          "vendorGovernance": "dict",
+          "requirementGroups": "list",
+          "decisionRecords": "list",
+          "requirementImplementations": "list"
+        },
+        "enumFields": {
+          "serviceRole": [
+            "definition",
+            "instance"
+          ],
+          "provisioningModel": [
+            "deployable",
+            "reference-only"
+          ],
+          "catalogStatus": [
+            "stub",
+            "incomplete",
+            "complete"
+          ],
+          "lifecycleStatus": [
+            "candidate",
+            "preferred",
+            "existing-only",
+            "deprecated",
+            "retired"
+          ],
+          "deliveryModel": [
+            "self-managed",
+            "paas",
+            "saas",
+            "appliance"
+          ],
+          "networkPlacement": [
+            "public-facing",
+            "internal",
+            "vpc-private"
+          ],
+          "patchingOwner": [
+            "provider-managed",
+            "organization-scheduled",
+            "vendor-managed",
+            "aws-managed"
+          ],
+          "authenticationModel": [
+            "iam",
+            "api-key",
+            "oauth",
+            "saml",
+            "other",
+            "TBD"
+          ]
+        },
+        "enumListFields": {},
+        "collectionSchemas": {
+          "internalComponents": "internalComponent",
+          "deploymentConfigurations": "deploymentConfiguration",
+          "configurations": "configuration",
+          "decisionRecords": "decisionRecordRef",
+          "requirementImplementations": "requirementImplementation"
+        },
+        "schemaPath": "framework/schemas/runtime-service.schema.yaml"
+      },
+      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M7GWTG2T-VA2G\",\n  \"type\": \"runtime_service\",\n  \"name\": \"Cloudflare Access - BeerCanLabs Front Door\",\n  \"description\": \"Cloudflare Zero Trust Access in front of Agent Factory and BeerCanLabs web hostnames.\",\n  \"catalogStatus\": \"incomplete\",\n  \"lifecycleStatus\": \"preferred\",\n  \"owner\": {\n    \"team\": \"platform-ai-team\",\n    \"contact\": \"platform-ai@example.com\"\n  },\n  \"tags\": [\n    \"cloudflare\",\n    \"zero-trust\",\n    \"access\",\n    \"front-door\",\n    \"agent-factory\"\n  ],\n  \"deliveryModel\": \"saas\",\n  \"vendor\": \"Cloudflare\",\n  \"productName\": \"Cloudflare Zero Trust Access\",\n  \"productVersion\": \"managed\",\n  \"patchingOwner\": \"vendor-managed\",\n  \"authenticationModel\": \"oauth\",\n  \"capabilities\": [\n    \"01KQQ4Q026-MHJM\",\n    \"01KQQ4Q026-4JR6\"\n  ],\n  \"provisioningModel\": \"reference-only\",\n  \"notes\": {\n    \"verification\": \"HTTPS probes on 2026-11-15: agent-factory.beercanlabs.com, garrison.dalesackrider.com and knowledge.beercanlabs.ai return 302 to the beercanlabs Cloudflare Access team login; submind-aws.dalesackrider.com returns 401 from Cloudflare.\",\n    \"definition\": \"Access applications (factory front door, signature-verified webhooks bypass, API-key bypass) are defined in BeerCanLabs/agent-factory landing-zones/aws/cloudflare.tf. closing-climb-web validates Cloudflare Access OIDC tokens.\",\n    \"incomplete\": \"Access policies, identity providers and service tokens were not read (no Cloudflare API access used).\"\n  },\n  \"_source\": \"catalog/shared-services/runtime-services/runtime-service-cloudflare-access.yaml\"\n}",
       "existsInCatalog": true,
       "outboundRelationships": [],
       "inboundRelationships": []
@@ -26016,6 +29801,347 @@ window.DRAFT_BROWSER_DATA = {
         "schemaPath": "framework/schemas/runtime-service.schema.yaml"
       },
       "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M7GTBMQS-N71S\",\n  \"type\": \"runtime_service\",\n  \"name\": \"GCP Secret Manager Vault Service\",\n  \"description\": \"Centralized secret management vault storing Cloudflare API Tokens, LLM credentials (Anthropic, OpenAI, xAI), Motion API keys, and Discord bot tokens with IAM service account accessor bindings.\",\n  \"deliveryModel\": \"paas\",\n  \"catalogStatus\": \"incomplete\",\n  \"lifecycleStatus\": \"preferred\",\n  \"vendor\": \"Google Cloud\",\n  \"productName\": \"Google Cloud Secret Manager\",\n  \"productVersion\": \"Secret Manager API v1\",\n  \"securityFunction\": \"Cryptographic secret storage, version control, and IAM role-based secret accessor policy enforcement.\",\n  \"provisioningModel\": \"reference-only\",\n  \"protocols\": [\n    \"HTTPS\",\n    \"gRPC\"\n  ],\n  \"owner\": {\n    \"team\": \"engineering-platform\",\n    \"contact\": \"dale.sackrider+switch@gmail.com\",\n    \"resourceOwner\": \"Switch\",\n    \"serviceProviderRole\": \"Security & Secrets Provider\"\n  },\n  \"vendorGovernance\": {\n    \"dataLeavesInfrastructure\": false,\n    \"dataResidencyCommitment\": \"Regional KMS envelope encryption with strict IAM access logging\",\n    \"vendorSLA\": \"99.95% uptime commitment\",\n    \"acceptableUsePolicy\": \"Mandatory secret vault for all API keys, OAuth tokens, and sensitive infrastructure credentials across subminds.\"\n  },\n  \"_source\": \"catalog/shared-services/security-services/secret-management-service-gcp-secret-manager.yaml\"\n}",
+      "existsInCatalog": true,
+      "outboundRelationships": [],
+      "inboundRelationships": []
+    },
+    {
+      "id": "01M7GWTG2S-ZT0V",
+      "uid": "01M7GWTG2S-ZT0V",
+      "name": "AWS Fargate (Amazon ECS)",
+      "aliases": [],
+      "type": "technology_component",
+      "typeLabel": "TechnologyComponent / Compute Platform",
+      "filterType": "technology_component",
+      "category": "",
+      "deliveryModel": "",
+      "domain": "",
+      "description": "Serverless container compute for Amazon ECS. Runs the Agent Factory and Closing Climb tasks in the factory-prod cluster.",
+      "version": "",
+      "catalogStatus": "incomplete",
+      "lifecycleStatus": "",
+      "status": "",
+      "businessContext": {},
+      "product": "",
+      "runsOn": "",
+      "subtype": "",
+      "vendor": "Amazon Web Services",
+      "productName": "AWS Fargate",
+      "productVersion": "managed",
+      "classification": "compute-platform",
+      "platformDependency": "",
+      "capabilities": [
+        "01KQQ4Q026-1HZP",
+        "01KQQ4Q026-GW5D"
+      ],
+      "configurations": [],
+      "networkPlacement": "",
+      "patchingOwner": "",
+      "complianceCerts": [],
+      "requirementGroups": [],
+      "requirementImplementations": [],
+      "dataLeavesInfrastructure": null,
+      "dataResidencyCommitment": "",
+      "dpaNotes": "",
+      "vendorSLA": "",
+      "authenticationModel": "",
+      "incidentNotificationProcess": "",
+      "owner": {
+        "team": "platform-ai-team",
+        "contact": "platform-ai@example.com"
+      },
+      "definitionOwner": {},
+      "provider": {},
+      "authority": {},
+      "shape": "ellipse",
+      "color": "#64748b",
+      "source": "catalog/shared-services/technology-components/tc-aws-fargate.yaml",
+      "tags": [
+        "aws",
+        "fargate",
+        "ecs",
+        "container",
+        "serverless"
+      ],
+      "ardCategory": "",
+      "internalComponents": [],
+      "notes": {
+        "verification": "Verified read-only from AWS account ending 2296 (us-east-1) on 2026-11-15 (America/Phoenix).",
+        "launchTypes": "Services use FARGATE or FARGATE_SPOT capacity (see the factory-prod runtime service).",
+        "incomplete": "Fargate platform version is not pinned in the catalog."
+      },
+      "requirements": [],
+      "implementations": [],
+      "appliesTo": {},
+      "inherits": "",
+      "scalingUnits": [],
+      "networkZones": [],
+      "sdpConnections": [],
+      "serviceGroups": [],
+      "tierVariants": [],
+      "tierId": "",
+      "purpose": "",
+      "availabilityExpectation": "",
+      "costPosture": "",
+      "complianceScope": [],
+      "parameterSurface": [],
+      "followsReferenceArchitecture": "",
+      "decisionRecords": [],
+      "affectedComponent": "",
+      "impact": "",
+      "mitigationPath": "",
+      "decisionRationale": "",
+      "relatedDecisionRecords": [],
+      "linkedObject": "",
+      "primaryObjectType": "",
+      "primaryObjectUid": "",
+      "generatedObjects": [],
+      "unresolvedQuestions": [],
+      "assumptions": [],
+      "nextSteps": [],
+      "defaultSelection": false,
+      "requirementCount": 0,
+      "hasRiskRef": false,
+      "outboundRefs": [
+        {
+          "target": "01KQQ4Q026-1HZP",
+          "path": "capabilities[0]"
+        },
+        {
+          "target": "01KQQ4Q026-GW5D",
+          "path": "capabilities[1]"
+        }
+      ],
+      "referencedBy": [
+        {
+          "source": "01M7GWTG2S-X9V8",
+          "path": "computePlatformComponent"
+        }
+      ],
+      "editorSchema": {
+        "requiredFields": [
+          "schemaVersion",
+          "uid",
+          "type",
+          "name",
+          "vendor",
+          "productName",
+          "productVersion",
+          "classification",
+          "catalogStatus"
+        ],
+        "optionalFields": [
+          "aliases",
+          "description",
+          "version",
+          "owner",
+          "tags",
+          "subtype",
+          "vendorLifecycle",
+          "platformDependency",
+          "capabilities",
+          "configurations",
+          "networkPlacement",
+          "patchingOwner",
+          "complianceCerts",
+          "controlReferences",
+          "notes"
+        ],
+        "fieldTypes": {
+          "aliases": "list",
+          "owner": "dict",
+          "tags": "list",
+          "vendorLifecycle": "dict",
+          "capabilities": "list",
+          "configurations": "list",
+          "complianceCerts": "list",
+          "controlReferences": "list"
+        },
+        "enumFields": {
+          "catalogStatus": [
+            "stub",
+            "incomplete",
+            "complete"
+          ],
+          "classification": [
+            "operating-system",
+            "compute-platform",
+            "software",
+            "agent"
+          ]
+        },
+        "enumListFields": {},
+        "collectionSchemas": {
+          "configurations": "configuration"
+        },
+        "schemaPath": "framework/schemas/technology-component.schema.yaml"
+      },
+      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M7GWTG2S-ZT0V\",\n  \"type\": \"technology_component\",\n  \"name\": \"AWS Fargate (Amazon ECS)\",\n  \"description\": \"Serverless container compute for Amazon ECS. Runs the Agent Factory and Closing Climb tasks in the factory-prod cluster.\",\n  \"catalogStatus\": \"incomplete\",\n  \"owner\": {\n    \"team\": \"platform-ai-team\",\n    \"contact\": \"platform-ai@example.com\"\n  },\n  \"tags\": [\n    \"aws\",\n    \"fargate\",\n    \"ecs\",\n    \"container\",\n    \"serverless\"\n  ],\n  \"vendor\": \"Amazon Web Services\",\n  \"productName\": \"AWS Fargate\",\n  \"productVersion\": \"managed\",\n  \"classification\": \"compute-platform\",\n  \"capabilities\": [\n    \"01KQQ4Q026-1HZP\",\n    \"01KQQ4Q026-GW5D\"\n  ],\n  \"notes\": {\n    \"verification\": \"Verified read-only from AWS account ending 2296 (us-east-1) on 2026-11-15 (America/Phoenix).\",\n    \"launchTypes\": \"Services use FARGATE or FARGATE_SPOT capacity (see the factory-prod runtime service).\",\n    \"incomplete\": \"Fargate platform version is not pinned in the catalog.\"\n  },\n  \"_source\": \"catalog/shared-services/technology-components/tc-aws-fargate.yaml\"\n}",
+      "existsInCatalog": true,
+      "outboundRelationships": [],
+      "inboundRelationships": []
+    },
+    {
+      "id": "01M7GWTG2S-W2BR",
+      "uid": "01M7GWTG2S-W2BR",
+      "name": "AWS Distro for OpenTelemetry Collector",
+      "aliases": [],
+      "type": "technology_component",
+      "typeLabel": "TechnologyComponent / Agent",
+      "filterType": "technology_component",
+      "category": "",
+      "deliveryModel": "",
+      "domain": "",
+      "description": "OpenTelemetry collector sidecar shipped with the Agent Factory control-plane and gatekeeper-egress tasks.",
+      "version": "",
+      "catalogStatus": "incomplete",
+      "lifecycleStatus": "",
+      "status": "",
+      "businessContext": {},
+      "product": "",
+      "runsOn": "",
+      "subtype": "",
+      "vendor": "Amazon Web Services",
+      "productName": "AWS Distro for OpenTelemetry Collector",
+      "productVersion": "v0.43.3",
+      "classification": "agent",
+      "platformDependency": "",
+      "capabilities": [
+        "01KQQ4Q026-NB1W"
+      ],
+      "configurations": [],
+      "networkPlacement": "",
+      "patchingOwner": "",
+      "complianceCerts": [],
+      "requirementGroups": [],
+      "requirementImplementations": [],
+      "dataLeavesInfrastructure": null,
+      "dataResidencyCommitment": "",
+      "dpaNotes": "",
+      "vendorSLA": "",
+      "authenticationModel": "",
+      "incidentNotificationProcess": "",
+      "owner": {
+        "team": "platform-ai-team",
+        "contact": "platform-ai@example.com"
+      },
+      "definitionOwner": {},
+      "provider": {},
+      "authority": {},
+      "shape": "ellipse",
+      "color": "#64748b",
+      "source": "catalog/shared-services/technology-components/tc-aws-otel-collector.yaml",
+      "tags": [
+        "aws",
+        "opentelemetry",
+        "observability",
+        "sidecar"
+      ],
+      "ardCategory": "",
+      "internalComponents": [],
+      "notes": {
+        "verification": "Verified read-only from AWS account ending 2296 (us-east-1) on 2026-11-15 (America/Phoenix).",
+        "image": "public.ecr.aws/aws-observability/aws-otel-collector:v0.43.3 (container name otel) in task definitions factory-prod-control-plane and factory-prod-gatekeeper-egress.",
+        "incomplete": "Collector pipeline configuration and export destinations were not reviewed."
+      },
+      "requirements": [],
+      "implementations": [],
+      "appliesTo": {},
+      "inherits": "",
+      "scalingUnits": [],
+      "networkZones": [],
+      "sdpConnections": [],
+      "serviceGroups": [],
+      "tierVariants": [],
+      "tierId": "",
+      "purpose": "",
+      "availabilityExpectation": "",
+      "costPosture": "",
+      "complianceScope": [],
+      "parameterSurface": [],
+      "followsReferenceArchitecture": "",
+      "decisionRecords": [],
+      "affectedComponent": "",
+      "impact": "",
+      "mitigationPath": "",
+      "decisionRationale": "",
+      "relatedDecisionRecords": [],
+      "linkedObject": "",
+      "primaryObjectType": "",
+      "primaryObjectUid": "",
+      "generatedObjects": [],
+      "unresolvedQuestions": [],
+      "assumptions": [],
+      "nextSteps": [],
+      "defaultSelection": false,
+      "requirementCount": 0,
+      "hasRiskRef": false,
+      "outboundRefs": [
+        {
+          "target": "01KQQ4Q026-NB1W",
+          "path": "capabilities[0]"
+        }
+      ],
+      "referencedBy": [],
+      "editorSchema": {
+        "requiredFields": [
+          "schemaVersion",
+          "uid",
+          "type",
+          "name",
+          "vendor",
+          "productName",
+          "productVersion",
+          "classification",
+          "catalogStatus"
+        ],
+        "optionalFields": [
+          "aliases",
+          "description",
+          "version",
+          "owner",
+          "tags",
+          "subtype",
+          "vendorLifecycle",
+          "platformDependency",
+          "capabilities",
+          "configurations",
+          "networkPlacement",
+          "patchingOwner",
+          "complianceCerts",
+          "controlReferences",
+          "notes"
+        ],
+        "fieldTypes": {
+          "aliases": "list",
+          "owner": "dict",
+          "tags": "list",
+          "vendorLifecycle": "dict",
+          "capabilities": "list",
+          "configurations": "list",
+          "complianceCerts": "list",
+          "controlReferences": "list"
+        },
+        "enumFields": {
+          "catalogStatus": [
+            "stub",
+            "incomplete",
+            "complete"
+          ],
+          "classification": [
+            "operating-system",
+            "compute-platform",
+            "software",
+            "agent"
+          ]
+        },
+        "enumListFields": {},
+        "collectionSchemas": {
+          "configurations": "configuration"
+        },
+        "schemaPath": "framework/schemas/technology-component.schema.yaml"
+      },
+      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M7GWTG2S-W2BR\",\n  \"type\": \"technology_component\",\n  \"name\": \"AWS Distro for OpenTelemetry Collector\",\n  \"description\": \"OpenTelemetry collector sidecar shipped with the Agent Factory control-plane and gatekeeper-egress tasks.\",\n  \"catalogStatus\": \"incomplete\",\n  \"owner\": {\n    \"team\": \"platform-ai-team\",\n    \"contact\": \"platform-ai@example.com\"\n  },\n  \"tags\": [\n    \"aws\",\n    \"opentelemetry\",\n    \"observability\",\n    \"sidecar\"\n  ],\n  \"vendor\": \"Amazon Web Services\",\n  \"productName\": \"AWS Distro for OpenTelemetry Collector\",\n  \"productVersion\": \"v0.43.3\",\n  \"classification\": \"agent\",\n  \"capabilities\": [\n    \"01KQQ4Q026-NB1W\"\n  ],\n  \"notes\": {\n    \"verification\": \"Verified read-only from AWS account ending 2296 (us-east-1) on 2026-11-15 (America/Phoenix).\",\n    \"image\": \"public.ecr.aws/aws-observability/aws-otel-collector:v0.43.3 (container name otel) in task definitions factory-prod-control-plane and factory-prod-gatekeeper-egress.\",\n    \"incomplete\": \"Collector pipeline configuration and export destinations were not reviewed.\"\n  },\n  \"_source\": \"catalog/shared-services/technology-components/tc-aws-otel-collector.yaml\"\n}",
       "existsInCatalog": true,
       "outboundRelationships": [],
       "inboundRelationships": []
@@ -27423,6 +31549,149 @@ window.DRAFT_BROWSER_DATA = {
       "existsInCatalog": true,
       "outboundRelationships": [],
       "inboundRelationships": []
+    },
+    {
+      "id": "VP8VB5X0E7-7FJC",
+      "uid": "VP8VB5X0E7-7FJC",
+      "name": "AWS ECS Fargate Runtime - factory-prod \u2192 AWS Fargate factory-prod ECS Cluster Host (us-east-1)",
+      "aliases": [],
+      "type": "relationship",
+      "typeLabel": "Relationship",
+      "filterType": "relationship",
+      "category": "",
+      "deliveryModel": "",
+      "domain": "",
+      "description": "",
+      "version": "",
+      "catalogStatus": "complete",
+      "lifecycleStatus": "unknown",
+      "status": "",
+      "businessContext": {},
+      "product": "",
+      "runsOn": "",
+      "subtype": "",
+      "vendor": "",
+      "productName": "",
+      "productVersion": "",
+      "classification": "",
+      "platformDependency": "",
+      "capabilities": [],
+      "configurations": [],
+      "networkPlacement": "",
+      "patchingOwner": "",
+      "complianceCerts": [],
+      "requirementGroups": [],
+      "requirementImplementations": [],
+      "dataLeavesInfrastructure": null,
+      "dataResidencyCommitment": "",
+      "dpaNotes": "",
+      "vendorSLA": "",
+      "authenticationModel": "",
+      "incidentNotificationProcess": "",
+      "owner": {},
+      "definitionOwner": {},
+      "provider": {},
+      "authority": {},
+      "shape": "round-rectangle",
+      "color": "#7a6e60",
+      "source": "derived from catalog/shared-services/runtime-services/runtime-service-aws-ecs-fargate-factory-prod.yaml [host]",
+      "tags": [],
+      "ardCategory": "",
+      "internalComponents": [],
+      "notes": "Derived from host field",
+      "requirements": [],
+      "implementations": [],
+      "appliesTo": {},
+      "inherits": "",
+      "scalingUnits": [],
+      "networkZones": [],
+      "sdpConnections": [],
+      "serviceGroups": [],
+      "tierVariants": [],
+      "tierId": "",
+      "purpose": "",
+      "availabilityExpectation": "",
+      "costPosture": "",
+      "complianceScope": [],
+      "parameterSurface": [],
+      "followsReferenceArchitecture": "",
+      "decisionRecords": [],
+      "affectedComponent": "",
+      "impact": "",
+      "mitigationPath": "",
+      "decisionRationale": "",
+      "relatedDecisionRecords": [],
+      "linkedObject": "",
+      "primaryObjectType": "",
+      "primaryObjectUid": "",
+      "generatedObjects": [],
+      "unresolvedQuestions": [],
+      "assumptions": [],
+      "nextSteps": [],
+      "defaultSelection": false,
+      "requirementCount": 0,
+      "hasRiskRef": false,
+      "outboundRefs": [
+        {
+          "target": "01M7GWTG2S-AC3R",
+          "path": "source"
+        },
+        {
+          "target": "01M7GWTG2S-X9V8",
+          "path": "target"
+        }
+      ],
+      "referencedBy": [],
+      "editorSchema": {
+        "requiredFields": [
+          "schemaVersion",
+          "uid",
+          "type",
+          "name",
+          "source",
+          "label",
+          "catalogStatus"
+        ],
+        "optionalFields": [
+          "description",
+          "target",
+          "externalTarget",
+          "technology",
+          "direction",
+          "flow",
+          "capabilities",
+          "notes",
+          "tags"
+        ],
+        "fieldTypes": {
+          "tags": "list",
+          "capabilities": "list"
+        },
+        "enumFields": {
+          "catalogStatus": [
+            "stub",
+            "incomplete",
+            "complete"
+          ],
+          "direction": [
+            "synchronous",
+            "asynchronous",
+            "event"
+          ],
+          "flow": [
+            "outbound",
+            "inbound",
+            "bidirectional"
+          ]
+        },
+        "enumListFields": {},
+        "collectionSchemas": {},
+        "schemaPath": "framework/schemas/relationship.schema.yaml"
+      },
+      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"VP8VB5X0E7-7FJC\",\n  \"type\": \"relationship\",\n  \"name\": \"AWS ECS Fargate Runtime - factory-prod \\u2192 AWS Fargate factory-prod ECS Cluster Host (us-east-1)\",\n  \"source\": \"01M7GWTG2S-AC3R\",\n  \"target\": \"01M7GWTG2S-X9V8\",\n  \"label\": \"runs on\",\n  \"notes\": \"Derived from host field\",\n  \"catalogStatus\": \"complete\",\n  \"_source\": \"derived from catalog/shared-services/runtime-services/runtime-service-aws-ecs-fargate-factory-prod.yaml [host]\",\n  \"_derived\": true\n}",
+      "existsInCatalog": true,
+      "outboundRelationships": [],
+      "inboundRelationships": []
     }
   ],
   "lookup": {
@@ -27545,6 +31814,10 @@ window.DRAFT_BROWSER_DATA = {
         {
           "source": "01KQQ4Q027-1GHC",
           "path": "requirements[5].relatedCapability"
+        },
+        {
+          "source": "01M7GWTG2T-VA2G",
+          "path": "capabilities[1]"
         }
       ],
       "editorSchema": {
@@ -28100,6 +32373,10 @@ window.DRAFT_BROWSER_DATA = {
         {
           "source": "01KSF29JTP-SRVE",
           "path": "requirements[0].relatedCapability"
+        },
+        {
+          "source": "01M7GWTG2S-W2BR",
+          "path": "capabilities[0]"
         }
       ],
       "editorSchema": {
@@ -28240,6 +32517,10 @@ window.DRAFT_BROWSER_DATA = {
         {
           "source": "01KT0VM061-CRN7",
           "path": "requirements[4].relatedCapability"
+        },
+        {
+          "source": "01M7GWTG2S-AC3R",
+          "path": "capabilities[2]"
         }
       ],
       "editorSchema": {
@@ -28380,6 +32661,10 @@ window.DRAFT_BROWSER_DATA = {
         {
           "source": "01KT0VM061-CRN7",
           "path": "requirements[12].relatedCapability"
+        },
+        {
+          "source": "01M7GWTG2T-0NKZ",
+          "path": "capabilities[0]"
         }
       ],
       "editorSchema": {
@@ -28540,6 +32825,10 @@ window.DRAFT_BROWSER_DATA = {
         {
           "source": "01KQQ4Q027-THYN",
           "path": "requirements[2].relatedCapability"
+        },
+        {
+          "source": "01M7GWTG2T-VA2G",
+          "path": "capabilities[0]"
         }
       ],
       "editorSchema": {
@@ -28960,6 +33249,10 @@ window.DRAFT_BROWSER_DATA = {
         {
           "source": "01KT0VM061-CRN7",
           "path": "requirements[19].relatedCapability"
+        },
+        {
+          "source": "01M7GWTG2T-M2Q0",
+          "path": "capabilities[1]"
         }
       ],
       "editorSchema": {
@@ -29246,6 +33539,14 @@ window.DRAFT_BROWSER_DATA = {
           "path": "requirements[1].relatedCapability"
         },
         {
+          "source": "01M7GWTG2S-AC3R",
+          "path": "capabilities[0]"
+        },
+        {
+          "source": "01M7GWTG2S-ZT0V",
+          "path": "capabilities[0]"
+        },
+        {
           "source": "01M7GTBMQT-6QYP",
           "path": "capabilities[0]"
         }
@@ -29528,6 +33829,14 @@ window.DRAFT_BROWSER_DATA = {
         {
           "source": "01KSF29JTP-SRVE",
           "path": "requirements[1].relatedCapability"
+        },
+        {
+          "source": "01M7GWTG2S-AC3R",
+          "path": "capabilities[1]"
+        },
+        {
+          "source": "01M7GWTG2S-ZT0V",
+          "path": "capabilities[1]"
         }
       ],
       "editorSchema": {
@@ -29810,6 +34119,22 @@ window.DRAFT_BROWSER_DATA = {
           "path": "requirements[8].relatedCapability"
         },
         {
+          "source": "01M7GWTG2T-7D9P",
+          "path": "capabilities[0]"
+        },
+        {
+          "source": "01M7GWTG2T-KR1Y",
+          "path": "capabilities[1]"
+        },
+        {
+          "source": "01M7GWTG2T-GYW1",
+          "path": "capabilities[1]"
+        },
+        {
+          "source": "01M7GWTG2T-F1WG",
+          "path": "capabilities[1]"
+        },
+        {
           "source": "01M7GTBMQT-3P47",
           "path": "capabilities[0]"
         }
@@ -29972,6 +34297,14 @@ window.DRAFT_BROWSER_DATA = {
         {
           "source": "01KQQ4Q027-1GHC",
           "path": "requirements[6].relatedCapability"
+        },
+        {
+          "source": "01M7GWTG2T-7D9P",
+          "path": "capabilities[1]"
+        },
+        {
+          "source": "01M7GWTG2T-F1WG",
+          "path": "capabilities[2]"
         }
       ],
       "editorSchema": {
@@ -30112,6 +34445,10 @@ window.DRAFT_BROWSER_DATA = {
         {
           "source": "01KT0VM061-CRN7",
           "path": "requirements[1].relatedCapability"
+        },
+        {
+          "source": "01M7GWTG2T-8A54",
+          "path": "capabilities[0]"
         }
       ],
       "editorSchema": {
@@ -30404,6 +34741,14 @@ window.DRAFT_BROWSER_DATA = {
         {
           "source": "01KQQ4Q027-1GHC",
           "path": "requirements[4].relatedCapability"
+        },
+        {
+          "source": "01M7GWTG2T-KR1Y",
+          "path": "capabilities[2]"
+        },
+        {
+          "source": "01M7GWTG2T-JHTR",
+          "path": "capabilities[0]"
         }
       ],
       "editorSchema": {
@@ -30544,6 +34889,10 @@ window.DRAFT_BROWSER_DATA = {
         {
           "source": "01KT0VM061-CRN7",
           "path": "requirements[10].relatedCapability"
+        },
+        {
+          "source": "01M7GWTG2T-KR1Y",
+          "path": "capabilities[0]"
         }
       ],
       "editorSchema": {
@@ -30840,6 +35189,10 @@ window.DRAFT_BROWSER_DATA = {
         {
           "source": "01KQQ4Q027-K5DR",
           "path": "requirements[5].relatedCapability"
+        },
+        {
+          "source": "01M7GWTG2T-TQEB",
+          "path": "capabilities[1]"
         }
       ],
       "editorSchema": {
@@ -30996,6 +35349,10 @@ window.DRAFT_BROWSER_DATA = {
         {
           "source": "01KQQ4Q027-THYN",
           "path": "requirements[3].relatedCapability"
+        },
+        {
+          "source": "01M7GWTG2T-TQEB",
+          "path": "capabilities[0]"
         }
       ],
       "editorSchema": {
@@ -31136,6 +35493,14 @@ window.DRAFT_BROWSER_DATA = {
         {
           "source": "01KT0VM061-CRN7",
           "path": "requirements[7].relatedCapability"
+        },
+        {
+          "source": "01M7GWTG2T-M5GD",
+          "path": "capabilities[0]"
+        },
+        {
+          "source": "01M7GWTG2T-M07S",
+          "path": "capabilities[0]"
         },
         {
           "source": "01M7GTBMQT-TFSM",
@@ -31690,6 +36055,14 @@ window.DRAFT_BROWSER_DATA = {
         {
           "source": "01KT0VM061-CRN7",
           "path": "requirements[9].relatedCapability"
+        },
+        {
+          "source": "01M7GWTG2T-GYW1",
+          "path": "capabilities[0]"
+        },
+        {
+          "source": "01M7GWTG2T-F1WG",
+          "path": "capabilities[0]"
         }
       ],
       "editorSchema": {
@@ -32568,6 +36941,10 @@ window.DRAFT_BROWSER_DATA = {
           "path": "requirements[3].relatedCapability"
         },
         {
+          "source": "01M7GWTG2T-3PQY",
+          "path": "capabilities[0]"
+        },
+        {
           "source": "01M7GTBMQT-F262",
           "path": "capabilities[0]"
         }
@@ -33422,7 +37799,12 @@ window.DRAFT_BROWSER_DATA = {
           "path": "domain"
         }
       ],
-      "referencedBy": [],
+      "referencedBy": [
+        {
+          "source": "01M7GWTG2T-M2Q0",
+          "path": "capabilities[0]"
+        }
+      ],
       "editorSchema": {
         "requiredFields": [
           "schemaVersion",
@@ -51079,6 +55461,898 @@ window.DRAFT_BROWSER_DATA = {
       ],
       "inboundRelationships": []
     },
+    "01M7GWTG2T-7D9P": {
+      "id": "01M7GWTG2T-7D9P",
+      "uid": "01M7GWTG2T-7D9P",
+      "name": "Amazon DynamoDB - closing-climb-prod",
+      "aliases": [],
+      "type": "data_store_service",
+      "typeLabel": "DataStoreService / Paas",
+      "filterType": "data_store_service",
+      "category": "",
+      "deliveryModel": "paas",
+      "domain": "",
+      "description": "DynamoDB table that holds Closing Climb application data (migrated from Firestore).",
+      "version": "",
+      "catalogStatus": "incomplete",
+      "lifecycleStatus": "preferred",
+      "status": "",
+      "businessContext": {},
+      "product": "",
+      "runsOn": "",
+      "subtype": "",
+      "vendor": "Amazon Web Services",
+      "productName": "Amazon DynamoDB",
+      "productVersion": "managed",
+      "classification": "",
+      "platformDependency": "",
+      "capabilities": [
+        "01KT0V5MCV-VD0Y",
+        "01KQQ4Q026-7T2H"
+      ],
+      "configurations": [],
+      "networkPlacement": "",
+      "patchingOwner": "aws-managed",
+      "complianceCerts": [],
+      "requirementGroups": [],
+      "requirementImplementations": [],
+      "dataLeavesInfrastructure": null,
+      "dataResidencyCommitment": "",
+      "dpaNotes": "",
+      "vendorSLA": "",
+      "authenticationModel": "iam",
+      "incidentNotificationProcess": "",
+      "owner": {
+        "team": "platform-ai-team",
+        "contact": "platform-ai@example.com"
+      },
+      "definitionOwner": {},
+      "provider": {},
+      "authority": {},
+      "shape": "diamond",
+      "color": "#1f8a5b",
+      "source": "catalog/shared-services/data-store-services/data-store-service-aws-dynamodb-closing-climb.yaml",
+      "tags": [
+        "aws",
+        "dynamodb",
+        "closing-climb"
+      ],
+      "ardCategory": "",
+      "internalComponents": [],
+      "notes": {
+        "verification": "Verified read-only from AWS account ending 2296 (us-east-1) on 2026-11-15 (America/Phoenix).",
+        "table": "closing-climb-prod: ACTIVE, on-demand (PAY_PER_REQUEST), key schema pk (hash) / sk (range), no GSIs, SSE type KMS, point-in-time recovery ENABLED.",
+        "migration": "BeerCanLabs/closing-climb-web contains scripts/migrate_firestore_to_dynamodb.py and app/store.py uses DynamoDB.",
+        "provisioning": "Provisioned by Terraform in BeerCanLabs/closing-climb-web infra/aws/main.tf; not yet packaged as a DRAFT deployablePackage.",
+        "incomplete": "Not cross-checked against the GCP Firestore entry, which is left in place pending Dale's decision."
+      },
+      "requirements": [],
+      "implementations": [],
+      "appliesTo": {},
+      "inherits": "",
+      "scalingUnits": [],
+      "networkZones": [],
+      "sdpConnections": [],
+      "serviceGroups": [],
+      "tierVariants": [],
+      "tierId": "",
+      "purpose": "",
+      "availabilityExpectation": "",
+      "costPosture": "",
+      "complianceScope": [],
+      "parameterSurface": [],
+      "followsReferenceArchitecture": "",
+      "decisionRecords": [],
+      "affectedComponent": "",
+      "impact": "",
+      "mitigationPath": "",
+      "decisionRationale": "",
+      "relatedDecisionRecords": [],
+      "linkedObject": "",
+      "primaryObjectType": "",
+      "primaryObjectUid": "",
+      "generatedObjects": [],
+      "unresolvedQuestions": [],
+      "assumptions": [],
+      "nextSteps": [],
+      "defaultSelection": false,
+      "requirementCount": 0,
+      "hasRiskRef": false,
+      "outboundRefs": [
+        {
+          "target": "01KT0V5MCV-VD0Y",
+          "path": "capabilities[0]"
+        },
+        {
+          "target": "01KQQ4Q026-7T2H",
+          "path": "capabilities[1]"
+        }
+      ],
+      "referencedBy": [],
+      "editorSchema": {
+        "requiredFields": [
+          "schemaVersion",
+          "uid",
+          "type",
+          "name",
+          "deliveryModel",
+          "catalogStatus",
+          "lifecycleStatus"
+        ],
+        "optionalFields": [
+          "aliases",
+          "description",
+          "version",
+          "owner",
+          "tags",
+          "serviceRole",
+          "host",
+          "primaryTechnologyComponent",
+          "internalComponents",
+          "deploymentConfigurations",
+          "vendor",
+          "productName",
+          "productVersion",
+          "capabilities",
+          "configurations",
+          "networkPlacement",
+          "patchingOwner",
+          "authenticationModel",
+          "vendorGovernance",
+          "provisioningModel",
+          "deployablePackage",
+          "notes",
+          "decisionRecords",
+          "requirementImplementations"
+        ],
+        "fieldTypes": {
+          "aliases": "list",
+          "owner": "dict",
+          "tags": "list",
+          "internalComponents": "list",
+          "deploymentConfigurations": "list",
+          "capabilities": "list",
+          "configurations": "list",
+          "notes": "dict",
+          "vendorGovernance": "dict",
+          "requirementGroups": "list",
+          "decisionRecords": "list",
+          "requirementImplementations": "list"
+        },
+        "enumFields": {
+          "serviceRole": [
+            "definition",
+            "instance"
+          ],
+          "provisioningModel": [
+            "deployable",
+            "reference-only"
+          ],
+          "catalogStatus": [
+            "stub",
+            "incomplete",
+            "complete"
+          ],
+          "lifecycleStatus": [
+            "candidate",
+            "preferred",
+            "existing-only",
+            "deprecated",
+            "retired"
+          ],
+          "deliveryModel": [
+            "self-managed",
+            "paas",
+            "saas",
+            "appliance"
+          ],
+          "networkPlacement": [
+            "public-facing",
+            "internal",
+            "vpc-private"
+          ],
+          "patchingOwner": [
+            "provider-managed",
+            "organization-scheduled",
+            "vendor-managed",
+            "aws-managed"
+          ],
+          "authenticationModel": [
+            "iam",
+            "api-key",
+            "oauth",
+            "saml",
+            "other",
+            "TBD"
+          ]
+        },
+        "enumListFields": {},
+        "collectionSchemas": {
+          "internalComponents": "internalComponent",
+          "deploymentConfigurations": "deploymentConfiguration",
+          "configurations": "configuration",
+          "decisionRecords": "decisionRecordRef",
+          "requirementImplementations": "requirementImplementation"
+        },
+        "schemaPath": "framework/schemas/data-store-service.schema.yaml"
+      },
+      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M7GWTG2T-7D9P\",\n  \"type\": \"data_store_service\",\n  \"name\": \"Amazon DynamoDB - closing-climb-prod\",\n  \"description\": \"DynamoDB table that holds Closing Climb application data (migrated from Firestore).\",\n  \"catalogStatus\": \"incomplete\",\n  \"lifecycleStatus\": \"preferred\",\n  \"owner\": {\n    \"team\": \"platform-ai-team\",\n    \"contact\": \"platform-ai@example.com\"\n  },\n  \"tags\": [\n    \"aws\",\n    \"dynamodb\",\n    \"closing-climb\"\n  ],\n  \"deliveryModel\": \"paas\",\n  \"vendor\": \"Amazon Web Services\",\n  \"productName\": \"Amazon DynamoDB\",\n  \"productVersion\": \"managed\",\n  \"patchingOwner\": \"aws-managed\",\n  \"authenticationModel\": \"iam\",\n  \"capabilities\": [\n    \"01KT0V5MCV-VD0Y\",\n    \"01KQQ4Q026-7T2H\"\n  ],\n  \"provisioningModel\": \"reference-only\",\n  \"notes\": {\n    \"verification\": \"Verified read-only from AWS account ending 2296 (us-east-1) on 2026-11-15 (America/Phoenix).\",\n    \"table\": \"closing-climb-prod: ACTIVE, on-demand (PAY_PER_REQUEST), key schema pk (hash) / sk (range), no GSIs, SSE type KMS, point-in-time recovery ENABLED.\",\n    \"migration\": \"BeerCanLabs/closing-climb-web contains scripts/migrate_firestore_to_dynamodb.py and app/store.py uses DynamoDB.\",\n    \"provisioning\": \"Provisioned by Terraform in BeerCanLabs/closing-climb-web infra/aws/main.tf; not yet packaged as a DRAFT deployablePackage.\",\n    \"incomplete\": \"Not cross-checked against the GCP Firestore entry, which is left in place pending Dale's decision.\"\n  },\n  \"_source\": \"catalog/shared-services/data-store-services/data-store-service-aws-dynamodb-closing-climb.yaml\"\n}",
+      "existsInCatalog": true,
+      "outboundRelationships": [],
+      "inboundRelationships": []
+    },
+    "01M7GWTG2T-KR1Y": {
+      "id": "01M7GWTG2T-KR1Y",
+      "uid": "01M7GWTG2T-KR1Y",
+      "name": "Amazon EFS - factory-prod-ledger",
+      "aliases": [],
+      "type": "data_store_service",
+      "typeLabel": "DataStoreService / Paas",
+      "filterType": "data_store_service",
+      "category": "",
+      "deliveryModel": "paas",
+      "domain": "",
+      "description": "Encrypted EFS file system mounted by the Agent Factory control plane for the live execution ledger.",
+      "version": "",
+      "catalogStatus": "incomplete",
+      "lifecycleStatus": "preferred",
+      "status": "",
+      "businessContext": {},
+      "product": "",
+      "runsOn": "",
+      "subtype": "",
+      "vendor": "Amazon Web Services",
+      "productName": "Amazon Elastic File System",
+      "productVersion": "managed",
+      "classification": "",
+      "platformDependency": "",
+      "capabilities": [
+        "01KT0V5MCV-924J",
+        "01KT0V5MCV-VD0Y",
+        "01KQQ4Q026-H3B5"
+      ],
+      "configurations": [],
+      "networkPlacement": "",
+      "patchingOwner": "aws-managed",
+      "complianceCerts": [],
+      "requirementGroups": [],
+      "requirementImplementations": [],
+      "dataLeavesInfrastructure": null,
+      "dataResidencyCommitment": "",
+      "dpaNotes": "",
+      "vendorSLA": "",
+      "authenticationModel": "iam",
+      "incidentNotificationProcess": "",
+      "owner": {
+        "team": "platform-ai-team",
+        "contact": "platform-ai@example.com"
+      },
+      "definitionOwner": {},
+      "provider": {},
+      "authority": {},
+      "shape": "diamond",
+      "color": "#1f8a5b",
+      "source": "catalog/shared-services/data-store-services/data-store-service-aws-efs-factory-ledger.yaml",
+      "tags": [
+        "aws",
+        "efs",
+        "ledger",
+        "agent-factory"
+      ],
+      "ardCategory": "",
+      "internalComponents": [],
+      "notes": {
+        "verification": "Verified read-only from AWS account ending 2296 (us-east-1) on 2026-11-15 (America/Phoenix).",
+        "fileSystem": "factory-prod-ledger: encrypted at rest; the control-plane task mounts it as volume data with transit encryption, IAM authorization and an access point.",
+        "provisioning": "Provisioned by Terraform in BeerCanLabs/agent-factory landing-zones/aws (S3 backend); module not yet packaged as a DRAFT deployablePackage.",
+        "incomplete": "Backup policy and throughput mode were not reviewed."
+      },
+      "requirements": [],
+      "implementations": [],
+      "appliesTo": {},
+      "inherits": "",
+      "scalingUnits": [],
+      "networkZones": [],
+      "sdpConnections": [],
+      "serviceGroups": [],
+      "tierVariants": [],
+      "tierId": "",
+      "purpose": "",
+      "availabilityExpectation": "",
+      "costPosture": "",
+      "complianceScope": [],
+      "parameterSurface": [],
+      "followsReferenceArchitecture": "",
+      "decisionRecords": [],
+      "affectedComponent": "",
+      "impact": "",
+      "mitigationPath": "",
+      "decisionRationale": "",
+      "relatedDecisionRecords": [],
+      "linkedObject": "",
+      "primaryObjectType": "",
+      "primaryObjectUid": "",
+      "generatedObjects": [],
+      "unresolvedQuestions": [],
+      "assumptions": [],
+      "nextSteps": [],
+      "defaultSelection": false,
+      "requirementCount": 0,
+      "hasRiskRef": false,
+      "outboundRefs": [
+        {
+          "target": "01KT0V5MCV-924J",
+          "path": "capabilities[0]"
+        },
+        {
+          "target": "01KT0V5MCV-VD0Y",
+          "path": "capabilities[1]"
+        },
+        {
+          "target": "01KQQ4Q026-H3B5",
+          "path": "capabilities[2]"
+        }
+      ],
+      "referencedBy": [],
+      "editorSchema": {
+        "requiredFields": [
+          "schemaVersion",
+          "uid",
+          "type",
+          "name",
+          "deliveryModel",
+          "catalogStatus",
+          "lifecycleStatus"
+        ],
+        "optionalFields": [
+          "aliases",
+          "description",
+          "version",
+          "owner",
+          "tags",
+          "serviceRole",
+          "host",
+          "primaryTechnologyComponent",
+          "internalComponents",
+          "deploymentConfigurations",
+          "vendor",
+          "productName",
+          "productVersion",
+          "capabilities",
+          "configurations",
+          "networkPlacement",
+          "patchingOwner",
+          "authenticationModel",
+          "vendorGovernance",
+          "provisioningModel",
+          "deployablePackage",
+          "notes",
+          "decisionRecords",
+          "requirementImplementations"
+        ],
+        "fieldTypes": {
+          "aliases": "list",
+          "owner": "dict",
+          "tags": "list",
+          "internalComponents": "list",
+          "deploymentConfigurations": "list",
+          "capabilities": "list",
+          "configurations": "list",
+          "notes": "dict",
+          "vendorGovernance": "dict",
+          "requirementGroups": "list",
+          "decisionRecords": "list",
+          "requirementImplementations": "list"
+        },
+        "enumFields": {
+          "serviceRole": [
+            "definition",
+            "instance"
+          ],
+          "provisioningModel": [
+            "deployable",
+            "reference-only"
+          ],
+          "catalogStatus": [
+            "stub",
+            "incomplete",
+            "complete"
+          ],
+          "lifecycleStatus": [
+            "candidate",
+            "preferred",
+            "existing-only",
+            "deprecated",
+            "retired"
+          ],
+          "deliveryModel": [
+            "self-managed",
+            "paas",
+            "saas",
+            "appliance"
+          ],
+          "networkPlacement": [
+            "public-facing",
+            "internal",
+            "vpc-private"
+          ],
+          "patchingOwner": [
+            "provider-managed",
+            "organization-scheduled",
+            "vendor-managed",
+            "aws-managed"
+          ],
+          "authenticationModel": [
+            "iam",
+            "api-key",
+            "oauth",
+            "saml",
+            "other",
+            "TBD"
+          ]
+        },
+        "enumListFields": {},
+        "collectionSchemas": {
+          "internalComponents": "internalComponent",
+          "deploymentConfigurations": "deploymentConfiguration",
+          "configurations": "configuration",
+          "decisionRecords": "decisionRecordRef",
+          "requirementImplementations": "requirementImplementation"
+        },
+        "schemaPath": "framework/schemas/data-store-service.schema.yaml"
+      },
+      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M7GWTG2T-KR1Y\",\n  \"type\": \"data_store_service\",\n  \"name\": \"Amazon EFS - factory-prod-ledger\",\n  \"description\": \"Encrypted EFS file system mounted by the Agent Factory control plane for the live execution ledger.\",\n  \"catalogStatus\": \"incomplete\",\n  \"lifecycleStatus\": \"preferred\",\n  \"owner\": {\n    \"team\": \"platform-ai-team\",\n    \"contact\": \"platform-ai@example.com\"\n  },\n  \"tags\": [\n    \"aws\",\n    \"efs\",\n    \"ledger\",\n    \"agent-factory\"\n  ],\n  \"deliveryModel\": \"paas\",\n  \"vendor\": \"Amazon Web Services\",\n  \"productName\": \"Amazon Elastic File System\",\n  \"productVersion\": \"managed\",\n  \"patchingOwner\": \"aws-managed\",\n  \"authenticationModel\": \"iam\",\n  \"capabilities\": [\n    \"01KT0V5MCV-924J\",\n    \"01KT0V5MCV-VD0Y\",\n    \"01KQQ4Q026-H3B5\"\n  ],\n  \"provisioningModel\": \"reference-only\",\n  \"notes\": {\n    \"verification\": \"Verified read-only from AWS account ending 2296 (us-east-1) on 2026-11-15 (America/Phoenix).\",\n    \"fileSystem\": \"factory-prod-ledger: encrypted at rest; the control-plane task mounts it as volume data with transit encryption, IAM authorization and an access point.\",\n    \"provisioning\": \"Provisioned by Terraform in BeerCanLabs/agent-factory landing-zones/aws (S3 backend); module not yet packaged as a DRAFT deployablePackage.\",\n    \"incomplete\": \"Backup policy and throughput mode were not reviewed.\"\n  },\n  \"_source\": \"catalog/shared-services/data-store-services/data-store-service-aws-efs-factory-ledger.yaml\"\n}",
+      "existsInCatalog": true,
+      "outboundRelationships": [],
+      "inboundRelationships": []
+    },
+    "01M7GWTG2T-GYW1": {
+      "id": "01M7GWTG2T-GYW1",
+      "uid": "01M7GWTG2T-GYW1",
+      "name": "Amazon S3 - Agent Factory Mind Bucket",
+      "aliases": [],
+      "type": "data_store_service",
+      "typeLabel": "DataStoreService / Paas",
+      "filterType": "data_store_service",
+      "category": "",
+      "deliveryModel": "paas",
+      "domain": "",
+      "description": "S3 bucket that holds agent mind (memory) state for the Agent Factory.",
+      "version": "",
+      "catalogStatus": "incomplete",
+      "lifecycleStatus": "preferred",
+      "status": "",
+      "businessContext": {},
+      "product": "",
+      "runsOn": "",
+      "subtype": "",
+      "vendor": "Amazon Web Services",
+      "productName": "Amazon S3",
+      "productVersion": "managed",
+      "classification": "",
+      "platformDependency": "",
+      "capabilities": [
+        "01KT0V5MCV-E9TN",
+        "01KT0V5MCV-VD0Y"
+      ],
+      "configurations": [],
+      "networkPlacement": "",
+      "patchingOwner": "aws-managed",
+      "complianceCerts": [],
+      "requirementGroups": [],
+      "requirementImplementations": [],
+      "dataLeavesInfrastructure": null,
+      "dataResidencyCommitment": "",
+      "dpaNotes": "",
+      "vendorSLA": "",
+      "authenticationModel": "iam",
+      "incidentNotificationProcess": "",
+      "owner": {
+        "team": "platform-ai-team",
+        "contact": "platform-ai@example.com"
+      },
+      "definitionOwner": {},
+      "provider": {},
+      "authority": {},
+      "shape": "diamond",
+      "color": "#1f8a5b",
+      "source": "catalog/shared-services/data-store-services/data-store-service-aws-s3-factory-mind.yaml",
+      "tags": [
+        "aws",
+        "s3",
+        "mind",
+        "agent-factory"
+      ],
+      "ardCategory": "",
+      "internalComponents": [],
+      "notes": {
+        "verification": "Verified read-only from AWS account ending 2296 (us-east-1) on 2026-11-15 (America/Phoenix).",
+        "bucket": "agent-factory-mind-prod-924cfefd: SSE-S3 (AES256), versioning Enabled, all four Block Public Access settings on, no Object Lock.",
+        "provisioning": "Provisioned by Terraform in BeerCanLabs/agent-factory landing-zones/aws (S3 backend); module not yet packaged as a DRAFT deployablePackage.",
+        "incomplete": "Lifecycle rules, replication and bucket policy were not reviewed."
+      },
+      "requirements": [],
+      "implementations": [],
+      "appliesTo": {},
+      "inherits": "",
+      "scalingUnits": [],
+      "networkZones": [],
+      "sdpConnections": [],
+      "serviceGroups": [],
+      "tierVariants": [],
+      "tierId": "",
+      "purpose": "",
+      "availabilityExpectation": "",
+      "costPosture": "",
+      "complianceScope": [],
+      "parameterSurface": [],
+      "followsReferenceArchitecture": "",
+      "decisionRecords": [],
+      "affectedComponent": "",
+      "impact": "",
+      "mitigationPath": "",
+      "decisionRationale": "",
+      "relatedDecisionRecords": [],
+      "linkedObject": "",
+      "primaryObjectType": "",
+      "primaryObjectUid": "",
+      "generatedObjects": [],
+      "unresolvedQuestions": [],
+      "assumptions": [],
+      "nextSteps": [],
+      "defaultSelection": false,
+      "requirementCount": 0,
+      "hasRiskRef": false,
+      "outboundRefs": [
+        {
+          "target": "01KT0V5MCV-E9TN",
+          "path": "capabilities[0]"
+        },
+        {
+          "target": "01KT0V5MCV-VD0Y",
+          "path": "capabilities[1]"
+        }
+      ],
+      "referencedBy": [],
+      "editorSchema": {
+        "requiredFields": [
+          "schemaVersion",
+          "uid",
+          "type",
+          "name",
+          "deliveryModel",
+          "catalogStatus",
+          "lifecycleStatus"
+        ],
+        "optionalFields": [
+          "aliases",
+          "description",
+          "version",
+          "owner",
+          "tags",
+          "serviceRole",
+          "host",
+          "primaryTechnologyComponent",
+          "internalComponents",
+          "deploymentConfigurations",
+          "vendor",
+          "productName",
+          "productVersion",
+          "capabilities",
+          "configurations",
+          "networkPlacement",
+          "patchingOwner",
+          "authenticationModel",
+          "vendorGovernance",
+          "provisioningModel",
+          "deployablePackage",
+          "notes",
+          "decisionRecords",
+          "requirementImplementations"
+        ],
+        "fieldTypes": {
+          "aliases": "list",
+          "owner": "dict",
+          "tags": "list",
+          "internalComponents": "list",
+          "deploymentConfigurations": "list",
+          "capabilities": "list",
+          "configurations": "list",
+          "notes": "dict",
+          "vendorGovernance": "dict",
+          "requirementGroups": "list",
+          "decisionRecords": "list",
+          "requirementImplementations": "list"
+        },
+        "enumFields": {
+          "serviceRole": [
+            "definition",
+            "instance"
+          ],
+          "provisioningModel": [
+            "deployable",
+            "reference-only"
+          ],
+          "catalogStatus": [
+            "stub",
+            "incomplete",
+            "complete"
+          ],
+          "lifecycleStatus": [
+            "candidate",
+            "preferred",
+            "existing-only",
+            "deprecated",
+            "retired"
+          ],
+          "deliveryModel": [
+            "self-managed",
+            "paas",
+            "saas",
+            "appliance"
+          ],
+          "networkPlacement": [
+            "public-facing",
+            "internal",
+            "vpc-private"
+          ],
+          "patchingOwner": [
+            "provider-managed",
+            "organization-scheduled",
+            "vendor-managed",
+            "aws-managed"
+          ],
+          "authenticationModel": [
+            "iam",
+            "api-key",
+            "oauth",
+            "saml",
+            "other",
+            "TBD"
+          ]
+        },
+        "enumListFields": {},
+        "collectionSchemas": {
+          "internalComponents": "internalComponent",
+          "deploymentConfigurations": "deploymentConfiguration",
+          "configurations": "configuration",
+          "decisionRecords": "decisionRecordRef",
+          "requirementImplementations": "requirementImplementation"
+        },
+        "schemaPath": "framework/schemas/data-store-service.schema.yaml"
+      },
+      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M7GWTG2T-GYW1\",\n  \"type\": \"data_store_service\",\n  \"name\": \"Amazon S3 - Agent Factory Mind Bucket\",\n  \"description\": \"S3 bucket that holds agent mind (memory) state for the Agent Factory.\",\n  \"catalogStatus\": \"incomplete\",\n  \"lifecycleStatus\": \"preferred\",\n  \"owner\": {\n    \"team\": \"platform-ai-team\",\n    \"contact\": \"platform-ai@example.com\"\n  },\n  \"tags\": [\n    \"aws\",\n    \"s3\",\n    \"mind\",\n    \"agent-factory\"\n  ],\n  \"deliveryModel\": \"paas\",\n  \"vendor\": \"Amazon Web Services\",\n  \"productName\": \"Amazon S3\",\n  \"productVersion\": \"managed\",\n  \"patchingOwner\": \"aws-managed\",\n  \"authenticationModel\": \"iam\",\n  \"capabilities\": [\n    \"01KT0V5MCV-E9TN\",\n    \"01KT0V5MCV-VD0Y\"\n  ],\n  \"provisioningModel\": \"reference-only\",\n  \"notes\": {\n    \"verification\": \"Verified read-only from AWS account ending 2296 (us-east-1) on 2026-11-15 (America/Phoenix).\",\n    \"bucket\": \"agent-factory-mind-prod-924cfefd: SSE-S3 (AES256), versioning Enabled, all four Block Public Access settings on, no Object Lock.\",\n    \"provisioning\": \"Provisioned by Terraform in BeerCanLabs/agent-factory landing-zones/aws (S3 backend); module not yet packaged as a DRAFT deployablePackage.\",\n    \"incomplete\": \"Lifecycle rules, replication and bucket policy were not reviewed.\"\n  },\n  \"_source\": \"catalog/shared-services/data-store-services/data-store-service-aws-s3-factory-mind.yaml\"\n}",
+      "existsInCatalog": true,
+      "outboundRelationships": [],
+      "inboundRelationships": []
+    },
+    "01M7GWTG2T-F1WG": {
+      "id": "01M7GWTG2T-F1WG",
+      "uid": "01M7GWTG2T-F1WG",
+      "name": "Amazon S3 - Agent Factory Config, Ledger and Package Buckets",
+      "aliases": [],
+      "type": "data_store_service",
+      "typeLabel": "DataStoreService / Paas",
+      "filterType": "data_store_service",
+      "category": "",
+      "deliveryModel": "paas",
+      "domain": "",
+      "description": "S3 buckets for Agent Factory configuration, the WORM ledger archive and skill packages.",
+      "version": "",
+      "catalogStatus": "incomplete",
+      "lifecycleStatus": "preferred",
+      "status": "",
+      "businessContext": {},
+      "product": "",
+      "runsOn": "",
+      "subtype": "",
+      "vendor": "Amazon Web Services",
+      "productName": "Amazon S3",
+      "productVersion": "managed",
+      "classification": "",
+      "platformDependency": "",
+      "capabilities": [
+        "01KT0V5MCV-E9TN",
+        "01KT0V5MCV-VD0Y",
+        "01KQQ4Q026-7T2H"
+      ],
+      "configurations": [],
+      "networkPlacement": "",
+      "patchingOwner": "aws-managed",
+      "complianceCerts": [],
+      "requirementGroups": [],
+      "requirementImplementations": [],
+      "dataLeavesInfrastructure": null,
+      "dataResidencyCommitment": "",
+      "dpaNotes": "",
+      "vendorSLA": "",
+      "authenticationModel": "iam",
+      "incidentNotificationProcess": "",
+      "owner": {
+        "team": "platform-ai-team",
+        "contact": "platform-ai@example.com"
+      },
+      "definitionOwner": {},
+      "provider": {},
+      "authority": {},
+      "shape": "diamond",
+      "color": "#1f8a5b",
+      "source": "catalog/shared-services/data-store-services/data-store-service-aws-s3-factory-support.yaml",
+      "tags": [
+        "aws",
+        "s3",
+        "ledger",
+        "agent-factory"
+      ],
+      "ardCategory": "",
+      "internalComponents": [],
+      "notes": {
+        "verification": "Verified read-only from AWS account ending 2296 (us-east-1) on 2026-11-15 (America/Phoenix).",
+        "buckets": "agent-factory-config-prod-924cfefd, agent-factory-ledger-prod-924cfefd and agent-factory-packages-prod-924cfefd. All SSE-S3 (AES256) with versioning Enabled.",
+        "ledgerWorm": "The ledger bucket has S3 Object Lock in COMPLIANCE mode with 365-day default retention and all Block Public Access settings on.",
+        "terraformState": "Terraform state lives in a separate bucket agent-factory-tfstate-<account-id> (SSE-S3, versioned); it is infrastructure state, not product data.",
+        "provisioning": "Provisioned by Terraform in BeerCanLabs/agent-factory landing-zones/aws (S3 backend); module not yet packaged as a DRAFT deployablePackage.",
+        "incomplete": "Block Public Access was checked only on the ledger bucket; lifecycle and bucket policies were not reviewed."
+      },
+      "requirements": [],
+      "implementations": [],
+      "appliesTo": {},
+      "inherits": "",
+      "scalingUnits": [],
+      "networkZones": [],
+      "sdpConnections": [],
+      "serviceGroups": [],
+      "tierVariants": [],
+      "tierId": "",
+      "purpose": "",
+      "availabilityExpectation": "",
+      "costPosture": "",
+      "complianceScope": [],
+      "parameterSurface": [],
+      "followsReferenceArchitecture": "",
+      "decisionRecords": [],
+      "affectedComponent": "",
+      "impact": "",
+      "mitigationPath": "",
+      "decisionRationale": "",
+      "relatedDecisionRecords": [],
+      "linkedObject": "",
+      "primaryObjectType": "",
+      "primaryObjectUid": "",
+      "generatedObjects": [],
+      "unresolvedQuestions": [],
+      "assumptions": [],
+      "nextSteps": [],
+      "defaultSelection": false,
+      "requirementCount": 0,
+      "hasRiskRef": false,
+      "outboundRefs": [
+        {
+          "target": "01KT0V5MCV-E9TN",
+          "path": "capabilities[0]"
+        },
+        {
+          "target": "01KT0V5MCV-VD0Y",
+          "path": "capabilities[1]"
+        },
+        {
+          "target": "01KQQ4Q026-7T2H",
+          "path": "capabilities[2]"
+        }
+      ],
+      "referencedBy": [],
+      "editorSchema": {
+        "requiredFields": [
+          "schemaVersion",
+          "uid",
+          "type",
+          "name",
+          "deliveryModel",
+          "catalogStatus",
+          "lifecycleStatus"
+        ],
+        "optionalFields": [
+          "aliases",
+          "description",
+          "version",
+          "owner",
+          "tags",
+          "serviceRole",
+          "host",
+          "primaryTechnologyComponent",
+          "internalComponents",
+          "deploymentConfigurations",
+          "vendor",
+          "productName",
+          "productVersion",
+          "capabilities",
+          "configurations",
+          "networkPlacement",
+          "patchingOwner",
+          "authenticationModel",
+          "vendorGovernance",
+          "provisioningModel",
+          "deployablePackage",
+          "notes",
+          "decisionRecords",
+          "requirementImplementations"
+        ],
+        "fieldTypes": {
+          "aliases": "list",
+          "owner": "dict",
+          "tags": "list",
+          "internalComponents": "list",
+          "deploymentConfigurations": "list",
+          "capabilities": "list",
+          "configurations": "list",
+          "notes": "dict",
+          "vendorGovernance": "dict",
+          "requirementGroups": "list",
+          "decisionRecords": "list",
+          "requirementImplementations": "list"
+        },
+        "enumFields": {
+          "serviceRole": [
+            "definition",
+            "instance"
+          ],
+          "provisioningModel": [
+            "deployable",
+            "reference-only"
+          ],
+          "catalogStatus": [
+            "stub",
+            "incomplete",
+            "complete"
+          ],
+          "lifecycleStatus": [
+            "candidate",
+            "preferred",
+            "existing-only",
+            "deprecated",
+            "retired"
+          ],
+          "deliveryModel": [
+            "self-managed",
+            "paas",
+            "saas",
+            "appliance"
+          ],
+          "networkPlacement": [
+            "public-facing",
+            "internal",
+            "vpc-private"
+          ],
+          "patchingOwner": [
+            "provider-managed",
+            "organization-scheduled",
+            "vendor-managed",
+            "aws-managed"
+          ],
+          "authenticationModel": [
+            "iam",
+            "api-key",
+            "oauth",
+            "saml",
+            "other",
+            "TBD"
+          ]
+        },
+        "enumListFields": {},
+        "collectionSchemas": {
+          "internalComponents": "internalComponent",
+          "deploymentConfigurations": "deploymentConfiguration",
+          "configurations": "configuration",
+          "decisionRecords": "decisionRecordRef",
+          "requirementImplementations": "requirementImplementation"
+        },
+        "schemaPath": "framework/schemas/data-store-service.schema.yaml"
+      },
+      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M7GWTG2T-F1WG\",\n  \"type\": \"data_store_service\",\n  \"name\": \"Amazon S3 - Agent Factory Config, Ledger and Package Buckets\",\n  \"description\": \"S3 buckets for Agent Factory configuration, the WORM ledger archive and skill packages.\",\n  \"catalogStatus\": \"incomplete\",\n  \"lifecycleStatus\": \"preferred\",\n  \"owner\": {\n    \"team\": \"platform-ai-team\",\n    \"contact\": \"platform-ai@example.com\"\n  },\n  \"tags\": [\n    \"aws\",\n    \"s3\",\n    \"ledger\",\n    \"agent-factory\"\n  ],\n  \"deliveryModel\": \"paas\",\n  \"vendor\": \"Amazon Web Services\",\n  \"productName\": \"Amazon S3\",\n  \"productVersion\": \"managed\",\n  \"patchingOwner\": \"aws-managed\",\n  \"authenticationModel\": \"iam\",\n  \"capabilities\": [\n    \"01KT0V5MCV-E9TN\",\n    \"01KT0V5MCV-VD0Y\",\n    \"01KQQ4Q026-7T2H\"\n  ],\n  \"provisioningModel\": \"reference-only\",\n  \"notes\": {\n    \"verification\": \"Verified read-only from AWS account ending 2296 (us-east-1) on 2026-11-15 (America/Phoenix).\",\n    \"buckets\": \"agent-factory-config-prod-924cfefd, agent-factory-ledger-prod-924cfefd and agent-factory-packages-prod-924cfefd. All SSE-S3 (AES256) with versioning Enabled.\",\n    \"ledgerWorm\": \"The ledger bucket has S3 Object Lock in COMPLIANCE mode with 365-day default retention and all Block Public Access settings on.\",\n    \"terraformState\": \"Terraform state lives in a separate bucket agent-factory-tfstate-<account-id> (SSE-S3, versioned); it is infrastructure state, not product data.\",\n    \"provisioning\": \"Provisioned by Terraform in BeerCanLabs/agent-factory landing-zones/aws (S3 backend); module not yet packaged as a DRAFT deployablePackage.\",\n    \"incomplete\": \"Block Public Access was checked only on the ledger bucket; lifecycle and bucket policies were not reviewed.\"\n  },\n  \"_source\": \"catalog/shared-services/data-store-services/data-store-service-aws-s3-factory-support.yaml\"\n}",
+      "existsInCatalog": true,
+      "outboundRelationships": [],
+      "inboundRelationships": []
+    },
     "01M7GTBMQS-9E05": {
       "id": "01M7GTBMQS-9E05",
       "uid": "01M7GTBMQS-9E05",
@@ -51711,6 +56985,369 @@ window.DRAFT_BROWSER_DATA = {
         "schemaPath": "framework/schemas/data-store-service.schema.yaml"
       },
       "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M15NEKT7-H42Y\",\n  \"type\": \"data_store_service\",\n  \"name\": \"Standard GCP Cloud SQL PostgreSQL Database\",\n  \"description\": \"Managed PostgreSQL database service on GCP with automated backups, IAM database authentication, and SSL encryption.\",\n  \"version\": \"1.0.0\",\n  \"deliveryModel\": \"paas\",\n  \"vendor\": \"GCP\",\n  \"productName\": \"GCP Cloud SQL PostgreSQL\",\n  \"productVersion\": \"15\",\n  \"catalogStatus\": \"complete\",\n  \"lifecycleStatus\": \"preferred\",\n  \"authenticationModel\": \"iam\",\n  \"capabilities\": [\n    \"capability-data-persistence\",\n    \"capability-data-resilience\",\n    \"capability-encryption-at-rest\"\n  ],\n  \"owner\": {\n    \"team\": \"data-engineering\",\n    \"contact\": \"data-engineering@example.com\"\n  },\n  \"tags\": [\n    \"database\",\n    \"gcp\",\n    \"postgresql\",\n    \"cloud-sql\"\n  ],\n  \"targetEngine\": \"postgres\",\n  \"decisionRecords\": [\n    {\n      \"ref\": \"01M15NFKKN-74NY\",\n      \"key\": \"resilienceModel\"\n    },\n    {\n      \"ref\": \"01M15NFKKN-74NY\",\n      \"key\": \"configurableSurface\"\n    },\n    {\n      \"ref\": \"01M15NFKKN-74NY\",\n      \"key\": \"failureDomain\"\n    }\n  ],\n  \"provisioningModel\": \"deployable\",\n  \"deployablePackage\": {\n    \"registry\": \"github\",\n    \"source\": \"company-infrastructure/platform-iac-data\",\n    \"version\": \"v1.0.0\",\n    \"modulePath\": \"modules/cloud-sql-postgres\"\n  },\n  \"notes\": {\n    \"data_resilience\": \"Daily automated backups retained for 30 days.\",\n    \"encryption_at_rest\": \"Encrypted using GCP managed keys (GCMK) or KMS.\"\n  },\n  \"_source\": \"catalog/shared-services/data-store-services/data-store-service-gcp-postgres.yaml\"\n}",
+      "existsInCatalog": true,
+      "outboundRelationships": [],
+      "inboundRelationships": []
+    },
+    "01M7GWTG2S-X9V8": {
+      "id": "01M7GWTG2S-X9V8",
+      "uid": "01M7GWTG2S-X9V8",
+      "name": "AWS Fargate factory-prod ECS Cluster Host (us-east-1)",
+      "aliases": [],
+      "type": "host",
+      "typeLabel": "Host",
+      "filterType": "host",
+      "category": "",
+      "deliveryModel": "",
+      "domain": "",
+      "description": "Managed serverless container host for the factory-prod ECS cluster. AWS owns the OS and the compute fabric.",
+      "version": "",
+      "catalogStatus": "incomplete",
+      "lifecycleStatus": "preferred",
+      "status": "",
+      "businessContext": {},
+      "product": "",
+      "runsOn": "",
+      "subtype": "",
+      "vendor": "",
+      "productName": "",
+      "productVersion": "",
+      "classification": "",
+      "platformDependency": "",
+      "capabilities": [],
+      "configurations": [],
+      "networkPlacement": "",
+      "patchingOwner": "",
+      "complianceCerts": [],
+      "requirementGroups": [],
+      "requirementImplementations": [],
+      "dataLeavesInfrastructure": null,
+      "dataResidencyCommitment": "",
+      "dpaNotes": "",
+      "vendorSLA": "",
+      "authenticationModel": "",
+      "incidentNotificationProcess": "",
+      "owner": {
+        "team": "platform-ai-team",
+        "contact": "platform-ai@example.com"
+      },
+      "definitionOwner": {},
+      "provider": {},
+      "authority": {},
+      "shape": "round-rectangle",
+      "color": "#1f8a5b",
+      "source": "catalog/shared-services/hosts/host-aws-fargate-factory-prod.yaml",
+      "tags": [
+        "host",
+        "aws",
+        "us-east-1",
+        "serverless",
+        "container",
+        "factory-prod"
+      ],
+      "ardCategory": "",
+      "internalComponents": [
+        {
+          "ref": "01M7GWTG2S-ZT0V",
+          "role": "hardware",
+          "configuration": "",
+          "notes": ""
+        }
+      ],
+      "notes": {
+        "verification": "Verified read-only from AWS account ending 2296 (us-east-1) on 2026-11-15 (America/Phoenix).",
+        "cluster": "ECS cluster factory-prod, status ACTIVE, Container Insights enabled.",
+        "provisioning": "Provisioned by Terraform in BeerCanLabs/agent-factory landing-zones/aws (S3 backend); module not yet packaged as a DRAFT deployablePackage."
+      },
+      "requirements": [],
+      "implementations": [],
+      "appliesTo": {},
+      "inherits": "",
+      "scalingUnits": [],
+      "networkZones": [],
+      "sdpConnections": [],
+      "serviceGroups": [],
+      "tierVariants": [],
+      "tierId": "",
+      "purpose": "",
+      "availabilityExpectation": "",
+      "costPosture": "",
+      "complianceScope": [],
+      "parameterSurface": [],
+      "followsReferenceArchitecture": "",
+      "decisionRecords": [],
+      "affectedComponent": "",
+      "impact": "",
+      "mitigationPath": "",
+      "decisionRationale": "",
+      "relatedDecisionRecords": [],
+      "linkedObject": "",
+      "primaryObjectType": "",
+      "primaryObjectUid": "",
+      "generatedObjects": [],
+      "unresolvedQuestions": [],
+      "assumptions": [],
+      "nextSteps": [],
+      "defaultSelection": false,
+      "requirementCount": 0,
+      "hasRiskRef": false,
+      "outboundRefs": [
+        {
+          "target": "01M7GWTG2S-ZT0V",
+          "path": "computePlatformComponent"
+        }
+      ],
+      "referencedBy": [
+        {
+          "source": "01M7GWTG2S-AC3R",
+          "path": "host"
+        },
+        {
+          "source": "VP8VB5X0E7-7FJC",
+          "path": "target"
+        }
+      ],
+      "editorSchema": {
+        "requiredFields": [
+          "schemaVersion",
+          "uid",
+          "type",
+          "name",
+          "catalogStatus",
+          "lifecycleStatus"
+        ],
+        "optionalFields": [
+          "aliases",
+          "description",
+          "version",
+          "owner",
+          "tags",
+          "serviceRole",
+          "notes",
+          "operatingSystemComponent",
+          "computePlatformComponent",
+          "internalComponents",
+          "deploymentConfigurations",
+          "provisioningModel",
+          "deployablePackage",
+          "decisionRecords",
+          "requirementImplementations"
+        ],
+        "fieldTypes": {
+          "aliases": "list",
+          "owner": "dict",
+          "tags": "list",
+          "notes": "dict",
+          "internalComponents": "list",
+          "deploymentConfigurations": "list",
+          "requirementGroups": "list",
+          "decisionRecords": "list",
+          "requirementImplementations": "list"
+        },
+        "enumFields": {
+          "serviceRole": [
+            "definition",
+            "instance"
+          ],
+          "provisioningModel": [
+            "deployable",
+            "reference-only"
+          ],
+          "catalogStatus": [
+            "stub",
+            "incomplete",
+            "complete"
+          ],
+          "lifecycleStatus": [
+            "candidate",
+            "preferred",
+            "existing-only",
+            "deprecated",
+            "retired"
+          ]
+        },
+        "enumListFields": {},
+        "collectionSchemas": {},
+        "schemaPath": "framework/schemas/host.schema.yaml"
+      },
+      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M7GWTG2S-X9V8\",\n  \"type\": \"host\",\n  \"name\": \"AWS Fargate factory-prod ECS Cluster Host (us-east-1)\",\n  \"description\": \"Managed serverless container host for the factory-prod ECS cluster. AWS owns the OS and the compute fabric.\",\n  \"catalogStatus\": \"incomplete\",\n  \"lifecycleStatus\": \"preferred\",\n  \"owner\": {\n    \"team\": \"platform-ai-team\",\n    \"contact\": \"platform-ai@example.com\"\n  },\n  \"tags\": [\n    \"host\",\n    \"aws\",\n    \"us-east-1\",\n    \"serverless\",\n    \"container\",\n    \"factory-prod\"\n  ],\n  \"serviceRole\": \"instance\",\n  \"computePlatformComponent\": \"01M7GWTG2S-ZT0V\",\n  \"provisioningModel\": \"reference-only\",\n  \"notes\": {\n    \"verification\": \"Verified read-only from AWS account ending 2296 (us-east-1) on 2026-11-15 (America/Phoenix).\",\n    \"cluster\": \"ECS cluster factory-prod, status ACTIVE, Container Insights enabled.\",\n    \"provisioning\": \"Provisioned by Terraform in BeerCanLabs/agent-factory landing-zones/aws (S3 backend); module not yet packaged as a DRAFT deployablePackage.\"\n  },\n  \"_source\": \"catalog/shared-services/hosts/host-aws-fargate-factory-prod.yaml\"\n}",
+      "existsInCatalog": true,
+      "outboundRelationships": [],
+      "inboundRelationships": [
+        {
+          "uid": "VP8VB5X0E7-7FJC",
+          "name": "AWS ECS Fargate Runtime - factory-prod \u2192 AWS Fargate factory-prod ECS Cluster Host (us-east-1)",
+          "label": "runs on",
+          "technology": "",
+          "direction": "",
+          "targetUid": "01M7GWTG2S-X9V8",
+          "targetName": "AWS Fargate factory-prod ECS Cluster Host (us-east-1)",
+          "capabilities": [],
+          "sourceUid": "01M7GWTG2S-AC3R",
+          "sourceName": "AWS ECS Fargate Runtime - factory-prod"
+        }
+      ]
+    },
+    "01M7GWTG2S-G6RH": {
+      "id": "01M7GWTG2S-G6RH",
+      "uid": "01M7GWTG2S-G6RH",
+      "name": "Cloudflare Pages Static Host (beercanlabs-knowledge)",
+      "aliases": [],
+      "type": "host",
+      "typeLabel": "Host",
+      "filterType": "host",
+      "category": "",
+      "deliveryModel": "",
+      "domain": "",
+      "description": "Managed static site hosting on Cloudflare Pages. Serves knowledge.beercanlabs.ai behind Cloudflare Access.",
+      "version": "",
+      "catalogStatus": "incomplete",
+      "lifecycleStatus": "preferred",
+      "status": "",
+      "businessContext": {},
+      "product": "",
+      "runsOn": "",
+      "subtype": "",
+      "vendor": "",
+      "productName": "",
+      "productVersion": "",
+      "classification": "",
+      "platformDependency": "",
+      "capabilities": [],
+      "configurations": [],
+      "networkPlacement": "",
+      "patchingOwner": "",
+      "complianceCerts": [],
+      "requirementGroups": [],
+      "requirementImplementations": [],
+      "dataLeavesInfrastructure": null,
+      "dataResidencyCommitment": "",
+      "dpaNotes": "",
+      "vendorSLA": "",
+      "authenticationModel": "",
+      "incidentNotificationProcess": "",
+      "owner": {
+        "team": "platform-ai-team",
+        "contact": "platform-ai@example.com"
+      },
+      "definitionOwner": {},
+      "provider": {},
+      "authority": {},
+      "shape": "round-rectangle",
+      "color": "#1f8a5b",
+      "source": "catalog/shared-services/hosts/host-cloudflare-pages-knowledge.yaml",
+      "tags": [
+        "host",
+        "cloudflare",
+        "cloudflare-pages",
+        "static-hosting",
+        "serverless"
+      ],
+      "ardCategory": "",
+      "internalComponents": [],
+      "notes": {
+        "verification": "Deploy workflow read from BeerCanLabs/knowledge .github/workflows/deploy.yml (wrangler pages deploy, project beercanlabs-knowledge). HTTPS probe on 2026-11-15 returned server cloudflare and a 302 to the beercanlabs Cloudflare Access login.",
+        "correction": "The knowledge site is on Cloudflare Pages, not GitHub Pages (the repository has no GitHub Pages site).",
+        "incomplete": "Cloudflare Pages project settings, build config and custom-domain records were not read (no Cloudflare API access used)."
+      },
+      "requirements": [],
+      "implementations": [],
+      "appliesTo": {},
+      "inherits": "",
+      "scalingUnits": [],
+      "networkZones": [],
+      "sdpConnections": [],
+      "serviceGroups": [],
+      "tierVariants": [],
+      "tierId": "",
+      "purpose": "",
+      "availabilityExpectation": "",
+      "costPosture": "",
+      "complianceScope": [],
+      "parameterSurface": [],
+      "followsReferenceArchitecture": "",
+      "decisionRecords": [],
+      "affectedComponent": "",
+      "impact": "",
+      "mitigationPath": "",
+      "decisionRationale": "",
+      "relatedDecisionRecords": [],
+      "linkedObject": "",
+      "primaryObjectType": "",
+      "primaryObjectUid": "",
+      "generatedObjects": [],
+      "unresolvedQuestions": [],
+      "assumptions": [],
+      "nextSteps": [],
+      "defaultSelection": false,
+      "requirementCount": 0,
+      "hasRiskRef": false,
+      "outboundRefs": [],
+      "referencedBy": [],
+      "editorSchema": {
+        "requiredFields": [
+          "schemaVersion",
+          "uid",
+          "type",
+          "name",
+          "catalogStatus",
+          "lifecycleStatus"
+        ],
+        "optionalFields": [
+          "aliases",
+          "description",
+          "version",
+          "owner",
+          "tags",
+          "serviceRole",
+          "notes",
+          "operatingSystemComponent",
+          "computePlatformComponent",
+          "internalComponents",
+          "deploymentConfigurations",
+          "provisioningModel",
+          "deployablePackage",
+          "decisionRecords",
+          "requirementImplementations"
+        ],
+        "fieldTypes": {
+          "aliases": "list",
+          "owner": "dict",
+          "tags": "list",
+          "notes": "dict",
+          "internalComponents": "list",
+          "deploymentConfigurations": "list",
+          "requirementGroups": "list",
+          "decisionRecords": "list",
+          "requirementImplementations": "list"
+        },
+        "enumFields": {
+          "serviceRole": [
+            "definition",
+            "instance"
+          ],
+          "provisioningModel": [
+            "deployable",
+            "reference-only"
+          ],
+          "catalogStatus": [
+            "stub",
+            "incomplete",
+            "complete"
+          ],
+          "lifecycleStatus": [
+            "candidate",
+            "preferred",
+            "existing-only",
+            "deprecated",
+            "retired"
+          ]
+        },
+        "enumListFields": {},
+        "collectionSchemas": {},
+        "schemaPath": "framework/schemas/host.schema.yaml"
+      },
+      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M7GWTG2S-G6RH\",\n  \"type\": \"host\",\n  \"name\": \"Cloudflare Pages Static Host (beercanlabs-knowledge)\",\n  \"description\": \"Managed static site hosting on Cloudflare Pages. Serves knowledge.beercanlabs.ai behind Cloudflare Access.\",\n  \"catalogStatus\": \"incomplete\",\n  \"lifecycleStatus\": \"preferred\",\n  \"owner\": {\n    \"team\": \"platform-ai-team\",\n    \"contact\": \"platform-ai@example.com\"\n  },\n  \"tags\": [\n    \"host\",\n    \"cloudflare\",\n    \"cloudflare-pages\",\n    \"static-hosting\",\n    \"serverless\"\n  ],\n  \"serviceRole\": \"instance\",\n  \"provisioningModel\": \"reference-only\",\n  \"notes\": {\n    \"verification\": \"Deploy workflow read from BeerCanLabs/knowledge .github/workflows/deploy.yml (wrangler pages deploy, project beercanlabs-knowledge). HTTPS probe on 2026-11-15 returned server cloudflare and a 302 to the beercanlabs Cloudflare Access login.\",\n    \"correction\": \"The knowledge site is on Cloudflare Pages, not GitHub Pages (the repository has no GitHub Pages site).\",\n    \"incomplete\": \"Cloudflare Pages project settings, build config and custom-domain records were not read (no Cloudflare API access used).\"\n  },\n  \"_source\": \"catalog/shared-services/hosts/host-cloudflare-pages-knowledge.yaml\"\n}",
       "existsInCatalog": true,
       "outboundRelationships": [],
       "inboundRelationships": []
@@ -52825,6 +58462,443 @@ window.DRAFT_BROWSER_DATA = {
       "outboundRelationships": [],
       "inboundRelationships": []
     },
+    "01M7GWTG2T-M2Q0": {
+      "id": "01M7GWTG2T-M2Q0",
+      "uid": "01M7GWTG2T-M2Q0",
+      "name": "AWS Application Load Balancer - factory-prod",
+      "aliases": [],
+      "type": "network_service",
+      "typeLabel": "NetworkService / Paas",
+      "filterType": "network_service",
+      "category": "",
+      "deliveryModel": "paas",
+      "domain": "",
+      "description": "Internet-facing ALB that is the AWS origin behind the Cloudflare edge for Agent Factory and Closing Climb hostnames.",
+      "version": "",
+      "catalogStatus": "incomplete",
+      "lifecycleStatus": "preferred",
+      "status": "",
+      "businessContext": {},
+      "product": "",
+      "runsOn": "",
+      "subtype": "",
+      "vendor": "Amazon Web Services",
+      "productName": "Elastic Load Balancing Application Load Balancer",
+      "productVersion": "managed",
+      "classification": "",
+      "platformDependency": "",
+      "capabilities": [
+        "01KSWVZSZ5-M0FR",
+        "01KT0XNZEY-RVTG"
+      ],
+      "configurations": [],
+      "networkPlacement": "",
+      "patchingOwner": "aws-managed",
+      "complianceCerts": [],
+      "requirementGroups": [],
+      "requirementImplementations": [],
+      "dataLeavesInfrastructure": null,
+      "dataResidencyCommitment": "",
+      "dpaNotes": "",
+      "vendorSLA": "",
+      "authenticationModel": "iam",
+      "incidentNotificationProcess": "",
+      "owner": {
+        "team": "platform-ai-team",
+        "contact": "platform-ai@example.com"
+      },
+      "definitionOwner": {},
+      "provider": {},
+      "authority": {},
+      "shape": "diamond",
+      "color": "#1f8a5b",
+      "source": "catalog/shared-services/network-services/network-service-aws-alb-factory-prod.yaml",
+      "tags": [
+        "aws",
+        "alb",
+        "load-balancer",
+        "ingress",
+        "agent-factory",
+        "closing-climb"
+      ],
+      "ardCategory": "",
+      "internalComponents": [],
+      "notes": {
+        "verification": "Verified read-only from AWS account ending 2296 (us-east-1) on 2026-11-15 (America/Phoenix).",
+        "listeners": "HTTP 80 and HTTPS 443.",
+        "routing": "Host rules: factory-dashboard.dalesackrider.com -> console; garrison.dalesackrider.com -> garrison; cc.dalesackrider.com -> closing-climb-prod; default -> control-plane (factory-prod-cp).",
+        "certificates": "ACM certificates for *.dalesackrider.com, submind-aws.dalesackrider.com and agent-factory.beercanlabs.com.",
+        "edge": "Every listed hostname answered through Cloudflare (server: cloudflare) on 2026-11-15. Cloudflare DNS origin records were not read.",
+        "provisioning": "Provisioned by Terraform in BeerCanLabs/agent-factory landing-zones/aws (S3 backend); module not yet packaged as a DRAFT deployablePackage.",
+        "incomplete": "Security group rules, WAF association and HTTP-to-HTTPS redirect behavior were not reviewed."
+      },
+      "requirements": [],
+      "implementations": [],
+      "appliesTo": {},
+      "inherits": "",
+      "scalingUnits": [],
+      "networkZones": [],
+      "sdpConnections": [],
+      "serviceGroups": [],
+      "tierVariants": [],
+      "tierId": "",
+      "purpose": "",
+      "availabilityExpectation": "",
+      "costPosture": "",
+      "complianceScope": [],
+      "parameterSurface": [],
+      "followsReferenceArchitecture": "",
+      "decisionRecords": [],
+      "affectedComponent": "",
+      "impact": "",
+      "mitigationPath": "",
+      "decisionRationale": "",
+      "relatedDecisionRecords": [],
+      "linkedObject": "",
+      "primaryObjectType": "",
+      "primaryObjectUid": "",
+      "generatedObjects": [],
+      "unresolvedQuestions": [],
+      "assumptions": [],
+      "nextSteps": [],
+      "defaultSelection": false,
+      "requirementCount": 0,
+      "hasRiskRef": false,
+      "outboundRefs": [
+        {
+          "target": "01KSWVZSZ5-M0FR",
+          "path": "capabilities[0]"
+        },
+        {
+          "target": "01KT0XNZEY-RVTG",
+          "path": "capabilities[1]"
+        }
+      ],
+      "referencedBy": [],
+      "editorSchema": {
+        "requiredFields": [
+          "schemaVersion",
+          "uid",
+          "type",
+          "name",
+          "deliveryModel",
+          "catalogStatus",
+          "lifecycleStatus"
+        ],
+        "optionalFields": [
+          "aliases",
+          "description",
+          "version",
+          "owner",
+          "tags",
+          "serviceRole",
+          "host",
+          "primaryTechnologyComponent",
+          "internalComponents",
+          "deploymentConfigurations",
+          "vendor",
+          "productName",
+          "productVersion",
+          "capabilities",
+          "configurations",
+          "networkFunction",
+          "networkTopology",
+          "protocols",
+          "authenticationModel",
+          "patchingOwner",
+          "vendorGovernance",
+          "provisioningModel",
+          "deployablePackage",
+          "notes",
+          "decisionRecords",
+          "requirementImplementations"
+        ],
+        "fieldTypes": {
+          "aliases": "list",
+          "owner": "dict",
+          "tags": "list",
+          "capabilities": "list",
+          "internalComponents": "list",
+          "deploymentConfigurations": "list",
+          "requirementGroups": "list",
+          "decisionRecords": "list",
+          "requirementImplementations": "list",
+          "vendorGovernance": "dict",
+          "protocols": "list",
+          "notes": "dict",
+          "configurations": "list"
+        },
+        "enumFields": {
+          "serviceRole": [
+            "definition",
+            "instance"
+          ],
+          "provisioningModel": [
+            "deployable",
+            "reference-only"
+          ],
+          "catalogStatus": [
+            "stub",
+            "incomplete",
+            "complete"
+          ],
+          "lifecycleStatus": [
+            "candidate",
+            "preferred",
+            "existing-only",
+            "deprecated",
+            "retired"
+          ],
+          "deliveryModel": [
+            "self-managed",
+            "paas",
+            "saas",
+            "appliance"
+          ],
+          "patchingOwner": [
+            "provider-managed",
+            "organization-scheduled",
+            "vendor-managed",
+            "aws-managed"
+          ],
+          "authenticationModel": [
+            "iam",
+            "api-key",
+            "oauth",
+            "saml",
+            "other",
+            "TBD"
+          ]
+        },
+        "enumListFields": {},
+        "collectionSchemas": {
+          "internalComponents": "internalComponent",
+          "deploymentConfigurations": "deploymentConfiguration",
+          "configurations": "configuration",
+          "decisionRecords": "decisionRecordRef",
+          "requirementImplementations": "requirementImplementation"
+        },
+        "schemaPath": "framework/schemas/network-service.schema.yaml"
+      },
+      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M7GWTG2T-M2Q0\",\n  \"type\": \"network_service\",\n  \"name\": \"AWS Application Load Balancer - factory-prod\",\n  \"description\": \"Internet-facing ALB that is the AWS origin behind the Cloudflare edge for Agent Factory and Closing Climb hostnames.\",\n  \"catalogStatus\": \"incomplete\",\n  \"lifecycleStatus\": \"preferred\",\n  \"owner\": {\n    \"team\": \"platform-ai-team\",\n    \"contact\": \"platform-ai@example.com\"\n  },\n  \"tags\": [\n    \"aws\",\n    \"alb\",\n    \"load-balancer\",\n    \"ingress\",\n    \"agent-factory\",\n    \"closing-climb\"\n  ],\n  \"deliveryModel\": \"paas\",\n  \"vendor\": \"Amazon Web Services\",\n  \"productName\": \"Elastic Load Balancing Application Load Balancer\",\n  \"productVersion\": \"managed\",\n  \"patchingOwner\": \"aws-managed\",\n  \"authenticationModel\": \"iam\",\n  \"networkFunction\": \"Layer 7 host-based routing and TLS termination for the factory-prod ECS services.\",\n  \"protocols\": [\n    \"HTTPS\",\n    \"HTTP\"\n  ],\n  \"capabilities\": [\n    \"01KSWVZSZ5-M0FR\",\n    \"01KT0XNZEY-RVTG\"\n  ],\n  \"provisioningModel\": \"reference-only\",\n  \"notes\": {\n    \"verification\": \"Verified read-only from AWS account ending 2296 (us-east-1) on 2026-11-15 (America/Phoenix).\",\n    \"listeners\": \"HTTP 80 and HTTPS 443.\",\n    \"routing\": \"Host rules: factory-dashboard.dalesackrider.com -> console; garrison.dalesackrider.com -> garrison; cc.dalesackrider.com -> closing-climb-prod; default -> control-plane (factory-prod-cp).\",\n    \"certificates\": \"ACM certificates for *.dalesackrider.com, submind-aws.dalesackrider.com and agent-factory.beercanlabs.com.\",\n    \"edge\": \"Every listed hostname answered through Cloudflare (server: cloudflare) on 2026-11-15. Cloudflare DNS origin records were not read.\",\n    \"provisioning\": \"Provisioned by Terraform in BeerCanLabs/agent-factory landing-zones/aws (S3 backend); module not yet packaged as a DRAFT deployablePackage.\",\n    \"incomplete\": \"Security group rules, WAF association and HTTP-to-HTTPS redirect behavior were not reviewed.\"\n  },\n  \"_source\": \"catalog/shared-services/network-services/network-service-aws-alb-factory-prod.yaml\"\n}",
+      "existsInCatalog": true,
+      "outboundRelationships": [],
+      "inboundRelationships": []
+    },
+    "01M7GWTG2T-8A54": {
+      "id": "01M7GWTG2T-8A54",
+      "uid": "01M7GWTG2T-8A54",
+      "name": "AWS Cloud Map - factory.internal",
+      "aliases": [],
+      "type": "network_service",
+      "typeLabel": "NetworkService / Paas",
+      "filterType": "network_service",
+      "category": "",
+      "deliveryModel": "paas",
+      "domain": "",
+      "description": "Private DNS namespace for service discovery between factory-prod ECS services.",
+      "version": "",
+      "catalogStatus": "incomplete",
+      "lifecycleStatus": "preferred",
+      "status": "",
+      "businessContext": {},
+      "product": "",
+      "runsOn": "",
+      "subtype": "",
+      "vendor": "Amazon Web Services",
+      "productName": "AWS Cloud Map",
+      "productVersion": "managed",
+      "classification": "",
+      "platformDependency": "",
+      "capabilities": [
+        "01KT0V5MCV-GJBH"
+      ],
+      "configurations": [],
+      "networkPlacement": "",
+      "patchingOwner": "aws-managed",
+      "complianceCerts": [],
+      "requirementGroups": [],
+      "requirementImplementations": [],
+      "dataLeavesInfrastructure": null,
+      "dataResidencyCommitment": "",
+      "dpaNotes": "",
+      "vendorSLA": "",
+      "authenticationModel": "iam",
+      "incidentNotificationProcess": "",
+      "owner": {
+        "team": "platform-ai-team",
+        "contact": "platform-ai@example.com"
+      },
+      "definitionOwner": {},
+      "provider": {},
+      "authority": {},
+      "shape": "diamond",
+      "color": "#1f8a5b",
+      "source": "catalog/shared-services/network-services/network-service-aws-cloud-map-factory-internal.yaml",
+      "tags": [
+        "aws",
+        "cloud-map",
+        "service-discovery",
+        "dns",
+        "agent-factory"
+      ],
+      "ardCategory": "",
+      "internalComponents": [],
+      "notes": {
+        "verification": "Verified read-only from AWS account ending 2296 (us-east-1) on 2026-11-15 (America/Phoenix).",
+        "namespace": "Private DNS namespace factory.internal.",
+        "registrations": "control-plane, gatekeeper-ingress, gatekeeper-egress and garrison are registered.",
+        "provisioning": "Provisioned by Terraform in BeerCanLabs/agent-factory landing-zones/aws (S3 backend); module not yet packaged as a DRAFT deployablePackage."
+      },
+      "requirements": [],
+      "implementations": [],
+      "appliesTo": {},
+      "inherits": "",
+      "scalingUnits": [],
+      "networkZones": [],
+      "sdpConnections": [],
+      "serviceGroups": [],
+      "tierVariants": [],
+      "tierId": "",
+      "purpose": "",
+      "availabilityExpectation": "",
+      "costPosture": "",
+      "complianceScope": [],
+      "parameterSurface": [],
+      "followsReferenceArchitecture": "",
+      "decisionRecords": [],
+      "affectedComponent": "",
+      "impact": "",
+      "mitigationPath": "",
+      "decisionRationale": "",
+      "relatedDecisionRecords": [],
+      "linkedObject": "",
+      "primaryObjectType": "",
+      "primaryObjectUid": "",
+      "generatedObjects": [],
+      "unresolvedQuestions": [],
+      "assumptions": [],
+      "nextSteps": [],
+      "defaultSelection": false,
+      "requirementCount": 0,
+      "hasRiskRef": false,
+      "outboundRefs": [
+        {
+          "target": "01KT0V5MCV-GJBH",
+          "path": "capabilities[0]"
+        }
+      ],
+      "referencedBy": [],
+      "editorSchema": {
+        "requiredFields": [
+          "schemaVersion",
+          "uid",
+          "type",
+          "name",
+          "deliveryModel",
+          "catalogStatus",
+          "lifecycleStatus"
+        ],
+        "optionalFields": [
+          "aliases",
+          "description",
+          "version",
+          "owner",
+          "tags",
+          "serviceRole",
+          "host",
+          "primaryTechnologyComponent",
+          "internalComponents",
+          "deploymentConfigurations",
+          "vendor",
+          "productName",
+          "productVersion",
+          "capabilities",
+          "configurations",
+          "networkFunction",
+          "networkTopology",
+          "protocols",
+          "authenticationModel",
+          "patchingOwner",
+          "vendorGovernance",
+          "provisioningModel",
+          "deployablePackage",
+          "notes",
+          "decisionRecords",
+          "requirementImplementations"
+        ],
+        "fieldTypes": {
+          "aliases": "list",
+          "owner": "dict",
+          "tags": "list",
+          "capabilities": "list",
+          "internalComponents": "list",
+          "deploymentConfigurations": "list",
+          "requirementGroups": "list",
+          "decisionRecords": "list",
+          "requirementImplementations": "list",
+          "vendorGovernance": "dict",
+          "protocols": "list",
+          "notes": "dict",
+          "configurations": "list"
+        },
+        "enumFields": {
+          "serviceRole": [
+            "definition",
+            "instance"
+          ],
+          "provisioningModel": [
+            "deployable",
+            "reference-only"
+          ],
+          "catalogStatus": [
+            "stub",
+            "incomplete",
+            "complete"
+          ],
+          "lifecycleStatus": [
+            "candidate",
+            "preferred",
+            "existing-only",
+            "deprecated",
+            "retired"
+          ],
+          "deliveryModel": [
+            "self-managed",
+            "paas",
+            "saas",
+            "appliance"
+          ],
+          "patchingOwner": [
+            "provider-managed",
+            "organization-scheduled",
+            "vendor-managed",
+            "aws-managed"
+          ],
+          "authenticationModel": [
+            "iam",
+            "api-key",
+            "oauth",
+            "saml",
+            "other",
+            "TBD"
+          ]
+        },
+        "enumListFields": {},
+        "collectionSchemas": {
+          "internalComponents": "internalComponent",
+          "deploymentConfigurations": "deploymentConfiguration",
+          "configurations": "configuration",
+          "decisionRecords": "decisionRecordRef",
+          "requirementImplementations": "requirementImplementation"
+        },
+        "schemaPath": "framework/schemas/network-service.schema.yaml"
+      },
+      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M7GWTG2T-8A54\",\n  \"type\": \"network_service\",\n  \"name\": \"AWS Cloud Map - factory.internal\",\n  \"description\": \"Private DNS namespace for service discovery between factory-prod ECS services.\",\n  \"catalogStatus\": \"incomplete\",\n  \"lifecycleStatus\": \"preferred\",\n  \"owner\": {\n    \"team\": \"platform-ai-team\",\n    \"contact\": \"platform-ai@example.com\"\n  },\n  \"tags\": [\n    \"aws\",\n    \"cloud-map\",\n    \"service-discovery\",\n    \"dns\",\n    \"agent-factory\"\n  ],\n  \"deliveryModel\": \"paas\",\n  \"vendor\": \"Amazon Web Services\",\n  \"productName\": \"AWS Cloud Map\",\n  \"productVersion\": \"managed\",\n  \"patchingOwner\": \"aws-managed\",\n  \"authenticationModel\": \"iam\",\n  \"networkFunction\": \"Private DNS service discovery inside the factory VPC.\",\n  \"protocols\": [\n    \"DNS\"\n  ],\n  \"capabilities\": [\n    \"01KT0V5MCV-GJBH\"\n  ],\n  \"provisioningModel\": \"reference-only\",\n  \"notes\": {\n    \"verification\": \"Verified read-only from AWS account ending 2296 (us-east-1) on 2026-11-15 (America/Phoenix).\",\n    \"namespace\": \"Private DNS namespace factory.internal.\",\n    \"registrations\": \"control-plane, gatekeeper-ingress, gatekeeper-egress and garrison are registered.\",\n    \"provisioning\": \"Provisioned by Terraform in BeerCanLabs/agent-factory landing-zones/aws (S3 backend); module not yet packaged as a DRAFT deployablePackage.\"\n  },\n  \"_source\": \"catalog/shared-services/network-services/network-service-aws-cloud-map-factory-internal.yaml\"\n}",
+      "existsInCatalog": true,
+      "outboundRelationships": [],
+      "inboundRelationships": []
+    },
     "01M7GTBMQS-YRGF": {
       "id": "01M7GTBMQS-YRGF",
       "uid": "01M7GTBMQS-YRGF",
@@ -53042,6 +59116,1986 @@ window.DRAFT_BROWSER_DATA = {
         "schemaPath": "framework/schemas/network-service.schema.yaml"
       },
       "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M7GTBMQS-YRGF\",\n  \"type\": \"network_service\",\n  \"name\": \"Cloudflare Global Anycast Edge Proxy Service\",\n  \"description\": \"Registration object for Geordi's Cloudflare Global Anycast Edge Proxy network service providing ingress routing, Orange Cloud DNS proxying, SSL Full TLS termination, 301 URL redirects, and ALPN negotiation compatibility under Netskope SSL inspection.\",\n  \"deliveryModel\": \"saas\",\n  \"catalogStatus\": \"incomplete\",\n  \"lifecycleStatus\": \"preferred\",\n  \"vendor\": \"Cloudflare\",\n  \"productName\": \"Cloudflare Managed DNS & Edge Proxy\",\n  \"productVersion\": \"Free Tier Anycast Edge Network\",\n  \"networkFunction\": \"Ingress traffic control, HTTPS termination, HTTP/1.1 and HTTP/2 ALPN negotiation, Orange Cloud DNS proxying, and 301 URL redirects.\",\n  \"provisioningModel\": \"deployable\",\n  \"deployablePackage\": {\n    \"registry\": \"github\",\n    \"source\": \"BeerCanLabs/skippy-matrix\",\n    \"version\": \"main\",\n    \"modulePath\": \"terraform/modules/cloudflare-edge-proxy\"\n  },\n  \"protocols\": [\n    \"HTTPS\",\n    \"HTTP/2\",\n    \"HTTP/1.1\"\n  ],\n  \"owner\": {\n    \"team\": \"engineering-platform\",\n    \"contact\": \"dale.sackrider+geordi@gmail.com\",\n    \"resourceOwner\": \"Geordi\",\n    \"serviceProviderRole\": \"Network Domain Service Provider\"\n  },\n  \"vendorGovernance\": {\n    \"dataLeavesInfrastructure\": false,\n    \"dataResidencyCommitment\": \"Global Anycast Edge with regional origin processing\",\n    \"vendorSLA\": \"100% SLA commitment\",\n    \"acceptableUsePolicy\": \"Mandatory for all public web endpoints across Submind and client workloads. Bare GHS CNAME mappings are strictly non-compliant. All traffic must route through Cloudflare Anycast Edge with Full SSL encryption enabled.\"\n  },\n  \"decisionRecords\": [\n    {\n      \"ref\": \"01M7GTBMQS-SZBH\",\n      \"key\": \"edgeProxyDecision\"\n    }\n  ],\n  \"requirementImplementations\": [\n    {\n      \"requirementGroup\": \"01M7GTBMQT-H66V\",\n      \"requirementId\": \"req-edge-proxy-mandatory\",\n      \"status\": \"satisfied\",\n      \"mechanism\": \"decisionRecord\",\n      \"key\": \"edgeProxyDecision\",\n      \"notes\": \"Satisfied by the Edge Proxy Architecture & Acceptable Use Decision; this object is Geordi's Cloudflare Global Anycast Edge Proxy service module deployed via BeerCanLabs/skippy-matrix.\"\n    }\n  ],\n  \"_source\": \"catalog/shared-services/network-services/network-service-cloudflare-edge-proxy.yaml\"\n}",
+      "existsInCatalog": true,
+      "outboundRelationships": [],
+      "inboundRelationships": []
+    },
+    "01M7GWTG2T-TQEB": {
+      "id": "01M7GWTG2T-TQEB",
+      "uid": "01M7GWTG2T-TQEB",
+      "name": "Amazon CloudWatch - Agent Factory",
+      "aliases": [],
+      "type": "runtime_service",
+      "typeLabel": "RuntimeService / Paas",
+      "filterType": "runtime_service",
+      "category": "",
+      "deliveryModel": "paas",
+      "domain": "",
+      "description": "CloudWatch Logs and Container Insights for the factory-prod ECS cluster, and alarms for Closing Climb jobs.",
+      "version": "",
+      "catalogStatus": "incomplete",
+      "lifecycleStatus": "preferred",
+      "status": "",
+      "businessContext": {},
+      "product": "",
+      "runsOn": "",
+      "subtype": "",
+      "vendor": "Amazon Web Services",
+      "productName": "Amazon CloudWatch",
+      "productVersion": "managed",
+      "classification": "",
+      "platformDependency": "",
+      "capabilities": [
+        "01KQQ4Q026-D04B",
+        "01KQQ4Q026-98VD"
+      ],
+      "configurations": [],
+      "networkPlacement": "",
+      "patchingOwner": "aws-managed",
+      "complianceCerts": [],
+      "requirementGroups": [],
+      "requirementImplementations": [],
+      "dataLeavesInfrastructure": null,
+      "dataResidencyCommitment": "",
+      "dpaNotes": "",
+      "vendorSLA": "",
+      "authenticationModel": "iam",
+      "incidentNotificationProcess": "",
+      "owner": {
+        "team": "platform-ai-team",
+        "contact": "platform-ai@example.com"
+      },
+      "definitionOwner": {},
+      "provider": {},
+      "authority": {},
+      "shape": "diamond",
+      "color": "#1f8a5b",
+      "source": "catalog/shared-services/runtime-services/runtime-service-amazon-cloudwatch.yaml",
+      "tags": [
+        "aws",
+        "cloudwatch",
+        "observability",
+        "agent-factory",
+        "closing-climb"
+      ],
+      "ardCategory": "",
+      "internalComponents": [],
+      "notes": {
+        "verification": "Verified read-only from AWS account ending 2296 (us-east-1) on 2026-11-15 (America/Phoenix).",
+        "logGroups": "/ecs/factory-prod (30 days), /ecs/closing-climb-prod (30 days), /aws/ecs/containerinsights/factory-prod/performance (1 day), /aws/ecs/application/metrics, and CodeBuild log groups for factory-agent-builder, factory-skill-checker and factory-skills-builder.",
+        "alarms": "7 metric alarms, all for Closing Climb: buffini-sync failed, empty-category, rank-unresolved and stale (namespace ClosingClimb); scheduler DLQ visible messages (AWS/SQS); weekly25 build failed and print failed.",
+        "incomplete": "No CloudWatch dashboards exist and no Agent Factory alarms were found; alerting coverage for factory services is unmodeled."
+      },
+      "requirements": [],
+      "implementations": [],
+      "appliesTo": {},
+      "inherits": "",
+      "scalingUnits": [],
+      "networkZones": [],
+      "sdpConnections": [],
+      "serviceGroups": [],
+      "tierVariants": [],
+      "tierId": "",
+      "purpose": "",
+      "availabilityExpectation": "",
+      "costPosture": "",
+      "complianceScope": [],
+      "parameterSurface": [],
+      "followsReferenceArchitecture": "",
+      "decisionRecords": [],
+      "affectedComponent": "",
+      "impact": "",
+      "mitigationPath": "",
+      "decisionRationale": "",
+      "relatedDecisionRecords": [],
+      "linkedObject": "",
+      "primaryObjectType": "",
+      "primaryObjectUid": "",
+      "generatedObjects": [],
+      "unresolvedQuestions": [],
+      "assumptions": [],
+      "nextSteps": [],
+      "defaultSelection": false,
+      "requirementCount": 0,
+      "hasRiskRef": false,
+      "outboundRefs": [
+        {
+          "target": "01KQQ4Q026-D04B",
+          "path": "capabilities[0]"
+        },
+        {
+          "target": "01KQQ4Q026-98VD",
+          "path": "capabilities[1]"
+        }
+      ],
+      "referencedBy": [],
+      "editorSchema": {
+        "requiredFields": [
+          "schemaVersion",
+          "uid",
+          "type",
+          "name",
+          "deliveryModel",
+          "catalogStatus",
+          "lifecycleStatus"
+        ],
+        "optionalFields": [
+          "aliases",
+          "description",
+          "version",
+          "owner",
+          "tags",
+          "serviceRole",
+          "host",
+          "primaryTechnologyComponent",
+          "internalComponents",
+          "deploymentConfigurations",
+          "vendor",
+          "productName",
+          "productVersion",
+          "capabilities",
+          "configurations",
+          "networkPlacement",
+          "patchingOwner",
+          "authenticationModel",
+          "vendorGovernance",
+          "provisioningModel",
+          "deployablePackage",
+          "notes",
+          "decisionRecords",
+          "requirementImplementations"
+        ],
+        "fieldTypes": {
+          "aliases": "list",
+          "owner": "dict",
+          "tags": "list",
+          "internalComponents": "list",
+          "deploymentConfigurations": "list",
+          "capabilities": "list",
+          "configurations": "list",
+          "notes": "dict",
+          "vendorGovernance": "dict",
+          "requirementGroups": "list",
+          "decisionRecords": "list",
+          "requirementImplementations": "list"
+        },
+        "enumFields": {
+          "serviceRole": [
+            "definition",
+            "instance"
+          ],
+          "provisioningModel": [
+            "deployable",
+            "reference-only"
+          ],
+          "catalogStatus": [
+            "stub",
+            "incomplete",
+            "complete"
+          ],
+          "lifecycleStatus": [
+            "candidate",
+            "preferred",
+            "existing-only",
+            "deprecated",
+            "retired"
+          ],
+          "deliveryModel": [
+            "self-managed",
+            "paas",
+            "saas",
+            "appliance"
+          ],
+          "networkPlacement": [
+            "public-facing",
+            "internal",
+            "vpc-private"
+          ],
+          "patchingOwner": [
+            "provider-managed",
+            "organization-scheduled",
+            "vendor-managed",
+            "aws-managed"
+          ],
+          "authenticationModel": [
+            "iam",
+            "api-key",
+            "oauth",
+            "saml",
+            "other",
+            "TBD"
+          ]
+        },
+        "enumListFields": {},
+        "collectionSchemas": {
+          "internalComponents": "internalComponent",
+          "deploymentConfigurations": "deploymentConfiguration",
+          "configurations": "configuration",
+          "decisionRecords": "decisionRecordRef",
+          "requirementImplementations": "requirementImplementation"
+        },
+        "schemaPath": "framework/schemas/runtime-service.schema.yaml"
+      },
+      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M7GWTG2T-TQEB\",\n  \"type\": \"runtime_service\",\n  \"name\": \"Amazon CloudWatch - Agent Factory\",\n  \"description\": \"CloudWatch Logs and Container Insights for the factory-prod ECS cluster, and alarms for Closing Climb jobs.\",\n  \"catalogStatus\": \"incomplete\",\n  \"lifecycleStatus\": \"preferred\",\n  \"owner\": {\n    \"team\": \"platform-ai-team\",\n    \"contact\": \"platform-ai@example.com\"\n  },\n  \"tags\": [\n    \"aws\",\n    \"cloudwatch\",\n    \"observability\",\n    \"agent-factory\",\n    \"closing-climb\"\n  ],\n  \"deliveryModel\": \"paas\",\n  \"vendor\": \"Amazon Web Services\",\n  \"productName\": \"Amazon CloudWatch\",\n  \"productVersion\": \"managed\",\n  \"patchingOwner\": \"aws-managed\",\n  \"authenticationModel\": \"iam\",\n  \"capabilities\": [\n    \"01KQQ4Q026-D04B\",\n    \"01KQQ4Q026-98VD\"\n  ],\n  \"provisioningModel\": \"reference-only\",\n  \"notes\": {\n    \"verification\": \"Verified read-only from AWS account ending 2296 (us-east-1) on 2026-11-15 (America/Phoenix).\",\n    \"logGroups\": \"/ecs/factory-prod (30 days), /ecs/closing-climb-prod (30 days), /aws/ecs/containerinsights/factory-prod/performance (1 day), /aws/ecs/application/metrics, and CodeBuild log groups for factory-agent-builder, factory-skill-checker and factory-skills-builder.\",\n    \"alarms\": \"7 metric alarms, all for Closing Climb: buffini-sync failed, empty-category, rank-unresolved and stale (namespace ClosingClimb); scheduler DLQ visible messages (AWS/SQS); weekly25 build failed and print failed.\",\n    \"incomplete\": \"No CloudWatch dashboards exist and no Agent Factory alarms were found; alerting coverage for factory services is unmodeled.\"\n  },\n  \"_source\": \"catalog/shared-services/runtime-services/runtime-service-amazon-cloudwatch.yaml\"\n}",
+      "existsInCatalog": true,
+      "outboundRelationships": [],
+      "inboundRelationships": []
+    },
+    "01M7GWTG2T-0NKZ": {
+      "id": "01M7GWTG2T-0NKZ",
+      "uid": "01M7GWTG2T-0NKZ",
+      "name": "Amazon ECR - Agent Factory Images",
+      "aliases": [],
+      "type": "runtime_service",
+      "typeLabel": "RuntimeService / Paas",
+      "filterType": "runtime_service",
+      "category": "",
+      "deliveryModel": "paas",
+      "domain": "",
+      "description": "Private container registry for Agent Factory, agent cartridge and Closing Climb images.",
+      "version": "",
+      "catalogStatus": "incomplete",
+      "lifecycleStatus": "preferred",
+      "status": "",
+      "businessContext": {},
+      "product": "",
+      "runsOn": "",
+      "subtype": "",
+      "vendor": "Amazon Web Services",
+      "productName": "Amazon Elastic Container Registry",
+      "productVersion": "managed",
+      "classification": "",
+      "platformDependency": "",
+      "capabilities": [
+        "01KT0XNZEY-7HWQ"
+      ],
+      "configurations": [],
+      "networkPlacement": "",
+      "patchingOwner": "aws-managed",
+      "complianceCerts": [],
+      "requirementGroups": [],
+      "requirementImplementations": [],
+      "dataLeavesInfrastructure": null,
+      "dataResidencyCommitment": "",
+      "dpaNotes": "",
+      "vendorSLA": "",
+      "authenticationModel": "iam",
+      "incidentNotificationProcess": "",
+      "owner": {
+        "team": "platform-ai-team",
+        "contact": "platform-ai@example.com"
+      },
+      "definitionOwner": {},
+      "provider": {},
+      "authority": {},
+      "shape": "diamond",
+      "color": "#1f8a5b",
+      "source": "catalog/shared-services/runtime-services/runtime-service-amazon-ecr.yaml",
+      "tags": [
+        "aws",
+        "ecr",
+        "container-registry",
+        "agent-factory",
+        "closing-climb"
+      ],
+      "ardCategory": "",
+      "internalComponents": [],
+      "notes": {
+        "verification": "Verified read-only from AWS account ending 2296 (us-east-1) on 2026-11-15 (America/Phoenix).",
+        "repositories": "factory-control-plane, factory-gatekeeper-ingress, factory-gatekeeper-egress, factory-console, factory-garrison, factory-agent-runtime, factory-dynamic-agents, factory-agent-llm-summarizer, factory-agent-echo-agent, closing-climb-web.",
+        "builds": "CodeBuild projects factory-agent-builder, factory-skills-builder and factory-skill-checker exist in the account.",
+        "incomplete": "Image scanning and lifecycle policies were not reviewed (closing-climb-web has a lifecycle policy in Terraform)."
+      },
+      "requirements": [],
+      "implementations": [],
+      "appliesTo": {},
+      "inherits": "",
+      "scalingUnits": [],
+      "networkZones": [],
+      "sdpConnections": [],
+      "serviceGroups": [],
+      "tierVariants": [],
+      "tierId": "",
+      "purpose": "",
+      "availabilityExpectation": "",
+      "costPosture": "",
+      "complianceScope": [],
+      "parameterSurface": [],
+      "followsReferenceArchitecture": "",
+      "decisionRecords": [],
+      "affectedComponent": "",
+      "impact": "",
+      "mitigationPath": "",
+      "decisionRationale": "",
+      "relatedDecisionRecords": [],
+      "linkedObject": "",
+      "primaryObjectType": "",
+      "primaryObjectUid": "",
+      "generatedObjects": [],
+      "unresolvedQuestions": [],
+      "assumptions": [],
+      "nextSteps": [],
+      "defaultSelection": false,
+      "requirementCount": 0,
+      "hasRiskRef": false,
+      "outboundRefs": [
+        {
+          "target": "01KT0XNZEY-7HWQ",
+          "path": "capabilities[0]"
+        }
+      ],
+      "referencedBy": [],
+      "editorSchema": {
+        "requiredFields": [
+          "schemaVersion",
+          "uid",
+          "type",
+          "name",
+          "deliveryModel",
+          "catalogStatus",
+          "lifecycleStatus"
+        ],
+        "optionalFields": [
+          "aliases",
+          "description",
+          "version",
+          "owner",
+          "tags",
+          "serviceRole",
+          "host",
+          "primaryTechnologyComponent",
+          "internalComponents",
+          "deploymentConfigurations",
+          "vendor",
+          "productName",
+          "productVersion",
+          "capabilities",
+          "configurations",
+          "networkPlacement",
+          "patchingOwner",
+          "authenticationModel",
+          "vendorGovernance",
+          "provisioningModel",
+          "deployablePackage",
+          "notes",
+          "decisionRecords",
+          "requirementImplementations"
+        ],
+        "fieldTypes": {
+          "aliases": "list",
+          "owner": "dict",
+          "tags": "list",
+          "internalComponents": "list",
+          "deploymentConfigurations": "list",
+          "capabilities": "list",
+          "configurations": "list",
+          "notes": "dict",
+          "vendorGovernance": "dict",
+          "requirementGroups": "list",
+          "decisionRecords": "list",
+          "requirementImplementations": "list"
+        },
+        "enumFields": {
+          "serviceRole": [
+            "definition",
+            "instance"
+          ],
+          "provisioningModel": [
+            "deployable",
+            "reference-only"
+          ],
+          "catalogStatus": [
+            "stub",
+            "incomplete",
+            "complete"
+          ],
+          "lifecycleStatus": [
+            "candidate",
+            "preferred",
+            "existing-only",
+            "deprecated",
+            "retired"
+          ],
+          "deliveryModel": [
+            "self-managed",
+            "paas",
+            "saas",
+            "appliance"
+          ],
+          "networkPlacement": [
+            "public-facing",
+            "internal",
+            "vpc-private"
+          ],
+          "patchingOwner": [
+            "provider-managed",
+            "organization-scheduled",
+            "vendor-managed",
+            "aws-managed"
+          ],
+          "authenticationModel": [
+            "iam",
+            "api-key",
+            "oauth",
+            "saml",
+            "other",
+            "TBD"
+          ]
+        },
+        "enumListFields": {},
+        "collectionSchemas": {
+          "internalComponents": "internalComponent",
+          "deploymentConfigurations": "deploymentConfiguration",
+          "configurations": "configuration",
+          "decisionRecords": "decisionRecordRef",
+          "requirementImplementations": "requirementImplementation"
+        },
+        "schemaPath": "framework/schemas/runtime-service.schema.yaml"
+      },
+      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M7GWTG2T-0NKZ\",\n  \"type\": \"runtime_service\",\n  \"name\": \"Amazon ECR - Agent Factory Images\",\n  \"description\": \"Private container registry for Agent Factory, agent cartridge and Closing Climb images.\",\n  \"catalogStatus\": \"incomplete\",\n  \"lifecycleStatus\": \"preferred\",\n  \"owner\": {\n    \"team\": \"platform-ai-team\",\n    \"contact\": \"platform-ai@example.com\"\n  },\n  \"tags\": [\n    \"aws\",\n    \"ecr\",\n    \"container-registry\",\n    \"agent-factory\",\n    \"closing-climb\"\n  ],\n  \"deliveryModel\": \"paas\",\n  \"vendor\": \"Amazon Web Services\",\n  \"productName\": \"Amazon Elastic Container Registry\",\n  \"productVersion\": \"managed\",\n  \"patchingOwner\": \"aws-managed\",\n  \"authenticationModel\": \"iam\",\n  \"capabilities\": [\n    \"01KT0XNZEY-7HWQ\"\n  ],\n  \"provisioningModel\": \"reference-only\",\n  \"notes\": {\n    \"verification\": \"Verified read-only from AWS account ending 2296 (us-east-1) on 2026-11-15 (America/Phoenix).\",\n    \"repositories\": \"factory-control-plane, factory-gatekeeper-ingress, factory-gatekeeper-egress, factory-console, factory-garrison, factory-agent-runtime, factory-dynamic-agents, factory-agent-llm-summarizer, factory-agent-echo-agent, closing-climb-web.\",\n    \"builds\": \"CodeBuild projects factory-agent-builder, factory-skills-builder and factory-skill-checker exist in the account.\",\n    \"incomplete\": \"Image scanning and lifecycle policies were not reviewed (closing-climb-web has a lifecycle policy in Terraform).\"\n  },\n  \"_source\": \"catalog/shared-services/runtime-services/runtime-service-amazon-ecr.yaml\"\n}",
+      "existsInCatalog": true,
+      "outboundRelationships": [],
+      "inboundRelationships": []
+    },
+    "01M7GWTG2T-M5GD": {
+      "id": "01M7GWTG2T-M5GD",
+      "uid": "01M7GWTG2T-M5GD",
+      "name": "Amazon SNS - Closing Climb Alerts",
+      "aliases": [],
+      "type": "runtime_service",
+      "typeLabel": "RuntimeService / Paas",
+      "filterType": "runtime_service",
+      "category": "",
+      "deliveryModel": "paas",
+      "domain": "",
+      "description": "SNS topic that receives all Closing Climb alarms (Buffini sync, weekly25 and the scheduler DLQ) and the EventBridge scheduled-task nonzero-exit rule.",
+      "version": "",
+      "catalogStatus": "incomplete",
+      "lifecycleStatus": "preferred",
+      "status": "",
+      "businessContext": {},
+      "product": "",
+      "runsOn": "",
+      "subtype": "",
+      "vendor": "Amazon Web Services",
+      "productName": "Amazon Simple Notification Service",
+      "productVersion": "managed",
+      "classification": "",
+      "platformDependency": "",
+      "capabilities": [
+        "01KT0V5MCV-KT72"
+      ],
+      "configurations": [],
+      "networkPlacement": "",
+      "patchingOwner": "aws-managed",
+      "complianceCerts": [],
+      "requirementGroups": [],
+      "requirementImplementations": [],
+      "dataLeavesInfrastructure": null,
+      "dataResidencyCommitment": "",
+      "dpaNotes": "",
+      "vendorSLA": "",
+      "authenticationModel": "iam",
+      "incidentNotificationProcess": "",
+      "owner": {
+        "team": "platform-ai-team",
+        "contact": "platform-ai@example.com"
+      },
+      "definitionOwner": {},
+      "provider": {},
+      "authority": {},
+      "shape": "diamond",
+      "color": "#1f8a5b",
+      "source": "catalog/shared-services/runtime-services/runtime-service-amazon-sns.yaml",
+      "tags": [
+        "aws",
+        "sns",
+        "alerting",
+        "closing-climb"
+      ],
+      "ardCategory": "",
+      "internalComponents": [],
+      "notes": {
+        "verification": "Verified read-only from AWS account ending 2296 (us-east-1) on 2026-11-15 (America/Phoenix).",
+        "topics": "1 topic: closing-climb-prod-buffini-sync-alerts with 1 email subscription (endpoint not recorded here).",
+        "provisioning": "Provisioned by Terraform in BeerCanLabs/closing-climb-web infra/aws/main.tf; not yet packaged as a DRAFT deployablePackage."
+      },
+      "requirements": [],
+      "implementations": [],
+      "appliesTo": {},
+      "inherits": "",
+      "scalingUnits": [],
+      "networkZones": [],
+      "sdpConnections": [],
+      "serviceGroups": [],
+      "tierVariants": [],
+      "tierId": "",
+      "purpose": "",
+      "availabilityExpectation": "",
+      "costPosture": "",
+      "complianceScope": [],
+      "parameterSurface": [],
+      "followsReferenceArchitecture": "",
+      "decisionRecords": [],
+      "affectedComponent": "",
+      "impact": "",
+      "mitigationPath": "",
+      "decisionRationale": "",
+      "relatedDecisionRecords": [],
+      "linkedObject": "",
+      "primaryObjectType": "",
+      "primaryObjectUid": "",
+      "generatedObjects": [],
+      "unresolvedQuestions": [],
+      "assumptions": [],
+      "nextSteps": [],
+      "defaultSelection": false,
+      "requirementCount": 0,
+      "hasRiskRef": false,
+      "outboundRefs": [
+        {
+          "target": "01KT0V5MCV-KT72",
+          "path": "capabilities[0]"
+        }
+      ],
+      "referencedBy": [],
+      "editorSchema": {
+        "requiredFields": [
+          "schemaVersion",
+          "uid",
+          "type",
+          "name",
+          "deliveryModel",
+          "catalogStatus",
+          "lifecycleStatus"
+        ],
+        "optionalFields": [
+          "aliases",
+          "description",
+          "version",
+          "owner",
+          "tags",
+          "serviceRole",
+          "host",
+          "primaryTechnologyComponent",
+          "internalComponents",
+          "deploymentConfigurations",
+          "vendor",
+          "productName",
+          "productVersion",
+          "capabilities",
+          "configurations",
+          "networkPlacement",
+          "patchingOwner",
+          "authenticationModel",
+          "vendorGovernance",
+          "provisioningModel",
+          "deployablePackage",
+          "notes",
+          "decisionRecords",
+          "requirementImplementations"
+        ],
+        "fieldTypes": {
+          "aliases": "list",
+          "owner": "dict",
+          "tags": "list",
+          "internalComponents": "list",
+          "deploymentConfigurations": "list",
+          "capabilities": "list",
+          "configurations": "list",
+          "notes": "dict",
+          "vendorGovernance": "dict",
+          "requirementGroups": "list",
+          "decisionRecords": "list",
+          "requirementImplementations": "list"
+        },
+        "enumFields": {
+          "serviceRole": [
+            "definition",
+            "instance"
+          ],
+          "provisioningModel": [
+            "deployable",
+            "reference-only"
+          ],
+          "catalogStatus": [
+            "stub",
+            "incomplete",
+            "complete"
+          ],
+          "lifecycleStatus": [
+            "candidate",
+            "preferred",
+            "existing-only",
+            "deprecated",
+            "retired"
+          ],
+          "deliveryModel": [
+            "self-managed",
+            "paas",
+            "saas",
+            "appliance"
+          ],
+          "networkPlacement": [
+            "public-facing",
+            "internal",
+            "vpc-private"
+          ],
+          "patchingOwner": [
+            "provider-managed",
+            "organization-scheduled",
+            "vendor-managed",
+            "aws-managed"
+          ],
+          "authenticationModel": [
+            "iam",
+            "api-key",
+            "oauth",
+            "saml",
+            "other",
+            "TBD"
+          ]
+        },
+        "enumListFields": {},
+        "collectionSchemas": {
+          "internalComponents": "internalComponent",
+          "deploymentConfigurations": "deploymentConfiguration",
+          "configurations": "configuration",
+          "decisionRecords": "decisionRecordRef",
+          "requirementImplementations": "requirementImplementation"
+        },
+        "schemaPath": "framework/schemas/runtime-service.schema.yaml"
+      },
+      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M7GWTG2T-M5GD\",\n  \"type\": \"runtime_service\",\n  \"name\": \"Amazon SNS - Closing Climb Alerts\",\n  \"description\": \"SNS topic that receives all Closing Climb alarms (Buffini sync, weekly25 and the scheduler DLQ) and the EventBridge scheduled-task nonzero-exit rule.\",\n  \"catalogStatus\": \"incomplete\",\n  \"lifecycleStatus\": \"preferred\",\n  \"owner\": {\n    \"team\": \"platform-ai-team\",\n    \"contact\": \"platform-ai@example.com\"\n  },\n  \"tags\": [\n    \"aws\",\n    \"sns\",\n    \"alerting\",\n    \"closing-climb\"\n  ],\n  \"deliveryModel\": \"paas\",\n  \"vendor\": \"Amazon Web Services\",\n  \"productName\": \"Amazon Simple Notification Service\",\n  \"productVersion\": \"managed\",\n  \"patchingOwner\": \"aws-managed\",\n  \"authenticationModel\": \"iam\",\n  \"capabilities\": [\n    \"01KT0V5MCV-KT72\"\n  ],\n  \"provisioningModel\": \"reference-only\",\n  \"notes\": {\n    \"verification\": \"Verified read-only from AWS account ending 2296 (us-east-1) on 2026-11-15 (America/Phoenix).\",\n    \"topics\": \"1 topic: closing-climb-prod-buffini-sync-alerts with 1 email subscription (endpoint not recorded here).\",\n    \"provisioning\": \"Provisioned by Terraform in BeerCanLabs/closing-climb-web infra/aws/main.tf; not yet packaged as a DRAFT deployablePackage.\"\n  },\n  \"_source\": \"catalog/shared-services/runtime-services/runtime-service-amazon-sns.yaml\"\n}",
+      "existsInCatalog": true,
+      "outboundRelationships": [],
+      "inboundRelationships": []
+    },
+    "01M7GWTG2T-M07S": {
+      "id": "01M7GWTG2T-M07S",
+      "uid": "01M7GWTG2T-M07S",
+      "name": "Amazon SQS - Closing Climb Scheduler DLQ",
+      "aliases": [],
+      "type": "runtime_service",
+      "typeLabel": "RuntimeService / Paas",
+      "filterType": "runtime_service",
+      "category": "",
+      "deliveryModel": "paas",
+      "domain": "",
+      "description": "SQS dead-letter queue for failed Closing Climb EventBridge Scheduler invocations.",
+      "version": "",
+      "catalogStatus": "incomplete",
+      "lifecycleStatus": "preferred",
+      "status": "",
+      "businessContext": {},
+      "product": "",
+      "runsOn": "",
+      "subtype": "",
+      "vendor": "Amazon Web Services",
+      "productName": "Amazon Simple Queue Service",
+      "productVersion": "managed",
+      "classification": "",
+      "platformDependency": "",
+      "capabilities": [
+        "01KT0V5MCV-KT72"
+      ],
+      "configurations": [],
+      "networkPlacement": "",
+      "patchingOwner": "aws-managed",
+      "complianceCerts": [],
+      "requirementGroups": [],
+      "requirementImplementations": [],
+      "dataLeavesInfrastructure": null,
+      "dataResidencyCommitment": "",
+      "dpaNotes": "",
+      "vendorSLA": "",
+      "authenticationModel": "iam",
+      "incidentNotificationProcess": "",
+      "owner": {
+        "team": "platform-ai-team",
+        "contact": "platform-ai@example.com"
+      },
+      "definitionOwner": {},
+      "provider": {},
+      "authority": {},
+      "shape": "diamond",
+      "color": "#1f8a5b",
+      "source": "catalog/shared-services/runtime-services/runtime-service-amazon-sqs.yaml",
+      "tags": [
+        "aws",
+        "sqs",
+        "dead-letter-queue",
+        "closing-climb"
+      ],
+      "ardCategory": "",
+      "internalComponents": [],
+      "notes": {
+        "verification": "Verified read-only from AWS account ending 2296 (us-east-1) on 2026-11-15 (America/Phoenix).",
+        "queues": "1 queue: closing-climb-prod-scheduler-dlq, watched by alarm closing-climb-prod-scheduler-dlq-visible.",
+        "provisioning": "Provisioned by Terraform in BeerCanLabs/closing-climb-web infra/aws/main.tf; not yet packaged as a DRAFT deployablePackage."
+      },
+      "requirements": [],
+      "implementations": [],
+      "appliesTo": {},
+      "inherits": "",
+      "scalingUnits": [],
+      "networkZones": [],
+      "sdpConnections": [],
+      "serviceGroups": [],
+      "tierVariants": [],
+      "tierId": "",
+      "purpose": "",
+      "availabilityExpectation": "",
+      "costPosture": "",
+      "complianceScope": [],
+      "parameterSurface": [],
+      "followsReferenceArchitecture": "",
+      "decisionRecords": [],
+      "affectedComponent": "",
+      "impact": "",
+      "mitigationPath": "",
+      "decisionRationale": "",
+      "relatedDecisionRecords": [],
+      "linkedObject": "",
+      "primaryObjectType": "",
+      "primaryObjectUid": "",
+      "generatedObjects": [],
+      "unresolvedQuestions": [],
+      "assumptions": [],
+      "nextSteps": [],
+      "defaultSelection": false,
+      "requirementCount": 0,
+      "hasRiskRef": false,
+      "outboundRefs": [
+        {
+          "target": "01KT0V5MCV-KT72",
+          "path": "capabilities[0]"
+        }
+      ],
+      "referencedBy": [],
+      "editorSchema": {
+        "requiredFields": [
+          "schemaVersion",
+          "uid",
+          "type",
+          "name",
+          "deliveryModel",
+          "catalogStatus",
+          "lifecycleStatus"
+        ],
+        "optionalFields": [
+          "aliases",
+          "description",
+          "version",
+          "owner",
+          "tags",
+          "serviceRole",
+          "host",
+          "primaryTechnologyComponent",
+          "internalComponents",
+          "deploymentConfigurations",
+          "vendor",
+          "productName",
+          "productVersion",
+          "capabilities",
+          "configurations",
+          "networkPlacement",
+          "patchingOwner",
+          "authenticationModel",
+          "vendorGovernance",
+          "provisioningModel",
+          "deployablePackage",
+          "notes",
+          "decisionRecords",
+          "requirementImplementations"
+        ],
+        "fieldTypes": {
+          "aliases": "list",
+          "owner": "dict",
+          "tags": "list",
+          "internalComponents": "list",
+          "deploymentConfigurations": "list",
+          "capabilities": "list",
+          "configurations": "list",
+          "notes": "dict",
+          "vendorGovernance": "dict",
+          "requirementGroups": "list",
+          "decisionRecords": "list",
+          "requirementImplementations": "list"
+        },
+        "enumFields": {
+          "serviceRole": [
+            "definition",
+            "instance"
+          ],
+          "provisioningModel": [
+            "deployable",
+            "reference-only"
+          ],
+          "catalogStatus": [
+            "stub",
+            "incomplete",
+            "complete"
+          ],
+          "lifecycleStatus": [
+            "candidate",
+            "preferred",
+            "existing-only",
+            "deprecated",
+            "retired"
+          ],
+          "deliveryModel": [
+            "self-managed",
+            "paas",
+            "saas",
+            "appliance"
+          ],
+          "networkPlacement": [
+            "public-facing",
+            "internal",
+            "vpc-private"
+          ],
+          "patchingOwner": [
+            "provider-managed",
+            "organization-scheduled",
+            "vendor-managed",
+            "aws-managed"
+          ],
+          "authenticationModel": [
+            "iam",
+            "api-key",
+            "oauth",
+            "saml",
+            "other",
+            "TBD"
+          ]
+        },
+        "enumListFields": {},
+        "collectionSchemas": {
+          "internalComponents": "internalComponent",
+          "deploymentConfigurations": "deploymentConfiguration",
+          "configurations": "configuration",
+          "decisionRecords": "decisionRecordRef",
+          "requirementImplementations": "requirementImplementation"
+        },
+        "schemaPath": "framework/schemas/runtime-service.schema.yaml"
+      },
+      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M7GWTG2T-M07S\",\n  \"type\": \"runtime_service\",\n  \"name\": \"Amazon SQS - Closing Climb Scheduler DLQ\",\n  \"description\": \"SQS dead-letter queue for failed Closing Climb EventBridge Scheduler invocations.\",\n  \"catalogStatus\": \"incomplete\",\n  \"lifecycleStatus\": \"preferred\",\n  \"owner\": {\n    \"team\": \"platform-ai-team\",\n    \"contact\": \"platform-ai@example.com\"\n  },\n  \"tags\": [\n    \"aws\",\n    \"sqs\",\n    \"dead-letter-queue\",\n    \"closing-climb\"\n  ],\n  \"deliveryModel\": \"paas\",\n  \"vendor\": \"Amazon Web Services\",\n  \"productName\": \"Amazon Simple Queue Service\",\n  \"productVersion\": \"managed\",\n  \"patchingOwner\": \"aws-managed\",\n  \"authenticationModel\": \"iam\",\n  \"capabilities\": [\n    \"01KT0V5MCV-KT72\"\n  ],\n  \"provisioningModel\": \"reference-only\",\n  \"notes\": {\n    \"verification\": \"Verified read-only from AWS account ending 2296 (us-east-1) on 2026-11-15 (America/Phoenix).\",\n    \"queues\": \"1 queue: closing-climb-prod-scheduler-dlq, watched by alarm closing-climb-prod-scheduler-dlq-visible.\",\n    \"provisioning\": \"Provisioned by Terraform in BeerCanLabs/closing-climb-web infra/aws/main.tf; not yet packaged as a DRAFT deployablePackage.\"\n  },\n  \"_source\": \"catalog/shared-services/runtime-services/runtime-service-amazon-sqs.yaml\"\n}",
+      "existsInCatalog": true,
+      "outboundRelationships": [],
+      "inboundRelationships": []
+    },
+    "01M7GWTG2S-AC3R": {
+      "id": "01M7GWTG2S-AC3R",
+      "uid": "01M7GWTG2S-AC3R",
+      "name": "AWS ECS Fargate Runtime - factory-prod",
+      "aliases": [],
+      "type": "runtime_service",
+      "typeLabel": "RuntimeService / Paas",
+      "filterType": "runtime_service",
+      "category": "",
+      "deliveryModel": "paas",
+      "domain": "",
+      "description": "Amazon ECS on Fargate runtime for the BeerCanLabs Agent Factory and Closing Climb in us-east-1. Long-running services plus on-demand agent tasks.",
+      "version": "",
+      "catalogStatus": "incomplete",
+      "lifecycleStatus": "preferred",
+      "status": "",
+      "businessContext": {},
+      "product": "",
+      "runsOn": "",
+      "subtype": "",
+      "vendor": "Amazon Web Services",
+      "productName": "Amazon ECS on AWS Fargate",
+      "productVersion": "managed",
+      "classification": "",
+      "platformDependency": "",
+      "capabilities": [
+        "01KQQ4Q026-1HZP",
+        "01KQQ4Q026-GW5D",
+        "01KT0V5MCV-RZV0"
+      ],
+      "configurations": [],
+      "networkPlacement": "",
+      "patchingOwner": "aws-managed",
+      "complianceCerts": [],
+      "requirementGroups": [],
+      "requirementImplementations": [],
+      "dataLeavesInfrastructure": null,
+      "dataResidencyCommitment": "",
+      "dpaNotes": "",
+      "vendorSLA": "",
+      "authenticationModel": "iam",
+      "incidentNotificationProcess": "",
+      "owner": {
+        "team": "platform-ai-team",
+        "contact": "platform-ai@example.com"
+      },
+      "definitionOwner": {},
+      "provider": {},
+      "authority": {},
+      "shape": "diamond",
+      "color": "#1f8a5b",
+      "source": "catalog/shared-services/runtime-services/runtime-service-aws-ecs-fargate-factory-prod.yaml",
+      "tags": [
+        "aws",
+        "ecs",
+        "fargate",
+        "agent-factory",
+        "closing-climb",
+        "factory-prod"
+      ],
+      "ardCategory": "",
+      "internalComponents": [
+        {
+          "ref": "01M7GWTG2S-X9V8",
+          "role": "host",
+          "configuration": "",
+          "notes": ""
+        }
+      ],
+      "notes": {
+        "verification": "Verified read-only from AWS account ending 2296 (us-east-1) on 2026-11-15 (America/Phoenix).",
+        "services": "Six ECS services, each desired 1 / running 1, assignPublicIp ENABLED: control-plane (FARGATE, 512 CPU/1024 MB, ports 8088/8089, EFS ledger volume, otel sidecar); gatekeeper-ingress (FARGATE, 256/512, port 8090); gatekeeper-egress (FARGATE_SPOT, 512/1024, port 8081, otel sidecar); console (FARGATE, 512/1024, port 3000); garrison (FARGATE_SPOT, 1024/2048, port 3000); closing-climb-web (FARGATE, 256/512, port 8080).",
+        "onDemandTasks": "Agent cartridges run as on-demand ECS tasks (256 CPU/512 MB, FARGATE) from per-agent task definition families such as agent-higgins, agent-archie, agent-beercanlabs-coder, agent-beercanlabs-conductor and agent-beercanlabs-pr-reviewer, using images from ECR repository factory-dynamic-agents. closing-climb-prod-buffini-sync runs on a schedule.",
+        "imageVersions": "Factory service images were tagged 01720b2 (BeerCanLabs/agent-factory commit) and closing-climb-web a576c3a at verification time.",
+        "provisioning": "Provisioned by Terraform in BeerCanLabs/agent-factory landing-zones/aws (S3 backend); module not yet packaged as a DRAFT deployablePackage. Closing Climb resources: Provisioned by Terraform in BeerCanLabs/closing-climb-web infra/aws/main.tf; not yet packaged as a DRAFT deployablePackage.",
+        "incomplete": "Autoscaling, deployment circuit breaker settings and task IAM role scopes were not reviewed."
+      },
+      "requirements": [],
+      "implementations": [],
+      "appliesTo": {},
+      "inherits": "",
+      "scalingUnits": [],
+      "networkZones": [],
+      "sdpConnections": [],
+      "serviceGroups": [],
+      "tierVariants": [],
+      "tierId": "",
+      "purpose": "",
+      "availabilityExpectation": "",
+      "costPosture": "",
+      "complianceScope": [],
+      "parameterSurface": [],
+      "followsReferenceArchitecture": "",
+      "decisionRecords": [],
+      "affectedComponent": "",
+      "impact": "",
+      "mitigationPath": "",
+      "decisionRationale": "",
+      "relatedDecisionRecords": [],
+      "linkedObject": "",
+      "primaryObjectType": "",
+      "primaryObjectUid": "",
+      "generatedObjects": [],
+      "unresolvedQuestions": [],
+      "assumptions": [],
+      "nextSteps": [],
+      "defaultSelection": false,
+      "requirementCount": 0,
+      "hasRiskRef": false,
+      "outboundRefs": [
+        {
+          "target": "01M7GWTG2S-X9V8",
+          "path": "host"
+        },
+        {
+          "target": "01KQQ4Q026-1HZP",
+          "path": "capabilities[0]"
+        },
+        {
+          "target": "01KQQ4Q026-GW5D",
+          "path": "capabilities[1]"
+        },
+        {
+          "target": "01KT0V5MCV-RZV0",
+          "path": "capabilities[2]"
+        }
+      ],
+      "referencedBy": [
+        {
+          "source": "VP8VB5X0E7-7FJC",
+          "path": "source"
+        }
+      ],
+      "editorSchema": {
+        "requiredFields": [
+          "schemaVersion",
+          "uid",
+          "type",
+          "name",
+          "deliveryModel",
+          "catalogStatus",
+          "lifecycleStatus"
+        ],
+        "optionalFields": [
+          "aliases",
+          "description",
+          "version",
+          "owner",
+          "tags",
+          "serviceRole",
+          "host",
+          "primaryTechnologyComponent",
+          "internalComponents",
+          "deploymentConfigurations",
+          "vendor",
+          "productName",
+          "productVersion",
+          "capabilities",
+          "configurations",
+          "networkPlacement",
+          "patchingOwner",
+          "authenticationModel",
+          "vendorGovernance",
+          "provisioningModel",
+          "deployablePackage",
+          "notes",
+          "decisionRecords",
+          "requirementImplementations"
+        ],
+        "fieldTypes": {
+          "aliases": "list",
+          "owner": "dict",
+          "tags": "list",
+          "internalComponents": "list",
+          "deploymentConfigurations": "list",
+          "capabilities": "list",
+          "configurations": "list",
+          "notes": "dict",
+          "vendorGovernance": "dict",
+          "requirementGroups": "list",
+          "decisionRecords": "list",
+          "requirementImplementations": "list"
+        },
+        "enumFields": {
+          "serviceRole": [
+            "definition",
+            "instance"
+          ],
+          "provisioningModel": [
+            "deployable",
+            "reference-only"
+          ],
+          "catalogStatus": [
+            "stub",
+            "incomplete",
+            "complete"
+          ],
+          "lifecycleStatus": [
+            "candidate",
+            "preferred",
+            "existing-only",
+            "deprecated",
+            "retired"
+          ],
+          "deliveryModel": [
+            "self-managed",
+            "paas",
+            "saas",
+            "appliance"
+          ],
+          "networkPlacement": [
+            "public-facing",
+            "internal",
+            "vpc-private"
+          ],
+          "patchingOwner": [
+            "provider-managed",
+            "organization-scheduled",
+            "vendor-managed",
+            "aws-managed"
+          ],
+          "authenticationModel": [
+            "iam",
+            "api-key",
+            "oauth",
+            "saml",
+            "other",
+            "TBD"
+          ]
+        },
+        "enumListFields": {},
+        "collectionSchemas": {
+          "internalComponents": "internalComponent",
+          "deploymentConfigurations": "deploymentConfiguration",
+          "configurations": "configuration",
+          "decisionRecords": "decisionRecordRef",
+          "requirementImplementations": "requirementImplementation"
+        },
+        "schemaPath": "framework/schemas/runtime-service.schema.yaml"
+      },
+      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M7GWTG2S-AC3R\",\n  \"type\": \"runtime_service\",\n  \"name\": \"AWS ECS Fargate Runtime - factory-prod\",\n  \"description\": \"Amazon ECS on Fargate runtime for the BeerCanLabs Agent Factory and Closing Climb in us-east-1. Long-running services plus on-demand agent tasks.\",\n  \"catalogStatus\": \"incomplete\",\n  \"lifecycleStatus\": \"preferred\",\n  \"owner\": {\n    \"team\": \"platform-ai-team\",\n    \"contact\": \"platform-ai@example.com\"\n  },\n  \"tags\": [\n    \"aws\",\n    \"ecs\",\n    \"fargate\",\n    \"agent-factory\",\n    \"closing-climb\",\n    \"factory-prod\"\n  ],\n  \"deliveryModel\": \"paas\",\n  \"vendor\": \"Amazon Web Services\",\n  \"productName\": \"Amazon ECS on AWS Fargate\",\n  \"productVersion\": \"managed\",\n  \"patchingOwner\": \"aws-managed\",\n  \"authenticationModel\": \"iam\",\n  \"host\": \"01M7GWTG2S-X9V8\",\n  \"capabilities\": [\n    \"01KQQ4Q026-1HZP\",\n    \"01KQQ4Q026-GW5D\",\n    \"01KT0V5MCV-RZV0\"\n  ],\n  \"provisioningModel\": \"reference-only\",\n  \"notes\": {\n    \"verification\": \"Verified read-only from AWS account ending 2296 (us-east-1) on 2026-11-15 (America/Phoenix).\",\n    \"services\": \"Six ECS services, each desired 1 / running 1, assignPublicIp ENABLED: control-plane (FARGATE, 512 CPU/1024 MB, ports 8088/8089, EFS ledger volume, otel sidecar); gatekeeper-ingress (FARGATE, 256/512, port 8090); gatekeeper-egress (FARGATE_SPOT, 512/1024, port 8081, otel sidecar); console (FARGATE, 512/1024, port 3000); garrison (FARGATE_SPOT, 1024/2048, port 3000); closing-climb-web (FARGATE, 256/512, port 8080).\",\n    \"onDemandTasks\": \"Agent cartridges run as on-demand ECS tasks (256 CPU/512 MB, FARGATE) from per-agent task definition families such as agent-higgins, agent-archie, agent-beercanlabs-coder, agent-beercanlabs-conductor and agent-beercanlabs-pr-reviewer, using images from ECR repository factory-dynamic-agents. closing-climb-prod-buffini-sync runs on a schedule.\",\n    \"imageVersions\": \"Factory service images were tagged 01720b2 (BeerCanLabs/agent-factory commit) and closing-climb-web a576c3a at verification time.\",\n    \"provisioning\": \"Provisioned by Terraform in BeerCanLabs/agent-factory landing-zones/aws (S3 backend); module not yet packaged as a DRAFT deployablePackage. Closing Climb resources: Provisioned by Terraform in BeerCanLabs/closing-climb-web infra/aws/main.tf; not yet packaged as a DRAFT deployablePackage.\",\n    \"incomplete\": \"Autoscaling, deployment circuit breaker settings and task IAM role scopes were not reviewed.\"\n  },\n  \"_source\": \"catalog/shared-services/runtime-services/runtime-service-aws-ecs-fargate-factory-prod.yaml\"\n}",
+      "existsInCatalog": true,
+      "outboundRelationships": [
+        {
+          "uid": "VP8VB5X0E7-7FJC",
+          "name": "AWS ECS Fargate Runtime - factory-prod \u2192 AWS Fargate factory-prod ECS Cluster Host (us-east-1)",
+          "label": "runs on",
+          "technology": "",
+          "direction": "",
+          "targetUid": "01M7GWTG2S-X9V8",
+          "targetName": "AWS Fargate factory-prod ECS Cluster Host (us-east-1)",
+          "capabilities": []
+        }
+      ],
+      "inboundRelationships": []
+    },
+    "01M7GWTG2T-XKK0": {
+      "id": "01M7GWTG2T-XKK0",
+      "uid": "01M7GWTG2T-XKK0",
+      "name": "Amazon EventBridge Scheduler - Closing Climb",
+      "aliases": [],
+      "type": "runtime_service",
+      "typeLabel": "RuntimeService / Paas",
+      "filterType": "runtime_service",
+      "category": "",
+      "deliveryModel": "paas",
+      "domain": "",
+      "description": "EventBridge Scheduler schedules that launch Closing Climb ECS tasks in the factory-prod cluster.",
+      "version": "",
+      "catalogStatus": "incomplete",
+      "lifecycleStatus": "preferred",
+      "status": "",
+      "businessContext": {},
+      "product": "",
+      "runsOn": "",
+      "subtype": "",
+      "vendor": "Amazon Web Services",
+      "productName": "Amazon EventBridge Scheduler",
+      "productVersion": "managed",
+      "classification": "",
+      "platformDependency": "",
+      "capabilities": [],
+      "configurations": [],
+      "networkPlacement": "",
+      "patchingOwner": "aws-managed",
+      "complianceCerts": [],
+      "requirementGroups": [],
+      "requirementImplementations": [],
+      "dataLeavesInfrastructure": null,
+      "dataResidencyCommitment": "",
+      "dpaNotes": "",
+      "vendorSLA": "",
+      "authenticationModel": "iam",
+      "incidentNotificationProcess": "",
+      "owner": {
+        "team": "platform-ai-team",
+        "contact": "platform-ai@example.com"
+      },
+      "definitionOwner": {},
+      "provider": {},
+      "authority": {},
+      "shape": "diamond",
+      "color": "#1f8a5b",
+      "source": "catalog/shared-services/runtime-services/runtime-service-aws-eventbridge-scheduler.yaml",
+      "tags": [
+        "aws",
+        "eventbridge",
+        "scheduler",
+        "closing-climb"
+      ],
+      "ardCategory": "",
+      "internalComponents": [],
+      "notes": {
+        "verification": "Verified read-only from AWS account ending 2296 (us-east-1) on 2026-11-15 (America/Phoenix).",
+        "schedules": "closing-climb-prod-buffini-sync-nightly cron(0 2 * * ? *) runs task definition closing-climb-prod-buffini-sync; closing-climb-prod-weekly25-sunday cron(0 6 ? * SUN *) runs task definition closing-climb-prod. Both use timezone America/Phoenix.",
+        "failureHandling": "EventBridge rule closing-climb-prod-scheduled-task-nonzero-exit and SQS dead-letter queue closing-climb-prod-scheduler-dlq.",
+        "provisioning": "Provisioned by Terraform in BeerCanLabs/closing-climb-web infra/aws/main.tf; not yet packaged as a DRAFT deployablePackage.",
+        "incomplete": "Agent Factory timekeeper schedules (if any) were not found in EventBridge Scheduler and are unmodeled."
+      },
+      "requirements": [],
+      "implementations": [],
+      "appliesTo": {},
+      "inherits": "",
+      "scalingUnits": [],
+      "networkZones": [],
+      "sdpConnections": [],
+      "serviceGroups": [],
+      "tierVariants": [],
+      "tierId": "",
+      "purpose": "",
+      "availabilityExpectation": "",
+      "costPosture": "",
+      "complianceScope": [],
+      "parameterSurface": [],
+      "followsReferenceArchitecture": "",
+      "decisionRecords": [],
+      "affectedComponent": "",
+      "impact": "",
+      "mitigationPath": "",
+      "decisionRationale": "",
+      "relatedDecisionRecords": [],
+      "linkedObject": "",
+      "primaryObjectType": "",
+      "primaryObjectUid": "",
+      "generatedObjects": [],
+      "unresolvedQuestions": [],
+      "assumptions": [],
+      "nextSteps": [],
+      "defaultSelection": false,
+      "requirementCount": 0,
+      "hasRiskRef": false,
+      "outboundRefs": [],
+      "referencedBy": [],
+      "editorSchema": {
+        "requiredFields": [
+          "schemaVersion",
+          "uid",
+          "type",
+          "name",
+          "deliveryModel",
+          "catalogStatus",
+          "lifecycleStatus"
+        ],
+        "optionalFields": [
+          "aliases",
+          "description",
+          "version",
+          "owner",
+          "tags",
+          "serviceRole",
+          "host",
+          "primaryTechnologyComponent",
+          "internalComponents",
+          "deploymentConfigurations",
+          "vendor",
+          "productName",
+          "productVersion",
+          "capabilities",
+          "configurations",
+          "networkPlacement",
+          "patchingOwner",
+          "authenticationModel",
+          "vendorGovernance",
+          "provisioningModel",
+          "deployablePackage",
+          "notes",
+          "decisionRecords",
+          "requirementImplementations"
+        ],
+        "fieldTypes": {
+          "aliases": "list",
+          "owner": "dict",
+          "tags": "list",
+          "internalComponents": "list",
+          "deploymentConfigurations": "list",
+          "capabilities": "list",
+          "configurations": "list",
+          "notes": "dict",
+          "vendorGovernance": "dict",
+          "requirementGroups": "list",
+          "decisionRecords": "list",
+          "requirementImplementations": "list"
+        },
+        "enumFields": {
+          "serviceRole": [
+            "definition",
+            "instance"
+          ],
+          "provisioningModel": [
+            "deployable",
+            "reference-only"
+          ],
+          "catalogStatus": [
+            "stub",
+            "incomplete",
+            "complete"
+          ],
+          "lifecycleStatus": [
+            "candidate",
+            "preferred",
+            "existing-only",
+            "deprecated",
+            "retired"
+          ],
+          "deliveryModel": [
+            "self-managed",
+            "paas",
+            "saas",
+            "appliance"
+          ],
+          "networkPlacement": [
+            "public-facing",
+            "internal",
+            "vpc-private"
+          ],
+          "patchingOwner": [
+            "provider-managed",
+            "organization-scheduled",
+            "vendor-managed",
+            "aws-managed"
+          ],
+          "authenticationModel": [
+            "iam",
+            "api-key",
+            "oauth",
+            "saml",
+            "other",
+            "TBD"
+          ]
+        },
+        "enumListFields": {},
+        "collectionSchemas": {
+          "internalComponents": "internalComponent",
+          "deploymentConfigurations": "deploymentConfiguration",
+          "configurations": "configuration",
+          "decisionRecords": "decisionRecordRef",
+          "requirementImplementations": "requirementImplementation"
+        },
+        "schemaPath": "framework/schemas/runtime-service.schema.yaml"
+      },
+      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M7GWTG2T-XKK0\",\n  \"type\": \"runtime_service\",\n  \"name\": \"Amazon EventBridge Scheduler - Closing Climb\",\n  \"description\": \"EventBridge Scheduler schedules that launch Closing Climb ECS tasks in the factory-prod cluster.\",\n  \"catalogStatus\": \"incomplete\",\n  \"lifecycleStatus\": \"preferred\",\n  \"owner\": {\n    \"team\": \"platform-ai-team\",\n    \"contact\": \"platform-ai@example.com\"\n  },\n  \"tags\": [\n    \"aws\",\n    \"eventbridge\",\n    \"scheduler\",\n    \"closing-climb\"\n  ],\n  \"deliveryModel\": \"paas\",\n  \"vendor\": \"Amazon Web Services\",\n  \"productName\": \"Amazon EventBridge Scheduler\",\n  \"productVersion\": \"managed\",\n  \"patchingOwner\": \"aws-managed\",\n  \"authenticationModel\": \"iam\",\n  \"capabilities\": [],\n  \"provisioningModel\": \"reference-only\",\n  \"notes\": {\n    \"verification\": \"Verified read-only from AWS account ending 2296 (us-east-1) on 2026-11-15 (America/Phoenix).\",\n    \"schedules\": \"closing-climb-prod-buffini-sync-nightly cron(0 2 * * ? *) runs task definition closing-climb-prod-buffini-sync; closing-climb-prod-weekly25-sunday cron(0 6 ? * SUN *) runs task definition closing-climb-prod. Both use timezone America/Phoenix.\",\n    \"failureHandling\": \"EventBridge rule closing-climb-prod-scheduled-task-nonzero-exit and SQS dead-letter queue closing-climb-prod-scheduler-dlq.\",\n    \"provisioning\": \"Provisioned by Terraform in BeerCanLabs/closing-climb-web infra/aws/main.tf; not yet packaged as a DRAFT deployablePackage.\",\n    \"incomplete\": \"Agent Factory timekeeper schedules (if any) were not found in EventBridge Scheduler and are unmodeled.\"\n  },\n  \"_source\": \"catalog/shared-services/runtime-services/runtime-service-aws-eventbridge-scheduler.yaml\"\n}",
+      "existsInCatalog": true,
+      "outboundRelationships": [],
+      "inboundRelationships": []
+    },
+    "01M7GWTG2T-JHTR": {
+      "id": "01M7GWTG2T-JHTR",
+      "uid": "01M7GWTG2T-JHTR",
+      "name": "AWS KMS (AWS-managed keys) - Agent Factory",
+      "aliases": [],
+      "type": "runtime_service",
+      "typeLabel": "RuntimeService / Paas",
+      "filterType": "runtime_service",
+      "category": "",
+      "deliveryModel": "paas",
+      "domain": "",
+      "description": "AWS Key Management Service as used by the Agent Factory account. Only AWS-managed service keys are in use.",
+      "version": "",
+      "catalogStatus": "incomplete",
+      "lifecycleStatus": "preferred",
+      "status": "",
+      "businessContext": {},
+      "product": "",
+      "runsOn": "",
+      "subtype": "",
+      "vendor": "Amazon Web Services",
+      "productName": "AWS Key Management Service",
+      "productVersion": "managed",
+      "classification": "",
+      "platformDependency": "",
+      "capabilities": [
+        "01KQQ4Q026-H3B5"
+      ],
+      "configurations": [],
+      "networkPlacement": "",
+      "patchingOwner": "aws-managed",
+      "complianceCerts": [],
+      "requirementGroups": [],
+      "requirementImplementations": [],
+      "dataLeavesInfrastructure": null,
+      "dataResidencyCommitment": "",
+      "dpaNotes": "",
+      "vendorSLA": "",
+      "authenticationModel": "iam",
+      "incidentNotificationProcess": "",
+      "owner": {
+        "team": "platform-ai-team",
+        "contact": "platform-ai@example.com"
+      },
+      "definitionOwner": {},
+      "provider": {},
+      "authority": {},
+      "shape": "diamond",
+      "color": "#1f8a5b",
+      "source": "catalog/shared-services/runtime-services/runtime-service-aws-kms.yaml",
+      "tags": [
+        "aws",
+        "kms",
+        "encryption"
+      ],
+      "ardCategory": "",
+      "internalComponents": [],
+      "notes": {
+        "verification": "Verified read-only from AWS account ending 2296 (us-east-1) on 2026-11-15 (America/Phoenix).",
+        "keys": "AWS-managed keys only (for EFS, DynamoDB, ACM, Backup and Secrets Manager). No customer-managed keys exist.",
+        "usage": "S3 buckets use SSE-S3 (AES256), not KMS. DynamoDB table closing-climb-prod uses SSE type KMS. The EFS ledger is encrypted.",
+        "incomplete": "No customer-managed key policy or rotation decision is recorded."
+      },
+      "requirements": [],
+      "implementations": [],
+      "appliesTo": {},
+      "inherits": "",
+      "scalingUnits": [],
+      "networkZones": [],
+      "sdpConnections": [],
+      "serviceGroups": [],
+      "tierVariants": [],
+      "tierId": "",
+      "purpose": "",
+      "availabilityExpectation": "",
+      "costPosture": "",
+      "complianceScope": [],
+      "parameterSurface": [],
+      "followsReferenceArchitecture": "",
+      "decisionRecords": [],
+      "affectedComponent": "",
+      "impact": "",
+      "mitigationPath": "",
+      "decisionRationale": "",
+      "relatedDecisionRecords": [],
+      "linkedObject": "",
+      "primaryObjectType": "",
+      "primaryObjectUid": "",
+      "generatedObjects": [],
+      "unresolvedQuestions": [],
+      "assumptions": [],
+      "nextSteps": [],
+      "defaultSelection": false,
+      "requirementCount": 0,
+      "hasRiskRef": false,
+      "outboundRefs": [
+        {
+          "target": "01KQQ4Q026-H3B5",
+          "path": "capabilities[0]"
+        }
+      ],
+      "referencedBy": [],
+      "editorSchema": {
+        "requiredFields": [
+          "schemaVersion",
+          "uid",
+          "type",
+          "name",
+          "deliveryModel",
+          "catalogStatus",
+          "lifecycleStatus"
+        ],
+        "optionalFields": [
+          "aliases",
+          "description",
+          "version",
+          "owner",
+          "tags",
+          "serviceRole",
+          "host",
+          "primaryTechnologyComponent",
+          "internalComponents",
+          "deploymentConfigurations",
+          "vendor",
+          "productName",
+          "productVersion",
+          "capabilities",
+          "configurations",
+          "networkPlacement",
+          "patchingOwner",
+          "authenticationModel",
+          "vendorGovernance",
+          "provisioningModel",
+          "deployablePackage",
+          "notes",
+          "decisionRecords",
+          "requirementImplementations"
+        ],
+        "fieldTypes": {
+          "aliases": "list",
+          "owner": "dict",
+          "tags": "list",
+          "internalComponents": "list",
+          "deploymentConfigurations": "list",
+          "capabilities": "list",
+          "configurations": "list",
+          "notes": "dict",
+          "vendorGovernance": "dict",
+          "requirementGroups": "list",
+          "decisionRecords": "list",
+          "requirementImplementations": "list"
+        },
+        "enumFields": {
+          "serviceRole": [
+            "definition",
+            "instance"
+          ],
+          "provisioningModel": [
+            "deployable",
+            "reference-only"
+          ],
+          "catalogStatus": [
+            "stub",
+            "incomplete",
+            "complete"
+          ],
+          "lifecycleStatus": [
+            "candidate",
+            "preferred",
+            "existing-only",
+            "deprecated",
+            "retired"
+          ],
+          "deliveryModel": [
+            "self-managed",
+            "paas",
+            "saas",
+            "appliance"
+          ],
+          "networkPlacement": [
+            "public-facing",
+            "internal",
+            "vpc-private"
+          ],
+          "patchingOwner": [
+            "provider-managed",
+            "organization-scheduled",
+            "vendor-managed",
+            "aws-managed"
+          ],
+          "authenticationModel": [
+            "iam",
+            "api-key",
+            "oauth",
+            "saml",
+            "other",
+            "TBD"
+          ]
+        },
+        "enumListFields": {},
+        "collectionSchemas": {
+          "internalComponents": "internalComponent",
+          "deploymentConfigurations": "deploymentConfiguration",
+          "configurations": "configuration",
+          "decisionRecords": "decisionRecordRef",
+          "requirementImplementations": "requirementImplementation"
+        },
+        "schemaPath": "framework/schemas/runtime-service.schema.yaml"
+      },
+      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M7GWTG2T-JHTR\",\n  \"type\": \"runtime_service\",\n  \"name\": \"AWS KMS (AWS-managed keys) - Agent Factory\",\n  \"description\": \"AWS Key Management Service as used by the Agent Factory account. Only AWS-managed service keys are in use.\",\n  \"catalogStatus\": \"incomplete\",\n  \"lifecycleStatus\": \"preferred\",\n  \"owner\": {\n    \"team\": \"platform-ai-team\",\n    \"contact\": \"platform-ai@example.com\"\n  },\n  \"tags\": [\n    \"aws\",\n    \"kms\",\n    \"encryption\"\n  ],\n  \"deliveryModel\": \"paas\",\n  \"vendor\": \"Amazon Web Services\",\n  \"productName\": \"AWS Key Management Service\",\n  \"productVersion\": \"managed\",\n  \"patchingOwner\": \"aws-managed\",\n  \"authenticationModel\": \"iam\",\n  \"capabilities\": [\n    \"01KQQ4Q026-H3B5\"\n  ],\n  \"provisioningModel\": \"reference-only\",\n  \"notes\": {\n    \"verification\": \"Verified read-only from AWS account ending 2296 (us-east-1) on 2026-11-15 (America/Phoenix).\",\n    \"keys\": \"AWS-managed keys only (for EFS, DynamoDB, ACM, Backup and Secrets Manager). No customer-managed keys exist.\",\n    \"usage\": \"S3 buckets use SSE-S3 (AES256), not KMS. DynamoDB table closing-climb-prod uses SSE type KMS. The EFS ledger is encrypted.\",\n    \"incomplete\": \"No customer-managed key policy or rotation decision is recorded.\"\n  },\n  \"_source\": \"catalog/shared-services/runtime-services/runtime-service-aws-kms.yaml\"\n}",
+      "existsInCatalog": true,
+      "outboundRelationships": [],
+      "inboundRelationships": []
+    },
+    "01M7GWTG2T-3PQY": {
+      "id": "01M7GWTG2T-3PQY",
+      "uid": "01M7GWTG2T-3PQY",
+      "name": "AWS Secrets Manager - Agent Factory",
+      "aliases": [],
+      "type": "runtime_service",
+      "typeLabel": "RuntimeService / Paas",
+      "filterType": "runtime_service",
+      "category": "",
+      "deliveryModel": "paas",
+      "domain": "",
+      "description": "AWS Secrets Manager in us-east-1 holding Agent Factory and Closing Climb secrets, injected into ECS tasks as container secrets.",
+      "version": "",
+      "catalogStatus": "incomplete",
+      "lifecycleStatus": "preferred",
+      "status": "",
+      "businessContext": {},
+      "product": "",
+      "runsOn": "",
+      "subtype": "",
+      "vendor": "Amazon Web Services",
+      "productName": "AWS Secrets Manager",
+      "productVersion": "managed",
+      "classification": "",
+      "platformDependency": "",
+      "capabilities": [
+        "01KQQ4Q026-DTJJ"
+      ],
+      "configurations": [],
+      "networkPlacement": "",
+      "patchingOwner": "aws-managed",
+      "complianceCerts": [],
+      "requirementGroups": [],
+      "requirementImplementations": [],
+      "dataLeavesInfrastructure": null,
+      "dataResidencyCommitment": "",
+      "dpaNotes": "",
+      "vendorSLA": "",
+      "authenticationModel": "iam",
+      "incidentNotificationProcess": "",
+      "owner": {
+        "team": "platform-ai-team",
+        "contact": "platform-ai@example.com"
+      },
+      "definitionOwner": {},
+      "provider": {},
+      "authority": {},
+      "shape": "diamond",
+      "color": "#1f8a5b",
+      "source": "catalog/shared-services/runtime-services/runtime-service-aws-secrets-manager.yaml",
+      "tags": [
+        "aws",
+        "secrets-manager",
+        "agent-factory",
+        "closing-climb"
+      ],
+      "ardCategory": "",
+      "internalComponents": [],
+      "notes": {
+        "verification": "Verified read-only from AWS account ending 2296 (us-east-1) on 2026-11-15 (America/Phoenix). Secret names and counts only; no values were read.",
+        "inventory": "96 secrets: 5 under closing-climb/prod/, 91 under factory/prod/ (including factory/prod/connections/* and factory/prod/shared/*).",
+        "consumers": "ECS container secret references per task definition (not exhaustive), including: closing-climb-web 8, control-plane 6, gatekeeper-egress 2, gatekeeper-ingress 2, garrison 1, console 0, agent-higgins 2, closing-climb-prod-buffini-sync 2.",
+        "encryption": "Encrypted with the AWS-managed aws/secretsmanager key (no customer-managed KMS keys exist).",
+        "incomplete": "Rotation configuration and resource policies were not reviewed."
+      },
+      "requirements": [],
+      "implementations": [],
+      "appliesTo": {},
+      "inherits": "",
+      "scalingUnits": [],
+      "networkZones": [],
+      "sdpConnections": [],
+      "serviceGroups": [],
+      "tierVariants": [],
+      "tierId": "",
+      "purpose": "",
+      "availabilityExpectation": "",
+      "costPosture": "",
+      "complianceScope": [],
+      "parameterSurface": [],
+      "followsReferenceArchitecture": "",
+      "decisionRecords": [],
+      "affectedComponent": "",
+      "impact": "",
+      "mitigationPath": "",
+      "decisionRationale": "",
+      "relatedDecisionRecords": [],
+      "linkedObject": "",
+      "primaryObjectType": "",
+      "primaryObjectUid": "",
+      "generatedObjects": [],
+      "unresolvedQuestions": [],
+      "assumptions": [],
+      "nextSteps": [],
+      "defaultSelection": false,
+      "requirementCount": 0,
+      "hasRiskRef": false,
+      "outboundRefs": [
+        {
+          "target": "01KQQ4Q026-DTJJ",
+          "path": "capabilities[0]"
+        }
+      ],
+      "referencedBy": [],
+      "editorSchema": {
+        "requiredFields": [
+          "schemaVersion",
+          "uid",
+          "type",
+          "name",
+          "deliveryModel",
+          "catalogStatus",
+          "lifecycleStatus"
+        ],
+        "optionalFields": [
+          "aliases",
+          "description",
+          "version",
+          "owner",
+          "tags",
+          "serviceRole",
+          "host",
+          "primaryTechnologyComponent",
+          "internalComponents",
+          "deploymentConfigurations",
+          "vendor",
+          "productName",
+          "productVersion",
+          "capabilities",
+          "configurations",
+          "networkPlacement",
+          "patchingOwner",
+          "authenticationModel",
+          "vendorGovernance",
+          "provisioningModel",
+          "deployablePackage",
+          "notes",
+          "decisionRecords",
+          "requirementImplementations"
+        ],
+        "fieldTypes": {
+          "aliases": "list",
+          "owner": "dict",
+          "tags": "list",
+          "internalComponents": "list",
+          "deploymentConfigurations": "list",
+          "capabilities": "list",
+          "configurations": "list",
+          "notes": "dict",
+          "vendorGovernance": "dict",
+          "requirementGroups": "list",
+          "decisionRecords": "list",
+          "requirementImplementations": "list"
+        },
+        "enumFields": {
+          "serviceRole": [
+            "definition",
+            "instance"
+          ],
+          "provisioningModel": [
+            "deployable",
+            "reference-only"
+          ],
+          "catalogStatus": [
+            "stub",
+            "incomplete",
+            "complete"
+          ],
+          "lifecycleStatus": [
+            "candidate",
+            "preferred",
+            "existing-only",
+            "deprecated",
+            "retired"
+          ],
+          "deliveryModel": [
+            "self-managed",
+            "paas",
+            "saas",
+            "appliance"
+          ],
+          "networkPlacement": [
+            "public-facing",
+            "internal",
+            "vpc-private"
+          ],
+          "patchingOwner": [
+            "provider-managed",
+            "organization-scheduled",
+            "vendor-managed",
+            "aws-managed"
+          ],
+          "authenticationModel": [
+            "iam",
+            "api-key",
+            "oauth",
+            "saml",
+            "other",
+            "TBD"
+          ]
+        },
+        "enumListFields": {},
+        "collectionSchemas": {
+          "internalComponents": "internalComponent",
+          "deploymentConfigurations": "deploymentConfiguration",
+          "configurations": "configuration",
+          "decisionRecords": "decisionRecordRef",
+          "requirementImplementations": "requirementImplementation"
+        },
+        "schemaPath": "framework/schemas/runtime-service.schema.yaml"
+      },
+      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M7GWTG2T-3PQY\",\n  \"type\": \"runtime_service\",\n  \"name\": \"AWS Secrets Manager - Agent Factory\",\n  \"description\": \"AWS Secrets Manager in us-east-1 holding Agent Factory and Closing Climb secrets, injected into ECS tasks as container secrets.\",\n  \"catalogStatus\": \"incomplete\",\n  \"lifecycleStatus\": \"preferred\",\n  \"owner\": {\n    \"team\": \"platform-ai-team\",\n    \"contact\": \"platform-ai@example.com\"\n  },\n  \"tags\": [\n    \"aws\",\n    \"secrets-manager\",\n    \"agent-factory\",\n    \"closing-climb\"\n  ],\n  \"deliveryModel\": \"paas\",\n  \"vendor\": \"Amazon Web Services\",\n  \"productName\": \"AWS Secrets Manager\",\n  \"productVersion\": \"managed\",\n  \"patchingOwner\": \"aws-managed\",\n  \"authenticationModel\": \"iam\",\n  \"capabilities\": [\n    \"01KQQ4Q026-DTJJ\"\n  ],\n  \"provisioningModel\": \"reference-only\",\n  \"notes\": {\n    \"verification\": \"Verified read-only from AWS account ending 2296 (us-east-1) on 2026-11-15 (America/Phoenix). Secret names and counts only; no values were read.\",\n    \"inventory\": \"96 secrets: 5 under closing-climb/prod/, 91 under factory/prod/ (including factory/prod/connections/* and factory/prod/shared/*).\",\n    \"consumers\": \"ECS container secret references per task definition (not exhaustive), including: closing-climb-web 8, control-plane 6, gatekeeper-egress 2, gatekeeper-ingress 2, garrison 1, console 0, agent-higgins 2, closing-climb-prod-buffini-sync 2.\",\n    \"encryption\": \"Encrypted with the AWS-managed aws/secretsmanager key (no customer-managed KMS keys exist).\",\n    \"incomplete\": \"Rotation configuration and resource policies were not reviewed.\"\n  },\n  \"_source\": \"catalog/shared-services/runtime-services/runtime-service-aws-secrets-manager.yaml\"\n}",
+      "existsInCatalog": true,
+      "outboundRelationships": [],
+      "inboundRelationships": []
+    },
+    "01M7GWTG2T-VA2G": {
+      "id": "01M7GWTG2T-VA2G",
+      "uid": "01M7GWTG2T-VA2G",
+      "name": "Cloudflare Access - BeerCanLabs Front Door",
+      "aliases": [],
+      "type": "runtime_service",
+      "typeLabel": "RuntimeService / Saas",
+      "filterType": "runtime_service",
+      "category": "",
+      "deliveryModel": "saas",
+      "domain": "",
+      "description": "Cloudflare Zero Trust Access in front of Agent Factory and BeerCanLabs web hostnames.",
+      "version": "",
+      "catalogStatus": "incomplete",
+      "lifecycleStatus": "preferred",
+      "status": "",
+      "businessContext": {},
+      "product": "",
+      "runsOn": "",
+      "subtype": "",
+      "vendor": "Cloudflare",
+      "productName": "Cloudflare Zero Trust Access",
+      "productVersion": "managed",
+      "classification": "",
+      "platformDependency": "",
+      "capabilities": [
+        "01KQQ4Q026-MHJM",
+        "01KQQ4Q026-4JR6"
+      ],
+      "configurations": [],
+      "networkPlacement": "",
+      "patchingOwner": "vendor-managed",
+      "complianceCerts": [],
+      "requirementGroups": [],
+      "requirementImplementations": [],
+      "dataLeavesInfrastructure": null,
+      "dataResidencyCommitment": "",
+      "dpaNotes": "",
+      "vendorSLA": "",
+      "authenticationModel": "oauth",
+      "incidentNotificationProcess": "",
+      "owner": {
+        "team": "platform-ai-team",
+        "contact": "platform-ai@example.com"
+      },
+      "definitionOwner": {},
+      "provider": {},
+      "authority": {},
+      "shape": "diamond",
+      "color": "#1f8a5b",
+      "source": "catalog/shared-services/runtime-services/runtime-service-cloudflare-access.yaml",
+      "tags": [
+        "cloudflare",
+        "zero-trust",
+        "access",
+        "front-door",
+        "agent-factory"
+      ],
+      "ardCategory": "",
+      "internalComponents": [],
+      "notes": {
+        "verification": "HTTPS probes on 2026-11-15: agent-factory.beercanlabs.com, garrison.dalesackrider.com and knowledge.beercanlabs.ai return 302 to the beercanlabs Cloudflare Access team login; submind-aws.dalesackrider.com returns 401 from Cloudflare.",
+        "definition": "Access applications (factory front door, signature-verified webhooks bypass, API-key bypass) are defined in BeerCanLabs/agent-factory landing-zones/aws/cloudflare.tf. closing-climb-web validates Cloudflare Access OIDC tokens.",
+        "incomplete": "Access policies, identity providers and service tokens were not read (no Cloudflare API access used)."
+      },
+      "requirements": [],
+      "implementations": [],
+      "appliesTo": {},
+      "inherits": "",
+      "scalingUnits": [],
+      "networkZones": [],
+      "sdpConnections": [],
+      "serviceGroups": [],
+      "tierVariants": [],
+      "tierId": "",
+      "purpose": "",
+      "availabilityExpectation": "",
+      "costPosture": "",
+      "complianceScope": [],
+      "parameterSurface": [],
+      "followsReferenceArchitecture": "",
+      "decisionRecords": [],
+      "affectedComponent": "",
+      "impact": "",
+      "mitigationPath": "",
+      "decisionRationale": "",
+      "relatedDecisionRecords": [],
+      "linkedObject": "",
+      "primaryObjectType": "",
+      "primaryObjectUid": "",
+      "generatedObjects": [],
+      "unresolvedQuestions": [],
+      "assumptions": [],
+      "nextSteps": [],
+      "defaultSelection": false,
+      "requirementCount": 0,
+      "hasRiskRef": false,
+      "outboundRefs": [
+        {
+          "target": "01KQQ4Q026-MHJM",
+          "path": "capabilities[0]"
+        },
+        {
+          "target": "01KQQ4Q026-4JR6",
+          "path": "capabilities[1]"
+        }
+      ],
+      "referencedBy": [],
+      "editorSchema": {
+        "requiredFields": [
+          "schemaVersion",
+          "uid",
+          "type",
+          "name",
+          "deliveryModel",
+          "catalogStatus",
+          "lifecycleStatus"
+        ],
+        "optionalFields": [
+          "aliases",
+          "description",
+          "version",
+          "owner",
+          "tags",
+          "serviceRole",
+          "host",
+          "primaryTechnologyComponent",
+          "internalComponents",
+          "deploymentConfigurations",
+          "vendor",
+          "productName",
+          "productVersion",
+          "capabilities",
+          "configurations",
+          "networkPlacement",
+          "patchingOwner",
+          "authenticationModel",
+          "vendorGovernance",
+          "provisioningModel",
+          "deployablePackage",
+          "notes",
+          "decisionRecords",
+          "requirementImplementations"
+        ],
+        "fieldTypes": {
+          "aliases": "list",
+          "owner": "dict",
+          "tags": "list",
+          "internalComponents": "list",
+          "deploymentConfigurations": "list",
+          "capabilities": "list",
+          "configurations": "list",
+          "notes": "dict",
+          "vendorGovernance": "dict",
+          "requirementGroups": "list",
+          "decisionRecords": "list",
+          "requirementImplementations": "list"
+        },
+        "enumFields": {
+          "serviceRole": [
+            "definition",
+            "instance"
+          ],
+          "provisioningModel": [
+            "deployable",
+            "reference-only"
+          ],
+          "catalogStatus": [
+            "stub",
+            "incomplete",
+            "complete"
+          ],
+          "lifecycleStatus": [
+            "candidate",
+            "preferred",
+            "existing-only",
+            "deprecated",
+            "retired"
+          ],
+          "deliveryModel": [
+            "self-managed",
+            "paas",
+            "saas",
+            "appliance"
+          ],
+          "networkPlacement": [
+            "public-facing",
+            "internal",
+            "vpc-private"
+          ],
+          "patchingOwner": [
+            "provider-managed",
+            "organization-scheduled",
+            "vendor-managed",
+            "aws-managed"
+          ],
+          "authenticationModel": [
+            "iam",
+            "api-key",
+            "oauth",
+            "saml",
+            "other",
+            "TBD"
+          ]
+        },
+        "enumListFields": {},
+        "collectionSchemas": {
+          "internalComponents": "internalComponent",
+          "deploymentConfigurations": "deploymentConfiguration",
+          "configurations": "configuration",
+          "decisionRecords": "decisionRecordRef",
+          "requirementImplementations": "requirementImplementation"
+        },
+        "schemaPath": "framework/schemas/runtime-service.schema.yaml"
+      },
+      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M7GWTG2T-VA2G\",\n  \"type\": \"runtime_service\",\n  \"name\": \"Cloudflare Access - BeerCanLabs Front Door\",\n  \"description\": \"Cloudflare Zero Trust Access in front of Agent Factory and BeerCanLabs web hostnames.\",\n  \"catalogStatus\": \"incomplete\",\n  \"lifecycleStatus\": \"preferred\",\n  \"owner\": {\n    \"team\": \"platform-ai-team\",\n    \"contact\": \"platform-ai@example.com\"\n  },\n  \"tags\": [\n    \"cloudflare\",\n    \"zero-trust\",\n    \"access\",\n    \"front-door\",\n    \"agent-factory\"\n  ],\n  \"deliveryModel\": \"saas\",\n  \"vendor\": \"Cloudflare\",\n  \"productName\": \"Cloudflare Zero Trust Access\",\n  \"productVersion\": \"managed\",\n  \"patchingOwner\": \"vendor-managed\",\n  \"authenticationModel\": \"oauth\",\n  \"capabilities\": [\n    \"01KQQ4Q026-MHJM\",\n    \"01KQQ4Q026-4JR6\"\n  ],\n  \"provisioningModel\": \"reference-only\",\n  \"notes\": {\n    \"verification\": \"HTTPS probes on 2026-11-15: agent-factory.beercanlabs.com, garrison.dalesackrider.com and knowledge.beercanlabs.ai return 302 to the beercanlabs Cloudflare Access team login; submind-aws.dalesackrider.com returns 401 from Cloudflare.\",\n    \"definition\": \"Access applications (factory front door, signature-verified webhooks bypass, API-key bypass) are defined in BeerCanLabs/agent-factory landing-zones/aws/cloudflare.tf. closing-climb-web validates Cloudflare Access OIDC tokens.\",\n    \"incomplete\": \"Access policies, identity providers and service tokens were not read (no Cloudflare API access used).\"\n  },\n  \"_source\": \"catalog/shared-services/runtime-services/runtime-service-cloudflare-access.yaml\"\n}",
       "existsInCatalog": true,
       "outboundRelationships": [],
       "inboundRelationships": []
@@ -53442,6 +61496,347 @@ window.DRAFT_BROWSER_DATA = {
         "schemaPath": "framework/schemas/runtime-service.schema.yaml"
       },
       "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M7GTBMQS-N71S\",\n  \"type\": \"runtime_service\",\n  \"name\": \"GCP Secret Manager Vault Service\",\n  \"description\": \"Centralized secret management vault storing Cloudflare API Tokens, LLM credentials (Anthropic, OpenAI, xAI), Motion API keys, and Discord bot tokens with IAM service account accessor bindings.\",\n  \"deliveryModel\": \"paas\",\n  \"catalogStatus\": \"incomplete\",\n  \"lifecycleStatus\": \"preferred\",\n  \"vendor\": \"Google Cloud\",\n  \"productName\": \"Google Cloud Secret Manager\",\n  \"productVersion\": \"Secret Manager API v1\",\n  \"securityFunction\": \"Cryptographic secret storage, version control, and IAM role-based secret accessor policy enforcement.\",\n  \"provisioningModel\": \"reference-only\",\n  \"protocols\": [\n    \"HTTPS\",\n    \"gRPC\"\n  ],\n  \"owner\": {\n    \"team\": \"engineering-platform\",\n    \"contact\": \"dale.sackrider+switch@gmail.com\",\n    \"resourceOwner\": \"Switch\",\n    \"serviceProviderRole\": \"Security & Secrets Provider\"\n  },\n  \"vendorGovernance\": {\n    \"dataLeavesInfrastructure\": false,\n    \"dataResidencyCommitment\": \"Regional KMS envelope encryption with strict IAM access logging\",\n    \"vendorSLA\": \"99.95% uptime commitment\",\n    \"acceptableUsePolicy\": \"Mandatory secret vault for all API keys, OAuth tokens, and sensitive infrastructure credentials across subminds.\"\n  },\n  \"_source\": \"catalog/shared-services/security-services/secret-management-service-gcp-secret-manager.yaml\"\n}",
+      "existsInCatalog": true,
+      "outboundRelationships": [],
+      "inboundRelationships": []
+    },
+    "01M7GWTG2S-ZT0V": {
+      "id": "01M7GWTG2S-ZT0V",
+      "uid": "01M7GWTG2S-ZT0V",
+      "name": "AWS Fargate (Amazon ECS)",
+      "aliases": [],
+      "type": "technology_component",
+      "typeLabel": "TechnologyComponent / Compute Platform",
+      "filterType": "technology_component",
+      "category": "",
+      "deliveryModel": "",
+      "domain": "",
+      "description": "Serverless container compute for Amazon ECS. Runs the Agent Factory and Closing Climb tasks in the factory-prod cluster.",
+      "version": "",
+      "catalogStatus": "incomplete",
+      "lifecycleStatus": "",
+      "status": "",
+      "businessContext": {},
+      "product": "",
+      "runsOn": "",
+      "subtype": "",
+      "vendor": "Amazon Web Services",
+      "productName": "AWS Fargate",
+      "productVersion": "managed",
+      "classification": "compute-platform",
+      "platformDependency": "",
+      "capabilities": [
+        "01KQQ4Q026-1HZP",
+        "01KQQ4Q026-GW5D"
+      ],
+      "configurations": [],
+      "networkPlacement": "",
+      "patchingOwner": "",
+      "complianceCerts": [],
+      "requirementGroups": [],
+      "requirementImplementations": [],
+      "dataLeavesInfrastructure": null,
+      "dataResidencyCommitment": "",
+      "dpaNotes": "",
+      "vendorSLA": "",
+      "authenticationModel": "",
+      "incidentNotificationProcess": "",
+      "owner": {
+        "team": "platform-ai-team",
+        "contact": "platform-ai@example.com"
+      },
+      "definitionOwner": {},
+      "provider": {},
+      "authority": {},
+      "shape": "ellipse",
+      "color": "#64748b",
+      "source": "catalog/shared-services/technology-components/tc-aws-fargate.yaml",
+      "tags": [
+        "aws",
+        "fargate",
+        "ecs",
+        "container",
+        "serverless"
+      ],
+      "ardCategory": "",
+      "internalComponents": [],
+      "notes": {
+        "verification": "Verified read-only from AWS account ending 2296 (us-east-1) on 2026-11-15 (America/Phoenix).",
+        "launchTypes": "Services use FARGATE or FARGATE_SPOT capacity (see the factory-prod runtime service).",
+        "incomplete": "Fargate platform version is not pinned in the catalog."
+      },
+      "requirements": [],
+      "implementations": [],
+      "appliesTo": {},
+      "inherits": "",
+      "scalingUnits": [],
+      "networkZones": [],
+      "sdpConnections": [],
+      "serviceGroups": [],
+      "tierVariants": [],
+      "tierId": "",
+      "purpose": "",
+      "availabilityExpectation": "",
+      "costPosture": "",
+      "complianceScope": [],
+      "parameterSurface": [],
+      "followsReferenceArchitecture": "",
+      "decisionRecords": [],
+      "affectedComponent": "",
+      "impact": "",
+      "mitigationPath": "",
+      "decisionRationale": "",
+      "relatedDecisionRecords": [],
+      "linkedObject": "",
+      "primaryObjectType": "",
+      "primaryObjectUid": "",
+      "generatedObjects": [],
+      "unresolvedQuestions": [],
+      "assumptions": [],
+      "nextSteps": [],
+      "defaultSelection": false,
+      "requirementCount": 0,
+      "hasRiskRef": false,
+      "outboundRefs": [
+        {
+          "target": "01KQQ4Q026-1HZP",
+          "path": "capabilities[0]"
+        },
+        {
+          "target": "01KQQ4Q026-GW5D",
+          "path": "capabilities[1]"
+        }
+      ],
+      "referencedBy": [
+        {
+          "source": "01M7GWTG2S-X9V8",
+          "path": "computePlatformComponent"
+        }
+      ],
+      "editorSchema": {
+        "requiredFields": [
+          "schemaVersion",
+          "uid",
+          "type",
+          "name",
+          "vendor",
+          "productName",
+          "productVersion",
+          "classification",
+          "catalogStatus"
+        ],
+        "optionalFields": [
+          "aliases",
+          "description",
+          "version",
+          "owner",
+          "tags",
+          "subtype",
+          "vendorLifecycle",
+          "platformDependency",
+          "capabilities",
+          "configurations",
+          "networkPlacement",
+          "patchingOwner",
+          "complianceCerts",
+          "controlReferences",
+          "notes"
+        ],
+        "fieldTypes": {
+          "aliases": "list",
+          "owner": "dict",
+          "tags": "list",
+          "vendorLifecycle": "dict",
+          "capabilities": "list",
+          "configurations": "list",
+          "complianceCerts": "list",
+          "controlReferences": "list"
+        },
+        "enumFields": {
+          "catalogStatus": [
+            "stub",
+            "incomplete",
+            "complete"
+          ],
+          "classification": [
+            "operating-system",
+            "compute-platform",
+            "software",
+            "agent"
+          ]
+        },
+        "enumListFields": {},
+        "collectionSchemas": {
+          "configurations": "configuration"
+        },
+        "schemaPath": "framework/schemas/technology-component.schema.yaml"
+      },
+      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M7GWTG2S-ZT0V\",\n  \"type\": \"technology_component\",\n  \"name\": \"AWS Fargate (Amazon ECS)\",\n  \"description\": \"Serverless container compute for Amazon ECS. Runs the Agent Factory and Closing Climb tasks in the factory-prod cluster.\",\n  \"catalogStatus\": \"incomplete\",\n  \"owner\": {\n    \"team\": \"platform-ai-team\",\n    \"contact\": \"platform-ai@example.com\"\n  },\n  \"tags\": [\n    \"aws\",\n    \"fargate\",\n    \"ecs\",\n    \"container\",\n    \"serverless\"\n  ],\n  \"vendor\": \"Amazon Web Services\",\n  \"productName\": \"AWS Fargate\",\n  \"productVersion\": \"managed\",\n  \"classification\": \"compute-platform\",\n  \"capabilities\": [\n    \"01KQQ4Q026-1HZP\",\n    \"01KQQ4Q026-GW5D\"\n  ],\n  \"notes\": {\n    \"verification\": \"Verified read-only from AWS account ending 2296 (us-east-1) on 2026-11-15 (America/Phoenix).\",\n    \"launchTypes\": \"Services use FARGATE or FARGATE_SPOT capacity (see the factory-prod runtime service).\",\n    \"incomplete\": \"Fargate platform version is not pinned in the catalog.\"\n  },\n  \"_source\": \"catalog/shared-services/technology-components/tc-aws-fargate.yaml\"\n}",
+      "existsInCatalog": true,
+      "outboundRelationships": [],
+      "inboundRelationships": []
+    },
+    "01M7GWTG2S-W2BR": {
+      "id": "01M7GWTG2S-W2BR",
+      "uid": "01M7GWTG2S-W2BR",
+      "name": "AWS Distro for OpenTelemetry Collector",
+      "aliases": [],
+      "type": "technology_component",
+      "typeLabel": "TechnologyComponent / Agent",
+      "filterType": "technology_component",
+      "category": "",
+      "deliveryModel": "",
+      "domain": "",
+      "description": "OpenTelemetry collector sidecar shipped with the Agent Factory control-plane and gatekeeper-egress tasks.",
+      "version": "",
+      "catalogStatus": "incomplete",
+      "lifecycleStatus": "",
+      "status": "",
+      "businessContext": {},
+      "product": "",
+      "runsOn": "",
+      "subtype": "",
+      "vendor": "Amazon Web Services",
+      "productName": "AWS Distro for OpenTelemetry Collector",
+      "productVersion": "v0.43.3",
+      "classification": "agent",
+      "platformDependency": "",
+      "capabilities": [
+        "01KQQ4Q026-NB1W"
+      ],
+      "configurations": [],
+      "networkPlacement": "",
+      "patchingOwner": "",
+      "complianceCerts": [],
+      "requirementGroups": [],
+      "requirementImplementations": [],
+      "dataLeavesInfrastructure": null,
+      "dataResidencyCommitment": "",
+      "dpaNotes": "",
+      "vendorSLA": "",
+      "authenticationModel": "",
+      "incidentNotificationProcess": "",
+      "owner": {
+        "team": "platform-ai-team",
+        "contact": "platform-ai@example.com"
+      },
+      "definitionOwner": {},
+      "provider": {},
+      "authority": {},
+      "shape": "ellipse",
+      "color": "#64748b",
+      "source": "catalog/shared-services/technology-components/tc-aws-otel-collector.yaml",
+      "tags": [
+        "aws",
+        "opentelemetry",
+        "observability",
+        "sidecar"
+      ],
+      "ardCategory": "",
+      "internalComponents": [],
+      "notes": {
+        "verification": "Verified read-only from AWS account ending 2296 (us-east-1) on 2026-11-15 (America/Phoenix).",
+        "image": "public.ecr.aws/aws-observability/aws-otel-collector:v0.43.3 (container name otel) in task definitions factory-prod-control-plane and factory-prod-gatekeeper-egress.",
+        "incomplete": "Collector pipeline configuration and export destinations were not reviewed."
+      },
+      "requirements": [],
+      "implementations": [],
+      "appliesTo": {},
+      "inherits": "",
+      "scalingUnits": [],
+      "networkZones": [],
+      "sdpConnections": [],
+      "serviceGroups": [],
+      "tierVariants": [],
+      "tierId": "",
+      "purpose": "",
+      "availabilityExpectation": "",
+      "costPosture": "",
+      "complianceScope": [],
+      "parameterSurface": [],
+      "followsReferenceArchitecture": "",
+      "decisionRecords": [],
+      "affectedComponent": "",
+      "impact": "",
+      "mitigationPath": "",
+      "decisionRationale": "",
+      "relatedDecisionRecords": [],
+      "linkedObject": "",
+      "primaryObjectType": "",
+      "primaryObjectUid": "",
+      "generatedObjects": [],
+      "unresolvedQuestions": [],
+      "assumptions": [],
+      "nextSteps": [],
+      "defaultSelection": false,
+      "requirementCount": 0,
+      "hasRiskRef": false,
+      "outboundRefs": [
+        {
+          "target": "01KQQ4Q026-NB1W",
+          "path": "capabilities[0]"
+        }
+      ],
+      "referencedBy": [],
+      "editorSchema": {
+        "requiredFields": [
+          "schemaVersion",
+          "uid",
+          "type",
+          "name",
+          "vendor",
+          "productName",
+          "productVersion",
+          "classification",
+          "catalogStatus"
+        ],
+        "optionalFields": [
+          "aliases",
+          "description",
+          "version",
+          "owner",
+          "tags",
+          "subtype",
+          "vendorLifecycle",
+          "platformDependency",
+          "capabilities",
+          "configurations",
+          "networkPlacement",
+          "patchingOwner",
+          "complianceCerts",
+          "controlReferences",
+          "notes"
+        ],
+        "fieldTypes": {
+          "aliases": "list",
+          "owner": "dict",
+          "tags": "list",
+          "vendorLifecycle": "dict",
+          "capabilities": "list",
+          "configurations": "list",
+          "complianceCerts": "list",
+          "controlReferences": "list"
+        },
+        "enumFields": {
+          "catalogStatus": [
+            "stub",
+            "incomplete",
+            "complete"
+          ],
+          "classification": [
+            "operating-system",
+            "compute-platform",
+            "software",
+            "agent"
+          ]
+        },
+        "enumListFields": {},
+        "collectionSchemas": {
+          "configurations": "configuration"
+        },
+        "schemaPath": "framework/schemas/technology-component.schema.yaml"
+      },
+      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M7GWTG2S-W2BR\",\n  \"type\": \"technology_component\",\n  \"name\": \"AWS Distro for OpenTelemetry Collector\",\n  \"description\": \"OpenTelemetry collector sidecar shipped with the Agent Factory control-plane and gatekeeper-egress tasks.\",\n  \"catalogStatus\": \"incomplete\",\n  \"owner\": {\n    \"team\": \"platform-ai-team\",\n    \"contact\": \"platform-ai@example.com\"\n  },\n  \"tags\": [\n    \"aws\",\n    \"opentelemetry\",\n    \"observability\",\n    \"sidecar\"\n  ],\n  \"vendor\": \"Amazon Web Services\",\n  \"productName\": \"AWS Distro for OpenTelemetry Collector\",\n  \"productVersion\": \"v0.43.3\",\n  \"classification\": \"agent\",\n  \"capabilities\": [\n    \"01KQQ4Q026-NB1W\"\n  ],\n  \"notes\": {\n    \"verification\": \"Verified read-only from AWS account ending 2296 (us-east-1) on 2026-11-15 (America/Phoenix).\",\n    \"image\": \"public.ecr.aws/aws-observability/aws-otel-collector:v0.43.3 (container name otel) in task definitions factory-prod-control-plane and factory-prod-gatekeeper-egress.\",\n    \"incomplete\": \"Collector pipeline configuration and export destinations were not reviewed.\"\n  },\n  \"_source\": \"catalog/shared-services/technology-components/tc-aws-otel-collector.yaml\"\n}",
       "existsInCatalog": true,
       "outboundRelationships": [],
       "inboundRelationships": []
@@ -54849,6 +63244,149 @@ window.DRAFT_BROWSER_DATA = {
       "existsInCatalog": true,
       "outboundRelationships": [],
       "inboundRelationships": []
+    },
+    "VP8VB5X0E7-7FJC": {
+      "id": "VP8VB5X0E7-7FJC",
+      "uid": "VP8VB5X0E7-7FJC",
+      "name": "AWS ECS Fargate Runtime - factory-prod \u2192 AWS Fargate factory-prod ECS Cluster Host (us-east-1)",
+      "aliases": [],
+      "type": "relationship",
+      "typeLabel": "Relationship",
+      "filterType": "relationship",
+      "category": "",
+      "deliveryModel": "",
+      "domain": "",
+      "description": "",
+      "version": "",
+      "catalogStatus": "complete",
+      "lifecycleStatus": "unknown",
+      "status": "",
+      "businessContext": {},
+      "product": "",
+      "runsOn": "",
+      "subtype": "",
+      "vendor": "",
+      "productName": "",
+      "productVersion": "",
+      "classification": "",
+      "platformDependency": "",
+      "capabilities": [],
+      "configurations": [],
+      "networkPlacement": "",
+      "patchingOwner": "",
+      "complianceCerts": [],
+      "requirementGroups": [],
+      "requirementImplementations": [],
+      "dataLeavesInfrastructure": null,
+      "dataResidencyCommitment": "",
+      "dpaNotes": "",
+      "vendorSLA": "",
+      "authenticationModel": "",
+      "incidentNotificationProcess": "",
+      "owner": {},
+      "definitionOwner": {},
+      "provider": {},
+      "authority": {},
+      "shape": "round-rectangle",
+      "color": "#7a6e60",
+      "source": "derived from catalog/shared-services/runtime-services/runtime-service-aws-ecs-fargate-factory-prod.yaml [host]",
+      "tags": [],
+      "ardCategory": "",
+      "internalComponents": [],
+      "notes": "Derived from host field",
+      "requirements": [],
+      "implementations": [],
+      "appliesTo": {},
+      "inherits": "",
+      "scalingUnits": [],
+      "networkZones": [],
+      "sdpConnections": [],
+      "serviceGroups": [],
+      "tierVariants": [],
+      "tierId": "",
+      "purpose": "",
+      "availabilityExpectation": "",
+      "costPosture": "",
+      "complianceScope": [],
+      "parameterSurface": [],
+      "followsReferenceArchitecture": "",
+      "decisionRecords": [],
+      "affectedComponent": "",
+      "impact": "",
+      "mitigationPath": "",
+      "decisionRationale": "",
+      "relatedDecisionRecords": [],
+      "linkedObject": "",
+      "primaryObjectType": "",
+      "primaryObjectUid": "",
+      "generatedObjects": [],
+      "unresolvedQuestions": [],
+      "assumptions": [],
+      "nextSteps": [],
+      "defaultSelection": false,
+      "requirementCount": 0,
+      "hasRiskRef": false,
+      "outboundRefs": [
+        {
+          "target": "01M7GWTG2S-AC3R",
+          "path": "source"
+        },
+        {
+          "target": "01M7GWTG2S-X9V8",
+          "path": "target"
+        }
+      ],
+      "referencedBy": [],
+      "editorSchema": {
+        "requiredFields": [
+          "schemaVersion",
+          "uid",
+          "type",
+          "name",
+          "source",
+          "label",
+          "catalogStatus"
+        ],
+        "optionalFields": [
+          "description",
+          "target",
+          "externalTarget",
+          "technology",
+          "direction",
+          "flow",
+          "capabilities",
+          "notes",
+          "tags"
+        ],
+        "fieldTypes": {
+          "tags": "list",
+          "capabilities": "list"
+        },
+        "enumFields": {
+          "catalogStatus": [
+            "stub",
+            "incomplete",
+            "complete"
+          ],
+          "direction": [
+            "synchronous",
+            "asynchronous",
+            "event"
+          ],
+          "flow": [
+            "outbound",
+            "inbound",
+            "bidirectional"
+          ]
+        },
+        "enumListFields": {},
+        "collectionSchemas": {},
+        "schemaPath": "framework/schemas/relationship.schema.yaml"
+      },
+      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"VP8VB5X0E7-7FJC\",\n  \"type\": \"relationship\",\n  \"name\": \"AWS ECS Fargate Runtime - factory-prod \\u2192 AWS Fargate factory-prod ECS Cluster Host (us-east-1)\",\n  \"source\": \"01M7GWTG2S-AC3R\",\n  \"target\": \"01M7GWTG2S-X9V8\",\n  \"label\": \"runs on\",\n  \"notes\": \"Derived from host field\",\n  \"catalogStatus\": \"complete\",\n  \"_source\": \"derived from catalog/shared-services/runtime-services/runtime-service-aws-ecs-fargate-factory-prod.yaml [host]\",\n  \"_derived\": true\n}",
+      "existsInCatalog": true,
+      "outboundRelationships": [],
+      "inboundRelationships": []
     }
   },
   "lifecycleColors": {
@@ -55105,6 +63643,14 @@ window.DRAFT_BROWSER_DATA = {
       {
         "source": "01KQQ4Q027-1GHC",
         "path": "requirements[6].relatedCapability"
+      },
+      {
+        "source": "01M7GWTG2T-7D9P",
+        "path": "capabilities[1]"
+      },
+      {
+        "source": "01M7GWTG2T-F1WG",
+        "path": "capabilities[2]"
       }
     ],
     "01KQQ4Q026-H3B5": [
@@ -55123,6 +63669,14 @@ window.DRAFT_BROWSER_DATA = {
       {
         "source": "01KQQ4Q027-1GHC",
         "path": "requirements[4].relatedCapability"
+      },
+      {
+        "source": "01M7GWTG2T-KR1Y",
+        "path": "capabilities[2]"
+      },
+      {
+        "source": "01M7GWTG2T-JHTR",
+        "path": "capabilities[0]"
       }
     ],
     "01KQQ4Q026-4JR6": [
@@ -55153,6 +63707,10 @@ window.DRAFT_BROWSER_DATA = {
       {
         "source": "01KQQ4Q027-1GHC",
         "path": "requirements[5].relatedCapability"
+      },
+      {
+        "source": "01M7GWTG2T-VA2G",
+        "path": "capabilities[1]"
       }
     ],
     "01KQQ4Q027-K5DR": [
@@ -55185,6 +63743,10 @@ window.DRAFT_BROWSER_DATA = {
       {
         "source": "01KQQ4Q027-THYN",
         "path": "requirements[2].relatedCapability"
+      },
+      {
+        "source": "01M7GWTG2T-VA2G",
+        "path": "capabilities[0]"
       }
     ],
     "01KQQ4Q026-D04B": [
@@ -55207,6 +63769,10 @@ window.DRAFT_BROWSER_DATA = {
       {
         "source": "01KQQ4Q027-THYN",
         "path": "requirements[3].relatedCapability"
+      },
+      {
+        "source": "01M7GWTG2T-TQEB",
+        "path": "capabilities[0]"
       }
     ],
     "01KQQ4Q026-98VD": [
@@ -55229,6 +63795,10 @@ window.DRAFT_BROWSER_DATA = {
       {
         "source": "01KQQ4Q027-K5DR",
         "path": "requirements[5].relatedCapability"
+      },
+      {
+        "source": "01M7GWTG2T-TQEB",
+        "path": "capabilities[1]"
       }
     ],
     "01KQQ4Q026-JW52": [
@@ -55301,6 +63871,10 @@ window.DRAFT_BROWSER_DATA = {
         "path": "requirements[3].relatedCapability"
       },
       {
+        "source": "01M7GWTG2T-3PQY",
+        "path": "capabilities[0]"
+      },
+      {
         "source": "01M7GTBMQT-F262",
         "path": "capabilities[0]"
       }
@@ -55339,6 +63913,14 @@ window.DRAFT_BROWSER_DATA = {
         "path": "requirements[1].relatedCapability"
       },
       {
+        "source": "01M7GWTG2S-AC3R",
+        "path": "capabilities[0]"
+      },
+      {
+        "source": "01M7GWTG2S-ZT0V",
+        "path": "capabilities[0]"
+      },
+      {
         "source": "01M7GTBMQT-6QYP",
         "path": "capabilities[0]"
       }
@@ -55359,6 +63941,10 @@ window.DRAFT_BROWSER_DATA = {
       {
         "source": "01KT0VM061-CRN7",
         "path": "requirements[1].relatedCapability"
+      },
+      {
+        "source": "01M7GWTG2T-8A54",
+        "path": "capabilities[0]"
       }
     ],
     "01KT0V5MCV-HZ37": [
@@ -55377,6 +63963,10 @@ window.DRAFT_BROWSER_DATA = {
       {
         "source": "01KT0VM061-CRN7",
         "path": "requirements[4].relatedCapability"
+      },
+      {
+        "source": "01M7GWTG2S-AC3R",
+        "path": "capabilities[2]"
       }
     ],
     "01KT0V5MCV-RM8M": [
@@ -55397,6 +63987,14 @@ window.DRAFT_BROWSER_DATA = {
         "path": "requirements[7].relatedCapability"
       },
       {
+        "source": "01M7GWTG2T-M5GD",
+        "path": "capabilities[0]"
+      },
+      {
+        "source": "01M7GWTG2T-M07S",
+        "path": "capabilities[0]"
+      },
+      {
         "source": "01M7GTBMQT-TFSM",
         "path": "capabilities[0]"
       }
@@ -55407,6 +64005,22 @@ window.DRAFT_BROWSER_DATA = {
         "path": "requirements[8].relatedCapability"
       },
       {
+        "source": "01M7GWTG2T-7D9P",
+        "path": "capabilities[0]"
+      },
+      {
+        "source": "01M7GWTG2T-KR1Y",
+        "path": "capabilities[1]"
+      },
+      {
+        "source": "01M7GWTG2T-GYW1",
+        "path": "capabilities[1]"
+      },
+      {
+        "source": "01M7GWTG2T-F1WG",
+        "path": "capabilities[1]"
+      },
+      {
         "source": "01M7GTBMQT-3P47",
         "path": "capabilities[0]"
       }
@@ -55415,12 +64029,24 @@ window.DRAFT_BROWSER_DATA = {
       {
         "source": "01KT0VM061-CRN7",
         "path": "requirements[9].relatedCapability"
+      },
+      {
+        "source": "01M7GWTG2T-GYW1",
+        "path": "capabilities[0]"
+      },
+      {
+        "source": "01M7GWTG2T-F1WG",
+        "path": "capabilities[0]"
       }
     ],
     "01KT0V5MCV-924J": [
       {
         "source": "01KT0VM061-CRN7",
         "path": "requirements[10].relatedCapability"
+      },
+      {
+        "source": "01M7GWTG2T-KR1Y",
+        "path": "capabilities[0]"
       }
     ],
     "01KT0XNZEY-Q2TF": [
@@ -55433,6 +64059,10 @@ window.DRAFT_BROWSER_DATA = {
       {
         "source": "01KT0VM061-CRN7",
         "path": "requirements[12].relatedCapability"
+      },
+      {
+        "source": "01M7GWTG2T-0NKZ",
+        "path": "capabilities[0]"
       }
     ],
     "01KT0XNZEY-35Y2": [
@@ -55475,18 +64105,34 @@ window.DRAFT_BROWSER_DATA = {
       {
         "source": "01KT0VM061-CRN7",
         "path": "requirements[19].relatedCapability"
+      },
+      {
+        "source": "01M7GWTG2T-M2Q0",
+        "path": "capabilities[1]"
       }
     ],
     "01KQQ4Q026-NB1W": [
       {
         "source": "01KSF29JTP-SRVE",
         "path": "requirements[0].relatedCapability"
+      },
+      {
+        "source": "01M7GWTG2S-W2BR",
+        "path": "capabilities[0]"
       }
     ],
     "01KQQ4Q026-GW5D": [
       {
         "source": "01KSF29JTP-SRVE",
         "path": "requirements[1].relatedCapability"
+      },
+      {
+        "source": "01M7GWTG2S-AC3R",
+        "path": "capabilities[1]"
+      },
+      {
+        "source": "01M7GWTG2S-ZT0V",
+        "path": "capabilities[1]"
       }
     ],
     "01KQQ4Q026-3ZWJ": [
@@ -55799,6 +64445,12 @@ window.DRAFT_BROWSER_DATA = {
         "path": "primaryTechnologyComponent"
       }
     ],
+    "01M7GWTG2S-ZT0V": [
+      {
+        "source": "01M7GWTG2S-X9V8",
+        "path": "computePlatformComponent"
+      }
+    ],
     "01M7GVD4FN-3C7S": [
       {
         "source": "01M7GTBMQS-WDE3",
@@ -55815,10 +64467,26 @@ window.DRAFT_BROWSER_DATA = {
         "path": "primaryTechnologyComponent"
       }
     ],
+    "01KSWVZSZ5-M0FR": [
+      {
+        "source": "01M7GWTG2T-M2Q0",
+        "path": "capabilities[0]"
+      }
+    ],
     "01M7GTBMQT-H66V": [
       {
         "source": "01M7GTBMQS-YRGF",
         "path": "requirementImplementations[0].requirementGroup"
+      }
+    ],
+    "01M7GWTG2S-X9V8": [
+      {
+        "source": "01M7GWTG2S-AC3R",
+        "path": "host"
+      },
+      {
+        "source": "VP8VB5X0E7-7FJC",
+        "path": "target"
       }
     ],
     "01KTWS3D6T-T6F6": [
@@ -55836,6 +64504,12 @@ window.DRAFT_BROWSER_DATA = {
     "01M7GTBMQS-WDE3": [
       {
         "source": "96JSYM60JB-Q60Y",
+        "path": "source"
+      }
+    ],
+    "01M7GWTG2S-AC3R": [
+      {
+        "source": "VP8VB5X0E7-7FJC",
         "path": "source"
       }
     ]
@@ -56202,6 +64876,34 @@ window.DRAFT_BROWSER_DATA = {
         "domain": "01KSWVZSZ5-4WKE"
       },
       {
+        "uid": "01M7GWTG2T-7D9P",
+        "name": "Amazon DynamoDB - closing-climb-prod",
+        "type": "data_store_service",
+        "catalogStatus": "incomplete",
+        "description": "DynamoDB table that holds Closing Climb application data (migrated from Firestore)."
+      },
+      {
+        "uid": "01M7GWTG2T-KR1Y",
+        "name": "Amazon EFS - factory-prod-ledger",
+        "type": "data_store_service",
+        "catalogStatus": "incomplete",
+        "description": "Encrypted EFS file system mounted by the Agent Factory control plane for the live execution ledger."
+      },
+      {
+        "uid": "01M7GWTG2T-F1WG",
+        "name": "Amazon S3 - Agent Factory Config, Ledger and Package Buckets",
+        "type": "data_store_service",
+        "catalogStatus": "incomplete",
+        "description": "S3 buckets for Agent Factory configuration, the WORM ledger archive and skill packages."
+      },
+      {
+        "uid": "01M7GWTG2T-GYW1",
+        "name": "Amazon S3 - Agent Factory Mind Bucket",
+        "type": "data_store_service",
+        "catalogStatus": "incomplete",
+        "description": "S3 bucket that holds agent mind (memory) state for the Agent Factory."
+      },
+      {
         "uid": "01M7GTBMQS-9E05",
         "name": "GCP Firestore NoSQL Document Data Store Service",
         "type": "data_store_service",
@@ -56321,6 +65023,20 @@ window.DRAFT_BROWSER_DATA = {
         "description": "Strategic domain covering all aspects of software testing, quality assurance, and release gates.\n"
       },
       {
+        "uid": "01M7GWTG2S-X9V8",
+        "name": "AWS Fargate factory-prod ECS Cluster Host (us-east-1)",
+        "type": "host",
+        "catalogStatus": "incomplete",
+        "description": "Managed serverless container host for the factory-prod ECS cluster. AWS owns the OS and the compute fabric."
+      },
+      {
+        "uid": "01M7GWTG2S-G6RH",
+        "name": "Cloudflare Pages Static Host (beercanlabs-knowledge)",
+        "type": "host",
+        "catalogStatus": "incomplete",
+        "description": "Managed static site hosting on Cloudflare Pages. Serves knowledge.beercanlabs.ai behind Cloudflare Access."
+      },
+      {
         "uid": "01M7GVD4FN-YGN9",
         "name": "Dale's Mac mini (home)",
         "type": "host",
@@ -56347,6 +65063,20 @@ window.DRAFT_BROWSER_DATA = {
         "type": "host",
         "catalogStatus": "complete",
         "description": "Fully managed serverless container host platform for stateless services and agent runners on Google Cloud Platform."
+      },
+      {
+        "uid": "01M7GWTG2T-M2Q0",
+        "name": "AWS Application Load Balancer - factory-prod",
+        "type": "network_service",
+        "catalogStatus": "incomplete",
+        "description": "Internet-facing ALB that is the AWS origin behind the Cloudflare edge for Agent Factory and Closing Climb hostnames."
+      },
+      {
+        "uid": "01M7GWTG2T-8A54",
+        "name": "AWS Cloud Map - factory.internal",
+        "type": "network_service",
+        "catalogStatus": "incomplete",
+        "description": "Private DNS namespace for service discovery between factory-prod ECS services."
       },
       {
         "uid": "01M7GTBMQS-YRGF",
@@ -56475,6 +65205,15 @@ window.DRAFT_BROWSER_DATA = {
         "type": "reference_architecture",
         "catalogStatus": "complete",
         "description": "Deployment pattern for simple applications where a client or static presentation layer talks directly to a managed data service without a separately operated application runtime tier. Use this for static sites, thick clients, reporting front ends, or low-code applications whose business logic is primarily in the client and managed data platform."
+      },
+      {
+        "uid": "VP8VB5X0E7-7FJC",
+        "name": "AWS ECS Fargate Runtime - factory-prod \u2192 AWS Fargate factory-prod ECS Cluster Host (us-east-1)",
+        "type": "relationship",
+        "catalogStatus": "complete",
+        "source": "01M7GWTG2S-AC3R",
+        "target": "01M7GWTG2S-X9V8",
+        "label": "runs on"
       },
       {
         "uid": "96JSYM60JB-Q60Y",
@@ -56677,6 +65416,69 @@ window.DRAFT_BROWSER_DATA = {
         "description": "Starter TX-RAMP requirement group for DRAFT. This file is intended to map TX-RAMP control expectations onto the unified DRAFT requirement model.\n"
       },
       {
+        "uid": "01M7GWTG2S-AC3R",
+        "name": "AWS ECS Fargate Runtime - factory-prod",
+        "type": "runtime_service",
+        "catalogStatus": "incomplete",
+        "description": "Amazon ECS on Fargate runtime for the BeerCanLabs Agent Factory and Closing Climb in us-east-1. Long-running services plus on-demand agent tasks."
+      },
+      {
+        "uid": "01M7GWTG2T-JHTR",
+        "name": "AWS KMS (AWS-managed keys) - Agent Factory",
+        "type": "runtime_service",
+        "catalogStatus": "incomplete",
+        "description": "AWS Key Management Service as used by the Agent Factory account. Only AWS-managed service keys are in use."
+      },
+      {
+        "uid": "01M7GWTG2T-3PQY",
+        "name": "AWS Secrets Manager - Agent Factory",
+        "type": "runtime_service",
+        "catalogStatus": "incomplete",
+        "description": "AWS Secrets Manager in us-east-1 holding Agent Factory and Closing Climb secrets, injected into ECS tasks as container secrets."
+      },
+      {
+        "uid": "01M7GWTG2T-TQEB",
+        "name": "Amazon CloudWatch - Agent Factory",
+        "type": "runtime_service",
+        "catalogStatus": "incomplete",
+        "description": "CloudWatch Logs and Container Insights for the factory-prod ECS cluster, and alarms for Closing Climb jobs."
+      },
+      {
+        "uid": "01M7GWTG2T-0NKZ",
+        "name": "Amazon ECR - Agent Factory Images",
+        "type": "runtime_service",
+        "catalogStatus": "incomplete",
+        "description": "Private container registry for Agent Factory, agent cartridge and Closing Climb images."
+      },
+      {
+        "uid": "01M7GWTG2T-XKK0",
+        "name": "Amazon EventBridge Scheduler - Closing Climb",
+        "type": "runtime_service",
+        "catalogStatus": "incomplete",
+        "description": "EventBridge Scheduler schedules that launch Closing Climb ECS tasks in the factory-prod cluster."
+      },
+      {
+        "uid": "01M7GWTG2T-M5GD",
+        "name": "Amazon SNS - Closing Climb Alerts",
+        "type": "runtime_service",
+        "catalogStatus": "incomplete",
+        "description": "SNS topic that receives all Closing Climb alarms (Buffini sync, weekly25 and the scheduler DLQ) and the EventBridge scheduled-task nonzero-exit rule."
+      },
+      {
+        "uid": "01M7GWTG2T-M07S",
+        "name": "Amazon SQS - Closing Climb Scheduler DLQ",
+        "type": "runtime_service",
+        "catalogStatus": "incomplete",
+        "description": "SQS dead-letter queue for failed Closing Climb EventBridge Scheduler invocations."
+      },
+      {
+        "uid": "01M7GWTG2T-VA2G",
+        "name": "Cloudflare Access - BeerCanLabs Front Door",
+        "type": "runtime_service",
+        "catalogStatus": "incomplete",
+        "description": "Cloudflare Zero Trust Access in front of Agent Factory and BeerCanLabs web hostnames."
+      },
+      {
         "uid": "01M7GTBMQS-NBA2",
         "name": "GCP Cloud Scheduler Cron Dispatch Service",
         "type": "runtime_service",
@@ -56717,6 +65519,20 @@ window.DRAFT_BROWSER_DATA = {
         "type": "software_deployment_pattern",
         "catalogStatus": "complete",
         "description": "Serverless containerized agent factory deployment pattern on GCP Cloud Run with Secret Manager IAM bindings and Cloud SQL datastores."
+      },
+      {
+        "uid": "01M7GWTG2S-W2BR",
+        "name": "AWS Distro for OpenTelemetry Collector",
+        "type": "technology_component",
+        "catalogStatus": "incomplete",
+        "description": "OpenTelemetry collector sidecar shipped with the Agent Factory control-plane and gatekeeper-egress tasks."
+      },
+      {
+        "uid": "01M7GWTG2S-ZT0V",
+        "name": "AWS Fargate (Amazon ECS)",
+        "type": "technology_component",
+        "catalogStatus": "incomplete",
+        "description": "Serverless container compute for Amazon ECS. Runs the Agent Factory and Closing Climb tasks in the factory-prod cluster."
       },
       {
         "uid": "01M7GTBMQT-TFSM",
@@ -57900,6 +66716,15 @@ window.DRAFT_BROWSER_DATA = {
       "technology": "",
       "direction": "",
       "name": "Home Assistant IoT & Display Integration Service \u2192 Home Assistant host (hardware/OS unconfirmed)"
+    },
+    {
+      "id": "VP8VB5X0E7-7FJC",
+      "source": "01M7GWTG2S-AC3R",
+      "target": "01M7GWTG2S-X9V8",
+      "label": "runs on",
+      "technology": "",
+      "direction": "",
+      "name": "AWS ECS Fargate Runtime - factory-prod \u2192 AWS Fargate factory-prod ECS Cluster Host (us-east-1)"
     }
   ]
 };
