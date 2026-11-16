@@ -1,0 +1,23 @@
+schemaVersion: '1.0'
+uid: 01M7GWXKXW-70GF
+type: product_registration
+name: BeerCanLabs Knowledge Base
+description: BeerCanLabs company knowledge base in Open Knowledge Format, served at knowledge.beercanlabs.ai.
+catalogStatus: incomplete
+owner:
+  team: platform-ai-team
+  contact: platform-ai@example.com
+tags:
+- knowledge
+- static-site
+- cloudflare-pages
+repository:
+  provider: github
+  url: https://github.com/BeerCanLabs/knowledge
+  defaultBranch: main
+notes:
+  sdpStatus: No .draft/sdp.yaml in the repository (checked at 02757f5). An SDP is needed before this registration
+    can be complete.
+  deployment: Deployed to Cloudflare Pages project beercanlabs-knowledge by .github/workflows/deploy.yml
+    (host 01M7GWTG2S-G6RH), behind Cloudflare Access (01M7GWTG2T-VA2G).
+  correction: The brief said GitHub Pages; the repository has no GitHub Pages site.

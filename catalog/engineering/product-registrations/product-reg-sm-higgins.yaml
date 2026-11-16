@@ -1,0 +1,22 @@
+schemaVersion: '1.0'
+uid: 01M7GWXKXW-DF11
+type: product_registration
+name: Higgins Submind
+description: Higgins estate and executive manager submind, packaged as an Agent Factory cartridge.
+catalogStatus: incomplete
+owner:
+  team: platform-ai-team
+  contact: platform-ai@example.com
+tags:
+- agent-factory
+- cartridge
+- submind
+repository:
+  provider: github
+  url: https://github.com/BeerCanLabs/SM-higgins
+  defaultBranch: main
+notes:
+  sdpStatus: No .draft/sdp.yaml in the repository (checked at 95f8b4a). An SDP is needed before this registration
+    can be complete.
+  deployment: Runs on the Agent Factory as ECS task definition family agent-higgins (2 Secrets Manager
+    references). Gatekeeper-ingress holds the Discord presence and gatekeeper-egress injects the Discord token into replies; the Keymaster holds the Google and Microsoft grants (cartridge.yaml).

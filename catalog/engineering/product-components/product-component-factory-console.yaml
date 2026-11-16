@@ -1,0 +1,23 @@
+schemaVersion: '1.0'
+uid: 01M7GWXKXW-VPCD
+type: product_component
+name: Agent Factory Console
+description: Web dashboard for the Agent Factory.
+repoUrl: https://github.com/BeerCanLabs/agent-factory
+owner:
+  team: platform-ai-team
+  contact: platform-ai@example.com
+classification: web-application
+catalogStatus: incomplete
+lifecycleStatus: preferred
+tags:
+- agent-factory
+- console
+- dashboard
+runsOn: 01M7GWTG2S-AC3R
+language: TypeScript
+notes:
+  verification: Verified read-only from AWS account ending 2296 (us-east-1) on 2026-11-15 (America/Phoenix).
+  deployment: 'ECS service console on factory-prod: FARGATE, 512 CPU/1024 MB, port 3000, no secrets. ALB
+    host rule factory-dashboard.dalesackrider.com.'
+  source: packages/console in BeerCanLabs/agent-factory; image tag 01720b2.

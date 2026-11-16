@@ -2,11 +2,10 @@ schemaVersion: '1.0'
 uid: 01M1N137Q4-BNT8
 type: product_registration
 name: Closing Climb Web UI
-catalogStatus: complete
+catalogStatus: incomplete
 owner:
   team: real-estate-solutions
   contact: stephanie@example.com
-
 repository:
   provider: github
   url: https://github.com/BeerCanLabs/closing-climb-web
@@ -14,3 +13,6 @@ repository:
 sdpManifest:
   mode: git
   path: .draft/sdp.yaml
+notes:
+  sdpStatus: The repository .draft/sdp.yaml exists (SDP0000002-CLOSINGCLIMB, last changed 2026-09-03) but still describes GCP Cloud Run and Firestore. It needs updating in the closing-climb-web repository.
+  deployment: Verified 2026-11-15 on AWS us-east-1. ECS service closing-climb-web on cluster factory-prod (task definition family closing-climb-prod), ALB host rule cc.dalesackrider.com, DynamoDB table closing-climb-prod, 5 closing-climb/prod secrets, nightly Buffini sync and Sunday weekly25 schedules (America/Phoenix), and SNS/SQS alerting. Infra is in infra/aws/main.tf.

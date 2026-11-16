@@ -1,0 +1,23 @@
+schemaVersion: '1.0'
+uid: 01M7GWXKXW-TTMR
+type: product_registration
+name: Agentic SDLC Fleet
+description: Governed multi-agent SDLC fleet (conductor, coder, juror, PR reviewer) packaged as Agent
+  Factory cartridges.
+catalogStatus: incomplete
+owner:
+  team: platform-ai-team
+  contact: platform-ai@example.com
+tags:
+- agent-factory
+- cartridge
+- sdlc
+repository:
+  provider: github
+  url: https://github.com/BeerCanLabs/agentic-sdlc
+  defaultBranch: main
+notes:
+  sdpStatus: No .draft/sdp.yaml in the repository (checked at 6c75e89). An SDP is needed before this registration
+    can be complete.
+  deployment: Runs on the Agent Factory. ECS task definition families agent-beercanlabs-conductor, agent-beercanlabs-coder
+    and agent-beercanlabs-pr-reviewer exist in factory-prod (no juror family found).

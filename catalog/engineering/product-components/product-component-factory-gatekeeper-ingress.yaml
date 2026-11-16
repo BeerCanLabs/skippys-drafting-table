@@ -1,0 +1,27 @@
+schemaVersion: '1.0'
+uid: 01M7GWXKXW-7W49
+type: product_component
+name: Agent Factory Gatekeeper Ingress
+description: Holds agent Discord presence and forwards inbound events to the control plane, so agent containers
+  never hold the bot tokens.
+repoUrl: https://github.com/BeerCanLabs/agent-factory
+owner:
+  team: platform-ai-team
+  contact: platform-ai@example.com
+classification: api-service
+catalogStatus: incomplete
+lifecycleStatus: preferred
+tags:
+- agent-factory
+- gatekeeper
+- ingress
+- discord
+runsOn: 01M7GWTG2S-AC3R
+language: TypeScript
+notes:
+  verification: Verified read-only from AWS account ending 2296 (us-east-1) on 2026-11-15 (America/Phoenix).
+  deployment: 'ECS service gatekeeper-ingress on factory-prod: FARGATE, 256 CPU/512 MB, port 8090, 2 Secrets
+    Manager references, no load balancer, registered in Cloud Map factory.internal.'
+  source: packages/gatekeeper (ingress.Dockerfile) in BeerCanLabs/agent-factory; image tag 01720b2. The
+    role (holding the Discord token outside agent containers) is from SM-higgins cartridge.yaml comments
+    and agent-factory DESIGN_AUTHORITY S1.

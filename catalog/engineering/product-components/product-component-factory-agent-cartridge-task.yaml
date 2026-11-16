@@ -1,0 +1,29 @@
+schemaVersion: '1.0'
+uid: 01M7GWXKXW-4ZJF
+type: product_component
+name: Agent Factory Cartridge Task (on-demand)
+description: 'Scale-to-zero worker: each agent cartridge runs as an on-demand ECS task that the control
+  plane launches when the agent wakes.'
+repoUrl: https://github.com/BeerCanLabs/agent-factory
+owner:
+  team: platform-ai-team
+  contact: platform-ai@example.com
+classification: worker
+catalogStatus: incomplete
+lifecycleStatus: preferred
+tags:
+- agent-factory
+- cartridge
+- on-demand
+- scale-to-zero
+runsOn: 01M7GWTG2S-AC3R
+notes:
+  verification: Verified read-only from AWS account ending 2296 (us-east-1) on 2026-11-15 (America/Phoenix).
+  deployment: Per-agent ECS task definition families (for example agent-higgins, agent-archie, agent-beercanlabs-coder,
+    agent-beercanlabs-conductor, agent-beercanlabs-pr-reviewer), FARGATE, 256 CPU/512 MB, images in ECR
+    factory-dynamic-agents tagged <agent>-<sha>, logs to /ecs/factory-prod.
+  source: Runtime from runtimes/agent-runtime in BeerCanLabs/agent-factory; cartridge content from each
+    agent repository (for example SM-higgins, agentic-sdlc).
+  incomplete: Which families are current and which are leftover test families (e2e, agent-<uuid>) was
+    not established.
+  language: Cartridge workers vary by agent. runtimes/agent-runtime and SM-higgins are Python, agentic-sdlc agents are Node.js (agent.mjs), and all run behind the Node hydrate shim.

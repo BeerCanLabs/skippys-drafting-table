@@ -6,7 +6,6 @@ catalogStatus: complete
 owner:
   team: platform-ai-team
   contact: platform-ai@example.com
-
 repository:
   provider: github
   url: https://github.com/BeerCanLabs/agent-factory
@@ -14,3 +13,5 @@ repository:
 sdpManifest:
   mode: git
   path: .draft/sdp.yaml
+notes:
+  deployment: Deployed on AWS us-east-1 (ECS cluster factory-prod). The deployed topology is modeled by SDP 01M15NEKT7-S14J. The repository .draft/sdp.yaml (SDP0000002-AGENTFACTORY) is the cloud-agnostic kernel pattern.
