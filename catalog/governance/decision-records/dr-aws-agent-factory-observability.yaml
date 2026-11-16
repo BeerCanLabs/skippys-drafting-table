@@ -1,0 +1,38 @@
+schemaVersion: '1.0'
+uid: 01M7GYV3B6-KB8Q
+type: decision_record
+name: 'AWS Agent Factory: Observability and Audit Logging'
+description: The ledger is the structured audit trail. CloudWatch Logs (30 days), Container Insights and
+  an ADOT collector carry operational telemetry. The kernel exposes telemetry through headless APIs, not
+  dashboards.
+version: 1.0.0
+category: decision
+status: accepted
+catalogStatus: incomplete
+lifecycleStatus: preferred
+owner:
+  team: platform-ai-team
+  contact: platform-ai@example.com
+tags:
+- agent-factory
+- aws
+- submind
+- observability
+- logging
+- audit
+linkedObject: 01M15NEKT7-S14J
+decisionRationale: |
+  Decision: audit is the ledger. Every egress request writes a ledger row (agent, run, route or host, allow/deny), never prompt
+  bodies or secrets (E3); the ledger is append-only, single-writer and verified (6.10). Secret values are redacted from
+  results and ledger rows (S1). Webhook deliveries that are unsigned or carry a bad signature are refused, all in the same
+  way (A1). The kernel builds no dashboards and serves telemetry through headless APIs (6.5).
+  AWS binding: container logs go to CloudWatch Logs /ecs/factory-prod with 30-day retention (storage.tf). Container Insights
+  is enabled on the cluster (ecs.tf). An ADOT collector sidecar next to the control plane and gatekeeper-egress turns OTLP
+  into CloudWatch metrics (README "Metrics").
+  Observed gaps: application log lines are plain text with component prefixes (for example "[subscriptions] ..."), not JSON
+  with trace/span IDs. No CloudWatch alarms or dashboards exist for the factory (live: all 7 alarms belong to Closing Climb).
+  Why, for both: rationale not recorded.
+
+  Sources:
+  - BeerCanLabs/agent-factory @01720b2: DESIGN_AUTHORITY.md 6.3.1 E3, 6.3.2 S1, 6.5, 6.10, 6.12 A1; landing-zones/aws/README.md (Metrics), storage.tf (retention_in_days), ecs.tf (containerInsights); packages/control-plane/src (console logging)
+  - Live AWS, read-only, account ending 2296, us-east-1, 2026-11-15: logs describe-log-groups, cloudwatch describe-alarms/list-dashboards, ecs describe-clusters

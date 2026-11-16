@@ -1,0 +1,47 @@
+schemaVersion: '1.0'
+uid: 01M7GYV3B6-K9CZ
+type: decision_record
+name: 'AWS Agent Factory: Compute, Hosting and Scheduling'
+description: 'The Agent Factory runs on AWS ECS Fargate in us-east-1 (cluster factory-prod) using the
+  orchestrated-tasks baseline pattern: mailbox services stay warm and each agent run is its own on-demand
+  task.'
+version: 1.0.0
+category: decision
+status: accepted
+catalogStatus: incomplete
+lifecycleStatus: preferred
+owner:
+  team: platform-ai-team
+  contact: platform-ai@example.com
+tags:
+- agent-factory
+- aws
+- submind
+- compute
+- ecs
+- fargate
+- scheduling
+linkedObject: 01M15NEKT7-S14J
+decisionRationale: |
+  Decision (observed and documented): the deployment target is AWS us-east-1, ECS cluster factory-prod on Fargate. It follows the
+  orchestrated-tasks baseline pattern (reference architecture 01KV0REFAR-CMSV). The control plane, gatekeeper-ingress,
+  gatekeeper-egress, console and garrison run as ECS services (desired 1). Agents run as one Fargate task per run, started by
+  the control plane, so agent compute is zero when idle.
+  Why: the kernel is cloud-agnostic and the landing zone is a per-deployment choice; landing-zones/aws is the
+  "orchestrated-tasks x AWS" binding. Mailboxes stay warm because they are mailboxes, not cartridges (agent-factory
+  .draft/sdp.yaml patternDeviations). Each deployment target has its own ops repository that pins an exact agent-factory
+  commit (Design Authority L1); for AWS that is submind-aws.
+  Capacity: gatekeeper-egress and garrison use FARGATE_SPOT; the control plane, console and gatekeeper-ingress use on-demand
+  FARGATE. gatekeeper-ingress was moved off Spot after a Spot reclaim killed the single task that holds every agent's Discord
+  presence during the 2026-09-30 deploy (commit b58b49a). Why Spot was chosen for the other two: rationale not recorded
+  (introduced in 85bfff6, whose message gives no reason).
+  Scheduling: agent cron triggers are handled by the factory's own Timekeeper (packages/timekeeper; Design Authority 6.15),
+  not by a cloud scheduler. Amazon EventBridge Scheduler in this account is used only by Closing Climb. Why an
+  in-process scheduler rather than a cloud scheduler: rationale not recorded beyond the cloud-agnostic kernel principle.
+  Choice of AWS over the earlier GCP deployment: rationale not recorded in the sources reviewed.
+
+  Sources:
+  - BeerCanLabs/agent-factory @01720b2: AGENTS.md (Interview, Landing-zone examples), .draft/sdp.yaml (notes.patternDeviations, baselinePatterns), landing-zones/aws/README.md, landing-zones/aws/ecs.tf
+  - BeerCanLabs/agent-factory @01720b2: DESIGN_AUTHORITY.md 6.8 L1, 6.15 (Timekeeper); commits b58b49a (2026-09-30), 85bfff6 (2026-09-19)
+  - BeerCanLabs/submind-aws @3f7d9a5: README.md, OPERATIONS.md (What lives here)
+  - Live AWS, read-only, account ending 2296, us-east-1, 2026-11-15: ecs describe-clusters/describe-services (launch types, desired counts), list-task-definition-families, scheduler list-schedules

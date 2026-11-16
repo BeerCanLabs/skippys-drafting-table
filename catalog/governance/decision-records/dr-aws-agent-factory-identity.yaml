@@ -1,0 +1,41 @@
+schemaVersion: '1.0'
+uid: 01M7GYV3B6-EEZ3
+type: decision_record
+name: 'AWS Agent Factory: Identity and Access Control'
+description: People get operator identity only from a verified Cloudflare Access assertion or the factory's
+  own login. Machines use factory tokens. Agents get per-run tokens and per-agent IAM roles. Everything
+  is deny by default.
+version: 1.0.0
+category: decision
+status: accepted
+catalogStatus: incomplete
+lifecycleStatus: preferred
+owner:
+  team: platform-ai-team
+  contact: platform-ai@example.com
+tags:
+- agent-factory
+- aws
+- submind
+- identity
+- access-control
+- cloudflare-access
+linkedObject: 01M15NEKT7-S14J
+decisionRationale: |
+  Decision: identity is verified, not asserted (Design Authority A2). The control plane grants a role only from a factory
+  token, a run token, or the Cloudflare Access RS256 assertion checked against the team domain's certs, issuer and audience;
+  the cf-access-authenticated-user-email header grants nothing (landing-zones/aws/README.md "Operator identity").
+  Cloudflare Access covers agent-factory.beercanlabs.com and garrison.dalesackrider.com (live: 302 to the beercanlabs Access
+  login). Exception, documented in submind-aws OPERATIONS.md: the console host factory-dashboard.dalesackrider.com has a
+  hand-set Access Bypass (2026-11-03) because the factory enforces its own login there; the ALB still admits only Cloudflare.
+  Authorization is default-deny and server-side: an agent with no admin-set policy has no egress (E7), and console and API
+  actions ask the Bouncer for a named privilege (6.15, SK7). In AWS each agent gets its own task role limited to its own
+  mind prefix, and the control plane may RunTask only factory-prod-agent-* task definitions and is denied provider keys
+  (landing-zones/aws/README.md "IAM"). Production deploys assume the factory-deploy role through GitHub OIDC, trusted only
+  for submind-aws main (OPERATIONS.md Rules).
+  Not covered here: MFA for admins and API rate limiting are not documented in the sources reviewed.
+
+  Sources:
+  - BeerCanLabs/agent-factory @01720b2: DESIGN_AUTHORITY.md 6.3.1 E7, 6.12 A1-A2, 6.15; landing-zones/aws/README.md (IAM, Operator identity), iam.tf
+  - BeerCanLabs/submind-aws @3f7d9a5: OPERATIONS.md (Front door, Console host bypass, Rules)
+  - HTTPS probes 2026-11-15: agent-factory.beercanlabs.com and garrison.dalesackrider.com redirect to beercanlabs.cloudflareaccess.com

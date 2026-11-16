@@ -1,0 +1,41 @@
+schemaVersion: '1.0'
+uid: 01M7GYV3B6-FASW
+type: decision_record
+name: 'AWS Agent Factory: Data Stores and Data Classification'
+description: Agent memory is kept in S3 under per-agent prefixes. The ledger is on encrypted EFS with
+  WORM checkpoints in S3 Object Lock. Configuration is in a versioned S3 bucket. The factory runs no relational
+  or query database.
+version: 1.0.0
+category: decision
+status: accepted
+catalogStatus: complete
+lifecycleStatus: preferred
+owner:
+  team: platform-ai-team
+  contact: platform-ai@example.com
+tags:
+- agent-factory
+- aws
+- submind
+- data
+- s3
+- efs
+- classification
+linkedObject: 01M15NEKT7-S14J
+decisionRationale: |
+  Decision: agent memory follows "The Notebook & Safe" (Design Authority 6.6). Cartridges read and write local SQLite in
+  $MEMORY_DIR and never import cloud SDKs; the Property Manager's shim pulls the mind from object storage on wake and pushes it
+  back on sleep. AWS binding: S3 bucket agent-factory-mind-prod-* with per-agent prefixes (each agent's task role is limited
+  to its prefix). The ledger hot chain is on EFS factory-prod-ledger with one writer (LG1); checkpoints ship to
+  agent-factory-ledger-prod-* with S3 Object Lock in COMPLIANCE mode, 365-day default retention, so no principal can delete
+  or overwrite them early (storage.tf comment; live configuration). Each agent's deployment configuration is one immutable
+  object per version in the versioned config bucket (6.14 SK3, R1). Skill packages are in the packages bucket.
+  Classification: Confidential. The ledger holds metadata and hashes only, and the mind holds adopter data (agent-factory
+  .draft/sdp.yaml notes.dataClassification). The ledger never holds secrets or prompt bodies (AGENTS.md definition of done 4).
+  No relational or query database: the factory kernel has no SQL/NoSQL query layer (no SQL engine in packages/*/src at
+  01720b2), so expand-and-contract schema migrations and parameterized-query rules do not apply to this deployment.
+  DynamoDB closing-climb-prod in the same account belongs to Closing Climb, not the factory.
+
+  Sources:
+  - BeerCanLabs/agent-factory @01720b2: DESIGN_AUTHORITY.md 6.6, 6.10 LG1-LG2, 6.13 R1, 6.14; .draft/sdp.yaml (notes.dataClassification); AGENTS.md; landing-zones/aws/storage.tf, README.md (IAM, Ledger)
+  - Live AWS, read-only, account ending 2296, us-east-1, 2026-11-15: s3api get-bucket-encryption/versioning/object-lock-configuration/public-access-block, efs describe-file-systems
