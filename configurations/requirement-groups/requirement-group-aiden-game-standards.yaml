@@ -2,11 +2,11 @@ schemaVersion: '1.0'
 uid: 01M162FHHS-XAJQ
 type: requirement_group
 name: Aiden Game Platform Architecture & UAT Standards
-description: Governed architecture standards for Switch to build, scaffold, and deploy games for Aiden (tier classification, persistent storage, auth/user profiles, GitHub Pages / Cloud Run UAT delivery).
+description: Governed architecture standards for Switch to build, scaffold, and deploy games for Aiden (tier classification, persistent storage, auth/user profiles, and UAT delivery). Applies only to game products. No Tier 2 or Tier 3 stack is currently catalogued.
 version: 1.0.0
 catalogStatus: complete
 lifecycleStatus: preferred
-activation: always
+activation: workspace
 appliesTo:
 - product_component
 - software_deployment_pattern
@@ -17,6 +17,8 @@ authority:
 owner:
   team: switch-product-team
   contact: switch-team@example.com
+notes:
+  activation: This group is workspace-activated so it does not apply to non-game products such as the Submind SDP. To apply it to a game product, list UID 01M162FHHS-XAJQ in `.draft/workspace.yaml` under `requirements.activeRequirementGroups`, and claim the group on the game SDP (or product component) via `requirementGroups`. No game SDP is in this workspace today, so the group is inactive.
 requirements:
 - id: req-game-tier-classification
   description: Every game built by Switch MUST be classified into Tier 1 (Static Web Game), Tier 2 (Persistent Web Game with Auth/DB), or Tier 3 (Real-Time Multiplayer).
@@ -32,7 +34,7 @@ requirements:
   - field
   - decisionRecord
 - id: req-game-uat-deployment
-  description: Every game MUST include automated CI/CD deployment pipelines providing an accessible UAT link for Aiden to play and test (GitHub Pages for Tier 1, GitHub Pages + Cloud Run for Tier 2).
+  description: Every game MUST include automated CI/CD deployment pipelines providing an accessible UAT link for Aiden to play and test. Tier 1 uses GitHub Pages, which is the approved live path. Tier 2 and Tier 3 have no approved stack; Switch must get a decision record before building one.
   canBeSatisfiedBy:
   - mechanism: field
     key: gameUatDeployment
@@ -45,7 +47,7 @@ requirements:
   - field
   - decisionRecord
 - id: req-game-auth-profile-persistence
-  description: Tier 2+ persistent games MUST use standard authentication (JWT / Secret Manager / Auth Provider) and persistent storage (Cloud SQL Postgres / Firestore) for user profiles and saved state.
+  description: Tier 2+ persistent games MUST use standard auth with secrets in a managed secret store, and a governed persistent DataStoreService, per an approved decision record; no Tier 2 stack is currently catalogued.
   canBeSatisfiedBy:
   - mechanism: field
     key: gameAuthPersistence

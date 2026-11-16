@@ -20,13 +20,16 @@ When Aiden asks Switch to build a game, Switch evaluates the requested features 
  ├──────────────────────────┬─────────────────────────────┬───────────────────────────────┤
  │ Tier 1: Static Web Game  │ Tier 2: Persistent Web Game │ Tier 3: Real-Time Multiplayer │
  ├──────────────────────────┼─────────────────────────────┼───────────────────────────────┤
- │ • RA: `ra-aiden-game-`   │ • RA: `ra-aiden-game-`      │ • RA: `ra-aiden-game-`        │
- │   `tier1-static.yaml`    │   `tier2-persistent.yaml`   │   `tier3-multiplayer.yaml`    │
- │ • LocalStorage state     │ • Auth & User Profiles      │ • Redis Session / WebSockets  │
- │ • Host: GitHub Pages     │ • Host: GitHub Pages + API  │ • Host: Cloud Run WebSocket   │
- │ • Storage: Browser Local │ • Storage: Cloud SQL DB     │ • Storage: Redis + Cloud SQL  │
+ │ • RA: `ra-aiden-game-`   │ • No approved RA            │ • No approved RA              │
+ │   `tier1-static.yaml`    │ • Auth & user profiles      │ • Real-time multiplayer       │
+ │ • LocalStorage state     │ • Needs a decision record   │ • Needs a decision record     │
+ │ • Host: GitHub Pages     │   before Switch builds it   │   before Switch builds it     │
+ │ • Storage: Browser Local │                             │                               │
+ │ • Approved and live      │                             │                               │
  └──────────────────────────┴─────────────────────────────┴───────────────────────────────┘
 ```
+
+Tier 1 is the only approved, catalogued stack (GitHub Pages). Tier 2 and Tier 3 have no approved stack. Switch MUST get a decision record before building a Tier 2 or Tier 3 game, and MUST NOT invent a cloud or datastore choice in the meantime.
 
 ---
 
@@ -36,7 +39,9 @@ When Aiden asks Switch to build a game, Switch evaluates the requested features 
 1. If the game only needs local clicks, sound effects, or single-device progress:
    -> Select **Tier 1 (Static Web Game RA)** (`ra-aiden-game-tier1-static.yaml`).
 2. If the game needs logins, saved profiles, cloud sync across devices, or leaderboards:
-   -> Select **Tier 2 (Persistent Web Game RA)** (`ra-aiden-game-tier2-persistent.yaml`).
+   -> This is **Tier 2**. There is no approved Reference Architecture and no approved auth or datastore stack. Stop and get a decision record before building anything.
+3. If the game needs real-time multiplayer:
+   -> This is **Tier 3**. There is no approved Reference Architecture. Stop and get a decision record before building anything.
 
 ---
 
@@ -45,22 +50,17 @@ Whenever Switch creates a new game repo (e.g. `dsackr/aiden-cookie-clicker`):
 1. **`MATURITY.md`**: Vendor the standard `MATURITY.md` file at root.
 2. **`AGENTS.md`**: Add bootstrap instructions pointing to `MATURITY.md` and `KPF.md`.
 3. **`KPF.md`**: Document Key Product Functionalities (e.g., `KPF-GAME-001: Clicker Loop`, `KPF-GAME-002: User Login & Save State`) mapped to unit/integration tests.
-4. **`.draft/sdp.yaml`**: Generate the specific game SDP (e.g. `sdp-aiden-cookie-clicker.yaml`), setting `followsReferenceArchitecture` to the selected RA's UID.
+4. **`.draft/sdp.yaml`**: Generate the specific game SDP (e.g. `sdp-aiden-cookie-clicker.yaml`), setting `followsReferenceArchitecture` to the selected RA's UID when an approved RA exists (Tier 1 only today).
 5. **DRAFT Product Registration**: Register the product in `dsackr/drafting-table` under `catalog/engineering/product-registrations/`.
+6. **Activate the game standards group**: list requirement group `01M162FHHS-XAJQ` in the drafting-table workspace under `requirements.activeRequirementGroups`, and claim it on the game SDP via `requirementGroups`.
 
 ---
 
 ### Step 3: Auth & Persistent State Standard (Tier 2 Games)
-For any game requiring persistent memory or user profiles, Switch MUST follow the standard:
-* **Frontend Auth UI:** Lightweight auth component (Firebase Auth or JWT token login).
-* **Backend API:** Fast API service running on **GCP Cloud Run**.
-* **Secrets:** JWT secret stored in **GCP Secret Manager**.
-* **Datastore:** User profiles, save slots, and leaderboards stored in **Cloud SQL Postgres**.
-* **Catalog note (2026-11-15):** The GCP catalog objects this standard used to cite are archived under `archive/gcp/` and must not be referenced. No active catalog object backs the Tier 2 stack until a replacement is cataloged.
+There is no approved Tier 2 stack. Switch MUST NOT pick an auth provider, secret store, API host, or datastore on its own. Get a decision record first. The requirement is cloud-neutral: standard auth with secrets in a managed secret store, and a governed persistent DataStoreService, per that decision record.
 
 ---
 
 ### Step 4: Automated UAT Deployment (Aiden Playtesting)
-Switch MUST set up automated GitHub Actions deployment so Aiden can immediately play:
-* **Tier 1 Games:** Automated `.github/workflows/deploy-pages.yml` deploying to `https://dsackr.github.io/<repo-name>/`.
-* **Tier 2 Games:** GitHub Actions builds & deploys API to Cloud Run, deploys static UI to GitHub Pages, and outputs the live playable UAT link to the chat!
+* **Tier 1 Games:** Switch MUST set up automated GitHub Actions deployment (`.github/workflows/deploy-pages.yml`) to `https://dsackr.github.io/<repo-name>/`, so Aiden can immediately play.
+* **Tier 2 and Tier 3 Games:** There is no approved UAT stack. Switch MUST get a decision record before setting up API hosting or any path other than GitHub Pages.

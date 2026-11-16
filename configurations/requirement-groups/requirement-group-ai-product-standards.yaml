@@ -32,7 +32,7 @@ requirements:
   - field
   - decisionRecord
 - id: req-zero-hardcoded-keys
-  description: API keys and bot tokens MUST be retrieved dynamically from Secret Manager at runtime.
+  description: API keys and bot tokens MUST be retrieved dynamically from a managed secrets store (AWS Secrets Manager) at runtime.
   canBeSatisfiedBy:
   - mechanism: field
     key: secretsManagement

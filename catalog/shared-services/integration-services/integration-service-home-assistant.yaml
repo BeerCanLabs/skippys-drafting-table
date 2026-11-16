@@ -19,7 +19,7 @@ protocols:
 - MQTT
 owner:
   team: personal-automation
-  contact: dale.sackrider+donna@gmail.com
+  contact: estate-management@example.com
   resourceOwner: Donna
   serviceProviderRole: Integration Domain Service Provider
 vendorGovernance:
