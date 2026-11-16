@@ -17,7 +17,6 @@ tags:
 - on-demand
 - scale-to-zero
 runsOn: 01M7GWTG2S-AC3R
-language: TypeScript
 notes:
   verification: Verified read-only from AWS account ending 2296 (us-east-1) on 2026-11-15 (America/Phoenix).
   deployment: Per-agent ECS task definition families (for example agent-higgins, agent-archie, agent-beercanlabs-coder,
@@ -27,3 +26,4 @@ notes:
     agent repository (for example SM-higgins, agentic-sdlc).
   incomplete: Which families are current and which are leftover test families (e2e, agent-<uuid>) was
     not established.
+  language: Cartridge workers vary by agent. runtimes/agent-runtime and SM-higgins are Python, agentic-sdlc agents are Node.js (agent.mjs), and all run behind the Node hydrate shim.

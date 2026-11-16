@@ -19,4 +19,4 @@ notes:
   sdpStatus: No .draft/sdp.yaml in the repository (checked at 95f8b4a). An SDP is needed before this registration
     can be complete.
   deployment: Runs on the Agent Factory as ECS task definition family agent-higgins (2 Secrets Manager
-    references). The gatekeepers hold the Discord token and provider grants (cartridge.yaml).
+    references). Gatekeeper-ingress holds the Discord presence and gatekeeper-egress injects the Discord token into replies; the Keymaster holds the Google and Microsoft grants (cartridge.yaml).

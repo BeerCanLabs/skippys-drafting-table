@@ -42,80 +42,14 @@ serviceGroups:
 decisionRecords:
 - ref: 01M7GTBMQS-SZBH
   key: edgeProxyDecision
-- ref: 01M15NFKKN-74NY
-  key: noApplicablePattern
-- ref: 01M15NFKKN-74NY
-  key: interServiceConnections
-- ref: 01M15NFKKN-74NY
-  key: deploymentTargets
-- ref: 01M15NFKKN-74NY
-  key: availabilityRequirement
-- ref: 01M15NFKKN-74NY
-  key: externalDependencies
-- ref: 01M15NFKKN-74NY
-  key: dataClassification
-- ref: 01M15NFKKN-74NY
-  key: failureDomain
-- ref: 01M15NFKKN-74NY
-  key: patternDeviations
-- ref: 01M15NFKKN-74NY
-  key: localValidationDecision
-- ref: 01M15NFKKN-74NY
-  key: productRegistrationDecision
-- ref: 01M15NFKKN-74NY
-  key: modelInferenceSpecDecision
-- ref: 01M15NFKKN-74NY
-  key: aiGatewayRoutingDecision
-- ref: 01M15NFKKN-74NY
-  key: secretsManagementDecision
-- ref: 01M15NFKKN-74NY
-  key: databaseMigrationStrategyDecision
-- ref: 01M15NFKKN-74NY
-  key: iacAutomationDecision
-- ref: 01M15NFKKN-74NY
-  key: gateEnforcementDecision
-- ref: 01M15NFKKN-74NY
-  key: testDataGovernanceDecision
-- ref: 01M15NFKKN-74NY
-  key: rollbackStrategyDecision
-- ref: 01M15NFKKN-74NY
-  key: composableIacDecision
-- ref: 01M15NFKKN-74NY
-  key: previewEnvironmentsDecision
-- ref: 01M15NFKKN-74NY
-  key: structuredLoggingDecision
-- ref: 01M15NFKKN-74NY
-  key: sloPolicyDecision
-- ref: 01M15NFKKN-74NY
-  key: zeroDowntimeStrategyDecision
-- ref: 01M15NFKKN-74NY
-  key: automatedSecurityGatesDecision
-- ref: 01M15NFKKN-74NY
-  key: queryParameterizationDecision
-- ref: 01M15NFKKN-74NY
-  key: accessControlModelDecision
-- ref: 01M15NFKKN-74NY
-  key: cryptographyStandardDecision
-- ref: 01M15NFKKN-74NY
-  key: sessionManagementDecision
-- ref: 01M15NFKKN-74NY
-  key: errorHandlingLoggingDecision
-- ref: 01M15NFKKN-74NY
-  key: dependencySecurityDecision
-- ref: 01M15NFKKN-74NY
-  key: gameTierClassificationDecision
-- ref: 01M15NFKKN-74NY
-  key: gameUatDeploymentDecision
-- ref: 01M15NFKKN-74NY
-  key: gameAuthPersistenceDecision
-- ref: 01M15NFKKN-74NY
-  key: gameRepoScaffoldingDecision
 notes:
   verification: Verified read-only on 2026-11-15 (America/Phoenix) against AWS account ending 2296, us-east-1.
   deploymentTargets: AWS us-east-1, ECS cluster factory-prod on Fargate/Fargate Spot (01M7GWTG2S-X9V8).
   availabilityRequirement: Each kernel and client service runs desired 1 / running 1. Agent compute is zero when idle. gatekeeper-egress and garrison use FARGATE_SPOT. Availability target not yet set.
   dataClassification: Confidential (agent-factory .draft/sdp.yaml says the ledger holds metadata plus hashes and the mind holds adopter data).
-  failureDomain: Single region, single cluster. Losing the control plane blocks wakes and MCP. Losing one agent task does not take down the factory.
+  failureDomain:
+    scope: platform-wide
+    description: Single region, single cluster. Losing the control plane blocks wakes and MCP. Losing one agent task does not take down the factory.
   externalDependencies: Cloudflare edge proxy (01M7GTBMQS-YRGF) and Cloudflare Access (01M7GWTG2T-VA2G); ALB factory-prod (01M7GWTG2T-M2Q0); Cloud Map factory.internal (01M7GWTG2T-8A54); Secrets Manager (01M7GWTG2T-3PQY); S3 mind bucket (01M7GWTG2T-GYW1); S3 config/ledger/packages buckets (01M7GWTG2T-F1WG); EFS ledger (01M7GWTG2T-KR1Y); ECR (01M7GWTG2T-0NKZ); CloudWatch (01M7GWTG2T-TQEB); KMS AWS-managed keys (01M7GWTG2T-JHTR).
   interServiceConnections: The ALB routes the default host to the control plane, factory-dashboard to the console and garrison to garrison. Kernel services find each other through Cloud Map factory.internal.
   secretsManagement: AWS Secrets Manager referenced as ECS container secrets (control-plane 6, gatekeeper-ingress 2, gatekeeper-egress 2, garrison 1, console 0). The gatekeepers inject credentials so agent tasks hold only their run token.
@@ -124,8 +58,9 @@ notes:
   patternDeviations: none recorded
   productRegistration: Registered in drafting-table as BeerCanLabs Agent Factory (01M1N137Q5-AFAC).
   incomplete: >-
-    The decisionRecords list was carried over unchanged from the GCP version. Decision record 01M15NFKKN-74NY
-    has not been re-reviewed for AWS. Data components for the mind and ledger, autoscaling, security groups
+    The SDP no longer cites decision record 01M15NFKKN-74NY, whose rationale is GCP-specific and was not
+    re-reviewed for AWS. AWS decision records have not been written, so the related SDP requirements show as
+    unmet. Data components for the mind and ledger, autoscaling, security groups
     and model-provider routing through gatekeeper-egress are not yet modeled. The GCP data store
     (01M15NEKT7-H42Y) and AI gateway (01M15NEKT7-QKPW) are no longer placed by this pattern but stay in the
     catalog pending Dale's decision.
