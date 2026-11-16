@@ -3,7 +3,9 @@ uid: 01M7GTBMQS-WDE3
 type: runtime_service
 name: Home Assistant IoT & Display Integration Service
 description: IoT integration gateway service handling e-ink digital photo frames (ha-digital-frames, dash480), openHASP touch panels, and Home Assistant telemetry (ha.dalesackrider.com).
-deliveryModel: appliance
+deliveryModel: self-managed
+host: 01M7GVD4FN-3C7S
+primaryTechnologyComponent: 01M7GVD4FN-F0DT
 catalogStatus: incomplete
 lifecycleStatus: preferred
 vendor: Home Assistant / Custom

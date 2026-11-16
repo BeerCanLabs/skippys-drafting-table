@@ -1,0 +1,10 @@
+schemaVersion: '1.0'
+uid: 01M7GVD4FN-YCP8
+type: technology_component
+name: Python
+description: Python language runtime. Runtime for print_server.py on Dale's Mac mini (Household Print Queue & Spooler Service).
+vendor: Python Software Foundation
+productName: Python
+productVersion: 3.x
+classification: software
+catalogStatus: stub
