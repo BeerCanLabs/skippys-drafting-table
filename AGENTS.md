@@ -1,109 +1,140 @@
----
-type: ai-instructions
-title: "AI Agent Instructions"
-description: "This repository is AI-first."
-tags:
-  - draft
-  - ai
-  - bootstrap
-  - agents
-timestamp: 2026-06-12T21:06:02-07:00
----
 # AI Agent Instructions
 
-This repository is AI-first. Any AI assistant connected to this repo should use
-this file as the bootstrap contract before answering framework or catalog
-authoring requests.
+This repository is BeerCanLabs DRAFT Workspace. Any AI assistant connected to this repo
+should use this file as the bootstrap contract before answering architecture
+catalog authoring requests for BeerCanLabs.
 
 ## Immediate Bootstrap
 
-1. Read [MATURITY.md](MATURITY.md) for mandatory engineering maturity rules and pre-PR checklist.
-2. Read [KPF.md](KPF.md) to check Key Product Functionalities and test mappings.
-3. Read [framework/docs/draftsman.md](framework/docs/draftsman.md).
-4. Read [AI_INDEX.md](AI_INDEX.md) to understand the framework index, schemas, configurations, and templates.
-5. Use [framework/schemas/](framework/schemas/) as the authoritative object contract.
-6. Validate changes with `python3 framework/tools/validate.py`.
+1. Read [.draft/framework/AGENTS.md](.draft/framework/AGENTS.md).
+2. Read [.draft/framework/docs/draftsman.md](.draft/framework/docs/draftsman.md).
+3. Read [.draft/framework/AI_INDEX.md](.draft/framework/AI_INDEX.md) for the
+   approved framework version's schemas, templates, base configurations, and
+   tools.
+4. Read [.draft/workspace.yaml](.draft/workspace.yaml) for BeerCanLabs
+   workspace metadata, active RequirementGroups, business taxonomy, and
+   company vocabulary lists.
+5. Read [.github/CONTRIBUTING.md](.github/CONTRIBUTING.md) as the single
+   source of truth for BeerCanLabs branching strategy, pull request, and
+   review process.
+6. Read any company-specific AI instruction overlay files in [.draft/instructions/](.draft/instructions/) (if present) for local repository guidelines, custom prompt extensions, and review policies.
+7. Use [.draft/framework/schemas/](.draft/framework/schemas/) as the
+   authoritative schema contract.
+8. Use [.draft/framework/configurations/](.draft/framework/configurations/),
+   optional `.draft/providers/*/configurations/`, local `configurations/`, and
+   local `catalog/` as the effective DRAFT model.
 
 ## Draftsman Activation
 
 When the user says "I need a draftsman", "act as draftsman", or asks to build
 or update DRAFT architecture content, immediately assume the Draftsman role
-defined in [framework/docs/draftsman.md](framework/docs/draftsman.md).
+defined in [.draft/framework/docs/draftsman.md](.draft/framework/docs/draftsman.md).
 When the user asks to set up DRAFT, start onboarding, or make the DRAFT
 workspace useful, enter Draftsman setup mode from
-[framework/docs/setup-mode.md](framework/docs/setup-mode.md).
+[.draft/framework/docs/setup-mode.md](.draft/framework/docs/setup-mode.md).
 
-Do not ask what "draftsman" means. The full behavior contract is in
-[framework/docs/draftsman.md](framework/docs/draftsman.md).
+When the user types `/draft <verb>` (for example `/draft guide`,
+`/draft review`, or `/draft validate`), read
+`.draft/framework/commands/draft.md`, resolve the verb to its action file under
+`.draft/framework/draft-actions/`, and follow that file's instructions exactly.
+In Codex and other generic AI tools, `/draft <verb>` is a typed command phrase
+handled through this bootstrap file; it is not a native slash-command
+registration unless the tool explicitly provides that feature.
 
-## Repository Mode
+Do not ask what "draftsman" means. In this repo, it means:
 
-This upstream repository is the DRAFT framework. It includes framework base
-configurations, schemas, examples, templates, generated GitHub Pages output, and
-the tooling needed to validate and regenerate those assets. It is not a
-complete company architecture catalog.
+- resolve the user's intent
+- search the effective catalog inventory first
+- read the matching schema and RequirementGroup
+- interview the user only for missing architecture facts, asking at most three
+  focused questions at a time
+- create or update valid YAML in the appropriate BeerCanLabs workspace path
+- offer declared vocabulary choices and call answers outside approved choices
+  non-standard values that can be revisited or proposed for review
+- preserve unresolved uncertainty in a DraftingSession when needed
+- keep the user aware of the current step, next step, remaining work, and
+  revisit-later items
 
-Company-specific artifacts belong in a private DRAFT repository:
+## Available Commands
 
-- `.draft/framework/` for the vendored framework copy used during normal drafting
-- `catalog/` for architecture content
-- `configurations/` for capability mappings, RequirementGroups, domains,
-  vocabulary sources, vocabulary proposals, and object-patch overlays
-- `.draft/workspace.yaml` and `.draft/framework.lock` for tracked workspace
-  metadata and framework sync state
+If a user asks what commands are available or what they can do here, share this
+table:
 
-If a company points an AI assistant at this upstream framework repository and
-asks for company architecture content changes, do not edit `examples/`,
-`framework/configurations/`, or other framework files as a substitute for a
-company workspace. Ask for the company-specific DRAFT repo path first, then make
-content changes in that repo's `catalog/` or `configurations/` paths after it
-has vendored the framework.
+| Command | What it does |
+|---|---|
+| `/draft` (or `/draft help`) | List available DRAFT verbs |
+| `/draft guide [intent]` | Start a Draftsman session for authoring, workspace setup, or a guided DraftingSession |
+| `/draft review [PR\|security\|path]` | Review an open PR for catalog correctness, or audit catalog content for quality and security compliance |
+| `/draft update` | Check for framework updates and guide a safe upgrade |
 
-In a company DRAFT repo, `.draft/framework/**` and `.draft/framework.lock` are
-framework-managed. Normal Draftsman work must read those files but must not edit
-them. Framework refreshes are explicit user actions and should be reviewed as
-ordinary Git changes.
+Claude Code users see `/draft` in `/` autocomplete when the command symlink is
+installed. Codex, Gemini, Copilot, Cursor, Windsurf, and other AI tools respond
+to the same `/draft <verb>` phrases when typed in chat or matched by their
+project instruction files. If the tool does not support slash commands, any
+natural-language request to "act as a Draftsman" activates the same role.
 
-## Upstream Framework Feedback
+## Workspace Boundary
 
-If work in a company vendored workspace reveals a likely DRAFT framework bug,
-missing reusable framework capability, unclear `/draft` command behavior,
-validator defect, schema gap, or template problem, do not patch around it in
-`.draft/framework/**`. Explain that the finding appears framework-owned and
-recommend submitting an upstream report to the public
-`getdraft/draftsman` repository.
+BeerCanLabs architecture content belongs in:
 
-Before creating a public issue, ask the user to confirm. Use the appropriate
-public issue template:
+- `catalog/` for architecture inventory
+- `configurations/` for BeerCanLabs capabilities, RequirementGroups,
+  domains, vocabulary source files, vocabulary proposals, and object-patch overlays
+- `.draft/workspace.yaml` for workspace metadata when explicitly requested
 
-- **DRAFT framework bug** for broken or contradictory framework behavior.
-- **DRAFT framework feature request** for reusable framework enhancements.
+Do not edit `.draft/framework/**` or `.draft/framework.lock` during normal
+Draftsman authoring. Those files are a vendored framework copy and sync state.
+Framework updates must use an explicit framework refresh/update workflow and be
+reviewed as ordinary Git changes.
 
-Include safe context such as DRAFT version, framework source/ref/commit,
-command used, observed behavior, expected behavior, and sanitized reproduction
-steps. Do not include confidential company architecture details, secrets,
-customer data, or proprietary diagrams unless the user explicitly approves a
-sanitized public summary. If GitHub access is unavailable, draft the issue body
-for the user to submit manually.
+If normal drafting reveals a likely DRAFT framework bug, reusable framework
+feature request, validator defect, schema gap, template problem, or unclear
+`/draft` command behavior, do not patch around it in `.draft/framework/**`.
+Explain that it appears framework-owned and recommend submitting an upstream
+report to the public `getdraft/draftsman` repository. Ask for confirmation
+before creating any public issue, use the appropriate DRAFT framework bug or
+feature request template, include framework version/source/ref/commit when
+available, and sanitize BeerCanLabs details.
 
-## Editing Rules
+Do not write BeerCanLabs architecture content into the upstream DRAFT framework
+repository. If the selected repository is the upstream `draft-framework` repo
+instead of BeerCanLabs DRAFT Workspace, ask the user for the company-specific DRAFT repo
+path before making content changes.
 
-- Keep generated files current by running `python3 framework/tools/generate_ai_index.py`
-  when framework docs, schemas, RequirementGroups, templates, or catalog YAML changes.
-- Regenerate the browser with `python3 framework/tools/generate_browser.py` when YAML
-  catalog content changes.
-- If validation reports missing, malformed, duplicate, or legacy object
-  identity, use the explicit `framework/tools/repair_uids.py` command that the
-  validator prints.
-- Do not invent new object types, fields, lifecycle states, or taxonomy values
-  unless the schemas and docs are updated deliberately.
-- Prefer framework templates in [templates/](templates/) when creating new
-  objects.
-- **Notes and requirement satisfaction:** The inline `notes` field (formerly `notes`) is a scratchpad or drafting placeholder only. It **cannot** be used to satisfy requirements in a `RequirementGroup`. Requirements must be satisfied structurally by concrete catalog objects (e.g. `relationships`, `internalComponents`, configurations, or `DecisionRecords` for deviations).
-- **Decision Records use case:** `DecisionRecords` represent approved exceptions, architectural deviations, and risk acceptances. Do not use `DecisionRecords` to document standard configurations or paths (e.g., standard backup platforms, standard authentication, standard retention policies). Those must be modeled using concrete objects, relationships, or configurations.
-- **Release notes in PRs:** add a `## Unreleased` section at the top of
-  `CHANGELOG.md` with all five subsections (`Compatibility Impact`, `Added`,
-  `Changed`, `Fixed`, `Migration Notes`). Do **not** edit `draft-framework.yaml`
-  — the `promote-release` workflow assigns the version number automatically on
-  merge. See [VERSIONING.md](VERSIONING.md) for the bump-type rules.
+## Validation
 
+Before presenting completed changes, run:
+
+```bash
+python3 .draft/framework/tools/validate.py --workspace .
+```
+
+When catalog or configuration content changes, regenerate the browser:
+
+```bash
+python3 .draft/framework/tools/generate_browser.py --workspace . --output docs/index.html
+```
+
+## Local additions
+
+BeerCanLabs-specific material lives in `local/`, outside the vendored framework:
+
+- [local/docs/MATURITY.md](local/docs/MATURITY.md): engineering maturity rules and pre-PR checklist.
+- [local/docs/KPF.md](local/docs/KPF.md): Key Product Functionalities and test mappings.
+- [local/skills/](local/skills/): local skills (for example `switch-game-architect`, `draftsman-engineering-maturity`).
+- [local/README.md](local/README.md): local tools, docs, and the local deviations in `.github/workflows/draft-framework-update.yml`.
+
+<!-- DRAFT-SKILLS:BEGIN generated: true source_sha256: 1cd83316ed6e706d2d6194ad3a9bcd94bd0526464f567bb673087870c024d444 -->
+## DRAFT skills
+
+Load `draftsman-core` first, then the skill that matches the request. Generated by `setup_ide.py`; rerun it after a framework update.
+
+- `.draft/framework/skills/draftsman-author/SKILL.md`: Use when someone wants to create or change DRAFT catalog or SDP files, onboard a product, or have a code repository scanned into catalog entries. Needs the Author profile from draftsman-core.
+- `.draft/framework/skills/draftsman-core/SKILL.md`: Use when an agent answers questions about a company's architecture catalog or authors DRAFT catalog and SDP files. Always load this skill first; it holds the Evidence Discipline and the two capability profiles.
+- `.draft/framework/skills/draftsman-diagram/SKILL.md`: Use when someone wants to see or change a DRAFT deployment-pattern diagram, fix the catalog objects behind it, record a box order, or get Mermaid or C4 text. Needs the Author profile from draftsman-core.
+- `.draft/framework/skills/draftsman-maturity/SKILL.md`: Use when an agent scaffolds or changes a code repository and must meet DRAFT engineering maturity standards (MATURITY.md, KPF.md, test mapping, DRAFT registration) before opening a pull request. Needs the Author profile.
+- `.draft/framework/skills/draftsman-query/SKILL.md`: Use when someone asks a question about a company's architecture catalog (ports, APIs, datastores, dependencies, ownership) or about its technology standards, security requirements, version lifecycle or exceptions. Works in the Query or Author profile.
+- `.draft/framework/skills/draftsman-review/SKILL.md`: Use when someone asks to review an open pull request that changes catalog files, audit catalog quality, or run a security and compliance audit (requirements, satisfaction, posture, artifact compliance). Needs the Author profile; reviewing a pull request needs read access to the git host, and committing fixes needs write access and the user's confirmation.
+- `.draft/framework/skills/draftsman-update/SKILL.md`: Use when a Draft Admin wants to check for a newer DRAFT framework version and upgrade the vendored copy safely through a branch, validation and a pull request. Needs the Author profile.
+
+<!-- DRAFT-SKILLS:END -->

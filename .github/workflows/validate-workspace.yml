@@ -1,0 +1,51 @@
+name: Validate DRAFT Workspace
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v5
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.11"
+
+      - name: Install dependency
+        run: python -m pip install pyyaml
+
+      - name: Validate workspace catalog
+        run: python .draft/framework/tools/validate.py --workspace .
+
+      - name: Validate vendored DRAFT skills and IDE projections
+        run: |
+          python .draft/framework/tools/validate_skills.py
+          python .draft/framework/tools/validate_skills.py --workspace .
+
+      - name: Check framework lock matches vendored manifest
+        run: |
+          python - <<'PY'
+          import sys, yaml
+          lock = yaml.safe_load(open(".draft/framework.lock"))["framework"]
+          manifest = yaml.safe_load(open(".draft/framework/draft-framework.yaml"))
+          if str(lock.get("version")) != str(manifest.get("version")):
+              sys.exit(f"framework.lock version {lock.get('version')} != vendored draft-framework.yaml {manifest.get('version')}")
+          print(f"Vendored DRAFT framework {manifest.get('version')} matches framework.lock")
+          PY
+
+      - name: Build catalog browser
+        run: |
+          out="$RUNNER_TEMP/browser"
+          mkdir -p "$out"
+          python .draft/framework/tools/generate_browser.py --workspace . --output "$out/index.html"
+          test -s "$out/index.html"

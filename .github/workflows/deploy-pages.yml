@@ -5,6 +5,12 @@ on:
     branches:
       - main
   workflow_dispatch:
+  # Pushes made by GITHUB_TOKEN (e.g. the browser regeneration commit) do not
+  # trigger push workflows, so also deploy after that workflow finishes.
+  workflow_run:
+    workflows: ["Generate DRAFT Browser"]
+    types: [completed]
+    branches: [main]
 
 permissions:
   contents: read
@@ -25,6 +31,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v5
+        with:
+          ref: main
 
       - name: Setup Pages
         uses: actions/configure-pages@v5

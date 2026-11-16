@@ -1,1 +1,1 @@
-../../framework/commands/draft.md
+../../.draft/framework/commands/draft.md
