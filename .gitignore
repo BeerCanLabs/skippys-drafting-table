@@ -31,3 +31,10 @@ htmlcov/
 
 # Local AI tooling
 .antigravitycli/
+
+# DRAFT workspace local state
+.draft/local.json
+.draft/cache/
+node_modules/
+draft-validation-output.txt
+draft-update-pr-body.md

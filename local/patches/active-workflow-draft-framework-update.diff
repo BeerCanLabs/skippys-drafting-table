@@ -1,0 +1,53 @@
+--- upstream v1.2.0 framework/templates/github/draft-framework-update.yml
++++ skippys-drafting-table fork .github/workflows/draft-framework-update.yml
+@@ -9,7 +9,7 @@
+ #    pull requests" must be enabled.  The default GITHUB_TOKEN is otherwise
+ #    sufficient — no extra secrets required.
+ # 3. Run it manually from Actions → DRAFT Framework Update → Run workflow,
+-#    or let the Monday 09:17 UTC schedule run it automatically.
++#    or let the Sunday 09:17 UTC schedule run it automatically.
+ #
+ # WHAT IT DOES
+ # ------------
+@@ -31,13 +31,15 @@
+ 
+ on:
+   schedule:
+-    - cron: "17 9 * * 1"
++    - cron: "17 9 * * 0"
+   workflow_dispatch:
+     inputs:
+       target_ref:
+         description: "Optional DRAFT tag, branch, or commit. Version tags are vX.Y.Z; bare X.Y.Z is accepted."
+         required: false
+         type: string
++  repository_dispatch:
++    types: [upstream_draftsman_updated]
+ 
+ permissions:
+   contents: write
+@@ -233,10 +235,14 @@
+                   source_dir = framework_root / relative
+                   if source_dir.exists():
+                       shutil.copytree(source_dir, destination / relative, dirs_exist_ok=True, ignore=shutil.ignore_patterns("__pycache__", "*.pyc"))
+-              for relative in ("templates", "examples"):
++              for relative in ("templates", "examples", "agent"):
+                   source_dir = source_repo / relative
+                   if source_dir.exists():
+                       shutil.copytree(source_dir, destination / relative, dirs_exist_ok=True, ignore=shutil.ignore_patterns("__pycache__", "*.pyc"))
++                      # Synchronize root agent directory if it exists in downstream repo
++                      root_agent_dir = workspace / relative
++                      if relative == "agent" or root_agent_dir.exists():
++                          shutil.copytree(source_dir, root_agent_dir, dirs_exist_ok=True, ignore=shutil.ignore_patterns("__pycache__", "*.pyc"))
+               for filename in (
+                   "AGENTS.md",
+                   "AI_INDEX.md",
+@@ -356,7 +362,7 @@
+       - name: Commit refreshed framework
+         if: steps.refresh.outputs.update_needed == 'true'
+         run: |
+-          git add .draft/framework .draft/framework.lock docs/assets/draft-browser.css docs/assets/draft-browser.js docs/index.html || true
++          git add agent .draft/framework .draft/framework.lock docs/assets/draft-browser.css docs/assets/draft-browser.js docs/index.html || true
+           if git diff --cached --quiet; then
+             echo "No framework changes to commit."
+           else

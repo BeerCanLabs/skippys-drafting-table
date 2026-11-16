@@ -185,6 +185,7 @@ jobs:
                   "framework/personalities/": "personalities/",
                   "framework/reviews/": "reviews/",
                   "framework/schemas/": "schemas/",
+                  "framework/skills/": "skills/",
                   "framework/templates/": "templates/",
                   "framework/tools/": "tools/",
                   "framework/browser": "browser",
@@ -196,6 +197,7 @@ jobs:
                   "framework/personalities": "personalities",
                   "framework/reviews": "reviews",
                   "framework/schemas": "schemas",
+                  "framework/skills": "skills",
                   "framework/templates": "templates",
                   "framework/tools": "tools",
               }
@@ -229,20 +231,17 @@ jobs:
                   "personalities",
                   "reviews",
                   "schemas",
+                  "skills",
                   "templates",
                   "tools",
               ):
                   source_dir = framework_root / relative
                   if source_dir.exists():
                       shutil.copytree(source_dir, destination / relative, dirs_exist_ok=True, ignore=shutil.ignore_patterns("__pycache__", "*.pyc"))
-              for relative in ("templates", "examples", "agent"):
+              for relative in ("templates", "examples"):
                   source_dir = source_repo / relative
                   if source_dir.exists():
                       shutil.copytree(source_dir, destination / relative, dirs_exist_ok=True, ignore=shutil.ignore_patterns("__pycache__", "*.pyc"))
-                      # Synchronize root agent directory if it exists in downstream repo
-                      root_agent_dir = workspace / relative
-                      if relative == "agent" or root_agent_dir.exists():
-                          shutil.copytree(source_dir, root_agent_dir, dirs_exist_ok=True, ignore=shutil.ignore_patterns("__pycache__", "*.pyc"))
               for filename in (
                   "AGENTS.md",
                   "AI_INDEX.md",
@@ -337,6 +336,11 @@ jobs:
               output.write(f"release_url={release_url}\n")
           PY
 
+      - name: Record validation baseline for the refreshed framework
+        if: steps.refresh.outputs.update_needed == 'true'
+        run: |
+          python .draft/framework/tools/validate.py --workspace . --write-baseline
+
       - name: Validate workspace against refreshed framework
         id: validate
         if: steps.refresh.outputs.update_needed == 'true'
@@ -359,10 +363,17 @@ jobs:
           python .draft/framework/tools/generate_browser.py --refresh-shell
         continue-on-error: true
 
+      - name: Refresh IDE skill projections
+        if: steps.refresh.outputs.update_needed == 'true'
+        run: |
+          python .draft/framework/tools/setup_ide.py
+          python .draft/framework/tools/validate_skills.py --workspace .
+        continue-on-error: true
+
       - name: Commit refreshed framework
         if: steps.refresh.outputs.update_needed == 'true'
         run: |
-          git add agent .draft/framework .draft/framework.lock docs/assets/draft-browser.css docs/assets/draft-browser.js docs/index.html || true
+          git add .draft/framework .draft/framework.lock .draft/validation-baseline.yaml docs/assets/draft-browser.css docs/assets/draft-browser.js docs/index.html .claude AGENTS.md || true
           if git diff --cached --quiet; then
             echo "No framework changes to commit."
           else
