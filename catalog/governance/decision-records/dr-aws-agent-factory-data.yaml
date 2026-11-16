@@ -1,0 +1,52 @@
+schemaVersion: '1.0'
+uid: 01M7GYV3B6-FASW
+type: decision_record
+name: 'AWS Agent Factory: Data Stores and Data Classification'
+description: Agent memory is kept in S3 under per-agent prefixes and, while a task is running, as per-agent
+  SQLite in the agent-runtime notebook. The ledger is on encrypted EFS with WORM checkpoints in S3 Object Lock.
+  Configuration is in a versioned S3 bucket. Runtime-created agent roles are not limited to their own mind prefix.
+version: 1.0.0
+category: decision
+status: accepted
+catalogStatus: incomplete
+lifecycleStatus: preferred
+owner:
+  team: platform-ai-team
+  contact: platform-ai@example.com
+tags:
+- agent-factory
+- aws
+- submind
+- data
+- s3
+- efs
+- classification
+- sqlite
+linkedObject: 01M15NEKT7-S14J
+decisionRationale: |
+  Decision: agent memory follows "The Notebook & Safe" (Design Authority 6.6). Cartridges read and write local SQLite in
+  $MEMORY_DIR and never import cloud SDKs; the Property Manager's shim pulls the mind from object storage on wake and pushes it
+  back on sleep. AWS binding: S3 bucket agent-factory-mind-prod-* with per-agent prefixes. Only the Terraform-managed
+  factory-prod-agent-* task roles are limited to their own prefix (iam.tf own-mind-only). Runtime-created AgentTaskRole-*
+  roles (packages/property-manager/src/aws/iam.ts MindPersistenceAccess) can read, write and delete every agent's mind.
+  Live IAM confirms this on the 30 AgentTaskRole-* roles. That is not compliant with §6.6 "Private Agent Memory Isolation".
+  The ledger hot chain is on EFS factory-prod-ledger with one writer (LG1); checkpoints ship to
+  agent-factory-ledger-prod-* with S3 Object Lock in COMPLIANCE mode, 365-day default retention, so no principal can delete
+  or overwrite them early (storage.tf comment; live configuration). Each agent's deployment configuration is one immutable
+  object per version in the versioned config bucket (6.14 SK3, R1). Skill packages are in the packages bucket.
+  Classification: Confidential. The ledger holds metadata and hashes only, and the mind holds adopter data (agent-factory
+  .draft/sdp.yaml notes.dataClassification). The ledger never holds secrets or prompt bodies (AGENTS.md definition of done 4).
+  SQL scope: the factory kernel has no SQL engine in packages/*/src at 01720b2. The cartridge runtime this SDP places
+  (01M7GWXKXW-4ZJF, runtimes/agent-runtime) does: memory/episodic.py, memory/notebook.py and memory/workspace.py create a
+  SQLite schema (CREATE TABLE / CREATE INDEX / FTS5) for conversations, notebook metadata and workspace state. Schema
+  changes ship in that runtime as CREATE TABLE IF NOT EXISTS and index creation; notebook rotation copies the schema onto a
+  new file and swaps it in. There is no expand-and-contract migration decoupled from a runtime deploy, so
+  req-expand-contract-migrations is not-compliant. Query values are bound with parameterized placeholders throughout;
+  the only string-built SQL is notebook.py, which interpolates table identifiers from the carry_tables argument when rotating
+  (the runtime caller runtime/mind.py does not pass that argument). req-asvs-parameterized-queries is therefore satisfied,
+  with that identifier interpolation noted. DynamoDB closing-climb-prod in the same account belongs to Closing Climb, not
+  the factory.
+
+  Sources:
+  - BeerCanLabs/agent-factory @01720b2: DESIGN_AUTHORITY.md 6.6, 6.10 LG1-LG2, 6.13 R1, 6.14; .draft/sdp.yaml (notes.dataClassification); AGENTS.md; landing-zones/aws/storage.tf, iam.tf; packages/property-manager/src/aws/iam.ts; runtimes/agent-runtime/memory/episodic.py, notebook.py, workspace.py and runtime/mind.py
+  - Live AWS, read-only, account ending 2296, us-east-1, 2026-11-15: s3api get-bucket-encryption/versioning/object-lock-configuration/public-access-block, efs describe-file-systems, iam get-role-policy for AgentTaskRole-*

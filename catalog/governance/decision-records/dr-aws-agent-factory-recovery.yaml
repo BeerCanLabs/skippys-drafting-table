@@ -1,0 +1,41 @@
+schemaVersion: '1.0'
+uid: 01M7GYV3B6-RYSP
+type: decision_record
+name: 'AWS Agent Factory: Availability, Failure Domain and Recovery'
+description: Always-on mailboxes with zero idle agent compute. A single region and single cluster form
+  the failure domain. EFS is backed up daily (35 days), the config bucket keeps versions for at least
+  90 days, and the ledger keeps WORM checkpoints for 365 days.
+version: 1.0.0
+category: decision
+status: accepted
+catalogStatus: incomplete
+lifecycleStatus: preferred
+owner:
+  team: platform-ai-team
+  contact: platform-ai@example.com
+tags:
+- agent-factory
+- aws
+- submind
+- availability
+- backup
+- recovery
+linkedObject: 01M15NEKT7-S14J
+decisionRationale: |
+  Availability (agent-factory .draft/sdp.yaml notes.availabilityRequirement): the mailboxes (ingress, control plane,
+  gatekeeper-ingress) are always reachable and agent compute is zero when idle; "availability of the fleet is the mailbox, not
+  warm agents". Each service runs one task. A control-plane deploy has a brief gap because it deploys stop-then-start (LG1,
+  accepted 2026-09-28).
+  Failure domain: platform-wide. Everything runs in one region (us-east-1) and one ECS cluster. Losing the control plane
+  blocks wakes and MCP; losing one agent task does not take down the factory (repo SDP notes.failureDomain).
+  Recovery (Design Authority R1): the factory's own state is backed up automatically and restorable to an earlier point.
+  AWS binding: EFS automatic backups run daily (live: backup plan aws/efs/automatic-backup-plan, cron 05:00 UTC, 35-day
+  retention; storage.tf aws_efs_backup_policy, commit bd94490, TSK-051/GAP-058). The config bucket is versioned with
+  non-current versions kept for at least 90 days. Ledger checkpoints are WORM for 365 days. A failed ledger is archived, never
+  repaired (LG2), and submind-aws has a documented ledger-recovery deploy.
+  No SLO or error-budget policy is defined, and no cross-region recovery is recorded. (rationale not recorded)
+
+  Sources:
+  - BeerCanLabs/agent-factory @01720b2: .draft/sdp.yaml (notes.availabilityRequirement, failureDomain); DESIGN_AUTHORITY.md 6.10 LG1-LG2, 6.13 R1; landing-zones/aws/storage.tf, ecs.tf; commit bd94490
+  - BeerCanLabs/submind-aws @3f7d9a5: config/deploy.env (ledger recovery settings), OPERATIONS.md
+  - Live AWS, read-only, account ending 2296, us-east-1, 2026-11-15: backup list-backup-plans/get-backup-plan, efs describe-backup-policy, ecs describe-services (deployment configuration)

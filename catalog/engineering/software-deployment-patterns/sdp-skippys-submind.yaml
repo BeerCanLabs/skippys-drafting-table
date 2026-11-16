@@ -42,6 +42,83 @@ serviceGroups:
 decisionRecords:
 - ref: 01M7GTBMQS-SZBH
   key: edgeProxyDecision
+- ref: 01M7GYV3B6-K9CZ
+  key: deploymentTargets
+- ref: 01M7GYV3B6-K9CZ
+  key: patternDeviations
+- ref: 01M7GYV3B6-8VN0
+  key: interServiceConnections
+- ref: 01M7GYV3B6-8VN0
+  key: externalDependencies
+- ref: 01M7GYV3B6-EEZ3
+  key: accessControlModelDecision
+- ref: 01M7GYV3B6-YE24
+  key: secretsManagementDecision
+- ref: 01M7GYV3B6-FASW
+  key: dataClassification
+- ref: 01M7GYV3B6-FASW
+  key: queryParameterizationDecision
+- ref: 01M7GYV3B6-083M
+  key: cryptographyStandardDecision
+- ref: 01M7GYV3B6-RYSP
+  key: availabilityRequirement
+- ref: 01M7GYV3B6-RYSP
+  key: failureDomain
+- ref: 01M7GYV3B6-KB8Q
+  key: errorHandlingLoggingDecision
+- ref: 01M7GYV3B6-Q5NV
+  key: iacAutomationDecision
+- ref: 01M7GYV3B6-Q5NV
+  key: productRegistrationDecision
+- ref: 01M7GYV3B6-H03D
+  key: aiGatewayRoutingDecision
+- ref: 01M7GYV3B6-H03D
+  key: modelInferenceSpecDecision
+requirementImplementations:
+- requirementGroup: 01M15WPEFV-ZMA9
+  requirementId: req-expand-contract-migrations
+  status: not-compliant
+  notes: The placed agent-runtime (01M7GWXKXW-4ZJF) has a SQLite schema created in application code (CREATE TABLE IF NOT EXISTS in memory/episodic.py, notebook.py and workspace.py) that ships with the runtime. There is no expand-and-contract migration decoupled from a code deploy. See decision record 01M7GYV3B6-FASW.
+- requirementGroup: 01M15XYZXT-KTJA
+  requirementId: req-asvs-parameterized-queries
+  status: satisfied
+  notes: Agent-runtime SQLite binds query values with parameterized placeholders. The only string-built SQL is notebook.py interpolating table identifiers from carry_tables; the runtime caller does not pass that argument. See decision record 01M7GYV3B6-FASW.
+- requirementGroup: 01M15WPEFV-ZMA9
+  requirementId: req-no-gate-suppressions
+  status: not-compliant
+  notes: packages/conformance/baseline.json holds 4 approved baseline entries (GAP-031, GAP-050). See decision record 01M7GYV3B6-Q5NV.
+- requirementGroup: 01M15WPEFV-ZMA9
+  requirementId: req-rollback-mechanism
+  status: not-compliant
+  notes: Rollback is a manual redeploy of a recorded pin; ECS deployment circuit breakers are disabled. See decision record 01M7GYV3B6-Q5NV.
+- requirementGroup: 01M15WPEFV-ZMA9
+  requirementId: req-l3-composable-iac
+  status: not-compliant
+  notes: Single Terraform root configuration plus one documented hand-set Cloudflare Access bypass. See decision record 01M7GYV3B6-Q5NV.
+- requirementGroup: 01M15WPEFV-ZMA9
+  requirementId: req-l3-ephemeral-preview-environments
+  status: not-compliant
+  notes: No per-branch cloud preview environments; CI runs an ephemeral Docker Compose proof only. See decision record 01M7GYV3B6-Q5NV.
+- requirementGroup: 01M15WPEFV-ZMA9
+  requirementId: req-l3-json-structured-logging
+  status: not-compliant
+  notes: Application logs are plain text; the ledger is the structured audit trail. See decision record 01M7GYV3B6-KB8Q.
+- requirementGroup: 01M15WPEFV-ZMA9
+  requirementId: req-l3-slo-error-budget
+  status: not-compliant
+  notes: No SLO or error-budget policy is defined. See decision record 01M7GYV3B6-RYSP.
+- requirementGroup: 01M15WPEFV-ZMA9
+  requirementId: req-l3-zero-downtime-deployment
+  status: not-compliant
+  notes: Control plane deploys stop-then-start (LG1, accepted 2026-09-28); no auto-rollback. See decision record 01M7GYV3B6-Q5NV.
+- requirementGroup: 01M15WPEFV-ZMA9
+  requirementId: req-l3-automated-security-gates
+  status: not-compliant
+  notes: No SAST, secret scanning, SCA or IaC policy linting in CI. See decision record 01M7GYV3B6-Q5NV.
+- requirementGroup: 01M15XYZXT-KTJA
+  requirementId: req-asvs-third-party-component-security
+  status: not-compliant
+  notes: No automated SCA in CI and no Dependabot configuration. See decision record 01M7GYV3B6-Q5NV.
 notes:
   verification: Verified read-only on 2026-11-15 (America/Phoenix) against AWS account ending 2296, us-east-1.
   deploymentTargets: AWS us-east-1, ECS cluster factory-prod on Fargate/Fargate Spot (01M7GWTG2S-X9V8).
@@ -52,11 +129,15 @@ notes:
     description: Single region, single cluster. Losing the control plane blocks wakes and MCP. Losing one agent task does not take down the factory.
   externalDependencies: Cloudflare edge proxy (01M7GTBMQS-YRGF) and Cloudflare Access (01M7GWTG2T-VA2G); ALB factory-prod (01M7GWTG2T-M2Q0); Cloud Map factory.internal (01M7GWTG2T-8A54); Secrets Manager (01M7GWTG2T-3PQY); S3 mind bucket (01M7GWTG2T-GYW1); S3 config/ledger/packages buckets (01M7GWTG2T-F1WG); EFS ledger (01M7GWTG2T-KR1Y); ECR (01M7GWTG2T-0NKZ); CloudWatch (01M7GWTG2T-TQEB); KMS AWS-managed keys (01M7GWTG2T-JHTR).
   interServiceConnections: The ALB routes the default host to the control plane, factory-dashboard to the console and garrison to garrison. Kernel services find each other through Cloud Map factory.internal.
-  secretsManagement: AWS Secrets Manager referenced as ECS container secrets (control-plane 6, gatekeeper-ingress 2, gatekeeper-egress 2, garrison 1, console 0). The gatekeepers inject credentials so agent tasks hold only their run token.
+  secretsManagement: AWS Secrets Manager referenced as ECS container secrets (control-plane 6, gatekeeper-ingress 2, gatekeeper-egress 2, garrison 1, console 0). The gatekeepers inject credentials so agent tasks hold only their run token, except the registered gap GAP-031 (see decision record 01M7GYV3B6-YE24).
   iacAutomation: Terraform in BeerCanLabs/agent-factory landing-zones/aws with an S3 backend.
   observability: CloudWatch Logs /ecs/factory-prod (30 days), Container Insights, ADOT collector sidecar on control-plane and gatekeeper-egress. No factory alarms or dashboards found.
-  patternDeviations: none recorded
+  patternDeviations: Live ECS, the control plane, gatekeeper-ingress and gatekeeper-egress are always-on services; agents scale to zero (see decision record 01M7GYV3B6-K9CZ).
   productRegistration: Registered in drafting-table as BeerCanLabs Agent Factory (01M1N137Q5-AFAC).
   incomplete: >-
-    AWS decision records have not been written, so the related SDP requirements show as unmet. Data components for the mind and ledger, autoscaling, security groups
-    and model-provider routing through gatekeeper-egress are not yet modeled.
+    Requirements are answered by the AWS decision records listed above. Known gaps are recorded as not-compliant
+    requirementImplementations. Still open: synthetic test data, local DRAFT validation of the repo SDP, session/JWT
+    hardening (MFA, rate limiting), and reference-architecture
+    conformance: the agent-factory repo SDP maps the orchestrated-tasks pattern to RA 01KV0REFAR-CMSV, but declaring it
+    needs the RA's ingress, orchestration, mesh, data-store and logs slots modeled first. Data components for
+    the mind and ledger, autoscaling and security groups are not yet modeled.

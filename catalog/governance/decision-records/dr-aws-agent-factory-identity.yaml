@@ -1,0 +1,47 @@
+schemaVersion: '1.0'
+uid: 01M7GYV3B6-EEZ3
+type: decision_record
+name: 'AWS Agent Factory: Identity and Access Control'
+description: People get operator identity only from a verified Cloudflare Access assertion or the factory's
+  own login. Machines use factory tokens. Agents get per-run tokens and per-agent IAM roles. Everything
+  is deny by default. Live runtime-created agent task roles are not limited to their own mind prefix.
+version: 1.0.0
+category: decision
+status: accepted
+catalogStatus: incomplete
+lifecycleStatus: preferred
+owner:
+  team: platform-ai-team
+  contact: platform-ai@example.com
+tags:
+- agent-factory
+- aws
+- submind
+- identity
+- access-control
+- cloudflare-access
+linkedObject: 01M15NEKT7-S14J
+decisionRationale: |
+  Decision: identity is verified, not asserted (Design Authority A2). The control plane grants a role only from a factory
+  token, a run token, or the Cloudflare Access RS256 assertion checked against the team domain's certs, issuer and audience;
+  the cf-access-authenticated-user-email header grants nothing (landing-zones/aws/README.md "Operator identity").
+  Cloudflare Access covers agent-factory.beercanlabs.com and garrison.dalesackrider.com (live: 302 to the beercanlabs Access
+  login). Exception, documented in submind-aws OPERATIONS.md: the console host factory-dashboard.dalesackrider.com has a
+  hand-set Access Bypass (2026-11-03) because the factory enforces its own login there; the ALB still admits only Cloudflare.
+  Authorization is default-deny and server-side: an agent with no admin-set policy has no egress (E7), and console and API
+  actions ask the Bouncer for a named privilege (6.15, SK7).
+  AWS IAM (iam.tf, packages/property-manager/src/aws/iam.ts, and live IAM; the landing-zone README "IAM" line is stale and is
+  not used here): the Terraform-managed factory-prod-agent-* task roles are limited to their own mind prefix (own-mind-only).
+  Runtime-created AgentTaskRole-* roles, built by iam.ts MindPersistenceAccess on agent-factory-mind-* and /*, can Get, Put,
+  Delete and List every agent's mind. Live, 30 AgentTaskRole-* roles exist (higgins and archie spot-checked); agent-higgins
+  runs as AgentTaskRole-higgins. That is not compliant with Design Authority §6.6 "Private Agent Memory Isolation". The
+  control plane may RunTask for both factory-prod-agent-* and agent-* task definition families (iam.tf) and is denied provider
+  keys. Production deploys are intended to assume the factory-deploy role through GitHub OIDC, trusted only for submind-aws
+  main (OPERATIONS.md Rules); observed exceptions are recorded in the delivery decision 01M7GYV3B6-Q5NV.
+  Not covered here: MFA for admins and API rate limiting are not documented in the sources reviewed.
+
+  Sources:
+  - BeerCanLabs/agent-factory @01720b2: DESIGN_AUTHORITY.md 6.3.1 E7, 6.6, 6.12 A1-A2, 6.15; landing-zones/aws/iam.tf; packages/property-manager/src/aws/iam.ts
+  - BeerCanLabs/submind-aws @3f7d9a5: OPERATIONS.md (Front door, Console host bypass, Rules)
+  - Live AWS, read-only, account ending 2296, us-east-1, 2026-11-15: iam get-role / get-role-policy for AgentTaskRole-* (30 roles; higgins and archie spot-checked)
+  - HTTPS probes 2026-11-15: agent-factory.beercanlabs.com and garrison.dalesackrider.com redirect to beercanlabs.cloudflareaccess.com

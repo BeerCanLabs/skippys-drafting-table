@@ -1,0 +1,35 @@
+schemaVersion: '1.0'
+uid: 01M7GYV3B6-083M
+type: decision_record
+name: 'AWS Agent Factory: Encryption in Transit and at Rest'
+description: TLS 1.2+ at the ALB (ELBSecurityPolicy-TLS13-1-2-2021-06) with HTTP redirected to HTTPS.
+  Data at rest uses SSE-S3 (AES-256), an encrypted EFS with TLS mounts, and AWS-managed KMS keys for Secrets
+  Manager.
+version: 1.0.0
+category: decision
+status: accepted
+catalogStatus: incomplete
+lifecycleStatus: preferred
+owner:
+  team: platform-ai-team
+  contact: platform-ai@example.com
+tags:
+- agent-factory
+- aws
+- submind
+- encryption
+- tls
+- kms
+linkedObject: 01M15NEKT7-S14J
+decisionRationale: |
+  Decision (observed): the ALB terminates TLS with ACM certificates and policy ELBSecurityPolicy-TLS13-1-2-2021-06 (TLS 1.2 and
+  1.3); port 80 only redirects to HTTPS (landing-zones/aws/alb.tf; README "HTTPS only, :80 redirects"; live listeners).
+  Cloudflare to origin uses Full SSL per edge decision 01M7GTBMQS-SZBH. At rest: every factory S3 bucket uses SSE-S3
+  (AES256); the EFS ledger is encrypted and mounted with transit encryption and IAM authorization; Secrets Manager uses the
+  AWS-managed aws/secretsmanager key. No customer-managed KMS keys exist in the account.
+  Why SSE-S3 and AWS-managed keys rather than customer-managed KMS keys: rationale not recorded.
+
+  Sources:
+  - BeerCanLabs/agent-factory @01720b2: landing-zones/aws/alb.tf (ssl_policy), storage.tf (sse_algorithm AES256, EFS encrypted), ecs.tf (EFS transit encryption), README.md; commit a3d698f
+  - Live AWS, read-only, account ending 2296, us-east-1, 2026-11-15: elbv2 describe-listeners, s3api get-bucket-encryption, efs describe-file-systems, kms list-aliases
+  - Drafting table: decision record 01M7GTBMQS-SZBH

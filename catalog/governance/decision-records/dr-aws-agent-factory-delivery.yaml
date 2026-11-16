@@ -1,0 +1,54 @@
+schemaVersion: '1.0'
+uid: 01M7GYV3B6-Q5NV
+type: decision_record
+name: 'AWS Agent Factory: Infrastructure as Code, Delivery and Quality Gates'
+description: AWS changes are intended to go through Terraform and an ops-repo pipeline that deploys pinned,
+  CI-green SHAs. Conformance tests enforce design invariants only in part. Documented and observed bypasses
+  of the deploy and CI gates are recorded below.
+version: 1.0.0
+category: decision
+status: accepted
+catalogStatus: incomplete
+lifecycleStatus: preferred
+owner:
+  team: platform-ai-team
+  contact: platform-ai@example.com
+tags:
+- agent-factory
+- aws
+- submind
+- iac
+- ci-cd
+- quality-gates
+linkedObject: 01M15NEKT7-S14J
+decisionRationale: |
+  IaC (observed): the factory landing zone is Terraform in agent-factory landing-zones/aws (S3 backend). The intended apply
+  path is the submind-aws deploy-aws workflow on main through a GitHub OIDC role (factory-deploy trusts only submind-aws
+  ref:refs/heads/main), with "No hand changes in AWS" (OPERATIONS.md Rules). That is not the only path in force. OPERATIONS.md
+  documents a break-glass path (FACTORY_BREAK_GLASS=1 ./scripts/aws-deploy.sh from a workstation) that accepts a local test
+  run in place of GitHub results; the deploy log shows 8 uses (2026-10-29 to 2026-10-31). DESIGN_AUTHORITY GAP-074 (Critical)
+  records that submind-aws has no branch protection, so a session can push to main and deploy, and that agent-factory main
+  requires no approving review. CloudTrail also shows IAM user beercanlabs (not the factory-deploy OIDC role) running
+  Terraform on 2026-11-14 15:43 America/Phoenix and registering ECS task definitions on 2026-11-14 and 2026-11-15. One
+  further documented manual exception: the Cloudflare Access console bypass set by hand on 2026-11-03 while cloudflare.tf is
+  off (OPERATIONS.md). The landing zone is a single Terraform root configuration, not a set of composable modules.
+  Release intent is that deploys ship commits on agent-factory main with green CI, tagged by commit SHA, never :latest
+  (DA 6.7). Garrison is pinned by digest (deploy.env). The deploy fails unless its definition of done passes. Each
+  OPERATIONS.md deploy entry records a rollback pin (a previous agent-factory commit). Rollback means redeploying that pin
+  by hand. Live ECS deployment circuit breakers are disabled. Services roll out 100/200 except the control plane, which
+  deploys stop-then-start (min 0 / max 100) so the ledger never has two writers (LG1, accepted 2026-09-28; ecs.tf comment;
+  conformance fails if it changes).
+  Gates: CI runs npm test (including packages/conformance, which machine-checks Design Authority invariants), contract
+  validation and compose-proof (an ephemeral Docker Compose end-to-end run). A pre-push hook runs scripts/conformance.sh;
+  never bypass it and never skip tests (AGENTS.md). Known violations may be baselined only with the user's approval and a
+  registered gap: packages/conformance/baseline.json has 4 entries (GAP-031, GAP-050). Conformance covers invariants only
+  partially (GAP-051: the coverage table exists, but many invariants remain unchecked or partial). No SAST, secret scanning,
+  dependency (SCA) scanning or IaC policy linting runs in agent-factory CI, and there is no Dependabot configuration. Why:
+  rationale not recorded. There are no per-branch cloud preview environments.
+  Registration: the product is registered in this drafting table as 01M1N137Q5-AFAC with sdpManifest .draft/sdp.yaml.
+
+  Sources:
+  - BeerCanLabs/agent-factory @01720b2: DESIGN_AUTHORITY.md 6.7, 6.8 L1, 6.10 LG1, gap register GAP-074 and GAP-051; AGENTS.md (Change Workflow & Enforcement); .github/workflows/ci.yml; .githooks/pre-push; packages/conformance/baseline.json; landing-zones/aws/main.tf, ecs.tf, iam.tf
+  - BeerCanLabs/submind-aws @3f7d9a5: OPERATIONS.md (Changing production, Front door, Rules, Break glass and deploy log), config/deploy.env, scripts/aws-deploy.sh
+  - Live AWS, read-only, account ending 2296, us-east-1, 2026-11-15: ecs describe-services (deploymentConfiguration, circuit breaker); CloudTrail lookup-events for Terraform applies and ECS task-definition registrations by IAM user beercanlabs on 2026-11-14 and 2026-11-15
+  - Drafting table: product registration 01M1N137Q5-AFAC
