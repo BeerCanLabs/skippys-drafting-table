@@ -1,0 +1,25 @@
+schemaVersion: '1.0'
+uid: 01M7GWXKXW-Z0Z4
+type: product_component
+name: Agent Garrison
+description: 3D command-and-control interface for the factory. A client of the factory, not part of the
+  kernel.
+repoUrl: https://github.com/BeerCanLabs/agent-garrison
+owner:
+  team: platform-ai-team
+  contact: platform-ai@example.com
+classification: web-application
+catalogStatus: stub
+lifecycleStatus: preferred
+tags:
+- agent-factory
+- garrison
+- client
+runsOn: 01M7GWTG2S-AC3R
+notes:
+  verification: Verified read-only from AWS account ending 2296 (us-east-1) on 2026-11-15 (America/Phoenix).
+  deployment: 'ECS service garrison on factory-prod: FARGATE_SPOT, 1024 CPU/2048 MB, port 3000, 1 Secrets
+    Manager reference, registered in Cloud Map factory.internal. ALB host rule garrison.dalesackrider.com
+    (behind Cloudflare Access).'
+  incomplete: The ECR image is pinned by digest, so its source repository is not proven. repoUrl names
+    BeerCanLabs/agent-garrison by repository name only. Language is not recorded.

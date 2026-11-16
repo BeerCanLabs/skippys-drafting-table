@@ -1,0 +1,25 @@
+schemaVersion: '1.0'
+uid: 01M7GWXKXW-EJWB
+type: product_component
+name: Agent Factory Control Plane
+description: 'Factory kernel mailbox: wakes agent cartridges as ECS tasks, serves MCP and the API, and
+  writes the ledger.'
+repoUrl: https://github.com/BeerCanLabs/agent-factory
+owner:
+  team: platform-ai-team
+  contact: platform-ai@example.com
+classification: api-service
+catalogStatus: incomplete
+lifecycleStatus: preferred
+tags:
+- agent-factory
+- control-plane
+- kernel
+runsOn: 01M7GWTG2S-AC3R
+language: TypeScript
+notes:
+  verification: Verified read-only from AWS account ending 2296 (us-east-1) on 2026-11-15 (America/Phoenix).
+  deployment: 'ECS service control-plane on factory-prod: FARGATE, task definition factory-prod-control-plane,
+    512 CPU/1024 MB, ports 8088 and 8089, 6 Secrets Manager references, otel sidecar, EFS volume data
+    (factory-prod-ledger). Default target of the factory-prod ALB. Registered in Cloud Map factory.internal.'
+  source: packages/control-plane in BeerCanLabs/agent-factory; image tag 01720b2 at verification time.

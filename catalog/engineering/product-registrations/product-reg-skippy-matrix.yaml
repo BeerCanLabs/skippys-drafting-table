@@ -2,11 +2,10 @@ schemaVersion: '1.0'
 uid: 01M1N137Q4-RF6M
 type: product_registration
 name: Skippy Matrix Agent Factory Platform
-catalogStatus: complete
+catalogStatus: incomplete
 owner:
   team: platform-ai-team
   contact: platform-ai@example.com
-
 repository:
   provider: github
   url: https://github.com/BeerCanLabs/skippy-matrix
@@ -14,3 +13,5 @@ repository:
 sdpManifest:
   mode: git
   path: .draft/sdp.yaml
+notes:
+  sdpStatus: The repository .draft/sdp.yaml exists (SDP0000001-SKIPPYMATRIX) and describes a GCP Cloud Run platform substrate. Its current GCP deployment state was not verified in this refresh. No skippy-matrix ECS service runs in the AWS factory-prod cluster. Task definition families factory-prod-doorman and factory-prod-gateway exist there, but their link to skippy-matrix was not established.
