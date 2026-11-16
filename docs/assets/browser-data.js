@@ -23421,10 +23421,10 @@ window.DRAFT_BROWSER_DATA = {
       "name": "Household Print Queue & Spooler Service",
       "aliases": [],
       "type": "runtime_service",
-      "typeLabel": "RuntimeService / Appliance",
+      "typeLabel": "RuntimeService / Self Managed",
       "filterType": "runtime_service",
       "category": "",
-      "deliveryModel": "appliance",
+      "deliveryModel": "self-managed",
       "domain": "",
       "description": "Asynchronous document printing service backed by GCS bucket (submind-matrix-print-queue) and local CUPS print daemon for Higgins & Donna estate automation.",
       "version": "",
@@ -23467,7 +23467,20 @@ window.DRAFT_BROWSER_DATA = {
       "source": "catalog/shared-services/appliance-services/print-queue-service-home-print.yaml",
       "tags": [],
       "ardCategory": "",
-      "internalComponents": [],
+      "internalComponents": [
+        {
+          "ref": "01M7GVD4FN-YGN9",
+          "role": "host",
+          "configuration": "",
+          "notes": ""
+        },
+        {
+          "ref": "01M7GVD4FN-YCP8",
+          "role": "function",
+          "configuration": "",
+          "notes": ""
+        }
+      ],
       "notes": {},
       "requirements": [],
       "implementations": [],
@@ -23501,8 +23514,22 @@ window.DRAFT_BROWSER_DATA = {
       "defaultSelection": false,
       "requirementCount": 0,
       "hasRiskRef": false,
-      "outboundRefs": [],
-      "referencedBy": [],
+      "outboundRefs": [
+        {
+          "target": "01M7GVD4FN-YGN9",
+          "path": "host"
+        },
+        {
+          "target": "01M7GVD4FN-YCP8",
+          "path": "primaryTechnologyComponent"
+        }
+      ],
+      "referencedBy": [
+        {
+          "source": "5N5T1Z7SV2-44E6",
+          "path": "source"
+        }
+      ],
       "editorSchema": {
         "requiredFields": [
           "schemaVersion",
@@ -23610,9 +23637,20 @@ window.DRAFT_BROWSER_DATA = {
         },
         "schemaPath": "framework/schemas/runtime-service.schema.yaml"
       },
-      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M7GTBMQS-YYDW\",\n  \"type\": \"runtime_service\",\n  \"name\": \"Household Print Queue & Spooler Service\",\n  \"description\": \"Asynchronous document printing service backed by GCS bucket (submind-matrix-print-queue) and local CUPS print daemon for Higgins & Donna estate automation.\",\n  \"deliveryModel\": \"appliance\",\n  \"catalogStatus\": \"incomplete\",\n  \"lifecycleStatus\": \"preferred\",\n  \"vendor\": \"Custom / CUPS\",\n  \"productName\": \"Skippy Home Print Service\",\n  \"productVersion\": \"1.0.0\",\n  \"applianceFunction\": \"Asynchronous document rendering, PDF conversion, print spooling, and physical printer dispatch.\",\n  \"provisioningModel\": \"deployable\",\n  \"deployablePackage\": {\n    \"registry\": \"github\",\n    \"source\": \"BeerCanLabs/SM-higgins\",\n    \"version\": \"main\",\n    \"modulePath\": \"skills/home-print\"\n  },\n  \"protocols\": [\n    \"HTTPS\",\n    \"IPP\",\n    \"LPD\"\n  ],\n  \"owner\": {\n    \"team\": \"estate-management\",\n    \"contact\": \"dale.sackrider+higgins@gmail.com\",\n    \"resourceOwner\": \"Higgins\",\n    \"serviceProviderRole\": \"Appliance Domain Service Provider\"\n  },\n  \"vendorGovernance\": {\n    \"dataLeavesInfrastructure\": false,\n    \"dataResidencyCommitment\": \"Local LAN spooling with GCS queue transit\",\n    \"vendorSLA\": \"Best effort household availability\",\n    \"acceptableUsePolicy\": \"Authorized print queue for household estate management, daily briefings, and administrative document dispatch.\"\n  },\n  \"_source\": \"catalog/shared-services/appliance-services/print-queue-service-home-print.yaml\"\n}",
+      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M7GTBMQS-YYDW\",\n  \"type\": \"runtime_service\",\n  \"name\": \"Household Print Queue & Spooler Service\",\n  \"description\": \"Asynchronous document printing service backed by GCS bucket (submind-matrix-print-queue) and local CUPS print daemon for Higgins & Donna estate automation.\",\n  \"deliveryModel\": \"self-managed\",\n  \"host\": \"01M7GVD4FN-YGN9\",\n  \"primaryTechnologyComponent\": \"01M7GVD4FN-YCP8\",\n  \"catalogStatus\": \"incomplete\",\n  \"lifecycleStatus\": \"preferred\",\n  \"vendor\": \"Custom / CUPS\",\n  \"productName\": \"Skippy Home Print Service\",\n  \"productVersion\": \"1.0.0\",\n  \"applianceFunction\": \"Asynchronous document rendering, PDF conversion, print spooling, and physical printer dispatch.\",\n  \"provisioningModel\": \"deployable\",\n  \"deployablePackage\": {\n    \"registry\": \"github\",\n    \"source\": \"BeerCanLabs/SM-higgins\",\n    \"version\": \"main\",\n    \"modulePath\": \"skills/home-print\"\n  },\n  \"protocols\": [\n    \"HTTPS\",\n    \"IPP\",\n    \"LPD\"\n  ],\n  \"owner\": {\n    \"team\": \"estate-management\",\n    \"contact\": \"dale.sackrider+higgins@gmail.com\",\n    \"resourceOwner\": \"Higgins\",\n    \"serviceProviderRole\": \"Appliance Domain Service Provider\"\n  },\n  \"vendorGovernance\": {\n    \"dataLeavesInfrastructure\": false,\n    \"dataResidencyCommitment\": \"Local LAN spooling with GCS queue transit\",\n    \"vendorSLA\": \"Best effort household availability\",\n    \"acceptableUsePolicy\": \"Authorized print queue for household estate management, daily briefings, and administrative document dispatch.\"\n  },\n  \"_source\": \"catalog/shared-services/appliance-services/print-queue-service-home-print.yaml\"\n}",
       "existsInCatalog": true,
-      "outboundRelationships": [],
+      "outboundRelationships": [
+        {
+          "uid": "5N5T1Z7SV2-44E6",
+          "name": "Household Print Queue & Spooler Service \u2192 Dale's Mac mini (home)",
+          "label": "runs on",
+          "technology": "",
+          "direction": "",
+          "targetUid": "01M7GVD4FN-YGN9",
+          "targetName": "Dale's Mac mini (home)",
+          "capabilities": []
+        }
+      ],
       "inboundRelationships": []
     },
     {
@@ -24252,6 +24290,179 @@ window.DRAFT_BROWSER_DATA = {
       "inboundRelationships": []
     },
     {
+      "id": "01M7GVD4FN-YGN9",
+      "uid": "01M7GVD4FN-YGN9",
+      "name": "Dale's Mac mini (home)",
+      "aliases": [],
+      "type": "host",
+      "typeLabel": "Host",
+      "filterType": "host",
+      "category": "",
+      "deliveryModel": "",
+      "domain": "",
+      "description": "macOS Mac mini at Dale's home. Caddy (tls internal) reverse proxies print.dalesackrider.com, reached through Cloudflare, to print_server.py on 127.0.0.1:9123, which prints to an HP Color LaserJet Pro MFP 3301. The older GCP print-bridge also exists on this host.",
+      "version": "",
+      "catalogStatus": "stub",
+      "lifecycleStatus": "existing-only",
+      "status": "",
+      "businessContext": {},
+      "product": "",
+      "runsOn": "",
+      "subtype": "",
+      "vendor": "",
+      "productName": "",
+      "productVersion": "",
+      "classification": "",
+      "platformDependency": "",
+      "capabilities": [],
+      "configurations": [],
+      "networkPlacement": "",
+      "patchingOwner": "",
+      "complianceCerts": [],
+      "requirementGroups": [],
+      "requirementImplementations": [],
+      "dataLeavesInfrastructure": null,
+      "dataResidencyCommitment": "",
+      "dpaNotes": "",
+      "vendorSLA": "",
+      "authenticationModel": "",
+      "incidentNotificationProcess": "",
+      "owner": {},
+      "definitionOwner": {},
+      "provider": {},
+      "authority": {},
+      "shape": "round-rectangle",
+      "color": "#2a6fdb",
+      "source": "catalog/shared-services/hosts/host-dale-mac-mini.yaml",
+      "tags": [],
+      "ardCategory": "",
+      "internalComponents": [],
+      "notes": {},
+      "requirements": [],
+      "implementations": [],
+      "appliesTo": {},
+      "inherits": "",
+      "scalingUnits": [],
+      "networkZones": [],
+      "sdpConnections": [],
+      "serviceGroups": [],
+      "tierVariants": [],
+      "tierId": "",
+      "purpose": "",
+      "availabilityExpectation": "",
+      "costPosture": "",
+      "complianceScope": [],
+      "parameterSurface": [],
+      "followsReferenceArchitecture": "",
+      "decisionRecords": [],
+      "affectedComponent": "",
+      "impact": "",
+      "mitigationPath": "",
+      "decisionRationale": "",
+      "relatedDecisionRecords": [],
+      "linkedObject": "",
+      "primaryObjectType": "",
+      "primaryObjectUid": "",
+      "generatedObjects": [],
+      "unresolvedQuestions": [],
+      "assumptions": [],
+      "nextSteps": [],
+      "defaultSelection": false,
+      "requirementCount": 0,
+      "hasRiskRef": false,
+      "outboundRefs": [],
+      "referencedBy": [
+        {
+          "source": "01M7GTBMQS-YYDW",
+          "path": "host"
+        },
+        {
+          "source": "5N5T1Z7SV2-44E6",
+          "path": "target"
+        }
+      ],
+      "editorSchema": {
+        "requiredFields": [
+          "schemaVersion",
+          "uid",
+          "type",
+          "name",
+          "catalogStatus",
+          "lifecycleStatus"
+        ],
+        "optionalFields": [
+          "aliases",
+          "description",
+          "version",
+          "owner",
+          "tags",
+          "serviceRole",
+          "notes",
+          "operatingSystemComponent",
+          "computePlatformComponent",
+          "internalComponents",
+          "deploymentConfigurations",
+          "provisioningModel",
+          "deployablePackage",
+          "decisionRecords",
+          "requirementImplementations"
+        ],
+        "fieldTypes": {
+          "aliases": "list",
+          "owner": "dict",
+          "tags": "list",
+          "notes": "dict",
+          "internalComponents": "list",
+          "deploymentConfigurations": "list",
+          "requirementGroups": "list",
+          "decisionRecords": "list",
+          "requirementImplementations": "list"
+        },
+        "enumFields": {
+          "serviceRole": [
+            "definition",
+            "instance"
+          ],
+          "provisioningModel": [
+            "deployable",
+            "reference-only"
+          ],
+          "catalogStatus": [
+            "stub",
+            "incomplete",
+            "complete"
+          ],
+          "lifecycleStatus": [
+            "candidate",
+            "preferred",
+            "existing-only",
+            "deprecated",
+            "retired"
+          ]
+        },
+        "enumListFields": {},
+        "collectionSchemas": {},
+        "schemaPath": "framework/schemas/host.schema.yaml"
+      },
+      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M7GVD4FN-YGN9\",\n  \"type\": \"host\",\n  \"name\": \"Dale's Mac mini (home)\",\n  \"description\": \"macOS Mac mini at Dale's home. Caddy (tls internal) reverse proxies print.dalesackrider.com, reached through Cloudflare, to print_server.py on 127.0.0.1:9123, which prints to an HP Color LaserJet Pro MFP 3301. The older GCP print-bridge also exists on this host.\",\n  \"catalogStatus\": \"stub\",\n  \"lifecycleStatus\": \"existing-only\",\n  \"provisioningModel\": \"reference-only\",\n  \"_source\": \"catalog/shared-services/hosts/host-dale-mac-mini.yaml\"\n}",
+      "existsInCatalog": true,
+      "outboundRelationships": [],
+      "inboundRelationships": [
+        {
+          "uid": "5N5T1Z7SV2-44E6",
+          "name": "Household Print Queue & Spooler Service \u2192 Dale's Mac mini (home)",
+          "label": "runs on",
+          "technology": "",
+          "direction": "",
+          "targetUid": "01M7GVD4FN-YGN9",
+          "targetName": "Dale's Mac mini (home)",
+          "capabilities": [],
+          "sourceUid": "01M7GTBMQS-YYDW",
+          "sourceName": "Household Print Queue & Spooler Service"
+        }
+      ]
+    },
+    {
       "id": "01M15NEKT7-1SN8",
       "uid": "01M15NEKT7-1SN8",
       "name": "Standard GCP Cloud Run Serverless Substrate",
@@ -24576,15 +24787,190 @@ window.DRAFT_BROWSER_DATA = {
       "inboundRelationships": []
     },
     {
+      "id": "01M7GVD4FN-3C7S",
+      "uid": "01M7GVD4FN-3C7S",
+      "name": "Home Assistant host (hardware/OS unconfirmed)",
+      "aliases": [],
+      "type": "host",
+      "typeLabel": "Host",
+      "filterType": "host",
+      "category": "",
+      "deliveryModel": "",
+      "domain": "",
+      "description": "Host that runs the Home Assistant instance behind ha.dalesackrider.com.",
+      "version": "",
+      "catalogStatus": "stub",
+      "lifecycleStatus": "existing-only",
+      "status": "",
+      "businessContext": {},
+      "product": "",
+      "runsOn": "",
+      "subtype": "",
+      "vendor": "",
+      "productName": "",
+      "productVersion": "",
+      "classification": "",
+      "platformDependency": "",
+      "capabilities": [],
+      "configurations": [],
+      "networkPlacement": "",
+      "patchingOwner": "",
+      "complianceCerts": [],
+      "requirementGroups": [],
+      "requirementImplementations": [],
+      "dataLeavesInfrastructure": null,
+      "dataResidencyCommitment": "",
+      "dpaNotes": "",
+      "vendorSLA": "",
+      "authenticationModel": "",
+      "incidentNotificationProcess": "",
+      "owner": {},
+      "definitionOwner": {},
+      "provider": {},
+      "authority": {},
+      "shape": "round-rectangle",
+      "color": "#2a6fdb",
+      "source": "catalog/shared-services/hosts/host-home-assistant.yaml",
+      "tags": [],
+      "ardCategory": "",
+      "internalComponents": [],
+      "notes": {
+        "hardwareConfirmation": "Hardware and operating system are not yet confirmed. Do not assume this is Dale's Mac mini."
+      },
+      "requirements": [],
+      "implementations": [],
+      "appliesTo": {},
+      "inherits": "",
+      "scalingUnits": [],
+      "networkZones": [],
+      "sdpConnections": [],
+      "serviceGroups": [],
+      "tierVariants": [],
+      "tierId": "",
+      "purpose": "",
+      "availabilityExpectation": "",
+      "costPosture": "",
+      "complianceScope": [],
+      "parameterSurface": [],
+      "followsReferenceArchitecture": "",
+      "decisionRecords": [],
+      "affectedComponent": "",
+      "impact": "",
+      "mitigationPath": "",
+      "decisionRationale": "",
+      "relatedDecisionRecords": [],
+      "linkedObject": "",
+      "primaryObjectType": "",
+      "primaryObjectUid": "",
+      "generatedObjects": [],
+      "unresolvedQuestions": [],
+      "assumptions": [],
+      "nextSteps": [],
+      "defaultSelection": false,
+      "requirementCount": 0,
+      "hasRiskRef": false,
+      "outboundRefs": [],
+      "referencedBy": [
+        {
+          "source": "01M7GTBMQS-WDE3",
+          "path": "host"
+        },
+        {
+          "source": "96JSYM60JB-Q60Y",
+          "path": "target"
+        }
+      ],
+      "editorSchema": {
+        "requiredFields": [
+          "schemaVersion",
+          "uid",
+          "type",
+          "name",
+          "catalogStatus",
+          "lifecycleStatus"
+        ],
+        "optionalFields": [
+          "aliases",
+          "description",
+          "version",
+          "owner",
+          "tags",
+          "serviceRole",
+          "notes",
+          "operatingSystemComponent",
+          "computePlatformComponent",
+          "internalComponents",
+          "deploymentConfigurations",
+          "provisioningModel",
+          "deployablePackage",
+          "decisionRecords",
+          "requirementImplementations"
+        ],
+        "fieldTypes": {
+          "aliases": "list",
+          "owner": "dict",
+          "tags": "list",
+          "notes": "dict",
+          "internalComponents": "list",
+          "deploymentConfigurations": "list",
+          "requirementGroups": "list",
+          "decisionRecords": "list",
+          "requirementImplementations": "list"
+        },
+        "enumFields": {
+          "serviceRole": [
+            "definition",
+            "instance"
+          ],
+          "provisioningModel": [
+            "deployable",
+            "reference-only"
+          ],
+          "catalogStatus": [
+            "stub",
+            "incomplete",
+            "complete"
+          ],
+          "lifecycleStatus": [
+            "candidate",
+            "preferred",
+            "existing-only",
+            "deprecated",
+            "retired"
+          ]
+        },
+        "enumListFields": {},
+        "collectionSchemas": {},
+        "schemaPath": "framework/schemas/host.schema.yaml"
+      },
+      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M7GVD4FN-3C7S\",\n  \"type\": \"host\",\n  \"name\": \"Home Assistant host (hardware/OS unconfirmed)\",\n  \"description\": \"Host that runs the Home Assistant instance behind ha.dalesackrider.com.\",\n  \"catalogStatus\": \"stub\",\n  \"lifecycleStatus\": \"existing-only\",\n  \"provisioningModel\": \"reference-only\",\n  \"notes\": {\n    \"hardwareConfirmation\": \"Hardware and operating system are not yet confirmed. Do not assume this is Dale's Mac mini.\"\n  },\n  \"_source\": \"catalog/shared-services/hosts/host-home-assistant.yaml\"\n}",
+      "existsInCatalog": true,
+      "outboundRelationships": [],
+      "inboundRelationships": [
+        {
+          "uid": "96JSYM60JB-Q60Y",
+          "name": "Home Assistant IoT & Display Integration Service \u2192 Home Assistant host (hardware/OS unconfirmed)",
+          "label": "runs on",
+          "technology": "",
+          "direction": "",
+          "targetUid": "01M7GVD4FN-3C7S",
+          "targetName": "Home Assistant host (hardware/OS unconfirmed)",
+          "capabilities": [],
+          "sourceUid": "01M7GTBMQS-WDE3",
+          "sourceName": "Home Assistant IoT & Display Integration Service"
+        }
+      ]
+    },
+    {
       "id": "01M7GTBMQS-WDE3",
       "uid": "01M7GTBMQS-WDE3",
       "name": "Home Assistant IoT & Display Integration Service",
       "aliases": [],
       "type": "runtime_service",
-      "typeLabel": "RuntimeService / Appliance",
+      "typeLabel": "RuntimeService / Self Managed",
       "filterType": "runtime_service",
       "category": "",
-      "deliveryModel": "appliance",
+      "deliveryModel": "self-managed",
       "domain": "",
       "description": "IoT integration gateway service handling e-ink digital photo frames (ha-digital-frames, dash480), openHASP touch panels, and Home Assistant telemetry (ha.dalesackrider.com).",
       "version": "",
@@ -24627,7 +25013,20 @@ window.DRAFT_BROWSER_DATA = {
       "source": "catalog/shared-services/integration-services/integration-service-home-assistant.yaml",
       "tags": [],
       "ardCategory": "",
-      "internalComponents": [],
+      "internalComponents": [
+        {
+          "ref": "01M7GVD4FN-3C7S",
+          "role": "host",
+          "configuration": "",
+          "notes": ""
+        },
+        {
+          "ref": "01M7GVD4FN-F0DT",
+          "role": "function",
+          "configuration": "",
+          "notes": ""
+        }
+      ],
       "notes": {},
       "requirements": [],
       "implementations": [],
@@ -24661,8 +25060,22 @@ window.DRAFT_BROWSER_DATA = {
       "defaultSelection": false,
       "requirementCount": 0,
       "hasRiskRef": false,
-      "outboundRefs": [],
-      "referencedBy": [],
+      "outboundRefs": [
+        {
+          "target": "01M7GVD4FN-3C7S",
+          "path": "host"
+        },
+        {
+          "target": "01M7GVD4FN-F0DT",
+          "path": "primaryTechnologyComponent"
+        }
+      ],
+      "referencedBy": [
+        {
+          "source": "96JSYM60JB-Q60Y",
+          "path": "source"
+        }
+      ],
       "editorSchema": {
         "requiredFields": [
           "schemaVersion",
@@ -24770,9 +25183,20 @@ window.DRAFT_BROWSER_DATA = {
         },
         "schemaPath": "framework/schemas/runtime-service.schema.yaml"
       },
-      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M7GTBMQS-WDE3\",\n  \"type\": \"runtime_service\",\n  \"name\": \"Home Assistant IoT & Display Integration Service\",\n  \"description\": \"IoT integration gateway service handling e-ink digital photo frames (ha-digital-frames, dash480), openHASP touch panels, and Home Assistant telemetry (ha.dalesackrider.com).\",\n  \"deliveryModel\": \"appliance\",\n  \"catalogStatus\": \"incomplete\",\n  \"lifecycleStatus\": \"preferred\",\n  \"vendor\": \"Home Assistant / Custom\",\n  \"productName\": \"Home Assistant Core & Display Gateway\",\n  \"productVersion\": \"2026.x\",\n  \"integrationFunction\": \"Smart home state synchronization, REST/WebSocket API gateway, e-paper image conversion, and touch display control.\",\n  \"provisioningModel\": \"reference-only\",\n  \"protocols\": [\n    \"HTTPS\",\n    \"WebSockets\",\n    \"MQTT\"\n  ],\n  \"owner\": {\n    \"team\": \"personal-automation\",\n    \"contact\": \"dale.sackrider+donna@gmail.com\",\n    \"resourceOwner\": \"Donna\",\n    \"serviceProviderRole\": \"Integration Domain Service Provider\"\n  },\n  \"vendorGovernance\": {\n    \"dataLeavesInfrastructure\": false,\n    \"dataResidencyCommitment\": \"Local LAN processing with encrypted Cloudflare tunnel edge ingress\",\n    \"vendorSLA\": \"Best effort household availability\",\n    \"acceptableUsePolicy\": \"Authorized IoT gateway for digital frame image sync, touch panel dashboards, and smart home automation.\"\n  },\n  \"_source\": \"catalog/shared-services/integration-services/integration-service-home-assistant.yaml\"\n}",
+      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M7GTBMQS-WDE3\",\n  \"type\": \"runtime_service\",\n  \"name\": \"Home Assistant IoT & Display Integration Service\",\n  \"description\": \"IoT integration gateway service handling e-ink digital photo frames (ha-digital-frames, dash480), openHASP touch panels, and Home Assistant telemetry (ha.dalesackrider.com).\",\n  \"deliveryModel\": \"self-managed\",\n  \"host\": \"01M7GVD4FN-3C7S\",\n  \"primaryTechnologyComponent\": \"01M7GVD4FN-F0DT\",\n  \"catalogStatus\": \"incomplete\",\n  \"lifecycleStatus\": \"preferred\",\n  \"vendor\": \"Home Assistant / Custom\",\n  \"productName\": \"Home Assistant Core & Display Gateway\",\n  \"productVersion\": \"2026.x\",\n  \"integrationFunction\": \"Smart home state synchronization, REST/WebSocket API gateway, e-paper image conversion, and touch display control.\",\n  \"provisioningModel\": \"reference-only\",\n  \"protocols\": [\n    \"HTTPS\",\n    \"WebSockets\",\n    \"MQTT\"\n  ],\n  \"owner\": {\n    \"team\": \"personal-automation\",\n    \"contact\": \"dale.sackrider+donna@gmail.com\",\n    \"resourceOwner\": \"Donna\",\n    \"serviceProviderRole\": \"Integration Domain Service Provider\"\n  },\n  \"vendorGovernance\": {\n    \"dataLeavesInfrastructure\": false,\n    \"dataResidencyCommitment\": \"Local LAN processing with encrypted Cloudflare tunnel edge ingress\",\n    \"vendorSLA\": \"Best effort household availability\",\n    \"acceptableUsePolicy\": \"Authorized IoT gateway for digital frame image sync, touch panel dashboards, and smart home automation.\"\n  },\n  \"_source\": \"catalog/shared-services/integration-services/integration-service-home-assistant.yaml\"\n}",
       "existsInCatalog": true,
-      "outboundRelationships": [],
+      "outboundRelationships": [
+        {
+          "uid": "96JSYM60JB-Q60Y",
+          "name": "Home Assistant IoT & Display Integration Service \u2192 Home Assistant host (hardware/OS unconfirmed)",
+          "label": "runs on",
+          "technology": "",
+          "direction": "",
+          "targetUid": "01M7GVD4FN-3C7S",
+          "targetName": "Home Assistant host (hardware/OS unconfirmed)",
+          "capabilities": []
+        }
+      ],
       "inboundRelationships": []
     },
     {
@@ -26249,6 +26673,157 @@ window.DRAFT_BROWSER_DATA = {
       "inboundRelationships": []
     },
     {
+      "id": "01M7GVD4FN-F0DT",
+      "uid": "01M7GVD4FN-F0DT",
+      "name": "Home Assistant Core",
+      "aliases": [],
+      "type": "technology_component",
+      "typeLabel": "TechnologyComponent / Software",
+      "filterType": "technology_component",
+      "category": "",
+      "deliveryModel": "",
+      "domain": "",
+      "description": "",
+      "version": "",
+      "catalogStatus": "stub",
+      "lifecycleStatus": "",
+      "status": "",
+      "businessContext": {},
+      "product": "",
+      "runsOn": "",
+      "subtype": "",
+      "vendor": "Home Assistant",
+      "productName": "Home Assistant Core",
+      "productVersion": "2026.x",
+      "classification": "software",
+      "platformDependency": "",
+      "capabilities": [],
+      "configurations": [],
+      "networkPlacement": "",
+      "patchingOwner": "",
+      "complianceCerts": [],
+      "requirementGroups": [],
+      "requirementImplementations": [],
+      "dataLeavesInfrastructure": null,
+      "dataResidencyCommitment": "",
+      "dpaNotes": "",
+      "vendorSLA": "",
+      "authenticationModel": "",
+      "incidentNotificationProcess": "",
+      "owner": {},
+      "definitionOwner": {},
+      "provider": {},
+      "authority": {},
+      "shape": "ellipse",
+      "color": "#64748b",
+      "source": "catalog/shared-services/technology-components/tc-home-assistant-core.yaml",
+      "tags": [],
+      "ardCategory": "",
+      "internalComponents": [],
+      "notes": {},
+      "requirements": [],
+      "implementations": [],
+      "appliesTo": {},
+      "inherits": "",
+      "scalingUnits": [],
+      "networkZones": [],
+      "sdpConnections": [],
+      "serviceGroups": [],
+      "tierVariants": [],
+      "tierId": "",
+      "purpose": "",
+      "availabilityExpectation": "",
+      "costPosture": "",
+      "complianceScope": [],
+      "parameterSurface": [],
+      "followsReferenceArchitecture": "",
+      "decisionRecords": [],
+      "affectedComponent": "",
+      "impact": "",
+      "mitigationPath": "",
+      "decisionRationale": "",
+      "relatedDecisionRecords": [],
+      "linkedObject": "",
+      "primaryObjectType": "",
+      "primaryObjectUid": "",
+      "generatedObjects": [],
+      "unresolvedQuestions": [],
+      "assumptions": [],
+      "nextSteps": [],
+      "defaultSelection": false,
+      "requirementCount": 0,
+      "hasRiskRef": false,
+      "outboundRefs": [],
+      "referencedBy": [
+        {
+          "source": "01M7GTBMQS-WDE3",
+          "path": "primaryTechnologyComponent"
+        }
+      ],
+      "editorSchema": {
+        "requiredFields": [
+          "schemaVersion",
+          "uid",
+          "type",
+          "name",
+          "vendor",
+          "productName",
+          "productVersion",
+          "classification",
+          "catalogStatus"
+        ],
+        "optionalFields": [
+          "aliases",
+          "description",
+          "version",
+          "owner",
+          "tags",
+          "subtype",
+          "vendorLifecycle",
+          "platformDependency",
+          "capabilities",
+          "configurations",
+          "networkPlacement",
+          "patchingOwner",
+          "complianceCerts",
+          "controlReferences",
+          "notes"
+        ],
+        "fieldTypes": {
+          "aliases": "list",
+          "owner": "dict",
+          "tags": "list",
+          "vendorLifecycle": "dict",
+          "capabilities": "list",
+          "configurations": "list",
+          "complianceCerts": "list",
+          "controlReferences": "list"
+        },
+        "enumFields": {
+          "catalogStatus": [
+            "stub",
+            "incomplete",
+            "complete"
+          ],
+          "classification": [
+            "operating-system",
+            "compute-platform",
+            "software",
+            "agent"
+          ]
+        },
+        "enumListFields": {},
+        "collectionSchemas": {
+          "configurations": "configuration"
+        },
+        "schemaPath": "framework/schemas/technology-component.schema.yaml"
+      },
+      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M7GVD4FN-F0DT\",\n  \"type\": \"technology_component\",\n  \"name\": \"Home Assistant Core\",\n  \"vendor\": \"Home Assistant\",\n  \"productName\": \"Home Assistant Core\",\n  \"productVersion\": \"2026.x\",\n  \"classification\": \"software\",\n  \"catalogStatus\": \"stub\",\n  \"_source\": \"catalog/shared-services/technology-components/tc-home-assistant-core.yaml\"\n}",
+      "existsInCatalog": true,
+      "outboundRelationships": [],
+      "inboundRelationships": []
+    },
+    {
       "id": "01M7GTBMQT-1190",
       "uid": "01M7GTBMQT-1190",
       "name": "LLM Inference APIs (OpenAI / Anthropic)",
@@ -26408,6 +26983,443 @@ window.DRAFT_BROWSER_DATA = {
         "schemaPath": "framework/schemas/technology-component.schema.yaml"
       },
       "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M7GTBMQT-1190\",\n  \"type\": \"technology_component\",\n  \"name\": \"LLM Inference APIs (OpenAI / Anthropic)\",\n  \"aliases\": [\n    \"llm-api\",\n    \"openai-api\",\n    \"anthropic-api\"\n  ],\n  \"description\": \"Managed frontier Large Language Model inference endpoints (OpenAI GPT-4o, Anthropic Claude 3.5 Sonnet)  accessed via HTTPS / MCP gateways for AI Agent execution.\\n\",\n  \"version\": \"1.0.0\",\n  \"catalogStatus\": \"incomplete\",\n  \"provisioningModel\": \"reference-only\",\n  \"owner\": {\n    \"team\": \"Agent Factory Platform\",\n    \"contact\": \"agent-factory@beercanlabs.com\"\n  },\n  \"tags\": [\n    \"technology-component\",\n    \"ai-inference\",\n    \"reference-only\"\n  ],\n  \"vendor\": \"OpenAI / Anthropic\",\n  \"productName\": \"LLM APIs\",\n  \"productVersion\": \"Managed\",\n  \"classification\": \"software\",\n  \"vendorLifecycle\": {\n    \"mainstreamSupportEnd\": \"Active\",\n    \"extendedSupportEnd\": \"Active\",\n    \"notes\": \"External managed AI model inference endpoints.\"\n  },\n  \"capabilities\": [\n    \"01KTWS3D6T-T6F6\"\n  ],\n  \"_source\": \"catalog/shared-services/technology-components/tc-openai-anthropic-llm.yaml\"\n}",
+      "existsInCatalog": true,
+      "outboundRelationships": [],
+      "inboundRelationships": []
+    },
+    {
+      "id": "01M7GVD4FN-YCP8",
+      "uid": "01M7GVD4FN-YCP8",
+      "name": "Python",
+      "aliases": [],
+      "type": "technology_component",
+      "typeLabel": "TechnologyComponent / Software",
+      "filterType": "technology_component",
+      "category": "",
+      "deliveryModel": "",
+      "domain": "",
+      "description": "Python language runtime. Runtime for print_server.py on Dale's Mac mini (Household Print Queue & Spooler Service).",
+      "version": "",
+      "catalogStatus": "stub",
+      "lifecycleStatus": "",
+      "status": "",
+      "businessContext": {},
+      "product": "",
+      "runsOn": "",
+      "subtype": "",
+      "vendor": "Python Software Foundation",
+      "productName": "Python",
+      "productVersion": "3.x",
+      "classification": "software",
+      "platformDependency": "",
+      "capabilities": [],
+      "configurations": [],
+      "networkPlacement": "",
+      "patchingOwner": "",
+      "complianceCerts": [],
+      "requirementGroups": [],
+      "requirementImplementations": [],
+      "dataLeavesInfrastructure": null,
+      "dataResidencyCommitment": "",
+      "dpaNotes": "",
+      "vendorSLA": "",
+      "authenticationModel": "",
+      "incidentNotificationProcess": "",
+      "owner": {},
+      "definitionOwner": {},
+      "provider": {},
+      "authority": {},
+      "shape": "ellipse",
+      "color": "#64748b",
+      "source": "catalog/shared-services/technology-components/tc-python.yaml",
+      "tags": [],
+      "ardCategory": "",
+      "internalComponents": [],
+      "notes": {},
+      "requirements": [],
+      "implementations": [],
+      "appliesTo": {},
+      "inherits": "",
+      "scalingUnits": [],
+      "networkZones": [],
+      "sdpConnections": [],
+      "serviceGroups": [],
+      "tierVariants": [],
+      "tierId": "",
+      "purpose": "",
+      "availabilityExpectation": "",
+      "costPosture": "",
+      "complianceScope": [],
+      "parameterSurface": [],
+      "followsReferenceArchitecture": "",
+      "decisionRecords": [],
+      "affectedComponent": "",
+      "impact": "",
+      "mitigationPath": "",
+      "decisionRationale": "",
+      "relatedDecisionRecords": [],
+      "linkedObject": "",
+      "primaryObjectType": "",
+      "primaryObjectUid": "",
+      "generatedObjects": [],
+      "unresolvedQuestions": [],
+      "assumptions": [],
+      "nextSteps": [],
+      "defaultSelection": false,
+      "requirementCount": 0,
+      "hasRiskRef": false,
+      "outboundRefs": [],
+      "referencedBy": [
+        {
+          "source": "01M7GTBMQS-YYDW",
+          "path": "primaryTechnologyComponent"
+        }
+      ],
+      "editorSchema": {
+        "requiredFields": [
+          "schemaVersion",
+          "uid",
+          "type",
+          "name",
+          "vendor",
+          "productName",
+          "productVersion",
+          "classification",
+          "catalogStatus"
+        ],
+        "optionalFields": [
+          "aliases",
+          "description",
+          "version",
+          "owner",
+          "tags",
+          "subtype",
+          "vendorLifecycle",
+          "platformDependency",
+          "capabilities",
+          "configurations",
+          "networkPlacement",
+          "patchingOwner",
+          "complianceCerts",
+          "controlReferences",
+          "notes"
+        ],
+        "fieldTypes": {
+          "aliases": "list",
+          "owner": "dict",
+          "tags": "list",
+          "vendorLifecycle": "dict",
+          "capabilities": "list",
+          "configurations": "list",
+          "complianceCerts": "list",
+          "controlReferences": "list"
+        },
+        "enumFields": {
+          "catalogStatus": [
+            "stub",
+            "incomplete",
+            "complete"
+          ],
+          "classification": [
+            "operating-system",
+            "compute-platform",
+            "software",
+            "agent"
+          ]
+        },
+        "enumListFields": {},
+        "collectionSchemas": {
+          "configurations": "configuration"
+        },
+        "schemaPath": "framework/schemas/technology-component.schema.yaml"
+      },
+      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M7GVD4FN-YCP8\",\n  \"type\": \"technology_component\",\n  \"name\": \"Python\",\n  \"description\": \"Python language runtime. Runtime for print_server.py on Dale's Mac mini (Household Print Queue & Spooler Service).\",\n  \"vendor\": \"Python Software Foundation\",\n  \"productName\": \"Python\",\n  \"productVersion\": \"3.x\",\n  \"classification\": \"software\",\n  \"catalogStatus\": \"stub\",\n  \"_source\": \"catalog/shared-services/technology-components/tc-python.yaml\"\n}",
+      "existsInCatalog": true,
+      "outboundRelationships": [],
+      "inboundRelationships": []
+    },
+    {
+      "id": "5N5T1Z7SV2-44E6",
+      "uid": "5N5T1Z7SV2-44E6",
+      "name": "Household Print Queue & Spooler Service \u2192 Dale's Mac mini (home)",
+      "aliases": [],
+      "type": "relationship",
+      "typeLabel": "Relationship",
+      "filterType": "relationship",
+      "category": "",
+      "deliveryModel": "",
+      "domain": "",
+      "description": "",
+      "version": "",
+      "catalogStatus": "complete",
+      "lifecycleStatus": "unknown",
+      "status": "",
+      "businessContext": {},
+      "product": "",
+      "runsOn": "",
+      "subtype": "",
+      "vendor": "",
+      "productName": "",
+      "productVersion": "",
+      "classification": "",
+      "platformDependency": "",
+      "capabilities": [],
+      "configurations": [],
+      "networkPlacement": "",
+      "patchingOwner": "",
+      "complianceCerts": [],
+      "requirementGroups": [],
+      "requirementImplementations": [],
+      "dataLeavesInfrastructure": null,
+      "dataResidencyCommitment": "",
+      "dpaNotes": "",
+      "vendorSLA": "",
+      "authenticationModel": "",
+      "incidentNotificationProcess": "",
+      "owner": {},
+      "definitionOwner": {},
+      "provider": {},
+      "authority": {},
+      "shape": "round-rectangle",
+      "color": "#7a6e60",
+      "source": "derived from catalog/shared-services/appliance-services/print-queue-service-home-print.yaml [host]",
+      "tags": [],
+      "ardCategory": "",
+      "internalComponents": [],
+      "notes": "Derived from host field",
+      "requirements": [],
+      "implementations": [],
+      "appliesTo": {},
+      "inherits": "",
+      "scalingUnits": [],
+      "networkZones": [],
+      "sdpConnections": [],
+      "serviceGroups": [],
+      "tierVariants": [],
+      "tierId": "",
+      "purpose": "",
+      "availabilityExpectation": "",
+      "costPosture": "",
+      "complianceScope": [],
+      "parameterSurface": [],
+      "followsReferenceArchitecture": "",
+      "decisionRecords": [],
+      "affectedComponent": "",
+      "impact": "",
+      "mitigationPath": "",
+      "decisionRationale": "",
+      "relatedDecisionRecords": [],
+      "linkedObject": "",
+      "primaryObjectType": "",
+      "primaryObjectUid": "",
+      "generatedObjects": [],
+      "unresolvedQuestions": [],
+      "assumptions": [],
+      "nextSteps": [],
+      "defaultSelection": false,
+      "requirementCount": 0,
+      "hasRiskRef": false,
+      "outboundRefs": [
+        {
+          "target": "01M7GTBMQS-YYDW",
+          "path": "source"
+        },
+        {
+          "target": "01M7GVD4FN-YGN9",
+          "path": "target"
+        }
+      ],
+      "referencedBy": [],
+      "editorSchema": {
+        "requiredFields": [
+          "schemaVersion",
+          "uid",
+          "type",
+          "name",
+          "source",
+          "label",
+          "catalogStatus"
+        ],
+        "optionalFields": [
+          "description",
+          "target",
+          "externalTarget",
+          "technology",
+          "direction",
+          "flow",
+          "capabilities",
+          "notes",
+          "tags"
+        ],
+        "fieldTypes": {
+          "tags": "list",
+          "capabilities": "list"
+        },
+        "enumFields": {
+          "catalogStatus": [
+            "stub",
+            "incomplete",
+            "complete"
+          ],
+          "direction": [
+            "synchronous",
+            "asynchronous",
+            "event"
+          ],
+          "flow": [
+            "outbound",
+            "inbound",
+            "bidirectional"
+          ]
+        },
+        "enumListFields": {},
+        "collectionSchemas": {},
+        "schemaPath": "framework/schemas/relationship.schema.yaml"
+      },
+      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"5N5T1Z7SV2-44E6\",\n  \"type\": \"relationship\",\n  \"name\": \"Household Print Queue & Spooler Service \\u2192 Dale's Mac mini (home)\",\n  \"source\": \"01M7GTBMQS-YYDW\",\n  \"target\": \"01M7GVD4FN-YGN9\",\n  \"label\": \"runs on\",\n  \"notes\": \"Derived from host field\",\n  \"catalogStatus\": \"complete\",\n  \"_source\": \"derived from catalog/shared-services/appliance-services/print-queue-service-home-print.yaml [host]\",\n  \"_derived\": true\n}",
+      "existsInCatalog": true,
+      "outboundRelationships": [],
+      "inboundRelationships": []
+    },
+    {
+      "id": "96JSYM60JB-Q60Y",
+      "uid": "96JSYM60JB-Q60Y",
+      "name": "Home Assistant IoT & Display Integration Service \u2192 Home Assistant host (hardware/OS unconfirmed)",
+      "aliases": [],
+      "type": "relationship",
+      "typeLabel": "Relationship",
+      "filterType": "relationship",
+      "category": "",
+      "deliveryModel": "",
+      "domain": "",
+      "description": "",
+      "version": "",
+      "catalogStatus": "complete",
+      "lifecycleStatus": "unknown",
+      "status": "",
+      "businessContext": {},
+      "product": "",
+      "runsOn": "",
+      "subtype": "",
+      "vendor": "",
+      "productName": "",
+      "productVersion": "",
+      "classification": "",
+      "platformDependency": "",
+      "capabilities": [],
+      "configurations": [],
+      "networkPlacement": "",
+      "patchingOwner": "",
+      "complianceCerts": [],
+      "requirementGroups": [],
+      "requirementImplementations": [],
+      "dataLeavesInfrastructure": null,
+      "dataResidencyCommitment": "",
+      "dpaNotes": "",
+      "vendorSLA": "",
+      "authenticationModel": "",
+      "incidentNotificationProcess": "",
+      "owner": {},
+      "definitionOwner": {},
+      "provider": {},
+      "authority": {},
+      "shape": "round-rectangle",
+      "color": "#7a6e60",
+      "source": "derived from catalog/shared-services/integration-services/integration-service-home-assistant.yaml [host]",
+      "tags": [],
+      "ardCategory": "",
+      "internalComponents": [],
+      "notes": "Derived from host field",
+      "requirements": [],
+      "implementations": [],
+      "appliesTo": {},
+      "inherits": "",
+      "scalingUnits": [],
+      "networkZones": [],
+      "sdpConnections": [],
+      "serviceGroups": [],
+      "tierVariants": [],
+      "tierId": "",
+      "purpose": "",
+      "availabilityExpectation": "",
+      "costPosture": "",
+      "complianceScope": [],
+      "parameterSurface": [],
+      "followsReferenceArchitecture": "",
+      "decisionRecords": [],
+      "affectedComponent": "",
+      "impact": "",
+      "mitigationPath": "",
+      "decisionRationale": "",
+      "relatedDecisionRecords": [],
+      "linkedObject": "",
+      "primaryObjectType": "",
+      "primaryObjectUid": "",
+      "generatedObjects": [],
+      "unresolvedQuestions": [],
+      "assumptions": [],
+      "nextSteps": [],
+      "defaultSelection": false,
+      "requirementCount": 0,
+      "hasRiskRef": false,
+      "outboundRefs": [
+        {
+          "target": "01M7GTBMQS-WDE3",
+          "path": "source"
+        },
+        {
+          "target": "01M7GVD4FN-3C7S",
+          "path": "target"
+        }
+      ],
+      "referencedBy": [],
+      "editorSchema": {
+        "requiredFields": [
+          "schemaVersion",
+          "uid",
+          "type",
+          "name",
+          "source",
+          "label",
+          "catalogStatus"
+        ],
+        "optionalFields": [
+          "description",
+          "target",
+          "externalTarget",
+          "technology",
+          "direction",
+          "flow",
+          "capabilities",
+          "notes",
+          "tags"
+        ],
+        "fieldTypes": {
+          "tags": "list",
+          "capabilities": "list"
+        },
+        "enumFields": {
+          "catalogStatus": [
+            "stub",
+            "incomplete",
+            "complete"
+          ],
+          "direction": [
+            "synchronous",
+            "asynchronous",
+            "event"
+          ],
+          "flow": [
+            "outbound",
+            "inbound",
+            "bidirectional"
+          ]
+        },
+        "enumListFields": {},
+        "collectionSchemas": {},
+        "schemaPath": "framework/schemas/relationship.schema.yaml"
+      },
+      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"96JSYM60JB-Q60Y\",\n  \"type\": \"relationship\",\n  \"name\": \"Home Assistant IoT & Display Integration Service \\u2192 Home Assistant host (hardware/OS unconfirmed)\",\n  \"source\": \"01M7GTBMQS-WDE3\",\n  \"target\": \"01M7GVD4FN-3C7S\",\n  \"label\": \"runs on\",\n  \"notes\": \"Derived from host field\",\n  \"catalogStatus\": \"complete\",\n  \"_source\": \"derived from catalog/shared-services/integration-services/integration-service-home-assistant.yaml [host]\",\n  \"_derived\": true\n}",
       "existsInCatalog": true,
       "outboundRelationships": [],
       "inboundRelationships": []
@@ -49835,10 +50847,10 @@ window.DRAFT_BROWSER_DATA = {
       "name": "Household Print Queue & Spooler Service",
       "aliases": [],
       "type": "runtime_service",
-      "typeLabel": "RuntimeService / Appliance",
+      "typeLabel": "RuntimeService / Self Managed",
       "filterType": "runtime_service",
       "category": "",
-      "deliveryModel": "appliance",
+      "deliveryModel": "self-managed",
       "domain": "",
       "description": "Asynchronous document printing service backed by GCS bucket (submind-matrix-print-queue) and local CUPS print daemon for Higgins & Donna estate automation.",
       "version": "",
@@ -49881,7 +50893,20 @@ window.DRAFT_BROWSER_DATA = {
       "source": "catalog/shared-services/appliance-services/print-queue-service-home-print.yaml",
       "tags": [],
       "ardCategory": "",
-      "internalComponents": [],
+      "internalComponents": [
+        {
+          "ref": "01M7GVD4FN-YGN9",
+          "role": "host",
+          "configuration": "",
+          "notes": ""
+        },
+        {
+          "ref": "01M7GVD4FN-YCP8",
+          "role": "function",
+          "configuration": "",
+          "notes": ""
+        }
+      ],
       "notes": {},
       "requirements": [],
       "implementations": [],
@@ -49915,8 +50940,22 @@ window.DRAFT_BROWSER_DATA = {
       "defaultSelection": false,
       "requirementCount": 0,
       "hasRiskRef": false,
-      "outboundRefs": [],
-      "referencedBy": [],
+      "outboundRefs": [
+        {
+          "target": "01M7GVD4FN-YGN9",
+          "path": "host"
+        },
+        {
+          "target": "01M7GVD4FN-YCP8",
+          "path": "primaryTechnologyComponent"
+        }
+      ],
+      "referencedBy": [
+        {
+          "source": "5N5T1Z7SV2-44E6",
+          "path": "source"
+        }
+      ],
       "editorSchema": {
         "requiredFields": [
           "schemaVersion",
@@ -50024,9 +51063,20 @@ window.DRAFT_BROWSER_DATA = {
         },
         "schemaPath": "framework/schemas/runtime-service.schema.yaml"
       },
-      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M7GTBMQS-YYDW\",\n  \"type\": \"runtime_service\",\n  \"name\": \"Household Print Queue & Spooler Service\",\n  \"description\": \"Asynchronous document printing service backed by GCS bucket (submind-matrix-print-queue) and local CUPS print daemon for Higgins & Donna estate automation.\",\n  \"deliveryModel\": \"appliance\",\n  \"catalogStatus\": \"incomplete\",\n  \"lifecycleStatus\": \"preferred\",\n  \"vendor\": \"Custom / CUPS\",\n  \"productName\": \"Skippy Home Print Service\",\n  \"productVersion\": \"1.0.0\",\n  \"applianceFunction\": \"Asynchronous document rendering, PDF conversion, print spooling, and physical printer dispatch.\",\n  \"provisioningModel\": \"deployable\",\n  \"deployablePackage\": {\n    \"registry\": \"github\",\n    \"source\": \"BeerCanLabs/SM-higgins\",\n    \"version\": \"main\",\n    \"modulePath\": \"skills/home-print\"\n  },\n  \"protocols\": [\n    \"HTTPS\",\n    \"IPP\",\n    \"LPD\"\n  ],\n  \"owner\": {\n    \"team\": \"estate-management\",\n    \"contact\": \"dale.sackrider+higgins@gmail.com\",\n    \"resourceOwner\": \"Higgins\",\n    \"serviceProviderRole\": \"Appliance Domain Service Provider\"\n  },\n  \"vendorGovernance\": {\n    \"dataLeavesInfrastructure\": false,\n    \"dataResidencyCommitment\": \"Local LAN spooling with GCS queue transit\",\n    \"vendorSLA\": \"Best effort household availability\",\n    \"acceptableUsePolicy\": \"Authorized print queue for household estate management, daily briefings, and administrative document dispatch.\"\n  },\n  \"_source\": \"catalog/shared-services/appliance-services/print-queue-service-home-print.yaml\"\n}",
+      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M7GTBMQS-YYDW\",\n  \"type\": \"runtime_service\",\n  \"name\": \"Household Print Queue & Spooler Service\",\n  \"description\": \"Asynchronous document printing service backed by GCS bucket (submind-matrix-print-queue) and local CUPS print daemon for Higgins & Donna estate automation.\",\n  \"deliveryModel\": \"self-managed\",\n  \"host\": \"01M7GVD4FN-YGN9\",\n  \"primaryTechnologyComponent\": \"01M7GVD4FN-YCP8\",\n  \"catalogStatus\": \"incomplete\",\n  \"lifecycleStatus\": \"preferred\",\n  \"vendor\": \"Custom / CUPS\",\n  \"productName\": \"Skippy Home Print Service\",\n  \"productVersion\": \"1.0.0\",\n  \"applianceFunction\": \"Asynchronous document rendering, PDF conversion, print spooling, and physical printer dispatch.\",\n  \"provisioningModel\": \"deployable\",\n  \"deployablePackage\": {\n    \"registry\": \"github\",\n    \"source\": \"BeerCanLabs/SM-higgins\",\n    \"version\": \"main\",\n    \"modulePath\": \"skills/home-print\"\n  },\n  \"protocols\": [\n    \"HTTPS\",\n    \"IPP\",\n    \"LPD\"\n  ],\n  \"owner\": {\n    \"team\": \"estate-management\",\n    \"contact\": \"dale.sackrider+higgins@gmail.com\",\n    \"resourceOwner\": \"Higgins\",\n    \"serviceProviderRole\": \"Appliance Domain Service Provider\"\n  },\n  \"vendorGovernance\": {\n    \"dataLeavesInfrastructure\": false,\n    \"dataResidencyCommitment\": \"Local LAN spooling with GCS queue transit\",\n    \"vendorSLA\": \"Best effort household availability\",\n    \"acceptableUsePolicy\": \"Authorized print queue for household estate management, daily briefings, and administrative document dispatch.\"\n  },\n  \"_source\": \"catalog/shared-services/appliance-services/print-queue-service-home-print.yaml\"\n}",
       "existsInCatalog": true,
-      "outboundRelationships": [],
+      "outboundRelationships": [
+        {
+          "uid": "5N5T1Z7SV2-44E6",
+          "name": "Household Print Queue & Spooler Service \u2192 Dale's Mac mini (home)",
+          "label": "runs on",
+          "technology": "",
+          "direction": "",
+          "targetUid": "01M7GVD4FN-YGN9",
+          "targetName": "Dale's Mac mini (home)",
+          "capabilities": []
+        }
+      ],
       "inboundRelationships": []
     },
     "01M7GTBMQS-9E05": {
@@ -50665,6 +51715,179 @@ window.DRAFT_BROWSER_DATA = {
       "outboundRelationships": [],
       "inboundRelationships": []
     },
+    "01M7GVD4FN-YGN9": {
+      "id": "01M7GVD4FN-YGN9",
+      "uid": "01M7GVD4FN-YGN9",
+      "name": "Dale's Mac mini (home)",
+      "aliases": [],
+      "type": "host",
+      "typeLabel": "Host",
+      "filterType": "host",
+      "category": "",
+      "deliveryModel": "",
+      "domain": "",
+      "description": "macOS Mac mini at Dale's home. Caddy (tls internal) reverse proxies print.dalesackrider.com, reached through Cloudflare, to print_server.py on 127.0.0.1:9123, which prints to an HP Color LaserJet Pro MFP 3301. The older GCP print-bridge also exists on this host.",
+      "version": "",
+      "catalogStatus": "stub",
+      "lifecycleStatus": "existing-only",
+      "status": "",
+      "businessContext": {},
+      "product": "",
+      "runsOn": "",
+      "subtype": "",
+      "vendor": "",
+      "productName": "",
+      "productVersion": "",
+      "classification": "",
+      "platformDependency": "",
+      "capabilities": [],
+      "configurations": [],
+      "networkPlacement": "",
+      "patchingOwner": "",
+      "complianceCerts": [],
+      "requirementGroups": [],
+      "requirementImplementations": [],
+      "dataLeavesInfrastructure": null,
+      "dataResidencyCommitment": "",
+      "dpaNotes": "",
+      "vendorSLA": "",
+      "authenticationModel": "",
+      "incidentNotificationProcess": "",
+      "owner": {},
+      "definitionOwner": {},
+      "provider": {},
+      "authority": {},
+      "shape": "round-rectangle",
+      "color": "#2a6fdb",
+      "source": "catalog/shared-services/hosts/host-dale-mac-mini.yaml",
+      "tags": [],
+      "ardCategory": "",
+      "internalComponents": [],
+      "notes": {},
+      "requirements": [],
+      "implementations": [],
+      "appliesTo": {},
+      "inherits": "",
+      "scalingUnits": [],
+      "networkZones": [],
+      "sdpConnections": [],
+      "serviceGroups": [],
+      "tierVariants": [],
+      "tierId": "",
+      "purpose": "",
+      "availabilityExpectation": "",
+      "costPosture": "",
+      "complianceScope": [],
+      "parameterSurface": [],
+      "followsReferenceArchitecture": "",
+      "decisionRecords": [],
+      "affectedComponent": "",
+      "impact": "",
+      "mitigationPath": "",
+      "decisionRationale": "",
+      "relatedDecisionRecords": [],
+      "linkedObject": "",
+      "primaryObjectType": "",
+      "primaryObjectUid": "",
+      "generatedObjects": [],
+      "unresolvedQuestions": [],
+      "assumptions": [],
+      "nextSteps": [],
+      "defaultSelection": false,
+      "requirementCount": 0,
+      "hasRiskRef": false,
+      "outboundRefs": [],
+      "referencedBy": [
+        {
+          "source": "01M7GTBMQS-YYDW",
+          "path": "host"
+        },
+        {
+          "source": "5N5T1Z7SV2-44E6",
+          "path": "target"
+        }
+      ],
+      "editorSchema": {
+        "requiredFields": [
+          "schemaVersion",
+          "uid",
+          "type",
+          "name",
+          "catalogStatus",
+          "lifecycleStatus"
+        ],
+        "optionalFields": [
+          "aliases",
+          "description",
+          "version",
+          "owner",
+          "tags",
+          "serviceRole",
+          "notes",
+          "operatingSystemComponent",
+          "computePlatformComponent",
+          "internalComponents",
+          "deploymentConfigurations",
+          "provisioningModel",
+          "deployablePackage",
+          "decisionRecords",
+          "requirementImplementations"
+        ],
+        "fieldTypes": {
+          "aliases": "list",
+          "owner": "dict",
+          "tags": "list",
+          "notes": "dict",
+          "internalComponents": "list",
+          "deploymentConfigurations": "list",
+          "requirementGroups": "list",
+          "decisionRecords": "list",
+          "requirementImplementations": "list"
+        },
+        "enumFields": {
+          "serviceRole": [
+            "definition",
+            "instance"
+          ],
+          "provisioningModel": [
+            "deployable",
+            "reference-only"
+          ],
+          "catalogStatus": [
+            "stub",
+            "incomplete",
+            "complete"
+          ],
+          "lifecycleStatus": [
+            "candidate",
+            "preferred",
+            "existing-only",
+            "deprecated",
+            "retired"
+          ]
+        },
+        "enumListFields": {},
+        "collectionSchemas": {},
+        "schemaPath": "framework/schemas/host.schema.yaml"
+      },
+      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M7GVD4FN-YGN9\",\n  \"type\": \"host\",\n  \"name\": \"Dale's Mac mini (home)\",\n  \"description\": \"macOS Mac mini at Dale's home. Caddy (tls internal) reverse proxies print.dalesackrider.com, reached through Cloudflare, to print_server.py on 127.0.0.1:9123, which prints to an HP Color LaserJet Pro MFP 3301. The older GCP print-bridge also exists on this host.\",\n  \"catalogStatus\": \"stub\",\n  \"lifecycleStatus\": \"existing-only\",\n  \"provisioningModel\": \"reference-only\",\n  \"_source\": \"catalog/shared-services/hosts/host-dale-mac-mini.yaml\"\n}",
+      "existsInCatalog": true,
+      "outboundRelationships": [],
+      "inboundRelationships": [
+        {
+          "uid": "5N5T1Z7SV2-44E6",
+          "name": "Household Print Queue & Spooler Service \u2192 Dale's Mac mini (home)",
+          "label": "runs on",
+          "technology": "",
+          "direction": "",
+          "targetUid": "01M7GVD4FN-YGN9",
+          "targetName": "Dale's Mac mini (home)",
+          "capabilities": [],
+          "sourceUid": "01M7GTBMQS-YYDW",
+          "sourceName": "Household Print Queue & Spooler Service"
+        }
+      ]
+    },
     "01M15NEKT7-1SN8": {
       "id": "01M15NEKT7-1SN8",
       "uid": "01M15NEKT7-1SN8",
@@ -50989,16 +52212,191 @@ window.DRAFT_BROWSER_DATA = {
       "outboundRelationships": [],
       "inboundRelationships": []
     },
+    "01M7GVD4FN-3C7S": {
+      "id": "01M7GVD4FN-3C7S",
+      "uid": "01M7GVD4FN-3C7S",
+      "name": "Home Assistant host (hardware/OS unconfirmed)",
+      "aliases": [],
+      "type": "host",
+      "typeLabel": "Host",
+      "filterType": "host",
+      "category": "",
+      "deliveryModel": "",
+      "domain": "",
+      "description": "Host that runs the Home Assistant instance behind ha.dalesackrider.com.",
+      "version": "",
+      "catalogStatus": "stub",
+      "lifecycleStatus": "existing-only",
+      "status": "",
+      "businessContext": {},
+      "product": "",
+      "runsOn": "",
+      "subtype": "",
+      "vendor": "",
+      "productName": "",
+      "productVersion": "",
+      "classification": "",
+      "platformDependency": "",
+      "capabilities": [],
+      "configurations": [],
+      "networkPlacement": "",
+      "patchingOwner": "",
+      "complianceCerts": [],
+      "requirementGroups": [],
+      "requirementImplementations": [],
+      "dataLeavesInfrastructure": null,
+      "dataResidencyCommitment": "",
+      "dpaNotes": "",
+      "vendorSLA": "",
+      "authenticationModel": "",
+      "incidentNotificationProcess": "",
+      "owner": {},
+      "definitionOwner": {},
+      "provider": {},
+      "authority": {},
+      "shape": "round-rectangle",
+      "color": "#2a6fdb",
+      "source": "catalog/shared-services/hosts/host-home-assistant.yaml",
+      "tags": [],
+      "ardCategory": "",
+      "internalComponents": [],
+      "notes": {
+        "hardwareConfirmation": "Hardware and operating system are not yet confirmed. Do not assume this is Dale's Mac mini."
+      },
+      "requirements": [],
+      "implementations": [],
+      "appliesTo": {},
+      "inherits": "",
+      "scalingUnits": [],
+      "networkZones": [],
+      "sdpConnections": [],
+      "serviceGroups": [],
+      "tierVariants": [],
+      "tierId": "",
+      "purpose": "",
+      "availabilityExpectation": "",
+      "costPosture": "",
+      "complianceScope": [],
+      "parameterSurface": [],
+      "followsReferenceArchitecture": "",
+      "decisionRecords": [],
+      "affectedComponent": "",
+      "impact": "",
+      "mitigationPath": "",
+      "decisionRationale": "",
+      "relatedDecisionRecords": [],
+      "linkedObject": "",
+      "primaryObjectType": "",
+      "primaryObjectUid": "",
+      "generatedObjects": [],
+      "unresolvedQuestions": [],
+      "assumptions": [],
+      "nextSteps": [],
+      "defaultSelection": false,
+      "requirementCount": 0,
+      "hasRiskRef": false,
+      "outboundRefs": [],
+      "referencedBy": [
+        {
+          "source": "01M7GTBMQS-WDE3",
+          "path": "host"
+        },
+        {
+          "source": "96JSYM60JB-Q60Y",
+          "path": "target"
+        }
+      ],
+      "editorSchema": {
+        "requiredFields": [
+          "schemaVersion",
+          "uid",
+          "type",
+          "name",
+          "catalogStatus",
+          "lifecycleStatus"
+        ],
+        "optionalFields": [
+          "aliases",
+          "description",
+          "version",
+          "owner",
+          "tags",
+          "serviceRole",
+          "notes",
+          "operatingSystemComponent",
+          "computePlatformComponent",
+          "internalComponents",
+          "deploymentConfigurations",
+          "provisioningModel",
+          "deployablePackage",
+          "decisionRecords",
+          "requirementImplementations"
+        ],
+        "fieldTypes": {
+          "aliases": "list",
+          "owner": "dict",
+          "tags": "list",
+          "notes": "dict",
+          "internalComponents": "list",
+          "deploymentConfigurations": "list",
+          "requirementGroups": "list",
+          "decisionRecords": "list",
+          "requirementImplementations": "list"
+        },
+        "enumFields": {
+          "serviceRole": [
+            "definition",
+            "instance"
+          ],
+          "provisioningModel": [
+            "deployable",
+            "reference-only"
+          ],
+          "catalogStatus": [
+            "stub",
+            "incomplete",
+            "complete"
+          ],
+          "lifecycleStatus": [
+            "candidate",
+            "preferred",
+            "existing-only",
+            "deprecated",
+            "retired"
+          ]
+        },
+        "enumListFields": {},
+        "collectionSchemas": {},
+        "schemaPath": "framework/schemas/host.schema.yaml"
+      },
+      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M7GVD4FN-3C7S\",\n  \"type\": \"host\",\n  \"name\": \"Home Assistant host (hardware/OS unconfirmed)\",\n  \"description\": \"Host that runs the Home Assistant instance behind ha.dalesackrider.com.\",\n  \"catalogStatus\": \"stub\",\n  \"lifecycleStatus\": \"existing-only\",\n  \"provisioningModel\": \"reference-only\",\n  \"notes\": {\n    \"hardwareConfirmation\": \"Hardware and operating system are not yet confirmed. Do not assume this is Dale's Mac mini.\"\n  },\n  \"_source\": \"catalog/shared-services/hosts/host-home-assistant.yaml\"\n}",
+      "existsInCatalog": true,
+      "outboundRelationships": [],
+      "inboundRelationships": [
+        {
+          "uid": "96JSYM60JB-Q60Y",
+          "name": "Home Assistant IoT & Display Integration Service \u2192 Home Assistant host (hardware/OS unconfirmed)",
+          "label": "runs on",
+          "technology": "",
+          "direction": "",
+          "targetUid": "01M7GVD4FN-3C7S",
+          "targetName": "Home Assistant host (hardware/OS unconfirmed)",
+          "capabilities": [],
+          "sourceUid": "01M7GTBMQS-WDE3",
+          "sourceName": "Home Assistant IoT & Display Integration Service"
+        }
+      ]
+    },
     "01M7GTBMQS-WDE3": {
       "id": "01M7GTBMQS-WDE3",
       "uid": "01M7GTBMQS-WDE3",
       "name": "Home Assistant IoT & Display Integration Service",
       "aliases": [],
       "type": "runtime_service",
-      "typeLabel": "RuntimeService / Appliance",
+      "typeLabel": "RuntimeService / Self Managed",
       "filterType": "runtime_service",
       "category": "",
-      "deliveryModel": "appliance",
+      "deliveryModel": "self-managed",
       "domain": "",
       "description": "IoT integration gateway service handling e-ink digital photo frames (ha-digital-frames, dash480), openHASP touch panels, and Home Assistant telemetry (ha.dalesackrider.com).",
       "version": "",
@@ -51041,7 +52439,20 @@ window.DRAFT_BROWSER_DATA = {
       "source": "catalog/shared-services/integration-services/integration-service-home-assistant.yaml",
       "tags": [],
       "ardCategory": "",
-      "internalComponents": [],
+      "internalComponents": [
+        {
+          "ref": "01M7GVD4FN-3C7S",
+          "role": "host",
+          "configuration": "",
+          "notes": ""
+        },
+        {
+          "ref": "01M7GVD4FN-F0DT",
+          "role": "function",
+          "configuration": "",
+          "notes": ""
+        }
+      ],
       "notes": {},
       "requirements": [],
       "implementations": [],
@@ -51075,8 +52486,22 @@ window.DRAFT_BROWSER_DATA = {
       "defaultSelection": false,
       "requirementCount": 0,
       "hasRiskRef": false,
-      "outboundRefs": [],
-      "referencedBy": [],
+      "outboundRefs": [
+        {
+          "target": "01M7GVD4FN-3C7S",
+          "path": "host"
+        },
+        {
+          "target": "01M7GVD4FN-F0DT",
+          "path": "primaryTechnologyComponent"
+        }
+      ],
+      "referencedBy": [
+        {
+          "source": "96JSYM60JB-Q60Y",
+          "path": "source"
+        }
+      ],
       "editorSchema": {
         "requiredFields": [
           "schemaVersion",
@@ -51184,9 +52609,20 @@ window.DRAFT_BROWSER_DATA = {
         },
         "schemaPath": "framework/schemas/runtime-service.schema.yaml"
       },
-      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M7GTBMQS-WDE3\",\n  \"type\": \"runtime_service\",\n  \"name\": \"Home Assistant IoT & Display Integration Service\",\n  \"description\": \"IoT integration gateway service handling e-ink digital photo frames (ha-digital-frames, dash480), openHASP touch panels, and Home Assistant telemetry (ha.dalesackrider.com).\",\n  \"deliveryModel\": \"appliance\",\n  \"catalogStatus\": \"incomplete\",\n  \"lifecycleStatus\": \"preferred\",\n  \"vendor\": \"Home Assistant / Custom\",\n  \"productName\": \"Home Assistant Core & Display Gateway\",\n  \"productVersion\": \"2026.x\",\n  \"integrationFunction\": \"Smart home state synchronization, REST/WebSocket API gateway, e-paper image conversion, and touch display control.\",\n  \"provisioningModel\": \"reference-only\",\n  \"protocols\": [\n    \"HTTPS\",\n    \"WebSockets\",\n    \"MQTT\"\n  ],\n  \"owner\": {\n    \"team\": \"personal-automation\",\n    \"contact\": \"dale.sackrider+donna@gmail.com\",\n    \"resourceOwner\": \"Donna\",\n    \"serviceProviderRole\": \"Integration Domain Service Provider\"\n  },\n  \"vendorGovernance\": {\n    \"dataLeavesInfrastructure\": false,\n    \"dataResidencyCommitment\": \"Local LAN processing with encrypted Cloudflare tunnel edge ingress\",\n    \"vendorSLA\": \"Best effort household availability\",\n    \"acceptableUsePolicy\": \"Authorized IoT gateway for digital frame image sync, touch panel dashboards, and smart home automation.\"\n  },\n  \"_source\": \"catalog/shared-services/integration-services/integration-service-home-assistant.yaml\"\n}",
+      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M7GTBMQS-WDE3\",\n  \"type\": \"runtime_service\",\n  \"name\": \"Home Assistant IoT & Display Integration Service\",\n  \"description\": \"IoT integration gateway service handling e-ink digital photo frames (ha-digital-frames, dash480), openHASP touch panels, and Home Assistant telemetry (ha.dalesackrider.com).\",\n  \"deliveryModel\": \"self-managed\",\n  \"host\": \"01M7GVD4FN-3C7S\",\n  \"primaryTechnologyComponent\": \"01M7GVD4FN-F0DT\",\n  \"catalogStatus\": \"incomplete\",\n  \"lifecycleStatus\": \"preferred\",\n  \"vendor\": \"Home Assistant / Custom\",\n  \"productName\": \"Home Assistant Core & Display Gateway\",\n  \"productVersion\": \"2026.x\",\n  \"integrationFunction\": \"Smart home state synchronization, REST/WebSocket API gateway, e-paper image conversion, and touch display control.\",\n  \"provisioningModel\": \"reference-only\",\n  \"protocols\": [\n    \"HTTPS\",\n    \"WebSockets\",\n    \"MQTT\"\n  ],\n  \"owner\": {\n    \"team\": \"personal-automation\",\n    \"contact\": \"dale.sackrider+donna@gmail.com\",\n    \"resourceOwner\": \"Donna\",\n    \"serviceProviderRole\": \"Integration Domain Service Provider\"\n  },\n  \"vendorGovernance\": {\n    \"dataLeavesInfrastructure\": false,\n    \"dataResidencyCommitment\": \"Local LAN processing with encrypted Cloudflare tunnel edge ingress\",\n    \"vendorSLA\": \"Best effort household availability\",\n    \"acceptableUsePolicy\": \"Authorized IoT gateway for digital frame image sync, touch panel dashboards, and smart home automation.\"\n  },\n  \"_source\": \"catalog/shared-services/integration-services/integration-service-home-assistant.yaml\"\n}",
       "existsInCatalog": true,
-      "outboundRelationships": [],
+      "outboundRelationships": [
+        {
+          "uid": "96JSYM60JB-Q60Y",
+          "name": "Home Assistant IoT & Display Integration Service \u2192 Home Assistant host (hardware/OS unconfirmed)",
+          "label": "runs on",
+          "technology": "",
+          "direction": "",
+          "targetUid": "01M7GVD4FN-3C7S",
+          "targetName": "Home Assistant host (hardware/OS unconfirmed)",
+          "capabilities": []
+        }
+      ],
       "inboundRelationships": []
     },
     "01M7GTBMQS-6BF5": {
@@ -52662,6 +54098,157 @@ window.DRAFT_BROWSER_DATA = {
       "outboundRelationships": [],
       "inboundRelationships": []
     },
+    "01M7GVD4FN-F0DT": {
+      "id": "01M7GVD4FN-F0DT",
+      "uid": "01M7GVD4FN-F0DT",
+      "name": "Home Assistant Core",
+      "aliases": [],
+      "type": "technology_component",
+      "typeLabel": "TechnologyComponent / Software",
+      "filterType": "technology_component",
+      "category": "",
+      "deliveryModel": "",
+      "domain": "",
+      "description": "",
+      "version": "",
+      "catalogStatus": "stub",
+      "lifecycleStatus": "",
+      "status": "",
+      "businessContext": {},
+      "product": "",
+      "runsOn": "",
+      "subtype": "",
+      "vendor": "Home Assistant",
+      "productName": "Home Assistant Core",
+      "productVersion": "2026.x",
+      "classification": "software",
+      "platformDependency": "",
+      "capabilities": [],
+      "configurations": [],
+      "networkPlacement": "",
+      "patchingOwner": "",
+      "complianceCerts": [],
+      "requirementGroups": [],
+      "requirementImplementations": [],
+      "dataLeavesInfrastructure": null,
+      "dataResidencyCommitment": "",
+      "dpaNotes": "",
+      "vendorSLA": "",
+      "authenticationModel": "",
+      "incidentNotificationProcess": "",
+      "owner": {},
+      "definitionOwner": {},
+      "provider": {},
+      "authority": {},
+      "shape": "ellipse",
+      "color": "#64748b",
+      "source": "catalog/shared-services/technology-components/tc-home-assistant-core.yaml",
+      "tags": [],
+      "ardCategory": "",
+      "internalComponents": [],
+      "notes": {},
+      "requirements": [],
+      "implementations": [],
+      "appliesTo": {},
+      "inherits": "",
+      "scalingUnits": [],
+      "networkZones": [],
+      "sdpConnections": [],
+      "serviceGroups": [],
+      "tierVariants": [],
+      "tierId": "",
+      "purpose": "",
+      "availabilityExpectation": "",
+      "costPosture": "",
+      "complianceScope": [],
+      "parameterSurface": [],
+      "followsReferenceArchitecture": "",
+      "decisionRecords": [],
+      "affectedComponent": "",
+      "impact": "",
+      "mitigationPath": "",
+      "decisionRationale": "",
+      "relatedDecisionRecords": [],
+      "linkedObject": "",
+      "primaryObjectType": "",
+      "primaryObjectUid": "",
+      "generatedObjects": [],
+      "unresolvedQuestions": [],
+      "assumptions": [],
+      "nextSteps": [],
+      "defaultSelection": false,
+      "requirementCount": 0,
+      "hasRiskRef": false,
+      "outboundRefs": [],
+      "referencedBy": [
+        {
+          "source": "01M7GTBMQS-WDE3",
+          "path": "primaryTechnologyComponent"
+        }
+      ],
+      "editorSchema": {
+        "requiredFields": [
+          "schemaVersion",
+          "uid",
+          "type",
+          "name",
+          "vendor",
+          "productName",
+          "productVersion",
+          "classification",
+          "catalogStatus"
+        ],
+        "optionalFields": [
+          "aliases",
+          "description",
+          "version",
+          "owner",
+          "tags",
+          "subtype",
+          "vendorLifecycle",
+          "platformDependency",
+          "capabilities",
+          "configurations",
+          "networkPlacement",
+          "patchingOwner",
+          "complianceCerts",
+          "controlReferences",
+          "notes"
+        ],
+        "fieldTypes": {
+          "aliases": "list",
+          "owner": "dict",
+          "tags": "list",
+          "vendorLifecycle": "dict",
+          "capabilities": "list",
+          "configurations": "list",
+          "complianceCerts": "list",
+          "controlReferences": "list"
+        },
+        "enumFields": {
+          "catalogStatus": [
+            "stub",
+            "incomplete",
+            "complete"
+          ],
+          "classification": [
+            "operating-system",
+            "compute-platform",
+            "software",
+            "agent"
+          ]
+        },
+        "enumListFields": {},
+        "collectionSchemas": {
+          "configurations": "configuration"
+        },
+        "schemaPath": "framework/schemas/technology-component.schema.yaml"
+      },
+      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M7GVD4FN-F0DT\",\n  \"type\": \"technology_component\",\n  \"name\": \"Home Assistant Core\",\n  \"vendor\": \"Home Assistant\",\n  \"productName\": \"Home Assistant Core\",\n  \"productVersion\": \"2026.x\",\n  \"classification\": \"software\",\n  \"catalogStatus\": \"stub\",\n  \"_source\": \"catalog/shared-services/technology-components/tc-home-assistant-core.yaml\"\n}",
+      "existsInCatalog": true,
+      "outboundRelationships": [],
+      "inboundRelationships": []
+    },
     "01M7GTBMQT-1190": {
       "id": "01M7GTBMQT-1190",
       "uid": "01M7GTBMQT-1190",
@@ -52825,6 +54412,443 @@ window.DRAFT_BROWSER_DATA = {
       "existsInCatalog": true,
       "outboundRelationships": [],
       "inboundRelationships": []
+    },
+    "01M7GVD4FN-YCP8": {
+      "id": "01M7GVD4FN-YCP8",
+      "uid": "01M7GVD4FN-YCP8",
+      "name": "Python",
+      "aliases": [],
+      "type": "technology_component",
+      "typeLabel": "TechnologyComponent / Software",
+      "filterType": "technology_component",
+      "category": "",
+      "deliveryModel": "",
+      "domain": "",
+      "description": "Python language runtime. Runtime for print_server.py on Dale's Mac mini (Household Print Queue & Spooler Service).",
+      "version": "",
+      "catalogStatus": "stub",
+      "lifecycleStatus": "",
+      "status": "",
+      "businessContext": {},
+      "product": "",
+      "runsOn": "",
+      "subtype": "",
+      "vendor": "Python Software Foundation",
+      "productName": "Python",
+      "productVersion": "3.x",
+      "classification": "software",
+      "platformDependency": "",
+      "capabilities": [],
+      "configurations": [],
+      "networkPlacement": "",
+      "patchingOwner": "",
+      "complianceCerts": [],
+      "requirementGroups": [],
+      "requirementImplementations": [],
+      "dataLeavesInfrastructure": null,
+      "dataResidencyCommitment": "",
+      "dpaNotes": "",
+      "vendorSLA": "",
+      "authenticationModel": "",
+      "incidentNotificationProcess": "",
+      "owner": {},
+      "definitionOwner": {},
+      "provider": {},
+      "authority": {},
+      "shape": "ellipse",
+      "color": "#64748b",
+      "source": "catalog/shared-services/technology-components/tc-python.yaml",
+      "tags": [],
+      "ardCategory": "",
+      "internalComponents": [],
+      "notes": {},
+      "requirements": [],
+      "implementations": [],
+      "appliesTo": {},
+      "inherits": "",
+      "scalingUnits": [],
+      "networkZones": [],
+      "sdpConnections": [],
+      "serviceGroups": [],
+      "tierVariants": [],
+      "tierId": "",
+      "purpose": "",
+      "availabilityExpectation": "",
+      "costPosture": "",
+      "complianceScope": [],
+      "parameterSurface": [],
+      "followsReferenceArchitecture": "",
+      "decisionRecords": [],
+      "affectedComponent": "",
+      "impact": "",
+      "mitigationPath": "",
+      "decisionRationale": "",
+      "relatedDecisionRecords": [],
+      "linkedObject": "",
+      "primaryObjectType": "",
+      "primaryObjectUid": "",
+      "generatedObjects": [],
+      "unresolvedQuestions": [],
+      "assumptions": [],
+      "nextSteps": [],
+      "defaultSelection": false,
+      "requirementCount": 0,
+      "hasRiskRef": false,
+      "outboundRefs": [],
+      "referencedBy": [
+        {
+          "source": "01M7GTBMQS-YYDW",
+          "path": "primaryTechnologyComponent"
+        }
+      ],
+      "editorSchema": {
+        "requiredFields": [
+          "schemaVersion",
+          "uid",
+          "type",
+          "name",
+          "vendor",
+          "productName",
+          "productVersion",
+          "classification",
+          "catalogStatus"
+        ],
+        "optionalFields": [
+          "aliases",
+          "description",
+          "version",
+          "owner",
+          "tags",
+          "subtype",
+          "vendorLifecycle",
+          "platformDependency",
+          "capabilities",
+          "configurations",
+          "networkPlacement",
+          "patchingOwner",
+          "complianceCerts",
+          "controlReferences",
+          "notes"
+        ],
+        "fieldTypes": {
+          "aliases": "list",
+          "owner": "dict",
+          "tags": "list",
+          "vendorLifecycle": "dict",
+          "capabilities": "list",
+          "configurations": "list",
+          "complianceCerts": "list",
+          "controlReferences": "list"
+        },
+        "enumFields": {
+          "catalogStatus": [
+            "stub",
+            "incomplete",
+            "complete"
+          ],
+          "classification": [
+            "operating-system",
+            "compute-platform",
+            "software",
+            "agent"
+          ]
+        },
+        "enumListFields": {},
+        "collectionSchemas": {
+          "configurations": "configuration"
+        },
+        "schemaPath": "framework/schemas/technology-component.schema.yaml"
+      },
+      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M7GVD4FN-YCP8\",\n  \"type\": \"technology_component\",\n  \"name\": \"Python\",\n  \"description\": \"Python language runtime. Runtime for print_server.py on Dale's Mac mini (Household Print Queue & Spooler Service).\",\n  \"vendor\": \"Python Software Foundation\",\n  \"productName\": \"Python\",\n  \"productVersion\": \"3.x\",\n  \"classification\": \"software\",\n  \"catalogStatus\": \"stub\",\n  \"_source\": \"catalog/shared-services/technology-components/tc-python.yaml\"\n}",
+      "existsInCatalog": true,
+      "outboundRelationships": [],
+      "inboundRelationships": []
+    },
+    "5N5T1Z7SV2-44E6": {
+      "id": "5N5T1Z7SV2-44E6",
+      "uid": "5N5T1Z7SV2-44E6",
+      "name": "Household Print Queue & Spooler Service \u2192 Dale's Mac mini (home)",
+      "aliases": [],
+      "type": "relationship",
+      "typeLabel": "Relationship",
+      "filterType": "relationship",
+      "category": "",
+      "deliveryModel": "",
+      "domain": "",
+      "description": "",
+      "version": "",
+      "catalogStatus": "complete",
+      "lifecycleStatus": "unknown",
+      "status": "",
+      "businessContext": {},
+      "product": "",
+      "runsOn": "",
+      "subtype": "",
+      "vendor": "",
+      "productName": "",
+      "productVersion": "",
+      "classification": "",
+      "platformDependency": "",
+      "capabilities": [],
+      "configurations": [],
+      "networkPlacement": "",
+      "patchingOwner": "",
+      "complianceCerts": [],
+      "requirementGroups": [],
+      "requirementImplementations": [],
+      "dataLeavesInfrastructure": null,
+      "dataResidencyCommitment": "",
+      "dpaNotes": "",
+      "vendorSLA": "",
+      "authenticationModel": "",
+      "incidentNotificationProcess": "",
+      "owner": {},
+      "definitionOwner": {},
+      "provider": {},
+      "authority": {},
+      "shape": "round-rectangle",
+      "color": "#7a6e60",
+      "source": "derived from catalog/shared-services/appliance-services/print-queue-service-home-print.yaml [host]",
+      "tags": [],
+      "ardCategory": "",
+      "internalComponents": [],
+      "notes": "Derived from host field",
+      "requirements": [],
+      "implementations": [],
+      "appliesTo": {},
+      "inherits": "",
+      "scalingUnits": [],
+      "networkZones": [],
+      "sdpConnections": [],
+      "serviceGroups": [],
+      "tierVariants": [],
+      "tierId": "",
+      "purpose": "",
+      "availabilityExpectation": "",
+      "costPosture": "",
+      "complianceScope": [],
+      "parameterSurface": [],
+      "followsReferenceArchitecture": "",
+      "decisionRecords": [],
+      "affectedComponent": "",
+      "impact": "",
+      "mitigationPath": "",
+      "decisionRationale": "",
+      "relatedDecisionRecords": [],
+      "linkedObject": "",
+      "primaryObjectType": "",
+      "primaryObjectUid": "",
+      "generatedObjects": [],
+      "unresolvedQuestions": [],
+      "assumptions": [],
+      "nextSteps": [],
+      "defaultSelection": false,
+      "requirementCount": 0,
+      "hasRiskRef": false,
+      "outboundRefs": [
+        {
+          "target": "01M7GTBMQS-YYDW",
+          "path": "source"
+        },
+        {
+          "target": "01M7GVD4FN-YGN9",
+          "path": "target"
+        }
+      ],
+      "referencedBy": [],
+      "editorSchema": {
+        "requiredFields": [
+          "schemaVersion",
+          "uid",
+          "type",
+          "name",
+          "source",
+          "label",
+          "catalogStatus"
+        ],
+        "optionalFields": [
+          "description",
+          "target",
+          "externalTarget",
+          "technology",
+          "direction",
+          "flow",
+          "capabilities",
+          "notes",
+          "tags"
+        ],
+        "fieldTypes": {
+          "tags": "list",
+          "capabilities": "list"
+        },
+        "enumFields": {
+          "catalogStatus": [
+            "stub",
+            "incomplete",
+            "complete"
+          ],
+          "direction": [
+            "synchronous",
+            "asynchronous",
+            "event"
+          ],
+          "flow": [
+            "outbound",
+            "inbound",
+            "bidirectional"
+          ]
+        },
+        "enumListFields": {},
+        "collectionSchemas": {},
+        "schemaPath": "framework/schemas/relationship.schema.yaml"
+      },
+      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"5N5T1Z7SV2-44E6\",\n  \"type\": \"relationship\",\n  \"name\": \"Household Print Queue & Spooler Service \\u2192 Dale's Mac mini (home)\",\n  \"source\": \"01M7GTBMQS-YYDW\",\n  \"target\": \"01M7GVD4FN-YGN9\",\n  \"label\": \"runs on\",\n  \"notes\": \"Derived from host field\",\n  \"catalogStatus\": \"complete\",\n  \"_source\": \"derived from catalog/shared-services/appliance-services/print-queue-service-home-print.yaml [host]\",\n  \"_derived\": true\n}",
+      "existsInCatalog": true,
+      "outboundRelationships": [],
+      "inboundRelationships": []
+    },
+    "96JSYM60JB-Q60Y": {
+      "id": "96JSYM60JB-Q60Y",
+      "uid": "96JSYM60JB-Q60Y",
+      "name": "Home Assistant IoT & Display Integration Service \u2192 Home Assistant host (hardware/OS unconfirmed)",
+      "aliases": [],
+      "type": "relationship",
+      "typeLabel": "Relationship",
+      "filterType": "relationship",
+      "category": "",
+      "deliveryModel": "",
+      "domain": "",
+      "description": "",
+      "version": "",
+      "catalogStatus": "complete",
+      "lifecycleStatus": "unknown",
+      "status": "",
+      "businessContext": {},
+      "product": "",
+      "runsOn": "",
+      "subtype": "",
+      "vendor": "",
+      "productName": "",
+      "productVersion": "",
+      "classification": "",
+      "platformDependency": "",
+      "capabilities": [],
+      "configurations": [],
+      "networkPlacement": "",
+      "patchingOwner": "",
+      "complianceCerts": [],
+      "requirementGroups": [],
+      "requirementImplementations": [],
+      "dataLeavesInfrastructure": null,
+      "dataResidencyCommitment": "",
+      "dpaNotes": "",
+      "vendorSLA": "",
+      "authenticationModel": "",
+      "incidentNotificationProcess": "",
+      "owner": {},
+      "definitionOwner": {},
+      "provider": {},
+      "authority": {},
+      "shape": "round-rectangle",
+      "color": "#7a6e60",
+      "source": "derived from catalog/shared-services/integration-services/integration-service-home-assistant.yaml [host]",
+      "tags": [],
+      "ardCategory": "",
+      "internalComponents": [],
+      "notes": "Derived from host field",
+      "requirements": [],
+      "implementations": [],
+      "appliesTo": {},
+      "inherits": "",
+      "scalingUnits": [],
+      "networkZones": [],
+      "sdpConnections": [],
+      "serviceGroups": [],
+      "tierVariants": [],
+      "tierId": "",
+      "purpose": "",
+      "availabilityExpectation": "",
+      "costPosture": "",
+      "complianceScope": [],
+      "parameterSurface": [],
+      "followsReferenceArchitecture": "",
+      "decisionRecords": [],
+      "affectedComponent": "",
+      "impact": "",
+      "mitigationPath": "",
+      "decisionRationale": "",
+      "relatedDecisionRecords": [],
+      "linkedObject": "",
+      "primaryObjectType": "",
+      "primaryObjectUid": "",
+      "generatedObjects": [],
+      "unresolvedQuestions": [],
+      "assumptions": [],
+      "nextSteps": [],
+      "defaultSelection": false,
+      "requirementCount": 0,
+      "hasRiskRef": false,
+      "outboundRefs": [
+        {
+          "target": "01M7GTBMQS-WDE3",
+          "path": "source"
+        },
+        {
+          "target": "01M7GVD4FN-3C7S",
+          "path": "target"
+        }
+      ],
+      "referencedBy": [],
+      "editorSchema": {
+        "requiredFields": [
+          "schemaVersion",
+          "uid",
+          "type",
+          "name",
+          "source",
+          "label",
+          "catalogStatus"
+        ],
+        "optionalFields": [
+          "description",
+          "target",
+          "externalTarget",
+          "technology",
+          "direction",
+          "flow",
+          "capabilities",
+          "notes",
+          "tags"
+        ],
+        "fieldTypes": {
+          "tags": "list",
+          "capabilities": "list"
+        },
+        "enumFields": {
+          "catalogStatus": [
+            "stub",
+            "incomplete",
+            "complete"
+          ],
+          "direction": [
+            "synchronous",
+            "asynchronous",
+            "event"
+          ],
+          "flow": [
+            "outbound",
+            "inbound",
+            "bidirectional"
+          ]
+        },
+        "enumListFields": {},
+        "collectionSchemas": {},
+        "schemaPath": "framework/schemas/relationship.schema.yaml"
+      },
+      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"96JSYM60JB-Q60Y\",\n  \"type\": \"relationship\",\n  \"name\": \"Home Assistant IoT & Display Integration Service \\u2192 Home Assistant host (hardware/OS unconfirmed)\",\n  \"source\": \"01M7GTBMQS-WDE3\",\n  \"target\": \"01M7GVD4FN-3C7S\",\n  \"label\": \"runs on\",\n  \"notes\": \"Derived from host field\",\n  \"catalogStatus\": \"complete\",\n  \"_source\": \"derived from catalog/shared-services/integration-services/integration-service-home-assistant.yaml [host]\",\n  \"_derived\": true\n}",
+      "existsInCatalog": true,
+      "outboundRelationships": [],
+      "inboundRelationships": []
     }
   },
   "lifecycleColors": {
@@ -52846,6 +54870,7 @@ window.DRAFT_BROWSER_DATA = {
     "product_component",
     "product_registration",
     "reference_architecture",
+    "relationship",
     "requirement_group",
     "runtime_service",
     "software_deployment_pattern",
@@ -52854,6 +54879,7 @@ window.DRAFT_BROWSER_DATA = {
   ],
   "lifecycleValues": [
     "preferred",
+    "existing-only",
     "candidate"
   ],
   "referencedBy": {
@@ -53757,6 +55783,38 @@ window.DRAFT_BROWSER_DATA = {
         "path": "decisionRecords[2].ref"
       }
     ],
+    "01M7GVD4FN-YGN9": [
+      {
+        "source": "01M7GTBMQS-YYDW",
+        "path": "host"
+      },
+      {
+        "source": "5N5T1Z7SV2-44E6",
+        "path": "target"
+      }
+    ],
+    "01M7GVD4FN-YCP8": [
+      {
+        "source": "01M7GTBMQS-YYDW",
+        "path": "primaryTechnologyComponent"
+      }
+    ],
+    "01M7GVD4FN-3C7S": [
+      {
+        "source": "01M7GTBMQS-WDE3",
+        "path": "host"
+      },
+      {
+        "source": "96JSYM60JB-Q60Y",
+        "path": "target"
+      }
+    ],
+    "01M7GVD4FN-F0DT": [
+      {
+        "source": "01M7GTBMQS-WDE3",
+        "path": "primaryTechnologyComponent"
+      }
+    ],
     "01M7GTBMQT-H66V": [
       {
         "source": "01M7GTBMQS-YRGF",
@@ -53767,6 +55825,18 @@ window.DRAFT_BROWSER_DATA = {
       {
         "source": "01M7GTBMQT-1190",
         "path": "capabilities[0]"
+      }
+    ],
+    "01M7GTBMQS-YYDW": [
+      {
+        "source": "5N5T1Z7SV2-44E6",
+        "path": "source"
+      }
+    ],
+    "01M7GTBMQS-WDE3": [
+      {
+        "source": "96JSYM60JB-Q60Y",
+        "path": "source"
       }
     ]
   },
@@ -54251,11 +56321,25 @@ window.DRAFT_BROWSER_DATA = {
         "description": "Strategic domain covering all aspects of software testing, quality assurance, and release gates.\n"
       },
       {
+        "uid": "01M7GVD4FN-YGN9",
+        "name": "Dale's Mac mini (home)",
+        "type": "host",
+        "catalogStatus": "stub",
+        "description": "macOS Mac mini at Dale's home. Caddy (tls internal) reverse proxies print.dalesackrider.com, reached through Cloudflare, to print_server.py on 127.0.0.1:9123, which prints to an HP Color LaserJet Pro MFP 3301. The older GCP print-bridge also exists on this host."
+      },
+      {
         "uid": "01M162FHHS-3STQ",
         "name": "GitHub Pages Static Web Game Host",
         "type": "host",
         "catalogStatus": "complete",
         "description": "Managed static hosting edge on GitHub Pages for hosting client-side HTML5/JS canvas games and UAT web apps."
+      },
+      {
+        "uid": "01M7GVD4FN-3C7S",
+        "name": "Home Assistant host (hardware/OS unconfirmed)",
+        "type": "host",
+        "catalogStatus": "stub",
+        "description": "Host that runs the Home Assistant instance behind ha.dalesackrider.com."
       },
       {
         "uid": "01M15NEKT7-1SN8",
@@ -54391,6 +56475,24 @@ window.DRAFT_BROWSER_DATA = {
         "type": "reference_architecture",
         "catalogStatus": "complete",
         "description": "Deployment pattern for simple applications where a client or static presentation layer talks directly to a managed data service without a separately operated application runtime tier. Use this for static sites, thick clients, reporting front ends, or low-code applications whose business logic is primarily in the client and managed data platform."
+      },
+      {
+        "uid": "96JSYM60JB-Q60Y",
+        "name": "Home Assistant IoT & Display Integration Service \u2192 Home Assistant host (hardware/OS unconfirmed)",
+        "type": "relationship",
+        "catalogStatus": "complete",
+        "source": "01M7GTBMQS-WDE3",
+        "target": "01M7GVD4FN-3C7S",
+        "label": "runs on"
+      },
+      {
+        "uid": "5N5T1Z7SV2-44E6",
+        "name": "Household Print Queue & Spooler Service \u2192 Dale's Mac mini (home)",
+        "type": "relationship",
+        "catalogStatus": "complete",
+        "source": "01M7GTBMQS-YYDW",
+        "target": "01M7GVD4FN-YGN9",
+        "label": "runs on"
       },
       {
         "uid": "01KTWS3D6T-NB0E",
@@ -54645,11 +56747,24 @@ window.DRAFT_BROWSER_DATA = {
         "description": "Secure, managed storage system for API keys, passwords, certificates, and other secret data  in Google Cloud Platform.\n"
       },
       {
+        "uid": "01M7GVD4FN-F0DT",
+        "name": "Home Assistant Core",
+        "type": "technology_component",
+        "catalogStatus": "stub"
+      },
+      {
         "uid": "01M7GTBMQT-1190",
         "name": "LLM Inference APIs (OpenAI / Anthropic)",
         "type": "technology_component",
         "catalogStatus": "incomplete",
         "description": "Managed frontier Large Language Model inference endpoints (OpenAI GPT-4o, Anthropic Claude 3.5 Sonnet)  accessed via HTTPS / MCP gateways for AI Agent execution.\n"
+      },
+      {
+        "uid": "01M7GVD4FN-YCP8",
+        "name": "Python",
+        "type": "technology_component",
+        "catalogStatus": "stub",
+        "description": "Python language runtime. Runtime for print_server.py on Dale's Mac mini (Household Print Queue & Spooler Service)."
       },
       {
         "uid": "01KS7ZZ1C5-1PFR",
@@ -55767,5 +57882,24 @@ window.DRAFT_BROWSER_DATA = {
   "repoUrl": "https://github.com/BeerCanLabs/skippys-drafting-table",
   "catalogName": "BeerCanLabs/skippys-drafting-table",
   "logoDataUri": "",
-  "topologyEdges": []
+  "topologyEdges": [
+    {
+      "id": "5N5T1Z7SV2-44E6",
+      "source": "01M7GTBMQS-YYDW",
+      "target": "01M7GVD4FN-YGN9",
+      "label": "runs on",
+      "technology": "",
+      "direction": "",
+      "name": "Household Print Queue & Spooler Service \u2192 Dale's Mac mini (home)"
+    },
+    {
+      "id": "96JSYM60JB-Q60Y",
+      "source": "01M7GTBMQS-WDE3",
+      "target": "01M7GVD4FN-3C7S",
+      "label": "runs on",
+      "technology": "",
+      "direction": "",
+      "name": "Home Assistant IoT & Display Integration Service \u2192 Home Assistant host (hardware/OS unconfirmed)"
+    }
+  ]
 };
