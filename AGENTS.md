@@ -115,6 +115,15 @@ When catalog or configuration content changes, regenerate the browser:
 python3 .draft/framework/tools/generate_browser.py --workspace . --output docs/index.html
 ```
 
+## Local additions
+
+BeerCanLabs-specific material lives in `local/`, outside the vendored framework:
+
+- [local/docs/MATURITY.md](local/docs/MATURITY.md): engineering maturity rules and pre-PR checklist.
+- [local/docs/KPF.md](local/docs/KPF.md): Key Product Functionalities and test mappings.
+- [local/skills/](local/skills/): local skills (for example `switch-game-architect`, `draftsman-engineering-maturity`).
+- [local/README.md](local/README.md): local tools, docs, and the local deviations in `.github/workflows/draft-framework-update.yml`.
+
 <!-- DRAFT-SKILLS:BEGIN generated: true source_sha256: 1cd83316ed6e706d2d6194ad3a9bcd94bd0526464f567bb673087870c024d444 -->
 ## DRAFT skills
 

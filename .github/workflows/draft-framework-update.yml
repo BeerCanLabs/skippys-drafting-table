@@ -128,20 +128,13 @@ jobs:
               return sorted(candidates)[-1][1]
 
           def latest_target_ref() -> str:
+              # Local deviation: automatic runs (schedule / repository_dispatch with no
+              # target_ref) only ever move to the newest released semver tag. Untagged
+              # upstream main is never pulled in automatically; name it explicitly via
+              # workflow_dispatch target_ref if you want it.
               tag = latest_tag()
               if tag == "main":
-                  return "main"
-              parsed_tag = semver(tag)
-              main_repo = clone_framework("main")
-              try:
-                  manifest = read_yaml(main_repo / "draft-framework.yaml")
-                  main_version = str(manifest.get("version") or "")
-                  parsed_main = semver(main_version)
-              finally:
-                  shutil.rmtree(main_repo, ignore_errors=True)
-              if parsed_main and parsed_tag and parsed_main > parsed_tag:
-                  print(f"Latest visible tag is {tag}, but main reports DRAFT Framework {main_version}; using main.")
-                  return "main"
+                  raise SystemExit("No vX.Y.Z release tag found upstream; automatic runs only follow release tags. Run manually with target_ref to pick a branch or commit.")
               return tag
 
           def canonical_target_ref(value: str) -> str:
@@ -175,6 +168,8 @@ jobs:
               return temp_dir
 
           def vendored_text(text: str) -> str:
+              protected_vendor_root = "__DRAFT_VENDOR_FRAMEWORK_ROOT__"
+              text = text.replace(".draft/framework", protected_vendor_root)
               replacements = {
                   "framework/browser/": "browser/",
                   "framework/commands/": "commands/",
@@ -203,7 +198,7 @@ jobs:
               }
               for old, new in replacements.items():
                   text = text.replace(old, new)
-              return text
+              return text.replace(protected_vendor_root, ".draft/framework")
 
           def release_url_for(source_url: str, version: str, target_ref: str) -> str:
               cleaned = source_url.strip().removesuffix(".git")
@@ -372,17 +367,21 @@ jobs:
 
       - name: Commit refreshed framework
         if: steps.refresh.outputs.update_needed == 'true'
+        env:
+          TARGET_VERSION: ${{ steps.refresh.outputs.target_version }}
         run: |
           git add .draft/framework .draft/framework.lock .draft/validation-baseline.yaml docs/assets/draft-browser.css docs/assets/draft-browser.js docs/index.html .claude AGENTS.md || true
           if git diff --cached --quiet; then
             echo "No framework changes to commit."
           else
-            git commit -m "Update DRAFT framework to v${{ steps.refresh.outputs.target_version }}"
+            git commit -m "Update DRAFT framework to v${TARGET_VERSION}"
           fi
 
       - name: Push update branch
         if: steps.refresh.outputs.update_needed == 'true'
-        run: git push --force-with-lease origin "${{ steps.refresh.outputs.branch }}"
+        env:
+          UPDATE_BRANCH: ${{ steps.refresh.outputs.branch }}
+        run: git push --force-with-lease origin "${UPDATE_BRANCH}"
 
       - name: Open or update pull request
         if: steps.refresh.outputs.update_needed == 'true'
@@ -390,10 +389,16 @@ jobs:
           GH_TOKEN: ${{ github.token }}
           VALIDATION_STATUS: ${{ steps.validate.outputs.status }}
           VALIDATION_EXIT_CODE: ${{ steps.validate.outputs.exit_code }}
+          UPDATE_BRANCH: ${{ steps.refresh.outputs.branch }}
+          TARGET_VERSION: ${{ steps.refresh.outputs.target_version }}
+          RELEASE_URL: ${{ steps.refresh.outputs.release_url }}
+          CURRENT_VERSION: ${{ steps.refresh.outputs.current_version }}
+          TARGET_REF: ${{ steps.refresh.outputs.target_ref }}
+          TARGET_COMMIT: ${{ steps.refresh.outputs.target_commit }}
         run: |
-          branch="${{ steps.refresh.outputs.branch }}"
-          target_version="${{ steps.refresh.outputs.target_version }}"
-          release_url="${{ steps.refresh.outputs.release_url }}"
+          branch="${UPDATE_BRANCH}"
+          target_version="${TARGET_VERSION}"
+          release_url="${RELEASE_URL}"
 
           if [ "$VALIDATION_STATUS" = "success" ]; then
             title="Update DRAFT framework to v${target_version}"
@@ -406,10 +411,10 @@ jobs:
           {
             echo "$summary"
             echo
-            echo "- Current DRAFT version: ${{ steps.refresh.outputs.current_version }}"
+            echo "- Current DRAFT version: ${CURRENT_VERSION}"
             echo "- Target DRAFT version: ${target_version}"
-            echo "- Target ref: ${{ steps.refresh.outputs.target_ref }}"
-            echo "- Target commit: ${{ steps.refresh.outputs.target_commit }}"
+            echo "- Target ref: ${TARGET_REF}"
+            echo "- Target commit: ${TARGET_COMMIT}"
             echo "- Release notes: ${release_url}"
             echo "- Validation exit code: ${VALIDATION_EXIT_CODE}"
             echo

@@ -23,7 +23,7 @@ wholesale on every framework update.
 ## Local deviations in `.github/workflows/draft-framework-update.yml`
 
 The workflow is upstream's `framework/templates/github/draft-framework-update.yml` from
-the pinned tag, plus these local changes:
+the pinned tag, plus these local changes (keep them when re-syncing from the upstream template):
 
 1. Runs on Sunday at 09:17 UTC (upstream runs Monday). Carried over from the fork.
 2. Also runs on `repository_dispatch` type `upstream_draftsman_updated`. Carried over from the fork.
@@ -32,6 +32,22 @@ the pinned tag, plus these local changes:
    this change a refresh would silently drop the Draftsman skills.
 4. Re-runs `setup_ide.py` and `validate_skills.py --workspace .` after a refresh, and
    commits `.claude/` and `AGENTS.md`, so the projected skills stay current.
+5. `vendored_text()` protects existing `.draft/framework` paths with the
+   `__DRAFT_VENDOR_FRAMEWORK_ROOT__` placeholder before rewriting `framework/...`
+   paths and restores them afterwards. This is the same guard as upstream
+   `draft_table/repo.py` `vendored_framework_text()`. Without it the workflow
+   corrupts `.draft/framework/...` references in vendored Markdown into
+   `.draft/...`, so the result no longer matches a `vendor_framework()` copy.
+6. Every `steps.refresh.outputs.*` value used inside a `run:` script is passed
+   through `env:` and read as a quoted shell variable, never interpolated with
+   `${{ }}` directly into the script (prevents script injection). `if:`
+   expressions still use the outputs directly.
+7. `latest_target_ref()` returns only the newest `vX.Y.Z` release tag on automatic
+   runs (schedule or `repository_dispatch` without `target_ref`). Upstream also
+   switched to untagged `main` when main declared a newer version; that fallback
+   is removed, and if no release tag exists the run stops with a message. A manual
+   `workflow_dispatch` `target_ref` naming `main`, a branch, a tag, or a commit is
+   still honoured.
 
 The fork's step that synced a root `agent/` directory was dropped. `agent/` has been
 retired, and the Draftsman now ships as upstream skills under `.draft/framework/skills/`.
