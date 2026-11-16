@@ -1,0 +1,10 @@
+schemaVersion: '1.0'
+uid: 01M7GVD4FN-3C7S
+type: host
+name: Home Assistant host (hardware/OS unconfirmed)
+description: Host that runs the Home Assistant instance behind ha.dalesackrider.com.
+catalogStatus: stub
+lifecycleStatus: existing-only
+provisioningModel: reference-only
+notes:
+  hardwareConfirmation: Hardware and operating system are not yet confirmed. Do not assume this is Dale's Mac mini.

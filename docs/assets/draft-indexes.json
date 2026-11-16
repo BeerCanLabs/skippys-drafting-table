@@ -479,11 +479,25 @@
       "description": "Strategic domain covering all aspects of software testing, quality assurance, and release gates.\n"
     },
     {
+      "uid": "01M7GVD4FN-YGN9",
+      "name": "Dale's Mac mini (home)",
+      "type": "host",
+      "catalogStatus": "stub",
+      "description": "macOS Mac mini at Dale's home. Caddy (tls internal) reverse proxies print.dalesackrider.com, reached through Cloudflare, to print_server.py on 127.0.0.1:9123, which prints to an HP Color LaserJet Pro MFP 3301. The older GCP print-bridge also exists on this host."
+    },
+    {
       "uid": "01M162FHHS-3STQ",
       "name": "GitHub Pages Static Web Game Host",
       "type": "host",
       "catalogStatus": "complete",
       "description": "Managed static hosting edge on GitHub Pages for hosting client-side HTML5/JS canvas games and UAT web apps."
+    },
+    {
+      "uid": "01M7GVD4FN-3C7S",
+      "name": "Home Assistant host (hardware/OS unconfirmed)",
+      "type": "host",
+      "catalogStatus": "stub",
+      "description": "Host that runs the Home Assistant instance behind ha.dalesackrider.com."
     },
     {
       "uid": "01M15NEKT7-1SN8",
@@ -619,6 +633,24 @@
       "type": "reference_architecture",
       "catalogStatus": "complete",
       "description": "Deployment pattern for simple applications where a client or static presentation layer talks directly to a managed data service without a separately operated application runtime tier. Use this for static sites, thick clients, reporting front ends, or low-code applications whose business logic is primarily in the client and managed data platform."
+    },
+    {
+      "uid": "96JSYM60JB-Q60Y",
+      "name": "Home Assistant IoT & Display Integration Service \u2192 Home Assistant host (hardware/OS unconfirmed)",
+      "type": "relationship",
+      "catalogStatus": "complete",
+      "source": "01M7GTBMQS-WDE3",
+      "target": "01M7GVD4FN-3C7S",
+      "label": "runs on"
+    },
+    {
+      "uid": "5N5T1Z7SV2-44E6",
+      "name": "Household Print Queue & Spooler Service \u2192 Dale's Mac mini (home)",
+      "type": "relationship",
+      "catalogStatus": "complete",
+      "source": "01M7GTBMQS-YYDW",
+      "target": "01M7GVD4FN-YGN9",
+      "label": "runs on"
     },
     {
       "uid": "01KTWS3D6T-NB0E",
@@ -873,11 +905,24 @@
       "description": "Secure, managed storage system for API keys, passwords, certificates, and other secret data  in Google Cloud Platform.\n"
     },
     {
+      "uid": "01M7GVD4FN-F0DT",
+      "name": "Home Assistant Core",
+      "type": "technology_component",
+      "catalogStatus": "stub"
+    },
+    {
       "uid": "01M7GTBMQT-1190",
       "name": "LLM Inference APIs (OpenAI / Anthropic)",
       "type": "technology_component",
       "catalogStatus": "incomplete",
       "description": "Managed frontier Large Language Model inference endpoints (OpenAI GPT-4o, Anthropic Claude 3.5 Sonnet)  accessed via HTTPS / MCP gateways for AI Agent execution.\n"
+    },
+    {
+      "uid": "01M7GVD4FN-YCP8",
+      "name": "Python",
+      "type": "technology_component",
+      "catalogStatus": "stub",
+      "description": "Python language runtime. Runtime for print_server.py on Dale's Mac mini (Household Print Queue & Spooler Service)."
     },
     {
       "uid": "01KS7ZZ1C5-1PFR",
