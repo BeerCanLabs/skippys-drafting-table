@@ -1,5 +1,5 @@
 schemaVersion: '1.0'
-uid: 01HBC-TC-LLM-004
+uid: 01M7GTBMQT-1190
 type: technology_component
 name: LLM Inference APIs (OpenAI / Anthropic)
 aliases:
@@ -10,7 +10,7 @@ description: >
   Managed frontier Large Language Model inference endpoints (OpenAI GPT-4o, Anthropic Claude 3.5 Sonnet) 
   accessed via HTTPS / MCP gateways for AI Agent execution.
 version: 1.0.0
-catalogStatus: documentation
+catalogStatus: incomplete
 provisioningModel: reference-only
 owner:
   team: Agent Factory Platform
@@ -28,4 +28,4 @@ vendorLifecycle:
   extendedSupportEnd: Active
   notes: External managed AI model inference endpoints.
 capabilities:
-- 01KTWS3D6T-AB30 # capability-model-inference
+- 01KTWS3D6T-T6F6 # capability-model-inference

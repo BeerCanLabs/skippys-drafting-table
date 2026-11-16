@@ -1,10 +1,10 @@
 schemaVersion: '1.0'
-uid: 01J89X0MCP-GATEWAY
-type: mcp_gateway
+uid: 01M7GTBMQS-6BF5
+type: runtime_service
 name: Skippy Submind MCP Router & Gateway Service
 description: Central Model Context Protocol (MCP) router hosting agent tool registrations, dynamic skill execution, and cross-agent tool invocation across the Submind matrix.
 deliveryModel: paas
-catalogStatus: complete
+catalogStatus: incomplete
 lifecycleStatus: preferred
 vendor: Google Cloud / Custom
 productName: Skippy Submind MCP Gateway

@@ -1,16 +1,16 @@
 schemaVersion: '1.0'
-uid: 01J89X0DS-FIRESTORE
+uid: 01M7GTBMQS-9E05
 type: data_store_service
 name: GCP Firestore NoSQL Document Data Store Service
 description: Managed NoSQL document database service storing live deal pipeline entries (climb_entries), Referral Maker client rosters (climb_clients), and submind metadata.
 deliveryModel: paas
-catalogStatus: complete
+catalogStatus: incomplete
 lifecycleStatus: preferred
 vendor: Google Cloud
 productName: Google Cloud Firestore
 productVersion: Native Mode Document DB
 dataStoreType: NoSQL Document Store
-provisioningModel: managed
+provisioningModel: reference-only
 protocols:
 - HTTPS
 - gRPC

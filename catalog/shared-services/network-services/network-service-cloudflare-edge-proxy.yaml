@@ -1,10 +1,10 @@
 schemaVersion: '1.0'
-uid: 01J89X0NET-CLOUDFLARE-EDGE
+uid: 01M7GTBMQS-YRGF
 type: network_service
 name: Cloudflare Global Anycast Edge Proxy Service
 description: Registration object for Geordi's Cloudflare Global Anycast Edge Proxy network service providing ingress routing, Orange Cloud DNS proxying, SSL Full TLS termination, 301 URL redirects, and ALPN negotiation compatibility under Netskope SSL inspection.
 deliveryModel: saas
-catalogStatus: complete
+catalogStatus: incomplete
 lifecycleStatus: preferred
 vendor: Cloudflare
 productName: Cloudflare Managed DNS & Edge Proxy
@@ -30,10 +30,13 @@ vendorGovernance:
   dataResidencyCommitment: Global Anycast Edge with regional origin processing
   vendorSLA: 100% SLA commitment
   acceptableUsePolicy: Mandatory for all public web endpoints across Submind and client workloads. Bare GHS CNAME mappings are strictly non-compliant. All traffic must route through Cloudflare Anycast Edge with Full SSL encryption enabled.
+decisionRecords:
+- ref: 01M7GTBMQS-SZBH
+  key: edgeProxyDecision
 requirementImplementations:
-- requirementGroup: 01J89X0NET-EDGE-NETWK
+- requirementGroup: 01M7GTBMQT-H66V
   requirementId: req-edge-proxy-mandatory
   status: satisfied
-  mechanism: field
-  key: networkService
-  notes: Satisfied by Geordi's Cloudflare Global Anycast Edge Proxy service module deployed via BeerCanLabs/skippy-matrix.
+  mechanism: decisionRecord
+  key: edgeProxyDecision
+  notes: Satisfied by the Edge Proxy Architecture & Acceptable Use Decision; this object is Geordi's Cloudflare Global Anycast Edge Proxy service module deployed via BeerCanLabs/skippy-matrix.

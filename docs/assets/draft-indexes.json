@@ -360,11 +360,25 @@
       "domain": "01KSWVZSZ5-4WKE"
     },
     {
+      "uid": "01M7GTBMQS-9E05",
+      "name": "GCP Firestore NoSQL Document Data Store Service",
+      "type": "data_store_service",
+      "catalogStatus": "incomplete",
+      "description": "Managed NoSQL document database service storing live deal pipeline entries (climb_entries), Referral Maker client rosters (climb_clients), and submind metadata."
+    },
+    {
       "uid": "01M15NEKT7-H42Y",
       "name": "Standard GCP Cloud SQL PostgreSQL Database",
       "type": "data_store_service",
       "catalogStatus": "complete",
       "description": "Managed PostgreSQL database service on GCP with automated backups, IAM database authentication, and SSL encryption."
+    },
+    {
+      "uid": "01M7GTBMQS-1121",
+      "name": "Submind GCS Memory & Backup Storage Service",
+      "type": "data_store_service",
+      "catalogStatus": "incomplete",
+      "description": "Persistent Google Cloud Storage object storage service backing agent memory state buckets (submind-matrix-sm-*-memory), Litestream SQLite snapshots, and BCP backups."
     },
     {
       "uid": "01M15NFKKN-74NY",
@@ -374,16 +388,35 @@
       "description": "Architecture decision record capturing operational decisions, resilience models, logging, security controls, and L1-L3 engineering maturity standards for the Agent Factory platform."
     },
     {
+      "uid": "01M7GTBMQS-SZBH",
+      "name": "Edge Proxy Architecture & Acceptable Use Decision",
+      "type": "decision_record",
+      "catalogStatus": "complete",
+      "description": "Architecture decision record formally adopting Cloudflare Global Anycast Edge Proxy ($0 Free Tier) as the mandatory network service for all Submind and client public web applications."
+    },
+    {
       "uid": "01KTWS3D6T-ABD1",
       "name": "AI & Machine Learning",
       "type": "domain",
       "description": "Strategic domain covering model training, inference serving, vector storage, and AI gateway routing. Capabilities in this domain are governed by the AI Platform / MLOps team, who owns the HOW decisions for model endpoints,  prompt safety firewalls, and vector query tools.\n"
     },
     {
+      "uid": "01M7GTBMQR-GB2Z",
+      "name": "Agent Factory",
+      "type": "domain",
+      "description": "Strategic domain covering the Agent Factory platform substrate (Doorman Proxy,  MCP Gateway, OAuth Auth Server, Persona Publisher Pipeline) and all published  AI Agent Personas and SOUL configurations.\n"
+    },
+    {
       "uid": "01KT0XNZEY-HGZZ",
       "name": "Analytics",
       "type": "domain",
       "description": "Strategic domain covering analytical processing and reporting over operational and business data. Capabilities in this domain are governed by the data team, who owns the HOW decisions for analytics and reporting technology.\n"
+    },
+    {
+      "uid": "01M7GTBMQS-VS5K",
+      "name": "Clients",
+      "type": "domain",
+      "description": "Business domain covering client-facing applications, customer experiences,  and web applications (e.g. alc-kellogg, closing-climb-web).\n"
     },
     {
       "uid": "01KQQ4Q027-ZTHF",
@@ -408,6 +441,12 @@
       "name": "Integration",
       "type": "domain",
       "description": "Strategic domain covering the movement of messages, files, and data between systems. Capabilities in this domain are governed by the platform engineering team, who owns the HOW decisions for email delivery, managed file transfer, and data integration technology.\n"
+    },
+    {
+      "uid": "01M7GTBMQS-3R9T",
+      "name": "Labs",
+      "type": "domain",
+      "description": "Innovation and experimental labs domain covering gaming engines, prototypes,  and experimental repositories authored by Aiden and the Labs team.\n"
     },
     {
       "uid": "01KSWVZSZ5-4WKE",
@@ -454,6 +493,13 @@
       "description": "Fully managed serverless container host platform for stateless services and agent runners on Google Cloud Platform."
     },
     {
+      "uid": "01M7GTBMQS-YRGF",
+      "name": "Cloudflare Global Anycast Edge Proxy Service",
+      "type": "network_service",
+      "catalogStatus": "incomplete",
+      "description": "Registration object for Geordi's Cloudflare Global Anycast Edge Proxy network service providing ingress routing, Orange Cloud DNS proxying, SSL Full TLS termination, 301 URL redirects, and ALPN negotiation compatibility under Netskope SSL inspection."
+    },
+    {
       "uid": "01M15NEKT7-EKAR",
       "name": "Skippy's Submind Agent Runner Container",
       "type": "product_component",
@@ -463,6 +509,12 @@
     {
       "uid": "01M15NEKT7-B26W",
       "name": "Archie AI Assistant Product Registration",
+      "type": "product_registration",
+      "catalogStatus": "complete"
+    },
+    {
+      "uid": "01M1N137Q5-AFAC",
+      "name": "BeerCanLabs Agent Factory",
       "type": "product_registration",
       "catalogStatus": "complete"
     },
@@ -681,6 +733,13 @@
       "description": "Built-in checklist for first-party code components deployed onto RuntimeServices. Establishes what must be known about a ProductComponent before it is considered architecturally complete."
     },
     {
+      "uid": "01M7GTBMQT-H66V",
+      "name": "Public Web Infrastructure & Edge Proxy Requirements",
+      "type": "requirement_group",
+      "catalogStatus": "complete",
+      "description": "Governed requirement group defining mandatory architectural requirements and acceptable use policy for public web services and endpoints."
+    },
+    {
       "uid": "01KQQ4Q027-SS2K",
       "name": "ReferenceArchitecture RequirementGroup",
       "type": "requirement_group",
@@ -744,11 +803,81 @@
       "description": "Starter TX-RAMP requirement group for DRAFT. This file is intended to map TX-RAMP control expectations onto the unified DRAFT requirement model.\n"
     },
     {
+      "uid": "01M7GTBMQS-NBA2",
+      "name": "GCP Cloud Scheduler Cron Dispatch Service",
+      "type": "runtime_service",
+      "catalogStatus": "incomplete",
+      "description": "Managed cron scheduling service driving automated triggers for Higgins' Daily 25 briefings, Donna's morning/evening Kanban reviews, Switch's CI triage, and Archie's issue triage."
+    },
+    {
+      "uid": "01M7GTBMQS-N71S",
+      "name": "GCP Secret Manager Vault Service",
+      "type": "runtime_service",
+      "catalogStatus": "incomplete",
+      "description": "Centralized secret management vault storing Cloudflare API Tokens, LLM credentials (Anthropic, OpenAI, xAI), Motion API keys, and Discord bot tokens with IAM service account accessor bindings."
+    },
+    {
+      "uid": "01M7GTBMQS-WDE3",
+      "name": "Home Assistant IoT & Display Integration Service",
+      "type": "runtime_service",
+      "catalogStatus": "incomplete",
+      "description": "IoT integration gateway service handling e-ink digital photo frames (ha-digital-frames, dash480), openHASP touch panels, and Home Assistant telemetry (ha.dalesackrider.com)."
+    },
+    {
+      "uid": "01M7GTBMQS-YYDW",
+      "name": "Household Print Queue & Spooler Service",
+      "type": "runtime_service",
+      "catalogStatus": "incomplete",
+      "description": "Asynchronous document printing service backed by GCS bucket (submind-matrix-print-queue) and local CUPS print daemon for Higgins & Donna estate automation."
+    },
+    {
+      "uid": "01M7GTBMQS-6BF5",
+      "name": "Skippy Submind MCP Router & Gateway Service",
+      "type": "runtime_service",
+      "catalogStatus": "incomplete",
+      "description": "Central Model Context Protocol (MCP) router hosting agent tool registrations, dynamic skill execution, and cross-agent tool invocation across the Submind matrix."
+    },
+    {
       "uid": "01M15NEKT7-S14J",
       "name": "Skippy's Submind Agent Factory Deployment Pattern",
       "type": "software_deployment_pattern",
       "catalogStatus": "complete",
       "description": "Serverless containerized agent factory deployment pattern on GCP Cloud Run with Secret Manager IAM bindings and Cloud SQL datastores."
+    },
+    {
+      "uid": "01M7GTBMQT-TFSM",
+      "name": "Discord Bot API & Gateway",
+      "type": "technology_component",
+      "catalogStatus": "incomplete",
+      "description": "Managed real-time messaging, bot API, and WebSocket gateway platform provided by Discord.  Used by Discord Doorman and agent proxy services for user interaction.\n"
+    },
+    {
+      "uid": "01M7GTBMQT-3P47",
+      "name": "Google Cloud Firestore",
+      "type": "technology_component",
+      "catalogStatus": "incomplete",
+      "description": "Fully managed serverless NoSQL document database offered by Google Cloud Platform.  Used for fast, scalable state persistence across web applications (e.g. closing-climb-web).\n"
+    },
+    {
+      "uid": "01M7GTBMQT-6QYP",
+      "name": "Google Cloud Run",
+      "type": "technology_component",
+      "catalogStatus": "incomplete",
+      "description": "Managed serverless compute platform that enables running stateless containers  invoked via HTTP requests. Used for hosting API gateways, microservices, and web frontends.\n"
+    },
+    {
+      "uid": "01M7GTBMQT-F262",
+      "name": "Google Cloud Secret Manager",
+      "type": "technology_component",
+      "catalogStatus": "incomplete",
+      "description": "Secure, managed storage system for API keys, passwords, certificates, and other secret data  in Google Cloud Platform.\n"
+    },
+    {
+      "uid": "01M7GTBMQT-1190",
+      "name": "LLM Inference APIs (OpenAI / Anthropic)",
+      "type": "technology_component",
+      "catalogStatus": "incomplete",
+      "description": "Managed frontier Large Language Model inference endpoints (OpenAI GPT-4o, Anthropic Claude 3.5 Sonnet)  accessed via HTTPS / MCP gateways for AI Agent execution.\n"
     },
     {
       "uid": "01KS7ZZ1C5-1PFR",
@@ -767,6 +896,13 @@
     "version": 1,
     "source": "capability.domain",
     "domains": [
+      {
+        "id": "01M7GTBMQR-GB2Z",
+        "uid": "01M7GTBMQR-GB2Z",
+        "name": "Agent Factory",
+        "description": "Strategic domain covering the Agent Factory platform substrate (Doorman Proxy,  MCP Gateway, OAuth Auth Server, Persona Publisher Pipeline) and all published  AI Agent Personas and SOUL configurations.\n",
+        "capabilities": []
+      },
       {
         "id": "01KTWS3D6T-ABD1",
         "uid": "01KTWS3D6T-ABD1",
@@ -818,6 +954,13 @@
             "implementations": []
           }
         ]
+      },
+      {
+        "id": "01M7GTBMQS-VS5K",
+        "uid": "01M7GTBMQS-VS5K",
+        "name": "Clients",
+        "description": "Business domain covering client-facing applications, customer experiences,  and web applications (e.g. alc-kellogg, closing-climb-web).\n",
+        "capabilities": []
       },
       {
         "id": "01KQQ4Q027-ZTHF",
@@ -1021,6 +1164,13 @@
             "implementations": []
           }
         ]
+      },
+      {
+        "id": "01M7GTBMQS-3R9T",
+        "uid": "01M7GTBMQS-3R9T",
+        "name": "Labs",
+        "description": "Innovation and experimental labs domain covering gaming engines, prototypes,  and experimental repositories authored by Aiden and the Labs team.\n",
+        "capabilities": []
       },
       {
         "id": "01KSWVZSZ5-4WKE",
@@ -1256,7 +1406,24 @@
   "requirementImplementations": {
     "version": 1,
     "source": "object.requirementImplementations",
-    "rows": []
+    "rows": [
+      {
+        "object": "01M7GTBMQS-YRGF",
+        "requirementGroup": "01M7GTBMQT-H66V",
+        "requirementId": "req-edge-proxy-mandatory",
+        "status": "satisfied",
+        "evidence": "",
+        "notes": "Satisfied by the Edge Proxy Architecture & Acceptable Use Decision; this object is Geordi's Cloudflare Global Anycast Edge Proxy service module deployed via BeerCanLabs/skippy-matrix.",
+        "implementation": {
+          "requirementGroup": "01M7GTBMQT-H66V",
+          "requirementId": "req-edge-proxy-mandatory",
+          "status": "satisfied",
+          "mechanism": "decisionRecord",
+          "key": "edgeProxyDecision",
+          "notes": "Satisfied by the Edge Proxy Architecture & Acceptable Use Decision; this object is Geordi's Cloudflare Global Anycast Edge Proxy service module deployed via BeerCanLabs/skippy-matrix."
+        }
+      }
+    ]
   },
   "domainCapabilities": {
     "01KQQ4Q027-C213": [
@@ -1324,7 +1491,10 @@
     "01KTWS3D6T-ABD1": [
       "01KTWS3D6T-5TAZ",
       "01KTWS3D6T-T6F6"
-    ]
+    ],
+    "01M7GTBMQR-GB2Z": [],
+    "01M7GTBMQS-3R9T": [],
+    "01M7GTBMQS-VS5K": []
   },
   "capabilityDomain": {
     "01KQQ4Q026-1HZP": "01KQQ4Q027-ZTHF",

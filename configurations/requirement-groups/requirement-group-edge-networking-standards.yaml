@@ -1,5 +1,5 @@
 schemaVersion: '1.0'
-uid: 01J89X0NET-EDGE-NETWK
+uid: 01M7GTBMQT-H66V
 type: requirement_group
 name: Public Web Infrastructure & Edge Proxy Requirements
 description: Governed requirement group defining mandatory architectural requirements and acceptable use policy for public web services and endpoints.
