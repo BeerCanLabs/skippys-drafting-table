@@ -2,13 +2,13 @@ schemaVersion: '1.0'
 uid: 01M7GYV3B6-H03D
 type: decision_record
 name: 'AWS Agent Factory: Model Access and AI Gateway Routing'
-description: Every model call goes through gatekeeper-egress (the factory model API), where it is metered,
-  budgeted and policy-gated. Bedrock is reached through the gatekeeper-egress task role and a VPC endpoint.
-  Model choice and budgets are factory policy, not code.
+description: Design intent is that every model call goes through gatekeeper-egress (the factory model API),
+  where it is metered, budgeted and policy-gated. Live agent task roles can also invoke Bedrock directly,
+  which bypasses that metering. Model choice and budgets are factory policy, not code.
 version: 1.0.0
 category: decision
 status: accepted
-catalogStatus: complete
+catalogStatus: incomplete
 lifecycleStatus: preferred
 owner:
   team: platform-ai-team
@@ -22,21 +22,28 @@ tags:
 - bedrock
 linkedObject: 01M15NEKT7-S14J
 decisionRationale: |
-  Decision: one factory model API (M1). Agents call models through gatekeeper-egress in the OpenAI Chat Completions format,
-  never call a provider directly and never hold provider credentials (E1, E5, S1). Every model call goes through a
-  gatekeeper-egress provider route so tokens and cost are metered and ledgered; CONNECT tunnels are not accepted for model
-  calls (E5). gatekeeper-egress enforces routes, models, budget, the kill switch and approvals before forwarding (E4).
-  gatekeeper-egress therefore acts as this deployment's AI gateway. No separate ai_gateway catalog object exists.
+  Decision (design intent): one factory model API (M1). Agents call models through gatekeeper-egress in the OpenAI Chat
+  Completions format, never call a provider directly and never hold provider credentials (E1, E5, S1). Every model call
+  goes through a gatekeeper-egress provider route so tokens and cost are metered and ledgered; CONNECT tunnels are not
+  accepted for model calls (E5). gatekeeper-egress enforces routes, models, budget, the kill switch and approvals before
+  forwarding (E4). gatekeeper-egress therefore acts as this deployment's AI gateway. No separate ai_gateway catalog object
+  exists.
   AWS binding: the models route translates calls to Bedrock Converse, signed by the gatekeeper-egress task role, which has
   bedrock:InvokeModel on foundation models and this account's inference profiles (README "Factory model API", iam.tf). There
-  is a bedrock-runtime VPC endpoint (live). Subscription plans (xAI, OpenAI) are served through the Keymaster and gatekeeper-egress
-  (M5; live secrets under factory/prod/shared/xai/subscription).
+  is a bedrock-runtime VPC endpoint (live), and the agents security group can reach it on 443. Subscription plans (xAI, OpenAI)
+  are served through the Keymaster and gatekeeper-egress (M5; live secrets under factory/prod/shared/xai/subscription).
+  Known gap, a deviation from E1, E5 and M1: live agent task roles can invoke Bedrock directly. They carry BedrockConverseAccess
+  (bedrock:InvokeModel and Converse* on *) plus the managed AgentBedrockModelInvocation policy, granted by
+  packages/property-manager/src/aws/iam.ts, and the bedrock-runtime endpoint is reachable from the agents subnet. That path
+  bypasses gatekeeper-egress metering and spend tracking. DESIGN_AUTHORITY GAP-027 (Critical, no resolution recorded) records
+  that 8 of 9 cartridges import boto3 for Bedrock and S3, so those model calls are not metered or ledgered. GAP-041 (the
+  factory model API itself) is only "RESOLVED (proposed)".
   Model specification: the owner chooses approved, primary and secondary models, and an admin sets per-agent budgets, as
   factory configuration rather than code (M2, M3, E7). Cartridges name no model. Unpriced models are refused.
   The Terraform default model_catalog offers claude-sonnet-4-5, claude-haiku-4-5, claude-sonnet-4-6 and claude-opus-4-6 on Bedrock. The live catalog and per-agent
   policies are runtime factory data and were not read.
 
   Sources:
-  - BeerCanLabs/agent-factory @01720b2: DESIGN_AUTHORITY.md 6.3.1 E1/E4/E5/E7, 6.9 M1-M5; landing-zones/aws/README.md (Enable LLM egress, Factory model API), iam.tf, variables.tf (model_catalog)
+  - BeerCanLabs/agent-factory @01720b2: DESIGN_AUTHORITY.md 6.3.1 E1/E4/E5/E7, 6.9 M1-M5, gap register GAP-027 and GAP-041; landing-zones/aws/README.md (Enable LLM egress, Factory model API), iam.tf, variables.tf (model_catalog); packages/property-manager/src/aws/iam.ts
   - BeerCanLabs/submind-aws @3f7d9a5: OPERATIONS.md (Deploying an agent, Model subscriptions)
-  - Live AWS, read-only, account ending 2296, us-east-1, 2026-11-15: ec2 describe-vpc-endpoints, secretsmanager list-secrets (names only)
+  - Live AWS, read-only, account ending 2296, us-east-1, 2026-11-15: iam get-role-policy on agent task roles (BedrockConverseAccess, AgentBedrockModelInvocation), ec2 describe-vpc-endpoints and describe-security-groups, secretsmanager list-secrets (names only)

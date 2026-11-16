@@ -3,12 +3,12 @@ uid: 01M7GYV3B6-8VN0
 type: decision_record
 name: 'AWS Agent Factory: Network Segmentation and Edge'
 description: 'Cloudflare is the only way in: the ALB admits only Cloudflare IPv4 ranges. Service and agent
-  subnets are separate tiers, agents have no internet route, and services find each other through Cloud
-  Map.'
+  subnets are separate tiers, and services find each other through Cloud Map. Live drift on the agent tier is
+  recorded below: both network-layer barriers to E1 are down, with assignPublicIp=false as the remaining mitigation.'
 version: 1.0.0
 category: decision
 status: accepted
-catalogStatus: complete
+catalogStatus: incomplete
 lifecycleStatus: preferred
 owner:
   team: platform-ai-team
@@ -30,18 +30,27 @@ decisionRationale: |
   Cloudflare Access is inbound webhooks, which must carry a verified sender signature (A1; the user's decision 2026-10-28,
   issue #32, option A).
   Segmentation (landing-zones/aws network.tf and README): public service subnets (ALB, control plane, gatekeepers) reach the
-  internet through the IGW. Private agent subnets have no NAT and no IGW route; agents can reach only the control plane
-  (8088), gatekeeper-egress (8081) and account-locked VPC endpoints (443). This enforces the egress invariant E1 (every
-  outbound connection from cartridge code goes through gatekeeper-egress). Live VPC interface/gateway endpoints: s3, ecr.api,
-  ecr.dkr, secretsmanager, logs, bedrock-runtime. Service discovery is the private DNS namespace factory.internal (Cloud Map).
-  Inter-service connections follow the traffic matrix in landing-zones/aws/README.md (security groups in network.tf).
+  internet through the IGW. Terraform declares the private agent route table with no routes, and the agents security group
+  with only scoped egress, so that agents can reach only the control plane (8088), gatekeeper-egress (8081) and account-locked
+  VPC endpoints (443). That is the intended enforcement of the egress invariant E1 (every outbound connection from cartridge
+  code goes through gatekeeper-egress).
+  Known gap, not compliant with E1/E6, and not in Terraform: live, route table factory-prod-agents-no-egress (associated with
+  both agent subnets) has a 0.0.0.0/0 route to the IGW, created by a Terraform apply run as IAM user beercanlabs on
+  2026-09-20 04:26 America/Phoenix; and security group factory-prod-agents has an all-protocol egress rule to 0.0.0.0/0, added
+  by hand with aws-cli on 2026-09-25 09:59 America/Phoenix. Terraform does not remove unmanaged routes or standalone SG rules,
+  so this drift survives deploys and contradicts OPERATIONS "No hand changes in AWS". Mitigation that is true today: agent
+  tasks launch with FACTORY_ECS_ASSIGN_PUBLIC_IP=false, and the agent subnets do not map public IPs, so there is no working
+  internet path yet.
+  Live VPC endpoints (5 interface plus the S3 gateway): s3, ecr.api, ecr.dkr, secretsmanager, logs, bedrock-runtime. Service
+  discovery is the private DNS namespace factory.internal (Cloud Map). Inter-service connections follow the traffic matrix in
+  landing-zones/aws/README.md, compared against live security-group rules for the agents group as above; the ALB group matches
+  the Cloudflare ingress list.
   External dependencies: Cloudflare (edge and Access), Discord gateway, model providers (AWS Bedrock; xAI and OpenAI
   subscriptions through gatekeeper-egress), IdPs and webhook senders (README "Services Egress").
-  No NAT gateways: cost (README "Cost notes") and E1.
-  Not verified: the live security-group rules were not compared one by one with the Terraform traffic matrix.
+  No NAT gateways: E1/E6 (landing-zones/aws/README.md).
 
   Sources:
-  - BeerCanLabs/agent-factory @01720b2: DESIGN_AUTHORITY.md 6.3.1 E1, 6.12 A1; landing-zones/aws/README.md, network.tf, variables.tf (ingress_cidrs); commits 09b3ac0, a3d698f, 27fb6b8
-  - BeerCanLabs/submind-aws @3f7d9a5: OPERATIONS.md (Front door), config/deploy.env (FACTORY_INGRESS_CIDRS comment)
-  - Live AWS, read-only, account ending 2296, us-east-1, 2026-11-15: elbv2 describe-load-balancers/listeners, ec2 describe-security-groups (ALB), describe-vpc-endpoints, servicediscovery
+  - BeerCanLabs/agent-factory @01720b2: DESIGN_AUTHORITY.md 6.3.1 E1/E6, 6.12 A1; landing-zones/aws/README.md, network.tf, variables.tf (ingress_cidrs); commits 09b3ac0, a3d698f, 27fb6b8
+  - BeerCanLabs/submind-aws @3f7d9a5: OPERATIONS.md (Front door, No hand changes in AWS), config/deploy.env (FACTORY_INGRESS_CIDRS, FACTORY_ECS_ASSIGN_PUBLIC_IP)
+  - Live AWS, read-only, account ending 2296, us-east-1, 2026-11-15: elbv2 describe-load-balancers/listeners, ec2 describe-security-groups (ALB and factory-prod-agents), describe-route-tables (factory-prod-agents-no-egress), describe-vpc-endpoints, servicediscovery; CloudTrail lookup-events for the unmanaged route and egress rule
   - Drafting table: decision record 01M7GTBMQS-SZBH (Cloudflare edge proxy)

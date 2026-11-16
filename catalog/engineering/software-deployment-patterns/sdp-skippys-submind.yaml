@@ -56,6 +56,8 @@ decisionRecords:
   key: secretsManagementDecision
 - ref: 01M7GYV3B6-FASW
   key: dataClassification
+- ref: 01M7GYV3B6-FASW
+  key: queryParameterizationDecision
 - ref: 01M7GYV3B6-083M
   key: cryptographyStandardDecision
 - ref: 01M7GYV3B6-RYSP
@@ -75,16 +77,12 @@ decisionRecords:
 requirementImplementations:
 - requirementGroup: 01M15WPEFV-ZMA9
   requirementId: req-expand-contract-migrations
-  status: not-applicable
-  notes: The factory has no relational schema; the ledger is append-only and agent memory is per-agent SQLite synced to S3. See decision record 01M7GYV3B6-FASW.
+  status: not-compliant
+  notes: The placed agent-runtime (01M7GWXKXW-4ZJF) has a SQLite schema created in application code (CREATE TABLE IF NOT EXISTS in memory/episodic.py, notebook.py and workspace.py) that ships with the runtime. There is no expand-and-contract migration decoupled from a code deploy. See decision record 01M7GYV3B6-FASW.
 - requirementGroup: 01M15XYZXT-KTJA
   requirementId: req-asvs-parameterized-queries
-  status: not-applicable
-  notes: The factory kernel has no SQL/NoSQL query layer. See decision record 01M7GYV3B6-FASW.
-- requirementGroup: 01M162FHHS-XAJQ
-  requirementId: req-game-auth-profile-persistence
-  status: not-applicable
-  notes: Not a game; the Agent Factory is not built by Switch for Aiden.
+  status: satisfied
+  notes: Agent-runtime SQLite binds query values with parameterized placeholders. The only string-built SQL is notebook.py interpolating table identifiers from carry_tables; the runtime caller does not pass that argument. See decision record 01M7GYV3B6-FASW.
 - requirementGroup: 01M15WPEFV-ZMA9
   requirementId: req-no-gate-suppressions
   status: not-compliant
@@ -134,12 +132,12 @@ notes:
   secretsManagement: AWS Secrets Manager referenced as ECS container secrets (control-plane 6, gatekeeper-ingress 2, gatekeeper-egress 2, garrison 1, console 0). The gatekeepers inject credentials so agent tasks hold only their run token, except the registered gap GAP-031 (see decision record 01M7GYV3B6-YE24).
   iacAutomation: Terraform in BeerCanLabs/agent-factory landing-zones/aws with an S3 backend.
   observability: CloudWatch Logs /ecs/factory-prod (30 days), Container Insights, ADOT collector sidecar on control-plane and gatekeeper-egress. No factory alarms or dashboards found.
-  patternDeviations: Mailbox services (control plane, gatekeepers) stay warm while agents scale to zero, per the agent-factory repo SDP (see decision record 01M7GYV3B6-K9CZ).
+  patternDeviations: Live ECS, the control plane, gatekeeper-ingress and gatekeeper-egress are always-on services; agents scale to zero (see decision record 01M7GYV3B6-K9CZ).
   productRegistration: Registered in drafting-table as BeerCanLabs Agent Factory (01M1N137Q5-AFAC).
   incomplete: >-
     Requirements are answered by the AWS decision records listed above. Known gaps are recorded as not-compliant
     requirementImplementations. Still open: synthetic test data, local DRAFT validation of the repo SDP, session/JWT
-    hardening (MFA, rate limiting), the Aiden game requirements that do not fit this product, and reference-architecture
+    hardening (MFA, rate limiting), and reference-architecture
     conformance: the agent-factory repo SDP maps the orchestrated-tasks pattern to RA 01KV0REFAR-CMSV, but declaring it
     needs the RA's ingress, orchestration, mesh, data-store and logs slots modeled first. Data components for
     the mind and ledger, autoscaling and security groups are not yet modeled.
