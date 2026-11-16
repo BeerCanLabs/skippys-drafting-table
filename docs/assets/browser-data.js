@@ -20263,7 +20263,44 @@ window.DRAFT_BROWSER_DATA = {
       "requirementCount": 11,
       "hasRiskRef": false,
       "outboundRefs": [],
-      "referencedBy": [],
+      "referencedBy": [
+        {
+          "source": "01M15NEKT7-S14J",
+          "path": "requirementImplementations[0].requirementGroup"
+        },
+        {
+          "source": "01M15NEKT7-S14J",
+          "path": "requirementImplementations[2].requirementGroup"
+        },
+        {
+          "source": "01M15NEKT7-S14J",
+          "path": "requirementImplementations[3].requirementGroup"
+        },
+        {
+          "source": "01M15NEKT7-S14J",
+          "path": "requirementImplementations[4].requirementGroup"
+        },
+        {
+          "source": "01M15NEKT7-S14J",
+          "path": "requirementImplementations[5].requirementGroup"
+        },
+        {
+          "source": "01M15NEKT7-S14J",
+          "path": "requirementImplementations[6].requirementGroup"
+        },
+        {
+          "source": "01M15NEKT7-S14J",
+          "path": "requirementImplementations[7].requirementGroup"
+        },
+        {
+          "source": "01M15NEKT7-S14J",
+          "path": "requirementImplementations[8].requirementGroup"
+        },
+        {
+          "source": "01M15NEKT7-S14J",
+          "path": "requirementImplementations[9].requirementGroup"
+        }
+      ],
       "editorSchema": {
         "requiredFields": [
           "schemaVersion",
@@ -20546,7 +20583,16 @@ window.DRAFT_BROWSER_DATA = {
       "requirementCount": 6,
       "hasRiskRef": false,
       "outboundRefs": [],
-      "referencedBy": [],
+      "referencedBy": [
+        {
+          "source": "01M15NEKT7-S14J",
+          "path": "requirementImplementations[1].requirementGroup"
+        },
+        {
+          "source": "01M15NEKT7-S14J",
+          "path": "requirementImplementations[10].requirementGroup"
+        }
+      ],
       "editorSchema": {
         "requiredFields": [
           "schemaVersion",
@@ -22815,7 +22861,74 @@ window.DRAFT_BROWSER_DATA = {
       "patchingOwner": "",
       "complianceCerts": [],
       "requirementGroups": [],
-      "requirementImplementations": [],
+      "requirementImplementations": [
+        {
+          "requirementGroup": "01M15WPEFV-ZMA9",
+          "requirementId": "req-expand-contract-migrations",
+          "status": "not-compliant",
+          "notes": "The placed agent-runtime (01M7GWXKXW-4ZJF) has a SQLite schema created in application code (CREATE TABLE IF NOT EXISTS in memory/episodic.py, notebook.py and workspace.py) that ships with the runtime. There is no expand-and-contract migration decoupled from a code deploy. See decision record 01M7GYV3B6-FASW."
+        },
+        {
+          "requirementGroup": "01M15XYZXT-KTJA",
+          "requirementId": "req-asvs-parameterized-queries",
+          "status": "satisfied",
+          "notes": "Agent-runtime SQLite binds query values with parameterized placeholders. The only string-built SQL is notebook.py interpolating table identifiers from carry_tables; the runtime caller does not pass that argument. See decision record 01M7GYV3B6-FASW."
+        },
+        {
+          "requirementGroup": "01M15WPEFV-ZMA9",
+          "requirementId": "req-no-gate-suppressions",
+          "status": "not-compliant",
+          "notes": "packages/conformance/baseline.json holds 4 approved baseline entries (GAP-031, GAP-050). See decision record 01M7GYV3B6-Q5NV."
+        },
+        {
+          "requirementGroup": "01M15WPEFV-ZMA9",
+          "requirementId": "req-rollback-mechanism",
+          "status": "not-compliant",
+          "notes": "Rollback is a manual redeploy of a recorded pin; ECS deployment circuit breakers are disabled. See decision record 01M7GYV3B6-Q5NV."
+        },
+        {
+          "requirementGroup": "01M15WPEFV-ZMA9",
+          "requirementId": "req-l3-composable-iac",
+          "status": "not-compliant",
+          "notes": "Single Terraform root configuration plus one documented hand-set Cloudflare Access bypass. See decision record 01M7GYV3B6-Q5NV."
+        },
+        {
+          "requirementGroup": "01M15WPEFV-ZMA9",
+          "requirementId": "req-l3-ephemeral-preview-environments",
+          "status": "not-compliant",
+          "notes": "No per-branch cloud preview environments; CI runs an ephemeral Docker Compose proof only. See decision record 01M7GYV3B6-Q5NV."
+        },
+        {
+          "requirementGroup": "01M15WPEFV-ZMA9",
+          "requirementId": "req-l3-json-structured-logging",
+          "status": "not-compliant",
+          "notes": "Application logs are plain text; the ledger is the structured audit trail. See decision record 01M7GYV3B6-KB8Q."
+        },
+        {
+          "requirementGroup": "01M15WPEFV-ZMA9",
+          "requirementId": "req-l3-slo-error-budget",
+          "status": "not-compliant",
+          "notes": "No SLO or error-budget policy is defined. See decision record 01M7GYV3B6-RYSP."
+        },
+        {
+          "requirementGroup": "01M15WPEFV-ZMA9",
+          "requirementId": "req-l3-zero-downtime-deployment",
+          "status": "not-compliant",
+          "notes": "Control plane deploys stop-then-start (LG1, accepted 2026-09-28); no auto-rollback. See decision record 01M7GYV3B6-Q5NV."
+        },
+        {
+          "requirementGroup": "01M15WPEFV-ZMA9",
+          "requirementId": "req-l3-automated-security-gates",
+          "status": "not-compliant",
+          "notes": "No SAST, secret scanning, SCA or IaC policy linting in CI. See decision record 01M7GYV3B6-Q5NV."
+        },
+        {
+          "requirementGroup": "01M15XYZXT-KTJA",
+          "requirementId": "req-asvs-third-party-component-security",
+          "status": "not-compliant",
+          "notes": "No automated SCA in CI and no Dependabot configuration. See decision record 01M7GYV3B6-Q5NV."
+        }
+      ],
       "dataLeavesInfrastructure": null,
       "dataResidencyCommitment": "",
       "dpaNotes": "",
@@ -22851,12 +22964,12 @@ window.DRAFT_BROWSER_DATA = {
         },
         "externalDependencies": "Cloudflare edge proxy (01M7GTBMQS-YRGF) and Cloudflare Access (01M7GWTG2T-VA2G); ALB factory-prod (01M7GWTG2T-M2Q0); Cloud Map factory.internal (01M7GWTG2T-8A54); Secrets Manager (01M7GWTG2T-3PQY); S3 mind bucket (01M7GWTG2T-GYW1); S3 config/ledger/packages buckets (01M7GWTG2T-F1WG); EFS ledger (01M7GWTG2T-KR1Y); ECR (01M7GWTG2T-0NKZ); CloudWatch (01M7GWTG2T-TQEB); KMS AWS-managed keys (01M7GWTG2T-JHTR).",
         "interServiceConnections": "The ALB routes the default host to the control plane, factory-dashboard to the console and garrison to garrison. Kernel services find each other through Cloud Map factory.internal.",
-        "secretsManagement": "AWS Secrets Manager referenced as ECS container secrets (control-plane 6, gatekeeper-ingress 2, gatekeeper-egress 2, garrison 1, console 0). The gatekeepers inject credentials so agent tasks hold only their run token.",
+        "secretsManagement": "AWS Secrets Manager referenced as ECS container secrets (control-plane 6, gatekeeper-ingress 2, gatekeeper-egress 2, garrison 1, console 0). The gatekeepers inject credentials so agent tasks hold only their run token, except the registered gap GAP-031 (see decision record 01M7GYV3B6-YE24).",
         "iacAutomation": "Terraform in BeerCanLabs/agent-factory landing-zones/aws with an S3 backend.",
         "observability": "CloudWatch Logs /ecs/factory-prod (30 days), Container Insights, ADOT collector sidecar on control-plane and gatekeeper-egress. No factory alarms or dashboards found.",
-        "patternDeviations": "none recorded",
+        "patternDeviations": "Live ECS, the control plane, gatekeeper-ingress and gatekeeper-egress are always-on services; agents scale to zero (see decision record 01M7GYV3B6-K9CZ).",
         "productRegistration": "Registered in drafting-table as BeerCanLabs Agent Factory (01M1N137Q5-AFAC).",
-        "incomplete": "AWS decision records have not been written, so the related SDP requirements show as unmet. Data components for the mind and ledger, autoscaling, security groups and model-provider routing through gatekeeper-egress are not yet modeled."
+        "incomplete": "Requirements are answered by the AWS decision records listed above. Known gaps are recorded as not-compliant requirementImplementations. Still open: synthetic test data, local DRAFT validation of the repo SDP, session/JWT hardening (MFA, rate limiting), and reference-architecture conformance: the agent-factory repo SDP maps the orchestrated-tasks pattern to RA 01KV0REFAR-CMSV, but declaring it needs the RA's ingress, orchestration, mesh, data-store and logs slots modeled first. Data components for the mind and ledger, autoscaling and security groups are not yet modeled."
       },
       "requirements": [],
       "implementations": [],
@@ -22924,6 +23037,70 @@ window.DRAFT_BROWSER_DATA = {
         {
           "ref": "01M7GTBMQS-SZBH",
           "key": "edgeProxyDecision"
+        },
+        {
+          "ref": "01M7GYV3B6-K9CZ",
+          "key": "deploymentTargets"
+        },
+        {
+          "ref": "01M7GYV3B6-K9CZ",
+          "key": "patternDeviations"
+        },
+        {
+          "ref": "01M7GYV3B6-8VN0",
+          "key": "interServiceConnections"
+        },
+        {
+          "ref": "01M7GYV3B6-8VN0",
+          "key": "externalDependencies"
+        },
+        {
+          "ref": "01M7GYV3B6-EEZ3",
+          "key": "accessControlModelDecision"
+        },
+        {
+          "ref": "01M7GYV3B6-YE24",
+          "key": "secretsManagementDecision"
+        },
+        {
+          "ref": "01M7GYV3B6-FASW",
+          "key": "dataClassification"
+        },
+        {
+          "ref": "01M7GYV3B6-FASW",
+          "key": "queryParameterizationDecision"
+        },
+        {
+          "ref": "01M7GYV3B6-083M",
+          "key": "cryptographyStandardDecision"
+        },
+        {
+          "ref": "01M7GYV3B6-RYSP",
+          "key": "availabilityRequirement"
+        },
+        {
+          "ref": "01M7GYV3B6-RYSP",
+          "key": "failureDomain"
+        },
+        {
+          "ref": "01M7GYV3B6-KB8Q",
+          "key": "errorHandlingLoggingDecision"
+        },
+        {
+          "ref": "01M7GYV3B6-Q5NV",
+          "key": "iacAutomationDecision"
+        },
+        {
+          "ref": "01M7GYV3B6-Q5NV",
+          "key": "productRegistrationDecision"
+        },
+        {
+          "ref": "01M7GYV3B6-H03D",
+          "key": "aiGatewayRoutingDecision"
+        },
+        {
+          "ref": "01M7GYV3B6-H03D",
+          "key": "modelInferenceSpecDecision"
         }
       ],
       "affectedComponent": "",
@@ -22981,9 +23158,158 @@ window.DRAFT_BROWSER_DATA = {
         {
           "target": "01M7GTBMQS-SZBH",
           "path": "decisionRecords[0].ref"
+        },
+        {
+          "target": "01M7GYV3B6-K9CZ",
+          "path": "decisionRecords[1].ref"
+        },
+        {
+          "target": "01M7GYV3B6-K9CZ",
+          "path": "decisionRecords[2].ref"
+        },
+        {
+          "target": "01M7GYV3B6-8VN0",
+          "path": "decisionRecords[3].ref"
+        },
+        {
+          "target": "01M7GYV3B6-8VN0",
+          "path": "decisionRecords[4].ref"
+        },
+        {
+          "target": "01M7GYV3B6-EEZ3",
+          "path": "decisionRecords[5].ref"
+        },
+        {
+          "target": "01M7GYV3B6-YE24",
+          "path": "decisionRecords[6].ref"
+        },
+        {
+          "target": "01M7GYV3B6-FASW",
+          "path": "decisionRecords[7].ref"
+        },
+        {
+          "target": "01M7GYV3B6-FASW",
+          "path": "decisionRecords[8].ref"
+        },
+        {
+          "target": "01M7GYV3B6-083M",
+          "path": "decisionRecords[9].ref"
+        },
+        {
+          "target": "01M7GYV3B6-RYSP",
+          "path": "decisionRecords[10].ref"
+        },
+        {
+          "target": "01M7GYV3B6-RYSP",
+          "path": "decisionRecords[11].ref"
+        },
+        {
+          "target": "01M7GYV3B6-KB8Q",
+          "path": "decisionRecords[12].ref"
+        },
+        {
+          "target": "01M7GYV3B6-Q5NV",
+          "path": "decisionRecords[13].ref"
+        },
+        {
+          "target": "01M7GYV3B6-Q5NV",
+          "path": "decisionRecords[14].ref"
+        },
+        {
+          "target": "01M7GYV3B6-H03D",
+          "path": "decisionRecords[15].ref"
+        },
+        {
+          "target": "01M7GYV3B6-H03D",
+          "path": "decisionRecords[16].ref"
+        },
+        {
+          "target": "01M15WPEFV-ZMA9",
+          "path": "requirementImplementations[0].requirementGroup"
+        },
+        {
+          "target": "01M15XYZXT-KTJA",
+          "path": "requirementImplementations[1].requirementGroup"
+        },
+        {
+          "target": "01M15WPEFV-ZMA9",
+          "path": "requirementImplementations[2].requirementGroup"
+        },
+        {
+          "target": "01M15WPEFV-ZMA9",
+          "path": "requirementImplementations[3].requirementGroup"
+        },
+        {
+          "target": "01M15WPEFV-ZMA9",
+          "path": "requirementImplementations[4].requirementGroup"
+        },
+        {
+          "target": "01M15WPEFV-ZMA9",
+          "path": "requirementImplementations[5].requirementGroup"
+        },
+        {
+          "target": "01M15WPEFV-ZMA9",
+          "path": "requirementImplementations[6].requirementGroup"
+        },
+        {
+          "target": "01M15WPEFV-ZMA9",
+          "path": "requirementImplementations[7].requirementGroup"
+        },
+        {
+          "target": "01M15WPEFV-ZMA9",
+          "path": "requirementImplementations[8].requirementGroup"
+        },
+        {
+          "target": "01M15WPEFV-ZMA9",
+          "path": "requirementImplementations[9].requirementGroup"
+        },
+        {
+          "target": "01M15XYZXT-KTJA",
+          "path": "requirementImplementations[10].requirementGroup"
         }
       ],
-      "referencedBy": [],
+      "referencedBy": [
+        {
+          "source": "01M7GYV3B6-K9CZ",
+          "path": "linkedObject"
+        },
+        {
+          "source": "01M7GYV3B6-083M",
+          "path": "linkedObject"
+        },
+        {
+          "source": "01M7GYV3B6-FASW",
+          "path": "linkedObject"
+        },
+        {
+          "source": "01M7GYV3B6-Q5NV",
+          "path": "linkedObject"
+        },
+        {
+          "source": "01M7GYV3B6-EEZ3",
+          "path": "linkedObject"
+        },
+        {
+          "source": "01M7GYV3B6-H03D",
+          "path": "linkedObject"
+        },
+        {
+          "source": "01M7GYV3B6-8VN0",
+          "path": "linkedObject"
+        },
+        {
+          "source": "01M7GYV3B6-KB8Q",
+          "path": "linkedObject"
+        },
+        {
+          "source": "01M7GYV3B6-RYSP",
+          "path": "linkedObject"
+        },
+        {
+          "source": "01M7GYV3B6-YE24",
+          "path": "linkedObject"
+        }
+      ],
       "editorSchema": {
         "requiredFields": [
           "schemaVersion",
@@ -23042,7 +23368,7 @@ window.DRAFT_BROWSER_DATA = {
         },
         "schemaPath": "framework/schemas/software-deployment-pattern.schema.yaml"
       },
-      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M15NEKT7-S14J\",\n  \"type\": \"software_deployment_pattern\",\n  \"name\": \"Skippy's Submind Agent Factory Deployment Pattern\",\n  \"description\": \"Agent Factory deployment on AWS ECS Fargate (cluster factory-prod, us-east-1) behind the Cloudflare edge and an internet-facing ALB, with Secrets Manager injection, S3 mind storage and an EFS/S3 ledger. Agents run as on-demand tasks.\",\n  \"version\": \"2.0.0\",\n  \"catalogStatus\": \"incomplete\",\n  \"lifecycleStatus\": \"preferred\",\n  \"owner\": {\n    \"team\": \"platform-ai-team\",\n    \"contact\": \"platform-ai@example.com\"\n  },\n  \"tags\": [\n    \"software-deployment-pattern\",\n    \"agent-factory\",\n    \"aws\",\n    \"ecs-fargate\"\n  ],\n  \"serviceGroups\": [\n    {\n      \"name\": \"Factory kernel mailboxes\",\n      \"deploymentTarget\": \"aws-us-east-1\",\n      \"substrate\": \"01M7GWTG2S-AC3R\",\n      \"deployableObjects\": [\n        {\n          \"ref\": \"01M7GWXKXW-EJWB\",\n          \"diagramTier\": \"application\"\n        },\n        {\n          \"ref\": \"01M7GWXKXW-7W49\",\n          \"diagramTier\": \"application\"\n        },\n        {\n          \"ref\": \"01M7GWXKXW-BPBV\",\n          \"diagramTier\": \"application\"\n        }\n      ]\n    },\n    {\n      \"name\": \"Factory clients\",\n      \"deploymentTarget\": \"aws-us-east-1\",\n      \"substrate\": \"01M7GWTG2S-AC3R\",\n      \"deployableObjects\": [\n        {\n          \"ref\": \"01M7GWXKXW-VPCD\",\n          \"diagramTier\": \"presentation\"\n        },\n        {\n          \"ref\": \"01M7GWXKXW-Z0Z4\",\n          \"diagramTier\": \"presentation\"\n        }\n      ]\n    },\n    {\n      \"name\": \"Agent cartridges (on-demand)\",\n      \"deploymentTarget\": \"aws-us-east-1\",\n      \"substrate\": \"01M7GWTG2S-AC3R\",\n      \"deployableObjects\": [\n        {\n          \"ref\": \"01M7GWXKXW-4ZJF\",\n          \"diagramTier\": \"application\"\n        }\n      ]\n    }\n  ],\n  \"decisionRecords\": [\n    {\n      \"ref\": \"01M7GTBMQS-SZBH\",\n      \"key\": \"edgeProxyDecision\"\n    }\n  ],\n  \"notes\": {\n    \"verification\": \"Verified read-only on 2026-11-15 (America/Phoenix) against AWS account ending 2296, us-east-1.\",\n    \"deploymentTargets\": \"AWS us-east-1, ECS cluster factory-prod on Fargate/Fargate Spot (01M7GWTG2S-X9V8).\",\n    \"availabilityRequirement\": \"Each kernel and client service runs desired 1 / running 1. Agent compute is zero when idle. gatekeeper-egress and garrison use FARGATE_SPOT. Availability target not yet set.\",\n    \"dataClassification\": \"Confidential (agent-factory .draft/sdp.yaml says the ledger holds metadata plus hashes and the mind holds adopter data).\",\n    \"failureDomain\": {\n      \"scope\": \"platform-wide\",\n      \"description\": \"Single region, single cluster. Losing the control plane blocks wakes and MCP. Losing one agent task does not take down the factory.\"\n    },\n    \"externalDependencies\": \"Cloudflare edge proxy (01M7GTBMQS-YRGF) and Cloudflare Access (01M7GWTG2T-VA2G); ALB factory-prod (01M7GWTG2T-M2Q0); Cloud Map factory.internal (01M7GWTG2T-8A54); Secrets Manager (01M7GWTG2T-3PQY); S3 mind bucket (01M7GWTG2T-GYW1); S3 config/ledger/packages buckets (01M7GWTG2T-F1WG); EFS ledger (01M7GWTG2T-KR1Y); ECR (01M7GWTG2T-0NKZ); CloudWatch (01M7GWTG2T-TQEB); KMS AWS-managed keys (01M7GWTG2T-JHTR).\",\n    \"interServiceConnections\": \"The ALB routes the default host to the control plane, factory-dashboard to the console and garrison to garrison. Kernel services find each other through Cloud Map factory.internal.\",\n    \"secretsManagement\": \"AWS Secrets Manager referenced as ECS container secrets (control-plane 6, gatekeeper-ingress 2, gatekeeper-egress 2, garrison 1, console 0). The gatekeepers inject credentials so agent tasks hold only their run token.\",\n    \"iacAutomation\": \"Terraform in BeerCanLabs/agent-factory landing-zones/aws with an S3 backend.\",\n    \"observability\": \"CloudWatch Logs /ecs/factory-prod (30 days), Container Insights, ADOT collector sidecar on control-plane and gatekeeper-egress. No factory alarms or dashboards found.\",\n    \"patternDeviations\": \"none recorded\",\n    \"productRegistration\": \"Registered in drafting-table as BeerCanLabs Agent Factory (01M1N137Q5-AFAC).\",\n    \"incomplete\": \"AWS decision records have not been written, so the related SDP requirements show as unmet. Data components for the mind and ledger, autoscaling, security groups and model-provider routing through gatekeeper-egress are not yet modeled.\"\n  },\n  \"_source\": \"catalog/engineering/software-deployment-patterns/sdp-skippys-submind.yaml\"\n}",
+      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M15NEKT7-S14J\",\n  \"type\": \"software_deployment_pattern\",\n  \"name\": \"Skippy's Submind Agent Factory Deployment Pattern\",\n  \"description\": \"Agent Factory deployment on AWS ECS Fargate (cluster factory-prod, us-east-1) behind the Cloudflare edge and an internet-facing ALB, with Secrets Manager injection, S3 mind storage and an EFS/S3 ledger. Agents run as on-demand tasks.\",\n  \"version\": \"2.0.0\",\n  \"catalogStatus\": \"incomplete\",\n  \"lifecycleStatus\": \"preferred\",\n  \"owner\": {\n    \"team\": \"platform-ai-team\",\n    \"contact\": \"platform-ai@example.com\"\n  },\n  \"tags\": [\n    \"software-deployment-pattern\",\n    \"agent-factory\",\n    \"aws\",\n    \"ecs-fargate\"\n  ],\n  \"serviceGroups\": [\n    {\n      \"name\": \"Factory kernel mailboxes\",\n      \"deploymentTarget\": \"aws-us-east-1\",\n      \"substrate\": \"01M7GWTG2S-AC3R\",\n      \"deployableObjects\": [\n        {\n          \"ref\": \"01M7GWXKXW-EJWB\",\n          \"diagramTier\": \"application\"\n        },\n        {\n          \"ref\": \"01M7GWXKXW-7W49\",\n          \"diagramTier\": \"application\"\n        },\n        {\n          \"ref\": \"01M7GWXKXW-BPBV\",\n          \"diagramTier\": \"application\"\n        }\n      ]\n    },\n    {\n      \"name\": \"Factory clients\",\n      \"deploymentTarget\": \"aws-us-east-1\",\n      \"substrate\": \"01M7GWTG2S-AC3R\",\n      \"deployableObjects\": [\n        {\n          \"ref\": \"01M7GWXKXW-VPCD\",\n          \"diagramTier\": \"presentation\"\n        },\n        {\n          \"ref\": \"01M7GWXKXW-Z0Z4\",\n          \"diagramTier\": \"presentation\"\n        }\n      ]\n    },\n    {\n      \"name\": \"Agent cartridges (on-demand)\",\n      \"deploymentTarget\": \"aws-us-east-1\",\n      \"substrate\": \"01M7GWTG2S-AC3R\",\n      \"deployableObjects\": [\n        {\n          \"ref\": \"01M7GWXKXW-4ZJF\",\n          \"diagramTier\": \"application\"\n        }\n      ]\n    }\n  ],\n  \"decisionRecords\": [\n    {\n      \"ref\": \"01M7GTBMQS-SZBH\",\n      \"key\": \"edgeProxyDecision\"\n    },\n    {\n      \"ref\": \"01M7GYV3B6-K9CZ\",\n      \"key\": \"deploymentTargets\"\n    },\n    {\n      \"ref\": \"01M7GYV3B6-K9CZ\",\n      \"key\": \"patternDeviations\"\n    },\n    {\n      \"ref\": \"01M7GYV3B6-8VN0\",\n      \"key\": \"interServiceConnections\"\n    },\n    {\n      \"ref\": \"01M7GYV3B6-8VN0\",\n      \"key\": \"externalDependencies\"\n    },\n    {\n      \"ref\": \"01M7GYV3B6-EEZ3\",\n      \"key\": \"accessControlModelDecision\"\n    },\n    {\n      \"ref\": \"01M7GYV3B6-YE24\",\n      \"key\": \"secretsManagementDecision\"\n    },\n    {\n      \"ref\": \"01M7GYV3B6-FASW\",\n      \"key\": \"dataClassification\"\n    },\n    {\n      \"ref\": \"01M7GYV3B6-FASW\",\n      \"key\": \"queryParameterizationDecision\"\n    },\n    {\n      \"ref\": \"01M7GYV3B6-083M\",\n      \"key\": \"cryptographyStandardDecision\"\n    },\n    {\n      \"ref\": \"01M7GYV3B6-RYSP\",\n      \"key\": \"availabilityRequirement\"\n    },\n    {\n      \"ref\": \"01M7GYV3B6-RYSP\",\n      \"key\": \"failureDomain\"\n    },\n    {\n      \"ref\": \"01M7GYV3B6-KB8Q\",\n      \"key\": \"errorHandlingLoggingDecision\"\n    },\n    {\n      \"ref\": \"01M7GYV3B6-Q5NV\",\n      \"key\": \"iacAutomationDecision\"\n    },\n    {\n      \"ref\": \"01M7GYV3B6-Q5NV\",\n      \"key\": \"productRegistrationDecision\"\n    },\n    {\n      \"ref\": \"01M7GYV3B6-H03D\",\n      \"key\": \"aiGatewayRoutingDecision\"\n    },\n    {\n      \"ref\": \"01M7GYV3B6-H03D\",\n      \"key\": \"modelInferenceSpecDecision\"\n    }\n  ],\n  \"requirementImplementations\": [\n    {\n      \"requirementGroup\": \"01M15WPEFV-ZMA9\",\n      \"requirementId\": \"req-expand-contract-migrations\",\n      \"status\": \"not-compliant\",\n      \"notes\": \"The placed agent-runtime (01M7GWXKXW-4ZJF) has a SQLite schema created in application code (CREATE TABLE IF NOT EXISTS in memory/episodic.py, notebook.py and workspace.py) that ships with the runtime. There is no expand-and-contract migration decoupled from a code deploy. See decision record 01M7GYV3B6-FASW.\"\n    },\n    {\n      \"requirementGroup\": \"01M15XYZXT-KTJA\",\n      \"requirementId\": \"req-asvs-parameterized-queries\",\n      \"status\": \"satisfied\",\n      \"notes\": \"Agent-runtime SQLite binds query values with parameterized placeholders. The only string-built SQL is notebook.py interpolating table identifiers from carry_tables; the runtime caller does not pass that argument. See decision record 01M7GYV3B6-FASW.\"\n    },\n    {\n      \"requirementGroup\": \"01M15WPEFV-ZMA9\",\n      \"requirementId\": \"req-no-gate-suppressions\",\n      \"status\": \"not-compliant\",\n      \"notes\": \"packages/conformance/baseline.json holds 4 approved baseline entries (GAP-031, GAP-050). See decision record 01M7GYV3B6-Q5NV.\"\n    },\n    {\n      \"requirementGroup\": \"01M15WPEFV-ZMA9\",\n      \"requirementId\": \"req-rollback-mechanism\",\n      \"status\": \"not-compliant\",\n      \"notes\": \"Rollback is a manual redeploy of a recorded pin; ECS deployment circuit breakers are disabled. See decision record 01M7GYV3B6-Q5NV.\"\n    },\n    {\n      \"requirementGroup\": \"01M15WPEFV-ZMA9\",\n      \"requirementId\": \"req-l3-composable-iac\",\n      \"status\": \"not-compliant\",\n      \"notes\": \"Single Terraform root configuration plus one documented hand-set Cloudflare Access bypass. See decision record 01M7GYV3B6-Q5NV.\"\n    },\n    {\n      \"requirementGroup\": \"01M15WPEFV-ZMA9\",\n      \"requirementId\": \"req-l3-ephemeral-preview-environments\",\n      \"status\": \"not-compliant\",\n      \"notes\": \"No per-branch cloud preview environments; CI runs an ephemeral Docker Compose proof only. See decision record 01M7GYV3B6-Q5NV.\"\n    },\n    {\n      \"requirementGroup\": \"01M15WPEFV-ZMA9\",\n      \"requirementId\": \"req-l3-json-structured-logging\",\n      \"status\": \"not-compliant\",\n      \"notes\": \"Application logs are plain text; the ledger is the structured audit trail. See decision record 01M7GYV3B6-KB8Q.\"\n    },\n    {\n      \"requirementGroup\": \"01M15WPEFV-ZMA9\",\n      \"requirementId\": \"req-l3-slo-error-budget\",\n      \"status\": \"not-compliant\",\n      \"notes\": \"No SLO or error-budget policy is defined. See decision record 01M7GYV3B6-RYSP.\"\n    },\n    {\n      \"requirementGroup\": \"01M15WPEFV-ZMA9\",\n      \"requirementId\": \"req-l3-zero-downtime-deployment\",\n      \"status\": \"not-compliant\",\n      \"notes\": \"Control plane deploys stop-then-start (LG1, accepted 2026-09-28); no auto-rollback. See decision record 01M7GYV3B6-Q5NV.\"\n    },\n    {\n      \"requirementGroup\": \"01M15WPEFV-ZMA9\",\n      \"requirementId\": \"req-l3-automated-security-gates\",\n      \"status\": \"not-compliant\",\n      \"notes\": \"No SAST, secret scanning, SCA or IaC policy linting in CI. See decision record 01M7GYV3B6-Q5NV.\"\n    },\n    {\n      \"requirementGroup\": \"01M15XYZXT-KTJA\",\n      \"requirementId\": \"req-asvs-third-party-component-security\",\n      \"status\": \"not-compliant\",\n      \"notes\": \"No automated SCA in CI and no Dependabot configuration. See decision record 01M7GYV3B6-Q5NV.\"\n    }\n  ],\n  \"notes\": {\n    \"verification\": \"Verified read-only on 2026-11-15 (America/Phoenix) against AWS account ending 2296, us-east-1.\",\n    \"deploymentTargets\": \"AWS us-east-1, ECS cluster factory-prod on Fargate/Fargate Spot (01M7GWTG2S-X9V8).\",\n    \"availabilityRequirement\": \"Each kernel and client service runs desired 1 / running 1. Agent compute is zero when idle. gatekeeper-egress and garrison use FARGATE_SPOT. Availability target not yet set.\",\n    \"dataClassification\": \"Confidential (agent-factory .draft/sdp.yaml says the ledger holds metadata plus hashes and the mind holds adopter data).\",\n    \"failureDomain\": {\n      \"scope\": \"platform-wide\",\n      \"description\": \"Single region, single cluster. Losing the control plane blocks wakes and MCP. Losing one agent task does not take down the factory.\"\n    },\n    \"externalDependencies\": \"Cloudflare edge proxy (01M7GTBMQS-YRGF) and Cloudflare Access (01M7GWTG2T-VA2G); ALB factory-prod (01M7GWTG2T-M2Q0); Cloud Map factory.internal (01M7GWTG2T-8A54); Secrets Manager (01M7GWTG2T-3PQY); S3 mind bucket (01M7GWTG2T-GYW1); S3 config/ledger/packages buckets (01M7GWTG2T-F1WG); EFS ledger (01M7GWTG2T-KR1Y); ECR (01M7GWTG2T-0NKZ); CloudWatch (01M7GWTG2T-TQEB); KMS AWS-managed keys (01M7GWTG2T-JHTR).\",\n    \"interServiceConnections\": \"The ALB routes the default host to the control plane, factory-dashboard to the console and garrison to garrison. Kernel services find each other through Cloud Map factory.internal.\",\n    \"secretsManagement\": \"AWS Secrets Manager referenced as ECS container secrets (control-plane 6, gatekeeper-ingress 2, gatekeeper-egress 2, garrison 1, console 0). The gatekeepers inject credentials so agent tasks hold only their run token, except the registered gap GAP-031 (see decision record 01M7GYV3B6-YE24).\",\n    \"iacAutomation\": \"Terraform in BeerCanLabs/agent-factory landing-zones/aws with an S3 backend.\",\n    \"observability\": \"CloudWatch Logs /ecs/factory-prod (30 days), Container Insights, ADOT collector sidecar on control-plane and gatekeeper-egress. No factory alarms or dashboards found.\",\n    \"patternDeviations\": \"Live ECS, the control plane, gatekeeper-ingress and gatekeeper-egress are always-on services; agents scale to zero (see decision record 01M7GYV3B6-K9CZ).\",\n    \"productRegistration\": \"Registered in drafting-table as BeerCanLabs Agent Factory (01M1N137Q5-AFAC).\",\n    \"incomplete\": \"Requirements are answered by the AWS decision records listed above. Known gaps are recorded as not-compliant requirementImplementations. Still open: synthetic test data, local DRAFT validation of the repo SDP, session/JWT hardening (MFA, rate limiting), and reference-architecture conformance: the agent-factory repo SDP maps the orchestrated-tasks pattern to RA 01KV0REFAR-CMSV, but declaring it needs the RA's ingress, orchestration, mesh, data-store and logs slots modeled first. Data components for the mind and ledger, autoscaling and security groups are not yet modeled.\"\n  },\n  \"_source\": \"catalog/engineering/software-deployment-patterns/sdp-skippys-submind.yaml\"\n}",
       "existsInCatalog": true,
       "outboundRelationships": [],
       "inboundRelationships": [],
@@ -23380,6 +23706,1752 @@ window.DRAFT_BROWSER_DATA = {
         "schemaPath": "framework/schemas/domain.schema.yaml"
       },
       "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M7GTBMQS-3R9T\",\n  \"type\": \"domain\",\n  \"name\": \"Labs\",\n  \"description\": \"Innovation and experimental labs domain covering gaming engines, prototypes,  and experimental repositories authored by Aiden and the Labs team.\\n\",\n  \"ownerContact\": \"labs-team@beercanlabs.com\",\n  \"_source\": \"catalog/governance/business-domains/domain-labs.yaml\"\n}",
+      "existsInCatalog": true,
+      "outboundRelationships": [],
+      "inboundRelationships": []
+    },
+    {
+      "id": "01M7GYV3B6-K9CZ",
+      "uid": "01M7GYV3B6-K9CZ",
+      "name": "AWS Agent Factory: Compute, Hosting and Scheduling",
+      "aliases": [],
+      "type": "decision_record",
+      "typeLabel": "DecisionRecord / decision",
+      "filterType": "decision_record",
+      "category": "decision",
+      "deliveryModel": "",
+      "domain": "",
+      "description": "The Agent Factory runs on AWS ECS Fargate in us-east-1 (cluster factory-prod) using the orchestrated-tasks baseline pattern: mailbox services stay warm and each agent run is its own on-demand task.",
+      "version": "1.0.0",
+      "catalogStatus": "incomplete",
+      "lifecycleStatus": "preferred",
+      "status": "accepted",
+      "businessContext": {},
+      "product": "",
+      "runsOn": "",
+      "subtype": "",
+      "vendor": "",
+      "productName": "",
+      "productVersion": "",
+      "classification": "",
+      "platformDependency": "",
+      "capabilities": [],
+      "configurations": [],
+      "networkPlacement": "",
+      "patchingOwner": "",
+      "complianceCerts": [],
+      "requirementGroups": [],
+      "requirementImplementations": [],
+      "dataLeavesInfrastructure": null,
+      "dataResidencyCommitment": "",
+      "dpaNotes": "",
+      "vendorSLA": "",
+      "authenticationModel": "",
+      "incidentNotificationProcess": "",
+      "owner": {
+        "team": "platform-ai-team",
+        "contact": "platform-ai@example.com"
+      },
+      "definitionOwner": {},
+      "provider": {},
+      "authority": {},
+      "shape": "round-rectangle",
+      "color": "#1f8a5b",
+      "source": "catalog/governance/decision-records/dr-aws-agent-factory-compute.yaml",
+      "tags": [
+        "agent-factory",
+        "aws",
+        "submind",
+        "compute",
+        "ecs",
+        "fargate",
+        "scheduling"
+      ],
+      "ardCategory": "decision",
+      "internalComponents": [],
+      "notes": {},
+      "requirements": [],
+      "implementations": [],
+      "appliesTo": {},
+      "inherits": "",
+      "scalingUnits": [],
+      "networkZones": [],
+      "sdpConnections": [],
+      "serviceGroups": [],
+      "tierVariants": [],
+      "tierId": "",
+      "purpose": "",
+      "availabilityExpectation": "",
+      "costPosture": "",
+      "complianceScope": [],
+      "parameterSurface": [],
+      "followsReferenceArchitecture": "",
+      "decisionRecords": [],
+      "affectedComponent": "",
+      "impact": "",
+      "mitigationPath": "",
+      "decisionRationale": "Decision (observed and documented): the deployment target is AWS us-east-1, ECS cluster factory-prod on Fargate. It follows the\norchestrated-tasks baseline pattern (reference architecture 01KV0REFAR-CMSV). The control plane, gatekeeper-ingress,\ngatekeeper-egress, console and garrison run as ECS services (desired 1). Agents run as one Fargate task per run, started by\nthe control plane, so agent compute is zero when idle.\nWhy: the kernel is cloud-agnostic and the landing zone is a per-deployment choice; landing-zones/aws is the\n\"orchestrated-tasks x AWS\" binding. Mailboxes stay warm because they are mailboxes, not cartridges (agent-factory\n.draft/sdp.yaml patternDeviations). Each deployment target has its own ops repository that pins an exact agent-factory\ncommit (Design Authority L1); for AWS that is submind-aws.\nCapacity: gatekeeper-egress and garrison use FARGATE_SPOT; the control plane, console and gatekeeper-ingress use on-demand\nFARGATE. gatekeeper-ingress was moved off Spot after a Spot reclaim killed the single task that holds every agent's Discord\npresence during the 2026-09-30 deploy (commit b58b49a). Why Spot was chosen for the other two: rationale not recorded\n(introduced in 85bfff6, whose message gives no reason).\nScheduling: agent cron triggers are handled by the factory's own Timekeeper (packages/timekeeper; Design Authority 6.15),\nnot by a cloud scheduler. Amazon EventBridge Scheduler in this account is used only by Closing Climb. Why an\nin-process scheduler rather than a cloud scheduler: rationale not recorded beyond the cloud-agnostic kernel principle.\nChoice of AWS over the earlier GCP deployment: rationale not recorded in the sources reviewed.\n\nSources:\n- BeerCanLabs/agent-factory @01720b2: AGENTS.md (Interview, Landing-zone examples), .draft/sdp.yaml (notes.patternDeviations, baselinePatterns), landing-zones/aws/README.md, landing-zones/aws/ecs.tf\n- BeerCanLabs/agent-factory @01720b2: DESIGN_AUTHORITY.md 6.8 L1, 6.15 (Timekeeper); commits b58b49a (2026-09-30), 85bfff6 (2026-09-19)\n- BeerCanLabs/submind-aws @3f7d9a5: README.md, OPERATIONS.md (What lives here)\n- Live AWS, read-only, account ending 2296, us-east-1, 2026-11-15: ecs describe-clusters/describe-services (launch types, desired counts), list-task-definition-families, scheduler list-schedules\n",
+      "relatedDecisionRecords": [],
+      "linkedObject": "01M15NEKT7-S14J",
+      "primaryObjectType": "",
+      "primaryObjectUid": "",
+      "generatedObjects": [],
+      "unresolvedQuestions": [],
+      "assumptions": [],
+      "nextSteps": [],
+      "defaultSelection": false,
+      "requirementCount": 0,
+      "hasRiskRef": false,
+      "outboundRefs": [
+        {
+          "target": "01M15NEKT7-S14J",
+          "path": "linkedObject"
+        }
+      ],
+      "referencedBy": [
+        {
+          "source": "01M15NEKT7-S14J",
+          "path": "decisionRecords[1].ref"
+        },
+        {
+          "source": "01M15NEKT7-S14J",
+          "path": "decisionRecords[2].ref"
+        }
+      ],
+      "editorSchema": {
+        "requiredFields": [
+          "schemaVersion",
+          "uid",
+          "type",
+          "name",
+          "category",
+          "status",
+          "catalogStatus",
+          "lifecycleStatus"
+        ],
+        "optionalFields": [
+          "aliases",
+          "description",
+          "version",
+          "owner",
+          "tags",
+          "affectedComponent",
+          "impact",
+          "mitigationPath",
+          "decisionRationale",
+          "relatedDecisionRecords",
+          "controlReferences",
+          "linkedObject",
+          "approver",
+          "approvalDate"
+        ],
+        "fieldTypes": {
+          "aliases": "list",
+          "owner": "dict",
+          "tags": "list",
+          "relatedDecisionRecords": "list",
+          "controlReferences": "list",
+          "approver": "str",
+          "approvalDate": "str"
+        },
+        "enumFields": {
+          "catalogStatus": [
+            "stub",
+            "incomplete",
+            "complete"
+          ],
+          "lifecycleStatus": [
+            "candidate",
+            "preferred",
+            "existing-only",
+            "deprecated",
+            "retired"
+          ],
+          "category": [
+            "risk",
+            "decision"
+          ],
+          "status": [
+            "open",
+            "accepted",
+            "mitigated",
+            "resolved"
+          ]
+        },
+        "enumListFields": {},
+        "collectionSchemas": {},
+        "schemaPath": "framework/schemas/decision-record.schema.yaml"
+      },
+      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M7GYV3B6-K9CZ\",\n  \"type\": \"decision_record\",\n  \"name\": \"AWS Agent Factory: Compute, Hosting and Scheduling\",\n  \"description\": \"The Agent Factory runs on AWS ECS Fargate in us-east-1 (cluster factory-prod) using the orchestrated-tasks baseline pattern: mailbox services stay warm and each agent run is its own on-demand task.\",\n  \"version\": \"1.0.0\",\n  \"category\": \"decision\",\n  \"status\": \"accepted\",\n  \"catalogStatus\": \"incomplete\",\n  \"lifecycleStatus\": \"preferred\",\n  \"owner\": {\n    \"team\": \"platform-ai-team\",\n    \"contact\": \"platform-ai@example.com\"\n  },\n  \"tags\": [\n    \"agent-factory\",\n    \"aws\",\n    \"submind\",\n    \"compute\",\n    \"ecs\",\n    \"fargate\",\n    \"scheduling\"\n  ],\n  \"linkedObject\": \"01M15NEKT7-S14J\",\n  \"decisionRationale\": \"Decision (observed and documented): the deployment target is AWS us-east-1, ECS cluster factory-prod on Fargate. It follows the\\norchestrated-tasks baseline pattern (reference architecture 01KV0REFAR-CMSV). The control plane, gatekeeper-ingress,\\ngatekeeper-egress, console and garrison run as ECS services (desired 1). Agents run as one Fargate task per run, started by\\nthe control plane, so agent compute is zero when idle.\\nWhy: the kernel is cloud-agnostic and the landing zone is a per-deployment choice; landing-zones/aws is the\\n\\\"orchestrated-tasks x AWS\\\" binding. Mailboxes stay warm because they are mailboxes, not cartridges (agent-factory\\n.draft/sdp.yaml patternDeviations). Each deployment target has its own ops repository that pins an exact agent-factory\\ncommit (Design Authority L1); for AWS that is submind-aws.\\nCapacity: gatekeeper-egress and garrison use FARGATE_SPOT; the control plane, console and gatekeeper-ingress use on-demand\\nFARGATE. gatekeeper-ingress was moved off Spot after a Spot reclaim killed the single task that holds every agent's Discord\\npresence during the 2026-09-30 deploy (commit b58b49a). Why Spot was chosen for the other two: rationale not recorded\\n(introduced in 85bfff6, whose message gives no reason).\\nScheduling: agent cron triggers are handled by the factory's own Timekeeper (packages/timekeeper; Design Authority 6.15),\\nnot by a cloud scheduler. Amazon EventBridge Scheduler in this account is used only by Closing Climb. Why an\\nin-process scheduler rather than a cloud scheduler: rationale not recorded beyond the cloud-agnostic kernel principle.\\nChoice of AWS over the earlier GCP deployment: rationale not recorded in the sources reviewed.\\n\\nSources:\\n- BeerCanLabs/agent-factory @01720b2: AGENTS.md (Interview, Landing-zone examples), .draft/sdp.yaml (notes.patternDeviations, baselinePatterns), landing-zones/aws/README.md, landing-zones/aws/ecs.tf\\n- BeerCanLabs/agent-factory @01720b2: DESIGN_AUTHORITY.md 6.8 L1, 6.15 (Timekeeper); commits b58b49a (2026-09-30), 85bfff6 (2026-09-19)\\n- BeerCanLabs/submind-aws @3f7d9a5: README.md, OPERATIONS.md (What lives here)\\n- Live AWS, read-only, account ending 2296, us-east-1, 2026-11-15: ecs describe-clusters/describe-services (launch types, desired counts), list-task-definition-families, scheduler list-schedules\\n\",\n  \"_source\": \"catalog/governance/decision-records/dr-aws-agent-factory-compute.yaml\"\n}",
+      "existsInCatalog": true,
+      "outboundRelationships": [],
+      "inboundRelationships": []
+    },
+    {
+      "id": "01M7GYV3B6-083M",
+      "uid": "01M7GYV3B6-083M",
+      "name": "AWS Agent Factory: Encryption in Transit and at Rest",
+      "aliases": [],
+      "type": "decision_record",
+      "typeLabel": "DecisionRecord / decision",
+      "filterType": "decision_record",
+      "category": "decision",
+      "deliveryModel": "",
+      "domain": "",
+      "description": "TLS 1.2+ at the ALB (ELBSecurityPolicy-TLS13-1-2-2021-06) with HTTP redirected to HTTPS. Data at rest uses SSE-S3 (AES-256), an encrypted EFS with TLS mounts, and AWS-managed KMS keys for Secrets Manager.",
+      "version": "1.0.0",
+      "catalogStatus": "incomplete",
+      "lifecycleStatus": "preferred",
+      "status": "accepted",
+      "businessContext": {},
+      "product": "",
+      "runsOn": "",
+      "subtype": "",
+      "vendor": "",
+      "productName": "",
+      "productVersion": "",
+      "classification": "",
+      "platformDependency": "",
+      "capabilities": [],
+      "configurations": [],
+      "networkPlacement": "",
+      "patchingOwner": "",
+      "complianceCerts": [],
+      "requirementGroups": [],
+      "requirementImplementations": [],
+      "dataLeavesInfrastructure": null,
+      "dataResidencyCommitment": "",
+      "dpaNotes": "",
+      "vendorSLA": "",
+      "authenticationModel": "",
+      "incidentNotificationProcess": "",
+      "owner": {
+        "team": "platform-ai-team",
+        "contact": "platform-ai@example.com"
+      },
+      "definitionOwner": {},
+      "provider": {},
+      "authority": {},
+      "shape": "round-rectangle",
+      "color": "#1f8a5b",
+      "source": "catalog/governance/decision-records/dr-aws-agent-factory-crypto.yaml",
+      "tags": [
+        "agent-factory",
+        "aws",
+        "submind",
+        "encryption",
+        "tls",
+        "kms"
+      ],
+      "ardCategory": "decision",
+      "internalComponents": [],
+      "notes": {},
+      "requirements": [],
+      "implementations": [],
+      "appliesTo": {},
+      "inherits": "",
+      "scalingUnits": [],
+      "networkZones": [],
+      "sdpConnections": [],
+      "serviceGroups": [],
+      "tierVariants": [],
+      "tierId": "",
+      "purpose": "",
+      "availabilityExpectation": "",
+      "costPosture": "",
+      "complianceScope": [],
+      "parameterSurface": [],
+      "followsReferenceArchitecture": "",
+      "decisionRecords": [],
+      "affectedComponent": "",
+      "impact": "",
+      "mitigationPath": "",
+      "decisionRationale": "Decision (observed): the ALB terminates TLS with ACM certificates and policy ELBSecurityPolicy-TLS13-1-2-2021-06 (TLS 1.2 and\n1.3); port 80 only redirects to HTTPS (landing-zones/aws/alb.tf; README \"HTTPS only, :80 redirects\"; live listeners).\nCloudflare to origin uses Full SSL per edge decision 01M7GTBMQS-SZBH. At rest: every factory S3 bucket uses SSE-S3\n(AES256); the EFS ledger is encrypted and mounted with transit encryption and IAM authorization; Secrets Manager uses the\nAWS-managed aws/secretsmanager key. No customer-managed KMS keys exist in the account.\nWhy SSE-S3 and AWS-managed keys rather than customer-managed KMS keys: rationale not recorded.\n\nSources:\n- BeerCanLabs/agent-factory @01720b2: landing-zones/aws/alb.tf (ssl_policy), storage.tf (sse_algorithm AES256, EFS encrypted), ecs.tf (EFS transit encryption), README.md; commit a3d698f\n- Live AWS, read-only, account ending 2296, us-east-1, 2026-11-15: elbv2 describe-listeners, s3api get-bucket-encryption, efs describe-file-systems, kms list-aliases\n- Drafting table: decision record 01M7GTBMQS-SZBH\n",
+      "relatedDecisionRecords": [],
+      "linkedObject": "01M15NEKT7-S14J",
+      "primaryObjectType": "",
+      "primaryObjectUid": "",
+      "generatedObjects": [],
+      "unresolvedQuestions": [],
+      "assumptions": [],
+      "nextSteps": [],
+      "defaultSelection": false,
+      "requirementCount": 0,
+      "hasRiskRef": false,
+      "outboundRefs": [
+        {
+          "target": "01M15NEKT7-S14J",
+          "path": "linkedObject"
+        }
+      ],
+      "referencedBy": [
+        {
+          "source": "01M15NEKT7-S14J",
+          "path": "decisionRecords[9].ref"
+        }
+      ],
+      "editorSchema": {
+        "requiredFields": [
+          "schemaVersion",
+          "uid",
+          "type",
+          "name",
+          "category",
+          "status",
+          "catalogStatus",
+          "lifecycleStatus"
+        ],
+        "optionalFields": [
+          "aliases",
+          "description",
+          "version",
+          "owner",
+          "tags",
+          "affectedComponent",
+          "impact",
+          "mitigationPath",
+          "decisionRationale",
+          "relatedDecisionRecords",
+          "controlReferences",
+          "linkedObject",
+          "approver",
+          "approvalDate"
+        ],
+        "fieldTypes": {
+          "aliases": "list",
+          "owner": "dict",
+          "tags": "list",
+          "relatedDecisionRecords": "list",
+          "controlReferences": "list",
+          "approver": "str",
+          "approvalDate": "str"
+        },
+        "enumFields": {
+          "catalogStatus": [
+            "stub",
+            "incomplete",
+            "complete"
+          ],
+          "lifecycleStatus": [
+            "candidate",
+            "preferred",
+            "existing-only",
+            "deprecated",
+            "retired"
+          ],
+          "category": [
+            "risk",
+            "decision"
+          ],
+          "status": [
+            "open",
+            "accepted",
+            "mitigated",
+            "resolved"
+          ]
+        },
+        "enumListFields": {},
+        "collectionSchemas": {},
+        "schemaPath": "framework/schemas/decision-record.schema.yaml"
+      },
+      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M7GYV3B6-083M\",\n  \"type\": \"decision_record\",\n  \"name\": \"AWS Agent Factory: Encryption in Transit and at Rest\",\n  \"description\": \"TLS 1.2+ at the ALB (ELBSecurityPolicy-TLS13-1-2-2021-06) with HTTP redirected to HTTPS. Data at rest uses SSE-S3 (AES-256), an encrypted EFS with TLS mounts, and AWS-managed KMS keys for Secrets Manager.\",\n  \"version\": \"1.0.0\",\n  \"category\": \"decision\",\n  \"status\": \"accepted\",\n  \"catalogStatus\": \"incomplete\",\n  \"lifecycleStatus\": \"preferred\",\n  \"owner\": {\n    \"team\": \"platform-ai-team\",\n    \"contact\": \"platform-ai@example.com\"\n  },\n  \"tags\": [\n    \"agent-factory\",\n    \"aws\",\n    \"submind\",\n    \"encryption\",\n    \"tls\",\n    \"kms\"\n  ],\n  \"linkedObject\": \"01M15NEKT7-S14J\",\n  \"decisionRationale\": \"Decision (observed): the ALB terminates TLS with ACM certificates and policy ELBSecurityPolicy-TLS13-1-2-2021-06 (TLS 1.2 and\\n1.3); port 80 only redirects to HTTPS (landing-zones/aws/alb.tf; README \\\"HTTPS only, :80 redirects\\\"; live listeners).\\nCloudflare to origin uses Full SSL per edge decision 01M7GTBMQS-SZBH. At rest: every factory S3 bucket uses SSE-S3\\n(AES256); the EFS ledger is encrypted and mounted with transit encryption and IAM authorization; Secrets Manager uses the\\nAWS-managed aws/secretsmanager key. No customer-managed KMS keys exist in the account.\\nWhy SSE-S3 and AWS-managed keys rather than customer-managed KMS keys: rationale not recorded.\\n\\nSources:\\n- BeerCanLabs/agent-factory @01720b2: landing-zones/aws/alb.tf (ssl_policy), storage.tf (sse_algorithm AES256, EFS encrypted), ecs.tf (EFS transit encryption), README.md; commit a3d698f\\n- Live AWS, read-only, account ending 2296, us-east-1, 2026-11-15: elbv2 describe-listeners, s3api get-bucket-encryption, efs describe-file-systems, kms list-aliases\\n- Drafting table: decision record 01M7GTBMQS-SZBH\\n\",\n  \"_source\": \"catalog/governance/decision-records/dr-aws-agent-factory-crypto.yaml\"\n}",
+      "existsInCatalog": true,
+      "outboundRelationships": [],
+      "inboundRelationships": []
+    },
+    {
+      "id": "01M7GYV3B6-FASW",
+      "uid": "01M7GYV3B6-FASW",
+      "name": "AWS Agent Factory: Data Stores and Data Classification",
+      "aliases": [],
+      "type": "decision_record",
+      "typeLabel": "DecisionRecord / decision",
+      "filterType": "decision_record",
+      "category": "decision",
+      "deliveryModel": "",
+      "domain": "",
+      "description": "Agent memory is kept in S3 under per-agent prefixes and, while a task is running, as per-agent SQLite in the agent-runtime notebook. The ledger is on encrypted EFS with WORM checkpoints in S3 Object Lock. Configuration is in a versioned S3 bucket. Runtime-created agent roles are not limited to their own mind prefix.",
+      "version": "1.0.0",
+      "catalogStatus": "incomplete",
+      "lifecycleStatus": "preferred",
+      "status": "accepted",
+      "businessContext": {},
+      "product": "",
+      "runsOn": "",
+      "subtype": "",
+      "vendor": "",
+      "productName": "",
+      "productVersion": "",
+      "classification": "",
+      "platformDependency": "",
+      "capabilities": [],
+      "configurations": [],
+      "networkPlacement": "",
+      "patchingOwner": "",
+      "complianceCerts": [],
+      "requirementGroups": [],
+      "requirementImplementations": [],
+      "dataLeavesInfrastructure": null,
+      "dataResidencyCommitment": "",
+      "dpaNotes": "",
+      "vendorSLA": "",
+      "authenticationModel": "",
+      "incidentNotificationProcess": "",
+      "owner": {
+        "team": "platform-ai-team",
+        "contact": "platform-ai@example.com"
+      },
+      "definitionOwner": {},
+      "provider": {},
+      "authority": {},
+      "shape": "round-rectangle",
+      "color": "#1f8a5b",
+      "source": "catalog/governance/decision-records/dr-aws-agent-factory-data.yaml",
+      "tags": [
+        "agent-factory",
+        "aws",
+        "submind",
+        "data",
+        "s3",
+        "efs",
+        "classification",
+        "sqlite"
+      ],
+      "ardCategory": "decision",
+      "internalComponents": [],
+      "notes": {},
+      "requirements": [],
+      "implementations": [],
+      "appliesTo": {},
+      "inherits": "",
+      "scalingUnits": [],
+      "networkZones": [],
+      "sdpConnections": [],
+      "serviceGroups": [],
+      "tierVariants": [],
+      "tierId": "",
+      "purpose": "",
+      "availabilityExpectation": "",
+      "costPosture": "",
+      "complianceScope": [],
+      "parameterSurface": [],
+      "followsReferenceArchitecture": "",
+      "decisionRecords": [],
+      "affectedComponent": "",
+      "impact": "",
+      "mitigationPath": "",
+      "decisionRationale": "Decision: agent memory follows \"The Notebook & Safe\" (Design Authority 6.6). Cartridges read and write local SQLite in\n$MEMORY_DIR and never import cloud SDKs; the Property Manager's shim pulls the mind from object storage on wake and pushes it\nback on sleep. AWS binding: S3 bucket agent-factory-mind-prod-* with per-agent prefixes. Only the Terraform-managed\nfactory-prod-agent-* task roles are limited to their own prefix (iam.tf own-mind-only). Runtime-created AgentTaskRole-*\nroles (packages/property-manager/src/aws/iam.ts MindPersistenceAccess) can read, write and delete every agent's mind.\nLive IAM confirms this on the 30 AgentTaskRole-* roles. That is not compliant with \u00a76.6 \"Private Agent Memory Isolation\".\nThe ledger hot chain is on EFS factory-prod-ledger with one writer (LG1); checkpoints ship to\nagent-factory-ledger-prod-* with S3 Object Lock in COMPLIANCE mode, 365-day default retention, so no principal can delete\nor overwrite them early (storage.tf comment; live configuration). Each agent's deployment configuration is one immutable\nobject per version in the versioned config bucket (6.14 SK3, R1). Skill packages are in the packages bucket.\nClassification: Confidential. The ledger holds metadata and hashes only, and the mind holds adopter data (agent-factory\n.draft/sdp.yaml notes.dataClassification). The ledger never holds secrets or prompt bodies (AGENTS.md definition of done 4).\nSQL scope: the factory kernel has no SQL engine in packages/*/src at 01720b2. The cartridge runtime this SDP places\n(01M7GWXKXW-4ZJF, runtimes/agent-runtime) does: memory/episodic.py, memory/notebook.py and memory/workspace.py create a\nSQLite schema (CREATE TABLE / CREATE INDEX / FTS5) for conversations, notebook metadata and workspace state. Schema\nchanges ship in that runtime as CREATE TABLE IF NOT EXISTS and index creation; notebook rotation copies the schema onto a\nnew file and swaps it in. There is no expand-and-contract migration decoupled from a runtime deploy, so\nreq-expand-contract-migrations is not-compliant. Query values are bound with parameterized placeholders throughout;\nthe only string-built SQL is notebook.py, which interpolates table identifiers from the carry_tables argument when rotating\n(the runtime caller runtime/mind.py does not pass that argument). req-asvs-parameterized-queries is therefore satisfied,\nwith that identifier interpolation noted. DynamoDB closing-climb-prod in the same account belongs to Closing Climb, not\nthe factory.\n\nSources:\n- BeerCanLabs/agent-factory @01720b2: DESIGN_AUTHORITY.md 6.6, 6.10 LG1-LG2, 6.13 R1, 6.14; .draft/sdp.yaml (notes.dataClassification); AGENTS.md; landing-zones/aws/storage.tf, iam.tf; packages/property-manager/src/aws/iam.ts; runtimes/agent-runtime/memory/episodic.py, notebook.py, workspace.py and runtime/mind.py\n- Live AWS, read-only, account ending 2296, us-east-1, 2026-11-15: s3api get-bucket-encryption/versioning/object-lock-configuration/public-access-block, efs describe-file-systems, iam get-role-policy for AgentTaskRole-*\n",
+      "relatedDecisionRecords": [],
+      "linkedObject": "01M15NEKT7-S14J",
+      "primaryObjectType": "",
+      "primaryObjectUid": "",
+      "generatedObjects": [],
+      "unresolvedQuestions": [],
+      "assumptions": [],
+      "nextSteps": [],
+      "defaultSelection": false,
+      "requirementCount": 0,
+      "hasRiskRef": false,
+      "outboundRefs": [
+        {
+          "target": "01M15NEKT7-S14J",
+          "path": "linkedObject"
+        }
+      ],
+      "referencedBy": [
+        {
+          "source": "01M15NEKT7-S14J",
+          "path": "decisionRecords[7].ref"
+        },
+        {
+          "source": "01M15NEKT7-S14J",
+          "path": "decisionRecords[8].ref"
+        }
+      ],
+      "editorSchema": {
+        "requiredFields": [
+          "schemaVersion",
+          "uid",
+          "type",
+          "name",
+          "category",
+          "status",
+          "catalogStatus",
+          "lifecycleStatus"
+        ],
+        "optionalFields": [
+          "aliases",
+          "description",
+          "version",
+          "owner",
+          "tags",
+          "affectedComponent",
+          "impact",
+          "mitigationPath",
+          "decisionRationale",
+          "relatedDecisionRecords",
+          "controlReferences",
+          "linkedObject",
+          "approver",
+          "approvalDate"
+        ],
+        "fieldTypes": {
+          "aliases": "list",
+          "owner": "dict",
+          "tags": "list",
+          "relatedDecisionRecords": "list",
+          "controlReferences": "list",
+          "approver": "str",
+          "approvalDate": "str"
+        },
+        "enumFields": {
+          "catalogStatus": [
+            "stub",
+            "incomplete",
+            "complete"
+          ],
+          "lifecycleStatus": [
+            "candidate",
+            "preferred",
+            "existing-only",
+            "deprecated",
+            "retired"
+          ],
+          "category": [
+            "risk",
+            "decision"
+          ],
+          "status": [
+            "open",
+            "accepted",
+            "mitigated",
+            "resolved"
+          ]
+        },
+        "enumListFields": {},
+        "collectionSchemas": {},
+        "schemaPath": "framework/schemas/decision-record.schema.yaml"
+      },
+      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M7GYV3B6-FASW\",\n  \"type\": \"decision_record\",\n  \"name\": \"AWS Agent Factory: Data Stores and Data Classification\",\n  \"description\": \"Agent memory is kept in S3 under per-agent prefixes and, while a task is running, as per-agent SQLite in the agent-runtime notebook. The ledger is on encrypted EFS with WORM checkpoints in S3 Object Lock. Configuration is in a versioned S3 bucket. Runtime-created agent roles are not limited to their own mind prefix.\",\n  \"version\": \"1.0.0\",\n  \"category\": \"decision\",\n  \"status\": \"accepted\",\n  \"catalogStatus\": \"incomplete\",\n  \"lifecycleStatus\": \"preferred\",\n  \"owner\": {\n    \"team\": \"platform-ai-team\",\n    \"contact\": \"platform-ai@example.com\"\n  },\n  \"tags\": [\n    \"agent-factory\",\n    \"aws\",\n    \"submind\",\n    \"data\",\n    \"s3\",\n    \"efs\",\n    \"classification\",\n    \"sqlite\"\n  ],\n  \"linkedObject\": \"01M15NEKT7-S14J\",\n  \"decisionRationale\": \"Decision: agent memory follows \\\"The Notebook & Safe\\\" (Design Authority 6.6). Cartridges read and write local SQLite in\\n$MEMORY_DIR and never import cloud SDKs; the Property Manager's shim pulls the mind from object storage on wake and pushes it\\nback on sleep. AWS binding: S3 bucket agent-factory-mind-prod-* with per-agent prefixes. Only the Terraform-managed\\nfactory-prod-agent-* task roles are limited to their own prefix (iam.tf own-mind-only). Runtime-created AgentTaskRole-*\\nroles (packages/property-manager/src/aws/iam.ts MindPersistenceAccess) can read, write and delete every agent's mind.\\nLive IAM confirms this on the 30 AgentTaskRole-* roles. That is not compliant with \\u00a76.6 \\\"Private Agent Memory Isolation\\\".\\nThe ledger hot chain is on EFS factory-prod-ledger with one writer (LG1); checkpoints ship to\\nagent-factory-ledger-prod-* with S3 Object Lock in COMPLIANCE mode, 365-day default retention, so no principal can delete\\nor overwrite them early (storage.tf comment; live configuration). Each agent's deployment configuration is one immutable\\nobject per version in the versioned config bucket (6.14 SK3, R1). Skill packages are in the packages bucket.\\nClassification: Confidential. The ledger holds metadata and hashes only, and the mind holds adopter data (agent-factory\\n.draft/sdp.yaml notes.dataClassification). The ledger never holds secrets or prompt bodies (AGENTS.md definition of done 4).\\nSQL scope: the factory kernel has no SQL engine in packages/*/src at 01720b2. The cartridge runtime this SDP places\\n(01M7GWXKXW-4ZJF, runtimes/agent-runtime) does: memory/episodic.py, memory/notebook.py and memory/workspace.py create a\\nSQLite schema (CREATE TABLE / CREATE INDEX / FTS5) for conversations, notebook metadata and workspace state. Schema\\nchanges ship in that runtime as CREATE TABLE IF NOT EXISTS and index creation; notebook rotation copies the schema onto a\\nnew file and swaps it in. There is no expand-and-contract migration decoupled from a runtime deploy, so\\nreq-expand-contract-migrations is not-compliant. Query values are bound with parameterized placeholders throughout;\\nthe only string-built SQL is notebook.py, which interpolates table identifiers from the carry_tables argument when rotating\\n(the runtime caller runtime/mind.py does not pass that argument). req-asvs-parameterized-queries is therefore satisfied,\\nwith that identifier interpolation noted. DynamoDB closing-climb-prod in the same account belongs to Closing Climb, not\\nthe factory.\\n\\nSources:\\n- BeerCanLabs/agent-factory @01720b2: DESIGN_AUTHORITY.md 6.6, 6.10 LG1-LG2, 6.13 R1, 6.14; .draft/sdp.yaml (notes.dataClassification); AGENTS.md; landing-zones/aws/storage.tf, iam.tf; packages/property-manager/src/aws/iam.ts; runtimes/agent-runtime/memory/episodic.py, notebook.py, workspace.py and runtime/mind.py\\n- Live AWS, read-only, account ending 2296, us-east-1, 2026-11-15: s3api get-bucket-encryption/versioning/object-lock-configuration/public-access-block, efs describe-file-systems, iam get-role-policy for AgentTaskRole-*\\n\",\n  \"_source\": \"catalog/governance/decision-records/dr-aws-agent-factory-data.yaml\"\n}",
+      "existsInCatalog": true,
+      "outboundRelationships": [],
+      "inboundRelationships": []
+    },
+    {
+      "id": "01M7GYV3B6-Q5NV",
+      "uid": "01M7GYV3B6-Q5NV",
+      "name": "AWS Agent Factory: Infrastructure as Code, Delivery and Quality Gates",
+      "aliases": [],
+      "type": "decision_record",
+      "typeLabel": "DecisionRecord / decision",
+      "filterType": "decision_record",
+      "category": "decision",
+      "deliveryModel": "",
+      "domain": "",
+      "description": "AWS changes are intended to go through Terraform and an ops-repo pipeline that deploys pinned, CI-green SHAs. Conformance tests enforce design invariants only in part. Documented and observed bypasses of the deploy and CI gates are recorded below.",
+      "version": "1.0.0",
+      "catalogStatus": "incomplete",
+      "lifecycleStatus": "preferred",
+      "status": "accepted",
+      "businessContext": {},
+      "product": "",
+      "runsOn": "",
+      "subtype": "",
+      "vendor": "",
+      "productName": "",
+      "productVersion": "",
+      "classification": "",
+      "platformDependency": "",
+      "capabilities": [],
+      "configurations": [],
+      "networkPlacement": "",
+      "patchingOwner": "",
+      "complianceCerts": [],
+      "requirementGroups": [],
+      "requirementImplementations": [],
+      "dataLeavesInfrastructure": null,
+      "dataResidencyCommitment": "",
+      "dpaNotes": "",
+      "vendorSLA": "",
+      "authenticationModel": "",
+      "incidentNotificationProcess": "",
+      "owner": {
+        "team": "platform-ai-team",
+        "contact": "platform-ai@example.com"
+      },
+      "definitionOwner": {},
+      "provider": {},
+      "authority": {},
+      "shape": "round-rectangle",
+      "color": "#1f8a5b",
+      "source": "catalog/governance/decision-records/dr-aws-agent-factory-delivery.yaml",
+      "tags": [
+        "agent-factory",
+        "aws",
+        "submind",
+        "iac",
+        "ci-cd",
+        "quality-gates"
+      ],
+      "ardCategory": "decision",
+      "internalComponents": [],
+      "notes": {},
+      "requirements": [],
+      "implementations": [],
+      "appliesTo": {},
+      "inherits": "",
+      "scalingUnits": [],
+      "networkZones": [],
+      "sdpConnections": [],
+      "serviceGroups": [],
+      "tierVariants": [],
+      "tierId": "",
+      "purpose": "",
+      "availabilityExpectation": "",
+      "costPosture": "",
+      "complianceScope": [],
+      "parameterSurface": [],
+      "followsReferenceArchitecture": "",
+      "decisionRecords": [],
+      "affectedComponent": "",
+      "impact": "",
+      "mitigationPath": "",
+      "decisionRationale": "IaC (observed): the factory landing zone is Terraform in agent-factory landing-zones/aws (S3 backend). The intended apply\npath is the submind-aws deploy-aws workflow on main through a GitHub OIDC role (factory-deploy trusts only submind-aws\nref:refs/heads/main), with \"No hand changes in AWS\" (OPERATIONS.md Rules). That is not the only path in force. OPERATIONS.md\ndocuments a break-glass path (FACTORY_BREAK_GLASS=1 ./scripts/aws-deploy.sh from a workstation) that accepts a local test\nrun in place of GitHub results; the deploy log shows 8 uses (2026-10-29 to 2026-10-31). DESIGN_AUTHORITY GAP-074 (Critical)\nrecords that submind-aws has no branch protection, so a session can push to main and deploy, and that agent-factory main\nrequires no approving review. CloudTrail also shows IAM user beercanlabs (not the factory-deploy OIDC role) running\nTerraform on 2026-11-14 15:43 America/Phoenix and registering ECS task definitions on 2026-11-14 and 2026-11-15. One\nfurther documented manual exception: the Cloudflare Access console bypass set by hand on 2026-11-03 while cloudflare.tf is\noff (OPERATIONS.md). The landing zone is a single Terraform root configuration, not a set of composable modules.\nRelease intent is that deploys ship commits on agent-factory main with green CI, tagged by commit SHA, never :latest\n(DA 6.7). Garrison is pinned by digest (deploy.env). The deploy fails unless its definition of done passes. Each\nOPERATIONS.md deploy entry records a rollback pin (a previous agent-factory commit). Rollback means redeploying that pin\nby hand. Live ECS deployment circuit breakers are disabled. Services roll out 100/200 except the control plane, which\ndeploys stop-then-start (min 0 / max 100) so the ledger never has two writers (LG1, accepted 2026-09-28; ecs.tf comment;\nconformance fails if it changes).\nGates: CI runs npm test (including packages/conformance, which machine-checks Design Authority invariants), contract\nvalidation and compose-proof (an ephemeral Docker Compose end-to-end run). A pre-push hook runs scripts/conformance.sh;\nnever bypass it and never skip tests (AGENTS.md). Known violations may be baselined only with the user's approval and a\nregistered gap: packages/conformance/baseline.json has 4 entries (GAP-031, GAP-050). Conformance covers invariants only\npartially (GAP-051: the coverage table exists, but many invariants remain unchecked or partial). No SAST, secret scanning,\ndependency (SCA) scanning or IaC policy linting runs in agent-factory CI, and there is no Dependabot configuration. Why:\nrationale not recorded. There are no per-branch cloud preview environments.\nRegistration: the product is registered in this drafting table as 01M1N137Q5-AFAC with sdpManifest .draft/sdp.yaml.\n\nSources:\n- BeerCanLabs/agent-factory @01720b2: DESIGN_AUTHORITY.md 6.7, 6.8 L1, 6.10 LG1, gap register GAP-074 and GAP-051; AGENTS.md (Change Workflow & Enforcement); .github/workflows/ci.yml; .githooks/pre-push; packages/conformance/baseline.json; landing-zones/aws/main.tf, ecs.tf, iam.tf\n- BeerCanLabs/submind-aws @3f7d9a5: OPERATIONS.md (Changing production, Front door, Rules, Break glass and deploy log), config/deploy.env, scripts/aws-deploy.sh\n- Live AWS, read-only, account ending 2296, us-east-1, 2026-11-15: ecs describe-services (deploymentConfiguration, circuit breaker); CloudTrail lookup-events for Terraform applies and ECS task-definition registrations by IAM user beercanlabs on 2026-11-14 and 2026-11-15\n- Drafting table: product registration 01M1N137Q5-AFAC\n",
+      "relatedDecisionRecords": [],
+      "linkedObject": "01M15NEKT7-S14J",
+      "primaryObjectType": "",
+      "primaryObjectUid": "",
+      "generatedObjects": [],
+      "unresolvedQuestions": [],
+      "assumptions": [],
+      "nextSteps": [],
+      "defaultSelection": false,
+      "requirementCount": 0,
+      "hasRiskRef": false,
+      "outboundRefs": [
+        {
+          "target": "01M15NEKT7-S14J",
+          "path": "linkedObject"
+        }
+      ],
+      "referencedBy": [
+        {
+          "source": "01M15NEKT7-S14J",
+          "path": "decisionRecords[13].ref"
+        },
+        {
+          "source": "01M15NEKT7-S14J",
+          "path": "decisionRecords[14].ref"
+        }
+      ],
+      "editorSchema": {
+        "requiredFields": [
+          "schemaVersion",
+          "uid",
+          "type",
+          "name",
+          "category",
+          "status",
+          "catalogStatus",
+          "lifecycleStatus"
+        ],
+        "optionalFields": [
+          "aliases",
+          "description",
+          "version",
+          "owner",
+          "tags",
+          "affectedComponent",
+          "impact",
+          "mitigationPath",
+          "decisionRationale",
+          "relatedDecisionRecords",
+          "controlReferences",
+          "linkedObject",
+          "approver",
+          "approvalDate"
+        ],
+        "fieldTypes": {
+          "aliases": "list",
+          "owner": "dict",
+          "tags": "list",
+          "relatedDecisionRecords": "list",
+          "controlReferences": "list",
+          "approver": "str",
+          "approvalDate": "str"
+        },
+        "enumFields": {
+          "catalogStatus": [
+            "stub",
+            "incomplete",
+            "complete"
+          ],
+          "lifecycleStatus": [
+            "candidate",
+            "preferred",
+            "existing-only",
+            "deprecated",
+            "retired"
+          ],
+          "category": [
+            "risk",
+            "decision"
+          ],
+          "status": [
+            "open",
+            "accepted",
+            "mitigated",
+            "resolved"
+          ]
+        },
+        "enumListFields": {},
+        "collectionSchemas": {},
+        "schemaPath": "framework/schemas/decision-record.schema.yaml"
+      },
+      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M7GYV3B6-Q5NV\",\n  \"type\": \"decision_record\",\n  \"name\": \"AWS Agent Factory: Infrastructure as Code, Delivery and Quality Gates\",\n  \"description\": \"AWS changes are intended to go through Terraform and an ops-repo pipeline that deploys pinned, CI-green SHAs. Conformance tests enforce design invariants only in part. Documented and observed bypasses of the deploy and CI gates are recorded below.\",\n  \"version\": \"1.0.0\",\n  \"category\": \"decision\",\n  \"status\": \"accepted\",\n  \"catalogStatus\": \"incomplete\",\n  \"lifecycleStatus\": \"preferred\",\n  \"owner\": {\n    \"team\": \"platform-ai-team\",\n    \"contact\": \"platform-ai@example.com\"\n  },\n  \"tags\": [\n    \"agent-factory\",\n    \"aws\",\n    \"submind\",\n    \"iac\",\n    \"ci-cd\",\n    \"quality-gates\"\n  ],\n  \"linkedObject\": \"01M15NEKT7-S14J\",\n  \"decisionRationale\": \"IaC (observed): the factory landing zone is Terraform in agent-factory landing-zones/aws (S3 backend). The intended apply\\npath is the submind-aws deploy-aws workflow on main through a GitHub OIDC role (factory-deploy trusts only submind-aws\\nref:refs/heads/main), with \\\"No hand changes in AWS\\\" (OPERATIONS.md Rules). That is not the only path in force. OPERATIONS.md\\ndocuments a break-glass path (FACTORY_BREAK_GLASS=1 ./scripts/aws-deploy.sh from a workstation) that accepts a local test\\nrun in place of GitHub results; the deploy log shows 8 uses (2026-10-29 to 2026-10-31). DESIGN_AUTHORITY GAP-074 (Critical)\\nrecords that submind-aws has no branch protection, so a session can push to main and deploy, and that agent-factory main\\nrequires no approving review. CloudTrail also shows IAM user beercanlabs (not the factory-deploy OIDC role) running\\nTerraform on 2026-11-14 15:43 America/Phoenix and registering ECS task definitions on 2026-11-14 and 2026-11-15. One\\nfurther documented manual exception: the Cloudflare Access console bypass set by hand on 2026-11-03 while cloudflare.tf is\\noff (OPERATIONS.md). The landing zone is a single Terraform root configuration, not a set of composable modules.\\nRelease intent is that deploys ship commits on agent-factory main with green CI, tagged by commit SHA, never :latest\\n(DA 6.7). Garrison is pinned by digest (deploy.env). The deploy fails unless its definition of done passes. Each\\nOPERATIONS.md deploy entry records a rollback pin (a previous agent-factory commit). Rollback means redeploying that pin\\nby hand. Live ECS deployment circuit breakers are disabled. Services roll out 100/200 except the control plane, which\\ndeploys stop-then-start (min 0 / max 100) so the ledger never has two writers (LG1, accepted 2026-09-28; ecs.tf comment;\\nconformance fails if it changes).\\nGates: CI runs npm test (including packages/conformance, which machine-checks Design Authority invariants), contract\\nvalidation and compose-proof (an ephemeral Docker Compose end-to-end run). A pre-push hook runs scripts/conformance.sh;\\nnever bypass it and never skip tests (AGENTS.md). Known violations may be baselined only with the user's approval and a\\nregistered gap: packages/conformance/baseline.json has 4 entries (GAP-031, GAP-050). Conformance covers invariants only\\npartially (GAP-051: the coverage table exists, but many invariants remain unchecked or partial). No SAST, secret scanning,\\ndependency (SCA) scanning or IaC policy linting runs in agent-factory CI, and there is no Dependabot configuration. Why:\\nrationale not recorded. There are no per-branch cloud preview environments.\\nRegistration: the product is registered in this drafting table as 01M1N137Q5-AFAC with sdpManifest .draft/sdp.yaml.\\n\\nSources:\\n- BeerCanLabs/agent-factory @01720b2: DESIGN_AUTHORITY.md 6.7, 6.8 L1, 6.10 LG1, gap register GAP-074 and GAP-051; AGENTS.md (Change Workflow & Enforcement); .github/workflows/ci.yml; .githooks/pre-push; packages/conformance/baseline.json; landing-zones/aws/main.tf, ecs.tf, iam.tf\\n- BeerCanLabs/submind-aws @3f7d9a5: OPERATIONS.md (Changing production, Front door, Rules, Break glass and deploy log), config/deploy.env, scripts/aws-deploy.sh\\n- Live AWS, read-only, account ending 2296, us-east-1, 2026-11-15: ecs describe-services (deploymentConfiguration, circuit breaker); CloudTrail lookup-events for Terraform applies and ECS task-definition registrations by IAM user beercanlabs on 2026-11-14 and 2026-11-15\\n- Drafting table: product registration 01M1N137Q5-AFAC\\n\",\n  \"_source\": \"catalog/governance/decision-records/dr-aws-agent-factory-delivery.yaml\"\n}",
+      "existsInCatalog": true,
+      "outboundRelationships": [],
+      "inboundRelationships": []
+    },
+    {
+      "id": "01M7GYV3B6-EEZ3",
+      "uid": "01M7GYV3B6-EEZ3",
+      "name": "AWS Agent Factory: Identity and Access Control",
+      "aliases": [],
+      "type": "decision_record",
+      "typeLabel": "DecisionRecord / decision",
+      "filterType": "decision_record",
+      "category": "decision",
+      "deliveryModel": "",
+      "domain": "",
+      "description": "People get operator identity only from a verified Cloudflare Access assertion or the factory's own login. Machines use factory tokens. Agents get per-run tokens and per-agent IAM roles. Everything is deny by default. Live runtime-created agent task roles are not limited to their own mind prefix.",
+      "version": "1.0.0",
+      "catalogStatus": "incomplete",
+      "lifecycleStatus": "preferred",
+      "status": "accepted",
+      "businessContext": {},
+      "product": "",
+      "runsOn": "",
+      "subtype": "",
+      "vendor": "",
+      "productName": "",
+      "productVersion": "",
+      "classification": "",
+      "platformDependency": "",
+      "capabilities": [],
+      "configurations": [],
+      "networkPlacement": "",
+      "patchingOwner": "",
+      "complianceCerts": [],
+      "requirementGroups": [],
+      "requirementImplementations": [],
+      "dataLeavesInfrastructure": null,
+      "dataResidencyCommitment": "",
+      "dpaNotes": "",
+      "vendorSLA": "",
+      "authenticationModel": "",
+      "incidentNotificationProcess": "",
+      "owner": {
+        "team": "platform-ai-team",
+        "contact": "platform-ai@example.com"
+      },
+      "definitionOwner": {},
+      "provider": {},
+      "authority": {},
+      "shape": "round-rectangle",
+      "color": "#1f8a5b",
+      "source": "catalog/governance/decision-records/dr-aws-agent-factory-identity.yaml",
+      "tags": [
+        "agent-factory",
+        "aws",
+        "submind",
+        "identity",
+        "access-control",
+        "cloudflare-access"
+      ],
+      "ardCategory": "decision",
+      "internalComponents": [],
+      "notes": {},
+      "requirements": [],
+      "implementations": [],
+      "appliesTo": {},
+      "inherits": "",
+      "scalingUnits": [],
+      "networkZones": [],
+      "sdpConnections": [],
+      "serviceGroups": [],
+      "tierVariants": [],
+      "tierId": "",
+      "purpose": "",
+      "availabilityExpectation": "",
+      "costPosture": "",
+      "complianceScope": [],
+      "parameterSurface": [],
+      "followsReferenceArchitecture": "",
+      "decisionRecords": [],
+      "affectedComponent": "",
+      "impact": "",
+      "mitigationPath": "",
+      "decisionRationale": "Decision: identity is verified, not asserted (Design Authority A2). The control plane grants a role only from a factory\ntoken, a run token, or the Cloudflare Access RS256 assertion checked against the team domain's certs, issuer and audience;\nthe cf-access-authenticated-user-email header grants nothing (landing-zones/aws/README.md \"Operator identity\").\nCloudflare Access covers agent-factory.beercanlabs.com and garrison.dalesackrider.com (live: 302 to the beercanlabs Access\nlogin). Exception, documented in submind-aws OPERATIONS.md: the console host factory-dashboard.dalesackrider.com has a\nhand-set Access Bypass (2026-11-03) because the factory enforces its own login there; the ALB still admits only Cloudflare.\nAuthorization is default-deny and server-side: an agent with no admin-set policy has no egress (E7), and console and API\nactions ask the Bouncer for a named privilege (6.15, SK7).\nAWS IAM (iam.tf, packages/property-manager/src/aws/iam.ts, and live IAM; the landing-zone README \"IAM\" line is stale and is\nnot used here): the Terraform-managed factory-prod-agent-* task roles are limited to their own mind prefix (own-mind-only).\nRuntime-created AgentTaskRole-* roles, built by iam.ts MindPersistenceAccess on agent-factory-mind-* and /*, can Get, Put,\nDelete and List every agent's mind. Live, 30 AgentTaskRole-* roles exist (higgins and archie spot-checked); agent-higgins\nruns as AgentTaskRole-higgins. That is not compliant with Design Authority \u00a76.6 \"Private Agent Memory Isolation\". The\ncontrol plane may RunTask for both factory-prod-agent-* and agent-* task definition families (iam.tf) and is denied provider\nkeys. Production deploys are intended to assume the factory-deploy role through GitHub OIDC, trusted only for submind-aws\nmain (OPERATIONS.md Rules); observed exceptions are recorded in the delivery decision 01M7GYV3B6-Q5NV.\nNot covered here: MFA for admins and API rate limiting are not documented in the sources reviewed.\n\nSources:\n- BeerCanLabs/agent-factory @01720b2: DESIGN_AUTHORITY.md 6.3.1 E7, 6.6, 6.12 A1-A2, 6.15; landing-zones/aws/iam.tf; packages/property-manager/src/aws/iam.ts\n- BeerCanLabs/submind-aws @3f7d9a5: OPERATIONS.md (Front door, Console host bypass, Rules)\n- Live AWS, read-only, account ending 2296, us-east-1, 2026-11-15: iam get-role / get-role-policy for AgentTaskRole-* (30 roles; higgins and archie spot-checked)\n- HTTPS probes 2026-11-15: agent-factory.beercanlabs.com and garrison.dalesackrider.com redirect to beercanlabs.cloudflareaccess.com\n",
+      "relatedDecisionRecords": [],
+      "linkedObject": "01M15NEKT7-S14J",
+      "primaryObjectType": "",
+      "primaryObjectUid": "",
+      "generatedObjects": [],
+      "unresolvedQuestions": [],
+      "assumptions": [],
+      "nextSteps": [],
+      "defaultSelection": false,
+      "requirementCount": 0,
+      "hasRiskRef": false,
+      "outboundRefs": [
+        {
+          "target": "01M15NEKT7-S14J",
+          "path": "linkedObject"
+        }
+      ],
+      "referencedBy": [
+        {
+          "source": "01M15NEKT7-S14J",
+          "path": "decisionRecords[5].ref"
+        }
+      ],
+      "editorSchema": {
+        "requiredFields": [
+          "schemaVersion",
+          "uid",
+          "type",
+          "name",
+          "category",
+          "status",
+          "catalogStatus",
+          "lifecycleStatus"
+        ],
+        "optionalFields": [
+          "aliases",
+          "description",
+          "version",
+          "owner",
+          "tags",
+          "affectedComponent",
+          "impact",
+          "mitigationPath",
+          "decisionRationale",
+          "relatedDecisionRecords",
+          "controlReferences",
+          "linkedObject",
+          "approver",
+          "approvalDate"
+        ],
+        "fieldTypes": {
+          "aliases": "list",
+          "owner": "dict",
+          "tags": "list",
+          "relatedDecisionRecords": "list",
+          "controlReferences": "list",
+          "approver": "str",
+          "approvalDate": "str"
+        },
+        "enumFields": {
+          "catalogStatus": [
+            "stub",
+            "incomplete",
+            "complete"
+          ],
+          "lifecycleStatus": [
+            "candidate",
+            "preferred",
+            "existing-only",
+            "deprecated",
+            "retired"
+          ],
+          "category": [
+            "risk",
+            "decision"
+          ],
+          "status": [
+            "open",
+            "accepted",
+            "mitigated",
+            "resolved"
+          ]
+        },
+        "enumListFields": {},
+        "collectionSchemas": {},
+        "schemaPath": "framework/schemas/decision-record.schema.yaml"
+      },
+      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M7GYV3B6-EEZ3\",\n  \"type\": \"decision_record\",\n  \"name\": \"AWS Agent Factory: Identity and Access Control\",\n  \"description\": \"People get operator identity only from a verified Cloudflare Access assertion or the factory's own login. Machines use factory tokens. Agents get per-run tokens and per-agent IAM roles. Everything is deny by default. Live runtime-created agent task roles are not limited to their own mind prefix.\",\n  \"version\": \"1.0.0\",\n  \"category\": \"decision\",\n  \"status\": \"accepted\",\n  \"catalogStatus\": \"incomplete\",\n  \"lifecycleStatus\": \"preferred\",\n  \"owner\": {\n    \"team\": \"platform-ai-team\",\n    \"contact\": \"platform-ai@example.com\"\n  },\n  \"tags\": [\n    \"agent-factory\",\n    \"aws\",\n    \"submind\",\n    \"identity\",\n    \"access-control\",\n    \"cloudflare-access\"\n  ],\n  \"linkedObject\": \"01M15NEKT7-S14J\",\n  \"decisionRationale\": \"Decision: identity is verified, not asserted (Design Authority A2). The control plane grants a role only from a factory\\ntoken, a run token, or the Cloudflare Access RS256 assertion checked against the team domain's certs, issuer and audience;\\nthe cf-access-authenticated-user-email header grants nothing (landing-zones/aws/README.md \\\"Operator identity\\\").\\nCloudflare Access covers agent-factory.beercanlabs.com and garrison.dalesackrider.com (live: 302 to the beercanlabs Access\\nlogin). Exception, documented in submind-aws OPERATIONS.md: the console host factory-dashboard.dalesackrider.com has a\\nhand-set Access Bypass (2026-11-03) because the factory enforces its own login there; the ALB still admits only Cloudflare.\\nAuthorization is default-deny and server-side: an agent with no admin-set policy has no egress (E7), and console and API\\nactions ask the Bouncer for a named privilege (6.15, SK7).\\nAWS IAM (iam.tf, packages/property-manager/src/aws/iam.ts, and live IAM; the landing-zone README \\\"IAM\\\" line is stale and is\\nnot used here): the Terraform-managed factory-prod-agent-* task roles are limited to their own mind prefix (own-mind-only).\\nRuntime-created AgentTaskRole-* roles, built by iam.ts MindPersistenceAccess on agent-factory-mind-* and /*, can Get, Put,\\nDelete and List every agent's mind. Live, 30 AgentTaskRole-* roles exist (higgins and archie spot-checked); agent-higgins\\nruns as AgentTaskRole-higgins. That is not compliant with Design Authority \\u00a76.6 \\\"Private Agent Memory Isolation\\\". The\\ncontrol plane may RunTask for both factory-prod-agent-* and agent-* task definition families (iam.tf) and is denied provider\\nkeys. Production deploys are intended to assume the factory-deploy role through GitHub OIDC, trusted only for submind-aws\\nmain (OPERATIONS.md Rules); observed exceptions are recorded in the delivery decision 01M7GYV3B6-Q5NV.\\nNot covered here: MFA for admins and API rate limiting are not documented in the sources reviewed.\\n\\nSources:\\n- BeerCanLabs/agent-factory @01720b2: DESIGN_AUTHORITY.md 6.3.1 E7, 6.6, 6.12 A1-A2, 6.15; landing-zones/aws/iam.tf; packages/property-manager/src/aws/iam.ts\\n- BeerCanLabs/submind-aws @3f7d9a5: OPERATIONS.md (Front door, Console host bypass, Rules)\\n- Live AWS, read-only, account ending 2296, us-east-1, 2026-11-15: iam get-role / get-role-policy for AgentTaskRole-* (30 roles; higgins and archie spot-checked)\\n- HTTPS probes 2026-11-15: agent-factory.beercanlabs.com and garrison.dalesackrider.com redirect to beercanlabs.cloudflareaccess.com\\n\",\n  \"_source\": \"catalog/governance/decision-records/dr-aws-agent-factory-identity.yaml\"\n}",
+      "existsInCatalog": true,
+      "outboundRelationships": [],
+      "inboundRelationships": []
+    },
+    {
+      "id": "01M7GYV3B6-H03D",
+      "uid": "01M7GYV3B6-H03D",
+      "name": "AWS Agent Factory: Model Access and AI Gateway Routing",
+      "aliases": [],
+      "type": "decision_record",
+      "typeLabel": "DecisionRecord / decision",
+      "filterType": "decision_record",
+      "category": "decision",
+      "deliveryModel": "",
+      "domain": "",
+      "description": "Design intent is that every model call goes through gatekeeper-egress (the factory model API), where it is metered, budgeted and policy-gated. Live agent task roles can also invoke Bedrock directly, which bypasses that metering. Model choice and budgets are factory policy, not code.",
+      "version": "1.0.0",
+      "catalogStatus": "incomplete",
+      "lifecycleStatus": "preferred",
+      "status": "accepted",
+      "businessContext": {},
+      "product": "",
+      "runsOn": "",
+      "subtype": "",
+      "vendor": "",
+      "productName": "",
+      "productVersion": "",
+      "classification": "",
+      "platformDependency": "",
+      "capabilities": [],
+      "configurations": [],
+      "networkPlacement": "",
+      "patchingOwner": "",
+      "complianceCerts": [],
+      "requirementGroups": [],
+      "requirementImplementations": [],
+      "dataLeavesInfrastructure": null,
+      "dataResidencyCommitment": "",
+      "dpaNotes": "",
+      "vendorSLA": "",
+      "authenticationModel": "",
+      "incidentNotificationProcess": "",
+      "owner": {
+        "team": "platform-ai-team",
+        "contact": "platform-ai@example.com"
+      },
+      "definitionOwner": {},
+      "provider": {},
+      "authority": {},
+      "shape": "round-rectangle",
+      "color": "#1f8a5b",
+      "source": "catalog/governance/decision-records/dr-aws-agent-factory-models.yaml",
+      "tags": [
+        "agent-factory",
+        "aws",
+        "submind",
+        "ai-gateway",
+        "models",
+        "bedrock"
+      ],
+      "ardCategory": "decision",
+      "internalComponents": [],
+      "notes": {},
+      "requirements": [],
+      "implementations": [],
+      "appliesTo": {},
+      "inherits": "",
+      "scalingUnits": [],
+      "networkZones": [],
+      "sdpConnections": [],
+      "serviceGroups": [],
+      "tierVariants": [],
+      "tierId": "",
+      "purpose": "",
+      "availabilityExpectation": "",
+      "costPosture": "",
+      "complianceScope": [],
+      "parameterSurface": [],
+      "followsReferenceArchitecture": "",
+      "decisionRecords": [],
+      "affectedComponent": "",
+      "impact": "",
+      "mitigationPath": "",
+      "decisionRationale": "Decision (design intent): one factory model API (M1). Agents call models through gatekeeper-egress in the OpenAI Chat\nCompletions format, never call a provider directly and never hold provider credentials (E1, E5, S1). Every model call\ngoes through a gatekeeper-egress provider route so tokens and cost are metered and ledgered; CONNECT tunnels are not\naccepted for model calls (E5). gatekeeper-egress enforces routes, models, budget, the kill switch and approvals before\nforwarding (E4). gatekeeper-egress therefore acts as this deployment's AI gateway. No separate ai_gateway catalog object\nexists.\nAWS binding: the models route translates calls to Bedrock Converse, signed by the gatekeeper-egress task role, which has\nbedrock:InvokeModel on foundation models and this account's inference profiles (README \"Factory model API\", iam.tf). There\nis a bedrock-runtime VPC endpoint (live), and the agents security group can reach it on 443. Subscription plans (xAI, OpenAI)\nare served through the Keymaster and gatekeeper-egress (M5; live secrets under factory/prod/shared/xai/subscription).\nKnown gap, a deviation from E1, E5 and M1: live agent task roles can invoke Bedrock directly. They carry BedrockConverseAccess\n(bedrock:InvokeModel and Converse* on *) plus the managed AgentBedrockModelInvocation policy, granted by\npackages/property-manager/src/aws/iam.ts, and the bedrock-runtime endpoint is reachable from the agents subnet. That path\nbypasses gatekeeper-egress metering and spend tracking. DESIGN_AUTHORITY GAP-027 (Critical, no resolution recorded) records\nthat 8 of 9 cartridges import boto3 for Bedrock and S3, so those model calls are not metered or ledgered. GAP-041 (the\nfactory model API itself) is only \"RESOLVED (proposed)\".\nModel specification: the owner chooses approved, primary and secondary models, and an admin sets per-agent budgets, as\nfactory configuration rather than code (M2, M3, E7). Cartridges name no model. Unpriced models are refused.\nThe Terraform default model_catalog offers claude-sonnet-4-5, claude-haiku-4-5, claude-sonnet-4-6 and claude-opus-4-6 on Bedrock. The live catalog and per-agent\npolicies are runtime factory data and were not read.\n\nSources:\n- BeerCanLabs/agent-factory @01720b2: DESIGN_AUTHORITY.md 6.3.1 E1/E4/E5/E7, 6.9 M1-M5, gap register GAP-027 and GAP-041; landing-zones/aws/README.md (Enable LLM egress, Factory model API), iam.tf, variables.tf (model_catalog); packages/property-manager/src/aws/iam.ts\n- BeerCanLabs/submind-aws @3f7d9a5: OPERATIONS.md (Deploying an agent, Model subscriptions)\n- Live AWS, read-only, account ending 2296, us-east-1, 2026-11-15: iam get-role-policy on agent task roles (BedrockConverseAccess, AgentBedrockModelInvocation), ec2 describe-vpc-endpoints and describe-security-groups, secretsmanager list-secrets (names only)\n",
+      "relatedDecisionRecords": [],
+      "linkedObject": "01M15NEKT7-S14J",
+      "primaryObjectType": "",
+      "primaryObjectUid": "",
+      "generatedObjects": [],
+      "unresolvedQuestions": [],
+      "assumptions": [],
+      "nextSteps": [],
+      "defaultSelection": false,
+      "requirementCount": 0,
+      "hasRiskRef": false,
+      "outboundRefs": [
+        {
+          "target": "01M15NEKT7-S14J",
+          "path": "linkedObject"
+        }
+      ],
+      "referencedBy": [
+        {
+          "source": "01M15NEKT7-S14J",
+          "path": "decisionRecords[15].ref"
+        },
+        {
+          "source": "01M15NEKT7-S14J",
+          "path": "decisionRecords[16].ref"
+        }
+      ],
+      "editorSchema": {
+        "requiredFields": [
+          "schemaVersion",
+          "uid",
+          "type",
+          "name",
+          "category",
+          "status",
+          "catalogStatus",
+          "lifecycleStatus"
+        ],
+        "optionalFields": [
+          "aliases",
+          "description",
+          "version",
+          "owner",
+          "tags",
+          "affectedComponent",
+          "impact",
+          "mitigationPath",
+          "decisionRationale",
+          "relatedDecisionRecords",
+          "controlReferences",
+          "linkedObject",
+          "approver",
+          "approvalDate"
+        ],
+        "fieldTypes": {
+          "aliases": "list",
+          "owner": "dict",
+          "tags": "list",
+          "relatedDecisionRecords": "list",
+          "controlReferences": "list",
+          "approver": "str",
+          "approvalDate": "str"
+        },
+        "enumFields": {
+          "catalogStatus": [
+            "stub",
+            "incomplete",
+            "complete"
+          ],
+          "lifecycleStatus": [
+            "candidate",
+            "preferred",
+            "existing-only",
+            "deprecated",
+            "retired"
+          ],
+          "category": [
+            "risk",
+            "decision"
+          ],
+          "status": [
+            "open",
+            "accepted",
+            "mitigated",
+            "resolved"
+          ]
+        },
+        "enumListFields": {},
+        "collectionSchemas": {},
+        "schemaPath": "framework/schemas/decision-record.schema.yaml"
+      },
+      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M7GYV3B6-H03D\",\n  \"type\": \"decision_record\",\n  \"name\": \"AWS Agent Factory: Model Access and AI Gateway Routing\",\n  \"description\": \"Design intent is that every model call goes through gatekeeper-egress (the factory model API), where it is metered, budgeted and policy-gated. Live agent task roles can also invoke Bedrock directly, which bypasses that metering. Model choice and budgets are factory policy, not code.\",\n  \"version\": \"1.0.0\",\n  \"category\": \"decision\",\n  \"status\": \"accepted\",\n  \"catalogStatus\": \"incomplete\",\n  \"lifecycleStatus\": \"preferred\",\n  \"owner\": {\n    \"team\": \"platform-ai-team\",\n    \"contact\": \"platform-ai@example.com\"\n  },\n  \"tags\": [\n    \"agent-factory\",\n    \"aws\",\n    \"submind\",\n    \"ai-gateway\",\n    \"models\",\n    \"bedrock\"\n  ],\n  \"linkedObject\": \"01M15NEKT7-S14J\",\n  \"decisionRationale\": \"Decision (design intent): one factory model API (M1). Agents call models through gatekeeper-egress in the OpenAI Chat\\nCompletions format, never call a provider directly and never hold provider credentials (E1, E5, S1). Every model call\\ngoes through a gatekeeper-egress provider route so tokens and cost are metered and ledgered; CONNECT tunnels are not\\naccepted for model calls (E5). gatekeeper-egress enforces routes, models, budget, the kill switch and approvals before\\nforwarding (E4). gatekeeper-egress therefore acts as this deployment's AI gateway. No separate ai_gateway catalog object\\nexists.\\nAWS binding: the models route translates calls to Bedrock Converse, signed by the gatekeeper-egress task role, which has\\nbedrock:InvokeModel on foundation models and this account's inference profiles (README \\\"Factory model API\\\", iam.tf). There\\nis a bedrock-runtime VPC endpoint (live), and the agents security group can reach it on 443. Subscription plans (xAI, OpenAI)\\nare served through the Keymaster and gatekeeper-egress (M5; live secrets under factory/prod/shared/xai/subscription).\\nKnown gap, a deviation from E1, E5 and M1: live agent task roles can invoke Bedrock directly. They carry BedrockConverseAccess\\n(bedrock:InvokeModel and Converse* on *) plus the managed AgentBedrockModelInvocation policy, granted by\\npackages/property-manager/src/aws/iam.ts, and the bedrock-runtime endpoint is reachable from the agents subnet. That path\\nbypasses gatekeeper-egress metering and spend tracking. DESIGN_AUTHORITY GAP-027 (Critical, no resolution recorded) records\\nthat 8 of 9 cartridges import boto3 for Bedrock and S3, so those model calls are not metered or ledgered. GAP-041 (the\\nfactory model API itself) is only \\\"RESOLVED (proposed)\\\".\\nModel specification: the owner chooses approved, primary and secondary models, and an admin sets per-agent budgets, as\\nfactory configuration rather than code (M2, M3, E7). Cartridges name no model. Unpriced models are refused.\\nThe Terraform default model_catalog offers claude-sonnet-4-5, claude-haiku-4-5, claude-sonnet-4-6 and claude-opus-4-6 on Bedrock. The live catalog and per-agent\\npolicies are runtime factory data and were not read.\\n\\nSources:\\n- BeerCanLabs/agent-factory @01720b2: DESIGN_AUTHORITY.md 6.3.1 E1/E4/E5/E7, 6.9 M1-M5, gap register GAP-027 and GAP-041; landing-zones/aws/README.md (Enable LLM egress, Factory model API), iam.tf, variables.tf (model_catalog); packages/property-manager/src/aws/iam.ts\\n- BeerCanLabs/submind-aws @3f7d9a5: OPERATIONS.md (Deploying an agent, Model subscriptions)\\n- Live AWS, read-only, account ending 2296, us-east-1, 2026-11-15: iam get-role-policy on agent task roles (BedrockConverseAccess, AgentBedrockModelInvocation), ec2 describe-vpc-endpoints and describe-security-groups, secretsmanager list-secrets (names only)\\n\",\n  \"_source\": \"catalog/governance/decision-records/dr-aws-agent-factory-models.yaml\"\n}",
+      "existsInCatalog": true,
+      "outboundRelationships": [],
+      "inboundRelationships": []
+    },
+    {
+      "id": "01M7GYV3B6-8VN0",
+      "uid": "01M7GYV3B6-8VN0",
+      "name": "AWS Agent Factory: Network Segmentation and Edge",
+      "aliases": [],
+      "type": "decision_record",
+      "typeLabel": "DecisionRecord / decision",
+      "filterType": "decision_record",
+      "category": "decision",
+      "deliveryModel": "",
+      "domain": "",
+      "description": "Cloudflare is the only way in: the ALB admits only Cloudflare IPv4 ranges. Service and agent subnets are separate tiers, and services find each other through Cloud Map. Live drift on the agent tier is recorded below: both network-layer barriers to E1 are down, with assignPublicIp=false as the remaining mitigation.",
+      "version": "1.0.0",
+      "catalogStatus": "incomplete",
+      "lifecycleStatus": "preferred",
+      "status": "accepted",
+      "businessContext": {},
+      "product": "",
+      "runsOn": "",
+      "subtype": "",
+      "vendor": "",
+      "productName": "",
+      "productVersion": "",
+      "classification": "",
+      "platformDependency": "",
+      "capabilities": [],
+      "configurations": [],
+      "networkPlacement": "",
+      "patchingOwner": "",
+      "complianceCerts": [],
+      "requirementGroups": [],
+      "requirementImplementations": [],
+      "dataLeavesInfrastructure": null,
+      "dataResidencyCommitment": "",
+      "dpaNotes": "",
+      "vendorSLA": "",
+      "authenticationModel": "",
+      "incidentNotificationProcess": "",
+      "owner": {
+        "team": "platform-ai-team",
+        "contact": "platform-ai@example.com"
+      },
+      "definitionOwner": {},
+      "provider": {},
+      "authority": {},
+      "shape": "round-rectangle",
+      "color": "#1f8a5b",
+      "source": "catalog/governance/decision-records/dr-aws-agent-factory-network.yaml",
+      "tags": [
+        "agent-factory",
+        "aws",
+        "submind",
+        "network",
+        "edge",
+        "cloudflare"
+      ],
+      "ardCategory": "decision",
+      "internalComponents": [],
+      "notes": {},
+      "requirements": [],
+      "implementations": [],
+      "appliesTo": {},
+      "inherits": "",
+      "scalingUnits": [],
+      "networkZones": [],
+      "sdpConnections": [],
+      "serviceGroups": [],
+      "tierVariants": [],
+      "tierId": "",
+      "purpose": "",
+      "availabilityExpectation": "",
+      "costPosture": "",
+      "complianceScope": [],
+      "parameterSurface": [],
+      "followsReferenceArchitecture": "",
+      "decisionRecords": [],
+      "affectedComponent": "",
+      "impact": "",
+      "mitigationPath": "",
+      "decisionRationale": "Decision: one front door. Public endpoints accept connections only from the identity-aware proxy (Cloudflare); the load\nbalancer refuses all other sources, and no landing zone opens platform ingress to 0.0.0.0/0 (Design Authority A1, commit\n09b3ac0, 2026-09-28, TSK-043/GAP-052). Live: the factory-prod ALB security group admits ports 80/443 only from 15 IPv4 CIDRs,\nthe Cloudflare ranges in submind-aws config/deploy.env FACTORY_INGRESS_CIDRS (checked against cloudflare.com/ips-v4 on\n2026-09-29). The edge proxy itself follows the existing edge decision 01M7GTBMQS-SZBH. The only route that skips\nCloudflare Access is inbound webhooks, which must carry a verified sender signature (A1; the user's decision 2026-10-28,\nissue #32, option A).\nSegmentation (landing-zones/aws network.tf and README): public service subnets (ALB, control plane, gatekeepers) reach the\ninternet through the IGW. Terraform declares the private agent route table with no routes, and the agents security group\nwith only scoped egress, so that agents can reach only the control plane (8088), gatekeeper-egress (8081) and account-locked\nVPC endpoints (443). That is the intended enforcement of the egress invariant E1 (every outbound connection from cartridge\ncode goes through gatekeeper-egress).\nKnown gap, not compliant with E1/E6, and not in Terraform: live, route table factory-prod-agents-no-egress (associated with\nboth agent subnets) has a 0.0.0.0/0 route to the IGW, created by a Terraform apply run as IAM user beercanlabs on\n2026-09-20 04:26 America/Phoenix; and security group factory-prod-agents has an all-protocol egress rule to 0.0.0.0/0, added\nby hand with aws-cli on 2026-09-25 09:59 America/Phoenix. Terraform does not remove unmanaged routes or standalone SG rules,\nso this drift survives deploys and contradicts OPERATIONS \"No hand changes in AWS\". Mitigation that is true today: agent\ntasks launch with FACTORY_ECS_ASSIGN_PUBLIC_IP=false, and the agent subnets do not map public IPs, so there is no working\ninternet path yet.\nLive VPC endpoints (5 interface plus the S3 gateway): s3, ecr.api, ecr.dkr, secretsmanager, logs, bedrock-runtime. Service\ndiscovery is the private DNS namespace factory.internal (Cloud Map). Inter-service connections follow the traffic matrix in\nlanding-zones/aws/README.md, compared against live security-group rules for the agents group as above; the ALB group matches\nthe Cloudflare ingress list.\nExternal dependencies: Cloudflare (edge and Access), Discord gateway, model providers (AWS Bedrock; xAI and OpenAI\nsubscriptions through gatekeeper-egress), IdPs and webhook senders (README \"Services Egress\").\nNo NAT gateways: E1/E6 (landing-zones/aws/README.md).\n\nSources:\n- BeerCanLabs/agent-factory @01720b2: DESIGN_AUTHORITY.md 6.3.1 E1/E6, 6.12 A1; landing-zones/aws/README.md, network.tf, variables.tf (ingress_cidrs); commits 09b3ac0, a3d698f, 27fb6b8\n- BeerCanLabs/submind-aws @3f7d9a5: OPERATIONS.md (Front door, No hand changes in AWS), config/deploy.env (FACTORY_INGRESS_CIDRS, FACTORY_ECS_ASSIGN_PUBLIC_IP)\n- Live AWS, read-only, account ending 2296, us-east-1, 2026-11-15: elbv2 describe-load-balancers/listeners, ec2 describe-security-groups (ALB and factory-prod-agents), describe-route-tables (factory-prod-agents-no-egress), describe-vpc-endpoints, servicediscovery; CloudTrail lookup-events for the unmanaged route and egress rule\n- Drafting table: decision record 01M7GTBMQS-SZBH (Cloudflare edge proxy)\n",
+      "relatedDecisionRecords": [],
+      "linkedObject": "01M15NEKT7-S14J",
+      "primaryObjectType": "",
+      "primaryObjectUid": "",
+      "generatedObjects": [],
+      "unresolvedQuestions": [],
+      "assumptions": [],
+      "nextSteps": [],
+      "defaultSelection": false,
+      "requirementCount": 0,
+      "hasRiskRef": false,
+      "outboundRefs": [
+        {
+          "target": "01M15NEKT7-S14J",
+          "path": "linkedObject"
+        }
+      ],
+      "referencedBy": [
+        {
+          "source": "01M15NEKT7-S14J",
+          "path": "decisionRecords[3].ref"
+        },
+        {
+          "source": "01M15NEKT7-S14J",
+          "path": "decisionRecords[4].ref"
+        }
+      ],
+      "editorSchema": {
+        "requiredFields": [
+          "schemaVersion",
+          "uid",
+          "type",
+          "name",
+          "category",
+          "status",
+          "catalogStatus",
+          "lifecycleStatus"
+        ],
+        "optionalFields": [
+          "aliases",
+          "description",
+          "version",
+          "owner",
+          "tags",
+          "affectedComponent",
+          "impact",
+          "mitigationPath",
+          "decisionRationale",
+          "relatedDecisionRecords",
+          "controlReferences",
+          "linkedObject",
+          "approver",
+          "approvalDate"
+        ],
+        "fieldTypes": {
+          "aliases": "list",
+          "owner": "dict",
+          "tags": "list",
+          "relatedDecisionRecords": "list",
+          "controlReferences": "list",
+          "approver": "str",
+          "approvalDate": "str"
+        },
+        "enumFields": {
+          "catalogStatus": [
+            "stub",
+            "incomplete",
+            "complete"
+          ],
+          "lifecycleStatus": [
+            "candidate",
+            "preferred",
+            "existing-only",
+            "deprecated",
+            "retired"
+          ],
+          "category": [
+            "risk",
+            "decision"
+          ],
+          "status": [
+            "open",
+            "accepted",
+            "mitigated",
+            "resolved"
+          ]
+        },
+        "enumListFields": {},
+        "collectionSchemas": {},
+        "schemaPath": "framework/schemas/decision-record.schema.yaml"
+      },
+      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M7GYV3B6-8VN0\",\n  \"type\": \"decision_record\",\n  \"name\": \"AWS Agent Factory: Network Segmentation and Edge\",\n  \"description\": \"Cloudflare is the only way in: the ALB admits only Cloudflare IPv4 ranges. Service and agent subnets are separate tiers, and services find each other through Cloud Map. Live drift on the agent tier is recorded below: both network-layer barriers to E1 are down, with assignPublicIp=false as the remaining mitigation.\",\n  \"version\": \"1.0.0\",\n  \"category\": \"decision\",\n  \"status\": \"accepted\",\n  \"catalogStatus\": \"incomplete\",\n  \"lifecycleStatus\": \"preferred\",\n  \"owner\": {\n    \"team\": \"platform-ai-team\",\n    \"contact\": \"platform-ai@example.com\"\n  },\n  \"tags\": [\n    \"agent-factory\",\n    \"aws\",\n    \"submind\",\n    \"network\",\n    \"edge\",\n    \"cloudflare\"\n  ],\n  \"linkedObject\": \"01M15NEKT7-S14J\",\n  \"decisionRationale\": \"Decision: one front door. Public endpoints accept connections only from the identity-aware proxy (Cloudflare); the load\\nbalancer refuses all other sources, and no landing zone opens platform ingress to 0.0.0.0/0 (Design Authority A1, commit\\n09b3ac0, 2026-09-28, TSK-043/GAP-052). Live: the factory-prod ALB security group admits ports 80/443 only from 15 IPv4 CIDRs,\\nthe Cloudflare ranges in submind-aws config/deploy.env FACTORY_INGRESS_CIDRS (checked against cloudflare.com/ips-v4 on\\n2026-09-29). The edge proxy itself follows the existing edge decision 01M7GTBMQS-SZBH. The only route that skips\\nCloudflare Access is inbound webhooks, which must carry a verified sender signature (A1; the user's decision 2026-10-28,\\nissue #32, option A).\\nSegmentation (landing-zones/aws network.tf and README): public service subnets (ALB, control plane, gatekeepers) reach the\\ninternet through the IGW. Terraform declares the private agent route table with no routes, and the agents security group\\nwith only scoped egress, so that agents can reach only the control plane (8088), gatekeeper-egress (8081) and account-locked\\nVPC endpoints (443). That is the intended enforcement of the egress invariant E1 (every outbound connection from cartridge\\ncode goes through gatekeeper-egress).\\nKnown gap, not compliant with E1/E6, and not in Terraform: live, route table factory-prod-agents-no-egress (associated with\\nboth agent subnets) has a 0.0.0.0/0 route to the IGW, created by a Terraform apply run as IAM user beercanlabs on\\n2026-09-20 04:26 America/Phoenix; and security group factory-prod-agents has an all-protocol egress rule to 0.0.0.0/0, added\\nby hand with aws-cli on 2026-09-25 09:59 America/Phoenix. Terraform does not remove unmanaged routes or standalone SG rules,\\nso this drift survives deploys and contradicts OPERATIONS \\\"No hand changes in AWS\\\". Mitigation that is true today: agent\\ntasks launch with FACTORY_ECS_ASSIGN_PUBLIC_IP=false, and the agent subnets do not map public IPs, so there is no working\\ninternet path yet.\\nLive VPC endpoints (5 interface plus the S3 gateway): s3, ecr.api, ecr.dkr, secretsmanager, logs, bedrock-runtime. Service\\ndiscovery is the private DNS namespace factory.internal (Cloud Map). Inter-service connections follow the traffic matrix in\\nlanding-zones/aws/README.md, compared against live security-group rules for the agents group as above; the ALB group matches\\nthe Cloudflare ingress list.\\nExternal dependencies: Cloudflare (edge and Access), Discord gateway, model providers (AWS Bedrock; xAI and OpenAI\\nsubscriptions through gatekeeper-egress), IdPs and webhook senders (README \\\"Services Egress\\\").\\nNo NAT gateways: E1/E6 (landing-zones/aws/README.md).\\n\\nSources:\\n- BeerCanLabs/agent-factory @01720b2: DESIGN_AUTHORITY.md 6.3.1 E1/E6, 6.12 A1; landing-zones/aws/README.md, network.tf, variables.tf (ingress_cidrs); commits 09b3ac0, a3d698f, 27fb6b8\\n- BeerCanLabs/submind-aws @3f7d9a5: OPERATIONS.md (Front door, No hand changes in AWS), config/deploy.env (FACTORY_INGRESS_CIDRS, FACTORY_ECS_ASSIGN_PUBLIC_IP)\\n- Live AWS, read-only, account ending 2296, us-east-1, 2026-11-15: elbv2 describe-load-balancers/listeners, ec2 describe-security-groups (ALB and factory-prod-agents), describe-route-tables (factory-prod-agents-no-egress), describe-vpc-endpoints, servicediscovery; CloudTrail lookup-events for the unmanaged route and egress rule\\n- Drafting table: decision record 01M7GTBMQS-SZBH (Cloudflare edge proxy)\\n\",\n  \"_source\": \"catalog/governance/decision-records/dr-aws-agent-factory-network.yaml\"\n}",
+      "existsInCatalog": true,
+      "outboundRelationships": [],
+      "inboundRelationships": []
+    },
+    {
+      "id": "01M7GYV3B6-KB8Q",
+      "uid": "01M7GYV3B6-KB8Q",
+      "name": "AWS Agent Factory: Observability and Audit Logging",
+      "aliases": [],
+      "type": "decision_record",
+      "typeLabel": "DecisionRecord / decision",
+      "filterType": "decision_record",
+      "category": "decision",
+      "deliveryModel": "",
+      "domain": "",
+      "description": "The ledger is the structured audit trail. CloudWatch Logs (30 days), Container Insights and an ADOT collector carry operational telemetry. The kernel exposes telemetry through headless APIs, not dashboards. Secret redaction from results and ledger rows is S1 design intent; GAP-031 limits it on AWS.",
+      "version": "1.0.0",
+      "catalogStatus": "incomplete",
+      "lifecycleStatus": "preferred",
+      "status": "accepted",
+      "businessContext": {},
+      "product": "",
+      "runsOn": "",
+      "subtype": "",
+      "vendor": "",
+      "productName": "",
+      "productVersion": "",
+      "classification": "",
+      "platformDependency": "",
+      "capabilities": [],
+      "configurations": [],
+      "networkPlacement": "",
+      "patchingOwner": "",
+      "complianceCerts": [],
+      "requirementGroups": [],
+      "requirementImplementations": [],
+      "dataLeavesInfrastructure": null,
+      "dataResidencyCommitment": "",
+      "dpaNotes": "",
+      "vendorSLA": "",
+      "authenticationModel": "",
+      "incidentNotificationProcess": "",
+      "owner": {
+        "team": "platform-ai-team",
+        "contact": "platform-ai@example.com"
+      },
+      "definitionOwner": {},
+      "provider": {},
+      "authority": {},
+      "shape": "round-rectangle",
+      "color": "#1f8a5b",
+      "source": "catalog/governance/decision-records/dr-aws-agent-factory-observability.yaml",
+      "tags": [
+        "agent-factory",
+        "aws",
+        "submind",
+        "observability",
+        "logging",
+        "audit"
+      ],
+      "ardCategory": "decision",
+      "internalComponents": [],
+      "notes": {},
+      "requirements": [],
+      "implementations": [],
+      "appliesTo": {},
+      "inherits": "",
+      "scalingUnits": [],
+      "networkZones": [],
+      "sdpConnections": [],
+      "serviceGroups": [],
+      "tierVariants": [],
+      "tierId": "",
+      "purpose": "",
+      "availabilityExpectation": "",
+      "costPosture": "",
+      "complianceScope": [],
+      "parameterSurface": [],
+      "followsReferenceArchitecture": "",
+      "decisionRecords": [],
+      "affectedComponent": "",
+      "impact": "",
+      "mitigationPath": "",
+      "decisionRationale": "Decision: audit is the ledger. Every egress request writes a ledger row (agent, run, route or host, allow/deny), never prompt\nbodies or secrets (E3); the ledger is append-only, single-writer and verified (6.10). Webhook deliveries that are unsigned\nor carry a bad signature are refused, all in the same way (A1). The kernel builds no dashboards and serves telemetry through\nheadless APIs (6.5).\nSecret redaction from results and ledger rows is Design Authority S1 design intent, not current AWS behaviour. GAP-031\n(Critical) records that since 6256fac the control plane skips secret binding for non-local runtimes, so it does not know\nthose values to redact them. See the secrets decision 01M7GYV3B6-YE24.\nAWS binding: container logs go to CloudWatch Logs /ecs/factory-prod with 30-day retention (storage.tf). Container Insights\nis enabled on the cluster (ecs.tf). An ADOT collector sidecar next to the control plane and gatekeeper-egress turns OTLP\ninto CloudWatch metrics (README \"Metrics\").\nObserved gaps: application log lines are plain text with component prefixes (for example \"[subscriptions] ...\"), not JSON\nwith trace/span IDs. No CloudWatch alarms or dashboards exist for the factory (live: all 7 alarms belong to Closing Climb).\nWhy, for both: rationale not recorded.\n\nSources:\n- BeerCanLabs/agent-factory @01720b2: DESIGN_AUTHORITY.md 6.3.1 E3, 6.3.2 S1, 6.5, 6.10, 6.12 A1, gap register GAP-031; landing-zones/aws/README.md (Metrics), storage.tf (retention_in_days), ecs.tf (containerInsights); packages/control-plane/src (console logging)\n- Live AWS, read-only, account ending 2296, us-east-1, 2026-11-15: logs describe-log-groups, cloudwatch describe-alarms/list-dashboards, ecs describe-clusters\n",
+      "relatedDecisionRecords": [],
+      "linkedObject": "01M15NEKT7-S14J",
+      "primaryObjectType": "",
+      "primaryObjectUid": "",
+      "generatedObjects": [],
+      "unresolvedQuestions": [],
+      "assumptions": [],
+      "nextSteps": [],
+      "defaultSelection": false,
+      "requirementCount": 0,
+      "hasRiskRef": false,
+      "outboundRefs": [
+        {
+          "target": "01M15NEKT7-S14J",
+          "path": "linkedObject"
+        }
+      ],
+      "referencedBy": [
+        {
+          "source": "01M15NEKT7-S14J",
+          "path": "decisionRecords[12].ref"
+        }
+      ],
+      "editorSchema": {
+        "requiredFields": [
+          "schemaVersion",
+          "uid",
+          "type",
+          "name",
+          "category",
+          "status",
+          "catalogStatus",
+          "lifecycleStatus"
+        ],
+        "optionalFields": [
+          "aliases",
+          "description",
+          "version",
+          "owner",
+          "tags",
+          "affectedComponent",
+          "impact",
+          "mitigationPath",
+          "decisionRationale",
+          "relatedDecisionRecords",
+          "controlReferences",
+          "linkedObject",
+          "approver",
+          "approvalDate"
+        ],
+        "fieldTypes": {
+          "aliases": "list",
+          "owner": "dict",
+          "tags": "list",
+          "relatedDecisionRecords": "list",
+          "controlReferences": "list",
+          "approver": "str",
+          "approvalDate": "str"
+        },
+        "enumFields": {
+          "catalogStatus": [
+            "stub",
+            "incomplete",
+            "complete"
+          ],
+          "lifecycleStatus": [
+            "candidate",
+            "preferred",
+            "existing-only",
+            "deprecated",
+            "retired"
+          ],
+          "category": [
+            "risk",
+            "decision"
+          ],
+          "status": [
+            "open",
+            "accepted",
+            "mitigated",
+            "resolved"
+          ]
+        },
+        "enumListFields": {},
+        "collectionSchemas": {},
+        "schemaPath": "framework/schemas/decision-record.schema.yaml"
+      },
+      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M7GYV3B6-KB8Q\",\n  \"type\": \"decision_record\",\n  \"name\": \"AWS Agent Factory: Observability and Audit Logging\",\n  \"description\": \"The ledger is the structured audit trail. CloudWatch Logs (30 days), Container Insights and an ADOT collector carry operational telemetry. The kernel exposes telemetry through headless APIs, not dashboards. Secret redaction from results and ledger rows is S1 design intent; GAP-031 limits it on AWS.\",\n  \"version\": \"1.0.0\",\n  \"category\": \"decision\",\n  \"status\": \"accepted\",\n  \"catalogStatus\": \"incomplete\",\n  \"lifecycleStatus\": \"preferred\",\n  \"owner\": {\n    \"team\": \"platform-ai-team\",\n    \"contact\": \"platform-ai@example.com\"\n  },\n  \"tags\": [\n    \"agent-factory\",\n    \"aws\",\n    \"submind\",\n    \"observability\",\n    \"logging\",\n    \"audit\"\n  ],\n  \"linkedObject\": \"01M15NEKT7-S14J\",\n  \"decisionRationale\": \"Decision: audit is the ledger. Every egress request writes a ledger row (agent, run, route or host, allow/deny), never prompt\\nbodies or secrets (E3); the ledger is append-only, single-writer and verified (6.10). Webhook deliveries that are unsigned\\nor carry a bad signature are refused, all in the same way (A1). The kernel builds no dashboards and serves telemetry through\\nheadless APIs (6.5).\\nSecret redaction from results and ledger rows is Design Authority S1 design intent, not current AWS behaviour. GAP-031\\n(Critical) records that since 6256fac the control plane skips secret binding for non-local runtimes, so it does not know\\nthose values to redact them. See the secrets decision 01M7GYV3B6-YE24.\\nAWS binding: container logs go to CloudWatch Logs /ecs/factory-prod with 30-day retention (storage.tf). Container Insights\\nis enabled on the cluster (ecs.tf). An ADOT collector sidecar next to the control plane and gatekeeper-egress turns OTLP\\ninto CloudWatch metrics (README \\\"Metrics\\\").\\nObserved gaps: application log lines are plain text with component prefixes (for example \\\"[subscriptions] ...\\\"), not JSON\\nwith trace/span IDs. No CloudWatch alarms or dashboards exist for the factory (live: all 7 alarms belong to Closing Climb).\\nWhy, for both: rationale not recorded.\\n\\nSources:\\n- BeerCanLabs/agent-factory @01720b2: DESIGN_AUTHORITY.md 6.3.1 E3, 6.3.2 S1, 6.5, 6.10, 6.12 A1, gap register GAP-031; landing-zones/aws/README.md (Metrics), storage.tf (retention_in_days), ecs.tf (containerInsights); packages/control-plane/src (console logging)\\n- Live AWS, read-only, account ending 2296, us-east-1, 2026-11-15: logs describe-log-groups, cloudwatch describe-alarms/list-dashboards, ecs describe-clusters\\n\",\n  \"_source\": \"catalog/governance/decision-records/dr-aws-agent-factory-observability.yaml\"\n}",
+      "existsInCatalog": true,
+      "outboundRelationships": [],
+      "inboundRelationships": []
+    },
+    {
+      "id": "01M7GYV3B6-RYSP",
+      "uid": "01M7GYV3B6-RYSP",
+      "name": "AWS Agent Factory: Availability, Failure Domain and Recovery",
+      "aliases": [],
+      "type": "decision_record",
+      "typeLabel": "DecisionRecord / decision",
+      "filterType": "decision_record",
+      "category": "decision",
+      "deliveryModel": "",
+      "domain": "",
+      "description": "Always-on mailboxes with zero idle agent compute. A single region and single cluster form the failure domain. EFS is backed up daily (35 days), the config bucket keeps versions for at least 90 days, and the ledger keeps WORM checkpoints for 365 days.",
+      "version": "1.0.0",
+      "catalogStatus": "incomplete",
+      "lifecycleStatus": "preferred",
+      "status": "accepted",
+      "businessContext": {},
+      "product": "",
+      "runsOn": "",
+      "subtype": "",
+      "vendor": "",
+      "productName": "",
+      "productVersion": "",
+      "classification": "",
+      "platformDependency": "",
+      "capabilities": [],
+      "configurations": [],
+      "networkPlacement": "",
+      "patchingOwner": "",
+      "complianceCerts": [],
+      "requirementGroups": [],
+      "requirementImplementations": [],
+      "dataLeavesInfrastructure": null,
+      "dataResidencyCommitment": "",
+      "dpaNotes": "",
+      "vendorSLA": "",
+      "authenticationModel": "",
+      "incidentNotificationProcess": "",
+      "owner": {
+        "team": "platform-ai-team",
+        "contact": "platform-ai@example.com"
+      },
+      "definitionOwner": {},
+      "provider": {},
+      "authority": {},
+      "shape": "round-rectangle",
+      "color": "#1f8a5b",
+      "source": "catalog/governance/decision-records/dr-aws-agent-factory-recovery.yaml",
+      "tags": [
+        "agent-factory",
+        "aws",
+        "submind",
+        "availability",
+        "backup",
+        "recovery"
+      ],
+      "ardCategory": "decision",
+      "internalComponents": [],
+      "notes": {},
+      "requirements": [],
+      "implementations": [],
+      "appliesTo": {},
+      "inherits": "",
+      "scalingUnits": [],
+      "networkZones": [],
+      "sdpConnections": [],
+      "serviceGroups": [],
+      "tierVariants": [],
+      "tierId": "",
+      "purpose": "",
+      "availabilityExpectation": "",
+      "costPosture": "",
+      "complianceScope": [],
+      "parameterSurface": [],
+      "followsReferenceArchitecture": "",
+      "decisionRecords": [],
+      "affectedComponent": "",
+      "impact": "",
+      "mitigationPath": "",
+      "decisionRationale": "Availability (agent-factory .draft/sdp.yaml notes.availabilityRequirement): the mailboxes (ingress, control plane,\ngatekeeper-ingress) are always reachable and agent compute is zero when idle; \"availability of the fleet is the mailbox, not\nwarm agents\". Each service runs one task. A control-plane deploy has a brief gap because it deploys stop-then-start (LG1,\naccepted 2026-09-28).\nFailure domain: platform-wide. Everything runs in one region (us-east-1) and one ECS cluster. Losing the control plane\nblocks wakes and MCP; losing one agent task does not take down the factory (repo SDP notes.failureDomain).\nRecovery (Design Authority R1): the factory's own state is backed up automatically and restorable to an earlier point.\nAWS binding: EFS automatic backups run daily (live: backup plan aws/efs/automatic-backup-plan, cron 05:00 UTC, 35-day\nretention; storage.tf aws_efs_backup_policy, commit bd94490, TSK-051/GAP-058). The config bucket is versioned with\nnon-current versions kept for at least 90 days. Ledger checkpoints are WORM for 365 days. A failed ledger is archived, never\nrepaired (LG2), and submind-aws has a documented ledger-recovery deploy.\nNo SLO or error-budget policy is defined, and no cross-region recovery is recorded. (rationale not recorded)\n\nSources:\n- BeerCanLabs/agent-factory @01720b2: .draft/sdp.yaml (notes.availabilityRequirement, failureDomain); DESIGN_AUTHORITY.md 6.10 LG1-LG2, 6.13 R1; landing-zones/aws/storage.tf, ecs.tf; commit bd94490\n- BeerCanLabs/submind-aws @3f7d9a5: config/deploy.env (ledger recovery settings), OPERATIONS.md\n- Live AWS, read-only, account ending 2296, us-east-1, 2026-11-15: backup list-backup-plans/get-backup-plan, efs describe-backup-policy, ecs describe-services (deployment configuration)\n",
+      "relatedDecisionRecords": [],
+      "linkedObject": "01M15NEKT7-S14J",
+      "primaryObjectType": "",
+      "primaryObjectUid": "",
+      "generatedObjects": [],
+      "unresolvedQuestions": [],
+      "assumptions": [],
+      "nextSteps": [],
+      "defaultSelection": false,
+      "requirementCount": 0,
+      "hasRiskRef": false,
+      "outboundRefs": [
+        {
+          "target": "01M15NEKT7-S14J",
+          "path": "linkedObject"
+        }
+      ],
+      "referencedBy": [
+        {
+          "source": "01M15NEKT7-S14J",
+          "path": "decisionRecords[10].ref"
+        },
+        {
+          "source": "01M15NEKT7-S14J",
+          "path": "decisionRecords[11].ref"
+        }
+      ],
+      "editorSchema": {
+        "requiredFields": [
+          "schemaVersion",
+          "uid",
+          "type",
+          "name",
+          "category",
+          "status",
+          "catalogStatus",
+          "lifecycleStatus"
+        ],
+        "optionalFields": [
+          "aliases",
+          "description",
+          "version",
+          "owner",
+          "tags",
+          "affectedComponent",
+          "impact",
+          "mitigationPath",
+          "decisionRationale",
+          "relatedDecisionRecords",
+          "controlReferences",
+          "linkedObject",
+          "approver",
+          "approvalDate"
+        ],
+        "fieldTypes": {
+          "aliases": "list",
+          "owner": "dict",
+          "tags": "list",
+          "relatedDecisionRecords": "list",
+          "controlReferences": "list",
+          "approver": "str",
+          "approvalDate": "str"
+        },
+        "enumFields": {
+          "catalogStatus": [
+            "stub",
+            "incomplete",
+            "complete"
+          ],
+          "lifecycleStatus": [
+            "candidate",
+            "preferred",
+            "existing-only",
+            "deprecated",
+            "retired"
+          ],
+          "category": [
+            "risk",
+            "decision"
+          ],
+          "status": [
+            "open",
+            "accepted",
+            "mitigated",
+            "resolved"
+          ]
+        },
+        "enumListFields": {},
+        "collectionSchemas": {},
+        "schemaPath": "framework/schemas/decision-record.schema.yaml"
+      },
+      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M7GYV3B6-RYSP\",\n  \"type\": \"decision_record\",\n  \"name\": \"AWS Agent Factory: Availability, Failure Domain and Recovery\",\n  \"description\": \"Always-on mailboxes with zero idle agent compute. A single region and single cluster form the failure domain. EFS is backed up daily (35 days), the config bucket keeps versions for at least 90 days, and the ledger keeps WORM checkpoints for 365 days.\",\n  \"version\": \"1.0.0\",\n  \"category\": \"decision\",\n  \"status\": \"accepted\",\n  \"catalogStatus\": \"incomplete\",\n  \"lifecycleStatus\": \"preferred\",\n  \"owner\": {\n    \"team\": \"platform-ai-team\",\n    \"contact\": \"platform-ai@example.com\"\n  },\n  \"tags\": [\n    \"agent-factory\",\n    \"aws\",\n    \"submind\",\n    \"availability\",\n    \"backup\",\n    \"recovery\"\n  ],\n  \"linkedObject\": \"01M15NEKT7-S14J\",\n  \"decisionRationale\": \"Availability (agent-factory .draft/sdp.yaml notes.availabilityRequirement): the mailboxes (ingress, control plane,\\ngatekeeper-ingress) are always reachable and agent compute is zero when idle; \\\"availability of the fleet is the mailbox, not\\nwarm agents\\\". Each service runs one task. A control-plane deploy has a brief gap because it deploys stop-then-start (LG1,\\naccepted 2026-09-28).\\nFailure domain: platform-wide. Everything runs in one region (us-east-1) and one ECS cluster. Losing the control plane\\nblocks wakes and MCP; losing one agent task does not take down the factory (repo SDP notes.failureDomain).\\nRecovery (Design Authority R1): the factory's own state is backed up automatically and restorable to an earlier point.\\nAWS binding: EFS automatic backups run daily (live: backup plan aws/efs/automatic-backup-plan, cron 05:00 UTC, 35-day\\nretention; storage.tf aws_efs_backup_policy, commit bd94490, TSK-051/GAP-058). The config bucket is versioned with\\nnon-current versions kept for at least 90 days. Ledger checkpoints are WORM for 365 days. A failed ledger is archived, never\\nrepaired (LG2), and submind-aws has a documented ledger-recovery deploy.\\nNo SLO or error-budget policy is defined, and no cross-region recovery is recorded. (rationale not recorded)\\n\\nSources:\\n- BeerCanLabs/agent-factory @01720b2: .draft/sdp.yaml (notes.availabilityRequirement, failureDomain); DESIGN_AUTHORITY.md 6.10 LG1-LG2, 6.13 R1; landing-zones/aws/storage.tf, ecs.tf; commit bd94490\\n- BeerCanLabs/submind-aws @3f7d9a5: config/deploy.env (ledger recovery settings), OPERATIONS.md\\n- Live AWS, read-only, account ending 2296, us-east-1, 2026-11-15: backup list-backup-plans/get-backup-plan, efs describe-backup-policy, ecs describe-services (deployment configuration)\\n\",\n  \"_source\": \"catalog/governance/decision-records/dr-aws-agent-factory-recovery.yaml\"\n}",
+      "existsInCatalog": true,
+      "outboundRelationships": [],
+      "inboundRelationships": []
+    },
+    {
+      "id": "01M7GYV3B6-YE24",
+      "uid": "01M7GYV3B6-YE24",
+      "name": "AWS Agent Factory: Secrets Management",
+      "aliases": [],
+      "type": "decision_record",
+      "typeLabel": "DecisionRecord / decision",
+      "filterType": "decision_record",
+      "category": "decision",
+      "deliveryModel": "",
+      "domain": "",
+      "description": "Design intent (S1) is that secrets stay in AWS Secrets Manager, with names only in git, and that gatekeeper-egress injects credentials so agents hold only a run token. On AWS that intent is not fully in force; GAP-031 is recorded below. OAuth grants are held by the Keymaster.",
+      "version": "1.0.0",
+      "catalogStatus": "incomplete",
+      "lifecycleStatus": "preferred",
+      "status": "accepted",
+      "businessContext": {},
+      "product": "",
+      "runsOn": "",
+      "subtype": "",
+      "vendor": "",
+      "productName": "",
+      "productVersion": "",
+      "classification": "",
+      "platformDependency": "",
+      "capabilities": [],
+      "configurations": [],
+      "networkPlacement": "",
+      "patchingOwner": "",
+      "complianceCerts": [],
+      "requirementGroups": [],
+      "requirementImplementations": [],
+      "dataLeavesInfrastructure": null,
+      "dataResidencyCommitment": "",
+      "dpaNotes": "",
+      "vendorSLA": "",
+      "authenticationModel": "",
+      "incidentNotificationProcess": "",
+      "owner": {
+        "team": "platform-ai-team",
+        "contact": "platform-ai@example.com"
+      },
+      "definitionOwner": {},
+      "provider": {},
+      "authority": {},
+      "shape": "round-rectangle",
+      "color": "#1f8a5b",
+      "source": "catalog/governance/decision-records/dr-aws-agent-factory-secrets.yaml",
+      "tags": [
+        "agent-factory",
+        "aws",
+        "submind",
+        "secrets",
+        "secrets-manager"
+      ],
+      "ardCategory": "decision",
+      "internalComponents": [],
+      "notes": {},
+      "requirements": [],
+      "implementations": [],
+      "appliesTo": {},
+      "inherits": "",
+      "scalingUnits": [],
+      "networkZones": [],
+      "sdpConnections": [],
+      "serviceGroups": [],
+      "tierVariants": [],
+      "tierId": "",
+      "purpose": "",
+      "availabilityExpectation": "",
+      "costPosture": "",
+      "complianceScope": [],
+      "parameterSurface": [],
+      "followsReferenceArchitecture": "",
+      "decisionRecords": [],
+      "affectedComponent": "",
+      "impact": "",
+      "mitigationPath": "",
+      "decisionRationale": "Design intent (Design Authority S1): agents never hold real secrets. A cartridge's declared secrets reach it only as\nplaceholders (its run token); gatekeeper-egress injects the real credential into the matching outbound request; the control\nplane and gatekeeper-egress are meant to redact every known secret value from results and ledger rows. OAuth grants and\nrefresh tokens are held only by the Keymaster (K1-K3). Git holds secret names only (agent-factory AGENTS.md \"Secrets\").\nUnbound required names are intended to fail with HTTP 412.\nStore: AWS Secrets Manager in us-east-1 (live: 96 secrets under factory/prod/ and closing-climb/prod/; names and counts\nonly were read), referenced by ECS task definitions and reached from agent subnets through the secretsmanager VPC endpoint.\nTerraform generates every factory credential, one per caller-to-callee edge (landing-zones/aws/README.md \"Secrets\").\nAWS reality, DESIGN_AUTHORITY GAP-031 (Critical, S1 coverage partial, TSK-024 PENDING): since 6256fac (2026-09-20) the\ncontrol plane skips secret binding for non-local runtimes, so it neither pre-flights them (no 412) nor knows their values\nto redact them from results and the ledger. The gap's scope covers Discord bot tokens, XAI_API_KEY, ANTHROPIC_API_KEY,\nGitHub tokens, a username/password pair and GCP service-account JSON, not only a couple of form-login secrets. Live, 11\nactive agent task-definition families still carry secret references (agent-higgins, factory-prod-agent-echo-agent, and\nnine agent-<uuid> families). packages/conformance/baseline.json also records GAP-031 (agent task definitions inject real\nsecret values, pending gatekeeper exchange routes) and GAP-050 (Terraform generates platform tokens and keeps their values\nin state, pending a Keymaster bootstrap design).\n\nSources:\n- BeerCanLabs/agent-factory @01720b2: DESIGN_AUTHORITY.md 6.3.2 S1, 6.11 K1-K5, gap register GAP-031; AGENTS.md (Secrets); landing-zones/aws/README.md, secrets.tf; packages/conformance/baseline.json\n- BeerCanLabs/SM-higgins cartridge.yaml (secrets.requires comments)\n- Live AWS, read-only, account ending 2296, us-east-1, 2026-11-15: secretsmanager list-secrets (names and counts only, no values), ecs list/describe-task-definition (secret reference names and counts only, no values)\n",
+      "relatedDecisionRecords": [],
+      "linkedObject": "01M15NEKT7-S14J",
+      "primaryObjectType": "",
+      "primaryObjectUid": "",
+      "generatedObjects": [],
+      "unresolvedQuestions": [],
+      "assumptions": [],
+      "nextSteps": [],
+      "defaultSelection": false,
+      "requirementCount": 0,
+      "hasRiskRef": false,
+      "outboundRefs": [
+        {
+          "target": "01M15NEKT7-S14J",
+          "path": "linkedObject"
+        }
+      ],
+      "referencedBy": [
+        {
+          "source": "01M15NEKT7-S14J",
+          "path": "decisionRecords[6].ref"
+        }
+      ],
+      "editorSchema": {
+        "requiredFields": [
+          "schemaVersion",
+          "uid",
+          "type",
+          "name",
+          "category",
+          "status",
+          "catalogStatus",
+          "lifecycleStatus"
+        ],
+        "optionalFields": [
+          "aliases",
+          "description",
+          "version",
+          "owner",
+          "tags",
+          "affectedComponent",
+          "impact",
+          "mitigationPath",
+          "decisionRationale",
+          "relatedDecisionRecords",
+          "controlReferences",
+          "linkedObject",
+          "approver",
+          "approvalDate"
+        ],
+        "fieldTypes": {
+          "aliases": "list",
+          "owner": "dict",
+          "tags": "list",
+          "relatedDecisionRecords": "list",
+          "controlReferences": "list",
+          "approver": "str",
+          "approvalDate": "str"
+        },
+        "enumFields": {
+          "catalogStatus": [
+            "stub",
+            "incomplete",
+            "complete"
+          ],
+          "lifecycleStatus": [
+            "candidate",
+            "preferred",
+            "existing-only",
+            "deprecated",
+            "retired"
+          ],
+          "category": [
+            "risk",
+            "decision"
+          ],
+          "status": [
+            "open",
+            "accepted",
+            "mitigated",
+            "resolved"
+          ]
+        },
+        "enumListFields": {},
+        "collectionSchemas": {},
+        "schemaPath": "framework/schemas/decision-record.schema.yaml"
+      },
+      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M7GYV3B6-YE24\",\n  \"type\": \"decision_record\",\n  \"name\": \"AWS Agent Factory: Secrets Management\",\n  \"description\": \"Design intent (S1) is that secrets stay in AWS Secrets Manager, with names only in git, and that gatekeeper-egress injects credentials so agents hold only a run token. On AWS that intent is not fully in force; GAP-031 is recorded below. OAuth grants are held by the Keymaster.\",\n  \"version\": \"1.0.0\",\n  \"category\": \"decision\",\n  \"status\": \"accepted\",\n  \"catalogStatus\": \"incomplete\",\n  \"lifecycleStatus\": \"preferred\",\n  \"owner\": {\n    \"team\": \"platform-ai-team\",\n    \"contact\": \"platform-ai@example.com\"\n  },\n  \"tags\": [\n    \"agent-factory\",\n    \"aws\",\n    \"submind\",\n    \"secrets\",\n    \"secrets-manager\"\n  ],\n  \"linkedObject\": \"01M15NEKT7-S14J\",\n  \"decisionRationale\": \"Design intent (Design Authority S1): agents never hold real secrets. A cartridge's declared secrets reach it only as\\nplaceholders (its run token); gatekeeper-egress injects the real credential into the matching outbound request; the control\\nplane and gatekeeper-egress are meant to redact every known secret value from results and ledger rows. OAuth grants and\\nrefresh tokens are held only by the Keymaster (K1-K3). Git holds secret names only (agent-factory AGENTS.md \\\"Secrets\\\").\\nUnbound required names are intended to fail with HTTP 412.\\nStore: AWS Secrets Manager in us-east-1 (live: 96 secrets under factory/prod/ and closing-climb/prod/; names and counts\\nonly were read), referenced by ECS task definitions and reached from agent subnets through the secretsmanager VPC endpoint.\\nTerraform generates every factory credential, one per caller-to-callee edge (landing-zones/aws/README.md \\\"Secrets\\\").\\nAWS reality, DESIGN_AUTHORITY GAP-031 (Critical, S1 coverage partial, TSK-024 PENDING): since 6256fac (2026-09-20) the\\ncontrol plane skips secret binding for non-local runtimes, so it neither pre-flights them (no 412) nor knows their values\\nto redact them from results and the ledger. The gap's scope covers Discord bot tokens, XAI_API_KEY, ANTHROPIC_API_KEY,\\nGitHub tokens, a username/password pair and GCP service-account JSON, not only a couple of form-login secrets. Live, 11\\nactive agent task-definition families still carry secret references (agent-higgins, factory-prod-agent-echo-agent, and\\nnine agent-<uuid> families). packages/conformance/baseline.json also records GAP-031 (agent task definitions inject real\\nsecret values, pending gatekeeper exchange routes) and GAP-050 (Terraform generates platform tokens and keeps their values\\nin state, pending a Keymaster bootstrap design).\\n\\nSources:\\n- BeerCanLabs/agent-factory @01720b2: DESIGN_AUTHORITY.md 6.3.2 S1, 6.11 K1-K5, gap register GAP-031; AGENTS.md (Secrets); landing-zones/aws/README.md, secrets.tf; packages/conformance/baseline.json\\n- BeerCanLabs/SM-higgins cartridge.yaml (secrets.requires comments)\\n- Live AWS, read-only, account ending 2296, us-east-1, 2026-11-15: secretsmanager list-secrets (names and counts only, no values), ecs list/describe-task-definition (secret reference names and counts only, no values)\\n\",\n  \"_source\": \"catalog/governance/decision-records/dr-aws-agent-factory-secrets.yaml\"\n}",
       "existsInCatalog": true,
       "outboundRelationships": [],
       "inboundRelationships": []
@@ -51086,7 +53158,44 @@ window.DRAFT_BROWSER_DATA = {
       "requirementCount": 11,
       "hasRiskRef": false,
       "outboundRefs": [],
-      "referencedBy": [],
+      "referencedBy": [
+        {
+          "source": "01M15NEKT7-S14J",
+          "path": "requirementImplementations[0].requirementGroup"
+        },
+        {
+          "source": "01M15NEKT7-S14J",
+          "path": "requirementImplementations[2].requirementGroup"
+        },
+        {
+          "source": "01M15NEKT7-S14J",
+          "path": "requirementImplementations[3].requirementGroup"
+        },
+        {
+          "source": "01M15NEKT7-S14J",
+          "path": "requirementImplementations[4].requirementGroup"
+        },
+        {
+          "source": "01M15NEKT7-S14J",
+          "path": "requirementImplementations[5].requirementGroup"
+        },
+        {
+          "source": "01M15NEKT7-S14J",
+          "path": "requirementImplementations[6].requirementGroup"
+        },
+        {
+          "source": "01M15NEKT7-S14J",
+          "path": "requirementImplementations[7].requirementGroup"
+        },
+        {
+          "source": "01M15NEKT7-S14J",
+          "path": "requirementImplementations[8].requirementGroup"
+        },
+        {
+          "source": "01M15NEKT7-S14J",
+          "path": "requirementImplementations[9].requirementGroup"
+        }
+      ],
       "editorSchema": {
         "requiredFields": [
           "schemaVersion",
@@ -51369,7 +53478,16 @@ window.DRAFT_BROWSER_DATA = {
       "requirementCount": 6,
       "hasRiskRef": false,
       "outboundRefs": [],
-      "referencedBy": [],
+      "referencedBy": [
+        {
+          "source": "01M15NEKT7-S14J",
+          "path": "requirementImplementations[1].requirementGroup"
+        },
+        {
+          "source": "01M15NEKT7-S14J",
+          "path": "requirementImplementations[10].requirementGroup"
+        }
+      ],
       "editorSchema": {
         "requiredFields": [
           "schemaVersion",
@@ -53638,7 +55756,74 @@ window.DRAFT_BROWSER_DATA = {
       "patchingOwner": "",
       "complianceCerts": [],
       "requirementGroups": [],
-      "requirementImplementations": [],
+      "requirementImplementations": [
+        {
+          "requirementGroup": "01M15WPEFV-ZMA9",
+          "requirementId": "req-expand-contract-migrations",
+          "status": "not-compliant",
+          "notes": "The placed agent-runtime (01M7GWXKXW-4ZJF) has a SQLite schema created in application code (CREATE TABLE IF NOT EXISTS in memory/episodic.py, notebook.py and workspace.py) that ships with the runtime. There is no expand-and-contract migration decoupled from a code deploy. See decision record 01M7GYV3B6-FASW."
+        },
+        {
+          "requirementGroup": "01M15XYZXT-KTJA",
+          "requirementId": "req-asvs-parameterized-queries",
+          "status": "satisfied",
+          "notes": "Agent-runtime SQLite binds query values with parameterized placeholders. The only string-built SQL is notebook.py interpolating table identifiers from carry_tables; the runtime caller does not pass that argument. See decision record 01M7GYV3B6-FASW."
+        },
+        {
+          "requirementGroup": "01M15WPEFV-ZMA9",
+          "requirementId": "req-no-gate-suppressions",
+          "status": "not-compliant",
+          "notes": "packages/conformance/baseline.json holds 4 approved baseline entries (GAP-031, GAP-050). See decision record 01M7GYV3B6-Q5NV."
+        },
+        {
+          "requirementGroup": "01M15WPEFV-ZMA9",
+          "requirementId": "req-rollback-mechanism",
+          "status": "not-compliant",
+          "notes": "Rollback is a manual redeploy of a recorded pin; ECS deployment circuit breakers are disabled. See decision record 01M7GYV3B6-Q5NV."
+        },
+        {
+          "requirementGroup": "01M15WPEFV-ZMA9",
+          "requirementId": "req-l3-composable-iac",
+          "status": "not-compliant",
+          "notes": "Single Terraform root configuration plus one documented hand-set Cloudflare Access bypass. See decision record 01M7GYV3B6-Q5NV."
+        },
+        {
+          "requirementGroup": "01M15WPEFV-ZMA9",
+          "requirementId": "req-l3-ephemeral-preview-environments",
+          "status": "not-compliant",
+          "notes": "No per-branch cloud preview environments; CI runs an ephemeral Docker Compose proof only. See decision record 01M7GYV3B6-Q5NV."
+        },
+        {
+          "requirementGroup": "01M15WPEFV-ZMA9",
+          "requirementId": "req-l3-json-structured-logging",
+          "status": "not-compliant",
+          "notes": "Application logs are plain text; the ledger is the structured audit trail. See decision record 01M7GYV3B6-KB8Q."
+        },
+        {
+          "requirementGroup": "01M15WPEFV-ZMA9",
+          "requirementId": "req-l3-slo-error-budget",
+          "status": "not-compliant",
+          "notes": "No SLO or error-budget policy is defined. See decision record 01M7GYV3B6-RYSP."
+        },
+        {
+          "requirementGroup": "01M15WPEFV-ZMA9",
+          "requirementId": "req-l3-zero-downtime-deployment",
+          "status": "not-compliant",
+          "notes": "Control plane deploys stop-then-start (LG1, accepted 2026-09-28); no auto-rollback. See decision record 01M7GYV3B6-Q5NV."
+        },
+        {
+          "requirementGroup": "01M15WPEFV-ZMA9",
+          "requirementId": "req-l3-automated-security-gates",
+          "status": "not-compliant",
+          "notes": "No SAST, secret scanning, SCA or IaC policy linting in CI. See decision record 01M7GYV3B6-Q5NV."
+        },
+        {
+          "requirementGroup": "01M15XYZXT-KTJA",
+          "requirementId": "req-asvs-third-party-component-security",
+          "status": "not-compliant",
+          "notes": "No automated SCA in CI and no Dependabot configuration. See decision record 01M7GYV3B6-Q5NV."
+        }
+      ],
       "dataLeavesInfrastructure": null,
       "dataResidencyCommitment": "",
       "dpaNotes": "",
@@ -53674,12 +55859,12 @@ window.DRAFT_BROWSER_DATA = {
         },
         "externalDependencies": "Cloudflare edge proxy (01M7GTBMQS-YRGF) and Cloudflare Access (01M7GWTG2T-VA2G); ALB factory-prod (01M7GWTG2T-M2Q0); Cloud Map factory.internal (01M7GWTG2T-8A54); Secrets Manager (01M7GWTG2T-3PQY); S3 mind bucket (01M7GWTG2T-GYW1); S3 config/ledger/packages buckets (01M7GWTG2T-F1WG); EFS ledger (01M7GWTG2T-KR1Y); ECR (01M7GWTG2T-0NKZ); CloudWatch (01M7GWTG2T-TQEB); KMS AWS-managed keys (01M7GWTG2T-JHTR).",
         "interServiceConnections": "The ALB routes the default host to the control plane, factory-dashboard to the console and garrison to garrison. Kernel services find each other through Cloud Map factory.internal.",
-        "secretsManagement": "AWS Secrets Manager referenced as ECS container secrets (control-plane 6, gatekeeper-ingress 2, gatekeeper-egress 2, garrison 1, console 0). The gatekeepers inject credentials so agent tasks hold only their run token.",
+        "secretsManagement": "AWS Secrets Manager referenced as ECS container secrets (control-plane 6, gatekeeper-ingress 2, gatekeeper-egress 2, garrison 1, console 0). The gatekeepers inject credentials so agent tasks hold only their run token, except the registered gap GAP-031 (see decision record 01M7GYV3B6-YE24).",
         "iacAutomation": "Terraform in BeerCanLabs/agent-factory landing-zones/aws with an S3 backend.",
         "observability": "CloudWatch Logs /ecs/factory-prod (30 days), Container Insights, ADOT collector sidecar on control-plane and gatekeeper-egress. No factory alarms or dashboards found.",
-        "patternDeviations": "none recorded",
+        "patternDeviations": "Live ECS, the control plane, gatekeeper-ingress and gatekeeper-egress are always-on services; agents scale to zero (see decision record 01M7GYV3B6-K9CZ).",
         "productRegistration": "Registered in drafting-table as BeerCanLabs Agent Factory (01M1N137Q5-AFAC).",
-        "incomplete": "AWS decision records have not been written, so the related SDP requirements show as unmet. Data components for the mind and ledger, autoscaling, security groups and model-provider routing through gatekeeper-egress are not yet modeled."
+        "incomplete": "Requirements are answered by the AWS decision records listed above. Known gaps are recorded as not-compliant requirementImplementations. Still open: synthetic test data, local DRAFT validation of the repo SDP, session/JWT hardening (MFA, rate limiting), and reference-architecture conformance: the agent-factory repo SDP maps the orchestrated-tasks pattern to RA 01KV0REFAR-CMSV, but declaring it needs the RA's ingress, orchestration, mesh, data-store and logs slots modeled first. Data components for the mind and ledger, autoscaling and security groups are not yet modeled."
       },
       "requirements": [],
       "implementations": [],
@@ -53747,6 +55932,70 @@ window.DRAFT_BROWSER_DATA = {
         {
           "ref": "01M7GTBMQS-SZBH",
           "key": "edgeProxyDecision"
+        },
+        {
+          "ref": "01M7GYV3B6-K9CZ",
+          "key": "deploymentTargets"
+        },
+        {
+          "ref": "01M7GYV3B6-K9CZ",
+          "key": "patternDeviations"
+        },
+        {
+          "ref": "01M7GYV3B6-8VN0",
+          "key": "interServiceConnections"
+        },
+        {
+          "ref": "01M7GYV3B6-8VN0",
+          "key": "externalDependencies"
+        },
+        {
+          "ref": "01M7GYV3B6-EEZ3",
+          "key": "accessControlModelDecision"
+        },
+        {
+          "ref": "01M7GYV3B6-YE24",
+          "key": "secretsManagementDecision"
+        },
+        {
+          "ref": "01M7GYV3B6-FASW",
+          "key": "dataClassification"
+        },
+        {
+          "ref": "01M7GYV3B6-FASW",
+          "key": "queryParameterizationDecision"
+        },
+        {
+          "ref": "01M7GYV3B6-083M",
+          "key": "cryptographyStandardDecision"
+        },
+        {
+          "ref": "01M7GYV3B6-RYSP",
+          "key": "availabilityRequirement"
+        },
+        {
+          "ref": "01M7GYV3B6-RYSP",
+          "key": "failureDomain"
+        },
+        {
+          "ref": "01M7GYV3B6-KB8Q",
+          "key": "errorHandlingLoggingDecision"
+        },
+        {
+          "ref": "01M7GYV3B6-Q5NV",
+          "key": "iacAutomationDecision"
+        },
+        {
+          "ref": "01M7GYV3B6-Q5NV",
+          "key": "productRegistrationDecision"
+        },
+        {
+          "ref": "01M7GYV3B6-H03D",
+          "key": "aiGatewayRoutingDecision"
+        },
+        {
+          "ref": "01M7GYV3B6-H03D",
+          "key": "modelInferenceSpecDecision"
         }
       ],
       "affectedComponent": "",
@@ -53804,9 +56053,158 @@ window.DRAFT_BROWSER_DATA = {
         {
           "target": "01M7GTBMQS-SZBH",
           "path": "decisionRecords[0].ref"
+        },
+        {
+          "target": "01M7GYV3B6-K9CZ",
+          "path": "decisionRecords[1].ref"
+        },
+        {
+          "target": "01M7GYV3B6-K9CZ",
+          "path": "decisionRecords[2].ref"
+        },
+        {
+          "target": "01M7GYV3B6-8VN0",
+          "path": "decisionRecords[3].ref"
+        },
+        {
+          "target": "01M7GYV3B6-8VN0",
+          "path": "decisionRecords[4].ref"
+        },
+        {
+          "target": "01M7GYV3B6-EEZ3",
+          "path": "decisionRecords[5].ref"
+        },
+        {
+          "target": "01M7GYV3B6-YE24",
+          "path": "decisionRecords[6].ref"
+        },
+        {
+          "target": "01M7GYV3B6-FASW",
+          "path": "decisionRecords[7].ref"
+        },
+        {
+          "target": "01M7GYV3B6-FASW",
+          "path": "decisionRecords[8].ref"
+        },
+        {
+          "target": "01M7GYV3B6-083M",
+          "path": "decisionRecords[9].ref"
+        },
+        {
+          "target": "01M7GYV3B6-RYSP",
+          "path": "decisionRecords[10].ref"
+        },
+        {
+          "target": "01M7GYV3B6-RYSP",
+          "path": "decisionRecords[11].ref"
+        },
+        {
+          "target": "01M7GYV3B6-KB8Q",
+          "path": "decisionRecords[12].ref"
+        },
+        {
+          "target": "01M7GYV3B6-Q5NV",
+          "path": "decisionRecords[13].ref"
+        },
+        {
+          "target": "01M7GYV3B6-Q5NV",
+          "path": "decisionRecords[14].ref"
+        },
+        {
+          "target": "01M7GYV3B6-H03D",
+          "path": "decisionRecords[15].ref"
+        },
+        {
+          "target": "01M7GYV3B6-H03D",
+          "path": "decisionRecords[16].ref"
+        },
+        {
+          "target": "01M15WPEFV-ZMA9",
+          "path": "requirementImplementations[0].requirementGroup"
+        },
+        {
+          "target": "01M15XYZXT-KTJA",
+          "path": "requirementImplementations[1].requirementGroup"
+        },
+        {
+          "target": "01M15WPEFV-ZMA9",
+          "path": "requirementImplementations[2].requirementGroup"
+        },
+        {
+          "target": "01M15WPEFV-ZMA9",
+          "path": "requirementImplementations[3].requirementGroup"
+        },
+        {
+          "target": "01M15WPEFV-ZMA9",
+          "path": "requirementImplementations[4].requirementGroup"
+        },
+        {
+          "target": "01M15WPEFV-ZMA9",
+          "path": "requirementImplementations[5].requirementGroup"
+        },
+        {
+          "target": "01M15WPEFV-ZMA9",
+          "path": "requirementImplementations[6].requirementGroup"
+        },
+        {
+          "target": "01M15WPEFV-ZMA9",
+          "path": "requirementImplementations[7].requirementGroup"
+        },
+        {
+          "target": "01M15WPEFV-ZMA9",
+          "path": "requirementImplementations[8].requirementGroup"
+        },
+        {
+          "target": "01M15WPEFV-ZMA9",
+          "path": "requirementImplementations[9].requirementGroup"
+        },
+        {
+          "target": "01M15XYZXT-KTJA",
+          "path": "requirementImplementations[10].requirementGroup"
         }
       ],
-      "referencedBy": [],
+      "referencedBy": [
+        {
+          "source": "01M7GYV3B6-K9CZ",
+          "path": "linkedObject"
+        },
+        {
+          "source": "01M7GYV3B6-083M",
+          "path": "linkedObject"
+        },
+        {
+          "source": "01M7GYV3B6-FASW",
+          "path": "linkedObject"
+        },
+        {
+          "source": "01M7GYV3B6-Q5NV",
+          "path": "linkedObject"
+        },
+        {
+          "source": "01M7GYV3B6-EEZ3",
+          "path": "linkedObject"
+        },
+        {
+          "source": "01M7GYV3B6-H03D",
+          "path": "linkedObject"
+        },
+        {
+          "source": "01M7GYV3B6-8VN0",
+          "path": "linkedObject"
+        },
+        {
+          "source": "01M7GYV3B6-KB8Q",
+          "path": "linkedObject"
+        },
+        {
+          "source": "01M7GYV3B6-RYSP",
+          "path": "linkedObject"
+        },
+        {
+          "source": "01M7GYV3B6-YE24",
+          "path": "linkedObject"
+        }
+      ],
       "editorSchema": {
         "requiredFields": [
           "schemaVersion",
@@ -53865,7 +56263,7 @@ window.DRAFT_BROWSER_DATA = {
         },
         "schemaPath": "framework/schemas/software-deployment-pattern.schema.yaml"
       },
-      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M15NEKT7-S14J\",\n  \"type\": \"software_deployment_pattern\",\n  \"name\": \"Skippy's Submind Agent Factory Deployment Pattern\",\n  \"description\": \"Agent Factory deployment on AWS ECS Fargate (cluster factory-prod, us-east-1) behind the Cloudflare edge and an internet-facing ALB, with Secrets Manager injection, S3 mind storage and an EFS/S3 ledger. Agents run as on-demand tasks.\",\n  \"version\": \"2.0.0\",\n  \"catalogStatus\": \"incomplete\",\n  \"lifecycleStatus\": \"preferred\",\n  \"owner\": {\n    \"team\": \"platform-ai-team\",\n    \"contact\": \"platform-ai@example.com\"\n  },\n  \"tags\": [\n    \"software-deployment-pattern\",\n    \"agent-factory\",\n    \"aws\",\n    \"ecs-fargate\"\n  ],\n  \"serviceGroups\": [\n    {\n      \"name\": \"Factory kernel mailboxes\",\n      \"deploymentTarget\": \"aws-us-east-1\",\n      \"substrate\": \"01M7GWTG2S-AC3R\",\n      \"deployableObjects\": [\n        {\n          \"ref\": \"01M7GWXKXW-EJWB\",\n          \"diagramTier\": \"application\"\n        },\n        {\n          \"ref\": \"01M7GWXKXW-7W49\",\n          \"diagramTier\": \"application\"\n        },\n        {\n          \"ref\": \"01M7GWXKXW-BPBV\",\n          \"diagramTier\": \"application\"\n        }\n      ]\n    },\n    {\n      \"name\": \"Factory clients\",\n      \"deploymentTarget\": \"aws-us-east-1\",\n      \"substrate\": \"01M7GWTG2S-AC3R\",\n      \"deployableObjects\": [\n        {\n          \"ref\": \"01M7GWXKXW-VPCD\",\n          \"diagramTier\": \"presentation\"\n        },\n        {\n          \"ref\": \"01M7GWXKXW-Z0Z4\",\n          \"diagramTier\": \"presentation\"\n        }\n      ]\n    },\n    {\n      \"name\": \"Agent cartridges (on-demand)\",\n      \"deploymentTarget\": \"aws-us-east-1\",\n      \"substrate\": \"01M7GWTG2S-AC3R\",\n      \"deployableObjects\": [\n        {\n          \"ref\": \"01M7GWXKXW-4ZJF\",\n          \"diagramTier\": \"application\"\n        }\n      ]\n    }\n  ],\n  \"decisionRecords\": [\n    {\n      \"ref\": \"01M7GTBMQS-SZBH\",\n      \"key\": \"edgeProxyDecision\"\n    }\n  ],\n  \"notes\": {\n    \"verification\": \"Verified read-only on 2026-11-15 (America/Phoenix) against AWS account ending 2296, us-east-1.\",\n    \"deploymentTargets\": \"AWS us-east-1, ECS cluster factory-prod on Fargate/Fargate Spot (01M7GWTG2S-X9V8).\",\n    \"availabilityRequirement\": \"Each kernel and client service runs desired 1 / running 1. Agent compute is zero when idle. gatekeeper-egress and garrison use FARGATE_SPOT. Availability target not yet set.\",\n    \"dataClassification\": \"Confidential (agent-factory .draft/sdp.yaml says the ledger holds metadata plus hashes and the mind holds adopter data).\",\n    \"failureDomain\": {\n      \"scope\": \"platform-wide\",\n      \"description\": \"Single region, single cluster. Losing the control plane blocks wakes and MCP. Losing one agent task does not take down the factory.\"\n    },\n    \"externalDependencies\": \"Cloudflare edge proxy (01M7GTBMQS-YRGF) and Cloudflare Access (01M7GWTG2T-VA2G); ALB factory-prod (01M7GWTG2T-M2Q0); Cloud Map factory.internal (01M7GWTG2T-8A54); Secrets Manager (01M7GWTG2T-3PQY); S3 mind bucket (01M7GWTG2T-GYW1); S3 config/ledger/packages buckets (01M7GWTG2T-F1WG); EFS ledger (01M7GWTG2T-KR1Y); ECR (01M7GWTG2T-0NKZ); CloudWatch (01M7GWTG2T-TQEB); KMS AWS-managed keys (01M7GWTG2T-JHTR).\",\n    \"interServiceConnections\": \"The ALB routes the default host to the control plane, factory-dashboard to the console and garrison to garrison. Kernel services find each other through Cloud Map factory.internal.\",\n    \"secretsManagement\": \"AWS Secrets Manager referenced as ECS container secrets (control-plane 6, gatekeeper-ingress 2, gatekeeper-egress 2, garrison 1, console 0). The gatekeepers inject credentials so agent tasks hold only their run token.\",\n    \"iacAutomation\": \"Terraform in BeerCanLabs/agent-factory landing-zones/aws with an S3 backend.\",\n    \"observability\": \"CloudWatch Logs /ecs/factory-prod (30 days), Container Insights, ADOT collector sidecar on control-plane and gatekeeper-egress. No factory alarms or dashboards found.\",\n    \"patternDeviations\": \"none recorded\",\n    \"productRegistration\": \"Registered in drafting-table as BeerCanLabs Agent Factory (01M1N137Q5-AFAC).\",\n    \"incomplete\": \"AWS decision records have not been written, so the related SDP requirements show as unmet. Data components for the mind and ledger, autoscaling, security groups and model-provider routing through gatekeeper-egress are not yet modeled.\"\n  },\n  \"_source\": \"catalog/engineering/software-deployment-patterns/sdp-skippys-submind.yaml\"\n}",
+      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M15NEKT7-S14J\",\n  \"type\": \"software_deployment_pattern\",\n  \"name\": \"Skippy's Submind Agent Factory Deployment Pattern\",\n  \"description\": \"Agent Factory deployment on AWS ECS Fargate (cluster factory-prod, us-east-1) behind the Cloudflare edge and an internet-facing ALB, with Secrets Manager injection, S3 mind storage and an EFS/S3 ledger. Agents run as on-demand tasks.\",\n  \"version\": \"2.0.0\",\n  \"catalogStatus\": \"incomplete\",\n  \"lifecycleStatus\": \"preferred\",\n  \"owner\": {\n    \"team\": \"platform-ai-team\",\n    \"contact\": \"platform-ai@example.com\"\n  },\n  \"tags\": [\n    \"software-deployment-pattern\",\n    \"agent-factory\",\n    \"aws\",\n    \"ecs-fargate\"\n  ],\n  \"serviceGroups\": [\n    {\n      \"name\": \"Factory kernel mailboxes\",\n      \"deploymentTarget\": \"aws-us-east-1\",\n      \"substrate\": \"01M7GWTG2S-AC3R\",\n      \"deployableObjects\": [\n        {\n          \"ref\": \"01M7GWXKXW-EJWB\",\n          \"diagramTier\": \"application\"\n        },\n        {\n          \"ref\": \"01M7GWXKXW-7W49\",\n          \"diagramTier\": \"application\"\n        },\n        {\n          \"ref\": \"01M7GWXKXW-BPBV\",\n          \"diagramTier\": \"application\"\n        }\n      ]\n    },\n    {\n      \"name\": \"Factory clients\",\n      \"deploymentTarget\": \"aws-us-east-1\",\n      \"substrate\": \"01M7GWTG2S-AC3R\",\n      \"deployableObjects\": [\n        {\n          \"ref\": \"01M7GWXKXW-VPCD\",\n          \"diagramTier\": \"presentation\"\n        },\n        {\n          \"ref\": \"01M7GWXKXW-Z0Z4\",\n          \"diagramTier\": \"presentation\"\n        }\n      ]\n    },\n    {\n      \"name\": \"Agent cartridges (on-demand)\",\n      \"deploymentTarget\": \"aws-us-east-1\",\n      \"substrate\": \"01M7GWTG2S-AC3R\",\n      \"deployableObjects\": [\n        {\n          \"ref\": \"01M7GWXKXW-4ZJF\",\n          \"diagramTier\": \"application\"\n        }\n      ]\n    }\n  ],\n  \"decisionRecords\": [\n    {\n      \"ref\": \"01M7GTBMQS-SZBH\",\n      \"key\": \"edgeProxyDecision\"\n    },\n    {\n      \"ref\": \"01M7GYV3B6-K9CZ\",\n      \"key\": \"deploymentTargets\"\n    },\n    {\n      \"ref\": \"01M7GYV3B6-K9CZ\",\n      \"key\": \"patternDeviations\"\n    },\n    {\n      \"ref\": \"01M7GYV3B6-8VN0\",\n      \"key\": \"interServiceConnections\"\n    },\n    {\n      \"ref\": \"01M7GYV3B6-8VN0\",\n      \"key\": \"externalDependencies\"\n    },\n    {\n      \"ref\": \"01M7GYV3B6-EEZ3\",\n      \"key\": \"accessControlModelDecision\"\n    },\n    {\n      \"ref\": \"01M7GYV3B6-YE24\",\n      \"key\": \"secretsManagementDecision\"\n    },\n    {\n      \"ref\": \"01M7GYV3B6-FASW\",\n      \"key\": \"dataClassification\"\n    },\n    {\n      \"ref\": \"01M7GYV3B6-FASW\",\n      \"key\": \"queryParameterizationDecision\"\n    },\n    {\n      \"ref\": \"01M7GYV3B6-083M\",\n      \"key\": \"cryptographyStandardDecision\"\n    },\n    {\n      \"ref\": \"01M7GYV3B6-RYSP\",\n      \"key\": \"availabilityRequirement\"\n    },\n    {\n      \"ref\": \"01M7GYV3B6-RYSP\",\n      \"key\": \"failureDomain\"\n    },\n    {\n      \"ref\": \"01M7GYV3B6-KB8Q\",\n      \"key\": \"errorHandlingLoggingDecision\"\n    },\n    {\n      \"ref\": \"01M7GYV3B6-Q5NV\",\n      \"key\": \"iacAutomationDecision\"\n    },\n    {\n      \"ref\": \"01M7GYV3B6-Q5NV\",\n      \"key\": \"productRegistrationDecision\"\n    },\n    {\n      \"ref\": \"01M7GYV3B6-H03D\",\n      \"key\": \"aiGatewayRoutingDecision\"\n    },\n    {\n      \"ref\": \"01M7GYV3B6-H03D\",\n      \"key\": \"modelInferenceSpecDecision\"\n    }\n  ],\n  \"requirementImplementations\": [\n    {\n      \"requirementGroup\": \"01M15WPEFV-ZMA9\",\n      \"requirementId\": \"req-expand-contract-migrations\",\n      \"status\": \"not-compliant\",\n      \"notes\": \"The placed agent-runtime (01M7GWXKXW-4ZJF) has a SQLite schema created in application code (CREATE TABLE IF NOT EXISTS in memory/episodic.py, notebook.py and workspace.py) that ships with the runtime. There is no expand-and-contract migration decoupled from a code deploy. See decision record 01M7GYV3B6-FASW.\"\n    },\n    {\n      \"requirementGroup\": \"01M15XYZXT-KTJA\",\n      \"requirementId\": \"req-asvs-parameterized-queries\",\n      \"status\": \"satisfied\",\n      \"notes\": \"Agent-runtime SQLite binds query values with parameterized placeholders. The only string-built SQL is notebook.py interpolating table identifiers from carry_tables; the runtime caller does not pass that argument. See decision record 01M7GYV3B6-FASW.\"\n    },\n    {\n      \"requirementGroup\": \"01M15WPEFV-ZMA9\",\n      \"requirementId\": \"req-no-gate-suppressions\",\n      \"status\": \"not-compliant\",\n      \"notes\": \"packages/conformance/baseline.json holds 4 approved baseline entries (GAP-031, GAP-050). See decision record 01M7GYV3B6-Q5NV.\"\n    },\n    {\n      \"requirementGroup\": \"01M15WPEFV-ZMA9\",\n      \"requirementId\": \"req-rollback-mechanism\",\n      \"status\": \"not-compliant\",\n      \"notes\": \"Rollback is a manual redeploy of a recorded pin; ECS deployment circuit breakers are disabled. See decision record 01M7GYV3B6-Q5NV.\"\n    },\n    {\n      \"requirementGroup\": \"01M15WPEFV-ZMA9\",\n      \"requirementId\": \"req-l3-composable-iac\",\n      \"status\": \"not-compliant\",\n      \"notes\": \"Single Terraform root configuration plus one documented hand-set Cloudflare Access bypass. See decision record 01M7GYV3B6-Q5NV.\"\n    },\n    {\n      \"requirementGroup\": \"01M15WPEFV-ZMA9\",\n      \"requirementId\": \"req-l3-ephemeral-preview-environments\",\n      \"status\": \"not-compliant\",\n      \"notes\": \"No per-branch cloud preview environments; CI runs an ephemeral Docker Compose proof only. See decision record 01M7GYV3B6-Q5NV.\"\n    },\n    {\n      \"requirementGroup\": \"01M15WPEFV-ZMA9\",\n      \"requirementId\": \"req-l3-json-structured-logging\",\n      \"status\": \"not-compliant\",\n      \"notes\": \"Application logs are plain text; the ledger is the structured audit trail. See decision record 01M7GYV3B6-KB8Q.\"\n    },\n    {\n      \"requirementGroup\": \"01M15WPEFV-ZMA9\",\n      \"requirementId\": \"req-l3-slo-error-budget\",\n      \"status\": \"not-compliant\",\n      \"notes\": \"No SLO or error-budget policy is defined. See decision record 01M7GYV3B6-RYSP.\"\n    },\n    {\n      \"requirementGroup\": \"01M15WPEFV-ZMA9\",\n      \"requirementId\": \"req-l3-zero-downtime-deployment\",\n      \"status\": \"not-compliant\",\n      \"notes\": \"Control plane deploys stop-then-start (LG1, accepted 2026-09-28); no auto-rollback. See decision record 01M7GYV3B6-Q5NV.\"\n    },\n    {\n      \"requirementGroup\": \"01M15WPEFV-ZMA9\",\n      \"requirementId\": \"req-l3-automated-security-gates\",\n      \"status\": \"not-compliant\",\n      \"notes\": \"No SAST, secret scanning, SCA or IaC policy linting in CI. See decision record 01M7GYV3B6-Q5NV.\"\n    },\n    {\n      \"requirementGroup\": \"01M15XYZXT-KTJA\",\n      \"requirementId\": \"req-asvs-third-party-component-security\",\n      \"status\": \"not-compliant\",\n      \"notes\": \"No automated SCA in CI and no Dependabot configuration. See decision record 01M7GYV3B6-Q5NV.\"\n    }\n  ],\n  \"notes\": {\n    \"verification\": \"Verified read-only on 2026-11-15 (America/Phoenix) against AWS account ending 2296, us-east-1.\",\n    \"deploymentTargets\": \"AWS us-east-1, ECS cluster factory-prod on Fargate/Fargate Spot (01M7GWTG2S-X9V8).\",\n    \"availabilityRequirement\": \"Each kernel and client service runs desired 1 / running 1. Agent compute is zero when idle. gatekeeper-egress and garrison use FARGATE_SPOT. Availability target not yet set.\",\n    \"dataClassification\": \"Confidential (agent-factory .draft/sdp.yaml says the ledger holds metadata plus hashes and the mind holds adopter data).\",\n    \"failureDomain\": {\n      \"scope\": \"platform-wide\",\n      \"description\": \"Single region, single cluster. Losing the control plane blocks wakes and MCP. Losing one agent task does not take down the factory.\"\n    },\n    \"externalDependencies\": \"Cloudflare edge proxy (01M7GTBMQS-YRGF) and Cloudflare Access (01M7GWTG2T-VA2G); ALB factory-prod (01M7GWTG2T-M2Q0); Cloud Map factory.internal (01M7GWTG2T-8A54); Secrets Manager (01M7GWTG2T-3PQY); S3 mind bucket (01M7GWTG2T-GYW1); S3 config/ledger/packages buckets (01M7GWTG2T-F1WG); EFS ledger (01M7GWTG2T-KR1Y); ECR (01M7GWTG2T-0NKZ); CloudWatch (01M7GWTG2T-TQEB); KMS AWS-managed keys (01M7GWTG2T-JHTR).\",\n    \"interServiceConnections\": \"The ALB routes the default host to the control plane, factory-dashboard to the console and garrison to garrison. Kernel services find each other through Cloud Map factory.internal.\",\n    \"secretsManagement\": \"AWS Secrets Manager referenced as ECS container secrets (control-plane 6, gatekeeper-ingress 2, gatekeeper-egress 2, garrison 1, console 0). The gatekeepers inject credentials so agent tasks hold only their run token, except the registered gap GAP-031 (see decision record 01M7GYV3B6-YE24).\",\n    \"iacAutomation\": \"Terraform in BeerCanLabs/agent-factory landing-zones/aws with an S3 backend.\",\n    \"observability\": \"CloudWatch Logs /ecs/factory-prod (30 days), Container Insights, ADOT collector sidecar on control-plane and gatekeeper-egress. No factory alarms or dashboards found.\",\n    \"patternDeviations\": \"Live ECS, the control plane, gatekeeper-ingress and gatekeeper-egress are always-on services; agents scale to zero (see decision record 01M7GYV3B6-K9CZ).\",\n    \"productRegistration\": \"Registered in drafting-table as BeerCanLabs Agent Factory (01M1N137Q5-AFAC).\",\n    \"incomplete\": \"Requirements are answered by the AWS decision records listed above. Known gaps are recorded as not-compliant requirementImplementations. Still open: synthetic test data, local DRAFT validation of the repo SDP, session/JWT hardening (MFA, rate limiting), and reference-architecture conformance: the agent-factory repo SDP maps the orchestrated-tasks pattern to RA 01KV0REFAR-CMSV, but declaring it needs the RA's ingress, orchestration, mesh, data-store and logs slots modeled first. Data components for the mind and ledger, autoscaling and security groups are not yet modeled.\"\n  },\n  \"_source\": \"catalog/engineering/software-deployment-patterns/sdp-skippys-submind.yaml\"\n}",
       "existsInCatalog": true,
       "outboundRelationships": [],
       "inboundRelationships": [],
@@ -54203,6 +56601,1752 @@ window.DRAFT_BROWSER_DATA = {
         "schemaPath": "framework/schemas/domain.schema.yaml"
       },
       "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M7GTBMQS-3R9T\",\n  \"type\": \"domain\",\n  \"name\": \"Labs\",\n  \"description\": \"Innovation and experimental labs domain covering gaming engines, prototypes,  and experimental repositories authored by Aiden and the Labs team.\\n\",\n  \"ownerContact\": \"labs-team@beercanlabs.com\",\n  \"_source\": \"catalog/governance/business-domains/domain-labs.yaml\"\n}",
+      "existsInCatalog": true,
+      "outboundRelationships": [],
+      "inboundRelationships": []
+    },
+    "01M7GYV3B6-K9CZ": {
+      "id": "01M7GYV3B6-K9CZ",
+      "uid": "01M7GYV3B6-K9CZ",
+      "name": "AWS Agent Factory: Compute, Hosting and Scheduling",
+      "aliases": [],
+      "type": "decision_record",
+      "typeLabel": "DecisionRecord / decision",
+      "filterType": "decision_record",
+      "category": "decision",
+      "deliveryModel": "",
+      "domain": "",
+      "description": "The Agent Factory runs on AWS ECS Fargate in us-east-1 (cluster factory-prod) using the orchestrated-tasks baseline pattern: mailbox services stay warm and each agent run is its own on-demand task.",
+      "version": "1.0.0",
+      "catalogStatus": "incomplete",
+      "lifecycleStatus": "preferred",
+      "status": "accepted",
+      "businessContext": {},
+      "product": "",
+      "runsOn": "",
+      "subtype": "",
+      "vendor": "",
+      "productName": "",
+      "productVersion": "",
+      "classification": "",
+      "platformDependency": "",
+      "capabilities": [],
+      "configurations": [],
+      "networkPlacement": "",
+      "patchingOwner": "",
+      "complianceCerts": [],
+      "requirementGroups": [],
+      "requirementImplementations": [],
+      "dataLeavesInfrastructure": null,
+      "dataResidencyCommitment": "",
+      "dpaNotes": "",
+      "vendorSLA": "",
+      "authenticationModel": "",
+      "incidentNotificationProcess": "",
+      "owner": {
+        "team": "platform-ai-team",
+        "contact": "platform-ai@example.com"
+      },
+      "definitionOwner": {},
+      "provider": {},
+      "authority": {},
+      "shape": "round-rectangle",
+      "color": "#1f8a5b",
+      "source": "catalog/governance/decision-records/dr-aws-agent-factory-compute.yaml",
+      "tags": [
+        "agent-factory",
+        "aws",
+        "submind",
+        "compute",
+        "ecs",
+        "fargate",
+        "scheduling"
+      ],
+      "ardCategory": "decision",
+      "internalComponents": [],
+      "notes": {},
+      "requirements": [],
+      "implementations": [],
+      "appliesTo": {},
+      "inherits": "",
+      "scalingUnits": [],
+      "networkZones": [],
+      "sdpConnections": [],
+      "serviceGroups": [],
+      "tierVariants": [],
+      "tierId": "",
+      "purpose": "",
+      "availabilityExpectation": "",
+      "costPosture": "",
+      "complianceScope": [],
+      "parameterSurface": [],
+      "followsReferenceArchitecture": "",
+      "decisionRecords": [],
+      "affectedComponent": "",
+      "impact": "",
+      "mitigationPath": "",
+      "decisionRationale": "Decision (observed and documented): the deployment target is AWS us-east-1, ECS cluster factory-prod on Fargate. It follows the\norchestrated-tasks baseline pattern (reference architecture 01KV0REFAR-CMSV). The control plane, gatekeeper-ingress,\ngatekeeper-egress, console and garrison run as ECS services (desired 1). Agents run as one Fargate task per run, started by\nthe control plane, so agent compute is zero when idle.\nWhy: the kernel is cloud-agnostic and the landing zone is a per-deployment choice; landing-zones/aws is the\n\"orchestrated-tasks x AWS\" binding. Mailboxes stay warm because they are mailboxes, not cartridges (agent-factory\n.draft/sdp.yaml patternDeviations). Each deployment target has its own ops repository that pins an exact agent-factory\ncommit (Design Authority L1); for AWS that is submind-aws.\nCapacity: gatekeeper-egress and garrison use FARGATE_SPOT; the control plane, console and gatekeeper-ingress use on-demand\nFARGATE. gatekeeper-ingress was moved off Spot after a Spot reclaim killed the single task that holds every agent's Discord\npresence during the 2026-09-30 deploy (commit b58b49a). Why Spot was chosen for the other two: rationale not recorded\n(introduced in 85bfff6, whose message gives no reason).\nScheduling: agent cron triggers are handled by the factory's own Timekeeper (packages/timekeeper; Design Authority 6.15),\nnot by a cloud scheduler. Amazon EventBridge Scheduler in this account is used only by Closing Climb. Why an\nin-process scheduler rather than a cloud scheduler: rationale not recorded beyond the cloud-agnostic kernel principle.\nChoice of AWS over the earlier GCP deployment: rationale not recorded in the sources reviewed.\n\nSources:\n- BeerCanLabs/agent-factory @01720b2: AGENTS.md (Interview, Landing-zone examples), .draft/sdp.yaml (notes.patternDeviations, baselinePatterns), landing-zones/aws/README.md, landing-zones/aws/ecs.tf\n- BeerCanLabs/agent-factory @01720b2: DESIGN_AUTHORITY.md 6.8 L1, 6.15 (Timekeeper); commits b58b49a (2026-09-30), 85bfff6 (2026-09-19)\n- BeerCanLabs/submind-aws @3f7d9a5: README.md, OPERATIONS.md (What lives here)\n- Live AWS, read-only, account ending 2296, us-east-1, 2026-11-15: ecs describe-clusters/describe-services (launch types, desired counts), list-task-definition-families, scheduler list-schedules\n",
+      "relatedDecisionRecords": [],
+      "linkedObject": "01M15NEKT7-S14J",
+      "primaryObjectType": "",
+      "primaryObjectUid": "",
+      "generatedObjects": [],
+      "unresolvedQuestions": [],
+      "assumptions": [],
+      "nextSteps": [],
+      "defaultSelection": false,
+      "requirementCount": 0,
+      "hasRiskRef": false,
+      "outboundRefs": [
+        {
+          "target": "01M15NEKT7-S14J",
+          "path": "linkedObject"
+        }
+      ],
+      "referencedBy": [
+        {
+          "source": "01M15NEKT7-S14J",
+          "path": "decisionRecords[1].ref"
+        },
+        {
+          "source": "01M15NEKT7-S14J",
+          "path": "decisionRecords[2].ref"
+        }
+      ],
+      "editorSchema": {
+        "requiredFields": [
+          "schemaVersion",
+          "uid",
+          "type",
+          "name",
+          "category",
+          "status",
+          "catalogStatus",
+          "lifecycleStatus"
+        ],
+        "optionalFields": [
+          "aliases",
+          "description",
+          "version",
+          "owner",
+          "tags",
+          "affectedComponent",
+          "impact",
+          "mitigationPath",
+          "decisionRationale",
+          "relatedDecisionRecords",
+          "controlReferences",
+          "linkedObject",
+          "approver",
+          "approvalDate"
+        ],
+        "fieldTypes": {
+          "aliases": "list",
+          "owner": "dict",
+          "tags": "list",
+          "relatedDecisionRecords": "list",
+          "controlReferences": "list",
+          "approver": "str",
+          "approvalDate": "str"
+        },
+        "enumFields": {
+          "catalogStatus": [
+            "stub",
+            "incomplete",
+            "complete"
+          ],
+          "lifecycleStatus": [
+            "candidate",
+            "preferred",
+            "existing-only",
+            "deprecated",
+            "retired"
+          ],
+          "category": [
+            "risk",
+            "decision"
+          ],
+          "status": [
+            "open",
+            "accepted",
+            "mitigated",
+            "resolved"
+          ]
+        },
+        "enumListFields": {},
+        "collectionSchemas": {},
+        "schemaPath": "framework/schemas/decision-record.schema.yaml"
+      },
+      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M7GYV3B6-K9CZ\",\n  \"type\": \"decision_record\",\n  \"name\": \"AWS Agent Factory: Compute, Hosting and Scheduling\",\n  \"description\": \"The Agent Factory runs on AWS ECS Fargate in us-east-1 (cluster factory-prod) using the orchestrated-tasks baseline pattern: mailbox services stay warm and each agent run is its own on-demand task.\",\n  \"version\": \"1.0.0\",\n  \"category\": \"decision\",\n  \"status\": \"accepted\",\n  \"catalogStatus\": \"incomplete\",\n  \"lifecycleStatus\": \"preferred\",\n  \"owner\": {\n    \"team\": \"platform-ai-team\",\n    \"contact\": \"platform-ai@example.com\"\n  },\n  \"tags\": [\n    \"agent-factory\",\n    \"aws\",\n    \"submind\",\n    \"compute\",\n    \"ecs\",\n    \"fargate\",\n    \"scheduling\"\n  ],\n  \"linkedObject\": \"01M15NEKT7-S14J\",\n  \"decisionRationale\": \"Decision (observed and documented): the deployment target is AWS us-east-1, ECS cluster factory-prod on Fargate. It follows the\\norchestrated-tasks baseline pattern (reference architecture 01KV0REFAR-CMSV). The control plane, gatekeeper-ingress,\\ngatekeeper-egress, console and garrison run as ECS services (desired 1). Agents run as one Fargate task per run, started by\\nthe control plane, so agent compute is zero when idle.\\nWhy: the kernel is cloud-agnostic and the landing zone is a per-deployment choice; landing-zones/aws is the\\n\\\"orchestrated-tasks x AWS\\\" binding. Mailboxes stay warm because they are mailboxes, not cartridges (agent-factory\\n.draft/sdp.yaml patternDeviations). Each deployment target has its own ops repository that pins an exact agent-factory\\ncommit (Design Authority L1); for AWS that is submind-aws.\\nCapacity: gatekeeper-egress and garrison use FARGATE_SPOT; the control plane, console and gatekeeper-ingress use on-demand\\nFARGATE. gatekeeper-ingress was moved off Spot after a Spot reclaim killed the single task that holds every agent's Discord\\npresence during the 2026-09-30 deploy (commit b58b49a). Why Spot was chosen for the other two: rationale not recorded\\n(introduced in 85bfff6, whose message gives no reason).\\nScheduling: agent cron triggers are handled by the factory's own Timekeeper (packages/timekeeper; Design Authority 6.15),\\nnot by a cloud scheduler. Amazon EventBridge Scheduler in this account is used only by Closing Climb. Why an\\nin-process scheduler rather than a cloud scheduler: rationale not recorded beyond the cloud-agnostic kernel principle.\\nChoice of AWS over the earlier GCP deployment: rationale not recorded in the sources reviewed.\\n\\nSources:\\n- BeerCanLabs/agent-factory @01720b2: AGENTS.md (Interview, Landing-zone examples), .draft/sdp.yaml (notes.patternDeviations, baselinePatterns), landing-zones/aws/README.md, landing-zones/aws/ecs.tf\\n- BeerCanLabs/agent-factory @01720b2: DESIGN_AUTHORITY.md 6.8 L1, 6.15 (Timekeeper); commits b58b49a (2026-09-30), 85bfff6 (2026-09-19)\\n- BeerCanLabs/submind-aws @3f7d9a5: README.md, OPERATIONS.md (What lives here)\\n- Live AWS, read-only, account ending 2296, us-east-1, 2026-11-15: ecs describe-clusters/describe-services (launch types, desired counts), list-task-definition-families, scheduler list-schedules\\n\",\n  \"_source\": \"catalog/governance/decision-records/dr-aws-agent-factory-compute.yaml\"\n}",
+      "existsInCatalog": true,
+      "outboundRelationships": [],
+      "inboundRelationships": []
+    },
+    "01M7GYV3B6-083M": {
+      "id": "01M7GYV3B6-083M",
+      "uid": "01M7GYV3B6-083M",
+      "name": "AWS Agent Factory: Encryption in Transit and at Rest",
+      "aliases": [],
+      "type": "decision_record",
+      "typeLabel": "DecisionRecord / decision",
+      "filterType": "decision_record",
+      "category": "decision",
+      "deliveryModel": "",
+      "domain": "",
+      "description": "TLS 1.2+ at the ALB (ELBSecurityPolicy-TLS13-1-2-2021-06) with HTTP redirected to HTTPS. Data at rest uses SSE-S3 (AES-256), an encrypted EFS with TLS mounts, and AWS-managed KMS keys for Secrets Manager.",
+      "version": "1.0.0",
+      "catalogStatus": "incomplete",
+      "lifecycleStatus": "preferred",
+      "status": "accepted",
+      "businessContext": {},
+      "product": "",
+      "runsOn": "",
+      "subtype": "",
+      "vendor": "",
+      "productName": "",
+      "productVersion": "",
+      "classification": "",
+      "platformDependency": "",
+      "capabilities": [],
+      "configurations": [],
+      "networkPlacement": "",
+      "patchingOwner": "",
+      "complianceCerts": [],
+      "requirementGroups": [],
+      "requirementImplementations": [],
+      "dataLeavesInfrastructure": null,
+      "dataResidencyCommitment": "",
+      "dpaNotes": "",
+      "vendorSLA": "",
+      "authenticationModel": "",
+      "incidentNotificationProcess": "",
+      "owner": {
+        "team": "platform-ai-team",
+        "contact": "platform-ai@example.com"
+      },
+      "definitionOwner": {},
+      "provider": {},
+      "authority": {},
+      "shape": "round-rectangle",
+      "color": "#1f8a5b",
+      "source": "catalog/governance/decision-records/dr-aws-agent-factory-crypto.yaml",
+      "tags": [
+        "agent-factory",
+        "aws",
+        "submind",
+        "encryption",
+        "tls",
+        "kms"
+      ],
+      "ardCategory": "decision",
+      "internalComponents": [],
+      "notes": {},
+      "requirements": [],
+      "implementations": [],
+      "appliesTo": {},
+      "inherits": "",
+      "scalingUnits": [],
+      "networkZones": [],
+      "sdpConnections": [],
+      "serviceGroups": [],
+      "tierVariants": [],
+      "tierId": "",
+      "purpose": "",
+      "availabilityExpectation": "",
+      "costPosture": "",
+      "complianceScope": [],
+      "parameterSurface": [],
+      "followsReferenceArchitecture": "",
+      "decisionRecords": [],
+      "affectedComponent": "",
+      "impact": "",
+      "mitigationPath": "",
+      "decisionRationale": "Decision (observed): the ALB terminates TLS with ACM certificates and policy ELBSecurityPolicy-TLS13-1-2-2021-06 (TLS 1.2 and\n1.3); port 80 only redirects to HTTPS (landing-zones/aws/alb.tf; README \"HTTPS only, :80 redirects\"; live listeners).\nCloudflare to origin uses Full SSL per edge decision 01M7GTBMQS-SZBH. At rest: every factory S3 bucket uses SSE-S3\n(AES256); the EFS ledger is encrypted and mounted with transit encryption and IAM authorization; Secrets Manager uses the\nAWS-managed aws/secretsmanager key. No customer-managed KMS keys exist in the account.\nWhy SSE-S3 and AWS-managed keys rather than customer-managed KMS keys: rationale not recorded.\n\nSources:\n- BeerCanLabs/agent-factory @01720b2: landing-zones/aws/alb.tf (ssl_policy), storage.tf (sse_algorithm AES256, EFS encrypted), ecs.tf (EFS transit encryption), README.md; commit a3d698f\n- Live AWS, read-only, account ending 2296, us-east-1, 2026-11-15: elbv2 describe-listeners, s3api get-bucket-encryption, efs describe-file-systems, kms list-aliases\n- Drafting table: decision record 01M7GTBMQS-SZBH\n",
+      "relatedDecisionRecords": [],
+      "linkedObject": "01M15NEKT7-S14J",
+      "primaryObjectType": "",
+      "primaryObjectUid": "",
+      "generatedObjects": [],
+      "unresolvedQuestions": [],
+      "assumptions": [],
+      "nextSteps": [],
+      "defaultSelection": false,
+      "requirementCount": 0,
+      "hasRiskRef": false,
+      "outboundRefs": [
+        {
+          "target": "01M15NEKT7-S14J",
+          "path": "linkedObject"
+        }
+      ],
+      "referencedBy": [
+        {
+          "source": "01M15NEKT7-S14J",
+          "path": "decisionRecords[9].ref"
+        }
+      ],
+      "editorSchema": {
+        "requiredFields": [
+          "schemaVersion",
+          "uid",
+          "type",
+          "name",
+          "category",
+          "status",
+          "catalogStatus",
+          "lifecycleStatus"
+        ],
+        "optionalFields": [
+          "aliases",
+          "description",
+          "version",
+          "owner",
+          "tags",
+          "affectedComponent",
+          "impact",
+          "mitigationPath",
+          "decisionRationale",
+          "relatedDecisionRecords",
+          "controlReferences",
+          "linkedObject",
+          "approver",
+          "approvalDate"
+        ],
+        "fieldTypes": {
+          "aliases": "list",
+          "owner": "dict",
+          "tags": "list",
+          "relatedDecisionRecords": "list",
+          "controlReferences": "list",
+          "approver": "str",
+          "approvalDate": "str"
+        },
+        "enumFields": {
+          "catalogStatus": [
+            "stub",
+            "incomplete",
+            "complete"
+          ],
+          "lifecycleStatus": [
+            "candidate",
+            "preferred",
+            "existing-only",
+            "deprecated",
+            "retired"
+          ],
+          "category": [
+            "risk",
+            "decision"
+          ],
+          "status": [
+            "open",
+            "accepted",
+            "mitigated",
+            "resolved"
+          ]
+        },
+        "enumListFields": {},
+        "collectionSchemas": {},
+        "schemaPath": "framework/schemas/decision-record.schema.yaml"
+      },
+      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M7GYV3B6-083M\",\n  \"type\": \"decision_record\",\n  \"name\": \"AWS Agent Factory: Encryption in Transit and at Rest\",\n  \"description\": \"TLS 1.2+ at the ALB (ELBSecurityPolicy-TLS13-1-2-2021-06) with HTTP redirected to HTTPS. Data at rest uses SSE-S3 (AES-256), an encrypted EFS with TLS mounts, and AWS-managed KMS keys for Secrets Manager.\",\n  \"version\": \"1.0.0\",\n  \"category\": \"decision\",\n  \"status\": \"accepted\",\n  \"catalogStatus\": \"incomplete\",\n  \"lifecycleStatus\": \"preferred\",\n  \"owner\": {\n    \"team\": \"platform-ai-team\",\n    \"contact\": \"platform-ai@example.com\"\n  },\n  \"tags\": [\n    \"agent-factory\",\n    \"aws\",\n    \"submind\",\n    \"encryption\",\n    \"tls\",\n    \"kms\"\n  ],\n  \"linkedObject\": \"01M15NEKT7-S14J\",\n  \"decisionRationale\": \"Decision (observed): the ALB terminates TLS with ACM certificates and policy ELBSecurityPolicy-TLS13-1-2-2021-06 (TLS 1.2 and\\n1.3); port 80 only redirects to HTTPS (landing-zones/aws/alb.tf; README \\\"HTTPS only, :80 redirects\\\"; live listeners).\\nCloudflare to origin uses Full SSL per edge decision 01M7GTBMQS-SZBH. At rest: every factory S3 bucket uses SSE-S3\\n(AES256); the EFS ledger is encrypted and mounted with transit encryption and IAM authorization; Secrets Manager uses the\\nAWS-managed aws/secretsmanager key. No customer-managed KMS keys exist in the account.\\nWhy SSE-S3 and AWS-managed keys rather than customer-managed KMS keys: rationale not recorded.\\n\\nSources:\\n- BeerCanLabs/agent-factory @01720b2: landing-zones/aws/alb.tf (ssl_policy), storage.tf (sse_algorithm AES256, EFS encrypted), ecs.tf (EFS transit encryption), README.md; commit a3d698f\\n- Live AWS, read-only, account ending 2296, us-east-1, 2026-11-15: elbv2 describe-listeners, s3api get-bucket-encryption, efs describe-file-systems, kms list-aliases\\n- Drafting table: decision record 01M7GTBMQS-SZBH\\n\",\n  \"_source\": \"catalog/governance/decision-records/dr-aws-agent-factory-crypto.yaml\"\n}",
+      "existsInCatalog": true,
+      "outboundRelationships": [],
+      "inboundRelationships": []
+    },
+    "01M7GYV3B6-FASW": {
+      "id": "01M7GYV3B6-FASW",
+      "uid": "01M7GYV3B6-FASW",
+      "name": "AWS Agent Factory: Data Stores and Data Classification",
+      "aliases": [],
+      "type": "decision_record",
+      "typeLabel": "DecisionRecord / decision",
+      "filterType": "decision_record",
+      "category": "decision",
+      "deliveryModel": "",
+      "domain": "",
+      "description": "Agent memory is kept in S3 under per-agent prefixes and, while a task is running, as per-agent SQLite in the agent-runtime notebook. The ledger is on encrypted EFS with WORM checkpoints in S3 Object Lock. Configuration is in a versioned S3 bucket. Runtime-created agent roles are not limited to their own mind prefix.",
+      "version": "1.0.0",
+      "catalogStatus": "incomplete",
+      "lifecycleStatus": "preferred",
+      "status": "accepted",
+      "businessContext": {},
+      "product": "",
+      "runsOn": "",
+      "subtype": "",
+      "vendor": "",
+      "productName": "",
+      "productVersion": "",
+      "classification": "",
+      "platformDependency": "",
+      "capabilities": [],
+      "configurations": [],
+      "networkPlacement": "",
+      "patchingOwner": "",
+      "complianceCerts": [],
+      "requirementGroups": [],
+      "requirementImplementations": [],
+      "dataLeavesInfrastructure": null,
+      "dataResidencyCommitment": "",
+      "dpaNotes": "",
+      "vendorSLA": "",
+      "authenticationModel": "",
+      "incidentNotificationProcess": "",
+      "owner": {
+        "team": "platform-ai-team",
+        "contact": "platform-ai@example.com"
+      },
+      "definitionOwner": {},
+      "provider": {},
+      "authority": {},
+      "shape": "round-rectangle",
+      "color": "#1f8a5b",
+      "source": "catalog/governance/decision-records/dr-aws-agent-factory-data.yaml",
+      "tags": [
+        "agent-factory",
+        "aws",
+        "submind",
+        "data",
+        "s3",
+        "efs",
+        "classification",
+        "sqlite"
+      ],
+      "ardCategory": "decision",
+      "internalComponents": [],
+      "notes": {},
+      "requirements": [],
+      "implementations": [],
+      "appliesTo": {},
+      "inherits": "",
+      "scalingUnits": [],
+      "networkZones": [],
+      "sdpConnections": [],
+      "serviceGroups": [],
+      "tierVariants": [],
+      "tierId": "",
+      "purpose": "",
+      "availabilityExpectation": "",
+      "costPosture": "",
+      "complianceScope": [],
+      "parameterSurface": [],
+      "followsReferenceArchitecture": "",
+      "decisionRecords": [],
+      "affectedComponent": "",
+      "impact": "",
+      "mitigationPath": "",
+      "decisionRationale": "Decision: agent memory follows \"The Notebook & Safe\" (Design Authority 6.6). Cartridges read and write local SQLite in\n$MEMORY_DIR and never import cloud SDKs; the Property Manager's shim pulls the mind from object storage on wake and pushes it\nback on sleep. AWS binding: S3 bucket agent-factory-mind-prod-* with per-agent prefixes. Only the Terraform-managed\nfactory-prod-agent-* task roles are limited to their own prefix (iam.tf own-mind-only). Runtime-created AgentTaskRole-*\nroles (packages/property-manager/src/aws/iam.ts MindPersistenceAccess) can read, write and delete every agent's mind.\nLive IAM confirms this on the 30 AgentTaskRole-* roles. That is not compliant with \u00a76.6 \"Private Agent Memory Isolation\".\nThe ledger hot chain is on EFS factory-prod-ledger with one writer (LG1); checkpoints ship to\nagent-factory-ledger-prod-* with S3 Object Lock in COMPLIANCE mode, 365-day default retention, so no principal can delete\nor overwrite them early (storage.tf comment; live configuration). Each agent's deployment configuration is one immutable\nobject per version in the versioned config bucket (6.14 SK3, R1). Skill packages are in the packages bucket.\nClassification: Confidential. The ledger holds metadata and hashes only, and the mind holds adopter data (agent-factory\n.draft/sdp.yaml notes.dataClassification). The ledger never holds secrets or prompt bodies (AGENTS.md definition of done 4).\nSQL scope: the factory kernel has no SQL engine in packages/*/src at 01720b2. The cartridge runtime this SDP places\n(01M7GWXKXW-4ZJF, runtimes/agent-runtime) does: memory/episodic.py, memory/notebook.py and memory/workspace.py create a\nSQLite schema (CREATE TABLE / CREATE INDEX / FTS5) for conversations, notebook metadata and workspace state. Schema\nchanges ship in that runtime as CREATE TABLE IF NOT EXISTS and index creation; notebook rotation copies the schema onto a\nnew file and swaps it in. There is no expand-and-contract migration decoupled from a runtime deploy, so\nreq-expand-contract-migrations is not-compliant. Query values are bound with parameterized placeholders throughout;\nthe only string-built SQL is notebook.py, which interpolates table identifiers from the carry_tables argument when rotating\n(the runtime caller runtime/mind.py does not pass that argument). req-asvs-parameterized-queries is therefore satisfied,\nwith that identifier interpolation noted. DynamoDB closing-climb-prod in the same account belongs to Closing Climb, not\nthe factory.\n\nSources:\n- BeerCanLabs/agent-factory @01720b2: DESIGN_AUTHORITY.md 6.6, 6.10 LG1-LG2, 6.13 R1, 6.14; .draft/sdp.yaml (notes.dataClassification); AGENTS.md; landing-zones/aws/storage.tf, iam.tf; packages/property-manager/src/aws/iam.ts; runtimes/agent-runtime/memory/episodic.py, notebook.py, workspace.py and runtime/mind.py\n- Live AWS, read-only, account ending 2296, us-east-1, 2026-11-15: s3api get-bucket-encryption/versioning/object-lock-configuration/public-access-block, efs describe-file-systems, iam get-role-policy for AgentTaskRole-*\n",
+      "relatedDecisionRecords": [],
+      "linkedObject": "01M15NEKT7-S14J",
+      "primaryObjectType": "",
+      "primaryObjectUid": "",
+      "generatedObjects": [],
+      "unresolvedQuestions": [],
+      "assumptions": [],
+      "nextSteps": [],
+      "defaultSelection": false,
+      "requirementCount": 0,
+      "hasRiskRef": false,
+      "outboundRefs": [
+        {
+          "target": "01M15NEKT7-S14J",
+          "path": "linkedObject"
+        }
+      ],
+      "referencedBy": [
+        {
+          "source": "01M15NEKT7-S14J",
+          "path": "decisionRecords[7].ref"
+        },
+        {
+          "source": "01M15NEKT7-S14J",
+          "path": "decisionRecords[8].ref"
+        }
+      ],
+      "editorSchema": {
+        "requiredFields": [
+          "schemaVersion",
+          "uid",
+          "type",
+          "name",
+          "category",
+          "status",
+          "catalogStatus",
+          "lifecycleStatus"
+        ],
+        "optionalFields": [
+          "aliases",
+          "description",
+          "version",
+          "owner",
+          "tags",
+          "affectedComponent",
+          "impact",
+          "mitigationPath",
+          "decisionRationale",
+          "relatedDecisionRecords",
+          "controlReferences",
+          "linkedObject",
+          "approver",
+          "approvalDate"
+        ],
+        "fieldTypes": {
+          "aliases": "list",
+          "owner": "dict",
+          "tags": "list",
+          "relatedDecisionRecords": "list",
+          "controlReferences": "list",
+          "approver": "str",
+          "approvalDate": "str"
+        },
+        "enumFields": {
+          "catalogStatus": [
+            "stub",
+            "incomplete",
+            "complete"
+          ],
+          "lifecycleStatus": [
+            "candidate",
+            "preferred",
+            "existing-only",
+            "deprecated",
+            "retired"
+          ],
+          "category": [
+            "risk",
+            "decision"
+          ],
+          "status": [
+            "open",
+            "accepted",
+            "mitigated",
+            "resolved"
+          ]
+        },
+        "enumListFields": {},
+        "collectionSchemas": {},
+        "schemaPath": "framework/schemas/decision-record.schema.yaml"
+      },
+      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M7GYV3B6-FASW\",\n  \"type\": \"decision_record\",\n  \"name\": \"AWS Agent Factory: Data Stores and Data Classification\",\n  \"description\": \"Agent memory is kept in S3 under per-agent prefixes and, while a task is running, as per-agent SQLite in the agent-runtime notebook. The ledger is on encrypted EFS with WORM checkpoints in S3 Object Lock. Configuration is in a versioned S3 bucket. Runtime-created agent roles are not limited to their own mind prefix.\",\n  \"version\": \"1.0.0\",\n  \"category\": \"decision\",\n  \"status\": \"accepted\",\n  \"catalogStatus\": \"incomplete\",\n  \"lifecycleStatus\": \"preferred\",\n  \"owner\": {\n    \"team\": \"platform-ai-team\",\n    \"contact\": \"platform-ai@example.com\"\n  },\n  \"tags\": [\n    \"agent-factory\",\n    \"aws\",\n    \"submind\",\n    \"data\",\n    \"s3\",\n    \"efs\",\n    \"classification\",\n    \"sqlite\"\n  ],\n  \"linkedObject\": \"01M15NEKT7-S14J\",\n  \"decisionRationale\": \"Decision: agent memory follows \\\"The Notebook & Safe\\\" (Design Authority 6.6). Cartridges read and write local SQLite in\\n$MEMORY_DIR and never import cloud SDKs; the Property Manager's shim pulls the mind from object storage on wake and pushes it\\nback on sleep. AWS binding: S3 bucket agent-factory-mind-prod-* with per-agent prefixes. Only the Terraform-managed\\nfactory-prod-agent-* task roles are limited to their own prefix (iam.tf own-mind-only). Runtime-created AgentTaskRole-*\\nroles (packages/property-manager/src/aws/iam.ts MindPersistenceAccess) can read, write and delete every agent's mind.\\nLive IAM confirms this on the 30 AgentTaskRole-* roles. That is not compliant with \\u00a76.6 \\\"Private Agent Memory Isolation\\\".\\nThe ledger hot chain is on EFS factory-prod-ledger with one writer (LG1); checkpoints ship to\\nagent-factory-ledger-prod-* with S3 Object Lock in COMPLIANCE mode, 365-day default retention, so no principal can delete\\nor overwrite them early (storage.tf comment; live configuration). Each agent's deployment configuration is one immutable\\nobject per version in the versioned config bucket (6.14 SK3, R1). Skill packages are in the packages bucket.\\nClassification: Confidential. The ledger holds metadata and hashes only, and the mind holds adopter data (agent-factory\\n.draft/sdp.yaml notes.dataClassification). The ledger never holds secrets or prompt bodies (AGENTS.md definition of done 4).\\nSQL scope: the factory kernel has no SQL engine in packages/*/src at 01720b2. The cartridge runtime this SDP places\\n(01M7GWXKXW-4ZJF, runtimes/agent-runtime) does: memory/episodic.py, memory/notebook.py and memory/workspace.py create a\\nSQLite schema (CREATE TABLE / CREATE INDEX / FTS5) for conversations, notebook metadata and workspace state. Schema\\nchanges ship in that runtime as CREATE TABLE IF NOT EXISTS and index creation; notebook rotation copies the schema onto a\\nnew file and swaps it in. There is no expand-and-contract migration decoupled from a runtime deploy, so\\nreq-expand-contract-migrations is not-compliant. Query values are bound with parameterized placeholders throughout;\\nthe only string-built SQL is notebook.py, which interpolates table identifiers from the carry_tables argument when rotating\\n(the runtime caller runtime/mind.py does not pass that argument). req-asvs-parameterized-queries is therefore satisfied,\\nwith that identifier interpolation noted. DynamoDB closing-climb-prod in the same account belongs to Closing Climb, not\\nthe factory.\\n\\nSources:\\n- BeerCanLabs/agent-factory @01720b2: DESIGN_AUTHORITY.md 6.6, 6.10 LG1-LG2, 6.13 R1, 6.14; .draft/sdp.yaml (notes.dataClassification); AGENTS.md; landing-zones/aws/storage.tf, iam.tf; packages/property-manager/src/aws/iam.ts; runtimes/agent-runtime/memory/episodic.py, notebook.py, workspace.py and runtime/mind.py\\n- Live AWS, read-only, account ending 2296, us-east-1, 2026-11-15: s3api get-bucket-encryption/versioning/object-lock-configuration/public-access-block, efs describe-file-systems, iam get-role-policy for AgentTaskRole-*\\n\",\n  \"_source\": \"catalog/governance/decision-records/dr-aws-agent-factory-data.yaml\"\n}",
+      "existsInCatalog": true,
+      "outboundRelationships": [],
+      "inboundRelationships": []
+    },
+    "01M7GYV3B6-Q5NV": {
+      "id": "01M7GYV3B6-Q5NV",
+      "uid": "01M7GYV3B6-Q5NV",
+      "name": "AWS Agent Factory: Infrastructure as Code, Delivery and Quality Gates",
+      "aliases": [],
+      "type": "decision_record",
+      "typeLabel": "DecisionRecord / decision",
+      "filterType": "decision_record",
+      "category": "decision",
+      "deliveryModel": "",
+      "domain": "",
+      "description": "AWS changes are intended to go through Terraform and an ops-repo pipeline that deploys pinned, CI-green SHAs. Conformance tests enforce design invariants only in part. Documented and observed bypasses of the deploy and CI gates are recorded below.",
+      "version": "1.0.0",
+      "catalogStatus": "incomplete",
+      "lifecycleStatus": "preferred",
+      "status": "accepted",
+      "businessContext": {},
+      "product": "",
+      "runsOn": "",
+      "subtype": "",
+      "vendor": "",
+      "productName": "",
+      "productVersion": "",
+      "classification": "",
+      "platformDependency": "",
+      "capabilities": [],
+      "configurations": [],
+      "networkPlacement": "",
+      "patchingOwner": "",
+      "complianceCerts": [],
+      "requirementGroups": [],
+      "requirementImplementations": [],
+      "dataLeavesInfrastructure": null,
+      "dataResidencyCommitment": "",
+      "dpaNotes": "",
+      "vendorSLA": "",
+      "authenticationModel": "",
+      "incidentNotificationProcess": "",
+      "owner": {
+        "team": "platform-ai-team",
+        "contact": "platform-ai@example.com"
+      },
+      "definitionOwner": {},
+      "provider": {},
+      "authority": {},
+      "shape": "round-rectangle",
+      "color": "#1f8a5b",
+      "source": "catalog/governance/decision-records/dr-aws-agent-factory-delivery.yaml",
+      "tags": [
+        "agent-factory",
+        "aws",
+        "submind",
+        "iac",
+        "ci-cd",
+        "quality-gates"
+      ],
+      "ardCategory": "decision",
+      "internalComponents": [],
+      "notes": {},
+      "requirements": [],
+      "implementations": [],
+      "appliesTo": {},
+      "inherits": "",
+      "scalingUnits": [],
+      "networkZones": [],
+      "sdpConnections": [],
+      "serviceGroups": [],
+      "tierVariants": [],
+      "tierId": "",
+      "purpose": "",
+      "availabilityExpectation": "",
+      "costPosture": "",
+      "complianceScope": [],
+      "parameterSurface": [],
+      "followsReferenceArchitecture": "",
+      "decisionRecords": [],
+      "affectedComponent": "",
+      "impact": "",
+      "mitigationPath": "",
+      "decisionRationale": "IaC (observed): the factory landing zone is Terraform in agent-factory landing-zones/aws (S3 backend). The intended apply\npath is the submind-aws deploy-aws workflow on main through a GitHub OIDC role (factory-deploy trusts only submind-aws\nref:refs/heads/main), with \"No hand changes in AWS\" (OPERATIONS.md Rules). That is not the only path in force. OPERATIONS.md\ndocuments a break-glass path (FACTORY_BREAK_GLASS=1 ./scripts/aws-deploy.sh from a workstation) that accepts a local test\nrun in place of GitHub results; the deploy log shows 8 uses (2026-10-29 to 2026-10-31). DESIGN_AUTHORITY GAP-074 (Critical)\nrecords that submind-aws has no branch protection, so a session can push to main and deploy, and that agent-factory main\nrequires no approving review. CloudTrail also shows IAM user beercanlabs (not the factory-deploy OIDC role) running\nTerraform on 2026-11-14 15:43 America/Phoenix and registering ECS task definitions on 2026-11-14 and 2026-11-15. One\nfurther documented manual exception: the Cloudflare Access console bypass set by hand on 2026-11-03 while cloudflare.tf is\noff (OPERATIONS.md). The landing zone is a single Terraform root configuration, not a set of composable modules.\nRelease intent is that deploys ship commits on agent-factory main with green CI, tagged by commit SHA, never :latest\n(DA 6.7). Garrison is pinned by digest (deploy.env). The deploy fails unless its definition of done passes. Each\nOPERATIONS.md deploy entry records a rollback pin (a previous agent-factory commit). Rollback means redeploying that pin\nby hand. Live ECS deployment circuit breakers are disabled. Services roll out 100/200 except the control plane, which\ndeploys stop-then-start (min 0 / max 100) so the ledger never has two writers (LG1, accepted 2026-09-28; ecs.tf comment;\nconformance fails if it changes).\nGates: CI runs npm test (including packages/conformance, which machine-checks Design Authority invariants), contract\nvalidation and compose-proof (an ephemeral Docker Compose end-to-end run). A pre-push hook runs scripts/conformance.sh;\nnever bypass it and never skip tests (AGENTS.md). Known violations may be baselined only with the user's approval and a\nregistered gap: packages/conformance/baseline.json has 4 entries (GAP-031, GAP-050). Conformance covers invariants only\npartially (GAP-051: the coverage table exists, but many invariants remain unchecked or partial). No SAST, secret scanning,\ndependency (SCA) scanning or IaC policy linting runs in agent-factory CI, and there is no Dependabot configuration. Why:\nrationale not recorded. There are no per-branch cloud preview environments.\nRegistration: the product is registered in this drafting table as 01M1N137Q5-AFAC with sdpManifest .draft/sdp.yaml.\n\nSources:\n- BeerCanLabs/agent-factory @01720b2: DESIGN_AUTHORITY.md 6.7, 6.8 L1, 6.10 LG1, gap register GAP-074 and GAP-051; AGENTS.md (Change Workflow & Enforcement); .github/workflows/ci.yml; .githooks/pre-push; packages/conformance/baseline.json; landing-zones/aws/main.tf, ecs.tf, iam.tf\n- BeerCanLabs/submind-aws @3f7d9a5: OPERATIONS.md (Changing production, Front door, Rules, Break glass and deploy log), config/deploy.env, scripts/aws-deploy.sh\n- Live AWS, read-only, account ending 2296, us-east-1, 2026-11-15: ecs describe-services (deploymentConfiguration, circuit breaker); CloudTrail lookup-events for Terraform applies and ECS task-definition registrations by IAM user beercanlabs on 2026-11-14 and 2026-11-15\n- Drafting table: product registration 01M1N137Q5-AFAC\n",
+      "relatedDecisionRecords": [],
+      "linkedObject": "01M15NEKT7-S14J",
+      "primaryObjectType": "",
+      "primaryObjectUid": "",
+      "generatedObjects": [],
+      "unresolvedQuestions": [],
+      "assumptions": [],
+      "nextSteps": [],
+      "defaultSelection": false,
+      "requirementCount": 0,
+      "hasRiskRef": false,
+      "outboundRefs": [
+        {
+          "target": "01M15NEKT7-S14J",
+          "path": "linkedObject"
+        }
+      ],
+      "referencedBy": [
+        {
+          "source": "01M15NEKT7-S14J",
+          "path": "decisionRecords[13].ref"
+        },
+        {
+          "source": "01M15NEKT7-S14J",
+          "path": "decisionRecords[14].ref"
+        }
+      ],
+      "editorSchema": {
+        "requiredFields": [
+          "schemaVersion",
+          "uid",
+          "type",
+          "name",
+          "category",
+          "status",
+          "catalogStatus",
+          "lifecycleStatus"
+        ],
+        "optionalFields": [
+          "aliases",
+          "description",
+          "version",
+          "owner",
+          "tags",
+          "affectedComponent",
+          "impact",
+          "mitigationPath",
+          "decisionRationale",
+          "relatedDecisionRecords",
+          "controlReferences",
+          "linkedObject",
+          "approver",
+          "approvalDate"
+        ],
+        "fieldTypes": {
+          "aliases": "list",
+          "owner": "dict",
+          "tags": "list",
+          "relatedDecisionRecords": "list",
+          "controlReferences": "list",
+          "approver": "str",
+          "approvalDate": "str"
+        },
+        "enumFields": {
+          "catalogStatus": [
+            "stub",
+            "incomplete",
+            "complete"
+          ],
+          "lifecycleStatus": [
+            "candidate",
+            "preferred",
+            "existing-only",
+            "deprecated",
+            "retired"
+          ],
+          "category": [
+            "risk",
+            "decision"
+          ],
+          "status": [
+            "open",
+            "accepted",
+            "mitigated",
+            "resolved"
+          ]
+        },
+        "enumListFields": {},
+        "collectionSchemas": {},
+        "schemaPath": "framework/schemas/decision-record.schema.yaml"
+      },
+      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M7GYV3B6-Q5NV\",\n  \"type\": \"decision_record\",\n  \"name\": \"AWS Agent Factory: Infrastructure as Code, Delivery and Quality Gates\",\n  \"description\": \"AWS changes are intended to go through Terraform and an ops-repo pipeline that deploys pinned, CI-green SHAs. Conformance tests enforce design invariants only in part. Documented and observed bypasses of the deploy and CI gates are recorded below.\",\n  \"version\": \"1.0.0\",\n  \"category\": \"decision\",\n  \"status\": \"accepted\",\n  \"catalogStatus\": \"incomplete\",\n  \"lifecycleStatus\": \"preferred\",\n  \"owner\": {\n    \"team\": \"platform-ai-team\",\n    \"contact\": \"platform-ai@example.com\"\n  },\n  \"tags\": [\n    \"agent-factory\",\n    \"aws\",\n    \"submind\",\n    \"iac\",\n    \"ci-cd\",\n    \"quality-gates\"\n  ],\n  \"linkedObject\": \"01M15NEKT7-S14J\",\n  \"decisionRationale\": \"IaC (observed): the factory landing zone is Terraform in agent-factory landing-zones/aws (S3 backend). The intended apply\\npath is the submind-aws deploy-aws workflow on main through a GitHub OIDC role (factory-deploy trusts only submind-aws\\nref:refs/heads/main), with \\\"No hand changes in AWS\\\" (OPERATIONS.md Rules). That is not the only path in force. OPERATIONS.md\\ndocuments a break-glass path (FACTORY_BREAK_GLASS=1 ./scripts/aws-deploy.sh from a workstation) that accepts a local test\\nrun in place of GitHub results; the deploy log shows 8 uses (2026-10-29 to 2026-10-31). DESIGN_AUTHORITY GAP-074 (Critical)\\nrecords that submind-aws has no branch protection, so a session can push to main and deploy, and that agent-factory main\\nrequires no approving review. CloudTrail also shows IAM user beercanlabs (not the factory-deploy OIDC role) running\\nTerraform on 2026-11-14 15:43 America/Phoenix and registering ECS task definitions on 2026-11-14 and 2026-11-15. One\\nfurther documented manual exception: the Cloudflare Access console bypass set by hand on 2026-11-03 while cloudflare.tf is\\noff (OPERATIONS.md). The landing zone is a single Terraform root configuration, not a set of composable modules.\\nRelease intent is that deploys ship commits on agent-factory main with green CI, tagged by commit SHA, never :latest\\n(DA 6.7). Garrison is pinned by digest (deploy.env). The deploy fails unless its definition of done passes. Each\\nOPERATIONS.md deploy entry records a rollback pin (a previous agent-factory commit). Rollback means redeploying that pin\\nby hand. Live ECS deployment circuit breakers are disabled. Services roll out 100/200 except the control plane, which\\ndeploys stop-then-start (min 0 / max 100) so the ledger never has two writers (LG1, accepted 2026-09-28; ecs.tf comment;\\nconformance fails if it changes).\\nGates: CI runs npm test (including packages/conformance, which machine-checks Design Authority invariants), contract\\nvalidation and compose-proof (an ephemeral Docker Compose end-to-end run). A pre-push hook runs scripts/conformance.sh;\\nnever bypass it and never skip tests (AGENTS.md). Known violations may be baselined only with the user's approval and a\\nregistered gap: packages/conformance/baseline.json has 4 entries (GAP-031, GAP-050). Conformance covers invariants only\\npartially (GAP-051: the coverage table exists, but many invariants remain unchecked or partial). No SAST, secret scanning,\\ndependency (SCA) scanning or IaC policy linting runs in agent-factory CI, and there is no Dependabot configuration. Why:\\nrationale not recorded. There are no per-branch cloud preview environments.\\nRegistration: the product is registered in this drafting table as 01M1N137Q5-AFAC with sdpManifest .draft/sdp.yaml.\\n\\nSources:\\n- BeerCanLabs/agent-factory @01720b2: DESIGN_AUTHORITY.md 6.7, 6.8 L1, 6.10 LG1, gap register GAP-074 and GAP-051; AGENTS.md (Change Workflow & Enforcement); .github/workflows/ci.yml; .githooks/pre-push; packages/conformance/baseline.json; landing-zones/aws/main.tf, ecs.tf, iam.tf\\n- BeerCanLabs/submind-aws @3f7d9a5: OPERATIONS.md (Changing production, Front door, Rules, Break glass and deploy log), config/deploy.env, scripts/aws-deploy.sh\\n- Live AWS, read-only, account ending 2296, us-east-1, 2026-11-15: ecs describe-services (deploymentConfiguration, circuit breaker); CloudTrail lookup-events for Terraform applies and ECS task-definition registrations by IAM user beercanlabs on 2026-11-14 and 2026-11-15\\n- Drafting table: product registration 01M1N137Q5-AFAC\\n\",\n  \"_source\": \"catalog/governance/decision-records/dr-aws-agent-factory-delivery.yaml\"\n}",
+      "existsInCatalog": true,
+      "outboundRelationships": [],
+      "inboundRelationships": []
+    },
+    "01M7GYV3B6-EEZ3": {
+      "id": "01M7GYV3B6-EEZ3",
+      "uid": "01M7GYV3B6-EEZ3",
+      "name": "AWS Agent Factory: Identity and Access Control",
+      "aliases": [],
+      "type": "decision_record",
+      "typeLabel": "DecisionRecord / decision",
+      "filterType": "decision_record",
+      "category": "decision",
+      "deliveryModel": "",
+      "domain": "",
+      "description": "People get operator identity only from a verified Cloudflare Access assertion or the factory's own login. Machines use factory tokens. Agents get per-run tokens and per-agent IAM roles. Everything is deny by default. Live runtime-created agent task roles are not limited to their own mind prefix.",
+      "version": "1.0.0",
+      "catalogStatus": "incomplete",
+      "lifecycleStatus": "preferred",
+      "status": "accepted",
+      "businessContext": {},
+      "product": "",
+      "runsOn": "",
+      "subtype": "",
+      "vendor": "",
+      "productName": "",
+      "productVersion": "",
+      "classification": "",
+      "platformDependency": "",
+      "capabilities": [],
+      "configurations": [],
+      "networkPlacement": "",
+      "patchingOwner": "",
+      "complianceCerts": [],
+      "requirementGroups": [],
+      "requirementImplementations": [],
+      "dataLeavesInfrastructure": null,
+      "dataResidencyCommitment": "",
+      "dpaNotes": "",
+      "vendorSLA": "",
+      "authenticationModel": "",
+      "incidentNotificationProcess": "",
+      "owner": {
+        "team": "platform-ai-team",
+        "contact": "platform-ai@example.com"
+      },
+      "definitionOwner": {},
+      "provider": {},
+      "authority": {},
+      "shape": "round-rectangle",
+      "color": "#1f8a5b",
+      "source": "catalog/governance/decision-records/dr-aws-agent-factory-identity.yaml",
+      "tags": [
+        "agent-factory",
+        "aws",
+        "submind",
+        "identity",
+        "access-control",
+        "cloudflare-access"
+      ],
+      "ardCategory": "decision",
+      "internalComponents": [],
+      "notes": {},
+      "requirements": [],
+      "implementations": [],
+      "appliesTo": {},
+      "inherits": "",
+      "scalingUnits": [],
+      "networkZones": [],
+      "sdpConnections": [],
+      "serviceGroups": [],
+      "tierVariants": [],
+      "tierId": "",
+      "purpose": "",
+      "availabilityExpectation": "",
+      "costPosture": "",
+      "complianceScope": [],
+      "parameterSurface": [],
+      "followsReferenceArchitecture": "",
+      "decisionRecords": [],
+      "affectedComponent": "",
+      "impact": "",
+      "mitigationPath": "",
+      "decisionRationale": "Decision: identity is verified, not asserted (Design Authority A2). The control plane grants a role only from a factory\ntoken, a run token, or the Cloudflare Access RS256 assertion checked against the team domain's certs, issuer and audience;\nthe cf-access-authenticated-user-email header grants nothing (landing-zones/aws/README.md \"Operator identity\").\nCloudflare Access covers agent-factory.beercanlabs.com and garrison.dalesackrider.com (live: 302 to the beercanlabs Access\nlogin). Exception, documented in submind-aws OPERATIONS.md: the console host factory-dashboard.dalesackrider.com has a\nhand-set Access Bypass (2026-11-03) because the factory enforces its own login there; the ALB still admits only Cloudflare.\nAuthorization is default-deny and server-side: an agent with no admin-set policy has no egress (E7), and console and API\nactions ask the Bouncer for a named privilege (6.15, SK7).\nAWS IAM (iam.tf, packages/property-manager/src/aws/iam.ts, and live IAM; the landing-zone README \"IAM\" line is stale and is\nnot used here): the Terraform-managed factory-prod-agent-* task roles are limited to their own mind prefix (own-mind-only).\nRuntime-created AgentTaskRole-* roles, built by iam.ts MindPersistenceAccess on agent-factory-mind-* and /*, can Get, Put,\nDelete and List every agent's mind. Live, 30 AgentTaskRole-* roles exist (higgins and archie spot-checked); agent-higgins\nruns as AgentTaskRole-higgins. That is not compliant with Design Authority \u00a76.6 \"Private Agent Memory Isolation\". The\ncontrol plane may RunTask for both factory-prod-agent-* and agent-* task definition families (iam.tf) and is denied provider\nkeys. Production deploys are intended to assume the factory-deploy role through GitHub OIDC, trusted only for submind-aws\nmain (OPERATIONS.md Rules); observed exceptions are recorded in the delivery decision 01M7GYV3B6-Q5NV.\nNot covered here: MFA for admins and API rate limiting are not documented in the sources reviewed.\n\nSources:\n- BeerCanLabs/agent-factory @01720b2: DESIGN_AUTHORITY.md 6.3.1 E7, 6.6, 6.12 A1-A2, 6.15; landing-zones/aws/iam.tf; packages/property-manager/src/aws/iam.ts\n- BeerCanLabs/submind-aws @3f7d9a5: OPERATIONS.md (Front door, Console host bypass, Rules)\n- Live AWS, read-only, account ending 2296, us-east-1, 2026-11-15: iam get-role / get-role-policy for AgentTaskRole-* (30 roles; higgins and archie spot-checked)\n- HTTPS probes 2026-11-15: agent-factory.beercanlabs.com and garrison.dalesackrider.com redirect to beercanlabs.cloudflareaccess.com\n",
+      "relatedDecisionRecords": [],
+      "linkedObject": "01M15NEKT7-S14J",
+      "primaryObjectType": "",
+      "primaryObjectUid": "",
+      "generatedObjects": [],
+      "unresolvedQuestions": [],
+      "assumptions": [],
+      "nextSteps": [],
+      "defaultSelection": false,
+      "requirementCount": 0,
+      "hasRiskRef": false,
+      "outboundRefs": [
+        {
+          "target": "01M15NEKT7-S14J",
+          "path": "linkedObject"
+        }
+      ],
+      "referencedBy": [
+        {
+          "source": "01M15NEKT7-S14J",
+          "path": "decisionRecords[5].ref"
+        }
+      ],
+      "editorSchema": {
+        "requiredFields": [
+          "schemaVersion",
+          "uid",
+          "type",
+          "name",
+          "category",
+          "status",
+          "catalogStatus",
+          "lifecycleStatus"
+        ],
+        "optionalFields": [
+          "aliases",
+          "description",
+          "version",
+          "owner",
+          "tags",
+          "affectedComponent",
+          "impact",
+          "mitigationPath",
+          "decisionRationale",
+          "relatedDecisionRecords",
+          "controlReferences",
+          "linkedObject",
+          "approver",
+          "approvalDate"
+        ],
+        "fieldTypes": {
+          "aliases": "list",
+          "owner": "dict",
+          "tags": "list",
+          "relatedDecisionRecords": "list",
+          "controlReferences": "list",
+          "approver": "str",
+          "approvalDate": "str"
+        },
+        "enumFields": {
+          "catalogStatus": [
+            "stub",
+            "incomplete",
+            "complete"
+          ],
+          "lifecycleStatus": [
+            "candidate",
+            "preferred",
+            "existing-only",
+            "deprecated",
+            "retired"
+          ],
+          "category": [
+            "risk",
+            "decision"
+          ],
+          "status": [
+            "open",
+            "accepted",
+            "mitigated",
+            "resolved"
+          ]
+        },
+        "enumListFields": {},
+        "collectionSchemas": {},
+        "schemaPath": "framework/schemas/decision-record.schema.yaml"
+      },
+      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M7GYV3B6-EEZ3\",\n  \"type\": \"decision_record\",\n  \"name\": \"AWS Agent Factory: Identity and Access Control\",\n  \"description\": \"People get operator identity only from a verified Cloudflare Access assertion or the factory's own login. Machines use factory tokens. Agents get per-run tokens and per-agent IAM roles. Everything is deny by default. Live runtime-created agent task roles are not limited to their own mind prefix.\",\n  \"version\": \"1.0.0\",\n  \"category\": \"decision\",\n  \"status\": \"accepted\",\n  \"catalogStatus\": \"incomplete\",\n  \"lifecycleStatus\": \"preferred\",\n  \"owner\": {\n    \"team\": \"platform-ai-team\",\n    \"contact\": \"platform-ai@example.com\"\n  },\n  \"tags\": [\n    \"agent-factory\",\n    \"aws\",\n    \"submind\",\n    \"identity\",\n    \"access-control\",\n    \"cloudflare-access\"\n  ],\n  \"linkedObject\": \"01M15NEKT7-S14J\",\n  \"decisionRationale\": \"Decision: identity is verified, not asserted (Design Authority A2). The control plane grants a role only from a factory\\ntoken, a run token, or the Cloudflare Access RS256 assertion checked against the team domain's certs, issuer and audience;\\nthe cf-access-authenticated-user-email header grants nothing (landing-zones/aws/README.md \\\"Operator identity\\\").\\nCloudflare Access covers agent-factory.beercanlabs.com and garrison.dalesackrider.com (live: 302 to the beercanlabs Access\\nlogin). Exception, documented in submind-aws OPERATIONS.md: the console host factory-dashboard.dalesackrider.com has a\\nhand-set Access Bypass (2026-11-03) because the factory enforces its own login there; the ALB still admits only Cloudflare.\\nAuthorization is default-deny and server-side: an agent with no admin-set policy has no egress (E7), and console and API\\nactions ask the Bouncer for a named privilege (6.15, SK7).\\nAWS IAM (iam.tf, packages/property-manager/src/aws/iam.ts, and live IAM; the landing-zone README \\\"IAM\\\" line is stale and is\\nnot used here): the Terraform-managed factory-prod-agent-* task roles are limited to their own mind prefix (own-mind-only).\\nRuntime-created AgentTaskRole-* roles, built by iam.ts MindPersistenceAccess on agent-factory-mind-* and /*, can Get, Put,\\nDelete and List every agent's mind. Live, 30 AgentTaskRole-* roles exist (higgins and archie spot-checked); agent-higgins\\nruns as AgentTaskRole-higgins. That is not compliant with Design Authority \\u00a76.6 \\\"Private Agent Memory Isolation\\\". The\\ncontrol plane may RunTask for both factory-prod-agent-* and agent-* task definition families (iam.tf) and is denied provider\\nkeys. Production deploys are intended to assume the factory-deploy role through GitHub OIDC, trusted only for submind-aws\\nmain (OPERATIONS.md Rules); observed exceptions are recorded in the delivery decision 01M7GYV3B6-Q5NV.\\nNot covered here: MFA for admins and API rate limiting are not documented in the sources reviewed.\\n\\nSources:\\n- BeerCanLabs/agent-factory @01720b2: DESIGN_AUTHORITY.md 6.3.1 E7, 6.6, 6.12 A1-A2, 6.15; landing-zones/aws/iam.tf; packages/property-manager/src/aws/iam.ts\\n- BeerCanLabs/submind-aws @3f7d9a5: OPERATIONS.md (Front door, Console host bypass, Rules)\\n- Live AWS, read-only, account ending 2296, us-east-1, 2026-11-15: iam get-role / get-role-policy for AgentTaskRole-* (30 roles; higgins and archie spot-checked)\\n- HTTPS probes 2026-11-15: agent-factory.beercanlabs.com and garrison.dalesackrider.com redirect to beercanlabs.cloudflareaccess.com\\n\",\n  \"_source\": \"catalog/governance/decision-records/dr-aws-agent-factory-identity.yaml\"\n}",
+      "existsInCatalog": true,
+      "outboundRelationships": [],
+      "inboundRelationships": []
+    },
+    "01M7GYV3B6-H03D": {
+      "id": "01M7GYV3B6-H03D",
+      "uid": "01M7GYV3B6-H03D",
+      "name": "AWS Agent Factory: Model Access and AI Gateway Routing",
+      "aliases": [],
+      "type": "decision_record",
+      "typeLabel": "DecisionRecord / decision",
+      "filterType": "decision_record",
+      "category": "decision",
+      "deliveryModel": "",
+      "domain": "",
+      "description": "Design intent is that every model call goes through gatekeeper-egress (the factory model API), where it is metered, budgeted and policy-gated. Live agent task roles can also invoke Bedrock directly, which bypasses that metering. Model choice and budgets are factory policy, not code.",
+      "version": "1.0.0",
+      "catalogStatus": "incomplete",
+      "lifecycleStatus": "preferred",
+      "status": "accepted",
+      "businessContext": {},
+      "product": "",
+      "runsOn": "",
+      "subtype": "",
+      "vendor": "",
+      "productName": "",
+      "productVersion": "",
+      "classification": "",
+      "platformDependency": "",
+      "capabilities": [],
+      "configurations": [],
+      "networkPlacement": "",
+      "patchingOwner": "",
+      "complianceCerts": [],
+      "requirementGroups": [],
+      "requirementImplementations": [],
+      "dataLeavesInfrastructure": null,
+      "dataResidencyCommitment": "",
+      "dpaNotes": "",
+      "vendorSLA": "",
+      "authenticationModel": "",
+      "incidentNotificationProcess": "",
+      "owner": {
+        "team": "platform-ai-team",
+        "contact": "platform-ai@example.com"
+      },
+      "definitionOwner": {},
+      "provider": {},
+      "authority": {},
+      "shape": "round-rectangle",
+      "color": "#1f8a5b",
+      "source": "catalog/governance/decision-records/dr-aws-agent-factory-models.yaml",
+      "tags": [
+        "agent-factory",
+        "aws",
+        "submind",
+        "ai-gateway",
+        "models",
+        "bedrock"
+      ],
+      "ardCategory": "decision",
+      "internalComponents": [],
+      "notes": {},
+      "requirements": [],
+      "implementations": [],
+      "appliesTo": {},
+      "inherits": "",
+      "scalingUnits": [],
+      "networkZones": [],
+      "sdpConnections": [],
+      "serviceGroups": [],
+      "tierVariants": [],
+      "tierId": "",
+      "purpose": "",
+      "availabilityExpectation": "",
+      "costPosture": "",
+      "complianceScope": [],
+      "parameterSurface": [],
+      "followsReferenceArchitecture": "",
+      "decisionRecords": [],
+      "affectedComponent": "",
+      "impact": "",
+      "mitigationPath": "",
+      "decisionRationale": "Decision (design intent): one factory model API (M1). Agents call models through gatekeeper-egress in the OpenAI Chat\nCompletions format, never call a provider directly and never hold provider credentials (E1, E5, S1). Every model call\ngoes through a gatekeeper-egress provider route so tokens and cost are metered and ledgered; CONNECT tunnels are not\naccepted for model calls (E5). gatekeeper-egress enforces routes, models, budget, the kill switch and approvals before\nforwarding (E4). gatekeeper-egress therefore acts as this deployment's AI gateway. No separate ai_gateway catalog object\nexists.\nAWS binding: the models route translates calls to Bedrock Converse, signed by the gatekeeper-egress task role, which has\nbedrock:InvokeModel on foundation models and this account's inference profiles (README \"Factory model API\", iam.tf). There\nis a bedrock-runtime VPC endpoint (live), and the agents security group can reach it on 443. Subscription plans (xAI, OpenAI)\nare served through the Keymaster and gatekeeper-egress (M5; live secrets under factory/prod/shared/xai/subscription).\nKnown gap, a deviation from E1, E5 and M1: live agent task roles can invoke Bedrock directly. They carry BedrockConverseAccess\n(bedrock:InvokeModel and Converse* on *) plus the managed AgentBedrockModelInvocation policy, granted by\npackages/property-manager/src/aws/iam.ts, and the bedrock-runtime endpoint is reachable from the agents subnet. That path\nbypasses gatekeeper-egress metering and spend tracking. DESIGN_AUTHORITY GAP-027 (Critical, no resolution recorded) records\nthat 8 of 9 cartridges import boto3 for Bedrock and S3, so those model calls are not metered or ledgered. GAP-041 (the\nfactory model API itself) is only \"RESOLVED (proposed)\".\nModel specification: the owner chooses approved, primary and secondary models, and an admin sets per-agent budgets, as\nfactory configuration rather than code (M2, M3, E7). Cartridges name no model. Unpriced models are refused.\nThe Terraform default model_catalog offers claude-sonnet-4-5, claude-haiku-4-5, claude-sonnet-4-6 and claude-opus-4-6 on Bedrock. The live catalog and per-agent\npolicies are runtime factory data and were not read.\n\nSources:\n- BeerCanLabs/agent-factory @01720b2: DESIGN_AUTHORITY.md 6.3.1 E1/E4/E5/E7, 6.9 M1-M5, gap register GAP-027 and GAP-041; landing-zones/aws/README.md (Enable LLM egress, Factory model API), iam.tf, variables.tf (model_catalog); packages/property-manager/src/aws/iam.ts\n- BeerCanLabs/submind-aws @3f7d9a5: OPERATIONS.md (Deploying an agent, Model subscriptions)\n- Live AWS, read-only, account ending 2296, us-east-1, 2026-11-15: iam get-role-policy on agent task roles (BedrockConverseAccess, AgentBedrockModelInvocation), ec2 describe-vpc-endpoints and describe-security-groups, secretsmanager list-secrets (names only)\n",
+      "relatedDecisionRecords": [],
+      "linkedObject": "01M15NEKT7-S14J",
+      "primaryObjectType": "",
+      "primaryObjectUid": "",
+      "generatedObjects": [],
+      "unresolvedQuestions": [],
+      "assumptions": [],
+      "nextSteps": [],
+      "defaultSelection": false,
+      "requirementCount": 0,
+      "hasRiskRef": false,
+      "outboundRefs": [
+        {
+          "target": "01M15NEKT7-S14J",
+          "path": "linkedObject"
+        }
+      ],
+      "referencedBy": [
+        {
+          "source": "01M15NEKT7-S14J",
+          "path": "decisionRecords[15].ref"
+        },
+        {
+          "source": "01M15NEKT7-S14J",
+          "path": "decisionRecords[16].ref"
+        }
+      ],
+      "editorSchema": {
+        "requiredFields": [
+          "schemaVersion",
+          "uid",
+          "type",
+          "name",
+          "category",
+          "status",
+          "catalogStatus",
+          "lifecycleStatus"
+        ],
+        "optionalFields": [
+          "aliases",
+          "description",
+          "version",
+          "owner",
+          "tags",
+          "affectedComponent",
+          "impact",
+          "mitigationPath",
+          "decisionRationale",
+          "relatedDecisionRecords",
+          "controlReferences",
+          "linkedObject",
+          "approver",
+          "approvalDate"
+        ],
+        "fieldTypes": {
+          "aliases": "list",
+          "owner": "dict",
+          "tags": "list",
+          "relatedDecisionRecords": "list",
+          "controlReferences": "list",
+          "approver": "str",
+          "approvalDate": "str"
+        },
+        "enumFields": {
+          "catalogStatus": [
+            "stub",
+            "incomplete",
+            "complete"
+          ],
+          "lifecycleStatus": [
+            "candidate",
+            "preferred",
+            "existing-only",
+            "deprecated",
+            "retired"
+          ],
+          "category": [
+            "risk",
+            "decision"
+          ],
+          "status": [
+            "open",
+            "accepted",
+            "mitigated",
+            "resolved"
+          ]
+        },
+        "enumListFields": {},
+        "collectionSchemas": {},
+        "schemaPath": "framework/schemas/decision-record.schema.yaml"
+      },
+      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M7GYV3B6-H03D\",\n  \"type\": \"decision_record\",\n  \"name\": \"AWS Agent Factory: Model Access and AI Gateway Routing\",\n  \"description\": \"Design intent is that every model call goes through gatekeeper-egress (the factory model API), where it is metered, budgeted and policy-gated. Live agent task roles can also invoke Bedrock directly, which bypasses that metering. Model choice and budgets are factory policy, not code.\",\n  \"version\": \"1.0.0\",\n  \"category\": \"decision\",\n  \"status\": \"accepted\",\n  \"catalogStatus\": \"incomplete\",\n  \"lifecycleStatus\": \"preferred\",\n  \"owner\": {\n    \"team\": \"platform-ai-team\",\n    \"contact\": \"platform-ai@example.com\"\n  },\n  \"tags\": [\n    \"agent-factory\",\n    \"aws\",\n    \"submind\",\n    \"ai-gateway\",\n    \"models\",\n    \"bedrock\"\n  ],\n  \"linkedObject\": \"01M15NEKT7-S14J\",\n  \"decisionRationale\": \"Decision (design intent): one factory model API (M1). Agents call models through gatekeeper-egress in the OpenAI Chat\\nCompletions format, never call a provider directly and never hold provider credentials (E1, E5, S1). Every model call\\ngoes through a gatekeeper-egress provider route so tokens and cost are metered and ledgered; CONNECT tunnels are not\\naccepted for model calls (E5). gatekeeper-egress enforces routes, models, budget, the kill switch and approvals before\\nforwarding (E4). gatekeeper-egress therefore acts as this deployment's AI gateway. No separate ai_gateway catalog object\\nexists.\\nAWS binding: the models route translates calls to Bedrock Converse, signed by the gatekeeper-egress task role, which has\\nbedrock:InvokeModel on foundation models and this account's inference profiles (README \\\"Factory model API\\\", iam.tf). There\\nis a bedrock-runtime VPC endpoint (live), and the agents security group can reach it on 443. Subscription plans (xAI, OpenAI)\\nare served through the Keymaster and gatekeeper-egress (M5; live secrets under factory/prod/shared/xai/subscription).\\nKnown gap, a deviation from E1, E5 and M1: live agent task roles can invoke Bedrock directly. They carry BedrockConverseAccess\\n(bedrock:InvokeModel and Converse* on *) plus the managed AgentBedrockModelInvocation policy, granted by\\npackages/property-manager/src/aws/iam.ts, and the bedrock-runtime endpoint is reachable from the agents subnet. That path\\nbypasses gatekeeper-egress metering and spend tracking. DESIGN_AUTHORITY GAP-027 (Critical, no resolution recorded) records\\nthat 8 of 9 cartridges import boto3 for Bedrock and S3, so those model calls are not metered or ledgered. GAP-041 (the\\nfactory model API itself) is only \\\"RESOLVED (proposed)\\\".\\nModel specification: the owner chooses approved, primary and secondary models, and an admin sets per-agent budgets, as\\nfactory configuration rather than code (M2, M3, E7). Cartridges name no model. Unpriced models are refused.\\nThe Terraform default model_catalog offers claude-sonnet-4-5, claude-haiku-4-5, claude-sonnet-4-6 and claude-opus-4-6 on Bedrock. The live catalog and per-agent\\npolicies are runtime factory data and were not read.\\n\\nSources:\\n- BeerCanLabs/agent-factory @01720b2: DESIGN_AUTHORITY.md 6.3.1 E1/E4/E5/E7, 6.9 M1-M5, gap register GAP-027 and GAP-041; landing-zones/aws/README.md (Enable LLM egress, Factory model API), iam.tf, variables.tf (model_catalog); packages/property-manager/src/aws/iam.ts\\n- BeerCanLabs/submind-aws @3f7d9a5: OPERATIONS.md (Deploying an agent, Model subscriptions)\\n- Live AWS, read-only, account ending 2296, us-east-1, 2026-11-15: iam get-role-policy on agent task roles (BedrockConverseAccess, AgentBedrockModelInvocation), ec2 describe-vpc-endpoints and describe-security-groups, secretsmanager list-secrets (names only)\\n\",\n  \"_source\": \"catalog/governance/decision-records/dr-aws-agent-factory-models.yaml\"\n}",
+      "existsInCatalog": true,
+      "outboundRelationships": [],
+      "inboundRelationships": []
+    },
+    "01M7GYV3B6-8VN0": {
+      "id": "01M7GYV3B6-8VN0",
+      "uid": "01M7GYV3B6-8VN0",
+      "name": "AWS Agent Factory: Network Segmentation and Edge",
+      "aliases": [],
+      "type": "decision_record",
+      "typeLabel": "DecisionRecord / decision",
+      "filterType": "decision_record",
+      "category": "decision",
+      "deliveryModel": "",
+      "domain": "",
+      "description": "Cloudflare is the only way in: the ALB admits only Cloudflare IPv4 ranges. Service and agent subnets are separate tiers, and services find each other through Cloud Map. Live drift on the agent tier is recorded below: both network-layer barriers to E1 are down, with assignPublicIp=false as the remaining mitigation.",
+      "version": "1.0.0",
+      "catalogStatus": "incomplete",
+      "lifecycleStatus": "preferred",
+      "status": "accepted",
+      "businessContext": {},
+      "product": "",
+      "runsOn": "",
+      "subtype": "",
+      "vendor": "",
+      "productName": "",
+      "productVersion": "",
+      "classification": "",
+      "platformDependency": "",
+      "capabilities": [],
+      "configurations": [],
+      "networkPlacement": "",
+      "patchingOwner": "",
+      "complianceCerts": [],
+      "requirementGroups": [],
+      "requirementImplementations": [],
+      "dataLeavesInfrastructure": null,
+      "dataResidencyCommitment": "",
+      "dpaNotes": "",
+      "vendorSLA": "",
+      "authenticationModel": "",
+      "incidentNotificationProcess": "",
+      "owner": {
+        "team": "platform-ai-team",
+        "contact": "platform-ai@example.com"
+      },
+      "definitionOwner": {},
+      "provider": {},
+      "authority": {},
+      "shape": "round-rectangle",
+      "color": "#1f8a5b",
+      "source": "catalog/governance/decision-records/dr-aws-agent-factory-network.yaml",
+      "tags": [
+        "agent-factory",
+        "aws",
+        "submind",
+        "network",
+        "edge",
+        "cloudflare"
+      ],
+      "ardCategory": "decision",
+      "internalComponents": [],
+      "notes": {},
+      "requirements": [],
+      "implementations": [],
+      "appliesTo": {},
+      "inherits": "",
+      "scalingUnits": [],
+      "networkZones": [],
+      "sdpConnections": [],
+      "serviceGroups": [],
+      "tierVariants": [],
+      "tierId": "",
+      "purpose": "",
+      "availabilityExpectation": "",
+      "costPosture": "",
+      "complianceScope": [],
+      "parameterSurface": [],
+      "followsReferenceArchitecture": "",
+      "decisionRecords": [],
+      "affectedComponent": "",
+      "impact": "",
+      "mitigationPath": "",
+      "decisionRationale": "Decision: one front door. Public endpoints accept connections only from the identity-aware proxy (Cloudflare); the load\nbalancer refuses all other sources, and no landing zone opens platform ingress to 0.0.0.0/0 (Design Authority A1, commit\n09b3ac0, 2026-09-28, TSK-043/GAP-052). Live: the factory-prod ALB security group admits ports 80/443 only from 15 IPv4 CIDRs,\nthe Cloudflare ranges in submind-aws config/deploy.env FACTORY_INGRESS_CIDRS (checked against cloudflare.com/ips-v4 on\n2026-09-29). The edge proxy itself follows the existing edge decision 01M7GTBMQS-SZBH. The only route that skips\nCloudflare Access is inbound webhooks, which must carry a verified sender signature (A1; the user's decision 2026-10-28,\nissue #32, option A).\nSegmentation (landing-zones/aws network.tf and README): public service subnets (ALB, control plane, gatekeepers) reach the\ninternet through the IGW. Terraform declares the private agent route table with no routes, and the agents security group\nwith only scoped egress, so that agents can reach only the control plane (8088), gatekeeper-egress (8081) and account-locked\nVPC endpoints (443). That is the intended enforcement of the egress invariant E1 (every outbound connection from cartridge\ncode goes through gatekeeper-egress).\nKnown gap, not compliant with E1/E6, and not in Terraform: live, route table factory-prod-agents-no-egress (associated with\nboth agent subnets) has a 0.0.0.0/0 route to the IGW, created by a Terraform apply run as IAM user beercanlabs on\n2026-09-20 04:26 America/Phoenix; and security group factory-prod-agents has an all-protocol egress rule to 0.0.0.0/0, added\nby hand with aws-cli on 2026-09-25 09:59 America/Phoenix. Terraform does not remove unmanaged routes or standalone SG rules,\nso this drift survives deploys and contradicts OPERATIONS \"No hand changes in AWS\". Mitigation that is true today: agent\ntasks launch with FACTORY_ECS_ASSIGN_PUBLIC_IP=false, and the agent subnets do not map public IPs, so there is no working\ninternet path yet.\nLive VPC endpoints (5 interface plus the S3 gateway): s3, ecr.api, ecr.dkr, secretsmanager, logs, bedrock-runtime. Service\ndiscovery is the private DNS namespace factory.internal (Cloud Map). Inter-service connections follow the traffic matrix in\nlanding-zones/aws/README.md, compared against live security-group rules for the agents group as above; the ALB group matches\nthe Cloudflare ingress list.\nExternal dependencies: Cloudflare (edge and Access), Discord gateway, model providers (AWS Bedrock; xAI and OpenAI\nsubscriptions through gatekeeper-egress), IdPs and webhook senders (README \"Services Egress\").\nNo NAT gateways: E1/E6 (landing-zones/aws/README.md).\n\nSources:\n- BeerCanLabs/agent-factory @01720b2: DESIGN_AUTHORITY.md 6.3.1 E1/E6, 6.12 A1; landing-zones/aws/README.md, network.tf, variables.tf (ingress_cidrs); commits 09b3ac0, a3d698f, 27fb6b8\n- BeerCanLabs/submind-aws @3f7d9a5: OPERATIONS.md (Front door, No hand changes in AWS), config/deploy.env (FACTORY_INGRESS_CIDRS, FACTORY_ECS_ASSIGN_PUBLIC_IP)\n- Live AWS, read-only, account ending 2296, us-east-1, 2026-11-15: elbv2 describe-load-balancers/listeners, ec2 describe-security-groups (ALB and factory-prod-agents), describe-route-tables (factory-prod-agents-no-egress), describe-vpc-endpoints, servicediscovery; CloudTrail lookup-events for the unmanaged route and egress rule\n- Drafting table: decision record 01M7GTBMQS-SZBH (Cloudflare edge proxy)\n",
+      "relatedDecisionRecords": [],
+      "linkedObject": "01M15NEKT7-S14J",
+      "primaryObjectType": "",
+      "primaryObjectUid": "",
+      "generatedObjects": [],
+      "unresolvedQuestions": [],
+      "assumptions": [],
+      "nextSteps": [],
+      "defaultSelection": false,
+      "requirementCount": 0,
+      "hasRiskRef": false,
+      "outboundRefs": [
+        {
+          "target": "01M15NEKT7-S14J",
+          "path": "linkedObject"
+        }
+      ],
+      "referencedBy": [
+        {
+          "source": "01M15NEKT7-S14J",
+          "path": "decisionRecords[3].ref"
+        },
+        {
+          "source": "01M15NEKT7-S14J",
+          "path": "decisionRecords[4].ref"
+        }
+      ],
+      "editorSchema": {
+        "requiredFields": [
+          "schemaVersion",
+          "uid",
+          "type",
+          "name",
+          "category",
+          "status",
+          "catalogStatus",
+          "lifecycleStatus"
+        ],
+        "optionalFields": [
+          "aliases",
+          "description",
+          "version",
+          "owner",
+          "tags",
+          "affectedComponent",
+          "impact",
+          "mitigationPath",
+          "decisionRationale",
+          "relatedDecisionRecords",
+          "controlReferences",
+          "linkedObject",
+          "approver",
+          "approvalDate"
+        ],
+        "fieldTypes": {
+          "aliases": "list",
+          "owner": "dict",
+          "tags": "list",
+          "relatedDecisionRecords": "list",
+          "controlReferences": "list",
+          "approver": "str",
+          "approvalDate": "str"
+        },
+        "enumFields": {
+          "catalogStatus": [
+            "stub",
+            "incomplete",
+            "complete"
+          ],
+          "lifecycleStatus": [
+            "candidate",
+            "preferred",
+            "existing-only",
+            "deprecated",
+            "retired"
+          ],
+          "category": [
+            "risk",
+            "decision"
+          ],
+          "status": [
+            "open",
+            "accepted",
+            "mitigated",
+            "resolved"
+          ]
+        },
+        "enumListFields": {},
+        "collectionSchemas": {},
+        "schemaPath": "framework/schemas/decision-record.schema.yaml"
+      },
+      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M7GYV3B6-8VN0\",\n  \"type\": \"decision_record\",\n  \"name\": \"AWS Agent Factory: Network Segmentation and Edge\",\n  \"description\": \"Cloudflare is the only way in: the ALB admits only Cloudflare IPv4 ranges. Service and agent subnets are separate tiers, and services find each other through Cloud Map. Live drift on the agent tier is recorded below: both network-layer barriers to E1 are down, with assignPublicIp=false as the remaining mitigation.\",\n  \"version\": \"1.0.0\",\n  \"category\": \"decision\",\n  \"status\": \"accepted\",\n  \"catalogStatus\": \"incomplete\",\n  \"lifecycleStatus\": \"preferred\",\n  \"owner\": {\n    \"team\": \"platform-ai-team\",\n    \"contact\": \"platform-ai@example.com\"\n  },\n  \"tags\": [\n    \"agent-factory\",\n    \"aws\",\n    \"submind\",\n    \"network\",\n    \"edge\",\n    \"cloudflare\"\n  ],\n  \"linkedObject\": \"01M15NEKT7-S14J\",\n  \"decisionRationale\": \"Decision: one front door. Public endpoints accept connections only from the identity-aware proxy (Cloudflare); the load\\nbalancer refuses all other sources, and no landing zone opens platform ingress to 0.0.0.0/0 (Design Authority A1, commit\\n09b3ac0, 2026-09-28, TSK-043/GAP-052). Live: the factory-prod ALB security group admits ports 80/443 only from 15 IPv4 CIDRs,\\nthe Cloudflare ranges in submind-aws config/deploy.env FACTORY_INGRESS_CIDRS (checked against cloudflare.com/ips-v4 on\\n2026-09-29). The edge proxy itself follows the existing edge decision 01M7GTBMQS-SZBH. The only route that skips\\nCloudflare Access is inbound webhooks, which must carry a verified sender signature (A1; the user's decision 2026-10-28,\\nissue #32, option A).\\nSegmentation (landing-zones/aws network.tf and README): public service subnets (ALB, control plane, gatekeepers) reach the\\ninternet through the IGW. Terraform declares the private agent route table with no routes, and the agents security group\\nwith only scoped egress, so that agents can reach only the control plane (8088), gatekeeper-egress (8081) and account-locked\\nVPC endpoints (443). That is the intended enforcement of the egress invariant E1 (every outbound connection from cartridge\\ncode goes through gatekeeper-egress).\\nKnown gap, not compliant with E1/E6, and not in Terraform: live, route table factory-prod-agents-no-egress (associated with\\nboth agent subnets) has a 0.0.0.0/0 route to the IGW, created by a Terraform apply run as IAM user beercanlabs on\\n2026-09-20 04:26 America/Phoenix; and security group factory-prod-agents has an all-protocol egress rule to 0.0.0.0/0, added\\nby hand with aws-cli on 2026-09-25 09:59 America/Phoenix. Terraform does not remove unmanaged routes or standalone SG rules,\\nso this drift survives deploys and contradicts OPERATIONS \\\"No hand changes in AWS\\\". Mitigation that is true today: agent\\ntasks launch with FACTORY_ECS_ASSIGN_PUBLIC_IP=false, and the agent subnets do not map public IPs, so there is no working\\ninternet path yet.\\nLive VPC endpoints (5 interface plus the S3 gateway): s3, ecr.api, ecr.dkr, secretsmanager, logs, bedrock-runtime. Service\\ndiscovery is the private DNS namespace factory.internal (Cloud Map). Inter-service connections follow the traffic matrix in\\nlanding-zones/aws/README.md, compared against live security-group rules for the agents group as above; the ALB group matches\\nthe Cloudflare ingress list.\\nExternal dependencies: Cloudflare (edge and Access), Discord gateway, model providers (AWS Bedrock; xAI and OpenAI\\nsubscriptions through gatekeeper-egress), IdPs and webhook senders (README \\\"Services Egress\\\").\\nNo NAT gateways: E1/E6 (landing-zones/aws/README.md).\\n\\nSources:\\n- BeerCanLabs/agent-factory @01720b2: DESIGN_AUTHORITY.md 6.3.1 E1/E6, 6.12 A1; landing-zones/aws/README.md, network.tf, variables.tf (ingress_cidrs); commits 09b3ac0, a3d698f, 27fb6b8\\n- BeerCanLabs/submind-aws @3f7d9a5: OPERATIONS.md (Front door, No hand changes in AWS), config/deploy.env (FACTORY_INGRESS_CIDRS, FACTORY_ECS_ASSIGN_PUBLIC_IP)\\n- Live AWS, read-only, account ending 2296, us-east-1, 2026-11-15: elbv2 describe-load-balancers/listeners, ec2 describe-security-groups (ALB and factory-prod-agents), describe-route-tables (factory-prod-agents-no-egress), describe-vpc-endpoints, servicediscovery; CloudTrail lookup-events for the unmanaged route and egress rule\\n- Drafting table: decision record 01M7GTBMQS-SZBH (Cloudflare edge proxy)\\n\",\n  \"_source\": \"catalog/governance/decision-records/dr-aws-agent-factory-network.yaml\"\n}",
+      "existsInCatalog": true,
+      "outboundRelationships": [],
+      "inboundRelationships": []
+    },
+    "01M7GYV3B6-KB8Q": {
+      "id": "01M7GYV3B6-KB8Q",
+      "uid": "01M7GYV3B6-KB8Q",
+      "name": "AWS Agent Factory: Observability and Audit Logging",
+      "aliases": [],
+      "type": "decision_record",
+      "typeLabel": "DecisionRecord / decision",
+      "filterType": "decision_record",
+      "category": "decision",
+      "deliveryModel": "",
+      "domain": "",
+      "description": "The ledger is the structured audit trail. CloudWatch Logs (30 days), Container Insights and an ADOT collector carry operational telemetry. The kernel exposes telemetry through headless APIs, not dashboards. Secret redaction from results and ledger rows is S1 design intent; GAP-031 limits it on AWS.",
+      "version": "1.0.0",
+      "catalogStatus": "incomplete",
+      "lifecycleStatus": "preferred",
+      "status": "accepted",
+      "businessContext": {},
+      "product": "",
+      "runsOn": "",
+      "subtype": "",
+      "vendor": "",
+      "productName": "",
+      "productVersion": "",
+      "classification": "",
+      "platformDependency": "",
+      "capabilities": [],
+      "configurations": [],
+      "networkPlacement": "",
+      "patchingOwner": "",
+      "complianceCerts": [],
+      "requirementGroups": [],
+      "requirementImplementations": [],
+      "dataLeavesInfrastructure": null,
+      "dataResidencyCommitment": "",
+      "dpaNotes": "",
+      "vendorSLA": "",
+      "authenticationModel": "",
+      "incidentNotificationProcess": "",
+      "owner": {
+        "team": "platform-ai-team",
+        "contact": "platform-ai@example.com"
+      },
+      "definitionOwner": {},
+      "provider": {},
+      "authority": {},
+      "shape": "round-rectangle",
+      "color": "#1f8a5b",
+      "source": "catalog/governance/decision-records/dr-aws-agent-factory-observability.yaml",
+      "tags": [
+        "agent-factory",
+        "aws",
+        "submind",
+        "observability",
+        "logging",
+        "audit"
+      ],
+      "ardCategory": "decision",
+      "internalComponents": [],
+      "notes": {},
+      "requirements": [],
+      "implementations": [],
+      "appliesTo": {},
+      "inherits": "",
+      "scalingUnits": [],
+      "networkZones": [],
+      "sdpConnections": [],
+      "serviceGroups": [],
+      "tierVariants": [],
+      "tierId": "",
+      "purpose": "",
+      "availabilityExpectation": "",
+      "costPosture": "",
+      "complianceScope": [],
+      "parameterSurface": [],
+      "followsReferenceArchitecture": "",
+      "decisionRecords": [],
+      "affectedComponent": "",
+      "impact": "",
+      "mitigationPath": "",
+      "decisionRationale": "Decision: audit is the ledger. Every egress request writes a ledger row (agent, run, route or host, allow/deny), never prompt\nbodies or secrets (E3); the ledger is append-only, single-writer and verified (6.10). Webhook deliveries that are unsigned\nor carry a bad signature are refused, all in the same way (A1). The kernel builds no dashboards and serves telemetry through\nheadless APIs (6.5).\nSecret redaction from results and ledger rows is Design Authority S1 design intent, not current AWS behaviour. GAP-031\n(Critical) records that since 6256fac the control plane skips secret binding for non-local runtimes, so it does not know\nthose values to redact them. See the secrets decision 01M7GYV3B6-YE24.\nAWS binding: container logs go to CloudWatch Logs /ecs/factory-prod with 30-day retention (storage.tf). Container Insights\nis enabled on the cluster (ecs.tf). An ADOT collector sidecar next to the control plane and gatekeeper-egress turns OTLP\ninto CloudWatch metrics (README \"Metrics\").\nObserved gaps: application log lines are plain text with component prefixes (for example \"[subscriptions] ...\"), not JSON\nwith trace/span IDs. No CloudWatch alarms or dashboards exist for the factory (live: all 7 alarms belong to Closing Climb).\nWhy, for both: rationale not recorded.\n\nSources:\n- BeerCanLabs/agent-factory @01720b2: DESIGN_AUTHORITY.md 6.3.1 E3, 6.3.2 S1, 6.5, 6.10, 6.12 A1, gap register GAP-031; landing-zones/aws/README.md (Metrics), storage.tf (retention_in_days), ecs.tf (containerInsights); packages/control-plane/src (console logging)\n- Live AWS, read-only, account ending 2296, us-east-1, 2026-11-15: logs describe-log-groups, cloudwatch describe-alarms/list-dashboards, ecs describe-clusters\n",
+      "relatedDecisionRecords": [],
+      "linkedObject": "01M15NEKT7-S14J",
+      "primaryObjectType": "",
+      "primaryObjectUid": "",
+      "generatedObjects": [],
+      "unresolvedQuestions": [],
+      "assumptions": [],
+      "nextSteps": [],
+      "defaultSelection": false,
+      "requirementCount": 0,
+      "hasRiskRef": false,
+      "outboundRefs": [
+        {
+          "target": "01M15NEKT7-S14J",
+          "path": "linkedObject"
+        }
+      ],
+      "referencedBy": [
+        {
+          "source": "01M15NEKT7-S14J",
+          "path": "decisionRecords[12].ref"
+        }
+      ],
+      "editorSchema": {
+        "requiredFields": [
+          "schemaVersion",
+          "uid",
+          "type",
+          "name",
+          "category",
+          "status",
+          "catalogStatus",
+          "lifecycleStatus"
+        ],
+        "optionalFields": [
+          "aliases",
+          "description",
+          "version",
+          "owner",
+          "tags",
+          "affectedComponent",
+          "impact",
+          "mitigationPath",
+          "decisionRationale",
+          "relatedDecisionRecords",
+          "controlReferences",
+          "linkedObject",
+          "approver",
+          "approvalDate"
+        ],
+        "fieldTypes": {
+          "aliases": "list",
+          "owner": "dict",
+          "tags": "list",
+          "relatedDecisionRecords": "list",
+          "controlReferences": "list",
+          "approver": "str",
+          "approvalDate": "str"
+        },
+        "enumFields": {
+          "catalogStatus": [
+            "stub",
+            "incomplete",
+            "complete"
+          ],
+          "lifecycleStatus": [
+            "candidate",
+            "preferred",
+            "existing-only",
+            "deprecated",
+            "retired"
+          ],
+          "category": [
+            "risk",
+            "decision"
+          ],
+          "status": [
+            "open",
+            "accepted",
+            "mitigated",
+            "resolved"
+          ]
+        },
+        "enumListFields": {},
+        "collectionSchemas": {},
+        "schemaPath": "framework/schemas/decision-record.schema.yaml"
+      },
+      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M7GYV3B6-KB8Q\",\n  \"type\": \"decision_record\",\n  \"name\": \"AWS Agent Factory: Observability and Audit Logging\",\n  \"description\": \"The ledger is the structured audit trail. CloudWatch Logs (30 days), Container Insights and an ADOT collector carry operational telemetry. The kernel exposes telemetry through headless APIs, not dashboards. Secret redaction from results and ledger rows is S1 design intent; GAP-031 limits it on AWS.\",\n  \"version\": \"1.0.0\",\n  \"category\": \"decision\",\n  \"status\": \"accepted\",\n  \"catalogStatus\": \"incomplete\",\n  \"lifecycleStatus\": \"preferred\",\n  \"owner\": {\n    \"team\": \"platform-ai-team\",\n    \"contact\": \"platform-ai@example.com\"\n  },\n  \"tags\": [\n    \"agent-factory\",\n    \"aws\",\n    \"submind\",\n    \"observability\",\n    \"logging\",\n    \"audit\"\n  ],\n  \"linkedObject\": \"01M15NEKT7-S14J\",\n  \"decisionRationale\": \"Decision: audit is the ledger. Every egress request writes a ledger row (agent, run, route or host, allow/deny), never prompt\\nbodies or secrets (E3); the ledger is append-only, single-writer and verified (6.10). Webhook deliveries that are unsigned\\nor carry a bad signature are refused, all in the same way (A1). The kernel builds no dashboards and serves telemetry through\\nheadless APIs (6.5).\\nSecret redaction from results and ledger rows is Design Authority S1 design intent, not current AWS behaviour. GAP-031\\n(Critical) records that since 6256fac the control plane skips secret binding for non-local runtimes, so it does not know\\nthose values to redact them. See the secrets decision 01M7GYV3B6-YE24.\\nAWS binding: container logs go to CloudWatch Logs /ecs/factory-prod with 30-day retention (storage.tf). Container Insights\\nis enabled on the cluster (ecs.tf). An ADOT collector sidecar next to the control plane and gatekeeper-egress turns OTLP\\ninto CloudWatch metrics (README \\\"Metrics\\\").\\nObserved gaps: application log lines are plain text with component prefixes (for example \\\"[subscriptions] ...\\\"), not JSON\\nwith trace/span IDs. No CloudWatch alarms or dashboards exist for the factory (live: all 7 alarms belong to Closing Climb).\\nWhy, for both: rationale not recorded.\\n\\nSources:\\n- BeerCanLabs/agent-factory @01720b2: DESIGN_AUTHORITY.md 6.3.1 E3, 6.3.2 S1, 6.5, 6.10, 6.12 A1, gap register GAP-031; landing-zones/aws/README.md (Metrics), storage.tf (retention_in_days), ecs.tf (containerInsights); packages/control-plane/src (console logging)\\n- Live AWS, read-only, account ending 2296, us-east-1, 2026-11-15: logs describe-log-groups, cloudwatch describe-alarms/list-dashboards, ecs describe-clusters\\n\",\n  \"_source\": \"catalog/governance/decision-records/dr-aws-agent-factory-observability.yaml\"\n}",
+      "existsInCatalog": true,
+      "outboundRelationships": [],
+      "inboundRelationships": []
+    },
+    "01M7GYV3B6-RYSP": {
+      "id": "01M7GYV3B6-RYSP",
+      "uid": "01M7GYV3B6-RYSP",
+      "name": "AWS Agent Factory: Availability, Failure Domain and Recovery",
+      "aliases": [],
+      "type": "decision_record",
+      "typeLabel": "DecisionRecord / decision",
+      "filterType": "decision_record",
+      "category": "decision",
+      "deliveryModel": "",
+      "domain": "",
+      "description": "Always-on mailboxes with zero idle agent compute. A single region and single cluster form the failure domain. EFS is backed up daily (35 days), the config bucket keeps versions for at least 90 days, and the ledger keeps WORM checkpoints for 365 days.",
+      "version": "1.0.0",
+      "catalogStatus": "incomplete",
+      "lifecycleStatus": "preferred",
+      "status": "accepted",
+      "businessContext": {},
+      "product": "",
+      "runsOn": "",
+      "subtype": "",
+      "vendor": "",
+      "productName": "",
+      "productVersion": "",
+      "classification": "",
+      "platformDependency": "",
+      "capabilities": [],
+      "configurations": [],
+      "networkPlacement": "",
+      "patchingOwner": "",
+      "complianceCerts": [],
+      "requirementGroups": [],
+      "requirementImplementations": [],
+      "dataLeavesInfrastructure": null,
+      "dataResidencyCommitment": "",
+      "dpaNotes": "",
+      "vendorSLA": "",
+      "authenticationModel": "",
+      "incidentNotificationProcess": "",
+      "owner": {
+        "team": "platform-ai-team",
+        "contact": "platform-ai@example.com"
+      },
+      "definitionOwner": {},
+      "provider": {},
+      "authority": {},
+      "shape": "round-rectangle",
+      "color": "#1f8a5b",
+      "source": "catalog/governance/decision-records/dr-aws-agent-factory-recovery.yaml",
+      "tags": [
+        "agent-factory",
+        "aws",
+        "submind",
+        "availability",
+        "backup",
+        "recovery"
+      ],
+      "ardCategory": "decision",
+      "internalComponents": [],
+      "notes": {},
+      "requirements": [],
+      "implementations": [],
+      "appliesTo": {},
+      "inherits": "",
+      "scalingUnits": [],
+      "networkZones": [],
+      "sdpConnections": [],
+      "serviceGroups": [],
+      "tierVariants": [],
+      "tierId": "",
+      "purpose": "",
+      "availabilityExpectation": "",
+      "costPosture": "",
+      "complianceScope": [],
+      "parameterSurface": [],
+      "followsReferenceArchitecture": "",
+      "decisionRecords": [],
+      "affectedComponent": "",
+      "impact": "",
+      "mitigationPath": "",
+      "decisionRationale": "Availability (agent-factory .draft/sdp.yaml notes.availabilityRequirement): the mailboxes (ingress, control plane,\ngatekeeper-ingress) are always reachable and agent compute is zero when idle; \"availability of the fleet is the mailbox, not\nwarm agents\". Each service runs one task. A control-plane deploy has a brief gap because it deploys stop-then-start (LG1,\naccepted 2026-09-28).\nFailure domain: platform-wide. Everything runs in one region (us-east-1) and one ECS cluster. Losing the control plane\nblocks wakes and MCP; losing one agent task does not take down the factory (repo SDP notes.failureDomain).\nRecovery (Design Authority R1): the factory's own state is backed up automatically and restorable to an earlier point.\nAWS binding: EFS automatic backups run daily (live: backup plan aws/efs/automatic-backup-plan, cron 05:00 UTC, 35-day\nretention; storage.tf aws_efs_backup_policy, commit bd94490, TSK-051/GAP-058). The config bucket is versioned with\nnon-current versions kept for at least 90 days. Ledger checkpoints are WORM for 365 days. A failed ledger is archived, never\nrepaired (LG2), and submind-aws has a documented ledger-recovery deploy.\nNo SLO or error-budget policy is defined, and no cross-region recovery is recorded. (rationale not recorded)\n\nSources:\n- BeerCanLabs/agent-factory @01720b2: .draft/sdp.yaml (notes.availabilityRequirement, failureDomain); DESIGN_AUTHORITY.md 6.10 LG1-LG2, 6.13 R1; landing-zones/aws/storage.tf, ecs.tf; commit bd94490\n- BeerCanLabs/submind-aws @3f7d9a5: config/deploy.env (ledger recovery settings), OPERATIONS.md\n- Live AWS, read-only, account ending 2296, us-east-1, 2026-11-15: backup list-backup-plans/get-backup-plan, efs describe-backup-policy, ecs describe-services (deployment configuration)\n",
+      "relatedDecisionRecords": [],
+      "linkedObject": "01M15NEKT7-S14J",
+      "primaryObjectType": "",
+      "primaryObjectUid": "",
+      "generatedObjects": [],
+      "unresolvedQuestions": [],
+      "assumptions": [],
+      "nextSteps": [],
+      "defaultSelection": false,
+      "requirementCount": 0,
+      "hasRiskRef": false,
+      "outboundRefs": [
+        {
+          "target": "01M15NEKT7-S14J",
+          "path": "linkedObject"
+        }
+      ],
+      "referencedBy": [
+        {
+          "source": "01M15NEKT7-S14J",
+          "path": "decisionRecords[10].ref"
+        },
+        {
+          "source": "01M15NEKT7-S14J",
+          "path": "decisionRecords[11].ref"
+        }
+      ],
+      "editorSchema": {
+        "requiredFields": [
+          "schemaVersion",
+          "uid",
+          "type",
+          "name",
+          "category",
+          "status",
+          "catalogStatus",
+          "lifecycleStatus"
+        ],
+        "optionalFields": [
+          "aliases",
+          "description",
+          "version",
+          "owner",
+          "tags",
+          "affectedComponent",
+          "impact",
+          "mitigationPath",
+          "decisionRationale",
+          "relatedDecisionRecords",
+          "controlReferences",
+          "linkedObject",
+          "approver",
+          "approvalDate"
+        ],
+        "fieldTypes": {
+          "aliases": "list",
+          "owner": "dict",
+          "tags": "list",
+          "relatedDecisionRecords": "list",
+          "controlReferences": "list",
+          "approver": "str",
+          "approvalDate": "str"
+        },
+        "enumFields": {
+          "catalogStatus": [
+            "stub",
+            "incomplete",
+            "complete"
+          ],
+          "lifecycleStatus": [
+            "candidate",
+            "preferred",
+            "existing-only",
+            "deprecated",
+            "retired"
+          ],
+          "category": [
+            "risk",
+            "decision"
+          ],
+          "status": [
+            "open",
+            "accepted",
+            "mitigated",
+            "resolved"
+          ]
+        },
+        "enumListFields": {},
+        "collectionSchemas": {},
+        "schemaPath": "framework/schemas/decision-record.schema.yaml"
+      },
+      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M7GYV3B6-RYSP\",\n  \"type\": \"decision_record\",\n  \"name\": \"AWS Agent Factory: Availability, Failure Domain and Recovery\",\n  \"description\": \"Always-on mailboxes with zero idle agent compute. A single region and single cluster form the failure domain. EFS is backed up daily (35 days), the config bucket keeps versions for at least 90 days, and the ledger keeps WORM checkpoints for 365 days.\",\n  \"version\": \"1.0.0\",\n  \"category\": \"decision\",\n  \"status\": \"accepted\",\n  \"catalogStatus\": \"incomplete\",\n  \"lifecycleStatus\": \"preferred\",\n  \"owner\": {\n    \"team\": \"platform-ai-team\",\n    \"contact\": \"platform-ai@example.com\"\n  },\n  \"tags\": [\n    \"agent-factory\",\n    \"aws\",\n    \"submind\",\n    \"availability\",\n    \"backup\",\n    \"recovery\"\n  ],\n  \"linkedObject\": \"01M15NEKT7-S14J\",\n  \"decisionRationale\": \"Availability (agent-factory .draft/sdp.yaml notes.availabilityRequirement): the mailboxes (ingress, control plane,\\ngatekeeper-ingress) are always reachable and agent compute is zero when idle; \\\"availability of the fleet is the mailbox, not\\nwarm agents\\\". Each service runs one task. A control-plane deploy has a brief gap because it deploys stop-then-start (LG1,\\naccepted 2026-09-28).\\nFailure domain: platform-wide. Everything runs in one region (us-east-1) and one ECS cluster. Losing the control plane\\nblocks wakes and MCP; losing one agent task does not take down the factory (repo SDP notes.failureDomain).\\nRecovery (Design Authority R1): the factory's own state is backed up automatically and restorable to an earlier point.\\nAWS binding: EFS automatic backups run daily (live: backup plan aws/efs/automatic-backup-plan, cron 05:00 UTC, 35-day\\nretention; storage.tf aws_efs_backup_policy, commit bd94490, TSK-051/GAP-058). The config bucket is versioned with\\nnon-current versions kept for at least 90 days. Ledger checkpoints are WORM for 365 days. A failed ledger is archived, never\\nrepaired (LG2), and submind-aws has a documented ledger-recovery deploy.\\nNo SLO or error-budget policy is defined, and no cross-region recovery is recorded. (rationale not recorded)\\n\\nSources:\\n- BeerCanLabs/agent-factory @01720b2: .draft/sdp.yaml (notes.availabilityRequirement, failureDomain); DESIGN_AUTHORITY.md 6.10 LG1-LG2, 6.13 R1; landing-zones/aws/storage.tf, ecs.tf; commit bd94490\\n- BeerCanLabs/submind-aws @3f7d9a5: config/deploy.env (ledger recovery settings), OPERATIONS.md\\n- Live AWS, read-only, account ending 2296, us-east-1, 2026-11-15: backup list-backup-plans/get-backup-plan, efs describe-backup-policy, ecs describe-services (deployment configuration)\\n\",\n  \"_source\": \"catalog/governance/decision-records/dr-aws-agent-factory-recovery.yaml\"\n}",
+      "existsInCatalog": true,
+      "outboundRelationships": [],
+      "inboundRelationships": []
+    },
+    "01M7GYV3B6-YE24": {
+      "id": "01M7GYV3B6-YE24",
+      "uid": "01M7GYV3B6-YE24",
+      "name": "AWS Agent Factory: Secrets Management",
+      "aliases": [],
+      "type": "decision_record",
+      "typeLabel": "DecisionRecord / decision",
+      "filterType": "decision_record",
+      "category": "decision",
+      "deliveryModel": "",
+      "domain": "",
+      "description": "Design intent (S1) is that secrets stay in AWS Secrets Manager, with names only in git, and that gatekeeper-egress injects credentials so agents hold only a run token. On AWS that intent is not fully in force; GAP-031 is recorded below. OAuth grants are held by the Keymaster.",
+      "version": "1.0.0",
+      "catalogStatus": "incomplete",
+      "lifecycleStatus": "preferred",
+      "status": "accepted",
+      "businessContext": {},
+      "product": "",
+      "runsOn": "",
+      "subtype": "",
+      "vendor": "",
+      "productName": "",
+      "productVersion": "",
+      "classification": "",
+      "platformDependency": "",
+      "capabilities": [],
+      "configurations": [],
+      "networkPlacement": "",
+      "patchingOwner": "",
+      "complianceCerts": [],
+      "requirementGroups": [],
+      "requirementImplementations": [],
+      "dataLeavesInfrastructure": null,
+      "dataResidencyCommitment": "",
+      "dpaNotes": "",
+      "vendorSLA": "",
+      "authenticationModel": "",
+      "incidentNotificationProcess": "",
+      "owner": {
+        "team": "platform-ai-team",
+        "contact": "platform-ai@example.com"
+      },
+      "definitionOwner": {},
+      "provider": {},
+      "authority": {},
+      "shape": "round-rectangle",
+      "color": "#1f8a5b",
+      "source": "catalog/governance/decision-records/dr-aws-agent-factory-secrets.yaml",
+      "tags": [
+        "agent-factory",
+        "aws",
+        "submind",
+        "secrets",
+        "secrets-manager"
+      ],
+      "ardCategory": "decision",
+      "internalComponents": [],
+      "notes": {},
+      "requirements": [],
+      "implementations": [],
+      "appliesTo": {},
+      "inherits": "",
+      "scalingUnits": [],
+      "networkZones": [],
+      "sdpConnections": [],
+      "serviceGroups": [],
+      "tierVariants": [],
+      "tierId": "",
+      "purpose": "",
+      "availabilityExpectation": "",
+      "costPosture": "",
+      "complianceScope": [],
+      "parameterSurface": [],
+      "followsReferenceArchitecture": "",
+      "decisionRecords": [],
+      "affectedComponent": "",
+      "impact": "",
+      "mitigationPath": "",
+      "decisionRationale": "Design intent (Design Authority S1): agents never hold real secrets. A cartridge's declared secrets reach it only as\nplaceholders (its run token); gatekeeper-egress injects the real credential into the matching outbound request; the control\nplane and gatekeeper-egress are meant to redact every known secret value from results and ledger rows. OAuth grants and\nrefresh tokens are held only by the Keymaster (K1-K3). Git holds secret names only (agent-factory AGENTS.md \"Secrets\").\nUnbound required names are intended to fail with HTTP 412.\nStore: AWS Secrets Manager in us-east-1 (live: 96 secrets under factory/prod/ and closing-climb/prod/; names and counts\nonly were read), referenced by ECS task definitions and reached from agent subnets through the secretsmanager VPC endpoint.\nTerraform generates every factory credential, one per caller-to-callee edge (landing-zones/aws/README.md \"Secrets\").\nAWS reality, DESIGN_AUTHORITY GAP-031 (Critical, S1 coverage partial, TSK-024 PENDING): since 6256fac (2026-09-20) the\ncontrol plane skips secret binding for non-local runtimes, so it neither pre-flights them (no 412) nor knows their values\nto redact them from results and the ledger. The gap's scope covers Discord bot tokens, XAI_API_KEY, ANTHROPIC_API_KEY,\nGitHub tokens, a username/password pair and GCP service-account JSON, not only a couple of form-login secrets. Live, 11\nactive agent task-definition families still carry secret references (agent-higgins, factory-prod-agent-echo-agent, and\nnine agent-<uuid> families). packages/conformance/baseline.json also records GAP-031 (agent task definitions inject real\nsecret values, pending gatekeeper exchange routes) and GAP-050 (Terraform generates platform tokens and keeps their values\nin state, pending a Keymaster bootstrap design).\n\nSources:\n- BeerCanLabs/agent-factory @01720b2: DESIGN_AUTHORITY.md 6.3.2 S1, 6.11 K1-K5, gap register GAP-031; AGENTS.md (Secrets); landing-zones/aws/README.md, secrets.tf; packages/conformance/baseline.json\n- BeerCanLabs/SM-higgins cartridge.yaml (secrets.requires comments)\n- Live AWS, read-only, account ending 2296, us-east-1, 2026-11-15: secretsmanager list-secrets (names and counts only, no values), ecs list/describe-task-definition (secret reference names and counts only, no values)\n",
+      "relatedDecisionRecords": [],
+      "linkedObject": "01M15NEKT7-S14J",
+      "primaryObjectType": "",
+      "primaryObjectUid": "",
+      "generatedObjects": [],
+      "unresolvedQuestions": [],
+      "assumptions": [],
+      "nextSteps": [],
+      "defaultSelection": false,
+      "requirementCount": 0,
+      "hasRiskRef": false,
+      "outboundRefs": [
+        {
+          "target": "01M15NEKT7-S14J",
+          "path": "linkedObject"
+        }
+      ],
+      "referencedBy": [
+        {
+          "source": "01M15NEKT7-S14J",
+          "path": "decisionRecords[6].ref"
+        }
+      ],
+      "editorSchema": {
+        "requiredFields": [
+          "schemaVersion",
+          "uid",
+          "type",
+          "name",
+          "category",
+          "status",
+          "catalogStatus",
+          "lifecycleStatus"
+        ],
+        "optionalFields": [
+          "aliases",
+          "description",
+          "version",
+          "owner",
+          "tags",
+          "affectedComponent",
+          "impact",
+          "mitigationPath",
+          "decisionRationale",
+          "relatedDecisionRecords",
+          "controlReferences",
+          "linkedObject",
+          "approver",
+          "approvalDate"
+        ],
+        "fieldTypes": {
+          "aliases": "list",
+          "owner": "dict",
+          "tags": "list",
+          "relatedDecisionRecords": "list",
+          "controlReferences": "list",
+          "approver": "str",
+          "approvalDate": "str"
+        },
+        "enumFields": {
+          "catalogStatus": [
+            "stub",
+            "incomplete",
+            "complete"
+          ],
+          "lifecycleStatus": [
+            "candidate",
+            "preferred",
+            "existing-only",
+            "deprecated",
+            "retired"
+          ],
+          "category": [
+            "risk",
+            "decision"
+          ],
+          "status": [
+            "open",
+            "accepted",
+            "mitigated",
+            "resolved"
+          ]
+        },
+        "enumListFields": {},
+        "collectionSchemas": {},
+        "schemaPath": "framework/schemas/decision-record.schema.yaml"
+      },
+      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M7GYV3B6-YE24\",\n  \"type\": \"decision_record\",\n  \"name\": \"AWS Agent Factory: Secrets Management\",\n  \"description\": \"Design intent (S1) is that secrets stay in AWS Secrets Manager, with names only in git, and that gatekeeper-egress injects credentials so agents hold only a run token. On AWS that intent is not fully in force; GAP-031 is recorded below. OAuth grants are held by the Keymaster.\",\n  \"version\": \"1.0.0\",\n  \"category\": \"decision\",\n  \"status\": \"accepted\",\n  \"catalogStatus\": \"incomplete\",\n  \"lifecycleStatus\": \"preferred\",\n  \"owner\": {\n    \"team\": \"platform-ai-team\",\n    \"contact\": \"platform-ai@example.com\"\n  },\n  \"tags\": [\n    \"agent-factory\",\n    \"aws\",\n    \"submind\",\n    \"secrets\",\n    \"secrets-manager\"\n  ],\n  \"linkedObject\": \"01M15NEKT7-S14J\",\n  \"decisionRationale\": \"Design intent (Design Authority S1): agents never hold real secrets. A cartridge's declared secrets reach it only as\\nplaceholders (its run token); gatekeeper-egress injects the real credential into the matching outbound request; the control\\nplane and gatekeeper-egress are meant to redact every known secret value from results and ledger rows. OAuth grants and\\nrefresh tokens are held only by the Keymaster (K1-K3). Git holds secret names only (agent-factory AGENTS.md \\\"Secrets\\\").\\nUnbound required names are intended to fail with HTTP 412.\\nStore: AWS Secrets Manager in us-east-1 (live: 96 secrets under factory/prod/ and closing-climb/prod/; names and counts\\nonly were read), referenced by ECS task definitions and reached from agent subnets through the secretsmanager VPC endpoint.\\nTerraform generates every factory credential, one per caller-to-callee edge (landing-zones/aws/README.md \\\"Secrets\\\").\\nAWS reality, DESIGN_AUTHORITY GAP-031 (Critical, S1 coverage partial, TSK-024 PENDING): since 6256fac (2026-09-20) the\\ncontrol plane skips secret binding for non-local runtimes, so it neither pre-flights them (no 412) nor knows their values\\nto redact them from results and the ledger. The gap's scope covers Discord bot tokens, XAI_API_KEY, ANTHROPIC_API_KEY,\\nGitHub tokens, a username/password pair and GCP service-account JSON, not only a couple of form-login secrets. Live, 11\\nactive agent task-definition families still carry secret references (agent-higgins, factory-prod-agent-echo-agent, and\\nnine agent-<uuid> families). packages/conformance/baseline.json also records GAP-031 (agent task definitions inject real\\nsecret values, pending gatekeeper exchange routes) and GAP-050 (Terraform generates platform tokens and keeps their values\\nin state, pending a Keymaster bootstrap design).\\n\\nSources:\\n- BeerCanLabs/agent-factory @01720b2: DESIGN_AUTHORITY.md 6.3.2 S1, 6.11 K1-K5, gap register GAP-031; AGENTS.md (Secrets); landing-zones/aws/README.md, secrets.tf; packages/conformance/baseline.json\\n- BeerCanLabs/SM-higgins cartridge.yaml (secrets.requires comments)\\n- Live AWS, read-only, account ending 2296, us-east-1, 2026-11-15: secretsmanager list-secrets (names and counts only, no values), ecs list/describe-task-definition (secret reference names and counts only, no values)\\n\",\n  \"_source\": \"catalog/governance/decision-records/dr-aws-agent-factory-secrets.yaml\"\n}",
       "existsInCatalog": true,
       "outboundRelationships": [],
       "inboundRelationships": []
@@ -62520,6 +66664,180 @@ window.DRAFT_BROWSER_DATA = {
         "path": "decisionRecords[0].ref"
       }
     ],
+    "01M7GYV3B6-K9CZ": [
+      {
+        "source": "01M15NEKT7-S14J",
+        "path": "decisionRecords[1].ref"
+      },
+      {
+        "source": "01M15NEKT7-S14J",
+        "path": "decisionRecords[2].ref"
+      }
+    ],
+    "01M7GYV3B6-8VN0": [
+      {
+        "source": "01M15NEKT7-S14J",
+        "path": "decisionRecords[3].ref"
+      },
+      {
+        "source": "01M15NEKT7-S14J",
+        "path": "decisionRecords[4].ref"
+      }
+    ],
+    "01M7GYV3B6-EEZ3": [
+      {
+        "source": "01M15NEKT7-S14J",
+        "path": "decisionRecords[5].ref"
+      }
+    ],
+    "01M7GYV3B6-YE24": [
+      {
+        "source": "01M15NEKT7-S14J",
+        "path": "decisionRecords[6].ref"
+      }
+    ],
+    "01M7GYV3B6-FASW": [
+      {
+        "source": "01M15NEKT7-S14J",
+        "path": "decisionRecords[7].ref"
+      },
+      {
+        "source": "01M15NEKT7-S14J",
+        "path": "decisionRecords[8].ref"
+      }
+    ],
+    "01M7GYV3B6-083M": [
+      {
+        "source": "01M15NEKT7-S14J",
+        "path": "decisionRecords[9].ref"
+      }
+    ],
+    "01M7GYV3B6-RYSP": [
+      {
+        "source": "01M15NEKT7-S14J",
+        "path": "decisionRecords[10].ref"
+      },
+      {
+        "source": "01M15NEKT7-S14J",
+        "path": "decisionRecords[11].ref"
+      }
+    ],
+    "01M7GYV3B6-KB8Q": [
+      {
+        "source": "01M15NEKT7-S14J",
+        "path": "decisionRecords[12].ref"
+      }
+    ],
+    "01M7GYV3B6-Q5NV": [
+      {
+        "source": "01M15NEKT7-S14J",
+        "path": "decisionRecords[13].ref"
+      },
+      {
+        "source": "01M15NEKT7-S14J",
+        "path": "decisionRecords[14].ref"
+      }
+    ],
+    "01M7GYV3B6-H03D": [
+      {
+        "source": "01M15NEKT7-S14J",
+        "path": "decisionRecords[15].ref"
+      },
+      {
+        "source": "01M15NEKT7-S14J",
+        "path": "decisionRecords[16].ref"
+      }
+    ],
+    "01M15WPEFV-ZMA9": [
+      {
+        "source": "01M15NEKT7-S14J",
+        "path": "requirementImplementations[0].requirementGroup"
+      },
+      {
+        "source": "01M15NEKT7-S14J",
+        "path": "requirementImplementations[2].requirementGroup"
+      },
+      {
+        "source": "01M15NEKT7-S14J",
+        "path": "requirementImplementations[3].requirementGroup"
+      },
+      {
+        "source": "01M15NEKT7-S14J",
+        "path": "requirementImplementations[4].requirementGroup"
+      },
+      {
+        "source": "01M15NEKT7-S14J",
+        "path": "requirementImplementations[5].requirementGroup"
+      },
+      {
+        "source": "01M15NEKT7-S14J",
+        "path": "requirementImplementations[6].requirementGroup"
+      },
+      {
+        "source": "01M15NEKT7-S14J",
+        "path": "requirementImplementations[7].requirementGroup"
+      },
+      {
+        "source": "01M15NEKT7-S14J",
+        "path": "requirementImplementations[8].requirementGroup"
+      },
+      {
+        "source": "01M15NEKT7-S14J",
+        "path": "requirementImplementations[9].requirementGroup"
+      }
+    ],
+    "01M15XYZXT-KTJA": [
+      {
+        "source": "01M15NEKT7-S14J",
+        "path": "requirementImplementations[1].requirementGroup"
+      },
+      {
+        "source": "01M15NEKT7-S14J",
+        "path": "requirementImplementations[10].requirementGroup"
+      }
+    ],
+    "01M15NEKT7-S14J": [
+      {
+        "source": "01M7GYV3B6-K9CZ",
+        "path": "linkedObject"
+      },
+      {
+        "source": "01M7GYV3B6-083M",
+        "path": "linkedObject"
+      },
+      {
+        "source": "01M7GYV3B6-FASW",
+        "path": "linkedObject"
+      },
+      {
+        "source": "01M7GYV3B6-Q5NV",
+        "path": "linkedObject"
+      },
+      {
+        "source": "01M7GYV3B6-EEZ3",
+        "path": "linkedObject"
+      },
+      {
+        "source": "01M7GYV3B6-H03D",
+        "path": "linkedObject"
+      },
+      {
+        "source": "01M7GYV3B6-8VN0",
+        "path": "linkedObject"
+      },
+      {
+        "source": "01M7GYV3B6-KB8Q",
+        "path": "linkedObject"
+      },
+      {
+        "source": "01M7GYV3B6-RYSP",
+        "path": "linkedObject"
+      },
+      {
+        "source": "01M7GYV3B6-YE24",
+        "path": "linkedObject"
+      }
+    ],
     "01M7GVD4FN-YGN9": [
       {
         "source": "01M7GTBMQS-YYDW",
@@ -62980,6 +67298,76 @@ window.DRAFT_BROWSER_DATA = {
         "type": "data_store_service",
         "catalogStatus": "incomplete",
         "description": "S3 bucket that holds agent mind (memory) state for the Agent Factory."
+      },
+      {
+        "uid": "01M7GYV3B6-RYSP",
+        "name": "AWS Agent Factory: Availability, Failure Domain and Recovery",
+        "type": "decision_record",
+        "catalogStatus": "incomplete",
+        "description": "Always-on mailboxes with zero idle agent compute. A single region and single cluster form the failure domain. EFS is backed up daily (35 days), the config bucket keeps versions for at least 90 days, and the ledger keeps WORM checkpoints for 365 days."
+      },
+      {
+        "uid": "01M7GYV3B6-K9CZ",
+        "name": "AWS Agent Factory: Compute, Hosting and Scheduling",
+        "type": "decision_record",
+        "catalogStatus": "incomplete",
+        "description": "The Agent Factory runs on AWS ECS Fargate in us-east-1 (cluster factory-prod) using the orchestrated-tasks baseline pattern: mailbox services stay warm and each agent run is its own on-demand task."
+      },
+      {
+        "uid": "01M7GYV3B6-FASW",
+        "name": "AWS Agent Factory: Data Stores and Data Classification",
+        "type": "decision_record",
+        "catalogStatus": "incomplete",
+        "description": "Agent memory is kept in S3 under per-agent prefixes and, while a task is running, as per-agent SQLite in the agent-runtime notebook. The ledger is on encrypted EFS with WORM checkpoints in S3 Object Lock. Configuration is in a versioned S3 bucket. Runtime-created agent roles are not limited to their own mind prefix."
+      },
+      {
+        "uid": "01M7GYV3B6-083M",
+        "name": "AWS Agent Factory: Encryption in Transit and at Rest",
+        "type": "decision_record",
+        "catalogStatus": "incomplete",
+        "description": "TLS 1.2+ at the ALB (ELBSecurityPolicy-TLS13-1-2-2021-06) with HTTP redirected to HTTPS. Data at rest uses SSE-S3 (AES-256), an encrypted EFS with TLS mounts, and AWS-managed KMS keys for Secrets Manager."
+      },
+      {
+        "uid": "01M7GYV3B6-EEZ3",
+        "name": "AWS Agent Factory: Identity and Access Control",
+        "type": "decision_record",
+        "catalogStatus": "incomplete",
+        "description": "People get operator identity only from a verified Cloudflare Access assertion or the factory's own login. Machines use factory tokens. Agents get per-run tokens and per-agent IAM roles. Everything is deny by default. Live runtime-created agent task roles are not limited to their own mind prefix."
+      },
+      {
+        "uid": "01M7GYV3B6-Q5NV",
+        "name": "AWS Agent Factory: Infrastructure as Code, Delivery and Quality Gates",
+        "type": "decision_record",
+        "catalogStatus": "incomplete",
+        "description": "AWS changes are intended to go through Terraform and an ops-repo pipeline that deploys pinned, CI-green SHAs. Conformance tests enforce design invariants only in part. Documented and observed bypasses of the deploy and CI gates are recorded below."
+      },
+      {
+        "uid": "01M7GYV3B6-H03D",
+        "name": "AWS Agent Factory: Model Access and AI Gateway Routing",
+        "type": "decision_record",
+        "catalogStatus": "incomplete",
+        "description": "Design intent is that every model call goes through gatekeeper-egress (the factory model API), where it is metered, budgeted and policy-gated. Live agent task roles can also invoke Bedrock directly, which bypasses that metering. Model choice and budgets are factory policy, not code."
+      },
+      {
+        "uid": "01M7GYV3B6-8VN0",
+        "name": "AWS Agent Factory: Network Segmentation and Edge",
+        "type": "decision_record",
+        "catalogStatus": "incomplete",
+        "description": "Cloudflare is the only way in: the ALB admits only Cloudflare IPv4 ranges. Service and agent subnets are separate tiers, and services find each other through Cloud Map. Live drift on the agent tier is recorded below: both network-layer barriers to E1 are down, with assignPublicIp=false as the remaining mitigation."
+      },
+      {
+        "uid": "01M7GYV3B6-KB8Q",
+        "name": "AWS Agent Factory: Observability and Audit Logging",
+        "type": "decision_record",
+        "catalogStatus": "incomplete",
+        "description": "The ledger is the structured audit trail. CloudWatch Logs (30 days), Container Insights and an ADOT collector carry operational telemetry. The kernel exposes telemetry through headless APIs, not dashboards. Secret redaction from results and ledger rows is S1 design intent; GAP-031 limits it on AWS."
+      },
+      {
+        "uid": "01M7GYV3B6-YE24",
+        "name": "AWS Agent Factory: Secrets Management",
+        "type": "decision_record",
+        "catalogStatus": "incomplete",
+        "description": "Design intent (S1) is that secrets stay in AWS Secrets Manager, with names only in git, and that gatekeeper-egress injects credentials so agents hold only a run token. On AWS that intent is not fully in force; GAP-031 is recorded below. OAuth grants are held by the Keymaster."
       },
       {
         "uid": "01M7GTBMQS-SZBH",
@@ -64208,6 +68596,160 @@ window.DRAFT_BROWSER_DATA = {
       "version": 1,
       "source": "object.requirementImplementations",
       "rows": [
+        {
+          "object": "01M15NEKT7-S14J",
+          "requirementGroup": "01M15WPEFV-ZMA9",
+          "requirementId": "req-expand-contract-migrations",
+          "status": "not-compliant",
+          "evidence": "",
+          "notes": "The placed agent-runtime (01M7GWXKXW-4ZJF) has a SQLite schema created in application code (CREATE TABLE IF NOT EXISTS in memory/episodic.py, notebook.py and workspace.py) that ships with the runtime. There is no expand-and-contract migration decoupled from a code deploy. See decision record 01M7GYV3B6-FASW.",
+          "implementation": {
+            "requirementGroup": "01M15WPEFV-ZMA9",
+            "requirementId": "req-expand-contract-migrations",
+            "status": "not-compliant",
+            "notes": "The placed agent-runtime (01M7GWXKXW-4ZJF) has a SQLite schema created in application code (CREATE TABLE IF NOT EXISTS in memory/episodic.py, notebook.py and workspace.py) that ships with the runtime. There is no expand-and-contract migration decoupled from a code deploy. See decision record 01M7GYV3B6-FASW."
+          }
+        },
+        {
+          "object": "01M15NEKT7-S14J",
+          "requirementGroup": "01M15WPEFV-ZMA9",
+          "requirementId": "req-l3-automated-security-gates",
+          "status": "not-compliant",
+          "evidence": "",
+          "notes": "No SAST, secret scanning, SCA or IaC policy linting in CI. See decision record 01M7GYV3B6-Q5NV.",
+          "implementation": {
+            "requirementGroup": "01M15WPEFV-ZMA9",
+            "requirementId": "req-l3-automated-security-gates",
+            "status": "not-compliant",
+            "notes": "No SAST, secret scanning, SCA or IaC policy linting in CI. See decision record 01M7GYV3B6-Q5NV."
+          }
+        },
+        {
+          "object": "01M15NEKT7-S14J",
+          "requirementGroup": "01M15WPEFV-ZMA9",
+          "requirementId": "req-l3-composable-iac",
+          "status": "not-compliant",
+          "evidence": "",
+          "notes": "Single Terraform root configuration plus one documented hand-set Cloudflare Access bypass. See decision record 01M7GYV3B6-Q5NV.",
+          "implementation": {
+            "requirementGroup": "01M15WPEFV-ZMA9",
+            "requirementId": "req-l3-composable-iac",
+            "status": "not-compliant",
+            "notes": "Single Terraform root configuration plus one documented hand-set Cloudflare Access bypass. See decision record 01M7GYV3B6-Q5NV."
+          }
+        },
+        {
+          "object": "01M15NEKT7-S14J",
+          "requirementGroup": "01M15WPEFV-ZMA9",
+          "requirementId": "req-l3-ephemeral-preview-environments",
+          "status": "not-compliant",
+          "evidence": "",
+          "notes": "No per-branch cloud preview environments; CI runs an ephemeral Docker Compose proof only. See decision record 01M7GYV3B6-Q5NV.",
+          "implementation": {
+            "requirementGroup": "01M15WPEFV-ZMA9",
+            "requirementId": "req-l3-ephemeral-preview-environments",
+            "status": "not-compliant",
+            "notes": "No per-branch cloud preview environments; CI runs an ephemeral Docker Compose proof only. See decision record 01M7GYV3B6-Q5NV."
+          }
+        },
+        {
+          "object": "01M15NEKT7-S14J",
+          "requirementGroup": "01M15WPEFV-ZMA9",
+          "requirementId": "req-l3-json-structured-logging",
+          "status": "not-compliant",
+          "evidence": "",
+          "notes": "Application logs are plain text; the ledger is the structured audit trail. See decision record 01M7GYV3B6-KB8Q.",
+          "implementation": {
+            "requirementGroup": "01M15WPEFV-ZMA9",
+            "requirementId": "req-l3-json-structured-logging",
+            "status": "not-compliant",
+            "notes": "Application logs are plain text; the ledger is the structured audit trail. See decision record 01M7GYV3B6-KB8Q."
+          }
+        },
+        {
+          "object": "01M15NEKT7-S14J",
+          "requirementGroup": "01M15WPEFV-ZMA9",
+          "requirementId": "req-l3-slo-error-budget",
+          "status": "not-compliant",
+          "evidence": "",
+          "notes": "No SLO or error-budget policy is defined. See decision record 01M7GYV3B6-RYSP.",
+          "implementation": {
+            "requirementGroup": "01M15WPEFV-ZMA9",
+            "requirementId": "req-l3-slo-error-budget",
+            "status": "not-compliant",
+            "notes": "No SLO or error-budget policy is defined. See decision record 01M7GYV3B6-RYSP."
+          }
+        },
+        {
+          "object": "01M15NEKT7-S14J",
+          "requirementGroup": "01M15WPEFV-ZMA9",
+          "requirementId": "req-l3-zero-downtime-deployment",
+          "status": "not-compliant",
+          "evidence": "",
+          "notes": "Control plane deploys stop-then-start (LG1, accepted 2026-09-28); no auto-rollback. See decision record 01M7GYV3B6-Q5NV.",
+          "implementation": {
+            "requirementGroup": "01M15WPEFV-ZMA9",
+            "requirementId": "req-l3-zero-downtime-deployment",
+            "status": "not-compliant",
+            "notes": "Control plane deploys stop-then-start (LG1, accepted 2026-09-28); no auto-rollback. See decision record 01M7GYV3B6-Q5NV."
+          }
+        },
+        {
+          "object": "01M15NEKT7-S14J",
+          "requirementGroup": "01M15WPEFV-ZMA9",
+          "requirementId": "req-no-gate-suppressions",
+          "status": "not-compliant",
+          "evidence": "",
+          "notes": "packages/conformance/baseline.json holds 4 approved baseline entries (GAP-031, GAP-050). See decision record 01M7GYV3B6-Q5NV.",
+          "implementation": {
+            "requirementGroup": "01M15WPEFV-ZMA9",
+            "requirementId": "req-no-gate-suppressions",
+            "status": "not-compliant",
+            "notes": "packages/conformance/baseline.json holds 4 approved baseline entries (GAP-031, GAP-050). See decision record 01M7GYV3B6-Q5NV."
+          }
+        },
+        {
+          "object": "01M15NEKT7-S14J",
+          "requirementGroup": "01M15WPEFV-ZMA9",
+          "requirementId": "req-rollback-mechanism",
+          "status": "not-compliant",
+          "evidence": "",
+          "notes": "Rollback is a manual redeploy of a recorded pin; ECS deployment circuit breakers are disabled. See decision record 01M7GYV3B6-Q5NV.",
+          "implementation": {
+            "requirementGroup": "01M15WPEFV-ZMA9",
+            "requirementId": "req-rollback-mechanism",
+            "status": "not-compliant",
+            "notes": "Rollback is a manual redeploy of a recorded pin; ECS deployment circuit breakers are disabled. See decision record 01M7GYV3B6-Q5NV."
+          }
+        },
+        {
+          "object": "01M15NEKT7-S14J",
+          "requirementGroup": "01M15XYZXT-KTJA",
+          "requirementId": "req-asvs-parameterized-queries",
+          "status": "satisfied",
+          "evidence": "",
+          "notes": "Agent-runtime SQLite binds query values with parameterized placeholders. The only string-built SQL is notebook.py interpolating table identifiers from carry_tables; the runtime caller does not pass that argument. See decision record 01M7GYV3B6-FASW.",
+          "implementation": {
+            "requirementGroup": "01M15XYZXT-KTJA",
+            "requirementId": "req-asvs-parameterized-queries",
+            "status": "satisfied",
+            "notes": "Agent-runtime SQLite binds query values with parameterized placeholders. The only string-built SQL is notebook.py interpolating table identifiers from carry_tables; the runtime caller does not pass that argument. See decision record 01M7GYV3B6-FASW."
+          }
+        },
+        {
+          "object": "01M15NEKT7-S14J",
+          "requirementGroup": "01M15XYZXT-KTJA",
+          "requirementId": "req-asvs-third-party-component-security",
+          "status": "not-compliant",
+          "evidence": "",
+          "notes": "No automated SCA in CI and no Dependabot configuration. See decision record 01M7GYV3B6-Q5NV.",
+          "implementation": {
+            "requirementGroup": "01M15XYZXT-KTJA",
+            "requirementId": "req-asvs-third-party-component-security",
+            "status": "not-compliant",
+            "notes": "No automated SCA in CI and no Dependabot configuration. See decision record 01M7GYV3B6-Q5NV."
+          }
+        },
         {
           "object": "01M7GTBMQS-YRGF",
           "requirementGroup": "01M7GTBMQT-H66V",
