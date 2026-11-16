@@ -2,7 +2,7 @@ schemaVersion: '1.0'
 uid: 01M7GWTG2T-M5GD
 type: runtime_service
 name: Amazon SNS - Closing Climb Alerts
-description: SNS topic that fans out Closing Climb Buffini sync alarms.
+description: SNS topic that receives all Closing Climb alarms (Buffini sync, weekly25 and the scheduler DLQ) and the EventBridge scheduled-task nonzero-exit rule.
 catalogStatus: incomplete
 lifecycleStatus: preferred
 owner:

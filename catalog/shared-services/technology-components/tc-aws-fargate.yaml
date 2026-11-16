@@ -14,7 +14,6 @@ tags:
 - ecs
 - container
 - serverless
-lifecycleStatus: preferred
 vendor: Amazon Web Services
 productName: AWS Fargate
 productVersion: managed

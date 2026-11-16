@@ -5,7 +5,6 @@ name: AWS Distro for OpenTelemetry Collector
 description: OpenTelemetry collector sidecar shipped with the Agent Factory control-plane and gatekeeper-egress
   tasks.
 catalogStatus: incomplete
-lifecycleStatus: preferred
 owner:
   team: platform-ai-team
   contact: platform-ai@example.com
