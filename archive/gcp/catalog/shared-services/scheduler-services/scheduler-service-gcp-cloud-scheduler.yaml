@@ -1,3 +1,5 @@
+# ARCHIVED 2026-11-15: GCP-era object, retired by Dale's decision. Not loaded by the validator, indexes or browser.
+# Do not reference from active catalog objects. See local/README.md (Archive).
 schemaVersion: '1.0'
 uid: 01M7GTBMQS-NBA2
 type: runtime_service
@@ -5,7 +7,7 @@ name: GCP Cloud Scheduler Cron Dispatch Service
 description: Managed cron scheduling service driving automated triggers for Higgins' Daily 25 briefings, Donna's morning/evening Kanban reviews, Switch's CI triage, and Archie's issue triage.
 deliveryModel: paas
 catalogStatus: incomplete
-lifecycleStatus: preferred
+lifecycleStatus: retired
 vendor: Google Cloud
 productName: Google Cloud Scheduler
 productVersion: Cloud Scheduler API v1

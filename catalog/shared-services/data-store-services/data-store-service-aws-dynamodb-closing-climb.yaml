@@ -30,5 +30,3 @@ notes:
     uses DynamoDB.
   provisioning: Provisioned by Terraform in BeerCanLabs/closing-climb-web infra/aws/main.tf; not yet packaged
     as a DRAFT deployablePackage.
-  incomplete: Not cross-checked against the GCP Firestore entry, which is left in place pending Dale's
-    decision.

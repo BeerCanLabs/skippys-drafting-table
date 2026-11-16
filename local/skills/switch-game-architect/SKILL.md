@@ -53,9 +53,10 @@ Whenever Switch creates a new game repo (e.g. `dsackr/aiden-cookie-clicker`):
 ### Step 3: Auth & Persistent State Standard (Tier 2 Games)
 For any game requiring persistent memory or user profiles, Switch MUST follow the standard:
 * **Frontend Auth UI:** Lightweight auth component (Firebase Auth or JWT token login).
-* **Backend API:** Fast API service running on **GCP Cloud Run** (`host-gcp-cloud-run`).
-* **Secrets:** JWT secret stored in **GCP Secret Manager** (`security-service-gcp-secret-manager`).
-* **Datastore:** User profiles, save slots, and leaderboards stored in **Cloud SQL Postgres** (`data-store-service-gcp-postgres`).
+* **Backend API:** Fast API service running on **GCP Cloud Run**.
+* **Secrets:** JWT secret stored in **GCP Secret Manager**.
+* **Datastore:** User profiles, save slots, and leaderboards stored in **Cloud SQL Postgres**.
+* **Catalog note (2026-11-15):** The GCP catalog objects this standard used to cite are archived under `archive/gcp/` and must not be referenced. No active catalog object backs the Tier 2 stack until a replacement is cataloged.
 
 ---
 

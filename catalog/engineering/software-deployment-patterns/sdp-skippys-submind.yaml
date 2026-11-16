@@ -58,9 +58,5 @@ notes:
   patternDeviations: none recorded
   productRegistration: Registered in drafting-table as BeerCanLabs Agent Factory (01M1N137Q5-AFAC).
   incomplete: >-
-    The SDP no longer cites decision record 01M15NFKKN-74NY, whose rationale is GCP-specific and was not
-    re-reviewed for AWS. AWS decision records have not been written, so the related SDP requirements show as
-    unmet. Data components for the mind and ledger, autoscaling, security groups
-    and model-provider routing through gatekeeper-egress are not yet modeled. The GCP data store
-    (01M15NEKT7-H42Y) and AI gateway (01M15NEKT7-QKPW) are no longer placed by this pattern but stay in the
-    catalog pending Dale's decision.
+    AWS decision records have not been written, so the related SDP requirements show as unmet. Data components for the mind and ledger, autoscaling, security groups
+    and model-provider routing through gatekeeper-egress are not yet modeled.

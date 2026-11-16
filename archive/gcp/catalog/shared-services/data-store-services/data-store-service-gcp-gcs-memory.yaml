@@ -1,3 +1,5 @@
+# ARCHIVED 2026-11-15: GCP-era object, retired by Dale's decision. Not loaded by the validator, indexes or browser.
+# Do not reference from active catalog objects. See local/README.md (Archive).
 schemaVersion: '1.0'
 uid: 01M7GTBMQS-1121
 type: data_store_service
@@ -5,7 +7,7 @@ name: Submind GCS Memory & Backup Storage Service
 description: Persistent Google Cloud Storage object storage service backing agent memory state buckets (submind-matrix-sm-*-memory), Litestream SQLite snapshots, and BCP backups.
 deliveryModel: paas
 catalogStatus: incomplete
-lifecycleStatus: preferred
+lifecycleStatus: retired
 vendor: Google Cloud
 productName: Google Cloud Storage
 productVersion: Standard Object Storage

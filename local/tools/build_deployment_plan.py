@@ -18,10 +18,15 @@ from typing import Any
 import yaml
 
 
+# Archived objects (archive/) are not part of the catalog; never resolve references into them.
+ARCHIVE_DIRS = {"archive", ".git"}
+
+
 def find_sdp_files(workspace_root: Path) -> list[Path]:
     """Finds all sdp.yaml or sdp-*.yaml files in workspace."""
     sdps = []
-    for root, _, files in os.walk(workspace_root):
+    for root, dirs, files in os.walk(workspace_root):
+        dirs[:] = [d for d in dirs if d not in ARCHIVE_DIRS]
         for file in files:
             if file == "sdp.yaml" or (file.startswith("sdp-") and file.endswith(".yaml")):
                 sdps.append(Path(root) / file)
@@ -49,7 +54,8 @@ def build_deployment_plan(sdp_path: Path, workspace_root: Path) -> dict[str, Any
 
     # Index all catalog objects in workspace for reference resolution
     catalog_index: dict[str, dict[str, Any]] = {}
-    for root, _, files in os.walk(workspace_root):
+    for root, dirs, files in os.walk(workspace_root):
+        dirs[:] = [d for d in dirs if d not in ARCHIVE_DIRS]
         for file in files:
             if file.endswith(".yaml") or file.endswith(".yml"):
                 fpath = Path(root) / file
