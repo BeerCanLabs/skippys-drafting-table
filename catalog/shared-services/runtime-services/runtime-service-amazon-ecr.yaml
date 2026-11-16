@@ -1,0 +1,34 @@
+schemaVersion: '1.0'
+uid: 01M7GWTG2T-0NKZ
+type: runtime_service
+name: Amazon ECR - Agent Factory Images
+description: Private container registry for Agent Factory, agent cartridge and Closing Climb images.
+catalogStatus: incomplete
+lifecycleStatus: preferred
+owner:
+  team: platform-ai-team
+  contact: platform-ai@example.com
+tags:
+- aws
+- ecr
+- container-registry
+- agent-factory
+- closing-climb
+deliveryModel: paas
+vendor: Amazon Web Services
+productName: Amazon Elastic Container Registry
+productVersion: managed
+patchingOwner: aws-managed
+authenticationModel: iam
+capabilities:
+- 01KT0XNZEY-7HWQ
+provisioningModel: reference-only
+notes:
+  verification: Verified read-only from AWS account ending 2296 (us-east-1) on 2026-11-15 (America/Phoenix).
+  repositories: factory-control-plane, factory-gatekeeper-ingress, factory-gatekeeper-egress, factory-console,
+    factory-garrison, factory-agent-runtime, factory-dynamic-agents, factory-agent-llm-summarizer, factory-agent-echo-agent,
+    closing-climb-web.
+  builds: CodeBuild projects factory-agent-builder, factory-skills-builder and factory-skill-checker exist
+    in the account.
+  incomplete: Image scanning and lifecycle policies were not reviewed (closing-climb-web has a lifecycle
+    policy in Terraform).

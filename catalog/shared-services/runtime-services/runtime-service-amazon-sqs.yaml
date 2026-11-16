@@ -1,0 +1,29 @@
+schemaVersion: '1.0'
+uid: 01M7GWTG2T-M07S
+type: runtime_service
+name: Amazon SQS - Closing Climb Scheduler DLQ
+description: SQS dead-letter queue for failed Closing Climb EventBridge Scheduler invocations.
+catalogStatus: incomplete
+lifecycleStatus: preferred
+owner:
+  team: platform-ai-team
+  contact: platform-ai@example.com
+tags:
+- aws
+- sqs
+- dead-letter-queue
+- closing-climb
+deliveryModel: paas
+vendor: Amazon Web Services
+productName: Amazon Simple Queue Service
+productVersion: managed
+patchingOwner: aws-managed
+authenticationModel: iam
+capabilities:
+- 01KT0V5MCV-KT72
+provisioningModel: reference-only
+notes:
+  verification: Verified read-only from AWS account ending 2296 (us-east-1) on 2026-11-15 (America/Phoenix).
+  queues: '1 queue: closing-climb-prod-scheduler-dlq, watched by alarm closing-climb-prod-scheduler-dlq-visible.'
+  provisioning: Provisioned by Terraform in BeerCanLabs/closing-climb-web infra/aws/main.tf; not yet packaged
+    as a DRAFT deployablePackage.

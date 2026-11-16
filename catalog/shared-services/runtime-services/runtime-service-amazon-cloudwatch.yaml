@@ -1,0 +1,36 @@
+schemaVersion: '1.0'
+uid: 01M7GWTG2T-TQEB
+type: runtime_service
+name: Amazon CloudWatch - Agent Factory
+description: CloudWatch Logs and Container Insights for the factory-prod ECS cluster, and alarms for Closing Climb jobs.
+catalogStatus: incomplete
+lifecycleStatus: preferred
+owner:
+  team: platform-ai-team
+  contact: platform-ai@example.com
+tags:
+- aws
+- cloudwatch
+- observability
+- agent-factory
+- closing-climb
+deliveryModel: paas
+vendor: Amazon Web Services
+productName: Amazon CloudWatch
+productVersion: managed
+patchingOwner: aws-managed
+authenticationModel: iam
+capabilities:
+- 01KQQ4Q026-D04B
+- 01KQQ4Q026-98VD
+provisioningModel: reference-only
+notes:
+  verification: Verified read-only from AWS account ending 2296 (us-east-1) on 2026-11-15 (America/Phoenix).
+  logGroups: /ecs/factory-prod (30 days), /ecs/closing-climb-prod (30 days), /aws/ecs/containerinsights/factory-prod/performance
+    (1 day), /aws/ecs/application/metrics, and CodeBuild log groups for factory-agent-builder, factory-skill-checker
+    and factory-skills-builder.
+  alarms: '7 metric alarms, all for Closing Climb: buffini-sync failed, empty-category, rank-unresolved
+    and stale (namespace ClosingClimb); scheduler DLQ visible messages (AWS/SQS); weekly25 build failed
+    and print failed.'
+  incomplete: No CloudWatch dashboards exist and no Agent Factory alarms were found; alerting coverage
+    for factory services is unmodeled.

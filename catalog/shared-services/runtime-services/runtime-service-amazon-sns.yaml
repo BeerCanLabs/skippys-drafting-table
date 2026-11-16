@@ -1,0 +1,30 @@
+schemaVersion: '1.0'
+uid: 01M7GWTG2T-M5GD
+type: runtime_service
+name: Amazon SNS - Closing Climb Alerts
+description: SNS topic that receives all Closing Climb alarms (Buffini sync, weekly25 and the scheduler DLQ) and the EventBridge scheduled-task nonzero-exit rule.
+catalogStatus: incomplete
+lifecycleStatus: preferred
+owner:
+  team: platform-ai-team
+  contact: platform-ai@example.com
+tags:
+- aws
+- sns
+- alerting
+- closing-climb
+deliveryModel: paas
+vendor: Amazon Web Services
+productName: Amazon Simple Notification Service
+productVersion: managed
+patchingOwner: aws-managed
+authenticationModel: iam
+capabilities:
+- 01KT0V5MCV-KT72
+provisioningModel: reference-only
+notes:
+  verification: Verified read-only from AWS account ending 2296 (us-east-1) on 2026-11-15 (America/Phoenix).
+  topics: '1 topic: closing-climb-prod-buffini-sync-alerts with 1 email subscription (endpoint not recorded
+    here).'
+  provisioning: Provisioned by Terraform in BeerCanLabs/closing-climb-web infra/aws/main.tf; not yet packaged
+    as a DRAFT deployablePackage.

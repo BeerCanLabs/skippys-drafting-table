@@ -1,0 +1,31 @@
+schemaVersion: '1.0'
+uid: 01M7GWTG2T-JHTR
+type: runtime_service
+name: AWS KMS (AWS-managed keys) - Agent Factory
+description: AWS Key Management Service as used by the Agent Factory account. Only AWS-managed service
+  keys are in use.
+catalogStatus: incomplete
+lifecycleStatus: preferred
+owner:
+  team: platform-ai-team
+  contact: platform-ai@example.com
+tags:
+- aws
+- kms
+- encryption
+deliveryModel: paas
+vendor: Amazon Web Services
+productName: AWS Key Management Service
+productVersion: managed
+patchingOwner: aws-managed
+authenticationModel: iam
+capabilities:
+- 01KQQ4Q026-H3B5
+provisioningModel: reference-only
+notes:
+  verification: Verified read-only from AWS account ending 2296 (us-east-1) on 2026-11-15 (America/Phoenix).
+  keys: AWS-managed keys only (for EFS, DynamoDB, ACM, Backup and Secrets Manager). No customer-managed
+    keys exist.
+  usage: S3 buckets use SSE-S3 (AES256), not KMS. DynamoDB table closing-climb-prod uses SSE type KMS.
+    The EFS ledger is encrypted.
+  incomplete: No customer-managed key policy or rotation decision is recorded.

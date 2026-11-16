@@ -1,0 +1,27 @@
+schemaVersion: '1.0'
+uid: 01M7GWTG2S-G6RH
+type: host
+name: Cloudflare Pages Static Host (beercanlabs-knowledge)
+description: Managed static site hosting on Cloudflare Pages. Serves knowledge.beercanlabs.ai behind Cloudflare
+  Access.
+catalogStatus: incomplete
+lifecycleStatus: preferred
+owner:
+  team: platform-ai-team
+  contact: platform-ai@example.com
+tags:
+- host
+- cloudflare
+- cloudflare-pages
+- static-hosting
+- serverless
+serviceRole: instance
+provisioningModel: reference-only
+notes:
+  verification: Deploy workflow read from BeerCanLabs/knowledge .github/workflows/deploy.yml (wrangler
+    pages deploy, project beercanlabs-knowledge). HTTPS probe on 2026-11-15 returned server cloudflare
+    and a 302 to the beercanlabs Cloudflare Access login.
+  correction: The knowledge site is on Cloudflare Pages, not GitHub Pages (the repository has no GitHub
+    Pages site).
+  incomplete: Cloudflare Pages project settings, build config and custom-domain records were not read
+    (no Cloudflare API access used).

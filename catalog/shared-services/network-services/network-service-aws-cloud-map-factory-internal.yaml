@@ -1,0 +1,34 @@
+schemaVersion: '1.0'
+uid: 01M7GWTG2T-8A54
+type: network_service
+name: AWS Cloud Map - factory.internal
+description: Private DNS namespace for service discovery between factory-prod ECS services.
+catalogStatus: incomplete
+lifecycleStatus: preferred
+owner:
+  team: platform-ai-team
+  contact: platform-ai@example.com
+tags:
+- aws
+- cloud-map
+- service-discovery
+- dns
+- agent-factory
+deliveryModel: paas
+vendor: Amazon Web Services
+productName: AWS Cloud Map
+productVersion: managed
+patchingOwner: aws-managed
+authenticationModel: iam
+networkFunction: Private DNS service discovery inside the factory VPC.
+protocols:
+- DNS
+capabilities:
+- 01KT0V5MCV-GJBH
+provisioningModel: reference-only
+notes:
+  verification: Verified read-only from AWS account ending 2296 (us-east-1) on 2026-11-15 (America/Phoenix).
+  namespace: Private DNS namespace factory.internal.
+  registrations: control-plane, gatekeeper-ingress, gatekeeper-egress and garrison are registered.
+  provisioning: Provisioned by Terraform in BeerCanLabs/agent-factory landing-zones/aws (S3 backend);
+    module not yet packaged as a DRAFT deployablePackage.
