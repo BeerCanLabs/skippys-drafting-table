@@ -70,3 +70,44 @@ That setting is currently off and was left unchanged.
   `docs/assets/draft-indexes.json` (a framework-repo artifact the workspace browser
   does not read).
 - `.claude/worktrees/agent-a699b6c2`: a stray submodule entry with no `.gitmodules` URL.
+
+## Archive (`archive/`)
+
+DRAFT v1.5.5 has no archive mechanism of its own. `lifecycleStatus: retired` marks an
+object as retired, but the validator, the browser, the indexes and the Draftsman skills
+still load and list retired objects (the browser even raises a "retired component still
+referenced" alert). Dale decided on 2026-11-15 that the GCP-era data should be archived,
+so that it is no longer searched or referenced. So archived objects move **out of the loaded roots**:
+
+- The validator loads the framework configurations, `community/`, `configurations/`,
+  `catalog/` and `.draft/external_sdps/`. `generate_browser.py` loads the same roots except
+  `.draft/external_sdps/`. Anything under `archive/` is not validated, indexed or shown in
+  the browser.
+- `archive/` keeps the original relative paths (`archive/gcp/catalog/...`, `archive/gcp/community/...`,
+  `archive/gcp/iac/...`), so a file can be restored with `git mv` if it is ever needed again.
+- Each archived catalog file has an `ARCHIVED` header comment, and `lifecycleStatus: retired` wherever
+  the schema has that field. Technology components have no `lifecycleStatus`.
+- `.ignore` lists `archive/`, so ripgrep-based searches (and agents that use them) skip it.
+  `git grep`, plain `grep`, GitHub code search and direct file reads still find it.
+  `local/tools/build_deployment_plan.py` skips `archive/` when it builds its UID index.
+- Active objects must not reference archived UIDs. Before adding a reference, check it with
+  `rg <UID> catalog configurations community local`.
+
+| Archived (2026-11-15) | UID |
+|---|---|
+| `host-gcp-cloud-run` | 01M15NEKT7-1SN8 |
+| `tc-gcp-cloud-run` | 01M7GTBMQT-6QYP |
+| `tc-gcp-firestore` | 01M7GTBMQT-3P47 |
+| `tc-gcp-secret-manager` | 01M7GTBMQT-F262 |
+| `data-store-service-gcp-firestore` | 01M7GTBMQS-9E05 |
+| `data-store-service-gcp-gcs-memory` | 01M7GTBMQS-1121 |
+| `data-store-service-gcp-postgres` | 01M15NEKT7-H42Y |
+| `scheduler-service-gcp-cloud-scheduler` | 01M7GTBMQS-NBA2 |
+| `secret-management-service-gcp-secret-manager` | 01M7GTBMQS-N71S |
+| `mcp-gateway-skippys-submind` | 01M7GTBMQS-6BF5 |
+| `ai-gateway-skippys-submind` | 01M15NEKT7-QKPW |
+| `product-component-skippy-submind-runner` | 01M15NEKT7-EKAR |
+| `dr-agent-factory-decisions` (GCP decision record) | 01M15NFKKN-74NY |
+| `iac/platform-iac-compute` (Cloud Run module), `iac/platform-iac-data` (Cloud SQL Postgres), `iac/platform-iac-security` (Secret Manager) | n/a |
+| `ra-aiden-game-tier2-persistent` | 01M1637YZT-QZ2Z |
+| `product-reg-skippy-matrix` | 01M1N137Q4-RF6M |

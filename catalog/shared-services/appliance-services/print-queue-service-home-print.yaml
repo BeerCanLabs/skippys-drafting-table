@@ -2,7 +2,7 @@ schemaVersion: '1.0'
 uid: 01M7GTBMQS-YYDW
 type: runtime_service
 name: Household Print Queue & Spooler Service
-description: Asynchronous document printing service backed by GCS bucket (submind-matrix-print-queue) and local CUPS print daemon for Higgins & Donna estate automation.
+description: Household print path for Higgins and Donna. Agents call the gatekeeper-egress print route (submind-aws config/deploy.env), which forwards to print.dalesackrider.com through Cloudflare, then Caddy on Dale's Mac mini (01M7GVD4FN-YGN9) to print_server.py, which dispatches to the printer. The client is BeerCanLabs/skill-print (print@1.0.1), adopted by Higgins in SM-higgins 84b6d5b (2026-11-15).
 deliveryModel: self-managed
 host: 01M7GVD4FN-YGN9
 primaryTechnologyComponent: 01M7GVD4FN-YCP8
@@ -15,20 +15,21 @@ applianceFunction: Asynchronous document rendering, PDF conversion, print spooli
 provisioningModel: deployable
 deployablePackage:
   registry: github
-  source: BeerCanLabs/SM-higgins
+  source: BeerCanLabs/skill-print
   version: main
-  modulePath: skills/home-print
 protocols:
 - HTTPS
 - IPP
 - LPD
 owner:
   team: estate-management
-  contact: dale.sackrider+higgins@gmail.com
+  contact: estate-management@example.com
   resourceOwner: Higgins
   serviceProviderRole: Appliance Domain Service Provider
 vendorGovernance:
   dataLeavesInfrastructure: false
-  dataResidencyCommitment: Local LAN spooling with GCS queue transit
+  dataResidencyCommitment: Jobs reach the Mac mini through the gatekeeper-egress print route and are spooled on the home LAN. No cloud object-store queue is on the current path.
   vendorSLA: Best effort household availability
   acceptableUsePolicy: Authorized print queue for household estate management, daily briefings, and administrative document dispatch.
+notes:
+  legacyPath: SM-higgins cartridge.yaml still declares the legacy home-print skill, which used a GCS queue. That path is not the current service.

@@ -123,6 +123,7 @@ BeerCanLabs-specific material lives in `local/`, outside the vendored framework:
 - [local/docs/KPF.md](local/docs/KPF.md): Key Product Functionalities and test mappings.
 - [local/skills/](local/skills/): local skills (for example `switch-game-architect`, `draftsman-engineering-maturity`).
 - [local/README.md](local/README.md): local tools, docs, and the local deviations in `.github/workflows/draft-framework-update.yml`.
+- `archive/`: retired objects kept for history only (GCP-era catalog objects and IaC). It is not part of the catalog: do not search, cite or reference it. See the Archive section of [local/README.md](local/README.md).
 
 <!-- DRAFT-SKILLS:BEGIN generated: true source_sha256: 1cd83316ed6e706d2d6194ad3a9bcd94bd0526464f567bb673087870c024d444 -->
 ## DRAFT skills

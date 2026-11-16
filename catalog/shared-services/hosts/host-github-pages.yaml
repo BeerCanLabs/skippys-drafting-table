@@ -17,12 +17,8 @@ tags:
 - github-pages
 - static-hosting
 - uat
-provisioningModel: deployable
-deployablePackage:
-  registry: github
-  source: company-infrastructure/platform-iac-compute
-  version: v1.0.0
-  modulePath: modules/github-pages
+provisioningModel: reference-only
 notes:
   security_monitoring: HTTPS enforced on custom domain or github.io.
   log_management: Web analytics and build deployment logs in GitHub Actions.
+  provisioning: The previous deployablePackage pointed at an IaC package that had no github-pages module and is now archived (see local/README.md, Archive). Set to reference-only until a real package exists.

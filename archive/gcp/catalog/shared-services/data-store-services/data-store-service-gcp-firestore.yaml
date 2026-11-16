@@ -1,3 +1,5 @@
+# ARCHIVED 2026-11-15: GCP-era object, retired by Dale's decision. Not loaded by the validator, indexes or browser.
+# Do not reference from active catalog objects. See local/README.md (Archive).
 schemaVersion: '1.0'
 uid: 01M7GTBMQS-9E05
 type: data_store_service
@@ -5,7 +7,7 @@ name: GCP Firestore NoSQL Document Data Store Service
 description: Managed NoSQL document database service storing live deal pipeline entries (climb_entries), Referral Maker client rosters (climb_clients), and submind metadata.
 deliveryModel: paas
 catalogStatus: incomplete
-lifecycleStatus: preferred
+lifecycleStatus: retired
 vendor: Google Cloud
 productName: Google Cloud Firestore
 productVersion: Native Mode Document DB

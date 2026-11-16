@@ -1,3 +1,5 @@
+# ARCHIVED 2026-11-15: GCP-era object, retired by Dale's decision. Not loaded by the validator, indexes or browser.
+# Do not reference from active catalog objects. See local/README.md (Archive).
 schemaVersion: '1.0'
 uid: 01M15NEKT7-1SN8
 type: host
@@ -5,7 +7,7 @@ name: Standard GCP Cloud Run Serverless Substrate
 description: Fully managed serverless container host platform for stateless services and agent runners on Google Cloud Platform.
 version: 1.0.0
 catalogStatus: complete
-lifecycleStatus: preferred
+lifecycleStatus: retired
 owner:
   team: platform-engineering
   contact: platform-engineering@example.com

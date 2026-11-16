@@ -17,7 +17,7 @@ authority:
   source: Skippy Submind Architecture Governance
 owner:
   team: engineering-platform
-  contact: dale.sackrider+geordi@gmail.com
+  contact: platform-ai@example.com
 acceptableUsePolicy:
   mandatory: true
   policy: All public web endpoints across Submind and client workloads MUST be fronted by Cloudflare Global Anycast Edge Proxy ($0 Free Tier). Bare GHS CNAME mappings and unproxied origin endpoints are strictly non-compliant.

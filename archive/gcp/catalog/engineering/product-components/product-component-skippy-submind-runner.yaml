@@ -1,3 +1,5 @@
+# ARCHIVED 2026-11-15: GCP-era object, retired by Dale's decision. Not loaded by the validator, indexes or browser.
+# Do not reference from active catalog objects. See local/README.md (Archive).
 schemaVersion: '1.0'
 uid: 01M15NEKT7-EKAR
 type: product_component
@@ -6,7 +8,7 @@ description: First-party agent container running LLM reasoning loops, tool dispa
 version: 1.2.0
 classification: worker
 catalogStatus: complete
-lifecycleStatus: preferred
+lifecycleStatus: retired
 repoUrl: https://github.com/dsackr/hermes-gcp-factory
 owner:
   team: platform-ai-team
