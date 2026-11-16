@@ -2,8 +2,7 @@ schemaVersion: '1.0'
 uid: 01M7GWTG2T-TQEB
 type: runtime_service
 name: Amazon CloudWatch - Agent Factory
-description: CloudWatch Logs, Container Insights and alarms for the factory-prod ECS cluster and Closing
-  Climb jobs.
+description: CloudWatch Logs and Container Insights for the factory-prod ECS cluster, and alarms for Closing Climb jobs.
 catalogStatus: incomplete
 lifecycleStatus: preferred
 owner:
