@@ -11,6 +11,6 @@ lifecycleStatus: preferred
 decisionRationale: Adopted Cloudflare Global Anycast Edge Proxy to resolve Netskope SSL inspection ALPN stream drops, eliminate GCP Load Balancer recurring charges ($0/month billing), and enforce Full SSL encryption and edge 301 redirects across all workloads.
 owner:
   team: engineering-platform
-  contact: dale.sackrider+geordi@gmail.com
+  contact: platform-ai@example.com
   resourceOwner: Geordi
   serviceProviderRole: Network Domain Service Provider

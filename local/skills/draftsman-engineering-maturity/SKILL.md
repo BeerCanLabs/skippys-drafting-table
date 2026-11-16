@@ -35,7 +35,7 @@ Before opening a Pull Request or declaring a task complete, **Archie** and **Swi
 * [ ] **`KPF.md` Updated:** Any new or modified product functionality is recorded in `KPF.md` with mapped test suite references.
 * [ ] **Sev1/Sev2 Test Coverage:** Every touched Sev1/Sev2 KPF has at least one passing automated test.
 * [ ] **Zero Gate Suppressions:** No `# nosec`, `--no-verify`, or `continue-on-error: true` ignores added.
-* [ ] **Zero Hardcoded Secrets:** API keys and credentials are lookups from Secret Manager / env vars.
+* [ ] **Zero Hardcoded Secrets:** API keys and credentials are lookups from a managed secrets store (AWS Secrets Manager) / env vars.
 * [ ] **Expand-and-Contract Migrations:** Database schema changes are backward-compatible and decoupled from code deploys.
 * [ ] **100% IaC:** Infrastructure changes are expressed in OpenTofu/Terraform modules (no manual steps).
 * [ ] **Schema Validation:** Executed `python3 .draft/framework/tools/validate.py --workspace .` with 0 errors.

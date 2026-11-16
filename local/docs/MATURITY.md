@@ -31,7 +31,7 @@ Levels are cumulative: a repo targeting L2 must satisfy L1 and L2. Reaching L3 m
 These rules keep contributions safe and high-quality. If a task cannot be completed without breaking one, **stop and report it**.
 
 1. **Never bypass, weaken, disable, or route around a gate.** That includes scan gates (SAST/SCA/IaC/container/secrets), required checks, and test suites. Do not add suppressions, `# nosec`/`# noqa`-style ignores, allowlist entries, `--no-verify`, or `continue-on-error: true` to force a broken build green. *(4.6.1.\*, 4.6.2.\*, 4.6.3.\*)*
-2. **Never commit a secret.** Any detected secret blocks promotion. Use Secret Manager or environment variables. *(4.6.1.4, 4.6.2.3)*
+2. **Never commit a secret.** Any detected secret blocks promotion. Use a managed secrets store (AWS Secrets Manager) or environment variables. *(4.6.1.4, 4.6.2.3)*
 3. **Never push unvalidated schema changes.** Database schema changes MUST be backward-compatible and use expand-and-contract patterns decoupled from app code releases. *(4.5.3.6)*
 4. **Never put real production data or credentials in lower environments or tests.** Use synthetic data and fixtures. *(4.2.1.3)*
 5. **Never introduce an undocumented manual step into deploy or infrastructure.** All infrastructure changes MUST be expressed as version-controlled OpenTofu/Terraform code. *(4.5.1.6, 4.2.2.6)*

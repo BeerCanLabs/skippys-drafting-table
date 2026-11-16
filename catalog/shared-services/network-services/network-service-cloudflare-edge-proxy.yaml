@@ -22,7 +22,7 @@ protocols:
 - HTTP/1.1
 owner:
   team: engineering-platform
-  contact: dale.sackrider+geordi@gmail.com
+  contact: platform-ai@example.com
   resourceOwner: Geordi
   serviceProviderRole: Network Domain Service Provider
 vendorGovernance:

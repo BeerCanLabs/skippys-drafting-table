@@ -79,14 +79,16 @@ still load and list retired objects (the browser even raises a "retired componen
 referenced" alert). Dale decided on 2026-11-15 that the GCP-era data should be archived,
 so that it is no longer searched or referenced. So archived objects move **out of the loaded roots**:
 
-- The validator and `generate_browser.py` load only the framework configurations,
-  `community/`, `configurations/`, `catalog/` and `.draft/external_sdps/`. Anything under
-  `archive/` is not validated, indexed or shown in the browser.
-- `archive/` keeps the original relative paths (`archive/gcp/catalog/...`, `archive/gcp/iac/...`),
-  so a file can be restored with `git mv` if it is ever needed again.
+- The validator loads the framework configurations, `community/`, `configurations/`,
+  `catalog/` and `.draft/external_sdps/`. `generate_browser.py` loads the same roots except
+  `.draft/external_sdps/`. Anything under `archive/` is not validated, indexed or shown in
+  the browser.
+- `archive/` keeps the original relative paths (`archive/gcp/catalog/...`, `archive/gcp/community/...`,
+  `archive/gcp/iac/...`), so a file can be restored with `git mv` if it is ever needed again.
 - Each archived catalog file has an `ARCHIVED` header comment, and `lifecycleStatus: retired` wherever
   the schema has that field. Technology components have no `lifecycleStatus`.
 - `.ignore` lists `archive/`, so ripgrep-based searches (and agents that use them) skip it.
+  `git grep`, plain `grep`, GitHub code search and direct file reads still find it.
   `local/tools/build_deployment_plan.py` skips `archive/` when it builds its UID index.
 - Active objects must not reference archived UIDs. Before adding a reference, check it with
   `rg <UID> catalog configurations community local`.
@@ -107,3 +109,5 @@ so that it is no longer searched or referenced. So archived objects move **out o
 | `product-component-skippy-submind-runner` | 01M15NEKT7-EKAR |
 | `dr-agent-factory-decisions` (GCP decision record) | 01M15NFKKN-74NY |
 | `iac/platform-iac-compute` (Cloud Run module), `iac/platform-iac-data` (Cloud SQL Postgres), `iac/platform-iac-security` (Secret Manager) | n/a |
+| `ra-aiden-game-tier2-persistent` | 01M1637YZT-QZ2Z |
+| `product-reg-skippy-matrix` | 01M1N137Q4-RF6M |
