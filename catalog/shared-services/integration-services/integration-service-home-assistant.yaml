@@ -1,16 +1,18 @@
 schemaVersion: '1.0'
-uid: 01J89X0INT-HOME-ASSISTANT
-type: integration_service
+uid: 01M7GTBMQS-WDE3
+type: runtime_service
 name: Home Assistant IoT & Display Integration Service
 description: IoT integration gateway service handling e-ink digital photo frames (ha-digital-frames, dash480), openHASP touch panels, and Home Assistant telemetry (ha.dalesackrider.com).
-deliveryModel: hybrid
-catalogStatus: complete
+deliveryModel: self-managed
+host: 01M7GVD4FN-3C7S
+primaryTechnologyComponent: 01M7GVD4FN-F0DT
+catalogStatus: incomplete
 lifecycleStatus: preferred
 vendor: Home Assistant / Custom
 productName: Home Assistant Core & Display Gateway
 productVersion: 2026.x
 integrationFunction: Smart home state synchronization, REST/WebSocket API gateway, e-paper image conversion, and touch display control.
-provisioningModel: self_hosted
+provisioningModel: reference-only
 protocols:
 - HTTPS
 - WebSockets

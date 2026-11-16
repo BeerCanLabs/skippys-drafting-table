@@ -17,6 +17,8 @@ tags:
 - python
 - containers
 decisionRecords:
+- ref: 01M7GTBMQS-SZBH
+  key: edgeProxyDecision
 - ref: 01M15NFKKN-74NY
   key: runtimeRequirement
 - ref: 01M15NFKKN-74NY

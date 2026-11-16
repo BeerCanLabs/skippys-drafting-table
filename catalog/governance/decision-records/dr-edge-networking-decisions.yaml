@@ -1,5 +1,5 @@
 schemaVersion: '1.0'
-uid: 01J89X0DR-EDGE-NETWK
+uid: 01M7GTBMQS-SZBH
 type: decision_record
 name: Edge Proxy Architecture & Acceptable Use Decision
 description: Architecture decision record formally adopting Cloudflare Global Anycast Edge Proxy ($0 Free Tier) as the mandatory network service for all Submind and client public web applications.

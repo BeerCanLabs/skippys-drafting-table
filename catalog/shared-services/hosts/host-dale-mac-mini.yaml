@@ -1,0 +1,8 @@
+schemaVersion: '1.0'
+uid: 01M7GVD4FN-YGN9
+type: host
+name: Dale's Mac mini (home)
+description: macOS Mac mini at Dale's home. Caddy (tls internal) reverse proxies print.dalesackrider.com, reached through Cloudflare, to print_server.py on 127.0.0.1:9123, which prints to an HP Color LaserJet Pro MFP 3301. The older GCP print-bridge also exists on this host.
+catalogStatus: stub
+lifecycleStatus: existing-only
+provisioningModel: reference-only

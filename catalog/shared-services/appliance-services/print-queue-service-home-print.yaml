@@ -1,10 +1,12 @@
 schemaVersion: '1.0'
-uid: 01J89X0APP-HOME-PRINT
-type: appliance_service
+uid: 01M7GTBMQS-YYDW
+type: runtime_service
 name: Household Print Queue & Spooler Service
 description: Asynchronous document printing service backed by GCS bucket (submind-matrix-print-queue) and local CUPS print daemon for Higgins & Donna estate automation.
-deliveryModel: hybrid
-catalogStatus: complete
+deliveryModel: self-managed
+host: 01M7GVD4FN-YGN9
+primaryTechnologyComponent: 01M7GVD4FN-YCP8
+catalogStatus: incomplete
 lifecycleStatus: preferred
 vendor: Custom / CUPS
 productName: Skippy Home Print Service

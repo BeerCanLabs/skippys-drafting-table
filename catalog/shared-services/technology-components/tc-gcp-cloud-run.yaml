@@ -1,5 +1,5 @@
 schemaVersion: '1.0'
-uid: 01HBC-TC-GCR-002
+uid: 01M7GTBMQT-6QYP
 type: technology_component
 name: Google Cloud Run
 aliases:
@@ -9,7 +9,7 @@ description: >
   Managed serverless compute platform that enables running stateless containers 
   invoked via HTTP requests. Used for hosting API gateways, microservices, and web frontends.
 version: 1.0.0
-catalogStatus: documentation
+catalogStatus: incomplete
 provisioningModel: reference-only
 owner:
   team: Infrastructure Platform
@@ -27,4 +27,4 @@ vendorLifecycle:
   extendedSupportEnd: Active
   notes: External managed serverless container runtime.
 capabilities:
-- 01KTWS3D6T-ABD3 # capability-compute-platform
+- 01KQQ4Q026-1HZP # capability-compute-platform

@@ -1,5 +1,5 @@
 schemaVersion: '1.0'
-uid: 01HBC-TC-DIS-003
+uid: 01M7GTBMQT-TFSM
 type: technology_component
 name: Discord Bot API & Gateway
 aliases:
@@ -9,7 +9,7 @@ description: >
   Managed real-time messaging, bot API, and WebSocket gateway platform provided by Discord. 
   Used by Discord Doorman and agent proxy services for user interaction.
 version: 1.0.0
-catalogStatus: documentation
+catalogStatus: incomplete
 provisioningModel: reference-only
 owner:
   team: Agent Factory Platform
@@ -27,4 +27,4 @@ vendorLifecycle:
   extendedSupportEnd: Active
   notes: External SaaS API provider platform.
 capabilities:
-- 01KTWS3D6T-AB29 # capability-messaging
+- 01KT0V5MCV-KT72 # capability-messaging
