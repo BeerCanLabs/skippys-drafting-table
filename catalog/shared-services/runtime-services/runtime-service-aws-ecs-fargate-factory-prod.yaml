@@ -1,0 +1,47 @@
+schemaVersion: '1.0'
+uid: 01M7GWTG2S-AC3R
+type: runtime_service
+name: AWS ECS Fargate Runtime - factory-prod
+description: Amazon ECS on Fargate runtime for the BeerCanLabs Agent Factory and Closing Climb in us-east-1.
+  Long-running services plus on-demand agent tasks.
+catalogStatus: incomplete
+lifecycleStatus: preferred
+owner:
+  team: platform-ai-team
+  contact: platform-ai@example.com
+tags:
+- aws
+- ecs
+- fargate
+- agent-factory
+- closing-climb
+- factory-prod
+deliveryModel: paas
+vendor: Amazon Web Services
+productName: Amazon ECS on AWS Fargate
+productVersion: managed
+patchingOwner: aws-managed
+authenticationModel: iam
+host: 01M7GWTG2S-X9V8
+capabilities:
+- 01KQQ4Q026-1HZP
+- 01KQQ4Q026-GW5D
+- 01KT0V5MCV-RZV0
+provisioningModel: reference-only
+notes:
+  verification: Verified read-only from AWS account ending 2296 (us-east-1) on 2026-11-15 (America/Phoenix).
+  services: 'Six ECS services, each desired 1 / running 1, assignPublicIp ENABLED: control-plane (FARGATE,
+    512 CPU/1024 MB, ports 8088/8089, EFS ledger volume, otel sidecar); gatekeeper-ingress (FARGATE, 256/512,
+    port 8090); gatekeeper-egress (FARGATE_SPOT, 512/1024, port 8081, otel sidecar); console (FARGATE,
+    512/1024, port 3000); garrison (FARGATE_SPOT, 1024/2048, port 3000); closing-climb-web (FARGATE, 256/512,
+    port 8080).'
+  onDemandTasks: Agent cartridges run as on-demand ECS tasks (256 CPU/512 MB, FARGATE) from per-agent
+    task definition families such as agent-higgins, agent-archie, agent-beercanlabs-coder, agent-beercanlabs-conductor
+    and agent-beercanlabs-pr-reviewer, using images from ECR repository factory-dynamic-agents. closing-climb-prod-buffini-sync
+    runs on a schedule.
+  imageVersions: Factory service images were tagged 01720b2 (BeerCanLabs/agent-factory commit) and closing-climb-web
+    a576c3a at verification time.
+  provisioning: 'Provisioned by Terraform in BeerCanLabs/agent-factory landing-zones/aws (S3 backend);
+    module not yet packaged as a DRAFT deployablePackage. Closing Climb resources: Provisioned by Terraform
+    in BeerCanLabs/closing-climb-web infra/aws/main.tf; not yet packaged as a DRAFT deployablePackage.'
+  incomplete: Autoscaling, deployment circuit breaker settings and task IAM role scopes were not reviewed.

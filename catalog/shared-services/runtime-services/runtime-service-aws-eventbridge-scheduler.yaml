@@ -1,0 +1,34 @@
+schemaVersion: '1.0'
+uid: 01M7GWTG2T-XKK0
+type: runtime_service
+name: Amazon EventBridge Scheduler - Closing Climb
+description: EventBridge Scheduler schedules that launch Closing Climb ECS tasks in the factory-prod cluster.
+catalogStatus: incomplete
+lifecycleStatus: preferred
+owner:
+  team: platform-ai-team
+  contact: platform-ai@example.com
+tags:
+- aws
+- eventbridge
+- scheduler
+- closing-climb
+deliveryModel: paas
+vendor: Amazon Web Services
+productName: Amazon EventBridge Scheduler
+productVersion: managed
+patchingOwner: aws-managed
+authenticationModel: iam
+capabilities: []
+provisioningModel: reference-only
+notes:
+  verification: Verified read-only from AWS account ending 2296 (us-east-1) on 2026-11-15 (America/Phoenix).
+  schedules: closing-climb-prod-buffini-sync-nightly cron(0 2 * * ? *) runs task definition closing-climb-prod-buffini-sync;
+    closing-climb-prod-weekly25-sunday cron(0 6 ? * SUN *) runs task definition closing-climb-prod. Both
+    use timezone America/Phoenix.
+  failureHandling: EventBridge rule closing-climb-prod-scheduled-task-nonzero-exit and SQS dead-letter
+    queue closing-climb-prod-scheduler-dlq.
+  provisioning: Provisioned by Terraform in BeerCanLabs/closing-climb-web infra/aws/main.tf; not yet packaged
+    as a DRAFT deployablePackage.
+  incomplete: Agent Factory timekeeper schedules (if any) were not found in EventBridge Scheduler and
+    are unmodeled.

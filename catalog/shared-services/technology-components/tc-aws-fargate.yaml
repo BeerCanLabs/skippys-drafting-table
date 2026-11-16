@@ -1,0 +1,28 @@
+schemaVersion: '1.0'
+uid: 01M7GWTG2S-ZT0V
+type: technology_component
+name: AWS Fargate (Amazon ECS)
+description: Serverless container compute for Amazon ECS. Runs the Agent Factory and Closing Climb tasks
+  in the factory-prod cluster.
+catalogStatus: incomplete
+owner:
+  team: platform-ai-team
+  contact: platform-ai@example.com
+tags:
+- aws
+- fargate
+- ecs
+- container
+- serverless
+lifecycleStatus: preferred
+vendor: Amazon Web Services
+productName: AWS Fargate
+productVersion: managed
+classification: compute-platform
+capabilities:
+- 01KQQ4Q026-1HZP
+- 01KQQ4Q026-GW5D
+notes:
+  verification: Verified read-only from AWS account ending 2296 (us-east-1) on 2026-11-15 (America/Phoenix).
+  launchTypes: Services use FARGATE or FARGATE_SPOT capacity (see the factory-prod runtime service).
+  incomplete: Fargate platform version is not pinned in the catalog.

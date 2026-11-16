@@ -1,0 +1,38 @@
+schemaVersion: '1.0'
+uid: 01M7GWTG2T-F1WG
+type: data_store_service
+name: Amazon S3 - Agent Factory Config, Ledger and Package Buckets
+description: S3 buckets for Agent Factory configuration, the WORM ledger archive and skill packages.
+catalogStatus: incomplete
+lifecycleStatus: preferred
+owner:
+  team: platform-ai-team
+  contact: platform-ai@example.com
+tags:
+- aws
+- s3
+- ledger
+- agent-factory
+deliveryModel: paas
+vendor: Amazon Web Services
+productName: Amazon S3
+productVersion: managed
+patchingOwner: aws-managed
+authenticationModel: iam
+capabilities:
+- 01KT0V5MCV-E9TN
+- 01KT0V5MCV-VD0Y
+- 01KQQ4Q026-7T2H
+provisioningModel: reference-only
+notes:
+  verification: Verified read-only from AWS account ending 2296 (us-east-1) on 2026-11-15 (America/Phoenix).
+  buckets: agent-factory-config-prod-924cfefd, agent-factory-ledger-prod-924cfefd and agent-factory-packages-prod-924cfefd.
+    All SSE-S3 (AES256) with versioning Enabled.
+  ledgerWorm: The ledger bucket has S3 Object Lock in COMPLIANCE mode with 365-day default retention and
+    all Block Public Access settings on.
+  terraformState: Terraform state lives in a separate bucket agent-factory-tfstate-<account-id> (SSE-S3,
+    versioned); it is infrastructure state, not product data.
+  provisioning: Provisioned by Terraform in BeerCanLabs/agent-factory landing-zones/aws (S3 backend);
+    module not yet packaged as a DRAFT deployablePackage.
+  incomplete: Block Public Access was checked only on the ledger bucket; lifecycle and bucket policies
+    were not reviewed.

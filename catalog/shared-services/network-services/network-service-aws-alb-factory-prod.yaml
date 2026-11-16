@@ -1,0 +1,43 @@
+schemaVersion: '1.0'
+uid: 01M7GWTG2T-M2Q0
+type: network_service
+name: AWS Application Load Balancer - factory-prod
+description: Internet-facing ALB that is the AWS origin behind the Cloudflare edge for Agent Factory and
+  Closing Climb hostnames.
+catalogStatus: incomplete
+lifecycleStatus: preferred
+owner:
+  team: platform-ai-team
+  contact: platform-ai@example.com
+tags:
+- aws
+- alb
+- load-balancer
+- ingress
+- agent-factory
+- closing-climb
+deliveryModel: paas
+vendor: Amazon Web Services
+productName: Elastic Load Balancing Application Load Balancer
+productVersion: managed
+patchingOwner: aws-managed
+authenticationModel: iam
+networkFunction: Layer 7 host-based routing and TLS termination for the factory-prod ECS services.
+protocols:
+- HTTPS
+- HTTP
+capabilities:
+- 01KSWVZSZ5-M0FR
+- 01KT0XNZEY-RVTG
+provisioningModel: reference-only
+notes:
+  verification: Verified read-only from AWS account ending 2296 (us-east-1) on 2026-11-15 (America/Phoenix).
+  listeners: HTTP 80 and HTTPS 443.
+  routing: 'Host rules: factory-dashboard.dalesackrider.com -> console; garrison.dalesackrider.com ->
+    garrison; cc.dalesackrider.com -> closing-climb-prod; default -> control-plane (factory-prod-cp).'
+  certificates: ACM certificates for *.dalesackrider.com, submind-aws.dalesackrider.com and agent-factory.beercanlabs.com.
+  edge: 'Every listed hostname answered through Cloudflare (server: cloudflare) on 2026-11-15. Cloudflare
+    DNS origin records were not read.'
+  provisioning: Provisioned by Terraform in BeerCanLabs/agent-factory landing-zones/aws (S3 backend);
+    module not yet packaged as a DRAFT deployablePackage.
+  incomplete: Security group rules, WAF association and HTTP-to-HTTPS redirect behavior were not reviewed.

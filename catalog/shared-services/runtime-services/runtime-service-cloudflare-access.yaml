@@ -1,0 +1,35 @@
+schemaVersion: '1.0'
+uid: 01M7GWTG2T-VA2G
+type: runtime_service
+name: Cloudflare Access - BeerCanLabs Front Door
+description: Cloudflare Zero Trust Access in front of Agent Factory and BeerCanLabs web hostnames.
+catalogStatus: incomplete
+lifecycleStatus: preferred
+owner:
+  team: platform-ai-team
+  contact: platform-ai@example.com
+tags:
+- cloudflare
+- zero-trust
+- access
+- front-door
+- agent-factory
+deliveryModel: saas
+vendor: Cloudflare
+productName: Cloudflare Zero Trust Access
+productVersion: managed
+patchingOwner: vendor-managed
+authenticationModel: oauth
+capabilities:
+- 01KQQ4Q026-MHJM
+- 01KQQ4Q026-4JR6
+provisioningModel: reference-only
+notes:
+  verification: 'HTTPS probes on 2026-11-15: agent-factory.beercanlabs.com, garrison.dalesackrider.com
+    and knowledge.beercanlabs.ai return 302 to the beercanlabs Cloudflare Access team login; submind-aws.dalesackrider.com
+    returns 401 from Cloudflare.'
+  definition: Access applications (factory front door, signature-verified webhooks bypass, API-key bypass)
+    are defined in BeerCanLabs/agent-factory landing-zones/aws/cloudflare.tf. closing-climb-web validates
+    Cloudflare Access OIDC tokens.
+  incomplete: Access policies, identity providers and service tokens were not read (no Cloudflare API
+    access used).

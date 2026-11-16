@@ -1,0 +1,26 @@
+schemaVersion: '1.0'
+uid: 01M7GWTG2S-X9V8
+type: host
+name: AWS Fargate factory-prod ECS Cluster Host (us-east-1)
+description: Managed serverless container host for the factory-prod ECS cluster. AWS owns the OS and the
+  compute fabric.
+catalogStatus: incomplete
+lifecycleStatus: preferred
+owner:
+  team: platform-ai-team
+  contact: platform-ai@example.com
+tags:
+- host
+- aws
+- us-east-1
+- serverless
+- container
+- factory-prod
+serviceRole: instance
+computePlatformComponent: 01M7GWTG2S-ZT0V
+provisioningModel: reference-only
+notes:
+  verification: Verified read-only from AWS account ending 2296 (us-east-1) on 2026-11-15 (America/Phoenix).
+  cluster: ECS cluster factory-prod, status ACTIVE, Container Insights enabled.
+  provisioning: Provisioned by Terraform in BeerCanLabs/agent-factory landing-zones/aws (S3 backend);
+    module not yet packaged as a DRAFT deployablePackage.

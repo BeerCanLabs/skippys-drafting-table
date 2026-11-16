@@ -1,0 +1,34 @@
+schemaVersion: '1.0'
+uid: 01M7GWTG2T-KR1Y
+type: data_store_service
+name: Amazon EFS - factory-prod-ledger
+description: Encrypted EFS file system mounted by the Agent Factory control plane for the live execution
+  ledger.
+catalogStatus: incomplete
+lifecycleStatus: preferred
+owner:
+  team: platform-ai-team
+  contact: platform-ai@example.com
+tags:
+- aws
+- efs
+- ledger
+- agent-factory
+deliveryModel: paas
+vendor: Amazon Web Services
+productName: Amazon Elastic File System
+productVersion: managed
+patchingOwner: aws-managed
+authenticationModel: iam
+capabilities:
+- 01KT0V5MCV-924J
+- 01KT0V5MCV-VD0Y
+- 01KQQ4Q026-H3B5
+provisioningModel: reference-only
+notes:
+  verification: Verified read-only from AWS account ending 2296 (us-east-1) on 2026-11-15 (America/Phoenix).
+  fileSystem: 'factory-prod-ledger: encrypted at rest; the control-plane task mounts it as volume data
+    with transit encryption, IAM authorization and an access point.'
+  provisioning: Provisioned by Terraform in BeerCanLabs/agent-factory landing-zones/aws (S3 backend);
+    module not yet packaged as a DRAFT deployablePackage.
+  incomplete: Backup policy and throughput mode were not reviewed.

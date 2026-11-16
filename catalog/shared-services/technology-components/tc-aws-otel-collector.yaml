@@ -1,0 +1,27 @@
+schemaVersion: '1.0'
+uid: 01M7GWTG2S-W2BR
+type: technology_component
+name: AWS Distro for OpenTelemetry Collector
+description: OpenTelemetry collector sidecar shipped with the Agent Factory control-plane and gatekeeper-egress
+  tasks.
+catalogStatus: incomplete
+lifecycleStatus: preferred
+owner:
+  team: platform-ai-team
+  contact: platform-ai@example.com
+tags:
+- aws
+- opentelemetry
+- observability
+- sidecar
+vendor: Amazon Web Services
+productName: AWS Distro for OpenTelemetry Collector
+productVersion: v0.43.3
+classification: agent
+capabilities:
+- 01KQQ4Q026-NB1W
+notes:
+  verification: Verified read-only from AWS account ending 2296 (us-east-1) on 2026-11-15 (America/Phoenix).
+  image: public.ecr.aws/aws-observability/aws-otel-collector:v0.43.3 (container name otel) in task definitions
+    factory-prod-control-plane and factory-prod-gatekeeper-egress.
+  incomplete: Collector pipeline configuration and export destinations were not reviewed.

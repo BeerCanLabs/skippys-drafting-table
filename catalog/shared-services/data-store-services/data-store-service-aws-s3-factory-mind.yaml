@@ -1,0 +1,32 @@
+schemaVersion: '1.0'
+uid: 01M7GWTG2T-GYW1
+type: data_store_service
+name: Amazon S3 - Agent Factory Mind Bucket
+description: S3 bucket that holds agent mind (memory) state for the Agent Factory.
+catalogStatus: incomplete
+lifecycleStatus: preferred
+owner:
+  team: platform-ai-team
+  contact: platform-ai@example.com
+tags:
+- aws
+- s3
+- mind
+- agent-factory
+deliveryModel: paas
+vendor: Amazon Web Services
+productName: Amazon S3
+productVersion: managed
+patchingOwner: aws-managed
+authenticationModel: iam
+capabilities:
+- 01KT0V5MCV-E9TN
+- 01KT0V5MCV-VD0Y
+provisioningModel: reference-only
+notes:
+  verification: Verified read-only from AWS account ending 2296 (us-east-1) on 2026-11-15 (America/Phoenix).
+  bucket: 'agent-factory-mind-prod-924cfefd: SSE-S3 (AES256), versioning Enabled, all four Block Public
+    Access settings on, no Object Lock.'
+  provisioning: Provisioned by Terraform in BeerCanLabs/agent-factory landing-zones/aws (S3 backend);
+    module not yet packaged as a DRAFT deployablePackage.
+  incomplete: Lifecycle rules, replication and bucket policy were not reviewed.
