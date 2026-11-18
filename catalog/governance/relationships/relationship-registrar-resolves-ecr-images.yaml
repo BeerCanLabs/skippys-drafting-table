@@ -1,7 +1,7 @@
 schemaVersion: '1.0'
 uid: 01M7QAES9Q-QSJ9
 type: relationship
-name: Agent Factory Registrar → Amazon ECR Agent Factory Images
+name: Registrar → Amazon ECR Agent Factory Images
 source: 01M7QCY010-CDPG
 target: 01M7GWTG2T-0NKZ
 label: resolves & pins digests in

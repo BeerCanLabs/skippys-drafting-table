@@ -1,7 +1,7 @@
 schemaVersion: '1.0'
 uid: 01M7KQAQCD-3CBS
 type: relationship
-name: Agent Factory Console ← AWS ALB factory-prod
+name: Web Console ← AWS ALB factory-prod
 source: 01M7GWXKXW-VPCD
 target: 01M7GWTG2T-M2Q0
 label: receives ingress from

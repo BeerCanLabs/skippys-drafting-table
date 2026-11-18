@@ -1,7 +1,7 @@
 schemaVersion: '1.0'
 uid: 01M7QD4DVC-VS9V
 type: relationship
-name: Agent Factory Control Plane → Agent Factory Registrar
+name: Control Plane → Registrar
 source: 01M7GWXKXW-EJWB
 target: 01M7QCY010-CDPG
 label: admits cartridges & skills via

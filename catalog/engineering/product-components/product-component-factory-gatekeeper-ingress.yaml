@@ -1,7 +1,9 @@
 schemaVersion: '1.0'
 uid: 01M7GWXKXW-7W49
 type: product_component
-name: Agent Factory Gatekeeper Ingress
+name: Gatekeeper Ingress
+aliases:
+  - Agent Factory Gatekeeper Ingress
 description: Holds agent Discord presence and forwards inbound events to the control plane, so agent containers
   never hold the bot tokens.
 repoUrl: https://github.com/BeerCanLabs/agent-factory

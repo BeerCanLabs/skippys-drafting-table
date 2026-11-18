@@ -1,7 +1,7 @@
 schemaVersion: '1.0'
 uid: 01M7KQAQCD-CWYV
 type: relationship
-name: Agent Factory Control Plane → Agent Factory Gatekeeper Ingress
+name: Control Plane → Gatekeeper Ingress
 source: 01M7GWXKXW-EJWB
 target: 01M7GWXKXW-7W49
 label: sends events to

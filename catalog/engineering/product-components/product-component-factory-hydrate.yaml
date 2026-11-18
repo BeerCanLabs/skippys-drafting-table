@@ -1,7 +1,9 @@
 schemaVersion: '1.0'
 uid: 01M7QCY010-83KN
 type: product_component
-name: Agent Factory Hydrate Shim
+name: Hydrate Shim
+aliases:
+  - Agent Factory Hydrate Shim
 description: >-
   PID-1 cartridge process wrapper (@beercanlabs/factory-hydrate: factory-hydrate) baked into
   every cartridge image: pulls the agent's $MEMORY_DIR Mind Safe from S3 on wake, configures

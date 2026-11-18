@@ -1,7 +1,9 @@
 schemaVersion: '1.0'
 uid: 01M7QCY010-KSCT
 type: product_component
-name: Agent Factory Accountant (Budget)
+name: Accountant (Budget)
+aliases:
+  - Agent Factory Accountant (Budget)
 description: >-
   Cast financial governance and spend-control service (@beercanlabs/factory-budget): prices
   model token consumption, tracks per-agent and per-plan spend accounts and cloud overhead,

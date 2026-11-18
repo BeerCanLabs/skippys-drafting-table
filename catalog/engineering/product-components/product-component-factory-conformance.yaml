@@ -1,7 +1,9 @@
 schemaVersion: '1.0'
 uid: 01M7QCY010-5KMC
 type: product_component
-name: Agent Factory Conformance Suite
+name: Conformance Suite
+aliases:
+  - Agent Factory Conformance Suite
 description: >-
   Executable Design Authority invariant enforcement suite (@beercanlabs/factory-conformance)
   run by the pre-push hook and CI to verify egress isolation, secret redaction, single-writer

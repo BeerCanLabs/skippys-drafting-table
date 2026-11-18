@@ -1,7 +1,7 @@
 schemaVersion: '1.0'
 uid: 01M7QD4DVC-6K7H
 type: relationship
-name: Agent Factory Control Plane → Agent Factory Auditor (Ledger)
+name: Control Plane → Auditor (Ledger)
 source: 01M7GWXKXW-EJWB
 target: 01M7QCY010-YM3F
 label: records attested events in

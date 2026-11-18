@@ -1,7 +1,9 @@
 schemaVersion: '1.0'
 uid: 01M7QCY010-YGWY
 type: product_component
-name: Agent Factory Headless Neck Contract
+name: Headless Neck Contract
+aliases:
+  - Agent Factory Headless Neck Contract
 description: >-
   Canonical typed contract package (@beercanlabs/factory-contract) defining every Headless
   Neck REST operation (/api/v1/*), OpenAPI 3.1 schema, Principal/Agent/Run MCP tool surface,

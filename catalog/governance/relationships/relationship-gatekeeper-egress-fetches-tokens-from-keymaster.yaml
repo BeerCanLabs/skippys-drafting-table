@@ -1,7 +1,7 @@
 schemaVersion: '1.0'
 uid: 01M7QD4DVC-E7Q0
 type: relationship
-name: Agent Factory Gatekeeper Egress → Agent Factory Keymaster
+name: Gatekeeper Egress → Keymaster
 source: 01M7GWXKXW-BPBV
 target: 01M7QCY010-PF3F
 label: resolves OAuth & App tokens via

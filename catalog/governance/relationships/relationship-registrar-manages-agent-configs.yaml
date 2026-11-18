@@ -1,7 +1,7 @@
 schemaVersion: '1.0'
 uid: 01M7QCKQX8-MBBY
 type: relationship
-name: Agent Factory Registrar → Agent Factory Deployment Config Store
+name: Registrar → Deployment Config Store
 source: 01M7QCY010-CDPG
 target: 01M7QCKQX8-5W8P
 label: reads & versions configs in

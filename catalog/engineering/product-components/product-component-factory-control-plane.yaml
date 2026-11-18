@@ -1,7 +1,9 @@
 schemaVersion: '1.0'
 uid: 01M7GWXKXW-EJWB
 type: product_component
-name: Agent Factory Control Plane
+name: Control Plane
+aliases:
+  - Agent Factory Control Plane
 description: >-
   Factory Headless Neck and kernel mailbox (:8088/:8089): exposes typed REST (/api/v1/*),
   Principal/Agent/Run MCP (/mcp*), and an embedded OAuth 2.1 Authorization Server (PKCE,

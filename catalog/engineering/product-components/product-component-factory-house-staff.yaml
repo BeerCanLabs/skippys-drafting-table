@@ -1,7 +1,9 @@
 schemaVersion: '1.0'
 uid: 01M7QAES9Q-MX3M
 type: product_component
-name: Agent Factory House Staff Cartridges
+name: House Staff Cartridges
+aliases:
+  - Agent Factory House Staff Cartridges
 description: >-
   Built-in repository cartridges shipped in BeerCanLabs/agent-factory (factory-manager,
   agent-builder, and personal-trainer under agents/staff/*) running on runtimes/python-staff

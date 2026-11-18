@@ -1,7 +1,7 @@
 schemaVersion: '1.0'
 uid: 01M7KQAQCD-RGE7
 type: relationship
-name: Agent Factory Hydrate Shim → Agent Mind Safe & SQLite Notebook
+name: Hydrate Shim → Agent Mind Safe & SQLite Notebook
 source: 01M7QCY010-83KN
 target: 01M7QAES9Q-FFCP
 label: hydrates & pushes mind in

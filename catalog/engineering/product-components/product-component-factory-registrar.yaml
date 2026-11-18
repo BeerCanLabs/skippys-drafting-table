@@ -1,7 +1,9 @@
 schemaVersion: '1.0'
 uid: 01M7QCY010-CDPG
 type: product_component
-name: Agent Factory Registrar
+name: Registrar
+aliases:
+  - Agent Factory Registrar
 description: >-
   Cast cartridge and skill admission service (@beercanlabs/factory-registrar): validates
   surface.yaml and memory archetypes, triggers commit-pinned CodeBuild agent/skill builds and

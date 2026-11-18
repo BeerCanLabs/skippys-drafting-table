@@ -1,7 +1,7 @@
 schemaVersion: '1.0'
 uid: 01M7QD4DVC-13ES
 type: relationship
-name: Agent Factory Control Plane → Agent Factory Accountant (Budget)
+name: Control Plane → Accountant (Budget)
 source: 01M7GWXKXW-EJWB
 target: 01M7QCY010-KSCT
 label: tracks & enforces spend via

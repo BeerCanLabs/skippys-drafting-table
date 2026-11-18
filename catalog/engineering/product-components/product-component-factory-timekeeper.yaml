@@ -1,7 +1,9 @@
 schemaVersion: '1.0'
 uid: 01M7QCY010-HVC7
 type: product_component
-name: Agent Factory Timekeeper
+name: Timekeeper
+aliases:
+  - Agent Factory Timekeeper
 description: >-
   Cast cloud-agnostic cron and interval scheduler (@beercanlabs/factory-timekeeper) managing
   durable per-agent wake schedules and firing scheduled wakes through the Control Plane

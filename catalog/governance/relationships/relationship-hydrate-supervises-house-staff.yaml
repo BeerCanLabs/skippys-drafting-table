@@ -1,7 +1,7 @@
 schemaVersion: '1.0'
 uid: 01M7QAG5KJ-DF1H
 type: relationship
-name: Agent Factory Hydrate Shim → Agent Factory House Staff Cartridges
+name: Hydrate Shim → House Staff Cartridges
 source: 01M7QCY010-83KN
 target: 01M7QAES9Q-MX3M
 label: wraps & hydrates $MEMORY_DIR for

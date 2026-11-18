@@ -1,7 +1,7 @@
 schemaVersion: '1.0'
 uid: 01M7QD4DVC-F9GQ
 type: relationship
-name: Agent Factory Control Plane → Agent Factory Bouncer
+name: Control Plane → Bouncer
 source: 01M7GWXKXW-EJWB
 target: 01M7QCY010-1NAQ
 label: checks privileges & holds via

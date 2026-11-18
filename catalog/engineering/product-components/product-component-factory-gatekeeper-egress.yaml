@@ -1,7 +1,9 @@
 schemaVersion: '1.0'
 uid: 01M7GWXKXW-BPBV
 type: product_component
-name: Agent Factory Gatekeeper Egress
+name: Gatekeeper Egress
+aliases:
+  - Agent Factory Gatekeeper Egress
 description: >-
   Outbound zero-trust gatekeeper and Executive enforcement proxy (:8081) for agent tasks:
   evaluates policy, kill-switch, Accountant budgets, and Bouncer holds before translating

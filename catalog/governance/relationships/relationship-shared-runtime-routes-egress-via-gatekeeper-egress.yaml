@@ -1,7 +1,7 @@
 schemaVersion: '1.0'
 uid: 01M7KQAQCD-BE9V
 type: relationship
-name: Agent Factory Cartridge Task → Agent Factory Gatekeeper Egress
+name: Agent Factory Cartridge Task → Gatekeeper Egress
 source: 01M7GWXKXW-4ZJF
 target: 01M7GWXKXW-BPBV
 label: calls

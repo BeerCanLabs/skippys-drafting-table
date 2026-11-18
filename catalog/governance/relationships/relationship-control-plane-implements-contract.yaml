@@ -1,7 +1,7 @@
 schemaVersion: '1.0'
 uid: 01M7QD4DVC-W89Q
 type: relationship
-name: Agent Factory Control Plane → Agent Factory Headless Neck Contract
+name: Control Plane → Headless Neck Contract
 source: 01M7GWXKXW-EJWB
 target: 01M7QCY010-YGWY
 label: implements & serves

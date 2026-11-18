@@ -1,7 +1,9 @@
 schemaVersion: '1.0'
 uid: 01M7QCY010-YM3F
 type: product_component
-name: Agent Factory Auditor (Ledger)
+name: Auditor (Ledger)
+aliases:
+  - Agent Factory Auditor (Ledger)
 description: >-
   Cast tamper-evident audit engine (@beercanlabs/factory-ledger): enforces single-writer
   leased serialization (LG1), sanitizes secrets and raw prompts, appends SHA-256 hash-chained

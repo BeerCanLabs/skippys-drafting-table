@@ -1,7 +1,7 @@
 schemaVersion: '1.0'
 uid: 01M7QD4DVC-W1A6
 type: relationship
-name: Agent Factory Control Plane → Agent Factory Property Manager
+name: Control Plane → Property Manager
 source: 01M7GWXKXW-EJWB
 target: 01M7QCY010-8E7R
 label: orchestrates wakes & lifecycle via

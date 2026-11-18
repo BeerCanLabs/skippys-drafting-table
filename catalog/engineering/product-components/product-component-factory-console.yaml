@@ -1,7 +1,9 @@
 schemaVersion: '1.0'
 uid: 01M7GWXKXW-VPCD
 type: product_component
-name: Agent Factory Console
+name: Web Console
+aliases:
+  - Agent Factory Console
 description: Web dashboard for the Agent Factory.
 repoUrl: https://github.com/BeerCanLabs/agent-factory
 owner:

@@ -1,7 +1,7 @@
 schemaVersion: '1.0'
 uid: 01M7QD4DVC-7HK8
 type: relationship
-name: Agent Factory Property Manager → Agent Factory House Staff Cartridges
+name: Property Manager → House Staff Cartridges
 source: 01M7QCY010-8E7R
 target: 01M7QAES9Q-MX3M
 label: launches ECS RunTask for

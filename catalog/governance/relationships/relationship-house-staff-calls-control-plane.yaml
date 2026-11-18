@@ -1,7 +1,7 @@
 schemaVersion: '1.0'
 uid: 01M7QAG5KJ-2PKT
 type: relationship
-name: Agent Factory House Staff Cartridges → Agent Factory Control Plane
+name: House Staff Cartridges → Control Plane
 source: 01M7QAES9Q-MX3M
 target: 01M7GWXKXW-EJWB
 label: calls

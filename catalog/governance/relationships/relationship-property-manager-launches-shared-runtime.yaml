@@ -1,7 +1,7 @@
 schemaVersion: '1.0'
 uid: 01M7QD4DVC-SPJP
 type: relationship
-name: Agent Factory Property Manager → Agent Factory Shared Cartridge Runtime
+name: Property Manager → Shared Cartridge Runtime
 source: 01M7QCY010-8E7R
 target: 01M7GWXKXW-4ZJF
 label: launches ECS RunTask for

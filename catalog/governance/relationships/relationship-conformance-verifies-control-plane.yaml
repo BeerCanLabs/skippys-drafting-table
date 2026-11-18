@@ -1,7 +1,7 @@
 schemaVersion: '1.0'
 uid: 01M7QD4DVC-JX71
 type: relationship
-name: Agent Factory Conformance Suite → Agent Factory Control Plane
+name: Conformance Suite → Control Plane
 source: 01M7QCY010-5KMC
 target: 01M7GWXKXW-EJWB
 label: verifies invariants against
