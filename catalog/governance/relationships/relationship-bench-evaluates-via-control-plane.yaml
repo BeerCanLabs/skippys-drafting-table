@@ -1,7 +1,7 @@
 schemaVersion: '1.0'
 uid: 01M7QD4DVC-GYVQ
 type: relationship
-name: Agent Factory Benchmark Harness → Agent Factory Control Plane
+name: Benchmark Harness → Control Plane
 source: 01M7QCY010-ZX4T
 target: 01M7GWXKXW-EJWB
 label: runs bench.yaml evaluations via

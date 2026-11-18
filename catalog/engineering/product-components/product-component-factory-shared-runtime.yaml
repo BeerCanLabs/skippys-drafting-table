@@ -1,8 +1,9 @@
 schemaVersion: '1.0'
 uid: 01M7GWXKXW-4ZJF
 type: product_component
-name: Agent Factory Shared Cartridge Runtime
+name: Shared Cartridge Runtime
 aliases:
+  - Agent Factory Shared Cartridge Runtime
   - Agent Factory Cartridge Task (on-demand)
 description: >-
   Scale-to-zero shared Python/Node agent execution runtime (runtimes/agent-runtime) launched

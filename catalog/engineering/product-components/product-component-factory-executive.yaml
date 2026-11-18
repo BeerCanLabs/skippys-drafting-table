@@ -1,7 +1,9 @@
 schemaVersion: '1.0'
 uid: 01M7QCY010-M2ZX
 type: product_component
-name: Agent Factory Executive
+name: Executive
+aliases:
+  - Agent Factory Executive
 description: >-
   Cast model-governance and inference routing service (@beercanlabs/factory-executive):
   maintains the approved vendor/Bedrock model catalog, enforces primary/secondary model

@@ -1,7 +1,9 @@
 schemaVersion: '1.0'
 uid: 01M7QCKQX8-5W8P
 type: data_component
-name: Agent Factory Deployment Config Store
+name: Deployment Config Store
+aliases:
+  - Agent Factory Deployment Config Store
 description: >-
   Immutable versioned agent configuration snapshots (SOUL, surface, skill bindings, model and
   egress policy metadata — secret names only) persisted as one S3 object per configuration

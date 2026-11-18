@@ -1,7 +1,7 @@
 schemaVersion: '1.0'
 uid: 01M7KQAQCD-4GN2
 type: relationship
-name: Agent Factory Registrar → CodeBuild Admission & Skill Builders
+name: Registrar → CodeBuild Admission & Skill Builders
 source: 01M7QCY010-CDPG
 target: 01M7KQAQCD-WD0R
 label: triggers builds in

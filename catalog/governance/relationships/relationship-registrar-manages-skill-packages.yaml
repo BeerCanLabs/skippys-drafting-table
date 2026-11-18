@@ -1,7 +1,7 @@
 schemaVersion: '1.0'
 uid: 01M7QCKQX8-V5TC
 type: relationship
-name: Agent Factory Registrar → Agent Factory Skill Package Registry
+name: Registrar → Skill Package Registry
 source: 01M7QCY010-CDPG
 target: 01M7QCKQX8-W76J
 label: stores & resolves skills in

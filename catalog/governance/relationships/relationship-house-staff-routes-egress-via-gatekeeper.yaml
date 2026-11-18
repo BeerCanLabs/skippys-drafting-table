@@ -1,7 +1,7 @@
 schemaVersion: '1.0'
 uid: 01M7QAG5KJ-5KXA
 type: relationship
-name: Agent Factory House Staff Cartridges → Agent Factory Gatekeeper Egress
+name: House Staff Cartridges → Gatekeeper Egress
 source: 01M7QAES9Q-MX3M
 target: 01M7GWXKXW-BPBV
 label: calls

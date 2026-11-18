@@ -1,7 +1,7 @@
 schemaVersion: '1.0'
 uid: 01M7QAES9Q-S4ST
 type: relationship
-name: Agent Factory Telemetry → Amazon CloudWatch
+name: Telemetry → Amazon CloudWatch
 source: 01M7QCY010-SW8C
 target: 01M7GWTG2T-TQEB
 label: exports spans & metrics to

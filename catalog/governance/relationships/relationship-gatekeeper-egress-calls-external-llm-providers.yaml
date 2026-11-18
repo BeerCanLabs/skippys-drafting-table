@@ -1,7 +1,7 @@
 schemaVersion: '1.0'
 uid: 01M7KQAQCD-7V12
 type: relationship
-name: Agent Factory Gatekeeper Egress → External SaaS & Tool APIs
+name: Gatekeeper Egress → External SaaS & Tool APIs
 source: 01M7GWXKXW-BPBV
 externalTarget: External SaaS & OAuth APIs (GitHub, Google Workspace, Notion, Tavily, Cloudflare API)
 label: injects credentials & calls

@@ -1,7 +1,7 @@
 schemaVersion: '1.0'
 uid: 01M7KQAQCD-HNYQ
 type: relationship
-name: Agent Factory Control Plane → Agent Factory Gatekeeper Egress
+name: Control Plane → Gatekeeper Egress
 source: 01M7GWXKXW-EJWB
 target: 01M7GWXKXW-BPBV
 label: calls

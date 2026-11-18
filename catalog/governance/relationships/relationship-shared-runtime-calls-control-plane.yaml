@@ -1,7 +1,7 @@
 schemaVersion: '1.0'
 uid: 01M7KQAQCD-8Z5M
 type: relationship
-name: Agent Factory Cartridge Task → Agent Factory Control Plane
+name: Agent Factory Cartridge Task → Control Plane
 source: 01M7GWXKXW-4ZJF
 target: 01M7GWXKXW-EJWB
 label: calls

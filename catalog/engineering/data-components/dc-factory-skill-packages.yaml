@@ -1,7 +1,9 @@
 schemaVersion: '1.0'
 uid: 01M7QCKQX8-W76J
 type: data_component
-name: Agent Factory Skill Package Registry
+name: Skill Package Registry
+aliases:
+  - Agent Factory Skill Package Registry
 description: >-
   Content-addressed SHA-256 skill package tarballs admitted after unprivileged AST/SDK/test
   verification by factory-skill-checker and composed onto the shared agent runtime by

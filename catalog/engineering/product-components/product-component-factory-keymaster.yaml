@@ -1,7 +1,9 @@
 schemaVersion: '1.0'
 uid: 01M7QCY010-PF3F
 type: product_component
-name: Agent Factory Keymaster
+name: Keymaster
+aliases:
+  - Agent Factory Keymaster
 description: >-
   Cast credential custody and OAuth broker service (@beercanlabs/factory-keymaster): owns
   third-party OAuth 2.0 connections and refresh rotation, manages BYOM subscription tokens,

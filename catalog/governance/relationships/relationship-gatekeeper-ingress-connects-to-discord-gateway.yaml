@@ -1,7 +1,7 @@
 schemaVersion: '1.0'
 uid: 01M7KQAQCD-PND8
 type: relationship
-name: Agent Factory Gatekeeper Ingress → Discord Gateway WebSocket API
+name: Gatekeeper Ingress → Discord Gateway WebSocket API
 source: 01M7GWXKXW-7W49
 externalTarget: Discord Gateway WebSocket API
 label: connects to

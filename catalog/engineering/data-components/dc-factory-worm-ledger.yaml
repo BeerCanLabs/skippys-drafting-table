@@ -1,8 +1,9 @@
 schemaVersion: '1.0'
 uid: 01M7QAES9Q-M4R9
 type: data_component
-name: Agent Factory WORM Ledger Archive
+name: WORM Ledger Archive
 aliases:
+  - Agent Factory WORM Ledger Archive
   - Agent Factory WORM Checkpoints, Versioned Configs & Skill Packages
 description: >-
   Immutable SHA-256 hash-chained ledger checkpoint objects written periodically by the

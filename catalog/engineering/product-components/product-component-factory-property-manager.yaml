@@ -1,7 +1,9 @@
 schemaVersion: '1.0'
 uid: 01M7QCY010-8E7R
 type: product_component
-name: Agent Factory Property Manager
+name: Property Manager
+aliases:
+  - Agent Factory Property Manager
 description: >-
   Cast compute lifecycle and cloud tenancy orchestrator (@beercanlabs/factory-property-manager):
   provisions per-agent own-prefix IAM roles (AgentTaskRole-<agent>), registers ECS task

@@ -1,7 +1,7 @@
 schemaVersion: '1.0'
 uid: 01M7QD4DVC-FHNH
 type: relationship
-name: Agent Factory Control Plane → Agent Factory Telemetry
+name: Control Plane → Telemetry
 source: 01M7GWXKXW-EJWB
 target: 01M7QCY010-SW8C
 label: records spans & metrics via

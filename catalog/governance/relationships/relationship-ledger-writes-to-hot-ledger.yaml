@@ -1,7 +1,7 @@
 schemaVersion: '1.0'
 uid: 01M7KQAQCD-XTFV
 type: relationship
-name: Agent Factory Auditor (Ledger) → Hot Execution Ledger & Runtime State
+name: Auditor (Ledger) → Hot Execution Ledger & Runtime State
 source: 01M7QCY010-YM3F
 target: 01M7QAES9Q-10ZE
 label: appends hash-chain to

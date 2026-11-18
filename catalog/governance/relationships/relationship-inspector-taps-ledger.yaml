@@ -1,7 +1,7 @@
 schemaVersion: '1.0'
 uid: 01M7QD4DVC-3K3H
 type: relationship
-name: Agent Factory Inspector → Agent Factory Auditor (Ledger)
+name: Inspector → Auditor (Ledger)
 source: 01M7QCY010-VTXC
 target: 01M7QCY010-YM3F
 label: taps committed rows from

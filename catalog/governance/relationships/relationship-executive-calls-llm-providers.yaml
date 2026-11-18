@@ -1,7 +1,7 @@
 schemaVersion: '1.0'
 uid: 01M7QD4DVC-8154
 type: relationship
-name: Agent Factory Executive → Frontier LLM & Bedrock Inference APIs
+name: Executive → Frontier LLM & Bedrock Inference APIs
 source: 01M7QCY010-M2ZX
 externalTarget: Frontier LLM Inference APIs (AWS Bedrock Converse, Anthropic, OpenAI, xAI)
 label: invokes models on

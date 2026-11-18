@@ -1,7 +1,7 @@
 schemaVersion: '1.0'
 uid: 01M7KQAQCD-9JK7
 type: relationship
-name: Agent Factory Control Plane ← AWS ALB factory-prod
+name: Control Plane ← AWS ALB factory-prod
 source: 01M7GWXKXW-EJWB
 target: 01M7GWTG2T-M2Q0
 label: receives ingress from

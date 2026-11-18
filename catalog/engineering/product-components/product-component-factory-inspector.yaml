@@ -1,7 +1,9 @@
 schemaVersion: '1.0'
 uid: 01M7QCY010-VTXC
 type: product_component
-name: Agent Factory Inspector
+name: Inspector
+aliases:
+  - Agent Factory Inspector
 description: >-
   Cast operational observability and triage service (@beercanlabs/factory-inspector): taps
   committed ledger rows to derive run progress, crash diagnostics, budget alerts, and held

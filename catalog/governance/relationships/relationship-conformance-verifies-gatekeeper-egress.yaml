@@ -1,7 +1,7 @@
 schemaVersion: '1.0'
 uid: 01M7QD4DVC-XSFP
 type: relationship
-name: Agent Factory Conformance Suite → Agent Factory Gatekeeper Egress
+name: Conformance Suite → Gatekeeper Egress
 source: 01M7QCY010-5KMC
 target: 01M7GWXKXW-BPBV
 label: verifies egress & S1 invariants on

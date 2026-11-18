@@ -1,7 +1,9 @@
 schemaVersion: '1.0'
 uid: 01M7QCY010-SW8C
 type: product_component
-name: Agent Factory Telemetry
+name: Telemetry
+aliases:
+  - Agent Factory Telemetry
 description: >-
   OpenTelemetry instrumentation package (@beercanlabs/factory-telemetry) emitting structured
   request, wake, and model-egress spans and metrics to the local ADOT collector sidecar.

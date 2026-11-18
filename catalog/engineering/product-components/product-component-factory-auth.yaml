@@ -1,7 +1,9 @@
 schemaVersion: '1.0'
 uid: 01M7QCY010-ZYH3
 type: product_component
-name: Agent Factory Auth & Token Authority
+name: Auth & Token Authority
+aliases:
+  - Agent Factory Auth & Token Authority
 description: >-
   Cryptographic identity and token package (@beercanlabs/factory-auth): verifies Cloudflare
   Access RS256 assertions against team certs/AUD, mints and validates scoped fk_ API keys,

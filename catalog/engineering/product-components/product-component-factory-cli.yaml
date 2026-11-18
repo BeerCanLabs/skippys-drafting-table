@@ -1,8 +1,9 @@
 schemaVersion: '1.0'
 uid: 01M7KQAQCD-01CD
 type: product_component
-name: Agent Factory CLI
+name: Factory CLI
 aliases:
+  - Agent Factory CLI
   - Agent Factory CLI & Benchmark Harness
 description: >-
   Hot-swappable operator terminal client (@beercanlabs/factory-cli: factory) authenticating

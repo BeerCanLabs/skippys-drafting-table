@@ -1,7 +1,7 @@
 schemaVersion: '1.0'
 uid: 01M7QD4DVC-HM6P
 type: relationship
-name: Agent Factory Hydrate Shim → Agent Factory Shared Cartridge Runtime
+name: Hydrate Shim → Shared Cartridge Runtime
 source: 01M7QCY010-83KN
 target: 01M7GWXKXW-4ZJF
 label: wraps & hydrates $MEMORY_DIR for

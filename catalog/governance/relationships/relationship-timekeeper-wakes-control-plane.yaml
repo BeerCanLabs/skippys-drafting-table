@@ -1,7 +1,7 @@
 schemaVersion: '1.0'
 uid: 01M7QD4DVC-YZRW
 type: relationship
-name: Agent Factory Timekeeper → Agent Factory Control Plane
+name: Timekeeper → Control Plane
 source: 01M7QCY010-HVC7
 target: 01M7GWXKXW-EJWB
 label: fires scheduled wakes in

@@ -1,7 +1,9 @@
 schemaVersion: '1.0'
 uid: 01M7QCY010-1NAQ
 type: product_component
-name: Agent Factory Bouncer
+name: Bouncer
+aliases:
+  - Agent Factory Bouncer
 description: >-
   Cast authorization and human-in-the-loop governance service (@beercanlabs/factory-bouncer):
   enforces default-deny named privileges, holds sensitive outbound actions or deploy/ops

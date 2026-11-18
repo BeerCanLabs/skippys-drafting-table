@@ -1,7 +1,7 @@
 schemaVersion: '1.0'
 uid: 01M7QD4DVC-2JWW
 type: relationship
-name: Agent Factory Gatekeeper Egress → Agent Factory Bouncer
+name: Gatekeeper Egress → Bouncer
 source: 01M7GWXKXW-BPBV
 target: 01M7QCY010-1NAQ
 label: enforces outbound holds via
