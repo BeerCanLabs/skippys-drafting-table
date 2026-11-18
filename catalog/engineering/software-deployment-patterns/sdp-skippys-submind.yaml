@@ -14,31 +14,92 @@ tags:
 - agent-factory
 - aws
 - ecs-fargate
+- headless-neck
+- mcp
+- oauth21
+businessContext:
+  productFamily: Skippy / Agent Factory
+networkZones:
+- id: edge
+  name: Edge & Identity-Aware Ingress
+  tier: frontend
+  description: >-
+    Cloudflare edge proxy, Cloudflare Access, and HTTPS AWS ALB restricted to Cloudflare IPv4
+    ingress CIDRs (see decision records 01M7GTBMQS-SZBH and 01M7GYV3B6-8VN0).
+- id: mailbox
+  name: Mailbox, Headless Neck & Client Services
+  tier: application
+  description: >-
+    Public service subnets hosting Control Plane (:8088/:8089), Gatekeeper Ingress (:8090),
+    Gatekeeper Egress (:8081), Console (:3000), and Garrison (:3000) under Cloud Map DNS
+    (factory.internal).
+- id: agents
+  name: Agent Cartridge Compute
+  tier: application
+  description: >-
+    Private agent subnets intended for zero direct internet egress (Terraform route=[], scoped
+    security group to Control Plane :8088, Gatekeeper Egress :8081, and VPC endpoints :443).
+    Live unmanaged route/SG drift and assignPublicIp=false mitigation are recorded in decision
+    record 01M7GYV3B6-8VN0.
+- id: data
+  name: Durable Mind, WORM Ledger & Package Storage
+  tier: data
+  description: >-
+    Encrypted EFS single-writer hot ledger volume (:2049) and versioned/Object-Lock S3 buckets
+    for agent minds, COMPLIANCE WORM checkpoints, configs, and skill packages.
 serviceGroups:
 - name: Factory kernel mailboxes
   deploymentTarget: aws-us-east-1
   substrate: 01M7GWTG2S-AC3R
   deployableObjects:
   - ref: 01M7GWXKXW-EJWB
+    networkZone: mailbox
     diagramTier: application
   - ref: 01M7GWXKXW-7W49
+    networkZone: mailbox
     diagramTier: application
   - ref: 01M7GWXKXW-BPBV
+    networkZone: mailbox
     diagramTier: application
 - name: Factory clients
   deploymentTarget: aws-us-east-1
   substrate: 01M7GWTG2S-AC3R
   deployableObjects:
   - ref: 01M7GWXKXW-VPCD
+    networkZone: mailbox
     diagramTier: presentation
   - ref: 01M7GWXKXW-Z0Z4
+    networkZone: mailbox
     diagramTier: presentation
 - name: Agent cartridges (on-demand)
   deploymentTarget: aws-us-east-1
   substrate: 01M7GWTG2S-AC3R
   deployableObjects:
   - ref: 01M7GWXKXW-4ZJF
+    networkZone: agents
     diagramTier: application
+tierVariants:
+- tier: 01M7KQAQCC-T9DS
+  deploymentTarget:
+    provider: aws
+    region: us-east-1
+  serviceGroupVariants:
+  - serviceGroup: Factory kernel mailboxes
+    replicaCount: 1
+    notes: Single-writer Control Plane (stop-then-start per LG1); Gatekeeper Ingress and Gatekeeper Egress run desiredCount=1.
+  - serviceGroup: Factory clients
+    replicaCount: 1
+    notes: Console and Garrison each run desiredCount=1 behind ALB host rules and Cloudflare Access.
+  - serviceGroup: Agent cartridges (on-demand)
+    autoscaling:
+      enabled: true
+      min: 0
+      max: 50
+    notes: Disposable scale-to-zero ECS Fargate RunTask execution per wake.
+- tier: 01M7KQAQCC-EG06
+  deploymentTarget:
+    provider: other
+  notes: Ephemeral single-host Docker Compose stack (landing-zones/compose) used for inner-loop local development and CI compose-proof verification.
 decisionRecords:
 - ref: 01M7GTBMQS-SZBH
   key: edgeProxyDecision
@@ -127,7 +188,7 @@ notes:
   failureDomain:
     scope: platform-wide
     description: Single region, single cluster. Losing the control plane blocks wakes and MCP. Losing one agent task does not take down the factory.
-  externalDependencies: Cloudflare edge proxy (01M7GTBMQS-YRGF) and Cloudflare Access (01M7GWTG2T-VA2G); ALB factory-prod (01M7GWTG2T-M2Q0); Cloud Map factory.internal (01M7GWTG2T-8A54); Secrets Manager (01M7GWTG2T-3PQY); S3 mind bucket (01M7GWTG2T-GYW1); S3 config/ledger/packages buckets (01M7GWTG2T-F1WG); EFS ledger (01M7GWTG2T-KR1Y); ECR (01M7GWTG2T-0NKZ); CloudWatch (01M7GWTG2T-TQEB); KMS AWS-managed keys (01M7GWTG2T-JHTR).
+  externalDependencies: Cloudflare edge proxy (01M7GTBMQS-YRGF) and Cloudflare Access (01M7GWTG2T-VA2G); ALB factory-prod (01M7GWTG2T-M2Q0); Cloud Map factory.internal (01M7GWTG2T-8A54); Secrets Manager (01M7GWTG2T-3PQY); S3 mind bucket (01M7GWTG2T-GYW1); S3 config/ledger/packages buckets (01M7GWTG2T-F1WG); EFS ledger (01M7GWTG2T-KR1Y); ECR (01M7GWTG2T-0NKZ); CodeBuild admission/skill builders (01M7KQAQCD-WD0R); EventBridge factory event bus (01M7KQAQCD-GHF4); CloudWatch (01M7GWTG2T-TQEB); KMS AWS-managed keys (01M7GWTG2T-JHTR).
   interServiceConnections: The ALB routes the default host to the control plane, factory-dashboard to the console and garrison to garrison. Kernel services find each other through Cloud Map factory.internal.
   secretsManagement: AWS Secrets Manager referenced as ECS container secrets (control-plane 6, gatekeeper-ingress 2, gatekeeper-egress 2, garrison 1, console 0). The gatekeepers inject credentials so agent tasks hold only their run token, except the registered gap GAP-031 (see decision record 01M7GYV3B6-YE24).
   iacAutomation: Terraform in BeerCanLabs/agent-factory landing-zones/aws with an S3 backend.

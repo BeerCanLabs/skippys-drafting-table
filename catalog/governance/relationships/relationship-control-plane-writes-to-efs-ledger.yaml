@@ -1,0 +1,15 @@
+schemaVersion: '1.0'
+uid: 01M7KQAQCD-XTFV
+type: relationship
+name: Agent Factory Control Plane → Amazon EFS factory-prod-ledger
+source: 01M7GWXKXW-EJWB
+target: 01M7GWTG2T-KR1Y
+label: writes to
+technology: NFSv4.1 over TLS (:2049)
+direction: synchronous
+flow: bidirectional
+catalogStatus: complete
+tags:
+  - agent-factory
+  - ledger
+notes: Single-writer leased append to SHA-256 hash-chained ledger.jsonl on encrypted EFS access point (LG1).

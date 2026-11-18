@@ -1,0 +1,40 @@
+schemaVersion: '1.0'
+uid: 01M7KQAQCC-T9DS
+type: environment_tier
+name: Production (AWS ECS Fargate Orchestrated Tasks)
+tierId: prod
+purpose: production
+availabilityExpectation: best-effort
+costPosture: balanced
+catalogStatus: complete
+description: >-
+  Production environment tier for BeerCanLabs Agent Factory deploying the Orchestrated
+  Tasks pattern onto AWS ECS Fargate (us-east-1, cluster factory-prod) behind the Cloudflare
+  edge, Cloudflare Access, and HTTPS ALB, with EFS hot ledger and S3 Object Lock COMPLIANCE
+  checkpoints.
+parameterSurface:
+  - name: accountId
+    description: Target 12-digit cloud account identifier supplied by deploy pipeline.
+    required: true
+    sensitive: false
+  - name: awsRegion
+    description: Target AWS region (default us-east-1).
+    required: true
+    sensitive: false
+  - name: certificateArn
+    description: ACM TLS certificate ARN for HTTPS ALB listener.
+    required: true
+    sensitive: false
+  - name: ingressCidrs
+    description: Published Cloudflare IPv4 CIDR ranges permitted to reach the ALB (never 0.0.0.0/0).
+    required: true
+    sensitive: false
+  - name: cloudflareZoneId
+    description: Cloudflare Zone ID fronting the public Factory endpoint and Access policies.
+    required: false
+    sensitive: false
+notes: >-
+  No formal availability SLA/SLO is defined yet (see decision record 01M7GYV3B6-RYSP).
+  Control plane runs desiredCount=1 with stop-then-start deployment (LG1); gatekeeper-egress
+  and garrison use FARGATE_SPOT; agent cartridges scale to zero (min=0) via ECS RunTask per
+  wake (see decision records 01M7GYV3B6-K9CZ and 01M7GYV3B6-8VN0).

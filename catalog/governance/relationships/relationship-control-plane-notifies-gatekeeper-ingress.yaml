@@ -1,0 +1,15 @@
+schemaVersion: '1.0'
+uid: 01M7KQAQCD-CWYV
+type: relationship
+name: Agent Factory Control Plane → Agent Factory Gatekeeper Ingress
+source: 01M7GWXKXW-EJWB
+target: 01M7GWXKXW-7W49
+label: sends events to
+technology: HTTP (:8090)
+direction: asynchronous
+flow: outbound
+catalogStatus: complete
+tags:
+  - agent-factory
+  - gatekeeper-ingress
+notes: Pushes presence synchronization (/api/v1/presence) and live typing/tool activity indicators (/api/v1/activity) over Cloud Map (factory.internal).

@@ -1,0 +1,18 @@
+schemaVersion: '1.0'
+uid: 01M7KQAQCD-BE9V
+type: relationship
+name: Agent Factory Cartridge Task → Agent Factory Gatekeeper Egress
+source: 01M7GWXKXW-4ZJF
+target: 01M7GWXKXW-BPBV
+label: calls
+technology: HTTP Reverse Proxy & CONNECT (:8081)
+direction: synchronous
+flow: outbound
+catalogStatus: incomplete
+tags:
+  - agent-factory
+  - zero-trust
+notes: >-
+  Intended sole outbound egress path from agent tasks (E1, E6) for metered model inference,
+  MCP tool calls, and allowlisted HTTPS CONNECT tunnels. Live Bedrock direct-invocation and
+  agent-subnet route/SG drift are recorded in decision records 01M7GYV3B6-8VN0 and 01M7GYV3B6-H03D.

@@ -2,8 +2,19 @@ schemaVersion: '1.0'
 uid: 01M7GTBMQR-GB2Z
 type: domain
 name: Agent Factory
-description: >
-  Strategic domain covering the Agent Factory platform substrate (Doorman Proxy, 
-  MCP Gateway, OAuth Auth Server, Persona Publisher Pipeline) and all published 
-  AI Agent Personas and SOUL configurations.
-ownerContact: agent-factory-team@beercanlabs.com
+description: >-
+  Strategic domain covering the BeerCanLabs Agent Factory headless platform: the typed
+  Headless Neck (REST /api/v1/*, Principal/Agent/Run MCP surfaces, and OAuth 2.1 Authorization
+  Server), Hot-Swappable Heads (Console SPA, Factory CLI, Agent Garrison, MCP clients), the
+  10 deterministic Cast services (Gatekeeper, Keymaster, Executive, Property Manager, Auditor,
+  Accountant, Bouncer, Timekeeper, Registrar, Inspector), Dual-Mode Hosting (Shared Agent
+  Runtime and Repository Cartridges), and portable House Staff & Skill packages.
+version: 2.0.0
+owner:
+  team: platform-ai-team
+  contact: platform-ai@example.com
+tags:
+  - domain
+  - agent-factory
+  - headless-neck
+  - mcp

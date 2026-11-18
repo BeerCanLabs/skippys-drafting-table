@@ -1698,6 +1698,14 @@ window.DRAFT_BROWSER_DATA = {
         {
           "source": "01KT0VM061-CRN7",
           "path": "requirements[11].relatedCapability"
+        },
+        {
+          "source": "01M7KQAQCD-WD0R",
+          "path": "capabilities[0]"
+        },
+        {
+          "source": "01M7KQAQCD-ZS7E",
+          "path": "capabilities[0]"
         }
       ],
       "editorSchema": {
@@ -3797,6 +3805,14 @@ window.DRAFT_BROWSER_DATA = {
         },
         {
           "source": "01M7GWTG2T-M07S",
+          "path": "capabilities[0]"
+        },
+        {
+          "source": "01M7KQAQCD-GHF4",
+          "path": "capabilities[0]"
+        },
+        {
+          "source": "01M7KQAQCD-ZVVA",
           "path": "capabilities[0]"
         },
         {
@@ -19251,6 +19267,326 @@ window.DRAFT_BROWSER_DATA = {
       "inboundRelationships": []
     },
     {
+      "id": "01M7KQAQCC-EG06",
+      "uid": "01M7KQAQCC-EG06",
+      "name": "Development & CI Container Proof (Compose Host)",
+      "aliases": [],
+      "type": "environment_tier",
+      "typeLabel": "Environment Tier / Test",
+      "filterType": "environment_tier",
+      "category": "",
+      "deliveryModel": "",
+      "domain": "",
+      "description": "Single-host Docker Compose environment tier (landing-zones/compose) used for inner-loop local development and CI compose-proof end-to-end verification of network isolation, run tokens, Gatekeeper metering, kill-switch, and WORM ledger tamper refusal.",
+      "version": "",
+      "catalogStatus": "complete",
+      "lifecycleStatus": "unknown",
+      "status": "",
+      "businessContext": {},
+      "product": "",
+      "runsOn": "",
+      "subtype": "",
+      "vendor": "",
+      "productName": "",
+      "productVersion": "",
+      "classification": "",
+      "platformDependency": "",
+      "capabilities": [],
+      "configurations": [],
+      "networkPlacement": "",
+      "patchingOwner": "",
+      "complianceCerts": [],
+      "requirementGroups": [],
+      "requirementImplementations": [],
+      "dataLeavesInfrastructure": null,
+      "dataResidencyCommitment": "",
+      "dpaNotes": "",
+      "vendorSLA": "",
+      "authenticationModel": "",
+      "incidentNotificationProcess": "",
+      "owner": {},
+      "definitionOwner": {},
+      "provider": {},
+      "authority": {},
+      "shape": "round-rectangle",
+      "color": "#7a6e60",
+      "source": "configurations/environment-tiers/environment-tier-dev-compose.yaml",
+      "tags": [],
+      "ardCategory": "",
+      "internalComponents": [],
+      "notes": "Enforces isolated Docker bridge networks (internal factory-agents with zero host egress, internal control network with docker-socket-proxy, and egress bridge for Gatekeeper and Control Plane).",
+      "requirements": [],
+      "implementations": [],
+      "appliesTo": {},
+      "inherits": "",
+      "scalingUnits": [],
+      "networkZones": [],
+      "sdpConnections": [],
+      "serviceGroups": [],
+      "tierVariants": [],
+      "tierId": "dev-compose",
+      "purpose": "test",
+      "availabilityExpectation": "best-effort",
+      "costPosture": "cost-optimized",
+      "complianceScope": [],
+      "parameterSurface": [
+        {
+          "name": "composeProjectName",
+          "description": "Docker Compose stack namespace (default agent-factory).",
+          "required": false,
+          "sensitive": false
+        }
+      ],
+      "followsReferenceArchitecture": "",
+      "decisionRecords": [],
+      "affectedComponent": "",
+      "impact": "",
+      "mitigationPath": "",
+      "decisionRationale": "",
+      "relatedDecisionRecords": [],
+      "linkedObject": "",
+      "primaryObjectType": "",
+      "primaryObjectUid": "",
+      "generatedObjects": [],
+      "unresolvedQuestions": [],
+      "assumptions": [],
+      "nextSteps": [],
+      "defaultSelection": false,
+      "requirementCount": 0,
+      "hasRiskRef": false,
+      "outboundRefs": [],
+      "referencedBy": [],
+      "editorSchema": {
+        "requiredFields": [
+          "schemaVersion",
+          "uid",
+          "type",
+          "name",
+          "tierId",
+          "purpose",
+          "availabilityExpectation",
+          "catalogStatus"
+        ],
+        "optionalFields": [
+          "description",
+          "costPosture",
+          "complianceScope",
+          "parameterSurface",
+          "notes"
+        ],
+        "fieldTypes": {
+          "complianceScope": "list",
+          "parameterSurface": "list"
+        },
+        "enumFields": {
+          "catalogStatus": [
+            "stub",
+            "incomplete",
+            "complete"
+          ],
+          "purpose": [
+            "development",
+            "test",
+            "staging",
+            "production",
+            "other"
+          ],
+          "availabilityExpectation": [
+            "best-effort",
+            "business-hours",
+            "high-availability",
+            "mission-critical"
+          ],
+          "costPosture": [
+            "cost-optimized",
+            "balanced",
+            "performance-optimized"
+          ]
+        },
+        "enumListFields": {},
+        "collectionSchemas": {
+          "parameterSurface": "tierParameter"
+        },
+        "schemaPath": "framework/schemas/environment-tier.schema.yaml"
+      },
+      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M7KQAQCC-EG06\",\n  \"type\": \"environment_tier\",\n  \"name\": \"Development & CI Container Proof (Compose Host)\",\n  \"tierId\": \"dev-compose\",\n  \"purpose\": \"test\",\n  \"availabilityExpectation\": \"best-effort\",\n  \"costPosture\": \"cost-optimized\",\n  \"catalogStatus\": \"complete\",\n  \"description\": \"Single-host Docker Compose environment tier (landing-zones/compose) used for inner-loop local development and CI compose-proof end-to-end verification of network isolation, run tokens, Gatekeeper metering, kill-switch, and WORM ledger tamper refusal.\",\n  \"parameterSurface\": [\n    {\n      \"name\": \"composeProjectName\",\n      \"description\": \"Docker Compose stack namespace (default agent-factory).\",\n      \"required\": false,\n      \"sensitive\": false\n    }\n  ],\n  \"notes\": \"Enforces isolated Docker bridge networks (internal factory-agents with zero host egress, internal control network with docker-socket-proxy, and egress bridge for Gatekeeper and Control Plane).\",\n  \"_source\": \"configurations/environment-tiers/environment-tier-dev-compose.yaml\"\n}",
+      "existsInCatalog": true,
+      "outboundRelationships": [],
+      "inboundRelationships": []
+    },
+    {
+      "id": "01M7KQAQCC-T9DS",
+      "uid": "01M7KQAQCC-T9DS",
+      "name": "Production (AWS ECS Fargate Orchestrated Tasks)",
+      "aliases": [],
+      "type": "environment_tier",
+      "typeLabel": "Environment Tier / Production",
+      "filterType": "environment_tier",
+      "category": "",
+      "deliveryModel": "",
+      "domain": "",
+      "description": "Production environment tier for BeerCanLabs Agent Factory deploying the Orchestrated Tasks pattern onto AWS ECS Fargate (us-east-1, cluster factory-prod) behind the Cloudflare edge, Cloudflare Access, and HTTPS ALB, with EFS hot ledger and S3 Object Lock COMPLIANCE checkpoints.",
+      "version": "",
+      "catalogStatus": "complete",
+      "lifecycleStatus": "unknown",
+      "status": "",
+      "businessContext": {},
+      "product": "",
+      "runsOn": "",
+      "subtype": "",
+      "vendor": "",
+      "productName": "",
+      "productVersion": "",
+      "classification": "",
+      "platformDependency": "",
+      "capabilities": [],
+      "configurations": [],
+      "networkPlacement": "",
+      "patchingOwner": "",
+      "complianceCerts": [],
+      "requirementGroups": [],
+      "requirementImplementations": [],
+      "dataLeavesInfrastructure": null,
+      "dataResidencyCommitment": "",
+      "dpaNotes": "",
+      "vendorSLA": "",
+      "authenticationModel": "",
+      "incidentNotificationProcess": "",
+      "owner": {},
+      "definitionOwner": {},
+      "provider": {},
+      "authority": {},
+      "shape": "round-rectangle",
+      "color": "#7a6e60",
+      "source": "configurations/environment-tiers/environment-tier-prod.yaml",
+      "tags": [],
+      "ardCategory": "",
+      "internalComponents": [],
+      "notes": "No formal availability SLA/SLO is defined yet (see decision record 01M7GYV3B6-RYSP). Control plane runs desiredCount=1 with stop-then-start deployment (LG1); gatekeeper-egress and garrison use FARGATE_SPOT; agent cartridges scale to zero (min=0) via ECS RunTask per wake (see decision records 01M7GYV3B6-K9CZ and 01M7GYV3B6-8VN0).",
+      "requirements": [],
+      "implementations": [],
+      "appliesTo": {},
+      "inherits": "",
+      "scalingUnits": [],
+      "networkZones": [],
+      "sdpConnections": [],
+      "serviceGroups": [],
+      "tierVariants": [],
+      "tierId": "prod",
+      "purpose": "production",
+      "availabilityExpectation": "best-effort",
+      "costPosture": "balanced",
+      "complianceScope": [],
+      "parameterSurface": [
+        {
+          "name": "accountId",
+          "description": "Target 12-digit cloud account identifier supplied by deploy pipeline.",
+          "required": true,
+          "sensitive": false
+        },
+        {
+          "name": "awsRegion",
+          "description": "Target AWS region (default us-east-1).",
+          "required": true,
+          "sensitive": false
+        },
+        {
+          "name": "certificateArn",
+          "description": "ACM TLS certificate ARN for HTTPS ALB listener.",
+          "required": true,
+          "sensitive": false
+        },
+        {
+          "name": "ingressCidrs",
+          "description": "Published Cloudflare IPv4 CIDR ranges permitted to reach the ALB (never 0.0.0.0/0).",
+          "required": true,
+          "sensitive": false
+        },
+        {
+          "name": "cloudflareZoneId",
+          "description": "Cloudflare Zone ID fronting the public Factory endpoint and Access policies.",
+          "required": false,
+          "sensitive": false
+        }
+      ],
+      "followsReferenceArchitecture": "",
+      "decisionRecords": [],
+      "affectedComponent": "",
+      "impact": "",
+      "mitigationPath": "",
+      "decisionRationale": "",
+      "relatedDecisionRecords": [],
+      "linkedObject": "",
+      "primaryObjectType": "",
+      "primaryObjectUid": "",
+      "generatedObjects": [],
+      "unresolvedQuestions": [],
+      "assumptions": [],
+      "nextSteps": [],
+      "defaultSelection": false,
+      "requirementCount": 0,
+      "hasRiskRef": false,
+      "outboundRefs": [],
+      "referencedBy": [],
+      "editorSchema": {
+        "requiredFields": [
+          "schemaVersion",
+          "uid",
+          "type",
+          "name",
+          "tierId",
+          "purpose",
+          "availabilityExpectation",
+          "catalogStatus"
+        ],
+        "optionalFields": [
+          "description",
+          "costPosture",
+          "complianceScope",
+          "parameterSurface",
+          "notes"
+        ],
+        "fieldTypes": {
+          "complianceScope": "list",
+          "parameterSurface": "list"
+        },
+        "enumFields": {
+          "catalogStatus": [
+            "stub",
+            "incomplete",
+            "complete"
+          ],
+          "purpose": [
+            "development",
+            "test",
+            "staging",
+            "production",
+            "other"
+          ],
+          "availabilityExpectation": [
+            "best-effort",
+            "business-hours",
+            "high-availability",
+            "mission-critical"
+          ],
+          "costPosture": [
+            "cost-optimized",
+            "balanced",
+            "performance-optimized"
+          ]
+        },
+        "enumListFields": {},
+        "collectionSchemas": {
+          "parameterSurface": "tierParameter"
+        },
+        "schemaPath": "framework/schemas/environment-tier.schema.yaml"
+      },
+      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M7KQAQCC-T9DS\",\n  \"type\": \"environment_tier\",\n  \"name\": \"Production (AWS ECS Fargate Orchestrated Tasks)\",\n  \"tierId\": \"prod\",\n  \"purpose\": \"production\",\n  \"availabilityExpectation\": \"best-effort\",\n  \"costPosture\": \"balanced\",\n  \"catalogStatus\": \"complete\",\n  \"description\": \"Production environment tier for BeerCanLabs Agent Factory deploying the Orchestrated Tasks pattern onto AWS ECS Fargate (us-east-1, cluster factory-prod) behind the Cloudflare edge, Cloudflare Access, and HTTPS ALB, with EFS hot ledger and S3 Object Lock COMPLIANCE checkpoints.\",\n  \"parameterSurface\": [\n    {\n      \"name\": \"accountId\",\n      \"description\": \"Target 12-digit cloud account identifier supplied by deploy pipeline.\",\n      \"required\": true,\n      \"sensitive\": false\n    },\n    {\n      \"name\": \"awsRegion\",\n      \"description\": \"Target AWS region (default us-east-1).\",\n      \"required\": true,\n      \"sensitive\": false\n    },\n    {\n      \"name\": \"certificateArn\",\n      \"description\": \"ACM TLS certificate ARN for HTTPS ALB listener.\",\n      \"required\": true,\n      \"sensitive\": false\n    },\n    {\n      \"name\": \"ingressCidrs\",\n      \"description\": \"Published Cloudflare IPv4 CIDR ranges permitted to reach the ALB (never 0.0.0.0/0).\",\n      \"required\": true,\n      \"sensitive\": false\n    },\n    {\n      \"name\": \"cloudflareZoneId\",\n      \"description\": \"Cloudflare Zone ID fronting the public Factory endpoint and Access policies.\",\n      \"required\": false,\n      \"sensitive\": false\n    }\n  ],\n  \"notes\": \"No formal availability SLA/SLO is defined yet (see decision record 01M7GYV3B6-RYSP). Control plane runs desiredCount=1 with stop-then-start deployment (LG1); gatekeeper-egress and garrison use FARGATE_SPOT; agent cartridges scale to zero (min=0) via ECS RunTask per wake (see decision records 01M7GYV3B6-K9CZ and 01M7GYV3B6-8VN0).\",\n  \"_source\": \"configurations/environment-tiers/environment-tier-prod.yaml\"\n}",
+      "existsInCatalog": true,
+      "outboundRelationships": [],
+      "inboundRelationships": []
+    },
+    {
       "id": "01M15NEKT7-4PZN",
       "uid": "01M15NEKT7-4PZN",
       "name": "Enterprise AI Product Security & Acceptable Use Standards",
@@ -20763,6 +21099,18 @@ window.DRAFT_BROWSER_DATA = {
           "path": "serviceGroups[2].deployableObjects[0].ref"
         },
         {
+          "source": "01M7KQAQCD-8Z5M",
+          "path": "source"
+        },
+        {
+          "source": "01M7KQAQCD-RGE7",
+          "path": "source"
+        },
+        {
+          "source": "01M7KQAQCD-BE9V",
+          "path": "source"
+        },
+        {
           "source": "N42482MC9H-V4TZ",
           "path": "source"
         }
@@ -20844,6 +21192,36 @@ window.DRAFT_BROWSER_DATA = {
       "existsInCatalog": true,
       "outboundRelationships": [
         {
+          "uid": "01M7KQAQCD-8Z5M",
+          "name": "Agent Factory Cartridge Task \u2192 Agent Factory Control Plane",
+          "label": "calls",
+          "technology": "HTTP (:8088)",
+          "direction": "synchronous",
+          "targetUid": "01M7GWXKXW-EJWB",
+          "targetName": "Agent Factory Control Plane",
+          "capabilities": []
+        },
+        {
+          "uid": "01M7KQAQCD-RGE7",
+          "name": "Agent Factory Cartridge Task \u2192 Amazon S3 Agent Factory Mind Bucket",
+          "label": "reads from",
+          "technology": "HTTPS via S3 Gateway VPC Endpoint (:443)",
+          "direction": "synchronous",
+          "targetUid": "01M7GWTG2T-GYW1",
+          "targetName": "Amazon S3 - Agent Factory Mind Bucket",
+          "capabilities": []
+        },
+        {
+          "uid": "01M7KQAQCD-BE9V",
+          "name": "Agent Factory Cartridge Task \u2192 Agent Factory Gatekeeper Egress",
+          "label": "calls",
+          "technology": "HTTP Reverse Proxy & CONNECT (:8081)",
+          "direction": "synchronous",
+          "targetUid": "01M7GWXKXW-BPBV",
+          "targetName": "Agent Factory Gatekeeper Egress",
+          "capabilities": []
+        },
+        {
           "uid": "N42482MC9H-V4TZ",
           "name": "Agent Factory Cartridge Task (on-demand) \u2192 AWS ECS Fargate Runtime - factory-prod",
           "label": "runs on",
@@ -20851,6 +21229,217 @@ window.DRAFT_BROWSER_DATA = {
           "direction": "",
           "targetUid": "01M7GWTG2S-AC3R",
           "targetName": "AWS ECS Fargate Runtime - factory-prod",
+          "capabilities": []
+        }
+      ],
+      "inboundRelationships": []
+    },
+    {
+      "id": "01M7KQAQCD-01CD",
+      "uid": "01M7KQAQCD-01CD",
+      "name": "Agent Factory CLI & Benchmark Harness",
+      "aliases": [],
+      "type": "product_component",
+      "typeLabel": "ProductComponent / Cli",
+      "filterType": "product_component",
+      "category": "",
+      "deliveryModel": "",
+      "domain": "",
+      "description": "Operator terminal client (@beercanlabs/factory-cli: factory) and Cost-vs-Quality benchmark runner (@beercanlabs/factory-bench: factory-bench). Authenticates via OIDC or fk_ API keys against the Control Plane Headless Neck to inspect runs and ledger chains, decide Bouncer approvals, manage model subscriptions, and score bench.yaml evaluations across candidate models.",
+      "version": "2.0.0",
+      "catalogStatus": "incomplete",
+      "lifecycleStatus": "preferred",
+      "status": "",
+      "businessContext": {},
+      "product": "",
+      "runsOn": "",
+      "subtype": "",
+      "vendor": "",
+      "productName": "",
+      "productVersion": "",
+      "classification": "cli",
+      "platformDependency": "",
+      "capabilities": [],
+      "configurations": [],
+      "networkPlacement": "",
+      "patchingOwner": "",
+      "complianceCerts": [],
+      "requirementGroups": [],
+      "requirementImplementations": [],
+      "dataLeavesInfrastructure": null,
+      "dataResidencyCommitment": "",
+      "dpaNotes": "",
+      "vendorSLA": "",
+      "authenticationModel": "",
+      "incidentNotificationProcess": "",
+      "owner": {
+        "team": "platform-ai-team",
+        "contact": "platform-ai@example.com"
+      },
+      "definitionOwner": {},
+      "provider": {},
+      "authority": {},
+      "shape": "round-rectangle",
+      "color": "#1f8a5b",
+      "source": "catalog/engineering/product-components/product-component-factory-cli.yaml",
+      "tags": [
+        "agent-factory",
+        "cli",
+        "benchmark",
+        "client"
+      ],
+      "ardCategory": "",
+      "internalComponents": [],
+      "notes": {
+        "source": "packages/cli and packages/bench in BeerCanLabs/agent-factory (Node.js 22 CLI binaries).",
+        "incomplete": "Requirement evidence and standalone CLI distribution/release governance are not yet recorded."
+      },
+      "requirements": [],
+      "implementations": [],
+      "appliesTo": {},
+      "inherits": "",
+      "scalingUnits": [],
+      "networkZones": [],
+      "sdpConnections": [],
+      "serviceGroups": [],
+      "tierVariants": [],
+      "tierId": "",
+      "purpose": "",
+      "availabilityExpectation": "",
+      "costPosture": "",
+      "complianceScope": [],
+      "parameterSurface": [],
+      "followsReferenceArchitecture": "",
+      "decisionRecords": [],
+      "affectedComponent": "",
+      "impact": "",
+      "mitigationPath": "",
+      "decisionRationale": "",
+      "relatedDecisionRecords": [],
+      "linkedObject": "",
+      "primaryObjectType": "",
+      "primaryObjectUid": "",
+      "generatedObjects": [],
+      "unresolvedQuestions": [],
+      "assumptions": [],
+      "nextSteps": [],
+      "defaultSelection": false,
+      "requirementCount": 0,
+      "hasRiskRef": false,
+      "outboundRefs": [
+        {
+          "target": "01M7GTBMQS-YRGF",
+          "path": "runtimeSpec.dependencies[0].ref"
+        },
+        {
+          "target": "01M7GWXKXW-EJWB",
+          "path": "runtimeSpec.dependencies[1].ref"
+        }
+      ],
+      "referencedBy": [
+        {
+          "source": "0C2JQD5S29-RJNY",
+          "path": "source"
+        },
+        {
+          "source": "ZA4E6M9Z1H-V5Q2",
+          "path": "source"
+        }
+      ],
+      "editorSchema": {
+        "requiredFields": [
+          "schemaVersion",
+          "uid",
+          "type",
+          "name",
+          "repoUrl",
+          "owner",
+          "classification",
+          "catalogStatus"
+        ],
+        "optionalFields": [
+          "lifecycleStatus",
+          "aliases",
+          "description",
+          "version",
+          "tags",
+          "runsOn",
+          "language",
+          "interfaces",
+          "networkBindings",
+          "environmentConfiguration",
+          "runtimeSpec",
+          "notes",
+          "decisionRecords",
+          "requirementImplementations"
+        ],
+        "fieldTypes": {
+          "aliases": "list",
+          "owner": "dict",
+          "runsOn": "str",
+          "tags": "list",
+          "interfaces": "list",
+          "networkBindings": "list",
+          "environmentConfiguration": "list",
+          "runtimeSpec": "dict",
+          "notes": "dict",
+          "requirementGroups": "list",
+          "decisionRecords": "list",
+          "requirementImplementations": "list"
+        },
+        "enumFields": {
+          "catalogStatus": [
+            "stub",
+            "incomplete",
+            "complete"
+          ],
+          "lifecycleStatus": [
+            "candidate",
+            "preferred",
+            "existing-only",
+            "deprecated",
+            "retired"
+          ],
+          "classification": [
+            "web-application",
+            "api-service",
+            "worker",
+            "library",
+            "cli",
+            "other"
+          ]
+        },
+        "enumListFields": {},
+        "collectionSchemas": {
+          "interfaces": "interface",
+          "networkBindings": "networkBinding",
+          "environmentConfiguration": "environmentVariable",
+          "decisionRecords": "decisionRecordRef",
+          "requirementImplementations": "requirementImplementation"
+        },
+        "schemaPath": "framework/schemas/product-component.schema.yaml"
+      },
+      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M7KQAQCD-01CD\",\n  \"type\": \"product_component\",\n  \"name\": \"Agent Factory CLI & Benchmark Harness\",\n  \"description\": \"Operator terminal client (@beercanlabs/factory-cli: factory) and Cost-vs-Quality benchmark runner (@beercanlabs/factory-bench: factory-bench). Authenticates via OIDC or fk_ API keys against the Control Plane Headless Neck to inspect runs and ledger chains, decide Bouncer approvals, manage model subscriptions, and score bench.yaml evaluations across candidate models.\",\n  \"version\": \"2.0.0\",\n  \"repoUrl\": \"https://github.com/BeerCanLabs/agent-factory\",\n  \"owner\": {\n    \"team\": \"platform-ai-team\",\n    \"contact\": \"platform-ai@example.com\"\n  },\n  \"classification\": \"cli\",\n  \"catalogStatus\": \"incomplete\",\n  \"lifecycleStatus\": \"preferred\",\n  \"language\": \"TypeScript\",\n  \"tags\": [\n    \"agent-factory\",\n    \"cli\",\n    \"benchmark\",\n    \"client\"\n  ],\n  \"environmentConfiguration\": [\n    {\n      \"name\": \"FACTORY_URL\",\n      \"description\": \"Target Agent Factory public HTTPS URL.\",\n      \"required\": true,\n      \"sensitive\": false\n    },\n    {\n      \"name\": \"FACTORY_API_KEY\",\n      \"description\": \"Operator or service fk_ API key when invoking headless CLI or CI benchmark commands.\",\n      \"required\": false,\n      \"sensitive\": true\n    }\n  ],\n  \"runtimeSpec\": {\n    \"dependencies\": [\n      {\n        \"ref\": \"01M7GTBMQS-YRGF\",\n        \"purpose\": \"Calls the Agent Factory Headless Neck over public HTTPS through the Cloudflare edge front door.\",\n        \"interface\": \"/api/v1/* and /mcp\"\n      },\n      {\n        \"ref\": \"01M7GWXKXW-EJWB\",\n        \"purpose\": \"Consumes the Control Plane REST and MCP operator surfaces.\",\n        \"interface\": \"/api/v1/* and /mcp\"\n      }\n    ]\n  },\n  \"notes\": {\n    \"source\": \"packages/cli and packages/bench in BeerCanLabs/agent-factory (Node.js 22 CLI binaries).\",\n    \"incomplete\": \"Requirement evidence and standalone CLI distribution/release governance are not yet recorded.\"\n  },\n  \"_source\": \"catalog/engineering/product-components/product-component-factory-cli.yaml\"\n}",
+      "existsInCatalog": true,
+      "outboundRelationships": [
+        {
+          "uid": "0C2JQD5S29-RJNY",
+          "name": "Agent Factory CLI & Benchmark Harness \u2192 Cloudflare Global Anycast Edge Proxy Service",
+          "label": "/api/v1/* and /mcp",
+          "technology": "",
+          "direction": "",
+          "targetUid": "01M7GTBMQS-YRGF",
+          "targetName": "Cloudflare Global Anycast Edge Proxy Service",
+          "capabilities": []
+        },
+        {
+          "uid": "ZA4E6M9Z1H-V5Q2",
+          "name": "Agent Factory CLI & Benchmark Harness \u2192 Agent Factory Control Plane",
+          "label": "/api/v1/* and /mcp",
+          "technology": "",
+          "direction": "",
+          "targetUid": "01M7GWXKXW-EJWB",
+          "targetName": "Agent Factory Control Plane",
           "capabilities": []
         }
       ],
@@ -20960,6 +21549,14 @@ window.DRAFT_BROWSER_DATA = {
           "path": "serviceGroups[1].deployableObjects[0].ref"
         },
         {
+          "source": "01M7KQAQCD-3CBS",
+          "path": "target"
+        },
+        {
+          "source": "01M7KQAQCD-GQNC",
+          "path": "source"
+        },
+        {
           "source": "K3K6BX46KE-5MV9",
           "path": "source"
         }
@@ -21041,6 +21638,16 @@ window.DRAFT_BROWSER_DATA = {
       "existsInCatalog": true,
       "outboundRelationships": [
         {
+          "uid": "01M7KQAQCD-GQNC",
+          "name": "Agent Factory Console \u2192 Agent Factory Control Plane",
+          "label": "calls",
+          "technology": "HTTP (:8088)",
+          "direction": "synchronous",
+          "targetUid": "01M7GWXKXW-EJWB",
+          "targetName": "Agent Factory Control Plane",
+          "capabilities": []
+        },
+        {
           "uid": "K3K6BX46KE-5MV9",
           "name": "Agent Factory Console \u2192 AWS ECS Fargate Runtime - factory-prod",
           "label": "runs on",
@@ -21051,7 +21658,20 @@ window.DRAFT_BROWSER_DATA = {
           "capabilities": []
         }
       ],
-      "inboundRelationships": []
+      "inboundRelationships": [
+        {
+          "uid": "01M7KQAQCD-3CBS",
+          "name": "AWS ALB factory-prod \u2192 Agent Factory Console",
+          "label": "routes to",
+          "technology": "HTTPS / HTTP (:3000)",
+          "direction": "synchronous",
+          "targetUid": "01M7GWXKXW-VPCD",
+          "targetName": "Agent Factory Console",
+          "capabilities": [],
+          "sourceUid": "01M7GWTG2T-M2Q0",
+          "sourceName": "AWS Application Load Balancer - factory-prod"
+        }
+      ]
     },
     {
       "id": "01M7GWXKXW-EJWB",
@@ -21153,8 +21773,60 @@ window.DRAFT_BROWSER_DATA = {
       ],
       "referencedBy": [
         {
+          "source": "01M7KQAQCD-01CD",
+          "path": "runtimeSpec.dependencies[1].ref"
+        },
+        {
           "source": "01M15NEKT7-S14J",
           "path": "serviceGroups[0].deployableObjects[0].ref"
+        },
+        {
+          "source": "01M7KQAQCD-9JK7",
+          "path": "target"
+        },
+        {
+          "source": "01M7KQAQCD-GQNC",
+          "path": "target"
+        },
+        {
+          "source": "01M7KQAQCD-ZD19",
+          "path": "source"
+        },
+        {
+          "source": "01M7KQAQCD-HNYQ",
+          "path": "source"
+        },
+        {
+          "source": "01M7KQAQCD-CWYV",
+          "path": "source"
+        },
+        {
+          "source": "01M7KQAQCD-Z7TV",
+          "path": "source"
+        },
+        {
+          "source": "01M7KQAQCD-4GN2",
+          "path": "source"
+        },
+        {
+          "source": "01M7KQAQCD-XTFV",
+          "path": "source"
+        },
+        {
+          "source": "01M7KQAQCD-M02F",
+          "path": "target"
+        },
+        {
+          "source": "01M7KQAQCD-1AM0",
+          "path": "target"
+        },
+        {
+          "source": "01M7KQAQCD-8Z5M",
+          "path": "target"
+        },
+        {
+          "source": "ZA4E6M9Z1H-V5Q2",
+          "path": "target"
         },
         {
           "source": "37Y75386HP-XZ13",
@@ -21238,6 +21910,66 @@ window.DRAFT_BROWSER_DATA = {
       "existsInCatalog": true,
       "outboundRelationships": [
         {
+          "uid": "01M7KQAQCD-ZD19",
+          "name": "Agent Factory Control Plane \u2192 S3 Config, Ledger & Package Buckets",
+          "label": "writes to",
+          "technology": "HTTPS (:443)",
+          "direction": "synchronous",
+          "targetUid": "01M7GWTG2T-F1WG",
+          "targetName": "Amazon S3 - Agent Factory Config, Ledger and Package Buckets",
+          "capabilities": []
+        },
+        {
+          "uid": "01M7KQAQCD-HNYQ",
+          "name": "Agent Factory Control Plane \u2192 Agent Factory Gatekeeper Egress",
+          "label": "calls",
+          "technology": "HTTP (:8081)",
+          "direction": "synchronous",
+          "targetUid": "01M7GWXKXW-BPBV",
+          "targetName": "Agent Factory Gatekeeper Egress",
+          "capabilities": []
+        },
+        {
+          "uid": "01M7KQAQCD-CWYV",
+          "name": "Agent Factory Control Plane \u2192 Agent Factory Gatekeeper Ingress",
+          "label": "sends events to",
+          "technology": "HTTP (:8090)",
+          "direction": "asynchronous",
+          "targetUid": "01M7GWXKXW-7W49",
+          "targetName": "Agent Factory Gatekeeper Ingress",
+          "capabilities": []
+        },
+        {
+          "uid": "01M7KQAQCD-Z7TV",
+          "name": "Agent Factory Control Plane \u2192 Agent Factory EventBridge Event Bus",
+          "label": "sends events to",
+          "technology": "HTTPS (:443)",
+          "direction": "event",
+          "targetUid": "01M7KQAQCD-GHF4",
+          "targetName": "Amazon EventBridge - Agent Factory Event Bus",
+          "capabilities": []
+        },
+        {
+          "uid": "01M7KQAQCD-4GN2",
+          "name": "Agent Factory Control Plane \u2192 CodeBuild Admission & Skill Builders",
+          "label": "calls",
+          "technology": "HTTPS (:443)",
+          "direction": "asynchronous",
+          "targetUid": "01M7KQAQCD-WD0R",
+          "targetName": "AWS CodeBuild - Agent Factory Admission & Skill Builders",
+          "capabilities": []
+        },
+        {
+          "uid": "01M7KQAQCD-XTFV",
+          "name": "Agent Factory Control Plane \u2192 Amazon EFS factory-prod-ledger",
+          "label": "writes to",
+          "technology": "NFSv4.1 over TLS (:2049)",
+          "direction": "synchronous",
+          "targetUid": "01M7GWTG2T-KR1Y",
+          "targetName": "Amazon EFS - factory-prod-ledger",
+          "capabilities": []
+        },
+        {
           "uid": "37Y75386HP-XZ13",
           "name": "Agent Factory Control Plane \u2192 AWS ECS Fargate Runtime - factory-prod",
           "label": "runs on",
@@ -21248,7 +21980,80 @@ window.DRAFT_BROWSER_DATA = {
           "capabilities": []
         }
       ],
-      "inboundRelationships": []
+      "inboundRelationships": [
+        {
+          "uid": "01M7KQAQCD-9JK7",
+          "name": "AWS ALB factory-prod \u2192 Agent Factory Control Plane",
+          "label": "routes to",
+          "technology": "HTTPS / HTTP (:8088, health :8089)",
+          "direction": "synchronous",
+          "targetUid": "01M7GWXKXW-EJWB",
+          "targetName": "Agent Factory Control Plane",
+          "capabilities": [],
+          "sourceUid": "01M7GWTG2T-M2Q0",
+          "sourceName": "AWS Application Load Balancer - factory-prod"
+        },
+        {
+          "uid": "01M7KQAQCD-GQNC",
+          "name": "Agent Factory Console \u2192 Agent Factory Control Plane",
+          "label": "calls",
+          "technology": "HTTP (:8088)",
+          "direction": "synchronous",
+          "targetUid": "01M7GWXKXW-EJWB",
+          "targetName": "Agent Factory Control Plane",
+          "capabilities": [],
+          "sourceUid": "01M7GWXKXW-VPCD",
+          "sourceName": "Agent Factory Console"
+        },
+        {
+          "uid": "01M7KQAQCD-M02F",
+          "name": "Agent Factory Gatekeeper Egress \u2192 Agent Factory Control Plane",
+          "label": "calls",
+          "technology": "HTTP (:8088)",
+          "direction": "synchronous",
+          "targetUid": "01M7GWXKXW-EJWB",
+          "targetName": "Agent Factory Control Plane",
+          "capabilities": [],
+          "sourceUid": "01M7GWXKXW-BPBV",
+          "sourceName": "Agent Factory Gatekeeper Egress"
+        },
+        {
+          "uid": "01M7KQAQCD-1AM0",
+          "name": "Agent Factory Gatekeeper Ingress \u2192 Agent Factory Control Plane",
+          "label": "calls",
+          "technology": "HTTP (:8088)",
+          "direction": "synchronous",
+          "targetUid": "01M7GWXKXW-EJWB",
+          "targetName": "Agent Factory Control Plane",
+          "capabilities": [],
+          "sourceUid": "01M7GWXKXW-7W49",
+          "sourceName": "Agent Factory Gatekeeper Ingress"
+        },
+        {
+          "uid": "01M7KQAQCD-8Z5M",
+          "name": "Agent Factory Cartridge Task \u2192 Agent Factory Control Plane",
+          "label": "calls",
+          "technology": "HTTP (:8088)",
+          "direction": "synchronous",
+          "targetUid": "01M7GWXKXW-EJWB",
+          "targetName": "Agent Factory Control Plane",
+          "capabilities": [],
+          "sourceUid": "01M7GWXKXW-4ZJF",
+          "sourceName": "Agent Factory Cartridge Task (on-demand)"
+        },
+        {
+          "uid": "ZA4E6M9Z1H-V5Q2",
+          "name": "Agent Factory CLI & Benchmark Harness \u2192 Agent Factory Control Plane",
+          "label": "/api/v1/* and /mcp",
+          "technology": "",
+          "direction": "",
+          "targetUid": "01M7GWXKXW-EJWB",
+          "targetName": "Agent Factory Control Plane",
+          "capabilities": [],
+          "sourceUid": "01M7KQAQCD-01CD",
+          "sourceName": "Agent Factory CLI & Benchmark Harness"
+        }
+      ]
     },
     {
       "id": "01M7GWXKXW-BPBV",
@@ -21356,6 +22161,22 @@ window.DRAFT_BROWSER_DATA = {
           "path": "serviceGroups[0].deployableObjects[2].ref"
         },
         {
+          "source": "01M7KQAQCD-HNYQ",
+          "path": "target"
+        },
+        {
+          "source": "01M7KQAQCD-7V12",
+          "path": "source"
+        },
+        {
+          "source": "01M7KQAQCD-M02F",
+          "path": "source"
+        },
+        {
+          "source": "01M7KQAQCD-BE9V",
+          "path": "target"
+        },
+        {
           "source": "HZPHDW059V-S1NS",
           "path": "source"
         }
@@ -21437,6 +22258,26 @@ window.DRAFT_BROWSER_DATA = {
       "existsInCatalog": true,
       "outboundRelationships": [
         {
+          "uid": "01M7KQAQCD-7V12",
+          "name": "Agent Factory Gatekeeper Egress \u2192 External LLM & SaaS Providers",
+          "label": "calls",
+          "technology": "HTTPS (:443)",
+          "direction": "synchronous",
+          "targetUid": "",
+          "targetName": "External Model & SaaS APIs (AWS Bedrock, OpenAI, xAI, Anthropic, GitHub, Google Workspace, Notion)",
+          "capabilities": []
+        },
+        {
+          "uid": "01M7KQAQCD-M02F",
+          "name": "Agent Factory Gatekeeper Egress \u2192 Agent Factory Control Plane",
+          "label": "calls",
+          "technology": "HTTP (:8088)",
+          "direction": "synchronous",
+          "targetUid": "01M7GWXKXW-EJWB",
+          "targetName": "Agent Factory Control Plane",
+          "capabilities": []
+        },
+        {
           "uid": "HZPHDW059V-S1NS",
           "name": "Agent Factory Gatekeeper Egress \u2192 AWS ECS Fargate Runtime - factory-prod",
           "label": "runs on",
@@ -21447,7 +22288,32 @@ window.DRAFT_BROWSER_DATA = {
           "capabilities": []
         }
       ],
-      "inboundRelationships": []
+      "inboundRelationships": [
+        {
+          "uid": "01M7KQAQCD-HNYQ",
+          "name": "Agent Factory Control Plane \u2192 Agent Factory Gatekeeper Egress",
+          "label": "calls",
+          "technology": "HTTP (:8081)",
+          "direction": "synchronous",
+          "targetUid": "01M7GWXKXW-BPBV",
+          "targetName": "Agent Factory Gatekeeper Egress",
+          "capabilities": [],
+          "sourceUid": "01M7GWXKXW-EJWB",
+          "sourceName": "Agent Factory Control Plane"
+        },
+        {
+          "uid": "01M7KQAQCD-BE9V",
+          "name": "Agent Factory Cartridge Task \u2192 Agent Factory Gatekeeper Egress",
+          "label": "calls",
+          "technology": "HTTP Reverse Proxy & CONNECT (:8081)",
+          "direction": "synchronous",
+          "targetUid": "01M7GWXKXW-BPBV",
+          "targetName": "Agent Factory Gatekeeper Egress",
+          "capabilities": [],
+          "sourceUid": "01M7GWXKXW-4ZJF",
+          "sourceName": "Agent Factory Cartridge Task (on-demand)"
+        }
+      ]
     },
     {
       "id": "01M7GWXKXW-7W49",
@@ -21554,6 +22420,18 @@ window.DRAFT_BROWSER_DATA = {
           "path": "serviceGroups[0].deployableObjects[1].ref"
         },
         {
+          "source": "01M7KQAQCD-CWYV",
+          "path": "target"
+        },
+        {
+          "source": "01M7KQAQCD-PND8",
+          "path": "source"
+        },
+        {
+          "source": "01M7KQAQCD-1AM0",
+          "path": "source"
+        },
+        {
           "source": "TGH5YT0GBB-SQPY",
           "path": "source"
         }
@@ -21635,6 +22513,26 @@ window.DRAFT_BROWSER_DATA = {
       "existsInCatalog": true,
       "outboundRelationships": [
         {
+          "uid": "01M7KQAQCD-PND8",
+          "name": "Agent Factory Gatekeeper Ingress \u2192 Discord Gateway WebSocket API",
+          "label": "connects to",
+          "technology": "WebSocket over TLS (:443)",
+          "direction": "event",
+          "targetUid": "",
+          "targetName": "Discord Gateway WebSocket API",
+          "capabilities": []
+        },
+        {
+          "uid": "01M7KQAQCD-1AM0",
+          "name": "Agent Factory Gatekeeper Ingress \u2192 Agent Factory Control Plane",
+          "label": "calls",
+          "technology": "HTTP (:8088)",
+          "direction": "synchronous",
+          "targetUid": "01M7GWXKXW-EJWB",
+          "targetName": "Agent Factory Control Plane",
+          "capabilities": []
+        },
+        {
           "uid": "TGH5YT0GBB-SQPY",
           "name": "Agent Factory Gatekeeper Ingress \u2192 AWS ECS Fargate Runtime - factory-prod",
           "label": "runs on",
@@ -21645,7 +22543,20 @@ window.DRAFT_BROWSER_DATA = {
           "capabilities": []
         }
       ],
-      "inboundRelationships": []
+      "inboundRelationships": [
+        {
+          "uid": "01M7KQAQCD-CWYV",
+          "name": "Agent Factory Control Plane \u2192 Agent Factory Gatekeeper Ingress",
+          "label": "sends events to",
+          "technology": "HTTP (:8090)",
+          "direction": "asynchronous",
+          "targetUid": "01M7GWXKXW-7W49",
+          "targetName": "Agent Factory Gatekeeper Ingress",
+          "capabilities": [],
+          "sourceUid": "01M7GWXKXW-EJWB",
+          "sourceName": "Agent Factory Control Plane"
+        }
+      ]
     },
     {
       "id": "01M7GWXKXW-Z0Z4",
@@ -21855,12 +22766,14 @@ window.DRAFT_BROWSER_DATA = {
       "category": "",
       "deliveryModel": "",
       "domain": "",
-      "description": "",
-      "version": "",
+      "description": "Central product registration for the BeerCanLabs Agent Factory headless autonomous agent hosting platform (Headless Neck REST/MCP + OAuth 2.1 AS, Hot-Swappable Heads, 10 Cast kernel services, Dual-Mode Cartridge & Shared Runtime hosting, and Zero-Trust Gatekeeper perimeter).",
+      "version": "2.0.0",
       "catalogStatus": "complete",
       "lifecycleStatus": "unknown",
       "status": "",
-      "businessContext": {},
+      "businessContext": {
+        "productFamily": "Skippy / Agent Factory"
+      },
       "product": "",
       "runsOn": "",
       "subtype": "",
@@ -21892,7 +22805,12 @@ window.DRAFT_BROWSER_DATA = {
       "shape": "round-rectangle",
       "color": "#7a6e60",
       "source": "catalog/engineering/product-registrations/product-reg-agent-factory.yaml",
-      "tags": [],
+      "tags": [
+        "agent-factory",
+        "headless-neck",
+        "mcp",
+        "oauth21"
+      ],
       "ardCategory": "",
       "internalComponents": [],
       "notes": {
@@ -21978,7 +22896,7 @@ window.DRAFT_BROWSER_DATA = {
         },
         "schemaPath": "framework/schemas/product-registration.schema.yaml"
       },
-      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M1N137Q5-AFAC\",\n  \"type\": \"product_registration\",\n  \"name\": \"BeerCanLabs Agent Factory\",\n  \"catalogStatus\": \"complete\",\n  \"owner\": {\n    \"team\": \"platform-ai-team\",\n    \"contact\": \"platform-ai@example.com\"\n  },\n  \"repository\": {\n    \"provider\": \"github\",\n    \"url\": \"https://github.com/BeerCanLabs/agent-factory\",\n    \"defaultBranch\": \"main\"\n  },\n  \"sdpManifest\": {\n    \"mode\": \"git\",\n    \"path\": \".draft/sdp.yaml\"\n  },\n  \"notes\": {\n    \"deployment\": \"Deployed on AWS us-east-1 (ECS cluster factory-prod). The deployed topology is modeled by SDP 01M15NEKT7-S14J. The repository .draft/sdp.yaml (SDP0000002-AGENTFACTORY) is the cloud-agnostic kernel pattern.\"\n  },\n  \"_source\": \"catalog/engineering/product-registrations/product-reg-agent-factory.yaml\"\n}",
+      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M1N137Q5-AFAC\",\n  \"type\": \"product_registration\",\n  \"name\": \"BeerCanLabs Agent Factory\",\n  \"description\": \"Central product registration for the BeerCanLabs Agent Factory headless autonomous agent hosting platform (Headless Neck REST/MCP + OAuth 2.1 AS, Hot-Swappable Heads, 10 Cast kernel services, Dual-Mode Cartridge & Shared Runtime hosting, and Zero-Trust Gatekeeper perimeter).\",\n  \"version\": \"2.0.0\",\n  \"catalogStatus\": \"complete\",\n  \"owner\": {\n    \"team\": \"platform-ai-team\",\n    \"contact\": \"platform-ai@example.com\"\n  },\n  \"businessContext\": {\n    \"productFamily\": \"Skippy / Agent Factory\"\n  },\n  \"tags\": [\n    \"agent-factory\",\n    \"headless-neck\",\n    \"mcp\",\n    \"oauth21\"\n  ],\n  \"repository\": {\n    \"provider\": \"github\",\n    \"owner\": \"BeerCanLabs\",\n    \"name\": \"agent-factory\",\n    \"url\": \"https://github.com/BeerCanLabs/agent-factory\",\n    \"defaultBranch\": \"main\"\n  },\n  \"sdpManifest\": {\n    \"mode\": \"git\",\n    \"path\": \".draft/sdp.yaml\",\n    \"branch\": \"main\"\n  },\n  \"notes\": {\n    \"deployment\": \"Deployed on AWS us-east-1 (ECS cluster factory-prod). The deployed topology is modeled by SDP 01M15NEKT7-S14J. The repository .draft/sdp.yaml (SDP0000002-AGENTFACTORY) is the cloud-agnostic kernel pattern.\"\n  },\n  \"_source\": \"catalog/engineering/product-registrations/product-reg-agent-factory.yaml\"\n}",
       "existsInCatalog": true,
       "outboundRelationships": [],
       "inboundRelationships": []
@@ -22846,7 +23764,9 @@ window.DRAFT_BROWSER_DATA = {
       "catalogStatus": "incomplete",
       "lifecycleStatus": "preferred",
       "status": "",
-      "businessContext": {},
+      "businessContext": {
+        "productFamily": "Skippy / Agent Factory"
+      },
       "product": "",
       "runsOn": "",
       "subtype": "",
@@ -22949,7 +23869,10 @@ window.DRAFT_BROWSER_DATA = {
         "software-deployment-pattern",
         "agent-factory",
         "aws",
-        "ecs-fargate"
+        "ecs-fargate",
+        "headless-neck",
+        "mcp",
+        "oauth21"
       ],
       "ardCategory": "",
       "internalComponents": [],
@@ -22962,7 +23885,7 @@ window.DRAFT_BROWSER_DATA = {
           "scope": "platform-wide",
           "description": "Single region, single cluster. Losing the control plane blocks wakes and MCP. Losing one agent task does not take down the factory."
         },
-        "externalDependencies": "Cloudflare edge proxy (01M7GTBMQS-YRGF) and Cloudflare Access (01M7GWTG2T-VA2G); ALB factory-prod (01M7GWTG2T-M2Q0); Cloud Map factory.internal (01M7GWTG2T-8A54); Secrets Manager (01M7GWTG2T-3PQY); S3 mind bucket (01M7GWTG2T-GYW1); S3 config/ledger/packages buckets (01M7GWTG2T-F1WG); EFS ledger (01M7GWTG2T-KR1Y); ECR (01M7GWTG2T-0NKZ); CloudWatch (01M7GWTG2T-TQEB); KMS AWS-managed keys (01M7GWTG2T-JHTR).",
+        "externalDependencies": "Cloudflare edge proxy (01M7GTBMQS-YRGF) and Cloudflare Access (01M7GWTG2T-VA2G); ALB factory-prod (01M7GWTG2T-M2Q0); Cloud Map factory.internal (01M7GWTG2T-8A54); Secrets Manager (01M7GWTG2T-3PQY); S3 mind bucket (01M7GWTG2T-GYW1); S3 config/ledger/packages buckets (01M7GWTG2T-F1WG); EFS ledger (01M7GWTG2T-KR1Y); ECR (01M7GWTG2T-0NKZ); CodeBuild admission/skill builders (01M7KQAQCD-WD0R); EventBridge factory event bus (01M7KQAQCD-GHF4); CloudWatch (01M7GWTG2T-TQEB); KMS AWS-managed keys (01M7GWTG2T-JHTR).",
         "interServiceConnections": "The ALB routes the default host to the control plane, factory-dashboard to the console and garrison to garrison. Kernel services find each other through Cloud Map factory.internal.",
         "secretsManagement": "AWS Secrets Manager referenced as ECS container secrets (control-plane 6, gatekeeper-ingress 2, gatekeeper-egress 2, garrison 1, console 0). The gatekeepers inject credentials so agent tasks hold only their run token, except the registered gap GAP-031 (see decision record 01M7GYV3B6-YE24).",
         "iacAutomation": "Terraform in BeerCanLabs/agent-factory landing-zones/aws with an S3 backend.",
@@ -22976,8 +23899,97 @@ window.DRAFT_BROWSER_DATA = {
       "appliesTo": {},
       "inherits": "",
       "scalingUnits": [],
-      "networkZones": [],
-      "sdpConnections": [],
+      "networkZones": [
+        {
+          "id": "edge",
+          "name": "Edge & Identity-Aware Ingress",
+          "tier": "frontend",
+          "description": "Cloudflare edge proxy, Cloudflare Access, and HTTPS AWS ALB restricted to Cloudflare IPv4 ingress CIDRs (see decision records 01M7GTBMQS-SZBH and 01M7GYV3B6-8VN0)."
+        },
+        {
+          "id": "mailbox",
+          "name": "Mailbox, Headless Neck & Client Services",
+          "tier": "application",
+          "description": "Public service subnets hosting Control Plane (:8088/:8089), Gatekeeper Ingress (:8090), Gatekeeper Egress (:8081), Console (:3000), and Garrison (:3000) under Cloud Map DNS (factory.internal)."
+        },
+        {
+          "id": "agents",
+          "name": "Agent Cartridge Compute",
+          "tier": "application",
+          "description": "Private agent subnets intended for zero direct internet egress (Terraform route=[], scoped security group to Control Plane :8088, Gatekeeper Egress :8081, and VPC endpoints :443). Live unmanaged route/SG drift and assignPublicIp=false mitigation are recorded in decision record 01M7GYV3B6-8VN0."
+        },
+        {
+          "id": "data",
+          "name": "Durable Mind, WORM Ledger & Package Storage",
+          "tier": "data",
+          "description": "Encrypted EFS single-writer hot ledger volume (:2049) and versioned/Object-Lock S3 buckets for agent minds, COMPLIANCE WORM checkpoints, configs, and skill packages."
+        }
+      ],
+      "sdpConnections": [
+        {
+          "from": "01M7GWXKXW-VPCD",
+          "to": "01M7GWXKXW-EJWB",
+          "protocol": "HTTP (:8088)",
+          "direction": "synchronous",
+          "port": "",
+          "label": "calls",
+          "serviceGroup": ""
+        },
+        {
+          "from": "01M7GWXKXW-EJWB",
+          "to": "01M7GWXKXW-BPBV",
+          "protocol": "HTTP (:8081)",
+          "direction": "synchronous",
+          "port": "",
+          "label": "calls",
+          "serviceGroup": ""
+        },
+        {
+          "from": "01M7GWXKXW-EJWB",
+          "to": "01M7GWXKXW-7W49",
+          "protocol": "HTTP (:8090)",
+          "direction": "asynchronous",
+          "port": "",
+          "label": "sends events to",
+          "serviceGroup": ""
+        },
+        {
+          "from": "01M7GWXKXW-BPBV",
+          "to": "01M7GWXKXW-EJWB",
+          "protocol": "HTTP (:8088)",
+          "direction": "synchronous",
+          "port": "",
+          "label": "calls",
+          "serviceGroup": ""
+        },
+        {
+          "from": "01M7GWXKXW-7W49",
+          "to": "01M7GWXKXW-EJWB",
+          "protocol": "HTTP (:8088)",
+          "direction": "synchronous",
+          "port": "",
+          "label": "calls",
+          "serviceGroup": ""
+        },
+        {
+          "from": "01M7GWXKXW-4ZJF",
+          "to": "01M7GWXKXW-EJWB",
+          "protocol": "HTTP (:8088)",
+          "direction": "synchronous",
+          "port": "",
+          "label": "calls",
+          "serviceGroup": ""
+        },
+        {
+          "from": "01M7GWXKXW-4ZJF",
+          "to": "01M7GWXKXW-BPBV",
+          "protocol": "HTTP Reverse Proxy & CONNECT (:8081)",
+          "direction": "synchronous",
+          "port": "",
+          "label": "calls",
+          "serviceGroup": ""
+        }
+      ],
       "serviceGroups": [
         {
           "name": "Factory kernel mailboxes",
@@ -22986,14 +23998,17 @@ window.DRAFT_BROWSER_DATA = {
           "deployableObjects": [
             {
               "ref": "01M7GWXKXW-EJWB",
+              "networkZone": "mailbox",
               "diagramTier": "application"
             },
             {
               "ref": "01M7GWXKXW-7W49",
+              "networkZone": "mailbox",
               "diagramTier": "application"
             },
             {
               "ref": "01M7GWXKXW-BPBV",
+              "networkZone": "mailbox",
               "diagramTier": "application"
             }
           ]
@@ -23005,10 +24020,12 @@ window.DRAFT_BROWSER_DATA = {
           "deployableObjects": [
             {
               "ref": "01M7GWXKXW-VPCD",
+              "networkZone": "mailbox",
               "diagramTier": "presentation"
             },
             {
               "ref": "01M7GWXKXW-Z0Z4",
+              "networkZone": "mailbox",
               "diagramTier": "presentation"
             }
           ]
@@ -23020,12 +24037,49 @@ window.DRAFT_BROWSER_DATA = {
           "deployableObjects": [
             {
               "ref": "01M7GWXKXW-4ZJF",
+              "networkZone": "agents",
               "diagramTier": "application"
             }
           ]
         }
       ],
-      "tierVariants": [],
+      "tierVariants": [
+        {
+          "tier": "01M7KQAQCC-T9DS",
+          "deploymentTarget": {
+            "provider": "aws",
+            "region": "us-east-1"
+          },
+          "serviceGroupVariants": [
+            {
+              "serviceGroup": "Factory kernel mailboxes",
+              "replicaCount": 1,
+              "notes": "Single-writer Control Plane (stop-then-start per LG1); Gatekeeper Ingress and Gatekeeper Egress run desiredCount=1."
+            },
+            {
+              "serviceGroup": "Factory clients",
+              "replicaCount": 1,
+              "notes": "Console and Garrison each run desiredCount=1 behind ALB host rules and Cloudflare Access."
+            },
+            {
+              "serviceGroup": "Agent cartridges (on-demand)",
+              "autoscaling": {
+                "enabled": true,
+                "min": 0,
+                "max": 50
+              },
+              "notes": "Disposable scale-to-zero ECS Fargate RunTask execution per wake."
+            }
+          ]
+        },
+        {
+          "tier": "01M7KQAQCC-EG06",
+          "deploymentTarget": {
+            "provider": "other"
+          },
+          "notes": "Ephemeral single-host Docker Compose stack (landing-zones/compose) used for inner-loop local development and CI compose-proof verification."
+        }
+      ],
       "tierId": "",
       "purpose": "",
       "availabilityExpectation": "",
@@ -23368,7 +24422,7 @@ window.DRAFT_BROWSER_DATA = {
         },
         "schemaPath": "framework/schemas/software-deployment-pattern.schema.yaml"
       },
-      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M15NEKT7-S14J\",\n  \"type\": \"software_deployment_pattern\",\n  \"name\": \"Skippy's Submind Agent Factory Deployment Pattern\",\n  \"description\": \"Agent Factory deployment on AWS ECS Fargate (cluster factory-prod, us-east-1) behind the Cloudflare edge and an internet-facing ALB, with Secrets Manager injection, S3 mind storage and an EFS/S3 ledger. Agents run as on-demand tasks.\",\n  \"version\": \"2.0.0\",\n  \"catalogStatus\": \"incomplete\",\n  \"lifecycleStatus\": \"preferred\",\n  \"owner\": {\n    \"team\": \"platform-ai-team\",\n    \"contact\": \"platform-ai@example.com\"\n  },\n  \"tags\": [\n    \"software-deployment-pattern\",\n    \"agent-factory\",\n    \"aws\",\n    \"ecs-fargate\"\n  ],\n  \"serviceGroups\": [\n    {\n      \"name\": \"Factory kernel mailboxes\",\n      \"deploymentTarget\": \"aws-us-east-1\",\n      \"substrate\": \"01M7GWTG2S-AC3R\",\n      \"deployableObjects\": [\n        {\n          \"ref\": \"01M7GWXKXW-EJWB\",\n          \"diagramTier\": \"application\"\n        },\n        {\n          \"ref\": \"01M7GWXKXW-7W49\",\n          \"diagramTier\": \"application\"\n        },\n        {\n          \"ref\": \"01M7GWXKXW-BPBV\",\n          \"diagramTier\": \"application\"\n        }\n      ]\n    },\n    {\n      \"name\": \"Factory clients\",\n      \"deploymentTarget\": \"aws-us-east-1\",\n      \"substrate\": \"01M7GWTG2S-AC3R\",\n      \"deployableObjects\": [\n        {\n          \"ref\": \"01M7GWXKXW-VPCD\",\n          \"diagramTier\": \"presentation\"\n        },\n        {\n          \"ref\": \"01M7GWXKXW-Z0Z4\",\n          \"diagramTier\": \"presentation\"\n        }\n      ]\n    },\n    {\n      \"name\": \"Agent cartridges (on-demand)\",\n      \"deploymentTarget\": \"aws-us-east-1\",\n      \"substrate\": \"01M7GWTG2S-AC3R\",\n      \"deployableObjects\": [\n        {\n          \"ref\": \"01M7GWXKXW-4ZJF\",\n          \"diagramTier\": \"application\"\n        }\n      ]\n    }\n  ],\n  \"decisionRecords\": [\n    {\n      \"ref\": \"01M7GTBMQS-SZBH\",\n      \"key\": \"edgeProxyDecision\"\n    },\n    {\n      \"ref\": \"01M7GYV3B6-K9CZ\",\n      \"key\": \"deploymentTargets\"\n    },\n    {\n      \"ref\": \"01M7GYV3B6-K9CZ\",\n      \"key\": \"patternDeviations\"\n    },\n    {\n      \"ref\": \"01M7GYV3B6-8VN0\",\n      \"key\": \"interServiceConnections\"\n    },\n    {\n      \"ref\": \"01M7GYV3B6-8VN0\",\n      \"key\": \"externalDependencies\"\n    },\n    {\n      \"ref\": \"01M7GYV3B6-EEZ3\",\n      \"key\": \"accessControlModelDecision\"\n    },\n    {\n      \"ref\": \"01M7GYV3B6-YE24\",\n      \"key\": \"secretsManagementDecision\"\n    },\n    {\n      \"ref\": \"01M7GYV3B6-FASW\",\n      \"key\": \"dataClassification\"\n    },\n    {\n      \"ref\": \"01M7GYV3B6-FASW\",\n      \"key\": \"queryParameterizationDecision\"\n    },\n    {\n      \"ref\": \"01M7GYV3B6-083M\",\n      \"key\": \"cryptographyStandardDecision\"\n    },\n    {\n      \"ref\": \"01M7GYV3B6-RYSP\",\n      \"key\": \"availabilityRequirement\"\n    },\n    {\n      \"ref\": \"01M7GYV3B6-RYSP\",\n      \"key\": \"failureDomain\"\n    },\n    {\n      \"ref\": \"01M7GYV3B6-KB8Q\",\n      \"key\": \"errorHandlingLoggingDecision\"\n    },\n    {\n      \"ref\": \"01M7GYV3B6-Q5NV\",\n      \"key\": \"iacAutomationDecision\"\n    },\n    {\n      \"ref\": \"01M7GYV3B6-Q5NV\",\n      \"key\": \"productRegistrationDecision\"\n    },\n    {\n      \"ref\": \"01M7GYV3B6-H03D\",\n      \"key\": \"aiGatewayRoutingDecision\"\n    },\n    {\n      \"ref\": \"01M7GYV3B6-H03D\",\n      \"key\": \"modelInferenceSpecDecision\"\n    }\n  ],\n  \"requirementImplementations\": [\n    {\n      \"requirementGroup\": \"01M15WPEFV-ZMA9\",\n      \"requirementId\": \"req-expand-contract-migrations\",\n      \"status\": \"not-compliant\",\n      \"notes\": \"The placed agent-runtime (01M7GWXKXW-4ZJF) has a SQLite schema created in application code (CREATE TABLE IF NOT EXISTS in memory/episodic.py, notebook.py and workspace.py) that ships with the runtime. There is no expand-and-contract migration decoupled from a code deploy. See decision record 01M7GYV3B6-FASW.\"\n    },\n    {\n      \"requirementGroup\": \"01M15XYZXT-KTJA\",\n      \"requirementId\": \"req-asvs-parameterized-queries\",\n      \"status\": \"satisfied\",\n      \"notes\": \"Agent-runtime SQLite binds query values with parameterized placeholders. The only string-built SQL is notebook.py interpolating table identifiers from carry_tables; the runtime caller does not pass that argument. See decision record 01M7GYV3B6-FASW.\"\n    },\n    {\n      \"requirementGroup\": \"01M15WPEFV-ZMA9\",\n      \"requirementId\": \"req-no-gate-suppressions\",\n      \"status\": \"not-compliant\",\n      \"notes\": \"packages/conformance/baseline.json holds 4 approved baseline entries (GAP-031, GAP-050). See decision record 01M7GYV3B6-Q5NV.\"\n    },\n    {\n      \"requirementGroup\": \"01M15WPEFV-ZMA9\",\n      \"requirementId\": \"req-rollback-mechanism\",\n      \"status\": \"not-compliant\",\n      \"notes\": \"Rollback is a manual redeploy of a recorded pin; ECS deployment circuit breakers are disabled. See decision record 01M7GYV3B6-Q5NV.\"\n    },\n    {\n      \"requirementGroup\": \"01M15WPEFV-ZMA9\",\n      \"requirementId\": \"req-l3-composable-iac\",\n      \"status\": \"not-compliant\",\n      \"notes\": \"Single Terraform root configuration plus one documented hand-set Cloudflare Access bypass. See decision record 01M7GYV3B6-Q5NV.\"\n    },\n    {\n      \"requirementGroup\": \"01M15WPEFV-ZMA9\",\n      \"requirementId\": \"req-l3-ephemeral-preview-environments\",\n      \"status\": \"not-compliant\",\n      \"notes\": \"No per-branch cloud preview environments; CI runs an ephemeral Docker Compose proof only. See decision record 01M7GYV3B6-Q5NV.\"\n    },\n    {\n      \"requirementGroup\": \"01M15WPEFV-ZMA9\",\n      \"requirementId\": \"req-l3-json-structured-logging\",\n      \"status\": \"not-compliant\",\n      \"notes\": \"Application logs are plain text; the ledger is the structured audit trail. See decision record 01M7GYV3B6-KB8Q.\"\n    },\n    {\n      \"requirementGroup\": \"01M15WPEFV-ZMA9\",\n      \"requirementId\": \"req-l3-slo-error-budget\",\n      \"status\": \"not-compliant\",\n      \"notes\": \"No SLO or error-budget policy is defined. See decision record 01M7GYV3B6-RYSP.\"\n    },\n    {\n      \"requirementGroup\": \"01M15WPEFV-ZMA9\",\n      \"requirementId\": \"req-l3-zero-downtime-deployment\",\n      \"status\": \"not-compliant\",\n      \"notes\": \"Control plane deploys stop-then-start (LG1, accepted 2026-09-28); no auto-rollback. See decision record 01M7GYV3B6-Q5NV.\"\n    },\n    {\n      \"requirementGroup\": \"01M15WPEFV-ZMA9\",\n      \"requirementId\": \"req-l3-automated-security-gates\",\n      \"status\": \"not-compliant\",\n      \"notes\": \"No SAST, secret scanning, SCA or IaC policy linting in CI. See decision record 01M7GYV3B6-Q5NV.\"\n    },\n    {\n      \"requirementGroup\": \"01M15XYZXT-KTJA\",\n      \"requirementId\": \"req-asvs-third-party-component-security\",\n      \"status\": \"not-compliant\",\n      \"notes\": \"No automated SCA in CI and no Dependabot configuration. See decision record 01M7GYV3B6-Q5NV.\"\n    }\n  ],\n  \"notes\": {\n    \"verification\": \"Verified read-only on 2026-11-15 (America/Phoenix) against AWS account ending 2296, us-east-1.\",\n    \"deploymentTargets\": \"AWS us-east-1, ECS cluster factory-prod on Fargate/Fargate Spot (01M7GWTG2S-X9V8).\",\n    \"availabilityRequirement\": \"Each kernel and client service runs desired 1 / running 1. Agent compute is zero when idle. gatekeeper-egress and garrison use FARGATE_SPOT. Availability target not yet set.\",\n    \"dataClassification\": \"Confidential (agent-factory .draft/sdp.yaml says the ledger holds metadata plus hashes and the mind holds adopter data).\",\n    \"failureDomain\": {\n      \"scope\": \"platform-wide\",\n      \"description\": \"Single region, single cluster. Losing the control plane blocks wakes and MCP. Losing one agent task does not take down the factory.\"\n    },\n    \"externalDependencies\": \"Cloudflare edge proxy (01M7GTBMQS-YRGF) and Cloudflare Access (01M7GWTG2T-VA2G); ALB factory-prod (01M7GWTG2T-M2Q0); Cloud Map factory.internal (01M7GWTG2T-8A54); Secrets Manager (01M7GWTG2T-3PQY); S3 mind bucket (01M7GWTG2T-GYW1); S3 config/ledger/packages buckets (01M7GWTG2T-F1WG); EFS ledger (01M7GWTG2T-KR1Y); ECR (01M7GWTG2T-0NKZ); CloudWatch (01M7GWTG2T-TQEB); KMS AWS-managed keys (01M7GWTG2T-JHTR).\",\n    \"interServiceConnections\": \"The ALB routes the default host to the control plane, factory-dashboard to the console and garrison to garrison. Kernel services find each other through Cloud Map factory.internal.\",\n    \"secretsManagement\": \"AWS Secrets Manager referenced as ECS container secrets (control-plane 6, gatekeeper-ingress 2, gatekeeper-egress 2, garrison 1, console 0). The gatekeepers inject credentials so agent tasks hold only their run token, except the registered gap GAP-031 (see decision record 01M7GYV3B6-YE24).\",\n    \"iacAutomation\": \"Terraform in BeerCanLabs/agent-factory landing-zones/aws with an S3 backend.\",\n    \"observability\": \"CloudWatch Logs /ecs/factory-prod (30 days), Container Insights, ADOT collector sidecar on control-plane and gatekeeper-egress. No factory alarms or dashboards found.\",\n    \"patternDeviations\": \"Live ECS, the control plane, gatekeeper-ingress and gatekeeper-egress are always-on services; agents scale to zero (see decision record 01M7GYV3B6-K9CZ).\",\n    \"productRegistration\": \"Registered in drafting-table as BeerCanLabs Agent Factory (01M1N137Q5-AFAC).\",\n    \"incomplete\": \"Requirements are answered by the AWS decision records listed above. Known gaps are recorded as not-compliant requirementImplementations. Still open: synthetic test data, local DRAFT validation of the repo SDP, session/JWT hardening (MFA, rate limiting), and reference-architecture conformance: the agent-factory repo SDP maps the orchestrated-tasks pattern to RA 01KV0REFAR-CMSV, but declaring it needs the RA's ingress, orchestration, mesh, data-store and logs slots modeled first. Data components for the mind and ledger, autoscaling and security groups are not yet modeled.\"\n  },\n  \"_source\": \"catalog/engineering/software-deployment-patterns/sdp-skippys-submind.yaml\"\n}",
+      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M15NEKT7-S14J\",\n  \"type\": \"software_deployment_pattern\",\n  \"name\": \"Skippy's Submind Agent Factory Deployment Pattern\",\n  \"description\": \"Agent Factory deployment on AWS ECS Fargate (cluster factory-prod, us-east-1) behind the Cloudflare edge and an internet-facing ALB, with Secrets Manager injection, S3 mind storage and an EFS/S3 ledger. Agents run as on-demand tasks.\",\n  \"version\": \"2.0.0\",\n  \"catalogStatus\": \"incomplete\",\n  \"lifecycleStatus\": \"preferred\",\n  \"owner\": {\n    \"team\": \"platform-ai-team\",\n    \"contact\": \"platform-ai@example.com\"\n  },\n  \"tags\": [\n    \"software-deployment-pattern\",\n    \"agent-factory\",\n    \"aws\",\n    \"ecs-fargate\",\n    \"headless-neck\",\n    \"mcp\",\n    \"oauth21\"\n  ],\n  \"businessContext\": {\n    \"productFamily\": \"Skippy / Agent Factory\"\n  },\n  \"networkZones\": [\n    {\n      \"id\": \"edge\",\n      \"name\": \"Edge & Identity-Aware Ingress\",\n      \"tier\": \"frontend\",\n      \"description\": \"Cloudflare edge proxy, Cloudflare Access, and HTTPS AWS ALB restricted to Cloudflare IPv4 ingress CIDRs (see decision records 01M7GTBMQS-SZBH and 01M7GYV3B6-8VN0).\"\n    },\n    {\n      \"id\": \"mailbox\",\n      \"name\": \"Mailbox, Headless Neck & Client Services\",\n      \"tier\": \"application\",\n      \"description\": \"Public service subnets hosting Control Plane (:8088/:8089), Gatekeeper Ingress (:8090), Gatekeeper Egress (:8081), Console (:3000), and Garrison (:3000) under Cloud Map DNS (factory.internal).\"\n    },\n    {\n      \"id\": \"agents\",\n      \"name\": \"Agent Cartridge Compute\",\n      \"tier\": \"application\",\n      \"description\": \"Private agent subnets intended for zero direct internet egress (Terraform route=[], scoped security group to Control Plane :8088, Gatekeeper Egress :8081, and VPC endpoints :443). Live unmanaged route/SG drift and assignPublicIp=false mitigation are recorded in decision record 01M7GYV3B6-8VN0.\"\n    },\n    {\n      \"id\": \"data\",\n      \"name\": \"Durable Mind, WORM Ledger & Package Storage\",\n      \"tier\": \"data\",\n      \"description\": \"Encrypted EFS single-writer hot ledger volume (:2049) and versioned/Object-Lock S3 buckets for agent minds, COMPLIANCE WORM checkpoints, configs, and skill packages.\"\n    }\n  ],\n  \"serviceGroups\": [\n    {\n      \"name\": \"Factory kernel mailboxes\",\n      \"deploymentTarget\": \"aws-us-east-1\",\n      \"substrate\": \"01M7GWTG2S-AC3R\",\n      \"deployableObjects\": [\n        {\n          \"ref\": \"01M7GWXKXW-EJWB\",\n          \"networkZone\": \"mailbox\",\n          \"diagramTier\": \"application\"\n        },\n        {\n          \"ref\": \"01M7GWXKXW-7W49\",\n          \"networkZone\": \"mailbox\",\n          \"diagramTier\": \"application\"\n        },\n        {\n          \"ref\": \"01M7GWXKXW-BPBV\",\n          \"networkZone\": \"mailbox\",\n          \"diagramTier\": \"application\"\n        }\n      ]\n    },\n    {\n      \"name\": \"Factory clients\",\n      \"deploymentTarget\": \"aws-us-east-1\",\n      \"substrate\": \"01M7GWTG2S-AC3R\",\n      \"deployableObjects\": [\n        {\n          \"ref\": \"01M7GWXKXW-VPCD\",\n          \"networkZone\": \"mailbox\",\n          \"diagramTier\": \"presentation\"\n        },\n        {\n          \"ref\": \"01M7GWXKXW-Z0Z4\",\n          \"networkZone\": \"mailbox\",\n          \"diagramTier\": \"presentation\"\n        }\n      ]\n    },\n    {\n      \"name\": \"Agent cartridges (on-demand)\",\n      \"deploymentTarget\": \"aws-us-east-1\",\n      \"substrate\": \"01M7GWTG2S-AC3R\",\n      \"deployableObjects\": [\n        {\n          \"ref\": \"01M7GWXKXW-4ZJF\",\n          \"networkZone\": \"agents\",\n          \"diagramTier\": \"application\"\n        }\n      ]\n    }\n  ],\n  \"tierVariants\": [\n    {\n      \"tier\": \"01M7KQAQCC-T9DS\",\n      \"deploymentTarget\": {\n        \"provider\": \"aws\",\n        \"region\": \"us-east-1\"\n      },\n      \"serviceGroupVariants\": [\n        {\n          \"serviceGroup\": \"Factory kernel mailboxes\",\n          \"replicaCount\": 1,\n          \"notes\": \"Single-writer Control Plane (stop-then-start per LG1); Gatekeeper Ingress and Gatekeeper Egress run desiredCount=1.\"\n        },\n        {\n          \"serviceGroup\": \"Factory clients\",\n          \"replicaCount\": 1,\n          \"notes\": \"Console and Garrison each run desiredCount=1 behind ALB host rules and Cloudflare Access.\"\n        },\n        {\n          \"serviceGroup\": \"Agent cartridges (on-demand)\",\n          \"autoscaling\": {\n            \"enabled\": true,\n            \"min\": 0,\n            \"max\": 50\n          },\n          \"notes\": \"Disposable scale-to-zero ECS Fargate RunTask execution per wake.\"\n        }\n      ]\n    },\n    {\n      \"tier\": \"01M7KQAQCC-EG06\",\n      \"deploymentTarget\": {\n        \"provider\": \"other\"\n      },\n      \"notes\": \"Ephemeral single-host Docker Compose stack (landing-zones/compose) used for inner-loop local development and CI compose-proof verification.\"\n    }\n  ],\n  \"decisionRecords\": [\n    {\n      \"ref\": \"01M7GTBMQS-SZBH\",\n      \"key\": \"edgeProxyDecision\"\n    },\n    {\n      \"ref\": \"01M7GYV3B6-K9CZ\",\n      \"key\": \"deploymentTargets\"\n    },\n    {\n      \"ref\": \"01M7GYV3B6-K9CZ\",\n      \"key\": \"patternDeviations\"\n    },\n    {\n      \"ref\": \"01M7GYV3B6-8VN0\",\n      \"key\": \"interServiceConnections\"\n    },\n    {\n      \"ref\": \"01M7GYV3B6-8VN0\",\n      \"key\": \"externalDependencies\"\n    },\n    {\n      \"ref\": \"01M7GYV3B6-EEZ3\",\n      \"key\": \"accessControlModelDecision\"\n    },\n    {\n      \"ref\": \"01M7GYV3B6-YE24\",\n      \"key\": \"secretsManagementDecision\"\n    },\n    {\n      \"ref\": \"01M7GYV3B6-FASW\",\n      \"key\": \"dataClassification\"\n    },\n    {\n      \"ref\": \"01M7GYV3B6-FASW\",\n      \"key\": \"queryParameterizationDecision\"\n    },\n    {\n      \"ref\": \"01M7GYV3B6-083M\",\n      \"key\": \"cryptographyStandardDecision\"\n    },\n    {\n      \"ref\": \"01M7GYV3B6-RYSP\",\n      \"key\": \"availabilityRequirement\"\n    },\n    {\n      \"ref\": \"01M7GYV3B6-RYSP\",\n      \"key\": \"failureDomain\"\n    },\n    {\n      \"ref\": \"01M7GYV3B6-KB8Q\",\n      \"key\": \"errorHandlingLoggingDecision\"\n    },\n    {\n      \"ref\": \"01M7GYV3B6-Q5NV\",\n      \"key\": \"iacAutomationDecision\"\n    },\n    {\n      \"ref\": \"01M7GYV3B6-Q5NV\",\n      \"key\": \"productRegistrationDecision\"\n    },\n    {\n      \"ref\": \"01M7GYV3B6-H03D\",\n      \"key\": \"aiGatewayRoutingDecision\"\n    },\n    {\n      \"ref\": \"01M7GYV3B6-H03D\",\n      \"key\": \"modelInferenceSpecDecision\"\n    }\n  ],\n  \"requirementImplementations\": [\n    {\n      \"requirementGroup\": \"01M15WPEFV-ZMA9\",\n      \"requirementId\": \"req-expand-contract-migrations\",\n      \"status\": \"not-compliant\",\n      \"notes\": \"The placed agent-runtime (01M7GWXKXW-4ZJF) has a SQLite schema created in application code (CREATE TABLE IF NOT EXISTS in memory/episodic.py, notebook.py and workspace.py) that ships with the runtime. There is no expand-and-contract migration decoupled from a code deploy. See decision record 01M7GYV3B6-FASW.\"\n    },\n    {\n      \"requirementGroup\": \"01M15XYZXT-KTJA\",\n      \"requirementId\": \"req-asvs-parameterized-queries\",\n      \"status\": \"satisfied\",\n      \"notes\": \"Agent-runtime SQLite binds query values with parameterized placeholders. The only string-built SQL is notebook.py interpolating table identifiers from carry_tables; the runtime caller does not pass that argument. See decision record 01M7GYV3B6-FASW.\"\n    },\n    {\n      \"requirementGroup\": \"01M15WPEFV-ZMA9\",\n      \"requirementId\": \"req-no-gate-suppressions\",\n      \"status\": \"not-compliant\",\n      \"notes\": \"packages/conformance/baseline.json holds 4 approved baseline entries (GAP-031, GAP-050). See decision record 01M7GYV3B6-Q5NV.\"\n    },\n    {\n      \"requirementGroup\": \"01M15WPEFV-ZMA9\",\n      \"requirementId\": \"req-rollback-mechanism\",\n      \"status\": \"not-compliant\",\n      \"notes\": \"Rollback is a manual redeploy of a recorded pin; ECS deployment circuit breakers are disabled. See decision record 01M7GYV3B6-Q5NV.\"\n    },\n    {\n      \"requirementGroup\": \"01M15WPEFV-ZMA9\",\n      \"requirementId\": \"req-l3-composable-iac\",\n      \"status\": \"not-compliant\",\n      \"notes\": \"Single Terraform root configuration plus one documented hand-set Cloudflare Access bypass. See decision record 01M7GYV3B6-Q5NV.\"\n    },\n    {\n      \"requirementGroup\": \"01M15WPEFV-ZMA9\",\n      \"requirementId\": \"req-l3-ephemeral-preview-environments\",\n      \"status\": \"not-compliant\",\n      \"notes\": \"No per-branch cloud preview environments; CI runs an ephemeral Docker Compose proof only. See decision record 01M7GYV3B6-Q5NV.\"\n    },\n    {\n      \"requirementGroup\": \"01M15WPEFV-ZMA9\",\n      \"requirementId\": \"req-l3-json-structured-logging\",\n      \"status\": \"not-compliant\",\n      \"notes\": \"Application logs are plain text; the ledger is the structured audit trail. See decision record 01M7GYV3B6-KB8Q.\"\n    },\n    {\n      \"requirementGroup\": \"01M15WPEFV-ZMA9\",\n      \"requirementId\": \"req-l3-slo-error-budget\",\n      \"status\": \"not-compliant\",\n      \"notes\": \"No SLO or error-budget policy is defined. See decision record 01M7GYV3B6-RYSP.\"\n    },\n    {\n      \"requirementGroup\": \"01M15WPEFV-ZMA9\",\n      \"requirementId\": \"req-l3-zero-downtime-deployment\",\n      \"status\": \"not-compliant\",\n      \"notes\": \"Control plane deploys stop-then-start (LG1, accepted 2026-09-28); no auto-rollback. See decision record 01M7GYV3B6-Q5NV.\"\n    },\n    {\n      \"requirementGroup\": \"01M15WPEFV-ZMA9\",\n      \"requirementId\": \"req-l3-automated-security-gates\",\n      \"status\": \"not-compliant\",\n      \"notes\": \"No SAST, secret scanning, SCA or IaC policy linting in CI. See decision record 01M7GYV3B6-Q5NV.\"\n    },\n    {\n      \"requirementGroup\": \"01M15XYZXT-KTJA\",\n      \"requirementId\": \"req-asvs-third-party-component-security\",\n      \"status\": \"not-compliant\",\n      \"notes\": \"No automated SCA in CI and no Dependabot configuration. See decision record 01M7GYV3B6-Q5NV.\"\n    }\n  ],\n  \"notes\": {\n    \"verification\": \"Verified read-only on 2026-11-15 (America/Phoenix) against AWS account ending 2296, us-east-1.\",\n    \"deploymentTargets\": \"AWS us-east-1, ECS cluster factory-prod on Fargate/Fargate Spot (01M7GWTG2S-X9V8).\",\n    \"availabilityRequirement\": \"Each kernel and client service runs desired 1 / running 1. Agent compute is zero when idle. gatekeeper-egress and garrison use FARGATE_SPOT. Availability target not yet set.\",\n    \"dataClassification\": \"Confidential (agent-factory .draft/sdp.yaml says the ledger holds metadata plus hashes and the mind holds adopter data).\",\n    \"failureDomain\": {\n      \"scope\": \"platform-wide\",\n      \"description\": \"Single region, single cluster. Losing the control plane blocks wakes and MCP. Losing one agent task does not take down the factory.\"\n    },\n    \"externalDependencies\": \"Cloudflare edge proxy (01M7GTBMQS-YRGF) and Cloudflare Access (01M7GWTG2T-VA2G); ALB factory-prod (01M7GWTG2T-M2Q0); Cloud Map factory.internal (01M7GWTG2T-8A54); Secrets Manager (01M7GWTG2T-3PQY); S3 mind bucket (01M7GWTG2T-GYW1); S3 config/ledger/packages buckets (01M7GWTG2T-F1WG); EFS ledger (01M7GWTG2T-KR1Y); ECR (01M7GWTG2T-0NKZ); CodeBuild admission/skill builders (01M7KQAQCD-WD0R); EventBridge factory event bus (01M7KQAQCD-GHF4); CloudWatch (01M7GWTG2T-TQEB); KMS AWS-managed keys (01M7GWTG2T-JHTR).\",\n    \"interServiceConnections\": \"The ALB routes the default host to the control plane, factory-dashboard to the console and garrison to garrison. Kernel services find each other through Cloud Map factory.internal.\",\n    \"secretsManagement\": \"AWS Secrets Manager referenced as ECS container secrets (control-plane 6, gatekeeper-ingress 2, gatekeeper-egress 2, garrison 1, console 0). The gatekeepers inject credentials so agent tasks hold only their run token, except the registered gap GAP-031 (see decision record 01M7GYV3B6-YE24).\",\n    \"iacAutomation\": \"Terraform in BeerCanLabs/agent-factory landing-zones/aws with an S3 backend.\",\n    \"observability\": \"CloudWatch Logs /ecs/factory-prod (30 days), Container Insights, ADOT collector sidecar on control-plane and gatekeeper-egress. No factory alarms or dashboards found.\",\n    \"patternDeviations\": \"Live ECS, the control plane, gatekeeper-ingress and gatekeeper-egress are always-on services; agents scale to zero (see decision record 01M7GYV3B6-K9CZ).\",\n    \"productRegistration\": \"Registered in drafting-table as BeerCanLabs Agent Factory (01M1N137Q5-AFAC).\",\n    \"incomplete\": \"Requirements are answered by the AWS decision records listed above. Known gaps are recorded as not-compliant requirementImplementations. Still open: synthetic test data, local DRAFT validation of the repo SDP, session/JWT hardening (MFA, rate limiting), and reference-architecture conformance: the agent-factory repo SDP maps the orchestrated-tasks pattern to RA 01KV0REFAR-CMSV, but declaring it needs the RA's ingress, orchestration, mesh, data-store and logs slots modeled first. Data components for the mind and ledger, autoscaling and security groups are not yet modeled.\"\n  },\n  \"_source\": \"catalog/engineering/software-deployment-patterns/sdp-skippys-submind.yaml\"\n}",
       "existsInCatalog": true,
       "outboundRelationships": [],
       "inboundRelationships": [],
@@ -23385,8 +24439,8 @@ window.DRAFT_BROWSER_DATA = {
       "category": "",
       "deliveryModel": "",
       "domain": "",
-      "description": "Strategic domain covering the Agent Factory platform substrate (Doorman Proxy,  MCP Gateway, OAuth Auth Server, Persona Publisher Pipeline) and all published  AI Agent Personas and SOUL configurations.\n",
-      "version": "",
+      "description": "Strategic domain covering the BeerCanLabs Agent Factory headless platform: the typed Headless Neck (REST /api/v1/*, Principal/Agent/Run MCP surfaces, and OAuth 2.1 Authorization Server), Hot-Swappable Heads (Console SPA, Factory CLI, Agent Garrison, MCP clients), the 10 deterministic Cast services (Gatekeeper, Keymaster, Executive, Property Manager, Auditor, Accountant, Bouncer, Timekeeper, Registrar, Inspector), Dual-Mode Hosting (Shared Agent Runtime and Repository Cartridges), and portable House Staff & Skill packages.",
+      "version": "2.0.0",
       "catalogStatus": "",
       "lifecycleStatus": "unknown",
       "status": "",
@@ -23412,14 +24466,22 @@ window.DRAFT_BROWSER_DATA = {
       "vendorSLA": "",
       "authenticationModel": "",
       "incidentNotificationProcess": "",
-      "owner": {},
+      "owner": {
+        "team": "platform-ai-team",
+        "contact": "platform-ai@example.com"
+      },
       "definitionOwner": {},
       "provider": {},
       "authority": {},
       "shape": "round-rectangle",
       "color": "#7a6e60",
       "source": "catalog/governance/business-domains/domain-agent-factory.yaml",
-      "tags": [],
+      "tags": [
+        "domain",
+        "agent-factory",
+        "headless-neck",
+        "mcp"
+      ],
       "ardCategory": "",
       "internalComponents": [],
       "notes": {},
@@ -23481,7 +24543,7 @@ window.DRAFT_BROWSER_DATA = {
         "collectionSchemas": {},
         "schemaPath": "framework/schemas/domain.schema.yaml"
       },
-      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M7GTBMQR-GB2Z\",\n  \"type\": \"domain\",\n  \"name\": \"Agent Factory\",\n  \"description\": \"Strategic domain covering the Agent Factory platform substrate (Doorman Proxy,  MCP Gateway, OAuth Auth Server, Persona Publisher Pipeline) and all published  AI Agent Personas and SOUL configurations.\\n\",\n  \"ownerContact\": \"agent-factory-team@beercanlabs.com\",\n  \"_source\": \"catalog/governance/business-domains/domain-agent-factory.yaml\"\n}",
+      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M7GTBMQR-GB2Z\",\n  \"type\": \"domain\",\n  \"name\": \"Agent Factory\",\n  \"description\": \"Strategic domain covering the BeerCanLabs Agent Factory headless platform: the typed Headless Neck (REST /api/v1/*, Principal/Agent/Run MCP surfaces, and OAuth 2.1 Authorization Server), Hot-Swappable Heads (Console SPA, Factory CLI, Agent Garrison, MCP clients), the 10 deterministic Cast services (Gatekeeper, Keymaster, Executive, Property Manager, Auditor, Accountant, Bouncer, Timekeeper, Registrar, Inspector), Dual-Mode Hosting (Shared Agent Runtime and Repository Cartridges), and portable House Staff & Skill packages.\",\n  \"version\": \"2.0.0\",\n  \"owner\": {\n    \"team\": \"platform-ai-team\",\n    \"contact\": \"platform-ai@example.com\"\n  },\n  \"tags\": [\n    \"domain\",\n    \"agent-factory\",\n    \"headless-neck\",\n    \"mcp\"\n  ],\n  \"_source\": \"catalog/governance/business-domains/domain-agent-factory.yaml\"\n}",
       "existsInCatalog": true,
       "outboundRelationships": [],
       "inboundRelationships": []
@@ -25623,6 +26685,2335 @@ window.DRAFT_BROWSER_DATA = {
       "inboundRelationships": []
     },
     {
+      "id": "01M7KQAQCD-3CBS",
+      "uid": "01M7KQAQCD-3CBS",
+      "name": "AWS ALB factory-prod \u2192 Agent Factory Console",
+      "aliases": [],
+      "type": "relationship",
+      "typeLabel": "Relationship",
+      "filterType": "relationship",
+      "category": "",
+      "deliveryModel": "",
+      "domain": "",
+      "description": "",
+      "version": "",
+      "catalogStatus": "complete",
+      "lifecycleStatus": "unknown",
+      "status": "",
+      "businessContext": {},
+      "product": "",
+      "runsOn": "",
+      "subtype": "",
+      "vendor": "",
+      "productName": "",
+      "productVersion": "",
+      "classification": "",
+      "platformDependency": "",
+      "capabilities": [],
+      "configurations": [],
+      "networkPlacement": "",
+      "patchingOwner": "",
+      "complianceCerts": [],
+      "requirementGroups": [],
+      "requirementImplementations": [],
+      "dataLeavesInfrastructure": null,
+      "dataResidencyCommitment": "",
+      "dpaNotes": "",
+      "vendorSLA": "",
+      "authenticationModel": "",
+      "incidentNotificationProcess": "",
+      "owner": {},
+      "definitionOwner": {},
+      "provider": {},
+      "authority": {},
+      "shape": "round-rectangle",
+      "color": "#7a6e60",
+      "source": "catalog/governance/relationships/relationship-cloudflare-alb-ingress-routes-to-console.yaml",
+      "tags": [
+        "agent-factory",
+        "console"
+      ],
+      "ardCategory": "",
+      "internalComponents": [],
+      "notes": "Host-header ALB listener rule (factory-dashboard.dalesackrider.com) forwarding dashboard traffic behind Cloudflare to Console :3000.",
+      "requirements": [],
+      "implementations": [],
+      "appliesTo": {},
+      "inherits": "",
+      "scalingUnits": [],
+      "networkZones": [],
+      "sdpConnections": [],
+      "serviceGroups": [],
+      "tierVariants": [],
+      "tierId": "",
+      "purpose": "",
+      "availabilityExpectation": "",
+      "costPosture": "",
+      "complianceScope": [],
+      "parameterSurface": [],
+      "followsReferenceArchitecture": "",
+      "decisionRecords": [],
+      "affectedComponent": "",
+      "impact": "",
+      "mitigationPath": "",
+      "decisionRationale": "",
+      "relatedDecisionRecords": [],
+      "linkedObject": "",
+      "primaryObjectType": "",
+      "primaryObjectUid": "",
+      "generatedObjects": [],
+      "unresolvedQuestions": [],
+      "assumptions": [],
+      "nextSteps": [],
+      "defaultSelection": false,
+      "requirementCount": 0,
+      "hasRiskRef": false,
+      "outboundRefs": [
+        {
+          "target": "01M7GWTG2T-M2Q0",
+          "path": "source"
+        },
+        {
+          "target": "01M7GWXKXW-VPCD",
+          "path": "target"
+        }
+      ],
+      "referencedBy": [],
+      "editorSchema": {
+        "requiredFields": [
+          "schemaVersion",
+          "uid",
+          "type",
+          "name",
+          "source",
+          "label",
+          "catalogStatus"
+        ],
+        "optionalFields": [
+          "description",
+          "target",
+          "externalTarget",
+          "technology",
+          "direction",
+          "flow",
+          "capabilities",
+          "notes",
+          "tags"
+        ],
+        "fieldTypes": {
+          "tags": "list",
+          "capabilities": "list"
+        },
+        "enumFields": {
+          "catalogStatus": [
+            "stub",
+            "incomplete",
+            "complete"
+          ],
+          "direction": [
+            "synchronous",
+            "asynchronous",
+            "event"
+          ],
+          "flow": [
+            "outbound",
+            "inbound",
+            "bidirectional"
+          ]
+        },
+        "enumListFields": {},
+        "collectionSchemas": {},
+        "schemaPath": "framework/schemas/relationship.schema.yaml"
+      },
+      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M7KQAQCD-3CBS\",\n  \"type\": \"relationship\",\n  \"name\": \"AWS ALB factory-prod \\u2192 Agent Factory Console\",\n  \"source\": \"01M7GWTG2T-M2Q0\",\n  \"target\": \"01M7GWXKXW-VPCD\",\n  \"label\": \"routes to\",\n  \"technology\": \"HTTPS / HTTP (:3000)\",\n  \"direction\": \"synchronous\",\n  \"flow\": \"outbound\",\n  \"catalogStatus\": \"complete\",\n  \"tags\": [\n    \"agent-factory\",\n    \"console\"\n  ],\n  \"notes\": \"Host-header ALB listener rule (factory-dashboard.dalesackrider.com) forwarding dashboard traffic behind Cloudflare to Console :3000.\",\n  \"_source\": \"catalog/governance/relationships/relationship-cloudflare-alb-ingress-routes-to-console.yaml\"\n}",
+      "existsInCatalog": true,
+      "outboundRelationships": [],
+      "inboundRelationships": []
+    },
+    {
+      "id": "01M7KQAQCD-9JK7",
+      "uid": "01M7KQAQCD-9JK7",
+      "name": "AWS ALB factory-prod \u2192 Agent Factory Control Plane",
+      "aliases": [],
+      "type": "relationship",
+      "typeLabel": "Relationship",
+      "filterType": "relationship",
+      "category": "",
+      "deliveryModel": "",
+      "domain": "",
+      "description": "",
+      "version": "",
+      "catalogStatus": "complete",
+      "lifecycleStatus": "unknown",
+      "status": "",
+      "businessContext": {},
+      "product": "",
+      "runsOn": "",
+      "subtype": "",
+      "vendor": "",
+      "productName": "",
+      "productVersion": "",
+      "classification": "",
+      "platformDependency": "",
+      "capabilities": [],
+      "configurations": [],
+      "networkPlacement": "",
+      "patchingOwner": "",
+      "complianceCerts": [],
+      "requirementGroups": [],
+      "requirementImplementations": [],
+      "dataLeavesInfrastructure": null,
+      "dataResidencyCommitment": "",
+      "dpaNotes": "",
+      "vendorSLA": "",
+      "authenticationModel": "",
+      "incidentNotificationProcess": "",
+      "owner": {},
+      "definitionOwner": {},
+      "provider": {},
+      "authority": {},
+      "shape": "round-rectangle",
+      "color": "#7a6e60",
+      "source": "catalog/governance/relationships/relationship-cloudflare-alb-ingress-routes-to-control-plane.yaml",
+      "tags": [
+        "agent-factory",
+        "ingress"
+      ],
+      "ardCategory": "",
+      "internalComponents": [],
+      "notes": "Default ALB target forwarding Cloudflare-fronted Access sessions, Bearer fk_ API requests, signature-verified webhooks (/api/v1/hooks/*), OAuth 2.1 AS routes, and MCP requests from ALB :443 to Control Plane :8088 while probing listener :8089.",
+      "requirements": [],
+      "implementations": [],
+      "appliesTo": {},
+      "inherits": "",
+      "scalingUnits": [],
+      "networkZones": [],
+      "sdpConnections": [],
+      "serviceGroups": [],
+      "tierVariants": [],
+      "tierId": "",
+      "purpose": "",
+      "availabilityExpectation": "",
+      "costPosture": "",
+      "complianceScope": [],
+      "parameterSurface": [],
+      "followsReferenceArchitecture": "",
+      "decisionRecords": [],
+      "affectedComponent": "",
+      "impact": "",
+      "mitigationPath": "",
+      "decisionRationale": "",
+      "relatedDecisionRecords": [],
+      "linkedObject": "",
+      "primaryObjectType": "",
+      "primaryObjectUid": "",
+      "generatedObjects": [],
+      "unresolvedQuestions": [],
+      "assumptions": [],
+      "nextSteps": [],
+      "defaultSelection": false,
+      "requirementCount": 0,
+      "hasRiskRef": false,
+      "outboundRefs": [
+        {
+          "target": "01M7GWTG2T-M2Q0",
+          "path": "source"
+        },
+        {
+          "target": "01M7GWXKXW-EJWB",
+          "path": "target"
+        }
+      ],
+      "referencedBy": [],
+      "editorSchema": {
+        "requiredFields": [
+          "schemaVersion",
+          "uid",
+          "type",
+          "name",
+          "source",
+          "label",
+          "catalogStatus"
+        ],
+        "optionalFields": [
+          "description",
+          "target",
+          "externalTarget",
+          "technology",
+          "direction",
+          "flow",
+          "capabilities",
+          "notes",
+          "tags"
+        ],
+        "fieldTypes": {
+          "tags": "list",
+          "capabilities": "list"
+        },
+        "enumFields": {
+          "catalogStatus": [
+            "stub",
+            "incomplete",
+            "complete"
+          ],
+          "direction": [
+            "synchronous",
+            "asynchronous",
+            "event"
+          ],
+          "flow": [
+            "outbound",
+            "inbound",
+            "bidirectional"
+          ]
+        },
+        "enumListFields": {},
+        "collectionSchemas": {},
+        "schemaPath": "framework/schemas/relationship.schema.yaml"
+      },
+      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M7KQAQCD-9JK7\",\n  \"type\": \"relationship\",\n  \"name\": \"AWS ALB factory-prod \\u2192 Agent Factory Control Plane\",\n  \"source\": \"01M7GWTG2T-M2Q0\",\n  \"target\": \"01M7GWXKXW-EJWB\",\n  \"label\": \"routes to\",\n  \"technology\": \"HTTPS / HTTP (:8088, health :8089)\",\n  \"direction\": \"synchronous\",\n  \"flow\": \"outbound\",\n  \"catalogStatus\": \"complete\",\n  \"tags\": [\n    \"agent-factory\",\n    \"ingress\"\n  ],\n  \"notes\": \"Default ALB target forwarding Cloudflare-fronted Access sessions, Bearer fk_ API requests, signature-verified webhooks (/api/v1/hooks/*), OAuth 2.1 AS routes, and MCP requests from ALB :443 to Control Plane :8088 while probing listener :8089.\",\n  \"_source\": \"catalog/governance/relationships/relationship-cloudflare-alb-ingress-routes-to-control-plane.yaml\"\n}",
+      "existsInCatalog": true,
+      "outboundRelationships": [],
+      "inboundRelationships": []
+    },
+    {
+      "id": "01M7KQAQCD-GQNC",
+      "uid": "01M7KQAQCD-GQNC",
+      "name": "Agent Factory Console \u2192 Agent Factory Control Plane",
+      "aliases": [],
+      "type": "relationship",
+      "typeLabel": "Relationship",
+      "filterType": "relationship",
+      "category": "",
+      "deliveryModel": "",
+      "domain": "",
+      "description": "",
+      "version": "",
+      "catalogStatus": "complete",
+      "lifecycleStatus": "unknown",
+      "status": "",
+      "businessContext": {},
+      "product": "",
+      "runsOn": "",
+      "subtype": "",
+      "vendor": "",
+      "productName": "",
+      "productVersion": "",
+      "classification": "",
+      "platformDependency": "",
+      "capabilities": [],
+      "configurations": [],
+      "networkPlacement": "",
+      "patchingOwner": "",
+      "complianceCerts": [],
+      "requirementGroups": [],
+      "requirementImplementations": [],
+      "dataLeavesInfrastructure": null,
+      "dataResidencyCommitment": "",
+      "dpaNotes": "",
+      "vendorSLA": "",
+      "authenticationModel": "",
+      "incidentNotificationProcess": "",
+      "owner": {},
+      "definitionOwner": {},
+      "provider": {},
+      "authority": {},
+      "shape": "round-rectangle",
+      "color": "#7a6e60",
+      "source": "catalog/governance/relationships/relationship-console-proxies-to-control-plane.yaml",
+      "tags": [
+        "agent-factory",
+        "headless-neck"
+      ],
+      "ardCategory": "",
+      "internalComponents": [],
+      "notes": "Zero-secret pass-through proxy forwarding caller cf-access-jwt-assertion or Bearer credentials over Cloud Map (factory.internal) to /api/v1/*, /login, OAuth 2.1 AS, and /mcp*.",
+      "requirements": [],
+      "implementations": [],
+      "appliesTo": {},
+      "inherits": "",
+      "scalingUnits": [],
+      "networkZones": [],
+      "sdpConnections": [],
+      "serviceGroups": [],
+      "tierVariants": [],
+      "tierId": "",
+      "purpose": "",
+      "availabilityExpectation": "",
+      "costPosture": "",
+      "complianceScope": [],
+      "parameterSurface": [],
+      "followsReferenceArchitecture": "",
+      "decisionRecords": [],
+      "affectedComponent": "",
+      "impact": "",
+      "mitigationPath": "",
+      "decisionRationale": "",
+      "relatedDecisionRecords": [],
+      "linkedObject": "",
+      "primaryObjectType": "",
+      "primaryObjectUid": "",
+      "generatedObjects": [],
+      "unresolvedQuestions": [],
+      "assumptions": [],
+      "nextSteps": [],
+      "defaultSelection": false,
+      "requirementCount": 0,
+      "hasRiskRef": false,
+      "outboundRefs": [
+        {
+          "target": "01M7GWXKXW-VPCD",
+          "path": "source"
+        },
+        {
+          "target": "01M7GWXKXW-EJWB",
+          "path": "target"
+        }
+      ],
+      "referencedBy": [],
+      "editorSchema": {
+        "requiredFields": [
+          "schemaVersion",
+          "uid",
+          "type",
+          "name",
+          "source",
+          "label",
+          "catalogStatus"
+        ],
+        "optionalFields": [
+          "description",
+          "target",
+          "externalTarget",
+          "technology",
+          "direction",
+          "flow",
+          "capabilities",
+          "notes",
+          "tags"
+        ],
+        "fieldTypes": {
+          "tags": "list",
+          "capabilities": "list"
+        },
+        "enumFields": {
+          "catalogStatus": [
+            "stub",
+            "incomplete",
+            "complete"
+          ],
+          "direction": [
+            "synchronous",
+            "asynchronous",
+            "event"
+          ],
+          "flow": [
+            "outbound",
+            "inbound",
+            "bidirectional"
+          ]
+        },
+        "enumListFields": {},
+        "collectionSchemas": {},
+        "schemaPath": "framework/schemas/relationship.schema.yaml"
+      },
+      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M7KQAQCD-GQNC\",\n  \"type\": \"relationship\",\n  \"name\": \"Agent Factory Console \\u2192 Agent Factory Control Plane\",\n  \"source\": \"01M7GWXKXW-VPCD\",\n  \"target\": \"01M7GWXKXW-EJWB\",\n  \"label\": \"calls\",\n  \"technology\": \"HTTP (:8088)\",\n  \"direction\": \"synchronous\",\n  \"flow\": \"outbound\",\n  \"catalogStatus\": \"complete\",\n  \"tags\": [\n    \"agent-factory\",\n    \"headless-neck\"\n  ],\n  \"notes\": \"Zero-secret pass-through proxy forwarding caller cf-access-jwt-assertion or Bearer credentials over Cloud Map (factory.internal) to /api/v1/*, /login, OAuth 2.1 AS, and /mcp*.\",\n  \"_source\": \"catalog/governance/relationships/relationship-console-proxies-to-control-plane.yaml\"\n}",
+      "existsInCatalog": true,
+      "outboundRelationships": [],
+      "inboundRelationships": []
+    },
+    {
+      "id": "01M7KQAQCD-ZD19",
+      "uid": "01M7KQAQCD-ZD19",
+      "name": "Agent Factory Control Plane \u2192 S3 Config, Ledger & Package Buckets",
+      "aliases": [],
+      "type": "relationship",
+      "typeLabel": "Relationship",
+      "filterType": "relationship",
+      "category": "",
+      "deliveryModel": "",
+      "domain": "",
+      "description": "",
+      "version": "",
+      "catalogStatus": "complete",
+      "lifecycleStatus": "unknown",
+      "status": "",
+      "businessContext": {},
+      "product": "",
+      "runsOn": "",
+      "subtype": "",
+      "vendor": "",
+      "productName": "",
+      "productVersion": "",
+      "classification": "",
+      "platformDependency": "",
+      "capabilities": [],
+      "configurations": [],
+      "networkPlacement": "",
+      "patchingOwner": "",
+      "complianceCerts": [],
+      "requirementGroups": [],
+      "requirementImplementations": [],
+      "dataLeavesInfrastructure": null,
+      "dataResidencyCommitment": "",
+      "dpaNotes": "",
+      "vendorSLA": "",
+      "authenticationModel": "",
+      "incidentNotificationProcess": "",
+      "owner": {},
+      "definitionOwner": {},
+      "provider": {},
+      "authority": {},
+      "shape": "round-rectangle",
+      "color": "#7a6e60",
+      "source": "catalog/governance/relationships/relationship-control-plane-checkpoints-to-s3-stores.yaml",
+      "tags": [
+        "agent-factory",
+        "worm-ledger",
+        "s3"
+      ],
+      "ardCategory": "",
+      "internalComponents": [],
+      "notes": "Ships WORM ledger checkpoints to S3 Object Lock (COMPLIANCE mode, 365-day retention), reads/writes immutable versioned agent configurations, and manages skill packages.",
+      "requirements": [],
+      "implementations": [],
+      "appliesTo": {},
+      "inherits": "",
+      "scalingUnits": [],
+      "networkZones": [],
+      "sdpConnections": [],
+      "serviceGroups": [],
+      "tierVariants": [],
+      "tierId": "",
+      "purpose": "",
+      "availabilityExpectation": "",
+      "costPosture": "",
+      "complianceScope": [],
+      "parameterSurface": [],
+      "followsReferenceArchitecture": "",
+      "decisionRecords": [],
+      "affectedComponent": "",
+      "impact": "",
+      "mitigationPath": "",
+      "decisionRationale": "",
+      "relatedDecisionRecords": [],
+      "linkedObject": "",
+      "primaryObjectType": "",
+      "primaryObjectUid": "",
+      "generatedObjects": [],
+      "unresolvedQuestions": [],
+      "assumptions": [],
+      "nextSteps": [],
+      "defaultSelection": false,
+      "requirementCount": 0,
+      "hasRiskRef": false,
+      "outboundRefs": [
+        {
+          "target": "01M7GWXKXW-EJWB",
+          "path": "source"
+        },
+        {
+          "target": "01M7GWTG2T-F1WG",
+          "path": "target"
+        }
+      ],
+      "referencedBy": [],
+      "editorSchema": {
+        "requiredFields": [
+          "schemaVersion",
+          "uid",
+          "type",
+          "name",
+          "source",
+          "label",
+          "catalogStatus"
+        ],
+        "optionalFields": [
+          "description",
+          "target",
+          "externalTarget",
+          "technology",
+          "direction",
+          "flow",
+          "capabilities",
+          "notes",
+          "tags"
+        ],
+        "fieldTypes": {
+          "tags": "list",
+          "capabilities": "list"
+        },
+        "enumFields": {
+          "catalogStatus": [
+            "stub",
+            "incomplete",
+            "complete"
+          ],
+          "direction": [
+            "synchronous",
+            "asynchronous",
+            "event"
+          ],
+          "flow": [
+            "outbound",
+            "inbound",
+            "bidirectional"
+          ]
+        },
+        "enumListFields": {},
+        "collectionSchemas": {},
+        "schemaPath": "framework/schemas/relationship.schema.yaml"
+      },
+      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M7KQAQCD-ZD19\",\n  \"type\": \"relationship\",\n  \"name\": \"Agent Factory Control Plane \\u2192 S3 Config, Ledger & Package Buckets\",\n  \"source\": \"01M7GWXKXW-EJWB\",\n  \"target\": \"01M7GWTG2T-F1WG\",\n  \"label\": \"writes to\",\n  \"technology\": \"HTTPS (:443)\",\n  \"direction\": \"synchronous\",\n  \"flow\": \"bidirectional\",\n  \"catalogStatus\": \"complete\",\n  \"tags\": [\n    \"agent-factory\",\n    \"worm-ledger\",\n    \"s3\"\n  ],\n  \"notes\": \"Ships WORM ledger checkpoints to S3 Object Lock (COMPLIANCE mode, 365-day retention), reads/writes immutable versioned agent configurations, and manages skill packages.\",\n  \"_source\": \"catalog/governance/relationships/relationship-control-plane-checkpoints-to-s3-stores.yaml\"\n}",
+      "existsInCatalog": true,
+      "outboundRelationships": [],
+      "inboundRelationships": []
+    },
+    {
+      "id": "01M7KQAQCD-HNYQ",
+      "uid": "01M7KQAQCD-HNYQ",
+      "name": "Agent Factory Control Plane \u2192 Agent Factory Gatekeeper Egress",
+      "aliases": [],
+      "type": "relationship",
+      "typeLabel": "Relationship",
+      "filterType": "relationship",
+      "category": "",
+      "deliveryModel": "",
+      "domain": "",
+      "description": "",
+      "version": "",
+      "catalogStatus": "complete",
+      "lifecycleStatus": "unknown",
+      "status": "",
+      "businessContext": {},
+      "product": "",
+      "runsOn": "",
+      "subtype": "",
+      "vendor": "",
+      "productName": "",
+      "productVersion": "",
+      "classification": "",
+      "platformDependency": "",
+      "capabilities": [],
+      "configurations": [],
+      "networkPlacement": "",
+      "patchingOwner": "",
+      "complianceCerts": [],
+      "requirementGroups": [],
+      "requirementImplementations": [],
+      "dataLeavesInfrastructure": null,
+      "dataResidencyCommitment": "",
+      "dpaNotes": "",
+      "vendorSLA": "",
+      "authenticationModel": "",
+      "incidentNotificationProcess": "",
+      "owner": {},
+      "definitionOwner": {},
+      "provider": {},
+      "authority": {},
+      "shape": "round-rectangle",
+      "color": "#7a6e60",
+      "source": "catalog/governance/relationships/relationship-control-plane-discovers-models-via-gatekeeper-egress.yaml",
+      "tags": [
+        "agent-factory",
+        "model-discovery"
+      ],
+      "ardCategory": "",
+      "internalComponents": [],
+      "notes": "Queries POST /internal/vendor-models over Cloud Map (factory.internal) so Control Plane discovers vendor models without reading Gatekeeper-held secrets (S1).",
+      "requirements": [],
+      "implementations": [],
+      "appliesTo": {},
+      "inherits": "",
+      "scalingUnits": [],
+      "networkZones": [],
+      "sdpConnections": [],
+      "serviceGroups": [],
+      "tierVariants": [],
+      "tierId": "",
+      "purpose": "",
+      "availabilityExpectation": "",
+      "costPosture": "",
+      "complianceScope": [],
+      "parameterSurface": [],
+      "followsReferenceArchitecture": "",
+      "decisionRecords": [],
+      "affectedComponent": "",
+      "impact": "",
+      "mitigationPath": "",
+      "decisionRationale": "",
+      "relatedDecisionRecords": [],
+      "linkedObject": "",
+      "primaryObjectType": "",
+      "primaryObjectUid": "",
+      "generatedObjects": [],
+      "unresolvedQuestions": [],
+      "assumptions": [],
+      "nextSteps": [],
+      "defaultSelection": false,
+      "requirementCount": 0,
+      "hasRiskRef": false,
+      "outboundRefs": [
+        {
+          "target": "01M7GWXKXW-EJWB",
+          "path": "source"
+        },
+        {
+          "target": "01M7GWXKXW-BPBV",
+          "path": "target"
+        }
+      ],
+      "referencedBy": [],
+      "editorSchema": {
+        "requiredFields": [
+          "schemaVersion",
+          "uid",
+          "type",
+          "name",
+          "source",
+          "label",
+          "catalogStatus"
+        ],
+        "optionalFields": [
+          "description",
+          "target",
+          "externalTarget",
+          "technology",
+          "direction",
+          "flow",
+          "capabilities",
+          "notes",
+          "tags"
+        ],
+        "fieldTypes": {
+          "tags": "list",
+          "capabilities": "list"
+        },
+        "enumFields": {
+          "catalogStatus": [
+            "stub",
+            "incomplete",
+            "complete"
+          ],
+          "direction": [
+            "synchronous",
+            "asynchronous",
+            "event"
+          ],
+          "flow": [
+            "outbound",
+            "inbound",
+            "bidirectional"
+          ]
+        },
+        "enumListFields": {},
+        "collectionSchemas": {},
+        "schemaPath": "framework/schemas/relationship.schema.yaml"
+      },
+      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M7KQAQCD-HNYQ\",\n  \"type\": \"relationship\",\n  \"name\": \"Agent Factory Control Plane \\u2192 Agent Factory Gatekeeper Egress\",\n  \"source\": \"01M7GWXKXW-EJWB\",\n  \"target\": \"01M7GWXKXW-BPBV\",\n  \"label\": \"calls\",\n  \"technology\": \"HTTP (:8081)\",\n  \"direction\": \"synchronous\",\n  \"flow\": \"outbound\",\n  \"catalogStatus\": \"complete\",\n  \"tags\": [\n    \"agent-factory\",\n    \"model-discovery\"\n  ],\n  \"notes\": \"Queries POST /internal/vendor-models over Cloud Map (factory.internal) so Control Plane discovers vendor models without reading Gatekeeper-held secrets (S1).\",\n  \"_source\": \"catalog/governance/relationships/relationship-control-plane-discovers-models-via-gatekeeper-egress.yaml\"\n}",
+      "existsInCatalog": true,
+      "outboundRelationships": [],
+      "inboundRelationships": []
+    },
+    {
+      "id": "01M7KQAQCD-CWYV",
+      "uid": "01M7KQAQCD-CWYV",
+      "name": "Agent Factory Control Plane \u2192 Agent Factory Gatekeeper Ingress",
+      "aliases": [],
+      "type": "relationship",
+      "typeLabel": "Relationship",
+      "filterType": "relationship",
+      "category": "",
+      "deliveryModel": "",
+      "domain": "",
+      "description": "",
+      "version": "",
+      "catalogStatus": "complete",
+      "lifecycleStatus": "unknown",
+      "status": "",
+      "businessContext": {},
+      "product": "",
+      "runsOn": "",
+      "subtype": "",
+      "vendor": "",
+      "productName": "",
+      "productVersion": "",
+      "classification": "",
+      "platformDependency": "",
+      "capabilities": [],
+      "configurations": [],
+      "networkPlacement": "",
+      "patchingOwner": "",
+      "complianceCerts": [],
+      "requirementGroups": [],
+      "requirementImplementations": [],
+      "dataLeavesInfrastructure": null,
+      "dataResidencyCommitment": "",
+      "dpaNotes": "",
+      "vendorSLA": "",
+      "authenticationModel": "",
+      "incidentNotificationProcess": "",
+      "owner": {},
+      "definitionOwner": {},
+      "provider": {},
+      "authority": {},
+      "shape": "round-rectangle",
+      "color": "#7a6e60",
+      "source": "catalog/governance/relationships/relationship-control-plane-notifies-gatekeeper-ingress.yaml",
+      "tags": [
+        "agent-factory",
+        "gatekeeper-ingress"
+      ],
+      "ardCategory": "",
+      "internalComponents": [],
+      "notes": "Pushes presence synchronization (/api/v1/presence) and live typing/tool activity indicators (/api/v1/activity) over Cloud Map (factory.internal).",
+      "requirements": [],
+      "implementations": [],
+      "appliesTo": {},
+      "inherits": "",
+      "scalingUnits": [],
+      "networkZones": [],
+      "sdpConnections": [],
+      "serviceGroups": [],
+      "tierVariants": [],
+      "tierId": "",
+      "purpose": "",
+      "availabilityExpectation": "",
+      "costPosture": "",
+      "complianceScope": [],
+      "parameterSurface": [],
+      "followsReferenceArchitecture": "",
+      "decisionRecords": [],
+      "affectedComponent": "",
+      "impact": "",
+      "mitigationPath": "",
+      "decisionRationale": "",
+      "relatedDecisionRecords": [],
+      "linkedObject": "",
+      "primaryObjectType": "",
+      "primaryObjectUid": "",
+      "generatedObjects": [],
+      "unresolvedQuestions": [],
+      "assumptions": [],
+      "nextSteps": [],
+      "defaultSelection": false,
+      "requirementCount": 0,
+      "hasRiskRef": false,
+      "outboundRefs": [
+        {
+          "target": "01M7GWXKXW-EJWB",
+          "path": "source"
+        },
+        {
+          "target": "01M7GWXKXW-7W49",
+          "path": "target"
+        }
+      ],
+      "referencedBy": [],
+      "editorSchema": {
+        "requiredFields": [
+          "schemaVersion",
+          "uid",
+          "type",
+          "name",
+          "source",
+          "label",
+          "catalogStatus"
+        ],
+        "optionalFields": [
+          "description",
+          "target",
+          "externalTarget",
+          "technology",
+          "direction",
+          "flow",
+          "capabilities",
+          "notes",
+          "tags"
+        ],
+        "fieldTypes": {
+          "tags": "list",
+          "capabilities": "list"
+        },
+        "enumFields": {
+          "catalogStatus": [
+            "stub",
+            "incomplete",
+            "complete"
+          ],
+          "direction": [
+            "synchronous",
+            "asynchronous",
+            "event"
+          ],
+          "flow": [
+            "outbound",
+            "inbound",
+            "bidirectional"
+          ]
+        },
+        "enumListFields": {},
+        "collectionSchemas": {},
+        "schemaPath": "framework/schemas/relationship.schema.yaml"
+      },
+      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M7KQAQCD-CWYV\",\n  \"type\": \"relationship\",\n  \"name\": \"Agent Factory Control Plane \\u2192 Agent Factory Gatekeeper Ingress\",\n  \"source\": \"01M7GWXKXW-EJWB\",\n  \"target\": \"01M7GWXKXW-7W49\",\n  \"label\": \"sends events to\",\n  \"technology\": \"HTTP (:8090)\",\n  \"direction\": \"asynchronous\",\n  \"flow\": \"outbound\",\n  \"catalogStatus\": \"complete\",\n  \"tags\": [\n    \"agent-factory\",\n    \"gatekeeper-ingress\"\n  ],\n  \"notes\": \"Pushes presence synchronization (/api/v1/presence) and live typing/tool activity indicators (/api/v1/activity) over Cloud Map (factory.internal).\",\n  \"_source\": \"catalog/governance/relationships/relationship-control-plane-notifies-gatekeeper-ingress.yaml\"\n}",
+      "existsInCatalog": true,
+      "outboundRelationships": [],
+      "inboundRelationships": []
+    },
+    {
+      "id": "01M7KQAQCD-Z7TV",
+      "uid": "01M7KQAQCD-Z7TV",
+      "name": "Agent Factory Control Plane \u2192 Agent Factory EventBridge Event Bus",
+      "aliases": [],
+      "type": "relationship",
+      "typeLabel": "Relationship",
+      "filterType": "relationship",
+      "category": "",
+      "deliveryModel": "",
+      "domain": "",
+      "description": "",
+      "version": "",
+      "catalogStatus": "incomplete",
+      "lifecycleStatus": "unknown",
+      "status": "",
+      "businessContext": {},
+      "product": "",
+      "runsOn": "",
+      "subtype": "",
+      "vendor": "",
+      "productName": "",
+      "productVersion": "",
+      "classification": "",
+      "platformDependency": "",
+      "capabilities": [],
+      "configurations": [],
+      "networkPlacement": "",
+      "patchingOwner": "",
+      "complianceCerts": [],
+      "requirementGroups": [],
+      "requirementImplementations": [],
+      "dataLeavesInfrastructure": null,
+      "dataResidencyCommitment": "",
+      "dpaNotes": "",
+      "vendorSLA": "",
+      "authenticationModel": "",
+      "incidentNotificationProcess": "",
+      "owner": {},
+      "definitionOwner": {},
+      "provider": {},
+      "authority": {},
+      "shape": "round-rectangle",
+      "color": "#7a6e60",
+      "source": "catalog/governance/relationships/relationship-control-plane-publishes-to-eventbridge.yaml",
+      "tags": [
+        "agent-factory",
+        "eventbridge"
+      ],
+      "ardCategory": "",
+      "internalComponents": [],
+      "notes": "Inspector taps the ledger and publishes run outcomes, budget alerts, crashes, and held-action events to the factory EventBridge bus (live rules/targets not yet reviewed).",
+      "requirements": [],
+      "implementations": [],
+      "appliesTo": {},
+      "inherits": "",
+      "scalingUnits": [],
+      "networkZones": [],
+      "sdpConnections": [],
+      "serviceGroups": [],
+      "tierVariants": [],
+      "tierId": "",
+      "purpose": "",
+      "availabilityExpectation": "",
+      "costPosture": "",
+      "complianceScope": [],
+      "parameterSurface": [],
+      "followsReferenceArchitecture": "",
+      "decisionRecords": [],
+      "affectedComponent": "",
+      "impact": "",
+      "mitigationPath": "",
+      "decisionRationale": "",
+      "relatedDecisionRecords": [],
+      "linkedObject": "",
+      "primaryObjectType": "",
+      "primaryObjectUid": "",
+      "generatedObjects": [],
+      "unresolvedQuestions": [],
+      "assumptions": [],
+      "nextSteps": [],
+      "defaultSelection": false,
+      "requirementCount": 0,
+      "hasRiskRef": false,
+      "outboundRefs": [
+        {
+          "target": "01M7GWXKXW-EJWB",
+          "path": "source"
+        },
+        {
+          "target": "01M7KQAQCD-GHF4",
+          "path": "target"
+        }
+      ],
+      "referencedBy": [],
+      "editorSchema": {
+        "requiredFields": [
+          "schemaVersion",
+          "uid",
+          "type",
+          "name",
+          "source",
+          "label",
+          "catalogStatus"
+        ],
+        "optionalFields": [
+          "description",
+          "target",
+          "externalTarget",
+          "technology",
+          "direction",
+          "flow",
+          "capabilities",
+          "notes",
+          "tags"
+        ],
+        "fieldTypes": {
+          "tags": "list",
+          "capabilities": "list"
+        },
+        "enumFields": {
+          "catalogStatus": [
+            "stub",
+            "incomplete",
+            "complete"
+          ],
+          "direction": [
+            "synchronous",
+            "asynchronous",
+            "event"
+          ],
+          "flow": [
+            "outbound",
+            "inbound",
+            "bidirectional"
+          ]
+        },
+        "enumListFields": {},
+        "collectionSchemas": {},
+        "schemaPath": "framework/schemas/relationship.schema.yaml"
+      },
+      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M7KQAQCD-Z7TV\",\n  \"type\": \"relationship\",\n  \"name\": \"Agent Factory Control Plane \\u2192 Agent Factory EventBridge Event Bus\",\n  \"source\": \"01M7GWXKXW-EJWB\",\n  \"target\": \"01M7KQAQCD-GHF4\",\n  \"label\": \"sends events to\",\n  \"technology\": \"HTTPS (:443)\",\n  \"direction\": \"event\",\n  \"flow\": \"outbound\",\n  \"catalogStatus\": \"incomplete\",\n  \"tags\": [\n    \"agent-factory\",\n    \"eventbridge\"\n  ],\n  \"notes\": \"Inspector taps the ledger and publishes run outcomes, budget alerts, crashes, and held-action events to the factory EventBridge bus (live rules/targets not yet reviewed).\",\n  \"_source\": \"catalog/governance/relationships/relationship-control-plane-publishes-to-eventbridge.yaml\"\n}",
+      "existsInCatalog": true,
+      "outboundRelationships": [],
+      "inboundRelationships": []
+    },
+    {
+      "id": "01M7KQAQCD-4GN2",
+      "uid": "01M7KQAQCD-4GN2",
+      "name": "Agent Factory Control Plane \u2192 CodeBuild Admission & Skill Builders",
+      "aliases": [],
+      "type": "relationship",
+      "typeLabel": "Relationship",
+      "filterType": "relationship",
+      "category": "",
+      "deliveryModel": "",
+      "domain": "",
+      "description": "",
+      "version": "",
+      "catalogStatus": "complete",
+      "lifecycleStatus": "unknown",
+      "status": "",
+      "businessContext": {},
+      "product": "",
+      "runsOn": "",
+      "subtype": "",
+      "vendor": "",
+      "productName": "",
+      "productVersion": "",
+      "classification": "",
+      "platformDependency": "",
+      "capabilities": [],
+      "configurations": [],
+      "networkPlacement": "",
+      "patchingOwner": "",
+      "complianceCerts": [],
+      "requirementGroups": [],
+      "requirementImplementations": [],
+      "dataLeavesInfrastructure": null,
+      "dataResidencyCommitment": "",
+      "dpaNotes": "",
+      "vendorSLA": "",
+      "authenticationModel": "",
+      "incidentNotificationProcess": "",
+      "owner": {},
+      "definitionOwner": {},
+      "provider": {},
+      "authority": {},
+      "shape": "round-rectangle",
+      "color": "#7a6e60",
+      "source": "catalog/governance/relationships/relationship-control-plane-triggers-codebuild-pipeline.yaml",
+      "tags": [
+        "agent-factory",
+        "admission"
+      ],
+      "ardCategory": "",
+      "internalComponents": [],
+      "notes": "Triggers commit-pinned factory-agent-builder, factory-skills-builder, and factory-skill-checker CodeBuild runs.",
+      "requirements": [],
+      "implementations": [],
+      "appliesTo": {},
+      "inherits": "",
+      "scalingUnits": [],
+      "networkZones": [],
+      "sdpConnections": [],
+      "serviceGroups": [],
+      "tierVariants": [],
+      "tierId": "",
+      "purpose": "",
+      "availabilityExpectation": "",
+      "costPosture": "",
+      "complianceScope": [],
+      "parameterSurface": [],
+      "followsReferenceArchitecture": "",
+      "decisionRecords": [],
+      "affectedComponent": "",
+      "impact": "",
+      "mitigationPath": "",
+      "decisionRationale": "",
+      "relatedDecisionRecords": [],
+      "linkedObject": "",
+      "primaryObjectType": "",
+      "primaryObjectUid": "",
+      "generatedObjects": [],
+      "unresolvedQuestions": [],
+      "assumptions": [],
+      "nextSteps": [],
+      "defaultSelection": false,
+      "requirementCount": 0,
+      "hasRiskRef": false,
+      "outboundRefs": [
+        {
+          "target": "01M7GWXKXW-EJWB",
+          "path": "source"
+        },
+        {
+          "target": "01M7KQAQCD-WD0R",
+          "path": "target"
+        }
+      ],
+      "referencedBy": [],
+      "editorSchema": {
+        "requiredFields": [
+          "schemaVersion",
+          "uid",
+          "type",
+          "name",
+          "source",
+          "label",
+          "catalogStatus"
+        ],
+        "optionalFields": [
+          "description",
+          "target",
+          "externalTarget",
+          "technology",
+          "direction",
+          "flow",
+          "capabilities",
+          "notes",
+          "tags"
+        ],
+        "fieldTypes": {
+          "tags": "list",
+          "capabilities": "list"
+        },
+        "enumFields": {
+          "catalogStatus": [
+            "stub",
+            "incomplete",
+            "complete"
+          ],
+          "direction": [
+            "synchronous",
+            "asynchronous",
+            "event"
+          ],
+          "flow": [
+            "outbound",
+            "inbound",
+            "bidirectional"
+          ]
+        },
+        "enumListFields": {},
+        "collectionSchemas": {},
+        "schemaPath": "framework/schemas/relationship.schema.yaml"
+      },
+      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M7KQAQCD-4GN2\",\n  \"type\": \"relationship\",\n  \"name\": \"Agent Factory Control Plane \\u2192 CodeBuild Admission & Skill Builders\",\n  \"source\": \"01M7GWXKXW-EJWB\",\n  \"target\": \"01M7KQAQCD-WD0R\",\n  \"label\": \"calls\",\n  \"technology\": \"HTTPS (:443)\",\n  \"direction\": \"asynchronous\",\n  \"flow\": \"outbound\",\n  \"catalogStatus\": \"complete\",\n  \"tags\": [\n    \"agent-factory\",\n    \"admission\"\n  ],\n  \"notes\": \"Triggers commit-pinned factory-agent-builder, factory-skills-builder, and factory-skill-checker CodeBuild runs.\",\n  \"_source\": \"catalog/governance/relationships/relationship-control-plane-triggers-codebuild-pipeline.yaml\"\n}",
+      "existsInCatalog": true,
+      "outboundRelationships": [],
+      "inboundRelationships": []
+    },
+    {
+      "id": "01M7KQAQCD-XTFV",
+      "uid": "01M7KQAQCD-XTFV",
+      "name": "Agent Factory Control Plane \u2192 Amazon EFS factory-prod-ledger",
+      "aliases": [],
+      "type": "relationship",
+      "typeLabel": "Relationship",
+      "filterType": "relationship",
+      "category": "",
+      "deliveryModel": "",
+      "domain": "",
+      "description": "",
+      "version": "",
+      "catalogStatus": "complete",
+      "lifecycleStatus": "unknown",
+      "status": "",
+      "businessContext": {},
+      "product": "",
+      "runsOn": "",
+      "subtype": "",
+      "vendor": "",
+      "productName": "",
+      "productVersion": "",
+      "classification": "",
+      "platformDependency": "",
+      "capabilities": [],
+      "configurations": [],
+      "networkPlacement": "",
+      "patchingOwner": "",
+      "complianceCerts": [],
+      "requirementGroups": [],
+      "requirementImplementations": [],
+      "dataLeavesInfrastructure": null,
+      "dataResidencyCommitment": "",
+      "dpaNotes": "",
+      "vendorSLA": "",
+      "authenticationModel": "",
+      "incidentNotificationProcess": "",
+      "owner": {},
+      "definitionOwner": {},
+      "provider": {},
+      "authority": {},
+      "shape": "round-rectangle",
+      "color": "#7a6e60",
+      "source": "catalog/governance/relationships/relationship-control-plane-writes-to-efs-ledger.yaml",
+      "tags": [
+        "agent-factory",
+        "ledger"
+      ],
+      "ardCategory": "",
+      "internalComponents": [],
+      "notes": "Single-writer leased append to SHA-256 hash-chained ledger.jsonl on encrypted EFS access point (LG1).",
+      "requirements": [],
+      "implementations": [],
+      "appliesTo": {},
+      "inherits": "",
+      "scalingUnits": [],
+      "networkZones": [],
+      "sdpConnections": [],
+      "serviceGroups": [],
+      "tierVariants": [],
+      "tierId": "",
+      "purpose": "",
+      "availabilityExpectation": "",
+      "costPosture": "",
+      "complianceScope": [],
+      "parameterSurface": [],
+      "followsReferenceArchitecture": "",
+      "decisionRecords": [],
+      "affectedComponent": "",
+      "impact": "",
+      "mitigationPath": "",
+      "decisionRationale": "",
+      "relatedDecisionRecords": [],
+      "linkedObject": "",
+      "primaryObjectType": "",
+      "primaryObjectUid": "",
+      "generatedObjects": [],
+      "unresolvedQuestions": [],
+      "assumptions": [],
+      "nextSteps": [],
+      "defaultSelection": false,
+      "requirementCount": 0,
+      "hasRiskRef": false,
+      "outboundRefs": [
+        {
+          "target": "01M7GWXKXW-EJWB",
+          "path": "source"
+        },
+        {
+          "target": "01M7GWTG2T-KR1Y",
+          "path": "target"
+        }
+      ],
+      "referencedBy": [],
+      "editorSchema": {
+        "requiredFields": [
+          "schemaVersion",
+          "uid",
+          "type",
+          "name",
+          "source",
+          "label",
+          "catalogStatus"
+        ],
+        "optionalFields": [
+          "description",
+          "target",
+          "externalTarget",
+          "technology",
+          "direction",
+          "flow",
+          "capabilities",
+          "notes",
+          "tags"
+        ],
+        "fieldTypes": {
+          "tags": "list",
+          "capabilities": "list"
+        },
+        "enumFields": {
+          "catalogStatus": [
+            "stub",
+            "incomplete",
+            "complete"
+          ],
+          "direction": [
+            "synchronous",
+            "asynchronous",
+            "event"
+          ],
+          "flow": [
+            "outbound",
+            "inbound",
+            "bidirectional"
+          ]
+        },
+        "enumListFields": {},
+        "collectionSchemas": {},
+        "schemaPath": "framework/schemas/relationship.schema.yaml"
+      },
+      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M7KQAQCD-XTFV\",\n  \"type\": \"relationship\",\n  \"name\": \"Agent Factory Control Plane \\u2192 Amazon EFS factory-prod-ledger\",\n  \"source\": \"01M7GWXKXW-EJWB\",\n  \"target\": \"01M7GWTG2T-KR1Y\",\n  \"label\": \"writes to\",\n  \"technology\": \"NFSv4.1 over TLS (:2049)\",\n  \"direction\": \"synchronous\",\n  \"flow\": \"bidirectional\",\n  \"catalogStatus\": \"complete\",\n  \"tags\": [\n    \"agent-factory\",\n    \"ledger\"\n  ],\n  \"notes\": \"Single-writer leased append to SHA-256 hash-chained ledger.jsonl on encrypted EFS access point (LG1).\",\n  \"_source\": \"catalog/governance/relationships/relationship-control-plane-writes-to-efs-ledger.yaml\"\n}",
+      "existsInCatalog": true,
+      "outboundRelationships": [],
+      "inboundRelationships": []
+    },
+    {
+      "id": "01M7KQAQCD-7V12",
+      "uid": "01M7KQAQCD-7V12",
+      "name": "Agent Factory Gatekeeper Egress \u2192 External LLM & SaaS Providers",
+      "aliases": [],
+      "type": "relationship",
+      "typeLabel": "Relationship",
+      "filterType": "relationship",
+      "category": "",
+      "deliveryModel": "",
+      "domain": "",
+      "description": "",
+      "version": "",
+      "catalogStatus": "incomplete",
+      "lifecycleStatus": "unknown",
+      "status": "",
+      "businessContext": {},
+      "product": "",
+      "runsOn": "",
+      "subtype": "",
+      "vendor": "",
+      "productName": "",
+      "productVersion": "",
+      "classification": "",
+      "platformDependency": "",
+      "capabilities": [],
+      "configurations": [],
+      "networkPlacement": "",
+      "patchingOwner": "",
+      "complianceCerts": [],
+      "requirementGroups": [],
+      "requirementImplementations": [],
+      "dataLeavesInfrastructure": null,
+      "dataResidencyCommitment": "",
+      "dpaNotes": "",
+      "vendorSLA": "",
+      "authenticationModel": "",
+      "incidentNotificationProcess": "",
+      "owner": {},
+      "definitionOwner": {},
+      "provider": {},
+      "authority": {},
+      "shape": "round-rectangle",
+      "color": "#7a6e60",
+      "source": "catalog/governance/relationships/relationship-gatekeeper-egress-calls-external-llm-providers.yaml",
+      "tags": [
+        "agent-factory",
+        "llm-providers"
+      ],
+      "ardCategory": "",
+      "internalComponents": [],
+      "notes": "Injects provider API keys and Keymaster-refreshed OAuth tokens at egress so agent containers do not hold upstream credentials (S1; see decision records 01M7GYV3B6-YE24 and 01M7GYV3B6-H03D for registered gaps GAP-027/GAP-031).",
+      "requirements": [],
+      "implementations": [],
+      "appliesTo": {},
+      "inherits": "",
+      "scalingUnits": [],
+      "networkZones": [],
+      "sdpConnections": [],
+      "serviceGroups": [],
+      "tierVariants": [],
+      "tierId": "",
+      "purpose": "",
+      "availabilityExpectation": "",
+      "costPosture": "",
+      "complianceScope": [],
+      "parameterSurface": [],
+      "followsReferenceArchitecture": "",
+      "decisionRecords": [],
+      "affectedComponent": "",
+      "impact": "",
+      "mitigationPath": "",
+      "decisionRationale": "",
+      "relatedDecisionRecords": [],
+      "linkedObject": "",
+      "primaryObjectType": "",
+      "primaryObjectUid": "",
+      "generatedObjects": [],
+      "unresolvedQuestions": [],
+      "assumptions": [],
+      "nextSteps": [],
+      "defaultSelection": false,
+      "requirementCount": 0,
+      "hasRiskRef": false,
+      "outboundRefs": [
+        {
+          "target": "01M7GWXKXW-BPBV",
+          "path": "source"
+        }
+      ],
+      "referencedBy": [],
+      "editorSchema": {
+        "requiredFields": [
+          "schemaVersion",
+          "uid",
+          "type",
+          "name",
+          "source",
+          "label",
+          "catalogStatus"
+        ],
+        "optionalFields": [
+          "description",
+          "target",
+          "externalTarget",
+          "technology",
+          "direction",
+          "flow",
+          "capabilities",
+          "notes",
+          "tags"
+        ],
+        "fieldTypes": {
+          "tags": "list",
+          "capabilities": "list"
+        },
+        "enumFields": {
+          "catalogStatus": [
+            "stub",
+            "incomplete",
+            "complete"
+          ],
+          "direction": [
+            "synchronous",
+            "asynchronous",
+            "event"
+          ],
+          "flow": [
+            "outbound",
+            "inbound",
+            "bidirectional"
+          ]
+        },
+        "enumListFields": {},
+        "collectionSchemas": {},
+        "schemaPath": "framework/schemas/relationship.schema.yaml"
+      },
+      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M7KQAQCD-7V12\",\n  \"type\": \"relationship\",\n  \"name\": \"Agent Factory Gatekeeper Egress \\u2192 External LLM & SaaS Providers\",\n  \"source\": \"01M7GWXKXW-BPBV\",\n  \"externalTarget\": \"External Model & SaaS APIs (AWS Bedrock, OpenAI, xAI, Anthropic, GitHub, Google Workspace, Notion)\",\n  \"label\": \"calls\",\n  \"technology\": \"HTTPS (:443)\",\n  \"direction\": \"synchronous\",\n  \"flow\": \"outbound\",\n  \"catalogStatus\": \"incomplete\",\n  \"tags\": [\n    \"agent-factory\",\n    \"llm-providers\"\n  ],\n  \"notes\": \"Injects provider API keys and Keymaster-refreshed OAuth tokens at egress so agent containers do not hold upstream credentials (S1; see decision records 01M7GYV3B6-YE24 and 01M7GYV3B6-H03D for registered gaps GAP-027/GAP-031).\",\n  \"_source\": \"catalog/governance/relationships/relationship-gatekeeper-egress-calls-external-llm-providers.yaml\"\n}",
+      "existsInCatalog": true,
+      "outboundRelationships": [],
+      "inboundRelationships": []
+    },
+    {
+      "id": "01M7KQAQCD-M02F",
+      "uid": "01M7KQAQCD-M02F",
+      "name": "Agent Factory Gatekeeper Egress \u2192 Agent Factory Control Plane",
+      "aliases": [],
+      "type": "relationship",
+      "typeLabel": "Relationship",
+      "filterType": "relationship",
+      "category": "",
+      "deliveryModel": "",
+      "domain": "",
+      "description": "",
+      "version": "",
+      "catalogStatus": "complete",
+      "lifecycleStatus": "unknown",
+      "status": "",
+      "businessContext": {},
+      "product": "",
+      "runsOn": "",
+      "subtype": "",
+      "vendor": "",
+      "productName": "",
+      "productVersion": "",
+      "classification": "",
+      "platformDependency": "",
+      "capabilities": [],
+      "configurations": [],
+      "networkPlacement": "",
+      "patchingOwner": "",
+      "complianceCerts": [],
+      "requirementGroups": [],
+      "requirementImplementations": [],
+      "dataLeavesInfrastructure": null,
+      "dataResidencyCommitment": "",
+      "dpaNotes": "",
+      "vendorSLA": "",
+      "authenticationModel": "",
+      "incidentNotificationProcess": "",
+      "owner": {},
+      "definitionOwner": {},
+      "provider": {},
+      "authority": {},
+      "shape": "round-rectangle",
+      "color": "#7a6e60",
+      "source": "catalog/governance/relationships/relationship-gatekeeper-egress-verifies-runs-with-control-plane.yaml",
+      "tags": [
+        "agent-factory",
+        "gatekeeper-egress"
+      ],
+      "ardCategory": "",
+      "internalComponents": [],
+      "notes": "Verifies live run context, kill-switch status, policy, and Accountant budget standing, opens/consumes Bouncer approvals, syncs dynamic model catalogs, and writes attested ledger records.",
+      "requirements": [],
+      "implementations": [],
+      "appliesTo": {},
+      "inherits": "",
+      "scalingUnits": [],
+      "networkZones": [],
+      "sdpConnections": [],
+      "serviceGroups": [],
+      "tierVariants": [],
+      "tierId": "",
+      "purpose": "",
+      "availabilityExpectation": "",
+      "costPosture": "",
+      "complianceScope": [],
+      "parameterSurface": [],
+      "followsReferenceArchitecture": "",
+      "decisionRecords": [],
+      "affectedComponent": "",
+      "impact": "",
+      "mitigationPath": "",
+      "decisionRationale": "",
+      "relatedDecisionRecords": [],
+      "linkedObject": "",
+      "primaryObjectType": "",
+      "primaryObjectUid": "",
+      "generatedObjects": [],
+      "unresolvedQuestions": [],
+      "assumptions": [],
+      "nextSteps": [],
+      "defaultSelection": false,
+      "requirementCount": 0,
+      "hasRiskRef": false,
+      "outboundRefs": [
+        {
+          "target": "01M7GWXKXW-BPBV",
+          "path": "source"
+        },
+        {
+          "target": "01M7GWXKXW-EJWB",
+          "path": "target"
+        }
+      ],
+      "referencedBy": [],
+      "editorSchema": {
+        "requiredFields": [
+          "schemaVersion",
+          "uid",
+          "type",
+          "name",
+          "source",
+          "label",
+          "catalogStatus"
+        ],
+        "optionalFields": [
+          "description",
+          "target",
+          "externalTarget",
+          "technology",
+          "direction",
+          "flow",
+          "capabilities",
+          "notes",
+          "tags"
+        ],
+        "fieldTypes": {
+          "tags": "list",
+          "capabilities": "list"
+        },
+        "enumFields": {
+          "catalogStatus": [
+            "stub",
+            "incomplete",
+            "complete"
+          ],
+          "direction": [
+            "synchronous",
+            "asynchronous",
+            "event"
+          ],
+          "flow": [
+            "outbound",
+            "inbound",
+            "bidirectional"
+          ]
+        },
+        "enumListFields": {},
+        "collectionSchemas": {},
+        "schemaPath": "framework/schemas/relationship.schema.yaml"
+      },
+      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M7KQAQCD-M02F\",\n  \"type\": \"relationship\",\n  \"name\": \"Agent Factory Gatekeeper Egress \\u2192 Agent Factory Control Plane\",\n  \"source\": \"01M7GWXKXW-BPBV\",\n  \"target\": \"01M7GWXKXW-EJWB\",\n  \"label\": \"calls\",\n  \"technology\": \"HTTP (:8088)\",\n  \"direction\": \"synchronous\",\n  \"flow\": \"outbound\",\n  \"catalogStatus\": \"complete\",\n  \"tags\": [\n    \"agent-factory\",\n    \"gatekeeper-egress\"\n  ],\n  \"notes\": \"Verifies live run context, kill-switch status, policy, and Accountant budget standing, opens/consumes Bouncer approvals, syncs dynamic model catalogs, and writes attested ledger records.\",\n  \"_source\": \"catalog/governance/relationships/relationship-gatekeeper-egress-verifies-runs-with-control-plane.yaml\"\n}",
+      "existsInCatalog": true,
+      "outboundRelationships": [],
+      "inboundRelationships": []
+    },
+    {
+      "id": "01M7KQAQCD-PND8",
+      "uid": "01M7KQAQCD-PND8",
+      "name": "Agent Factory Gatekeeper Ingress \u2192 Discord Gateway WebSocket API",
+      "aliases": [],
+      "type": "relationship",
+      "typeLabel": "Relationship",
+      "filterType": "relationship",
+      "category": "",
+      "deliveryModel": "",
+      "domain": "",
+      "description": "",
+      "version": "",
+      "catalogStatus": "complete",
+      "lifecycleStatus": "unknown",
+      "status": "",
+      "businessContext": {},
+      "product": "",
+      "runsOn": "",
+      "subtype": "",
+      "vendor": "",
+      "productName": "",
+      "productVersion": "",
+      "classification": "",
+      "platformDependency": "",
+      "capabilities": [],
+      "configurations": [],
+      "networkPlacement": "",
+      "patchingOwner": "",
+      "complianceCerts": [],
+      "requirementGroups": [],
+      "requirementImplementations": [],
+      "dataLeavesInfrastructure": null,
+      "dataResidencyCommitment": "",
+      "dpaNotes": "",
+      "vendorSLA": "",
+      "authenticationModel": "",
+      "incidentNotificationProcess": "",
+      "owner": {},
+      "definitionOwner": {},
+      "provider": {},
+      "authority": {},
+      "shape": "round-rectangle",
+      "color": "#7a6e60",
+      "source": "catalog/governance/relationships/relationship-gatekeeper-ingress-connects-to-discord-gateway.yaml",
+      "tags": [
+        "agent-factory",
+        "discord"
+      ],
+      "ardCategory": "",
+      "internalComponents": [],
+      "notes": "Holds Discord bot tokens outside agent containers (S1) and maintains Gateway WebSocket presence for registered cartridges declaring a discord surface.",
+      "requirements": [],
+      "implementations": [],
+      "appliesTo": {},
+      "inherits": "",
+      "scalingUnits": [],
+      "networkZones": [],
+      "sdpConnections": [],
+      "serviceGroups": [],
+      "tierVariants": [],
+      "tierId": "",
+      "purpose": "",
+      "availabilityExpectation": "",
+      "costPosture": "",
+      "complianceScope": [],
+      "parameterSurface": [],
+      "followsReferenceArchitecture": "",
+      "decisionRecords": [],
+      "affectedComponent": "",
+      "impact": "",
+      "mitigationPath": "",
+      "decisionRationale": "",
+      "relatedDecisionRecords": [],
+      "linkedObject": "",
+      "primaryObjectType": "",
+      "primaryObjectUid": "",
+      "generatedObjects": [],
+      "unresolvedQuestions": [],
+      "assumptions": [],
+      "nextSteps": [],
+      "defaultSelection": false,
+      "requirementCount": 0,
+      "hasRiskRef": false,
+      "outboundRefs": [
+        {
+          "target": "01M7GWXKXW-7W49",
+          "path": "source"
+        }
+      ],
+      "referencedBy": [],
+      "editorSchema": {
+        "requiredFields": [
+          "schemaVersion",
+          "uid",
+          "type",
+          "name",
+          "source",
+          "label",
+          "catalogStatus"
+        ],
+        "optionalFields": [
+          "description",
+          "target",
+          "externalTarget",
+          "technology",
+          "direction",
+          "flow",
+          "capabilities",
+          "notes",
+          "tags"
+        ],
+        "fieldTypes": {
+          "tags": "list",
+          "capabilities": "list"
+        },
+        "enumFields": {
+          "catalogStatus": [
+            "stub",
+            "incomplete",
+            "complete"
+          ],
+          "direction": [
+            "synchronous",
+            "asynchronous",
+            "event"
+          ],
+          "flow": [
+            "outbound",
+            "inbound",
+            "bidirectional"
+          ]
+        },
+        "enumListFields": {},
+        "collectionSchemas": {},
+        "schemaPath": "framework/schemas/relationship.schema.yaml"
+      },
+      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M7KQAQCD-PND8\",\n  \"type\": \"relationship\",\n  \"name\": \"Agent Factory Gatekeeper Ingress \\u2192 Discord Gateway WebSocket API\",\n  \"source\": \"01M7GWXKXW-7W49\",\n  \"externalTarget\": \"Discord Gateway WebSocket API\",\n  \"label\": \"connects to\",\n  \"technology\": \"WebSocket over TLS (:443)\",\n  \"direction\": \"event\",\n  \"flow\": \"bidirectional\",\n  \"catalogStatus\": \"complete\",\n  \"tags\": [\n    \"agent-factory\",\n    \"discord\"\n  ],\n  \"notes\": \"Holds Discord bot tokens outside agent containers (S1) and maintains Gateway WebSocket presence for registered cartridges declaring a discord surface.\",\n  \"_source\": \"catalog/governance/relationships/relationship-gatekeeper-ingress-connects-to-discord-gateway.yaml\"\n}",
+      "existsInCatalog": true,
+      "outboundRelationships": [],
+      "inboundRelationships": []
+    },
+    {
+      "id": "01M7KQAQCD-1AM0",
+      "uid": "01M7KQAQCD-1AM0",
+      "name": "Agent Factory Gatekeeper Ingress \u2192 Agent Factory Control Plane",
+      "aliases": [],
+      "type": "relationship",
+      "typeLabel": "Relationship",
+      "filterType": "relationship",
+      "category": "",
+      "deliveryModel": "",
+      "domain": "",
+      "description": "",
+      "version": "",
+      "catalogStatus": "complete",
+      "lifecycleStatus": "unknown",
+      "status": "",
+      "businessContext": {},
+      "product": "",
+      "runsOn": "",
+      "subtype": "",
+      "vendor": "",
+      "productName": "",
+      "productVersion": "",
+      "classification": "",
+      "platformDependency": "",
+      "capabilities": [],
+      "configurations": [],
+      "networkPlacement": "",
+      "patchingOwner": "",
+      "complianceCerts": [],
+      "requirementGroups": [],
+      "requirementImplementations": [],
+      "dataLeavesInfrastructure": null,
+      "dataResidencyCommitment": "",
+      "dpaNotes": "",
+      "vendorSLA": "",
+      "authenticationModel": "",
+      "incidentNotificationProcess": "",
+      "owner": {},
+      "definitionOwner": {},
+      "provider": {},
+      "authority": {},
+      "shape": "round-rectangle",
+      "color": "#7a6e60",
+      "source": "catalog/governance/relationships/relationship-gatekeeper-ingress-wakes-control-plane.yaml",
+      "tags": [
+        "agent-factory",
+        "gatekeeper-ingress"
+      ],
+      "ardCategory": "",
+      "internalComponents": [],
+      "notes": "Dispatches POST /api/v1/agents/:id/wake and conversation handoff on inbound Discord messages over Cloud Map (factory.internal).",
+      "requirements": [],
+      "implementations": [],
+      "appliesTo": {},
+      "inherits": "",
+      "scalingUnits": [],
+      "networkZones": [],
+      "sdpConnections": [],
+      "serviceGroups": [],
+      "tierVariants": [],
+      "tierId": "",
+      "purpose": "",
+      "availabilityExpectation": "",
+      "costPosture": "",
+      "complianceScope": [],
+      "parameterSurface": [],
+      "followsReferenceArchitecture": "",
+      "decisionRecords": [],
+      "affectedComponent": "",
+      "impact": "",
+      "mitigationPath": "",
+      "decisionRationale": "",
+      "relatedDecisionRecords": [],
+      "linkedObject": "",
+      "primaryObjectType": "",
+      "primaryObjectUid": "",
+      "generatedObjects": [],
+      "unresolvedQuestions": [],
+      "assumptions": [],
+      "nextSteps": [],
+      "defaultSelection": false,
+      "requirementCount": 0,
+      "hasRiskRef": false,
+      "outboundRefs": [
+        {
+          "target": "01M7GWXKXW-7W49",
+          "path": "source"
+        },
+        {
+          "target": "01M7GWXKXW-EJWB",
+          "path": "target"
+        }
+      ],
+      "referencedBy": [],
+      "editorSchema": {
+        "requiredFields": [
+          "schemaVersion",
+          "uid",
+          "type",
+          "name",
+          "source",
+          "label",
+          "catalogStatus"
+        ],
+        "optionalFields": [
+          "description",
+          "target",
+          "externalTarget",
+          "technology",
+          "direction",
+          "flow",
+          "capabilities",
+          "notes",
+          "tags"
+        ],
+        "fieldTypes": {
+          "tags": "list",
+          "capabilities": "list"
+        },
+        "enumFields": {
+          "catalogStatus": [
+            "stub",
+            "incomplete",
+            "complete"
+          ],
+          "direction": [
+            "synchronous",
+            "asynchronous",
+            "event"
+          ],
+          "flow": [
+            "outbound",
+            "inbound",
+            "bidirectional"
+          ]
+        },
+        "enumListFields": {},
+        "collectionSchemas": {},
+        "schemaPath": "framework/schemas/relationship.schema.yaml"
+      },
+      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M7KQAQCD-1AM0\",\n  \"type\": \"relationship\",\n  \"name\": \"Agent Factory Gatekeeper Ingress \\u2192 Agent Factory Control Plane\",\n  \"source\": \"01M7GWXKXW-7W49\",\n  \"target\": \"01M7GWXKXW-EJWB\",\n  \"label\": \"calls\",\n  \"technology\": \"HTTP (:8088)\",\n  \"direction\": \"synchronous\",\n  \"flow\": \"outbound\",\n  \"catalogStatus\": \"complete\",\n  \"tags\": [\n    \"agent-factory\",\n    \"gatekeeper-ingress\"\n  ],\n  \"notes\": \"Dispatches POST /api/v1/agents/:id/wake and conversation handoff on inbound Discord messages over Cloud Map (factory.internal).\",\n  \"_source\": \"catalog/governance/relationships/relationship-gatekeeper-ingress-wakes-control-plane.yaml\"\n}",
+      "existsInCatalog": true,
+      "outboundRelationships": [],
+      "inboundRelationships": []
+    },
+    {
+      "id": "01M7KQAQCD-8Z5M",
+      "uid": "01M7KQAQCD-8Z5M",
+      "name": "Agent Factory Cartridge Task \u2192 Agent Factory Control Plane",
+      "aliases": [],
+      "type": "relationship",
+      "typeLabel": "Relationship",
+      "filterType": "relationship",
+      "category": "",
+      "deliveryModel": "",
+      "domain": "",
+      "description": "",
+      "version": "",
+      "catalogStatus": "complete",
+      "lifecycleStatus": "unknown",
+      "status": "",
+      "businessContext": {},
+      "product": "",
+      "runsOn": "",
+      "subtype": "",
+      "vendor": "",
+      "productName": "",
+      "productVersion": "",
+      "classification": "",
+      "platformDependency": "",
+      "capabilities": [],
+      "configurations": [],
+      "networkPlacement": "",
+      "patchingOwner": "",
+      "complianceCerts": [],
+      "requirementGroups": [],
+      "requirementImplementations": [],
+      "dataLeavesInfrastructure": null,
+      "dataResidencyCommitment": "",
+      "dpaNotes": "",
+      "vendorSLA": "",
+      "authenticationModel": "",
+      "incidentNotificationProcess": "",
+      "owner": {},
+      "definitionOwner": {},
+      "provider": {},
+      "authority": {},
+      "shape": "round-rectangle",
+      "color": "#7a6e60",
+      "source": "catalog/governance/relationships/relationship-shared-runtime-calls-control-plane.yaml",
+      "tags": [
+        "agent-factory",
+        "agent-runtime"
+      ],
+      "ardCategory": "",
+      "internalComponents": [],
+      "notes": "Authenticated with short-lived FACTORY_RUN_TOKEN across zone boundary (agents -> mailbox) for /input prefetch, /mailbox long-polling, /heartbeat, /result, and POST /mcp/run.",
+      "requirements": [],
+      "implementations": [],
+      "appliesTo": {},
+      "inherits": "",
+      "scalingUnits": [],
+      "networkZones": [],
+      "sdpConnections": [],
+      "serviceGroups": [],
+      "tierVariants": [],
+      "tierId": "",
+      "purpose": "",
+      "availabilityExpectation": "",
+      "costPosture": "",
+      "complianceScope": [],
+      "parameterSurface": [],
+      "followsReferenceArchitecture": "",
+      "decisionRecords": [],
+      "affectedComponent": "",
+      "impact": "",
+      "mitigationPath": "",
+      "decisionRationale": "",
+      "relatedDecisionRecords": [],
+      "linkedObject": "",
+      "primaryObjectType": "",
+      "primaryObjectUid": "",
+      "generatedObjects": [],
+      "unresolvedQuestions": [],
+      "assumptions": [],
+      "nextSteps": [],
+      "defaultSelection": false,
+      "requirementCount": 0,
+      "hasRiskRef": false,
+      "outboundRefs": [
+        {
+          "target": "01M7GWXKXW-4ZJF",
+          "path": "source"
+        },
+        {
+          "target": "01M7GWXKXW-EJWB",
+          "path": "target"
+        }
+      ],
+      "referencedBy": [],
+      "editorSchema": {
+        "requiredFields": [
+          "schemaVersion",
+          "uid",
+          "type",
+          "name",
+          "source",
+          "label",
+          "catalogStatus"
+        ],
+        "optionalFields": [
+          "description",
+          "target",
+          "externalTarget",
+          "technology",
+          "direction",
+          "flow",
+          "capabilities",
+          "notes",
+          "tags"
+        ],
+        "fieldTypes": {
+          "tags": "list",
+          "capabilities": "list"
+        },
+        "enumFields": {
+          "catalogStatus": [
+            "stub",
+            "incomplete",
+            "complete"
+          ],
+          "direction": [
+            "synchronous",
+            "asynchronous",
+            "event"
+          ],
+          "flow": [
+            "outbound",
+            "inbound",
+            "bidirectional"
+          ]
+        },
+        "enumListFields": {},
+        "collectionSchemas": {},
+        "schemaPath": "framework/schemas/relationship.schema.yaml"
+      },
+      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M7KQAQCD-8Z5M\",\n  \"type\": \"relationship\",\n  \"name\": \"Agent Factory Cartridge Task \\u2192 Agent Factory Control Plane\",\n  \"source\": \"01M7GWXKXW-4ZJF\",\n  \"target\": \"01M7GWXKXW-EJWB\",\n  \"label\": \"calls\",\n  \"technology\": \"HTTP (:8088)\",\n  \"direction\": \"synchronous\",\n  \"flow\": \"outbound\",\n  \"catalogStatus\": \"complete\",\n  \"tags\": [\n    \"agent-factory\",\n    \"agent-runtime\"\n  ],\n  \"notes\": \"Authenticated with short-lived FACTORY_RUN_TOKEN across zone boundary (agents -> mailbox) for /input prefetch, /mailbox long-polling, /heartbeat, /result, and POST /mcp/run.\",\n  \"_source\": \"catalog/governance/relationships/relationship-shared-runtime-calls-control-plane.yaml\"\n}",
+      "existsInCatalog": true,
+      "outboundRelationships": [],
+      "inboundRelationships": []
+    },
+    {
+      "id": "01M7KQAQCD-RGE7",
+      "uid": "01M7KQAQCD-RGE7",
+      "name": "Agent Factory Cartridge Task \u2192 Amazon S3 Agent Factory Mind Bucket",
+      "aliases": [],
+      "type": "relationship",
+      "typeLabel": "Relationship",
+      "filterType": "relationship",
+      "category": "",
+      "deliveryModel": "",
+      "domain": "",
+      "description": "",
+      "version": "",
+      "catalogStatus": "incomplete",
+      "lifecycleStatus": "unknown",
+      "status": "",
+      "businessContext": {},
+      "product": "",
+      "runsOn": "",
+      "subtype": "",
+      "vendor": "",
+      "productName": "",
+      "productVersion": "",
+      "classification": "",
+      "platformDependency": "",
+      "capabilities": [],
+      "configurations": [],
+      "networkPlacement": "",
+      "patchingOwner": "",
+      "complianceCerts": [],
+      "requirementGroups": [],
+      "requirementImplementations": [],
+      "dataLeavesInfrastructure": null,
+      "dataResidencyCommitment": "",
+      "dpaNotes": "",
+      "vendorSLA": "",
+      "authenticationModel": "",
+      "incidentNotificationProcess": "",
+      "owner": {},
+      "definitionOwner": {},
+      "provider": {},
+      "authority": {},
+      "shape": "round-rectangle",
+      "color": "#7a6e60",
+      "source": "catalog/governance/relationships/relationship-shared-runtime-hydrates-from-s3-stores.yaml",
+      "tags": [
+        "agent-factory",
+        "mind-hydration"
+      ],
+      "ardCategory": "",
+      "internalComponents": [],
+      "notes": "Hydrate shim pulls and pushes $MEMORY_DIR over the S3 Gateway VPC Endpoint. Terraform-managed task roles restrict access to each agent's own prefix; runtime-created AgentTaskRole-* roles currently grant broader bucket access (recorded as non-compliant in decision record 01M7GYV3B6-FASW).",
+      "requirements": [],
+      "implementations": [],
+      "appliesTo": {},
+      "inherits": "",
+      "scalingUnits": [],
+      "networkZones": [],
+      "sdpConnections": [],
+      "serviceGroups": [],
+      "tierVariants": [],
+      "tierId": "",
+      "purpose": "",
+      "availabilityExpectation": "",
+      "costPosture": "",
+      "complianceScope": [],
+      "parameterSurface": [],
+      "followsReferenceArchitecture": "",
+      "decisionRecords": [],
+      "affectedComponent": "",
+      "impact": "",
+      "mitigationPath": "",
+      "decisionRationale": "",
+      "relatedDecisionRecords": [],
+      "linkedObject": "",
+      "primaryObjectType": "",
+      "primaryObjectUid": "",
+      "generatedObjects": [],
+      "unresolvedQuestions": [],
+      "assumptions": [],
+      "nextSteps": [],
+      "defaultSelection": false,
+      "requirementCount": 0,
+      "hasRiskRef": false,
+      "outboundRefs": [
+        {
+          "target": "01M7GWXKXW-4ZJF",
+          "path": "source"
+        },
+        {
+          "target": "01M7GWTG2T-GYW1",
+          "path": "target"
+        }
+      ],
+      "referencedBy": [],
+      "editorSchema": {
+        "requiredFields": [
+          "schemaVersion",
+          "uid",
+          "type",
+          "name",
+          "source",
+          "label",
+          "catalogStatus"
+        ],
+        "optionalFields": [
+          "description",
+          "target",
+          "externalTarget",
+          "technology",
+          "direction",
+          "flow",
+          "capabilities",
+          "notes",
+          "tags"
+        ],
+        "fieldTypes": {
+          "tags": "list",
+          "capabilities": "list"
+        },
+        "enumFields": {
+          "catalogStatus": [
+            "stub",
+            "incomplete",
+            "complete"
+          ],
+          "direction": [
+            "synchronous",
+            "asynchronous",
+            "event"
+          ],
+          "flow": [
+            "outbound",
+            "inbound",
+            "bidirectional"
+          ]
+        },
+        "enumListFields": {},
+        "collectionSchemas": {},
+        "schemaPath": "framework/schemas/relationship.schema.yaml"
+      },
+      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M7KQAQCD-RGE7\",\n  \"type\": \"relationship\",\n  \"name\": \"Agent Factory Cartridge Task \\u2192 Amazon S3 Agent Factory Mind Bucket\",\n  \"source\": \"01M7GWXKXW-4ZJF\",\n  \"target\": \"01M7GWTG2T-GYW1\",\n  \"label\": \"reads from\",\n  \"technology\": \"HTTPS via S3 Gateway VPC Endpoint (:443)\",\n  \"direction\": \"synchronous\",\n  \"flow\": \"bidirectional\",\n  \"catalogStatus\": \"incomplete\",\n  \"tags\": [\n    \"agent-factory\",\n    \"mind-hydration\"\n  ],\n  \"notes\": \"Hydrate shim pulls and pushes $MEMORY_DIR over the S3 Gateway VPC Endpoint. Terraform-managed task roles restrict access to each agent's own prefix; runtime-created AgentTaskRole-* roles currently grant broader bucket access (recorded as non-compliant in decision record 01M7GYV3B6-FASW).\",\n  \"_source\": \"catalog/governance/relationships/relationship-shared-runtime-hydrates-from-s3-stores.yaml\"\n}",
+      "existsInCatalog": true,
+      "outboundRelationships": [],
+      "inboundRelationships": []
+    },
+    {
+      "id": "01M7KQAQCD-BE9V",
+      "uid": "01M7KQAQCD-BE9V",
+      "name": "Agent Factory Cartridge Task \u2192 Agent Factory Gatekeeper Egress",
+      "aliases": [],
+      "type": "relationship",
+      "typeLabel": "Relationship",
+      "filterType": "relationship",
+      "category": "",
+      "deliveryModel": "",
+      "domain": "",
+      "description": "",
+      "version": "",
+      "catalogStatus": "incomplete",
+      "lifecycleStatus": "unknown",
+      "status": "",
+      "businessContext": {},
+      "product": "",
+      "runsOn": "",
+      "subtype": "",
+      "vendor": "",
+      "productName": "",
+      "productVersion": "",
+      "classification": "",
+      "platformDependency": "",
+      "capabilities": [],
+      "configurations": [],
+      "networkPlacement": "",
+      "patchingOwner": "",
+      "complianceCerts": [],
+      "requirementGroups": [],
+      "requirementImplementations": [],
+      "dataLeavesInfrastructure": null,
+      "dataResidencyCommitment": "",
+      "dpaNotes": "",
+      "vendorSLA": "",
+      "authenticationModel": "",
+      "incidentNotificationProcess": "",
+      "owner": {},
+      "definitionOwner": {},
+      "provider": {},
+      "authority": {},
+      "shape": "round-rectangle",
+      "color": "#7a6e60",
+      "source": "catalog/governance/relationships/relationship-shared-runtime-routes-egress-via-gatekeeper-egress.yaml",
+      "tags": [
+        "agent-factory",
+        "zero-trust"
+      ],
+      "ardCategory": "",
+      "internalComponents": [],
+      "notes": "Intended sole outbound egress path from agent tasks (E1, E6) for metered model inference, MCP tool calls, and allowlisted HTTPS CONNECT tunnels. Live Bedrock direct-invocation and agent-subnet route/SG drift are recorded in decision records 01M7GYV3B6-8VN0 and 01M7GYV3B6-H03D.",
+      "requirements": [],
+      "implementations": [],
+      "appliesTo": {},
+      "inherits": "",
+      "scalingUnits": [],
+      "networkZones": [],
+      "sdpConnections": [],
+      "serviceGroups": [],
+      "tierVariants": [],
+      "tierId": "",
+      "purpose": "",
+      "availabilityExpectation": "",
+      "costPosture": "",
+      "complianceScope": [],
+      "parameterSurface": [],
+      "followsReferenceArchitecture": "",
+      "decisionRecords": [],
+      "affectedComponent": "",
+      "impact": "",
+      "mitigationPath": "",
+      "decisionRationale": "",
+      "relatedDecisionRecords": [],
+      "linkedObject": "",
+      "primaryObjectType": "",
+      "primaryObjectUid": "",
+      "generatedObjects": [],
+      "unresolvedQuestions": [],
+      "assumptions": [],
+      "nextSteps": [],
+      "defaultSelection": false,
+      "requirementCount": 0,
+      "hasRiskRef": false,
+      "outboundRefs": [
+        {
+          "target": "01M7GWXKXW-4ZJF",
+          "path": "source"
+        },
+        {
+          "target": "01M7GWXKXW-BPBV",
+          "path": "target"
+        }
+      ],
+      "referencedBy": [],
+      "editorSchema": {
+        "requiredFields": [
+          "schemaVersion",
+          "uid",
+          "type",
+          "name",
+          "source",
+          "label",
+          "catalogStatus"
+        ],
+        "optionalFields": [
+          "description",
+          "target",
+          "externalTarget",
+          "technology",
+          "direction",
+          "flow",
+          "capabilities",
+          "notes",
+          "tags"
+        ],
+        "fieldTypes": {
+          "tags": "list",
+          "capabilities": "list"
+        },
+        "enumFields": {
+          "catalogStatus": [
+            "stub",
+            "incomplete",
+            "complete"
+          ],
+          "direction": [
+            "synchronous",
+            "asynchronous",
+            "event"
+          ],
+          "flow": [
+            "outbound",
+            "inbound",
+            "bidirectional"
+          ]
+        },
+        "enumListFields": {},
+        "collectionSchemas": {},
+        "schemaPath": "framework/schemas/relationship.schema.yaml"
+      },
+      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M7KQAQCD-BE9V\",\n  \"type\": \"relationship\",\n  \"name\": \"Agent Factory Cartridge Task \\u2192 Agent Factory Gatekeeper Egress\",\n  \"source\": \"01M7GWXKXW-4ZJF\",\n  \"target\": \"01M7GWXKXW-BPBV\",\n  \"label\": \"calls\",\n  \"technology\": \"HTTP Reverse Proxy & CONNECT (:8081)\",\n  \"direction\": \"synchronous\",\n  \"flow\": \"outbound\",\n  \"catalogStatus\": \"incomplete\",\n  \"tags\": [\n    \"agent-factory\",\n    \"zero-trust\"\n  ],\n  \"notes\": \"Intended sole outbound egress path from agent tasks (E1, E6) for metered model inference, MCP tool calls, and allowlisted HTTPS CONNECT tunnels. Live Bedrock direct-invocation and agent-subnet route/SG drift are recorded in decision records 01M7GYV3B6-8VN0 and 01M7GYV3B6-H03D.\",\n  \"_source\": \"catalog/governance/relationships/relationship-shared-runtime-routes-egress-via-gatekeeper-egress.yaml\"\n}",
+      "existsInCatalog": true,
+      "outboundRelationships": [],
+      "inboundRelationships": []
+    },
+    {
       "id": "01M7GTBMQS-YYDW",
       "uid": "01M7GTBMQS-YYDW",
       "name": "Household Print Queue & Spooler Service",
@@ -26193,7 +29584,12 @@ window.DRAFT_BROWSER_DATA = {
           "path": "capabilities[2]"
         }
       ],
-      "referencedBy": [],
+      "referencedBy": [
+        {
+          "source": "01M7KQAQCD-XTFV",
+          "path": "target"
+        }
+      ],
       "editorSchema": {
         "requiredFields": [
           "schemaVersion",
@@ -26304,7 +29700,20 @@ window.DRAFT_BROWSER_DATA = {
       "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M7GWTG2T-KR1Y\",\n  \"type\": \"data_store_service\",\n  \"name\": \"Amazon EFS - factory-prod-ledger\",\n  \"description\": \"Encrypted EFS file system mounted by the Agent Factory control plane for the live execution ledger.\",\n  \"catalogStatus\": \"incomplete\",\n  \"lifecycleStatus\": \"preferred\",\n  \"owner\": {\n    \"team\": \"platform-ai-team\",\n    \"contact\": \"platform-ai@example.com\"\n  },\n  \"tags\": [\n    \"aws\",\n    \"efs\",\n    \"ledger\",\n    \"agent-factory\"\n  ],\n  \"deliveryModel\": \"paas\",\n  \"vendor\": \"Amazon Web Services\",\n  \"productName\": \"Amazon Elastic File System\",\n  \"productVersion\": \"managed\",\n  \"patchingOwner\": \"aws-managed\",\n  \"authenticationModel\": \"iam\",\n  \"capabilities\": [\n    \"01KT0V5MCV-924J\",\n    \"01KT0V5MCV-VD0Y\",\n    \"01KQQ4Q026-H3B5\"\n  ],\n  \"provisioningModel\": \"reference-only\",\n  \"notes\": {\n    \"verification\": \"Verified read-only from AWS account ending 2296 (us-east-1) on 2026-11-15 (America/Phoenix).\",\n    \"fileSystem\": \"factory-prod-ledger: encrypted at rest; the control-plane task mounts it as volume data with transit encryption, IAM authorization and an access point.\",\n    \"provisioning\": \"Provisioned by Terraform in BeerCanLabs/agent-factory landing-zones/aws (S3 backend); module not yet packaged as a DRAFT deployablePackage.\",\n    \"incomplete\": \"Backup policy and throughput mode were not reviewed.\"\n  },\n  \"_source\": \"catalog/shared-services/data-store-services/data-store-service-aws-efs-factory-ledger.yaml\"\n}",
       "existsInCatalog": true,
       "outboundRelationships": [],
-      "inboundRelationships": []
+      "inboundRelationships": [
+        {
+          "uid": "01M7KQAQCD-XTFV",
+          "name": "Agent Factory Control Plane \u2192 Amazon EFS factory-prod-ledger",
+          "label": "writes to",
+          "technology": "NFSv4.1 over TLS (:2049)",
+          "direction": "synchronous",
+          "targetUid": "01M7GWTG2T-KR1Y",
+          "targetName": "Amazon EFS - factory-prod-ledger",
+          "capabilities": [],
+          "sourceUid": "01M7GWXKXW-EJWB",
+          "sourceName": "Agent Factory Control Plane"
+        }
+      ]
     },
     {
       "id": "01M7GWTG2T-GYW1",
@@ -26413,7 +29822,12 @@ window.DRAFT_BROWSER_DATA = {
           "path": "capabilities[1]"
         }
       ],
-      "referencedBy": [],
+      "referencedBy": [
+        {
+          "source": "01M7KQAQCD-RGE7",
+          "path": "target"
+        }
+      ],
       "editorSchema": {
         "requiredFields": [
           "schemaVersion",
@@ -26524,7 +29938,20 @@ window.DRAFT_BROWSER_DATA = {
       "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M7GWTG2T-GYW1\",\n  \"type\": \"data_store_service\",\n  \"name\": \"Amazon S3 - Agent Factory Mind Bucket\",\n  \"description\": \"S3 bucket that holds agent mind (memory) state for the Agent Factory.\",\n  \"catalogStatus\": \"incomplete\",\n  \"lifecycleStatus\": \"preferred\",\n  \"owner\": {\n    \"team\": \"platform-ai-team\",\n    \"contact\": \"platform-ai@example.com\"\n  },\n  \"tags\": [\n    \"aws\",\n    \"s3\",\n    \"mind\",\n    \"agent-factory\"\n  ],\n  \"deliveryModel\": \"paas\",\n  \"vendor\": \"Amazon Web Services\",\n  \"productName\": \"Amazon S3\",\n  \"productVersion\": \"managed\",\n  \"patchingOwner\": \"aws-managed\",\n  \"authenticationModel\": \"iam\",\n  \"capabilities\": [\n    \"01KT0V5MCV-E9TN\",\n    \"01KT0V5MCV-VD0Y\"\n  ],\n  \"provisioningModel\": \"reference-only\",\n  \"notes\": {\n    \"verification\": \"Verified read-only from AWS account ending 2296 (us-east-1) on 2026-11-15 (America/Phoenix).\",\n    \"bucket\": \"agent-factory-mind-prod-924cfefd: SSE-S3 (AES256), versioning Enabled, all four Block Public Access settings on, no Object Lock.\",\n    \"provisioning\": \"Provisioned by Terraform in BeerCanLabs/agent-factory landing-zones/aws (S3 backend); module not yet packaged as a DRAFT deployablePackage.\",\n    \"incomplete\": \"Lifecycle rules, replication and bucket policy were not reviewed.\"\n  },\n  \"_source\": \"catalog/shared-services/data-store-services/data-store-service-aws-s3-factory-mind.yaml\"\n}",
       "existsInCatalog": true,
       "outboundRelationships": [],
-      "inboundRelationships": []
+      "inboundRelationships": [
+        {
+          "uid": "01M7KQAQCD-RGE7",
+          "name": "Agent Factory Cartridge Task \u2192 Amazon S3 Agent Factory Mind Bucket",
+          "label": "reads from",
+          "technology": "HTTPS via S3 Gateway VPC Endpoint (:443)",
+          "direction": "synchronous",
+          "targetUid": "01M7GWTG2T-GYW1",
+          "targetName": "Amazon S3 - Agent Factory Mind Bucket",
+          "capabilities": [],
+          "sourceUid": "01M7GWXKXW-4ZJF",
+          "sourceName": "Agent Factory Cartridge Task (on-demand)"
+        }
+      ]
     },
     {
       "id": "01M7GWTG2T-F1WG",
@@ -26640,7 +30067,12 @@ window.DRAFT_BROWSER_DATA = {
           "path": "capabilities[2]"
         }
       ],
-      "referencedBy": [],
+      "referencedBy": [
+        {
+          "source": "01M7KQAQCD-ZD19",
+          "path": "target"
+        }
+      ],
       "editorSchema": {
         "requiredFields": [
           "schemaVersion",
@@ -26751,7 +30183,20 @@ window.DRAFT_BROWSER_DATA = {
       "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M7GWTG2T-F1WG\",\n  \"type\": \"data_store_service\",\n  \"name\": \"Amazon S3 - Agent Factory Config, Ledger and Package Buckets\",\n  \"description\": \"S3 buckets for Agent Factory configuration, the WORM ledger archive and skill packages.\",\n  \"catalogStatus\": \"incomplete\",\n  \"lifecycleStatus\": \"preferred\",\n  \"owner\": {\n    \"team\": \"platform-ai-team\",\n    \"contact\": \"platform-ai@example.com\"\n  },\n  \"tags\": [\n    \"aws\",\n    \"s3\",\n    \"ledger\",\n    \"agent-factory\"\n  ],\n  \"deliveryModel\": \"paas\",\n  \"vendor\": \"Amazon Web Services\",\n  \"productName\": \"Amazon S3\",\n  \"productVersion\": \"managed\",\n  \"patchingOwner\": \"aws-managed\",\n  \"authenticationModel\": \"iam\",\n  \"capabilities\": [\n    \"01KT0V5MCV-E9TN\",\n    \"01KT0V5MCV-VD0Y\",\n    \"01KQQ4Q026-7T2H\"\n  ],\n  \"provisioningModel\": \"reference-only\",\n  \"notes\": {\n    \"verification\": \"Verified read-only from AWS account ending 2296 (us-east-1) on 2026-11-15 (America/Phoenix).\",\n    \"buckets\": \"agent-factory-config-prod-924cfefd, agent-factory-ledger-prod-924cfefd and agent-factory-packages-prod-924cfefd. All SSE-S3 (AES256) with versioning Enabled.\",\n    \"ledgerWorm\": \"The ledger bucket has S3 Object Lock in COMPLIANCE mode with 365-day default retention and all Block Public Access settings on.\",\n    \"terraformState\": \"Terraform state lives in a separate bucket agent-factory-tfstate-<account-id> (SSE-S3, versioned); it is infrastructure state, not product data.\",\n    \"provisioning\": \"Provisioned by Terraform in BeerCanLabs/agent-factory landing-zones/aws (S3 backend); module not yet packaged as a DRAFT deployablePackage.\",\n    \"incomplete\": \"Block Public Access was checked only on the ledger bucket; lifecycle and bucket policies were not reviewed.\"\n  },\n  \"_source\": \"catalog/shared-services/data-store-services/data-store-service-aws-s3-factory-support.yaml\"\n}",
       "existsInCatalog": true,
       "outboundRelationships": [],
-      "inboundRelationships": []
+      "inboundRelationships": [
+        {
+          "uid": "01M7KQAQCD-ZD19",
+          "name": "Agent Factory Control Plane \u2192 S3 Config, Ledger & Package Buckets",
+          "label": "writes to",
+          "technology": "HTTPS (:443)",
+          "direction": "synchronous",
+          "targetUid": "01M7GWTG2T-F1WG",
+          "targetName": "Amazon S3 - Agent Factory Config, Ledger and Package Buckets",
+          "capabilities": [],
+          "sourceUid": "01M7GWXKXW-EJWB",
+          "sourceName": "Agent Factory Control Plane"
+        }
+      ]
     },
     {
       "id": "01M7GWTG2S-X9V8",
@@ -27977,7 +31422,16 @@ window.DRAFT_BROWSER_DATA = {
           "path": "capabilities[1]"
         }
       ],
-      "referencedBy": [],
+      "referencedBy": [
+        {
+          "source": "01M7KQAQCD-3CBS",
+          "path": "source"
+        },
+        {
+          "source": "01M7KQAQCD-9JK7",
+          "path": "source"
+        }
+      ],
       "editorSchema": {
         "requiredFields": [
           "schemaVersion",
@@ -28085,7 +31539,28 @@ window.DRAFT_BROWSER_DATA = {
       },
       "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M7GWTG2T-M2Q0\",\n  \"type\": \"network_service\",\n  \"name\": \"AWS Application Load Balancer - factory-prod\",\n  \"description\": \"Internet-facing ALB that is the AWS origin behind the Cloudflare edge for Agent Factory and Closing Climb hostnames.\",\n  \"catalogStatus\": \"incomplete\",\n  \"lifecycleStatus\": \"preferred\",\n  \"owner\": {\n    \"team\": \"platform-ai-team\",\n    \"contact\": \"platform-ai@example.com\"\n  },\n  \"tags\": [\n    \"aws\",\n    \"alb\",\n    \"load-balancer\",\n    \"ingress\",\n    \"agent-factory\",\n    \"closing-climb\"\n  ],\n  \"deliveryModel\": \"paas\",\n  \"vendor\": \"Amazon Web Services\",\n  \"productName\": \"Elastic Load Balancing Application Load Balancer\",\n  \"productVersion\": \"managed\",\n  \"patchingOwner\": \"aws-managed\",\n  \"authenticationModel\": \"iam\",\n  \"networkFunction\": \"Layer 7 host-based routing and TLS termination for the factory-prod ECS services.\",\n  \"protocols\": [\n    \"HTTPS\",\n    \"HTTP\"\n  ],\n  \"capabilities\": [\n    \"01KSWVZSZ5-M0FR\",\n    \"01KT0XNZEY-RVTG\"\n  ],\n  \"provisioningModel\": \"reference-only\",\n  \"notes\": {\n    \"verification\": \"Verified read-only from AWS account ending 2296 (us-east-1) on 2026-11-15 (America/Phoenix).\",\n    \"listeners\": \"HTTP 80 and HTTPS 443.\",\n    \"routing\": \"Host rules: factory-dashboard.dalesackrider.com -> console; garrison.dalesackrider.com -> garrison; cc.dalesackrider.com -> closing-climb-prod; default -> control-plane (factory-prod-cp).\",\n    \"certificates\": \"ACM certificates for *.dalesackrider.com, submind-aws.dalesackrider.com and agent-factory.beercanlabs.com.\",\n    \"edge\": \"Every listed hostname answered through Cloudflare (server: cloudflare) on 2026-11-15. Cloudflare DNS origin records were not read.\",\n    \"provisioning\": \"Provisioned by Terraform in BeerCanLabs/agent-factory landing-zones/aws (S3 backend); module not yet packaged as a DRAFT deployablePackage.\",\n    \"incomplete\": \"Security group rules, WAF association and HTTP-to-HTTPS redirect behavior were not reviewed.\"\n  },\n  \"_source\": \"catalog/shared-services/network-services/network-service-aws-alb-factory-prod.yaml\"\n}",
       "existsInCatalog": true,
-      "outboundRelationships": [],
+      "outboundRelationships": [
+        {
+          "uid": "01M7KQAQCD-3CBS",
+          "name": "AWS ALB factory-prod \u2192 Agent Factory Console",
+          "label": "routes to",
+          "technology": "HTTPS / HTTP (:3000)",
+          "direction": "synchronous",
+          "targetUid": "01M7GWXKXW-VPCD",
+          "targetName": "Agent Factory Console",
+          "capabilities": []
+        },
+        {
+          "uid": "01M7KQAQCD-9JK7",
+          "name": "AWS ALB factory-prod \u2192 Agent Factory Control Plane",
+          "label": "routes to",
+          "technology": "HTTPS / HTTP (:8088, health :8089)",
+          "direction": "synchronous",
+          "targetUid": "01M7GWXKXW-EJWB",
+          "targetName": "Agent Factory Control Plane",
+          "capabilities": []
+        }
+      ],
       "inboundRelationships": []
     },
     {
@@ -28412,7 +31887,16 @@ window.DRAFT_BROWSER_DATA = {
           "path": "requirementImplementations[0].requirementGroup"
         }
       ],
-      "referencedBy": [],
+      "referencedBy": [
+        {
+          "source": "01M7KQAQCD-01CD",
+          "path": "runtimeSpec.dependencies[0].ref"
+        },
+        {
+          "source": "0C2JQD5S29-RJNY",
+          "path": "target"
+        }
+      ],
       "editorSchema": {
         "requiredFields": [
           "schemaVersion",
@@ -28521,7 +32005,20 @@ window.DRAFT_BROWSER_DATA = {
       "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M7GTBMQS-YRGF\",\n  \"type\": \"network_service\",\n  \"name\": \"Cloudflare Global Anycast Edge Proxy Service\",\n  \"description\": \"Registration object for Geordi's Cloudflare Global Anycast Edge Proxy network service providing ingress routing, Orange Cloud DNS proxying, SSL Full TLS termination, 301 URL redirects, and ALPN negotiation compatibility under Netskope SSL inspection.\",\n  \"deliveryModel\": \"saas\",\n  \"catalogStatus\": \"incomplete\",\n  \"lifecycleStatus\": \"preferred\",\n  \"vendor\": \"Cloudflare\",\n  \"productName\": \"Cloudflare Managed DNS & Edge Proxy\",\n  \"productVersion\": \"Free Tier Anycast Edge Network\",\n  \"networkFunction\": \"Ingress traffic control, HTTPS termination, HTTP/1.1 and HTTP/2 ALPN negotiation, Orange Cloud DNS proxying, and 301 URL redirects.\",\n  \"provisioningModel\": \"deployable\",\n  \"deployablePackage\": {\n    \"registry\": \"github\",\n    \"source\": \"BeerCanLabs/skippy-matrix\",\n    \"version\": \"main\",\n    \"modulePath\": \"terraform/modules/cloudflare-edge-proxy\"\n  },\n  \"protocols\": [\n    \"HTTPS\",\n    \"HTTP/2\",\n    \"HTTP/1.1\"\n  ],\n  \"owner\": {\n    \"team\": \"engineering-platform\",\n    \"contact\": \"platform-ai@example.com\",\n    \"resourceOwner\": \"Geordi\",\n    \"serviceProviderRole\": \"Network Domain Service Provider\"\n  },\n  \"vendorGovernance\": {\n    \"dataLeavesInfrastructure\": false,\n    \"dataResidencyCommitment\": \"Global Anycast Edge with regional origin processing\",\n    \"vendorSLA\": \"100% SLA commitment\",\n    \"acceptableUsePolicy\": \"Mandatory for all public web endpoints across Submind and client workloads. Bare GHS CNAME mappings are strictly non-compliant. All traffic must route through Cloudflare Anycast Edge with Full SSL encryption enabled.\"\n  },\n  \"decisionRecords\": [\n    {\n      \"ref\": \"01M7GTBMQS-SZBH\",\n      \"key\": \"edgeProxyDecision\"\n    }\n  ],\n  \"requirementImplementations\": [\n    {\n      \"requirementGroup\": \"01M7GTBMQT-H66V\",\n      \"requirementId\": \"req-edge-proxy-mandatory\",\n      \"status\": \"satisfied\",\n      \"mechanism\": \"decisionRecord\",\n      \"key\": \"edgeProxyDecision\",\n      \"notes\": \"Satisfied by the Edge Proxy Architecture & Acceptable Use Decision; this object is Geordi's Cloudflare Global Anycast Edge Proxy service module deployed via BeerCanLabs/skippy-matrix.\"\n    }\n  ],\n  \"_source\": \"catalog/shared-services/network-services/network-service-cloudflare-edge-proxy.yaml\"\n}",
       "existsInCatalog": true,
       "outboundRelationships": [],
-      "inboundRelationships": []
+      "inboundRelationships": [
+        {
+          "uid": "0C2JQD5S29-RJNY",
+          "name": "Agent Factory CLI & Benchmark Harness \u2192 Cloudflare Global Anycast Edge Proxy Service",
+          "label": "/api/v1/* and /mcp",
+          "technology": "",
+          "direction": "",
+          "targetUid": "01M7GTBMQS-YRGF",
+          "targetName": "Cloudflare Global Anycast Edge Proxy Service",
+          "capabilities": [],
+          "sourceUid": "01M7KQAQCD-01CD",
+          "sourceName": "Agent Factory CLI & Benchmark Harness"
+        }
+      ]
     },
     {
       "id": "01M7GWTG2T-TQEB",
@@ -29389,6 +32886,249 @@ window.DRAFT_BROWSER_DATA = {
       "inboundRelationships": []
     },
     {
+      "id": "01M7KQAQCD-WD0R",
+      "uid": "01M7KQAQCD-WD0R",
+      "name": "AWS CodeBuild - Agent Factory Admission & Skill Builders",
+      "aliases": [],
+      "type": "runtime_service",
+      "typeLabel": "RuntimeService / Paas",
+      "filterType": "runtime_service",
+      "category": "",
+      "deliveryModel": "paas",
+      "domain": "",
+      "description": "Managed CodeBuild projects (factory-agent-builder, factory-skills-builder, and factory-skill-checker) that verify, compose, and push Agent Factory cartridge and skill images to Amazon ECR.",
+      "version": "",
+      "catalogStatus": "incomplete",
+      "lifecycleStatus": "preferred",
+      "status": "",
+      "businessContext": {},
+      "product": "",
+      "runsOn": "",
+      "subtype": "",
+      "vendor": "Amazon Web Services",
+      "productName": "AWS CodeBuild",
+      "productVersion": "managed",
+      "classification": "",
+      "platformDependency": "",
+      "capabilities": [
+        "01KT0XNZEY-Q2TF"
+      ],
+      "configurations": [],
+      "networkPlacement": "",
+      "patchingOwner": "aws-managed",
+      "complianceCerts": [],
+      "requirementGroups": [],
+      "requirementImplementations": [],
+      "dataLeavesInfrastructure": null,
+      "dataResidencyCommitment": "",
+      "dpaNotes": "",
+      "vendorSLA": "",
+      "authenticationModel": "iam",
+      "incidentNotificationProcess": "",
+      "owner": {
+        "team": "platform-ai-team",
+        "contact": "platform-ai@example.com"
+      },
+      "definitionOwner": {},
+      "provider": {},
+      "authority": {},
+      "shape": "diamond",
+      "color": "#1f8a5b",
+      "source": "catalog/shared-services/runtime-services/runtime-service-aws-codebuild-factory.yaml",
+      "tags": [
+        "aws",
+        "codebuild",
+        "admission",
+        "agent-factory"
+      ],
+      "ardCategory": "",
+      "internalComponents": [
+        {
+          "ref": "01M7KQAQCD-ZS7E",
+          "role": "function",
+          "configuration": "",
+          "notes": ""
+        }
+      ],
+      "notes": {
+        "verification": "Projects factory-agent-builder, factory-skills-builder and factory-skill-checker verified in AWS account ending 2296 (us-east-1) on 2026-11-15 (see 01M7GWTG2T-0NKZ) and defined in BeerCanLabs/agent-factory landing-zones/aws/codebuild.tf.",
+        "provisioning": "Provisioned by Terraform in BeerCanLabs/agent-factory landing-zones/aws (S3 backend); module not yet packaged as a DRAFT deployablePackage.",
+        "incomplete": "Per-project IAM policies, VPC attachment, and build timeout/concurrency limits were not reviewed."
+      },
+      "requirements": [],
+      "implementations": [],
+      "appliesTo": {},
+      "inherits": "",
+      "scalingUnits": [],
+      "networkZones": [],
+      "sdpConnections": [],
+      "serviceGroups": [],
+      "tierVariants": [],
+      "tierId": "",
+      "purpose": "",
+      "availabilityExpectation": "",
+      "costPosture": "",
+      "complianceScope": [],
+      "parameterSurface": [],
+      "followsReferenceArchitecture": "",
+      "decisionRecords": [],
+      "affectedComponent": "",
+      "impact": "",
+      "mitigationPath": "",
+      "decisionRationale": "",
+      "relatedDecisionRecords": [],
+      "linkedObject": "",
+      "primaryObjectType": "",
+      "primaryObjectUid": "",
+      "generatedObjects": [],
+      "unresolvedQuestions": [],
+      "assumptions": [],
+      "nextSteps": [],
+      "defaultSelection": false,
+      "requirementCount": 0,
+      "hasRiskRef": false,
+      "outboundRefs": [
+        {
+          "target": "01KT0XNZEY-Q2TF",
+          "path": "capabilities[0]"
+        },
+        {
+          "target": "01M7KQAQCD-ZS7E",
+          "path": "primaryTechnologyComponent"
+        }
+      ],
+      "referencedBy": [
+        {
+          "source": "01M7KQAQCD-4GN2",
+          "path": "target"
+        }
+      ],
+      "editorSchema": {
+        "requiredFields": [
+          "schemaVersion",
+          "uid",
+          "type",
+          "name",
+          "deliveryModel",
+          "catalogStatus",
+          "lifecycleStatus"
+        ],
+        "optionalFields": [
+          "aliases",
+          "description",
+          "version",
+          "owner",
+          "tags",
+          "serviceRole",
+          "host",
+          "primaryTechnologyComponent",
+          "internalComponents",
+          "deploymentConfigurations",
+          "vendor",
+          "productName",
+          "productVersion",
+          "capabilities",
+          "configurations",
+          "networkPlacement",
+          "patchingOwner",
+          "authenticationModel",
+          "vendorGovernance",
+          "provisioningModel",
+          "deployablePackage",
+          "notes",
+          "decisionRecords",
+          "requirementImplementations"
+        ],
+        "fieldTypes": {
+          "aliases": "list",
+          "owner": "dict",
+          "tags": "list",
+          "internalComponents": "list",
+          "deploymentConfigurations": "list",
+          "capabilities": "list",
+          "configurations": "list",
+          "notes": "dict",
+          "vendorGovernance": "dict",
+          "requirementGroups": "list",
+          "decisionRecords": "list",
+          "requirementImplementations": "list"
+        },
+        "enumFields": {
+          "serviceRole": [
+            "definition",
+            "instance"
+          ],
+          "provisioningModel": [
+            "deployable",
+            "reference-only"
+          ],
+          "catalogStatus": [
+            "stub",
+            "incomplete",
+            "complete"
+          ],
+          "lifecycleStatus": [
+            "candidate",
+            "preferred",
+            "existing-only",
+            "deprecated",
+            "retired"
+          ],
+          "deliveryModel": [
+            "self-managed",
+            "paas",
+            "saas",
+            "appliance"
+          ],
+          "networkPlacement": [
+            "public-facing",
+            "internal",
+            "vpc-private"
+          ],
+          "patchingOwner": [
+            "provider-managed",
+            "organization-scheduled",
+            "vendor-managed",
+            "aws-managed"
+          ],
+          "authenticationModel": [
+            "iam",
+            "api-key",
+            "oauth",
+            "saml",
+            "other",
+            "TBD"
+          ]
+        },
+        "enumListFields": {},
+        "collectionSchemas": {
+          "internalComponents": "internalComponent",
+          "deploymentConfigurations": "deploymentConfiguration",
+          "configurations": "configuration",
+          "decisionRecords": "decisionRecordRef",
+          "requirementImplementations": "requirementImplementation"
+        },
+        "schemaPath": "framework/schemas/runtime-service.schema.yaml"
+      },
+      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M7KQAQCD-WD0R\",\n  \"type\": \"runtime_service\",\n  \"name\": \"AWS CodeBuild - Agent Factory Admission & Skill Builders\",\n  \"description\": \"Managed CodeBuild projects (factory-agent-builder, factory-skills-builder, and factory-skill-checker) that verify, compose, and push Agent Factory cartridge and skill images to Amazon ECR.\",\n  \"catalogStatus\": \"incomplete\",\n  \"lifecycleStatus\": \"preferred\",\n  \"owner\": {\n    \"team\": \"platform-ai-team\",\n    \"contact\": \"platform-ai@example.com\"\n  },\n  \"tags\": [\n    \"aws\",\n    \"codebuild\",\n    \"admission\",\n    \"agent-factory\"\n  ],\n  \"deliveryModel\": \"paas\",\n  \"vendor\": \"Amazon Web Services\",\n  \"productName\": \"AWS CodeBuild\",\n  \"productVersion\": \"managed\",\n  \"patchingOwner\": \"aws-managed\",\n  \"authenticationModel\": \"iam\",\n  \"capabilities\": [\n    \"01KT0XNZEY-Q2TF\"\n  ],\n  \"primaryTechnologyComponent\": \"01M7KQAQCD-ZS7E\",\n  \"provisioningModel\": \"reference-only\",\n  \"notes\": {\n    \"verification\": \"Projects factory-agent-builder, factory-skills-builder and factory-skill-checker verified in AWS account ending 2296 (us-east-1) on 2026-11-15 (see 01M7GWTG2T-0NKZ) and defined in BeerCanLabs/agent-factory landing-zones/aws/codebuild.tf.\",\n    \"provisioning\": \"Provisioned by Terraform in BeerCanLabs/agent-factory landing-zones/aws (S3 backend); module not yet packaged as a DRAFT deployablePackage.\",\n    \"incomplete\": \"Per-project IAM policies, VPC attachment, and build timeout/concurrency limits were not reviewed.\"\n  },\n  \"_source\": \"catalog/shared-services/runtime-services/runtime-service-aws-codebuild-factory.yaml\"\n}",
+      "existsInCatalog": true,
+      "outboundRelationships": [],
+      "inboundRelationships": [
+        {
+          "uid": "01M7KQAQCD-4GN2",
+          "name": "Agent Factory Control Plane \u2192 CodeBuild Admission & Skill Builders",
+          "label": "calls",
+          "technology": "HTTPS (:443)",
+          "direction": "asynchronous",
+          "targetUid": "01M7KQAQCD-WD0R",
+          "targetName": "AWS CodeBuild - Agent Factory Admission & Skill Builders",
+          "capabilities": [],
+          "sourceUid": "01M7GWXKXW-EJWB",
+          "sourceName": "Agent Factory Control Plane"
+        }
+      ]
+    },
+    {
       "id": "01M7GWTG2S-AC3R",
       "uid": "01M7GWTG2S-AC3R",
       "name": "AWS ECS Fargate Runtime - factory-prod",
@@ -29774,6 +33514,249 @@ window.DRAFT_BROWSER_DATA = {
           "capabilities": [],
           "sourceUid": "01M7GWXKXW-Z0Z4",
           "sourceName": "Agent Garrison"
+        }
+      ]
+    },
+    {
+      "id": "01M7KQAQCD-GHF4",
+      "uid": "01M7KQAQCD-GHF4",
+      "name": "Amazon EventBridge - Agent Factory Event Bus",
+      "aliases": [],
+      "type": "runtime_service",
+      "typeLabel": "RuntimeService / Paas",
+      "filterType": "runtime_service",
+      "category": "",
+      "deliveryModel": "paas",
+      "domain": "",
+      "description": "Custom Amazon EventBridge event bus provisioned for Agent Factory operational, run lifecycle, budget, crash, and held-action events emitted by the Inspector service.",
+      "version": "",
+      "catalogStatus": "incomplete",
+      "lifecycleStatus": "preferred",
+      "status": "",
+      "businessContext": {},
+      "product": "",
+      "runsOn": "",
+      "subtype": "",
+      "vendor": "Amazon Web Services",
+      "productName": "Amazon EventBridge",
+      "productVersion": "managed",
+      "classification": "",
+      "platformDependency": "",
+      "capabilities": [
+        "01KT0V5MCV-KT72"
+      ],
+      "configurations": [],
+      "networkPlacement": "",
+      "patchingOwner": "aws-managed",
+      "complianceCerts": [],
+      "requirementGroups": [],
+      "requirementImplementations": [],
+      "dataLeavesInfrastructure": null,
+      "dataResidencyCommitment": "",
+      "dpaNotes": "",
+      "vendorSLA": "",
+      "authenticationModel": "iam",
+      "incidentNotificationProcess": "",
+      "owner": {
+        "team": "platform-ai-team",
+        "contact": "platform-ai@example.com"
+      },
+      "definitionOwner": {},
+      "provider": {},
+      "authority": {},
+      "shape": "diamond",
+      "color": "#1f8a5b",
+      "source": "catalog/shared-services/runtime-services/runtime-service-aws-eventbridge-factory-bus.yaml",
+      "tags": [
+        "aws",
+        "eventbridge",
+        "messaging",
+        "agent-factory"
+      ],
+      "ardCategory": "",
+      "internalComponents": [
+        {
+          "ref": "01M7KQAQCD-ZVVA",
+          "role": "function",
+          "configuration": "",
+          "notes": ""
+        }
+      ],
+      "notes": {
+        "source": "Defined as aws_cloudwatch_event_bus.factory in BeerCanLabs/agent-factory landing-zones/aws/storage.tf.",
+        "provisioning": "Provisioned by Terraform in BeerCanLabs/agent-factory landing-zones/aws (S3 backend); module not yet packaged as a DRAFT deployablePackage.",
+        "incomplete": "Live event rules, targets, and archive/replay configuration on the factory event bus were not reviewed."
+      },
+      "requirements": [],
+      "implementations": [],
+      "appliesTo": {},
+      "inherits": "",
+      "scalingUnits": [],
+      "networkZones": [],
+      "sdpConnections": [],
+      "serviceGroups": [],
+      "tierVariants": [],
+      "tierId": "",
+      "purpose": "",
+      "availabilityExpectation": "",
+      "costPosture": "",
+      "complianceScope": [],
+      "parameterSurface": [],
+      "followsReferenceArchitecture": "",
+      "decisionRecords": [],
+      "affectedComponent": "",
+      "impact": "",
+      "mitigationPath": "",
+      "decisionRationale": "",
+      "relatedDecisionRecords": [],
+      "linkedObject": "",
+      "primaryObjectType": "",
+      "primaryObjectUid": "",
+      "generatedObjects": [],
+      "unresolvedQuestions": [],
+      "assumptions": [],
+      "nextSteps": [],
+      "defaultSelection": false,
+      "requirementCount": 0,
+      "hasRiskRef": false,
+      "outboundRefs": [
+        {
+          "target": "01KT0V5MCV-KT72",
+          "path": "capabilities[0]"
+        },
+        {
+          "target": "01M7KQAQCD-ZVVA",
+          "path": "primaryTechnologyComponent"
+        }
+      ],
+      "referencedBy": [
+        {
+          "source": "01M7KQAQCD-Z7TV",
+          "path": "target"
+        }
+      ],
+      "editorSchema": {
+        "requiredFields": [
+          "schemaVersion",
+          "uid",
+          "type",
+          "name",
+          "deliveryModel",
+          "catalogStatus",
+          "lifecycleStatus"
+        ],
+        "optionalFields": [
+          "aliases",
+          "description",
+          "version",
+          "owner",
+          "tags",
+          "serviceRole",
+          "host",
+          "primaryTechnologyComponent",
+          "internalComponents",
+          "deploymentConfigurations",
+          "vendor",
+          "productName",
+          "productVersion",
+          "capabilities",
+          "configurations",
+          "networkPlacement",
+          "patchingOwner",
+          "authenticationModel",
+          "vendorGovernance",
+          "provisioningModel",
+          "deployablePackage",
+          "notes",
+          "decisionRecords",
+          "requirementImplementations"
+        ],
+        "fieldTypes": {
+          "aliases": "list",
+          "owner": "dict",
+          "tags": "list",
+          "internalComponents": "list",
+          "deploymentConfigurations": "list",
+          "capabilities": "list",
+          "configurations": "list",
+          "notes": "dict",
+          "vendorGovernance": "dict",
+          "requirementGroups": "list",
+          "decisionRecords": "list",
+          "requirementImplementations": "list"
+        },
+        "enumFields": {
+          "serviceRole": [
+            "definition",
+            "instance"
+          ],
+          "provisioningModel": [
+            "deployable",
+            "reference-only"
+          ],
+          "catalogStatus": [
+            "stub",
+            "incomplete",
+            "complete"
+          ],
+          "lifecycleStatus": [
+            "candidate",
+            "preferred",
+            "existing-only",
+            "deprecated",
+            "retired"
+          ],
+          "deliveryModel": [
+            "self-managed",
+            "paas",
+            "saas",
+            "appliance"
+          ],
+          "networkPlacement": [
+            "public-facing",
+            "internal",
+            "vpc-private"
+          ],
+          "patchingOwner": [
+            "provider-managed",
+            "organization-scheduled",
+            "vendor-managed",
+            "aws-managed"
+          ],
+          "authenticationModel": [
+            "iam",
+            "api-key",
+            "oauth",
+            "saml",
+            "other",
+            "TBD"
+          ]
+        },
+        "enumListFields": {},
+        "collectionSchemas": {
+          "internalComponents": "internalComponent",
+          "deploymentConfigurations": "deploymentConfiguration",
+          "configurations": "configuration",
+          "decisionRecords": "decisionRecordRef",
+          "requirementImplementations": "requirementImplementation"
+        },
+        "schemaPath": "framework/schemas/runtime-service.schema.yaml"
+      },
+      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M7KQAQCD-GHF4\",\n  \"type\": \"runtime_service\",\n  \"name\": \"Amazon EventBridge - Agent Factory Event Bus\",\n  \"description\": \"Custom Amazon EventBridge event bus provisioned for Agent Factory operational, run lifecycle, budget, crash, and held-action events emitted by the Inspector service.\",\n  \"catalogStatus\": \"incomplete\",\n  \"lifecycleStatus\": \"preferred\",\n  \"owner\": {\n    \"team\": \"platform-ai-team\",\n    \"contact\": \"platform-ai@example.com\"\n  },\n  \"tags\": [\n    \"aws\",\n    \"eventbridge\",\n    \"messaging\",\n    \"agent-factory\"\n  ],\n  \"deliveryModel\": \"paas\",\n  \"vendor\": \"Amazon Web Services\",\n  \"productName\": \"Amazon EventBridge\",\n  \"productVersion\": \"managed\",\n  \"patchingOwner\": \"aws-managed\",\n  \"authenticationModel\": \"iam\",\n  \"capabilities\": [\n    \"01KT0V5MCV-KT72\"\n  ],\n  \"primaryTechnologyComponent\": \"01M7KQAQCD-ZVVA\",\n  \"provisioningModel\": \"reference-only\",\n  \"notes\": {\n    \"source\": \"Defined as aws_cloudwatch_event_bus.factory in BeerCanLabs/agent-factory landing-zones/aws/storage.tf.\",\n    \"provisioning\": \"Provisioned by Terraform in BeerCanLabs/agent-factory landing-zones/aws (S3 backend); module not yet packaged as a DRAFT deployablePackage.\",\n    \"incomplete\": \"Live event rules, targets, and archive/replay configuration on the factory event bus were not reviewed.\"\n  },\n  \"_source\": \"catalog/shared-services/runtime-services/runtime-service-aws-eventbridge-factory-bus.yaml\"\n}",
+      "existsInCatalog": true,
+      "outboundRelationships": [],
+      "inboundRelationships": [
+        {
+          "uid": "01M7KQAQCD-Z7TV",
+          "name": "Agent Factory Control Plane \u2192 Agent Factory EventBridge Event Bus",
+          "label": "sends events to",
+          "technology": "HTTPS (:443)",
+          "direction": "event",
+          "targetUid": "01M7KQAQCD-GHF4",
+          "targetName": "Amazon EventBridge - Agent Factory Event Bus",
+          "capabilities": [],
+          "sourceUid": "01M7GWXKXW-EJWB",
+          "sourceName": "Agent Factory Control Plane"
         }
       ]
     },
@@ -30632,6 +34615,344 @@ window.DRAFT_BROWSER_DATA = {
         "schemaPath": "framework/schemas/runtime-service.schema.yaml"
       },
       "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M7GWTG2T-VA2G\",\n  \"type\": \"runtime_service\",\n  \"name\": \"Cloudflare Access - BeerCanLabs Front Door\",\n  \"description\": \"Cloudflare Zero Trust Access in front of Agent Factory and BeerCanLabs web hostnames.\",\n  \"catalogStatus\": \"incomplete\",\n  \"lifecycleStatus\": \"preferred\",\n  \"owner\": {\n    \"team\": \"platform-ai-team\",\n    \"contact\": \"platform-ai@example.com\"\n  },\n  \"tags\": [\n    \"cloudflare\",\n    \"zero-trust\",\n    \"access\",\n    \"front-door\",\n    \"agent-factory\"\n  ],\n  \"deliveryModel\": \"saas\",\n  \"vendor\": \"Cloudflare\",\n  \"productName\": \"Cloudflare Zero Trust Access\",\n  \"productVersion\": \"managed\",\n  \"patchingOwner\": \"vendor-managed\",\n  \"authenticationModel\": \"oauth\",\n  \"capabilities\": [\n    \"01KQQ4Q026-MHJM\",\n    \"01KQQ4Q026-4JR6\"\n  ],\n  \"provisioningModel\": \"reference-only\",\n  \"notes\": {\n    \"verification\": \"HTTPS probes on 2026-11-15: agent-factory.beercanlabs.com, garrison.dalesackrider.com and knowledge.beercanlabs.ai return 302 to the beercanlabs Cloudflare Access team login; submind-aws.dalesackrider.com returns 401 from Cloudflare.\",\n    \"definition\": \"Access applications (factory front door, signature-verified webhooks bypass, API-key bypass) are defined in BeerCanLabs/agent-factory landing-zones/aws/cloudflare.tf. closing-climb-web validates Cloudflare Access OIDC tokens.\",\n    \"incomplete\": \"Access policies, identity providers and service tokens were not read (no Cloudflare API access used).\"\n  },\n  \"_source\": \"catalog/shared-services/runtime-services/runtime-service-cloudflare-access.yaml\"\n}",
+      "existsInCatalog": true,
+      "outboundRelationships": [],
+      "inboundRelationships": []
+    },
+    {
+      "id": "01M7KQAQCD-ZS7E",
+      "uid": "01M7KQAQCD-ZS7E",
+      "name": "AWS CodeBuild",
+      "aliases": [],
+      "type": "technology_component",
+      "typeLabel": "TechnologyComponent / Software",
+      "filterType": "technology_component",
+      "category": "",
+      "deliveryModel": "",
+      "domain": "",
+      "description": "Managed ephemeral container build and verification service used by Agent Factory cartridge admission and skill layering workflows.",
+      "version": "",
+      "catalogStatus": "incomplete",
+      "lifecycleStatus": "",
+      "status": "",
+      "businessContext": {},
+      "product": "",
+      "runsOn": "",
+      "subtype": "",
+      "vendor": "Amazon Web Services",
+      "productName": "AWS CodeBuild",
+      "productVersion": "managed",
+      "classification": "software",
+      "platformDependency": "",
+      "capabilities": [
+        "01KT0XNZEY-Q2TF"
+      ],
+      "configurations": [],
+      "networkPlacement": "",
+      "patchingOwner": "",
+      "complianceCerts": [],
+      "requirementGroups": [],
+      "requirementImplementations": [],
+      "dataLeavesInfrastructure": null,
+      "dataResidencyCommitment": "",
+      "dpaNotes": "",
+      "vendorSLA": "",
+      "authenticationModel": "",
+      "incidentNotificationProcess": "",
+      "owner": {
+        "team": "platform-ai-team",
+        "contact": "platform-ai@example.com"
+      },
+      "definitionOwner": {},
+      "provider": {},
+      "authority": {},
+      "shape": "ellipse",
+      "color": "#64748b",
+      "source": "catalog/shared-services/technology-components/tc-aws-codebuild.yaml",
+      "tags": [
+        "aws",
+        "codebuild",
+        "cicd",
+        "agent-factory"
+      ],
+      "ardCategory": "",
+      "internalComponents": [],
+      "notes": {
+        "source": "Provisioned in BeerCanLabs/agent-factory landing-zones/aws/codebuild.tf.",
+        "incomplete": "Exact build image versions and IAM role boundaries per project are not pinned in the catalog."
+      },
+      "requirements": [],
+      "implementations": [],
+      "appliesTo": {},
+      "inherits": "",
+      "scalingUnits": [],
+      "networkZones": [],
+      "sdpConnections": [],
+      "serviceGroups": [],
+      "tierVariants": [],
+      "tierId": "",
+      "purpose": "",
+      "availabilityExpectation": "",
+      "costPosture": "",
+      "complianceScope": [],
+      "parameterSurface": [],
+      "followsReferenceArchitecture": "",
+      "decisionRecords": [],
+      "affectedComponent": "",
+      "impact": "",
+      "mitigationPath": "",
+      "decisionRationale": "",
+      "relatedDecisionRecords": [],
+      "linkedObject": "",
+      "primaryObjectType": "",
+      "primaryObjectUid": "",
+      "generatedObjects": [],
+      "unresolvedQuestions": [],
+      "assumptions": [],
+      "nextSteps": [],
+      "defaultSelection": false,
+      "requirementCount": 0,
+      "hasRiskRef": false,
+      "outboundRefs": [
+        {
+          "target": "01KT0XNZEY-Q2TF",
+          "path": "capabilities[0]"
+        }
+      ],
+      "referencedBy": [
+        {
+          "source": "01M7KQAQCD-WD0R",
+          "path": "primaryTechnologyComponent"
+        }
+      ],
+      "editorSchema": {
+        "requiredFields": [
+          "schemaVersion",
+          "uid",
+          "type",
+          "name",
+          "vendor",
+          "productName",
+          "productVersion",
+          "classification",
+          "catalogStatus"
+        ],
+        "optionalFields": [
+          "aliases",
+          "description",
+          "version",
+          "owner",
+          "tags",
+          "subtype",
+          "vendorLifecycle",
+          "platformDependency",
+          "capabilities",
+          "configurations",
+          "networkPlacement",
+          "patchingOwner",
+          "complianceCerts",
+          "controlReferences",
+          "notes"
+        ],
+        "fieldTypes": {
+          "aliases": "list",
+          "owner": "dict",
+          "tags": "list",
+          "vendorLifecycle": "dict",
+          "capabilities": "list",
+          "configurations": "list",
+          "complianceCerts": "list",
+          "controlReferences": "list"
+        },
+        "enumFields": {
+          "catalogStatus": [
+            "stub",
+            "incomplete",
+            "complete"
+          ],
+          "classification": [
+            "operating-system",
+            "compute-platform",
+            "software",
+            "agent"
+          ]
+        },
+        "enumListFields": {},
+        "collectionSchemas": {
+          "configurations": "configuration"
+        },
+        "schemaPath": "framework/schemas/technology-component.schema.yaml"
+      },
+      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M7KQAQCD-ZS7E\",\n  \"type\": \"technology_component\",\n  \"name\": \"AWS CodeBuild\",\n  \"description\": \"Managed ephemeral container build and verification service used by Agent Factory cartridge admission and skill layering workflows.\",\n  \"catalogStatus\": \"incomplete\",\n  \"owner\": {\n    \"team\": \"platform-ai-team\",\n    \"contact\": \"platform-ai@example.com\"\n  },\n  \"tags\": [\n    \"aws\",\n    \"codebuild\",\n    \"cicd\",\n    \"agent-factory\"\n  ],\n  \"vendor\": \"Amazon Web Services\",\n  \"productName\": \"AWS CodeBuild\",\n  \"productVersion\": \"managed\",\n  \"classification\": \"software\",\n  \"capabilities\": [\n    \"01KT0XNZEY-Q2TF\"\n  ],\n  \"notes\": {\n    \"source\": \"Provisioned in BeerCanLabs/agent-factory landing-zones/aws/codebuild.tf.\",\n    \"incomplete\": \"Exact build image versions and IAM role boundaries per project are not pinned in the catalog.\"\n  },\n  \"_source\": \"catalog/shared-services/technology-components/tc-aws-codebuild.yaml\"\n}",
+      "existsInCatalog": true,
+      "outboundRelationships": [],
+      "inboundRelationships": []
+    },
+    {
+      "id": "01M7KQAQCD-ZVVA",
+      "uid": "01M7KQAQCD-ZVVA",
+      "name": "Amazon EventBridge",
+      "aliases": [],
+      "type": "technology_component",
+      "typeLabel": "TechnologyComponent / Software",
+      "filterType": "technology_component",
+      "category": "",
+      "deliveryModel": "",
+      "domain": "",
+      "description": "Serverless event bus service routing asynchronous Agent Factory lifecycle, budget, crash, and approval events.",
+      "version": "",
+      "catalogStatus": "incomplete",
+      "lifecycleStatus": "",
+      "status": "",
+      "businessContext": {},
+      "product": "",
+      "runsOn": "",
+      "subtype": "",
+      "vendor": "Amazon Web Services",
+      "productName": "Amazon EventBridge",
+      "productVersion": "managed",
+      "classification": "software",
+      "platformDependency": "",
+      "capabilities": [
+        "01KT0V5MCV-KT72"
+      ],
+      "configurations": [],
+      "networkPlacement": "",
+      "patchingOwner": "",
+      "complianceCerts": [],
+      "requirementGroups": [],
+      "requirementImplementations": [],
+      "dataLeavesInfrastructure": null,
+      "dataResidencyCommitment": "",
+      "dpaNotes": "",
+      "vendorSLA": "",
+      "authenticationModel": "",
+      "incidentNotificationProcess": "",
+      "owner": {
+        "team": "platform-ai-team",
+        "contact": "platform-ai@example.com"
+      },
+      "definitionOwner": {},
+      "provider": {},
+      "authority": {},
+      "shape": "ellipse",
+      "color": "#64748b",
+      "source": "catalog/shared-services/technology-components/tc-aws-eventbridge.yaml",
+      "tags": [
+        "aws",
+        "eventbridge",
+        "messaging",
+        "agent-factory"
+      ],
+      "ardCategory": "",
+      "internalComponents": [],
+      "notes": {
+        "source": "Provisioned in BeerCanLabs/agent-factory landing-zones/aws/storage.tf (aws_cloudwatch_event_bus.factory).",
+        "incomplete": "Downstream rules, targets, and dead-letter handling on the factory event bus were not reviewed."
+      },
+      "requirements": [],
+      "implementations": [],
+      "appliesTo": {},
+      "inherits": "",
+      "scalingUnits": [],
+      "networkZones": [],
+      "sdpConnections": [],
+      "serviceGroups": [],
+      "tierVariants": [],
+      "tierId": "",
+      "purpose": "",
+      "availabilityExpectation": "",
+      "costPosture": "",
+      "complianceScope": [],
+      "parameterSurface": [],
+      "followsReferenceArchitecture": "",
+      "decisionRecords": [],
+      "affectedComponent": "",
+      "impact": "",
+      "mitigationPath": "",
+      "decisionRationale": "",
+      "relatedDecisionRecords": [],
+      "linkedObject": "",
+      "primaryObjectType": "",
+      "primaryObjectUid": "",
+      "generatedObjects": [],
+      "unresolvedQuestions": [],
+      "assumptions": [],
+      "nextSteps": [],
+      "defaultSelection": false,
+      "requirementCount": 0,
+      "hasRiskRef": false,
+      "outboundRefs": [
+        {
+          "target": "01KT0V5MCV-KT72",
+          "path": "capabilities[0]"
+        }
+      ],
+      "referencedBy": [
+        {
+          "source": "01M7KQAQCD-GHF4",
+          "path": "primaryTechnologyComponent"
+        }
+      ],
+      "editorSchema": {
+        "requiredFields": [
+          "schemaVersion",
+          "uid",
+          "type",
+          "name",
+          "vendor",
+          "productName",
+          "productVersion",
+          "classification",
+          "catalogStatus"
+        ],
+        "optionalFields": [
+          "aliases",
+          "description",
+          "version",
+          "owner",
+          "tags",
+          "subtype",
+          "vendorLifecycle",
+          "platformDependency",
+          "capabilities",
+          "configurations",
+          "networkPlacement",
+          "patchingOwner",
+          "complianceCerts",
+          "controlReferences",
+          "notes"
+        ],
+        "fieldTypes": {
+          "aliases": "list",
+          "owner": "dict",
+          "tags": "list",
+          "vendorLifecycle": "dict",
+          "capabilities": "list",
+          "configurations": "list",
+          "complianceCerts": "list",
+          "controlReferences": "list"
+        },
+        "enumFields": {
+          "catalogStatus": [
+            "stub",
+            "incomplete",
+            "complete"
+          ],
+          "classification": [
+            "operating-system",
+            "compute-platform",
+            "software",
+            "agent"
+          ]
+        },
+        "enumListFields": {},
+        "collectionSchemas": {
+          "configurations": "configuration"
+        },
+        "schemaPath": "framework/schemas/technology-component.schema.yaml"
+      },
+      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M7KQAQCD-ZVVA\",\n  \"type\": \"technology_component\",\n  \"name\": \"Amazon EventBridge\",\n  \"description\": \"Serverless event bus service routing asynchronous Agent Factory lifecycle, budget, crash, and approval events.\",\n  \"catalogStatus\": \"incomplete\",\n  \"owner\": {\n    \"team\": \"platform-ai-team\",\n    \"contact\": \"platform-ai@example.com\"\n  },\n  \"tags\": [\n    \"aws\",\n    \"eventbridge\",\n    \"messaging\",\n    \"agent-factory\"\n  ],\n  \"vendor\": \"Amazon Web Services\",\n  \"productName\": \"Amazon EventBridge\",\n  \"productVersion\": \"managed\",\n  \"classification\": \"software\",\n  \"capabilities\": [\n    \"01KT0V5MCV-KT72\"\n  ],\n  \"notes\": {\n    \"source\": \"Provisioned in BeerCanLabs/agent-factory landing-zones/aws/storage.tf (aws_cloudwatch_event_bus.factory).\",\n    \"incomplete\": \"Downstream rules, targets, and dead-letter handling on the factory event bus were not reviewed.\"\n  },\n  \"_source\": \"catalog/shared-services/technology-components/tc-aws-eventbridge.yaml\"\n}",
       "existsInCatalog": true,
       "outboundRelationships": [],
       "inboundRelationships": []
@@ -31745,6 +36066,292 @@ window.DRAFT_BROWSER_DATA = {
         "schemaPath": "framework/schemas/relationship.schema.yaml"
       },
       "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"N42482MC9H-V4TZ\",\n  \"type\": \"relationship\",\n  \"name\": \"Agent Factory Cartridge Task (on-demand) \\u2192 AWS ECS Fargate Runtime - factory-prod\",\n  \"source\": \"01M7GWXKXW-4ZJF\",\n  \"target\": \"01M7GWTG2S-AC3R\",\n  \"label\": \"runs on\",\n  \"notes\": \"Derived from runsOn field\",\n  \"catalogStatus\": \"complete\",\n  \"_source\": \"derived from catalog/engineering/product-components/product-component-factory-agent-cartridge-task.yaml [runsOn]\",\n  \"_derived\": true\n}",
+      "existsInCatalog": true,
+      "outboundRelationships": [],
+      "inboundRelationships": []
+    },
+    {
+      "id": "0C2JQD5S29-RJNY",
+      "uid": "0C2JQD5S29-RJNY",
+      "name": "Agent Factory CLI & Benchmark Harness \u2192 Cloudflare Global Anycast Edge Proxy Service",
+      "aliases": [],
+      "type": "relationship",
+      "typeLabel": "Relationship",
+      "filterType": "relationship",
+      "category": "",
+      "deliveryModel": "",
+      "domain": "",
+      "description": "",
+      "version": "",
+      "catalogStatus": "complete",
+      "lifecycleStatus": "unknown",
+      "status": "",
+      "businessContext": {},
+      "product": "",
+      "runsOn": "",
+      "subtype": "",
+      "vendor": "",
+      "productName": "",
+      "productVersion": "",
+      "classification": "",
+      "platformDependency": "",
+      "capabilities": [],
+      "configurations": [],
+      "networkPlacement": "",
+      "patchingOwner": "",
+      "complianceCerts": [],
+      "requirementGroups": [],
+      "requirementImplementations": [],
+      "dataLeavesInfrastructure": null,
+      "dataResidencyCommitment": "",
+      "dpaNotes": "",
+      "vendorSLA": "",
+      "authenticationModel": "",
+      "incidentNotificationProcess": "",
+      "owner": {},
+      "definitionOwner": {},
+      "provider": {},
+      "authority": {},
+      "shape": "round-rectangle",
+      "color": "#7a6e60",
+      "source": "derived from catalog/engineering/product-components/product-component-factory-cli.yaml [inline dependency]",
+      "tags": [],
+      "ardCategory": "",
+      "internalComponents": [],
+      "notes": "Calls the Agent Factory Headless Neck over public HTTPS through the Cloudflare edge front door.",
+      "requirements": [],
+      "implementations": [],
+      "appliesTo": {},
+      "inherits": "",
+      "scalingUnits": [],
+      "networkZones": [],
+      "sdpConnections": [],
+      "serviceGroups": [],
+      "tierVariants": [],
+      "tierId": "",
+      "purpose": "",
+      "availabilityExpectation": "",
+      "costPosture": "",
+      "complianceScope": [],
+      "parameterSurface": [],
+      "followsReferenceArchitecture": "",
+      "decisionRecords": [],
+      "affectedComponent": "",
+      "impact": "",
+      "mitigationPath": "",
+      "decisionRationale": "",
+      "relatedDecisionRecords": [],
+      "linkedObject": "",
+      "primaryObjectType": "",
+      "primaryObjectUid": "",
+      "generatedObjects": [],
+      "unresolvedQuestions": [],
+      "assumptions": [],
+      "nextSteps": [],
+      "defaultSelection": false,
+      "requirementCount": 0,
+      "hasRiskRef": false,
+      "outboundRefs": [
+        {
+          "target": "01M7KQAQCD-01CD",
+          "path": "source"
+        },
+        {
+          "target": "01M7GTBMQS-YRGF",
+          "path": "target"
+        }
+      ],
+      "referencedBy": [],
+      "editorSchema": {
+        "requiredFields": [
+          "schemaVersion",
+          "uid",
+          "type",
+          "name",
+          "source",
+          "label",
+          "catalogStatus"
+        ],
+        "optionalFields": [
+          "description",
+          "target",
+          "externalTarget",
+          "technology",
+          "direction",
+          "flow",
+          "capabilities",
+          "notes",
+          "tags"
+        ],
+        "fieldTypes": {
+          "tags": "list",
+          "capabilities": "list"
+        },
+        "enumFields": {
+          "catalogStatus": [
+            "stub",
+            "incomplete",
+            "complete"
+          ],
+          "direction": [
+            "synchronous",
+            "asynchronous",
+            "event"
+          ],
+          "flow": [
+            "outbound",
+            "inbound",
+            "bidirectional"
+          ]
+        },
+        "enumListFields": {},
+        "collectionSchemas": {},
+        "schemaPath": "framework/schemas/relationship.schema.yaml"
+      },
+      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"0C2JQD5S29-RJNY\",\n  \"type\": \"relationship\",\n  \"name\": \"Agent Factory CLI & Benchmark Harness \\u2192 Cloudflare Global Anycast Edge Proxy Service\",\n  \"source\": \"01M7KQAQCD-01CD\",\n  \"target\": \"01M7GTBMQS-YRGF\",\n  \"label\": \"/api/v1/* and /mcp\",\n  \"notes\": \"Calls the Agent Factory Headless Neck over public HTTPS through the Cloudflare edge front door.\",\n  \"catalogStatus\": \"complete\",\n  \"_source\": \"derived from catalog/engineering/product-components/product-component-factory-cli.yaml [inline dependency]\",\n  \"_derived\": true\n}",
+      "existsInCatalog": true,
+      "outboundRelationships": [],
+      "inboundRelationships": []
+    },
+    {
+      "id": "ZA4E6M9Z1H-V5Q2",
+      "uid": "ZA4E6M9Z1H-V5Q2",
+      "name": "Agent Factory CLI & Benchmark Harness \u2192 Agent Factory Control Plane",
+      "aliases": [],
+      "type": "relationship",
+      "typeLabel": "Relationship",
+      "filterType": "relationship",
+      "category": "",
+      "deliveryModel": "",
+      "domain": "",
+      "description": "",
+      "version": "",
+      "catalogStatus": "complete",
+      "lifecycleStatus": "unknown",
+      "status": "",
+      "businessContext": {},
+      "product": "",
+      "runsOn": "",
+      "subtype": "",
+      "vendor": "",
+      "productName": "",
+      "productVersion": "",
+      "classification": "",
+      "platformDependency": "",
+      "capabilities": [],
+      "configurations": [],
+      "networkPlacement": "",
+      "patchingOwner": "",
+      "complianceCerts": [],
+      "requirementGroups": [],
+      "requirementImplementations": [],
+      "dataLeavesInfrastructure": null,
+      "dataResidencyCommitment": "",
+      "dpaNotes": "",
+      "vendorSLA": "",
+      "authenticationModel": "",
+      "incidentNotificationProcess": "",
+      "owner": {},
+      "definitionOwner": {},
+      "provider": {},
+      "authority": {},
+      "shape": "round-rectangle",
+      "color": "#7a6e60",
+      "source": "derived from catalog/engineering/product-components/product-component-factory-cli.yaml [inline dependency]",
+      "tags": [],
+      "ardCategory": "",
+      "internalComponents": [],
+      "notes": "Consumes the Control Plane REST and MCP operator surfaces.",
+      "requirements": [],
+      "implementations": [],
+      "appliesTo": {},
+      "inherits": "",
+      "scalingUnits": [],
+      "networkZones": [],
+      "sdpConnections": [],
+      "serviceGroups": [],
+      "tierVariants": [],
+      "tierId": "",
+      "purpose": "",
+      "availabilityExpectation": "",
+      "costPosture": "",
+      "complianceScope": [],
+      "parameterSurface": [],
+      "followsReferenceArchitecture": "",
+      "decisionRecords": [],
+      "affectedComponent": "",
+      "impact": "",
+      "mitigationPath": "",
+      "decisionRationale": "",
+      "relatedDecisionRecords": [],
+      "linkedObject": "",
+      "primaryObjectType": "",
+      "primaryObjectUid": "",
+      "generatedObjects": [],
+      "unresolvedQuestions": [],
+      "assumptions": [],
+      "nextSteps": [],
+      "defaultSelection": false,
+      "requirementCount": 0,
+      "hasRiskRef": false,
+      "outboundRefs": [
+        {
+          "target": "01M7KQAQCD-01CD",
+          "path": "source"
+        },
+        {
+          "target": "01M7GWXKXW-EJWB",
+          "path": "target"
+        }
+      ],
+      "referencedBy": [],
+      "editorSchema": {
+        "requiredFields": [
+          "schemaVersion",
+          "uid",
+          "type",
+          "name",
+          "source",
+          "label",
+          "catalogStatus"
+        ],
+        "optionalFields": [
+          "description",
+          "target",
+          "externalTarget",
+          "technology",
+          "direction",
+          "flow",
+          "capabilities",
+          "notes",
+          "tags"
+        ],
+        "fieldTypes": {
+          "tags": "list",
+          "capabilities": "list"
+        },
+        "enumFields": {
+          "catalogStatus": [
+            "stub",
+            "incomplete",
+            "complete"
+          ],
+          "direction": [
+            "synchronous",
+            "asynchronous",
+            "event"
+          ],
+          "flow": [
+            "outbound",
+            "inbound",
+            "bidirectional"
+          ]
+        },
+        "enumListFields": {},
+        "collectionSchemas": {},
+        "schemaPath": "framework/schemas/relationship.schema.yaml"
+      },
+      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"ZA4E6M9Z1H-V5Q2\",\n  \"type\": \"relationship\",\n  \"name\": \"Agent Factory CLI & Benchmark Harness \\u2192 Agent Factory Control Plane\",\n  \"source\": \"01M7KQAQCD-01CD\",\n  \"target\": \"01M7GWXKXW-EJWB\",\n  \"label\": \"/api/v1/* and /mcp\",\n  \"notes\": \"Consumes the Control Plane REST and MCP operator surfaces.\",\n  \"catalogStatus\": \"complete\",\n  \"_source\": \"derived from catalog/engineering/product-components/product-component-factory-cli.yaml [inline dependency]\",\n  \"_derived\": true\n}",
       "existsInCatalog": true,
       "outboundRelationships": [],
       "inboundRelationships": []
@@ -34593,6 +39200,14 @@ window.DRAFT_BROWSER_DATA = {
         {
           "source": "01KT0VM061-CRN7",
           "path": "requirements[11].relatedCapability"
+        },
+        {
+          "source": "01M7KQAQCD-WD0R",
+          "path": "capabilities[0]"
+        },
+        {
+          "source": "01M7KQAQCD-ZS7E",
+          "path": "capabilities[0]"
         }
       ],
       "editorSchema": {
@@ -36692,6 +41307,14 @@ window.DRAFT_BROWSER_DATA = {
         },
         {
           "source": "01M7GWTG2T-M07S",
+          "path": "capabilities[0]"
+        },
+        {
+          "source": "01M7KQAQCD-GHF4",
+          "path": "capabilities[0]"
+        },
+        {
+          "source": "01M7KQAQCD-ZVVA",
           "path": "capabilities[0]"
         },
         {
@@ -52145,6 +56768,326 @@ window.DRAFT_BROWSER_DATA = {
       "outboundRelationships": [],
       "inboundRelationships": []
     },
+    "01M7KQAQCC-EG06": {
+      "id": "01M7KQAQCC-EG06",
+      "uid": "01M7KQAQCC-EG06",
+      "name": "Development & CI Container Proof (Compose Host)",
+      "aliases": [],
+      "type": "environment_tier",
+      "typeLabel": "Environment Tier / Test",
+      "filterType": "environment_tier",
+      "category": "",
+      "deliveryModel": "",
+      "domain": "",
+      "description": "Single-host Docker Compose environment tier (landing-zones/compose) used for inner-loop local development and CI compose-proof end-to-end verification of network isolation, run tokens, Gatekeeper metering, kill-switch, and WORM ledger tamper refusal.",
+      "version": "",
+      "catalogStatus": "complete",
+      "lifecycleStatus": "unknown",
+      "status": "",
+      "businessContext": {},
+      "product": "",
+      "runsOn": "",
+      "subtype": "",
+      "vendor": "",
+      "productName": "",
+      "productVersion": "",
+      "classification": "",
+      "platformDependency": "",
+      "capabilities": [],
+      "configurations": [],
+      "networkPlacement": "",
+      "patchingOwner": "",
+      "complianceCerts": [],
+      "requirementGroups": [],
+      "requirementImplementations": [],
+      "dataLeavesInfrastructure": null,
+      "dataResidencyCommitment": "",
+      "dpaNotes": "",
+      "vendorSLA": "",
+      "authenticationModel": "",
+      "incidentNotificationProcess": "",
+      "owner": {},
+      "definitionOwner": {},
+      "provider": {},
+      "authority": {},
+      "shape": "round-rectangle",
+      "color": "#7a6e60",
+      "source": "configurations/environment-tiers/environment-tier-dev-compose.yaml",
+      "tags": [],
+      "ardCategory": "",
+      "internalComponents": [],
+      "notes": "Enforces isolated Docker bridge networks (internal factory-agents with zero host egress, internal control network with docker-socket-proxy, and egress bridge for Gatekeeper and Control Plane).",
+      "requirements": [],
+      "implementations": [],
+      "appliesTo": {},
+      "inherits": "",
+      "scalingUnits": [],
+      "networkZones": [],
+      "sdpConnections": [],
+      "serviceGroups": [],
+      "tierVariants": [],
+      "tierId": "dev-compose",
+      "purpose": "test",
+      "availabilityExpectation": "best-effort",
+      "costPosture": "cost-optimized",
+      "complianceScope": [],
+      "parameterSurface": [
+        {
+          "name": "composeProjectName",
+          "description": "Docker Compose stack namespace (default agent-factory).",
+          "required": false,
+          "sensitive": false
+        }
+      ],
+      "followsReferenceArchitecture": "",
+      "decisionRecords": [],
+      "affectedComponent": "",
+      "impact": "",
+      "mitigationPath": "",
+      "decisionRationale": "",
+      "relatedDecisionRecords": [],
+      "linkedObject": "",
+      "primaryObjectType": "",
+      "primaryObjectUid": "",
+      "generatedObjects": [],
+      "unresolvedQuestions": [],
+      "assumptions": [],
+      "nextSteps": [],
+      "defaultSelection": false,
+      "requirementCount": 0,
+      "hasRiskRef": false,
+      "outboundRefs": [],
+      "referencedBy": [],
+      "editorSchema": {
+        "requiredFields": [
+          "schemaVersion",
+          "uid",
+          "type",
+          "name",
+          "tierId",
+          "purpose",
+          "availabilityExpectation",
+          "catalogStatus"
+        ],
+        "optionalFields": [
+          "description",
+          "costPosture",
+          "complianceScope",
+          "parameterSurface",
+          "notes"
+        ],
+        "fieldTypes": {
+          "complianceScope": "list",
+          "parameterSurface": "list"
+        },
+        "enumFields": {
+          "catalogStatus": [
+            "stub",
+            "incomplete",
+            "complete"
+          ],
+          "purpose": [
+            "development",
+            "test",
+            "staging",
+            "production",
+            "other"
+          ],
+          "availabilityExpectation": [
+            "best-effort",
+            "business-hours",
+            "high-availability",
+            "mission-critical"
+          ],
+          "costPosture": [
+            "cost-optimized",
+            "balanced",
+            "performance-optimized"
+          ]
+        },
+        "enumListFields": {},
+        "collectionSchemas": {
+          "parameterSurface": "tierParameter"
+        },
+        "schemaPath": "framework/schemas/environment-tier.schema.yaml"
+      },
+      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M7KQAQCC-EG06\",\n  \"type\": \"environment_tier\",\n  \"name\": \"Development & CI Container Proof (Compose Host)\",\n  \"tierId\": \"dev-compose\",\n  \"purpose\": \"test\",\n  \"availabilityExpectation\": \"best-effort\",\n  \"costPosture\": \"cost-optimized\",\n  \"catalogStatus\": \"complete\",\n  \"description\": \"Single-host Docker Compose environment tier (landing-zones/compose) used for inner-loop local development and CI compose-proof end-to-end verification of network isolation, run tokens, Gatekeeper metering, kill-switch, and WORM ledger tamper refusal.\",\n  \"parameterSurface\": [\n    {\n      \"name\": \"composeProjectName\",\n      \"description\": \"Docker Compose stack namespace (default agent-factory).\",\n      \"required\": false,\n      \"sensitive\": false\n    }\n  ],\n  \"notes\": \"Enforces isolated Docker bridge networks (internal factory-agents with zero host egress, internal control network with docker-socket-proxy, and egress bridge for Gatekeeper and Control Plane).\",\n  \"_source\": \"configurations/environment-tiers/environment-tier-dev-compose.yaml\"\n}",
+      "existsInCatalog": true,
+      "outboundRelationships": [],
+      "inboundRelationships": []
+    },
+    "01M7KQAQCC-T9DS": {
+      "id": "01M7KQAQCC-T9DS",
+      "uid": "01M7KQAQCC-T9DS",
+      "name": "Production (AWS ECS Fargate Orchestrated Tasks)",
+      "aliases": [],
+      "type": "environment_tier",
+      "typeLabel": "Environment Tier / Production",
+      "filterType": "environment_tier",
+      "category": "",
+      "deliveryModel": "",
+      "domain": "",
+      "description": "Production environment tier for BeerCanLabs Agent Factory deploying the Orchestrated Tasks pattern onto AWS ECS Fargate (us-east-1, cluster factory-prod) behind the Cloudflare edge, Cloudflare Access, and HTTPS ALB, with EFS hot ledger and S3 Object Lock COMPLIANCE checkpoints.",
+      "version": "",
+      "catalogStatus": "complete",
+      "lifecycleStatus": "unknown",
+      "status": "",
+      "businessContext": {},
+      "product": "",
+      "runsOn": "",
+      "subtype": "",
+      "vendor": "",
+      "productName": "",
+      "productVersion": "",
+      "classification": "",
+      "platformDependency": "",
+      "capabilities": [],
+      "configurations": [],
+      "networkPlacement": "",
+      "patchingOwner": "",
+      "complianceCerts": [],
+      "requirementGroups": [],
+      "requirementImplementations": [],
+      "dataLeavesInfrastructure": null,
+      "dataResidencyCommitment": "",
+      "dpaNotes": "",
+      "vendorSLA": "",
+      "authenticationModel": "",
+      "incidentNotificationProcess": "",
+      "owner": {},
+      "definitionOwner": {},
+      "provider": {},
+      "authority": {},
+      "shape": "round-rectangle",
+      "color": "#7a6e60",
+      "source": "configurations/environment-tiers/environment-tier-prod.yaml",
+      "tags": [],
+      "ardCategory": "",
+      "internalComponents": [],
+      "notes": "No formal availability SLA/SLO is defined yet (see decision record 01M7GYV3B6-RYSP). Control plane runs desiredCount=1 with stop-then-start deployment (LG1); gatekeeper-egress and garrison use FARGATE_SPOT; agent cartridges scale to zero (min=0) via ECS RunTask per wake (see decision records 01M7GYV3B6-K9CZ and 01M7GYV3B6-8VN0).",
+      "requirements": [],
+      "implementations": [],
+      "appliesTo": {},
+      "inherits": "",
+      "scalingUnits": [],
+      "networkZones": [],
+      "sdpConnections": [],
+      "serviceGroups": [],
+      "tierVariants": [],
+      "tierId": "prod",
+      "purpose": "production",
+      "availabilityExpectation": "best-effort",
+      "costPosture": "balanced",
+      "complianceScope": [],
+      "parameterSurface": [
+        {
+          "name": "accountId",
+          "description": "Target 12-digit cloud account identifier supplied by deploy pipeline.",
+          "required": true,
+          "sensitive": false
+        },
+        {
+          "name": "awsRegion",
+          "description": "Target AWS region (default us-east-1).",
+          "required": true,
+          "sensitive": false
+        },
+        {
+          "name": "certificateArn",
+          "description": "ACM TLS certificate ARN for HTTPS ALB listener.",
+          "required": true,
+          "sensitive": false
+        },
+        {
+          "name": "ingressCidrs",
+          "description": "Published Cloudflare IPv4 CIDR ranges permitted to reach the ALB (never 0.0.0.0/0).",
+          "required": true,
+          "sensitive": false
+        },
+        {
+          "name": "cloudflareZoneId",
+          "description": "Cloudflare Zone ID fronting the public Factory endpoint and Access policies.",
+          "required": false,
+          "sensitive": false
+        }
+      ],
+      "followsReferenceArchitecture": "",
+      "decisionRecords": [],
+      "affectedComponent": "",
+      "impact": "",
+      "mitigationPath": "",
+      "decisionRationale": "",
+      "relatedDecisionRecords": [],
+      "linkedObject": "",
+      "primaryObjectType": "",
+      "primaryObjectUid": "",
+      "generatedObjects": [],
+      "unresolvedQuestions": [],
+      "assumptions": [],
+      "nextSteps": [],
+      "defaultSelection": false,
+      "requirementCount": 0,
+      "hasRiskRef": false,
+      "outboundRefs": [],
+      "referencedBy": [],
+      "editorSchema": {
+        "requiredFields": [
+          "schemaVersion",
+          "uid",
+          "type",
+          "name",
+          "tierId",
+          "purpose",
+          "availabilityExpectation",
+          "catalogStatus"
+        ],
+        "optionalFields": [
+          "description",
+          "costPosture",
+          "complianceScope",
+          "parameterSurface",
+          "notes"
+        ],
+        "fieldTypes": {
+          "complianceScope": "list",
+          "parameterSurface": "list"
+        },
+        "enumFields": {
+          "catalogStatus": [
+            "stub",
+            "incomplete",
+            "complete"
+          ],
+          "purpose": [
+            "development",
+            "test",
+            "staging",
+            "production",
+            "other"
+          ],
+          "availabilityExpectation": [
+            "best-effort",
+            "business-hours",
+            "high-availability",
+            "mission-critical"
+          ],
+          "costPosture": [
+            "cost-optimized",
+            "balanced",
+            "performance-optimized"
+          ]
+        },
+        "enumListFields": {},
+        "collectionSchemas": {
+          "parameterSurface": "tierParameter"
+        },
+        "schemaPath": "framework/schemas/environment-tier.schema.yaml"
+      },
+      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M7KQAQCC-T9DS\",\n  \"type\": \"environment_tier\",\n  \"name\": \"Production (AWS ECS Fargate Orchestrated Tasks)\",\n  \"tierId\": \"prod\",\n  \"purpose\": \"production\",\n  \"availabilityExpectation\": \"best-effort\",\n  \"costPosture\": \"balanced\",\n  \"catalogStatus\": \"complete\",\n  \"description\": \"Production environment tier for BeerCanLabs Agent Factory deploying the Orchestrated Tasks pattern onto AWS ECS Fargate (us-east-1, cluster factory-prod) behind the Cloudflare edge, Cloudflare Access, and HTTPS ALB, with EFS hot ledger and S3 Object Lock COMPLIANCE checkpoints.\",\n  \"parameterSurface\": [\n    {\n      \"name\": \"accountId\",\n      \"description\": \"Target 12-digit cloud account identifier supplied by deploy pipeline.\",\n      \"required\": true,\n      \"sensitive\": false\n    },\n    {\n      \"name\": \"awsRegion\",\n      \"description\": \"Target AWS region (default us-east-1).\",\n      \"required\": true,\n      \"sensitive\": false\n    },\n    {\n      \"name\": \"certificateArn\",\n      \"description\": \"ACM TLS certificate ARN for HTTPS ALB listener.\",\n      \"required\": true,\n      \"sensitive\": false\n    },\n    {\n      \"name\": \"ingressCidrs\",\n      \"description\": \"Published Cloudflare IPv4 CIDR ranges permitted to reach the ALB (never 0.0.0.0/0).\",\n      \"required\": true,\n      \"sensitive\": false\n    },\n    {\n      \"name\": \"cloudflareZoneId\",\n      \"description\": \"Cloudflare Zone ID fronting the public Factory endpoint and Access policies.\",\n      \"required\": false,\n      \"sensitive\": false\n    }\n  ],\n  \"notes\": \"No formal availability SLA/SLO is defined yet (see decision record 01M7GYV3B6-RYSP). Control plane runs desiredCount=1 with stop-then-start deployment (LG1); gatekeeper-egress and garrison use FARGATE_SPOT; agent cartridges scale to zero (min=0) via ECS RunTask per wake (see decision records 01M7GYV3B6-K9CZ and 01M7GYV3B6-8VN0).\",\n  \"_source\": \"configurations/environment-tiers/environment-tier-prod.yaml\"\n}",
+      "existsInCatalog": true,
+      "outboundRelationships": [],
+      "inboundRelationships": []
+    },
     "01M15NEKT7-4PZN": {
       "id": "01M15NEKT7-4PZN",
       "uid": "01M15NEKT7-4PZN",
@@ -53658,6 +58601,18 @@ window.DRAFT_BROWSER_DATA = {
           "path": "serviceGroups[2].deployableObjects[0].ref"
         },
         {
+          "source": "01M7KQAQCD-8Z5M",
+          "path": "source"
+        },
+        {
+          "source": "01M7KQAQCD-RGE7",
+          "path": "source"
+        },
+        {
+          "source": "01M7KQAQCD-BE9V",
+          "path": "source"
+        },
+        {
           "source": "N42482MC9H-V4TZ",
           "path": "source"
         }
@@ -53739,6 +58694,36 @@ window.DRAFT_BROWSER_DATA = {
       "existsInCatalog": true,
       "outboundRelationships": [
         {
+          "uid": "01M7KQAQCD-8Z5M",
+          "name": "Agent Factory Cartridge Task \u2192 Agent Factory Control Plane",
+          "label": "calls",
+          "technology": "HTTP (:8088)",
+          "direction": "synchronous",
+          "targetUid": "01M7GWXKXW-EJWB",
+          "targetName": "Agent Factory Control Plane",
+          "capabilities": []
+        },
+        {
+          "uid": "01M7KQAQCD-RGE7",
+          "name": "Agent Factory Cartridge Task \u2192 Amazon S3 Agent Factory Mind Bucket",
+          "label": "reads from",
+          "technology": "HTTPS via S3 Gateway VPC Endpoint (:443)",
+          "direction": "synchronous",
+          "targetUid": "01M7GWTG2T-GYW1",
+          "targetName": "Amazon S3 - Agent Factory Mind Bucket",
+          "capabilities": []
+        },
+        {
+          "uid": "01M7KQAQCD-BE9V",
+          "name": "Agent Factory Cartridge Task \u2192 Agent Factory Gatekeeper Egress",
+          "label": "calls",
+          "technology": "HTTP Reverse Proxy & CONNECT (:8081)",
+          "direction": "synchronous",
+          "targetUid": "01M7GWXKXW-BPBV",
+          "targetName": "Agent Factory Gatekeeper Egress",
+          "capabilities": []
+        },
+        {
           "uid": "N42482MC9H-V4TZ",
           "name": "Agent Factory Cartridge Task (on-demand) \u2192 AWS ECS Fargate Runtime - factory-prod",
           "label": "runs on",
@@ -53746,6 +58731,217 @@ window.DRAFT_BROWSER_DATA = {
           "direction": "",
           "targetUid": "01M7GWTG2S-AC3R",
           "targetName": "AWS ECS Fargate Runtime - factory-prod",
+          "capabilities": []
+        }
+      ],
+      "inboundRelationships": []
+    },
+    "01M7KQAQCD-01CD": {
+      "id": "01M7KQAQCD-01CD",
+      "uid": "01M7KQAQCD-01CD",
+      "name": "Agent Factory CLI & Benchmark Harness",
+      "aliases": [],
+      "type": "product_component",
+      "typeLabel": "ProductComponent / Cli",
+      "filterType": "product_component",
+      "category": "",
+      "deliveryModel": "",
+      "domain": "",
+      "description": "Operator terminal client (@beercanlabs/factory-cli: factory) and Cost-vs-Quality benchmark runner (@beercanlabs/factory-bench: factory-bench). Authenticates via OIDC or fk_ API keys against the Control Plane Headless Neck to inspect runs and ledger chains, decide Bouncer approvals, manage model subscriptions, and score bench.yaml evaluations across candidate models.",
+      "version": "2.0.0",
+      "catalogStatus": "incomplete",
+      "lifecycleStatus": "preferred",
+      "status": "",
+      "businessContext": {},
+      "product": "",
+      "runsOn": "",
+      "subtype": "",
+      "vendor": "",
+      "productName": "",
+      "productVersion": "",
+      "classification": "cli",
+      "platformDependency": "",
+      "capabilities": [],
+      "configurations": [],
+      "networkPlacement": "",
+      "patchingOwner": "",
+      "complianceCerts": [],
+      "requirementGroups": [],
+      "requirementImplementations": [],
+      "dataLeavesInfrastructure": null,
+      "dataResidencyCommitment": "",
+      "dpaNotes": "",
+      "vendorSLA": "",
+      "authenticationModel": "",
+      "incidentNotificationProcess": "",
+      "owner": {
+        "team": "platform-ai-team",
+        "contact": "platform-ai@example.com"
+      },
+      "definitionOwner": {},
+      "provider": {},
+      "authority": {},
+      "shape": "round-rectangle",
+      "color": "#1f8a5b",
+      "source": "catalog/engineering/product-components/product-component-factory-cli.yaml",
+      "tags": [
+        "agent-factory",
+        "cli",
+        "benchmark",
+        "client"
+      ],
+      "ardCategory": "",
+      "internalComponents": [],
+      "notes": {
+        "source": "packages/cli and packages/bench in BeerCanLabs/agent-factory (Node.js 22 CLI binaries).",
+        "incomplete": "Requirement evidence and standalone CLI distribution/release governance are not yet recorded."
+      },
+      "requirements": [],
+      "implementations": [],
+      "appliesTo": {},
+      "inherits": "",
+      "scalingUnits": [],
+      "networkZones": [],
+      "sdpConnections": [],
+      "serviceGroups": [],
+      "tierVariants": [],
+      "tierId": "",
+      "purpose": "",
+      "availabilityExpectation": "",
+      "costPosture": "",
+      "complianceScope": [],
+      "parameterSurface": [],
+      "followsReferenceArchitecture": "",
+      "decisionRecords": [],
+      "affectedComponent": "",
+      "impact": "",
+      "mitigationPath": "",
+      "decisionRationale": "",
+      "relatedDecisionRecords": [],
+      "linkedObject": "",
+      "primaryObjectType": "",
+      "primaryObjectUid": "",
+      "generatedObjects": [],
+      "unresolvedQuestions": [],
+      "assumptions": [],
+      "nextSteps": [],
+      "defaultSelection": false,
+      "requirementCount": 0,
+      "hasRiskRef": false,
+      "outboundRefs": [
+        {
+          "target": "01M7GTBMQS-YRGF",
+          "path": "runtimeSpec.dependencies[0].ref"
+        },
+        {
+          "target": "01M7GWXKXW-EJWB",
+          "path": "runtimeSpec.dependencies[1].ref"
+        }
+      ],
+      "referencedBy": [
+        {
+          "source": "0C2JQD5S29-RJNY",
+          "path": "source"
+        },
+        {
+          "source": "ZA4E6M9Z1H-V5Q2",
+          "path": "source"
+        }
+      ],
+      "editorSchema": {
+        "requiredFields": [
+          "schemaVersion",
+          "uid",
+          "type",
+          "name",
+          "repoUrl",
+          "owner",
+          "classification",
+          "catalogStatus"
+        ],
+        "optionalFields": [
+          "lifecycleStatus",
+          "aliases",
+          "description",
+          "version",
+          "tags",
+          "runsOn",
+          "language",
+          "interfaces",
+          "networkBindings",
+          "environmentConfiguration",
+          "runtimeSpec",
+          "notes",
+          "decisionRecords",
+          "requirementImplementations"
+        ],
+        "fieldTypes": {
+          "aliases": "list",
+          "owner": "dict",
+          "runsOn": "str",
+          "tags": "list",
+          "interfaces": "list",
+          "networkBindings": "list",
+          "environmentConfiguration": "list",
+          "runtimeSpec": "dict",
+          "notes": "dict",
+          "requirementGroups": "list",
+          "decisionRecords": "list",
+          "requirementImplementations": "list"
+        },
+        "enumFields": {
+          "catalogStatus": [
+            "stub",
+            "incomplete",
+            "complete"
+          ],
+          "lifecycleStatus": [
+            "candidate",
+            "preferred",
+            "existing-only",
+            "deprecated",
+            "retired"
+          ],
+          "classification": [
+            "web-application",
+            "api-service",
+            "worker",
+            "library",
+            "cli",
+            "other"
+          ]
+        },
+        "enumListFields": {},
+        "collectionSchemas": {
+          "interfaces": "interface",
+          "networkBindings": "networkBinding",
+          "environmentConfiguration": "environmentVariable",
+          "decisionRecords": "decisionRecordRef",
+          "requirementImplementations": "requirementImplementation"
+        },
+        "schemaPath": "framework/schemas/product-component.schema.yaml"
+      },
+      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M7KQAQCD-01CD\",\n  \"type\": \"product_component\",\n  \"name\": \"Agent Factory CLI & Benchmark Harness\",\n  \"description\": \"Operator terminal client (@beercanlabs/factory-cli: factory) and Cost-vs-Quality benchmark runner (@beercanlabs/factory-bench: factory-bench). Authenticates via OIDC or fk_ API keys against the Control Plane Headless Neck to inspect runs and ledger chains, decide Bouncer approvals, manage model subscriptions, and score bench.yaml evaluations across candidate models.\",\n  \"version\": \"2.0.0\",\n  \"repoUrl\": \"https://github.com/BeerCanLabs/agent-factory\",\n  \"owner\": {\n    \"team\": \"platform-ai-team\",\n    \"contact\": \"platform-ai@example.com\"\n  },\n  \"classification\": \"cli\",\n  \"catalogStatus\": \"incomplete\",\n  \"lifecycleStatus\": \"preferred\",\n  \"language\": \"TypeScript\",\n  \"tags\": [\n    \"agent-factory\",\n    \"cli\",\n    \"benchmark\",\n    \"client\"\n  ],\n  \"environmentConfiguration\": [\n    {\n      \"name\": \"FACTORY_URL\",\n      \"description\": \"Target Agent Factory public HTTPS URL.\",\n      \"required\": true,\n      \"sensitive\": false\n    },\n    {\n      \"name\": \"FACTORY_API_KEY\",\n      \"description\": \"Operator or service fk_ API key when invoking headless CLI or CI benchmark commands.\",\n      \"required\": false,\n      \"sensitive\": true\n    }\n  ],\n  \"runtimeSpec\": {\n    \"dependencies\": [\n      {\n        \"ref\": \"01M7GTBMQS-YRGF\",\n        \"purpose\": \"Calls the Agent Factory Headless Neck over public HTTPS through the Cloudflare edge front door.\",\n        \"interface\": \"/api/v1/* and /mcp\"\n      },\n      {\n        \"ref\": \"01M7GWXKXW-EJWB\",\n        \"purpose\": \"Consumes the Control Plane REST and MCP operator surfaces.\",\n        \"interface\": \"/api/v1/* and /mcp\"\n      }\n    ]\n  },\n  \"notes\": {\n    \"source\": \"packages/cli and packages/bench in BeerCanLabs/agent-factory (Node.js 22 CLI binaries).\",\n    \"incomplete\": \"Requirement evidence and standalone CLI distribution/release governance are not yet recorded.\"\n  },\n  \"_source\": \"catalog/engineering/product-components/product-component-factory-cli.yaml\"\n}",
+      "existsInCatalog": true,
+      "outboundRelationships": [
+        {
+          "uid": "0C2JQD5S29-RJNY",
+          "name": "Agent Factory CLI & Benchmark Harness \u2192 Cloudflare Global Anycast Edge Proxy Service",
+          "label": "/api/v1/* and /mcp",
+          "technology": "",
+          "direction": "",
+          "targetUid": "01M7GTBMQS-YRGF",
+          "targetName": "Cloudflare Global Anycast Edge Proxy Service",
+          "capabilities": []
+        },
+        {
+          "uid": "ZA4E6M9Z1H-V5Q2",
+          "name": "Agent Factory CLI & Benchmark Harness \u2192 Agent Factory Control Plane",
+          "label": "/api/v1/* and /mcp",
+          "technology": "",
+          "direction": "",
+          "targetUid": "01M7GWXKXW-EJWB",
+          "targetName": "Agent Factory Control Plane",
           "capabilities": []
         }
       ],
@@ -53855,6 +59051,14 @@ window.DRAFT_BROWSER_DATA = {
           "path": "serviceGroups[1].deployableObjects[0].ref"
         },
         {
+          "source": "01M7KQAQCD-3CBS",
+          "path": "target"
+        },
+        {
+          "source": "01M7KQAQCD-GQNC",
+          "path": "source"
+        },
+        {
           "source": "K3K6BX46KE-5MV9",
           "path": "source"
         }
@@ -53936,6 +59140,16 @@ window.DRAFT_BROWSER_DATA = {
       "existsInCatalog": true,
       "outboundRelationships": [
         {
+          "uid": "01M7KQAQCD-GQNC",
+          "name": "Agent Factory Console \u2192 Agent Factory Control Plane",
+          "label": "calls",
+          "technology": "HTTP (:8088)",
+          "direction": "synchronous",
+          "targetUid": "01M7GWXKXW-EJWB",
+          "targetName": "Agent Factory Control Plane",
+          "capabilities": []
+        },
+        {
           "uid": "K3K6BX46KE-5MV9",
           "name": "Agent Factory Console \u2192 AWS ECS Fargate Runtime - factory-prod",
           "label": "runs on",
@@ -53946,7 +59160,20 @@ window.DRAFT_BROWSER_DATA = {
           "capabilities": []
         }
       ],
-      "inboundRelationships": []
+      "inboundRelationships": [
+        {
+          "uid": "01M7KQAQCD-3CBS",
+          "name": "AWS ALB factory-prod \u2192 Agent Factory Console",
+          "label": "routes to",
+          "technology": "HTTPS / HTTP (:3000)",
+          "direction": "synchronous",
+          "targetUid": "01M7GWXKXW-VPCD",
+          "targetName": "Agent Factory Console",
+          "capabilities": [],
+          "sourceUid": "01M7GWTG2T-M2Q0",
+          "sourceName": "AWS Application Load Balancer - factory-prod"
+        }
+      ]
     },
     "01M7GWXKXW-EJWB": {
       "id": "01M7GWXKXW-EJWB",
@@ -54048,8 +59275,60 @@ window.DRAFT_BROWSER_DATA = {
       ],
       "referencedBy": [
         {
+          "source": "01M7KQAQCD-01CD",
+          "path": "runtimeSpec.dependencies[1].ref"
+        },
+        {
           "source": "01M15NEKT7-S14J",
           "path": "serviceGroups[0].deployableObjects[0].ref"
+        },
+        {
+          "source": "01M7KQAQCD-9JK7",
+          "path": "target"
+        },
+        {
+          "source": "01M7KQAQCD-GQNC",
+          "path": "target"
+        },
+        {
+          "source": "01M7KQAQCD-ZD19",
+          "path": "source"
+        },
+        {
+          "source": "01M7KQAQCD-HNYQ",
+          "path": "source"
+        },
+        {
+          "source": "01M7KQAQCD-CWYV",
+          "path": "source"
+        },
+        {
+          "source": "01M7KQAQCD-Z7TV",
+          "path": "source"
+        },
+        {
+          "source": "01M7KQAQCD-4GN2",
+          "path": "source"
+        },
+        {
+          "source": "01M7KQAQCD-XTFV",
+          "path": "source"
+        },
+        {
+          "source": "01M7KQAQCD-M02F",
+          "path": "target"
+        },
+        {
+          "source": "01M7KQAQCD-1AM0",
+          "path": "target"
+        },
+        {
+          "source": "01M7KQAQCD-8Z5M",
+          "path": "target"
+        },
+        {
+          "source": "ZA4E6M9Z1H-V5Q2",
+          "path": "target"
         },
         {
           "source": "37Y75386HP-XZ13",
@@ -54133,6 +59412,66 @@ window.DRAFT_BROWSER_DATA = {
       "existsInCatalog": true,
       "outboundRelationships": [
         {
+          "uid": "01M7KQAQCD-ZD19",
+          "name": "Agent Factory Control Plane \u2192 S3 Config, Ledger & Package Buckets",
+          "label": "writes to",
+          "technology": "HTTPS (:443)",
+          "direction": "synchronous",
+          "targetUid": "01M7GWTG2T-F1WG",
+          "targetName": "Amazon S3 - Agent Factory Config, Ledger and Package Buckets",
+          "capabilities": []
+        },
+        {
+          "uid": "01M7KQAQCD-HNYQ",
+          "name": "Agent Factory Control Plane \u2192 Agent Factory Gatekeeper Egress",
+          "label": "calls",
+          "technology": "HTTP (:8081)",
+          "direction": "synchronous",
+          "targetUid": "01M7GWXKXW-BPBV",
+          "targetName": "Agent Factory Gatekeeper Egress",
+          "capabilities": []
+        },
+        {
+          "uid": "01M7KQAQCD-CWYV",
+          "name": "Agent Factory Control Plane \u2192 Agent Factory Gatekeeper Ingress",
+          "label": "sends events to",
+          "technology": "HTTP (:8090)",
+          "direction": "asynchronous",
+          "targetUid": "01M7GWXKXW-7W49",
+          "targetName": "Agent Factory Gatekeeper Ingress",
+          "capabilities": []
+        },
+        {
+          "uid": "01M7KQAQCD-Z7TV",
+          "name": "Agent Factory Control Plane \u2192 Agent Factory EventBridge Event Bus",
+          "label": "sends events to",
+          "technology": "HTTPS (:443)",
+          "direction": "event",
+          "targetUid": "01M7KQAQCD-GHF4",
+          "targetName": "Amazon EventBridge - Agent Factory Event Bus",
+          "capabilities": []
+        },
+        {
+          "uid": "01M7KQAQCD-4GN2",
+          "name": "Agent Factory Control Plane \u2192 CodeBuild Admission & Skill Builders",
+          "label": "calls",
+          "technology": "HTTPS (:443)",
+          "direction": "asynchronous",
+          "targetUid": "01M7KQAQCD-WD0R",
+          "targetName": "AWS CodeBuild - Agent Factory Admission & Skill Builders",
+          "capabilities": []
+        },
+        {
+          "uid": "01M7KQAQCD-XTFV",
+          "name": "Agent Factory Control Plane \u2192 Amazon EFS factory-prod-ledger",
+          "label": "writes to",
+          "technology": "NFSv4.1 over TLS (:2049)",
+          "direction": "synchronous",
+          "targetUid": "01M7GWTG2T-KR1Y",
+          "targetName": "Amazon EFS - factory-prod-ledger",
+          "capabilities": []
+        },
+        {
           "uid": "37Y75386HP-XZ13",
           "name": "Agent Factory Control Plane \u2192 AWS ECS Fargate Runtime - factory-prod",
           "label": "runs on",
@@ -54143,7 +59482,80 @@ window.DRAFT_BROWSER_DATA = {
           "capabilities": []
         }
       ],
-      "inboundRelationships": []
+      "inboundRelationships": [
+        {
+          "uid": "01M7KQAQCD-9JK7",
+          "name": "AWS ALB factory-prod \u2192 Agent Factory Control Plane",
+          "label": "routes to",
+          "technology": "HTTPS / HTTP (:8088, health :8089)",
+          "direction": "synchronous",
+          "targetUid": "01M7GWXKXW-EJWB",
+          "targetName": "Agent Factory Control Plane",
+          "capabilities": [],
+          "sourceUid": "01M7GWTG2T-M2Q0",
+          "sourceName": "AWS Application Load Balancer - factory-prod"
+        },
+        {
+          "uid": "01M7KQAQCD-GQNC",
+          "name": "Agent Factory Console \u2192 Agent Factory Control Plane",
+          "label": "calls",
+          "technology": "HTTP (:8088)",
+          "direction": "synchronous",
+          "targetUid": "01M7GWXKXW-EJWB",
+          "targetName": "Agent Factory Control Plane",
+          "capabilities": [],
+          "sourceUid": "01M7GWXKXW-VPCD",
+          "sourceName": "Agent Factory Console"
+        },
+        {
+          "uid": "01M7KQAQCD-M02F",
+          "name": "Agent Factory Gatekeeper Egress \u2192 Agent Factory Control Plane",
+          "label": "calls",
+          "technology": "HTTP (:8088)",
+          "direction": "synchronous",
+          "targetUid": "01M7GWXKXW-EJWB",
+          "targetName": "Agent Factory Control Plane",
+          "capabilities": [],
+          "sourceUid": "01M7GWXKXW-BPBV",
+          "sourceName": "Agent Factory Gatekeeper Egress"
+        },
+        {
+          "uid": "01M7KQAQCD-1AM0",
+          "name": "Agent Factory Gatekeeper Ingress \u2192 Agent Factory Control Plane",
+          "label": "calls",
+          "technology": "HTTP (:8088)",
+          "direction": "synchronous",
+          "targetUid": "01M7GWXKXW-EJWB",
+          "targetName": "Agent Factory Control Plane",
+          "capabilities": [],
+          "sourceUid": "01M7GWXKXW-7W49",
+          "sourceName": "Agent Factory Gatekeeper Ingress"
+        },
+        {
+          "uid": "01M7KQAQCD-8Z5M",
+          "name": "Agent Factory Cartridge Task \u2192 Agent Factory Control Plane",
+          "label": "calls",
+          "technology": "HTTP (:8088)",
+          "direction": "synchronous",
+          "targetUid": "01M7GWXKXW-EJWB",
+          "targetName": "Agent Factory Control Plane",
+          "capabilities": [],
+          "sourceUid": "01M7GWXKXW-4ZJF",
+          "sourceName": "Agent Factory Cartridge Task (on-demand)"
+        },
+        {
+          "uid": "ZA4E6M9Z1H-V5Q2",
+          "name": "Agent Factory CLI & Benchmark Harness \u2192 Agent Factory Control Plane",
+          "label": "/api/v1/* and /mcp",
+          "technology": "",
+          "direction": "",
+          "targetUid": "01M7GWXKXW-EJWB",
+          "targetName": "Agent Factory Control Plane",
+          "capabilities": [],
+          "sourceUid": "01M7KQAQCD-01CD",
+          "sourceName": "Agent Factory CLI & Benchmark Harness"
+        }
+      ]
     },
     "01M7GWXKXW-BPBV": {
       "id": "01M7GWXKXW-BPBV",
@@ -54251,6 +59663,22 @@ window.DRAFT_BROWSER_DATA = {
           "path": "serviceGroups[0].deployableObjects[2].ref"
         },
         {
+          "source": "01M7KQAQCD-HNYQ",
+          "path": "target"
+        },
+        {
+          "source": "01M7KQAQCD-7V12",
+          "path": "source"
+        },
+        {
+          "source": "01M7KQAQCD-M02F",
+          "path": "source"
+        },
+        {
+          "source": "01M7KQAQCD-BE9V",
+          "path": "target"
+        },
+        {
           "source": "HZPHDW059V-S1NS",
           "path": "source"
         }
@@ -54332,6 +59760,26 @@ window.DRAFT_BROWSER_DATA = {
       "existsInCatalog": true,
       "outboundRelationships": [
         {
+          "uid": "01M7KQAQCD-7V12",
+          "name": "Agent Factory Gatekeeper Egress \u2192 External LLM & SaaS Providers",
+          "label": "calls",
+          "technology": "HTTPS (:443)",
+          "direction": "synchronous",
+          "targetUid": "",
+          "targetName": "External Model & SaaS APIs (AWS Bedrock, OpenAI, xAI, Anthropic, GitHub, Google Workspace, Notion)",
+          "capabilities": []
+        },
+        {
+          "uid": "01M7KQAQCD-M02F",
+          "name": "Agent Factory Gatekeeper Egress \u2192 Agent Factory Control Plane",
+          "label": "calls",
+          "technology": "HTTP (:8088)",
+          "direction": "synchronous",
+          "targetUid": "01M7GWXKXW-EJWB",
+          "targetName": "Agent Factory Control Plane",
+          "capabilities": []
+        },
+        {
           "uid": "HZPHDW059V-S1NS",
           "name": "Agent Factory Gatekeeper Egress \u2192 AWS ECS Fargate Runtime - factory-prod",
           "label": "runs on",
@@ -54342,7 +59790,32 @@ window.DRAFT_BROWSER_DATA = {
           "capabilities": []
         }
       ],
-      "inboundRelationships": []
+      "inboundRelationships": [
+        {
+          "uid": "01M7KQAQCD-HNYQ",
+          "name": "Agent Factory Control Plane \u2192 Agent Factory Gatekeeper Egress",
+          "label": "calls",
+          "technology": "HTTP (:8081)",
+          "direction": "synchronous",
+          "targetUid": "01M7GWXKXW-BPBV",
+          "targetName": "Agent Factory Gatekeeper Egress",
+          "capabilities": [],
+          "sourceUid": "01M7GWXKXW-EJWB",
+          "sourceName": "Agent Factory Control Plane"
+        },
+        {
+          "uid": "01M7KQAQCD-BE9V",
+          "name": "Agent Factory Cartridge Task \u2192 Agent Factory Gatekeeper Egress",
+          "label": "calls",
+          "technology": "HTTP Reverse Proxy & CONNECT (:8081)",
+          "direction": "synchronous",
+          "targetUid": "01M7GWXKXW-BPBV",
+          "targetName": "Agent Factory Gatekeeper Egress",
+          "capabilities": [],
+          "sourceUid": "01M7GWXKXW-4ZJF",
+          "sourceName": "Agent Factory Cartridge Task (on-demand)"
+        }
+      ]
     },
     "01M7GWXKXW-7W49": {
       "id": "01M7GWXKXW-7W49",
@@ -54449,6 +59922,18 @@ window.DRAFT_BROWSER_DATA = {
           "path": "serviceGroups[0].deployableObjects[1].ref"
         },
         {
+          "source": "01M7KQAQCD-CWYV",
+          "path": "target"
+        },
+        {
+          "source": "01M7KQAQCD-PND8",
+          "path": "source"
+        },
+        {
+          "source": "01M7KQAQCD-1AM0",
+          "path": "source"
+        },
+        {
           "source": "TGH5YT0GBB-SQPY",
           "path": "source"
         }
@@ -54530,6 +60015,26 @@ window.DRAFT_BROWSER_DATA = {
       "existsInCatalog": true,
       "outboundRelationships": [
         {
+          "uid": "01M7KQAQCD-PND8",
+          "name": "Agent Factory Gatekeeper Ingress \u2192 Discord Gateway WebSocket API",
+          "label": "connects to",
+          "technology": "WebSocket over TLS (:443)",
+          "direction": "event",
+          "targetUid": "",
+          "targetName": "Discord Gateway WebSocket API",
+          "capabilities": []
+        },
+        {
+          "uid": "01M7KQAQCD-1AM0",
+          "name": "Agent Factory Gatekeeper Ingress \u2192 Agent Factory Control Plane",
+          "label": "calls",
+          "technology": "HTTP (:8088)",
+          "direction": "synchronous",
+          "targetUid": "01M7GWXKXW-EJWB",
+          "targetName": "Agent Factory Control Plane",
+          "capabilities": []
+        },
+        {
           "uid": "TGH5YT0GBB-SQPY",
           "name": "Agent Factory Gatekeeper Ingress \u2192 AWS ECS Fargate Runtime - factory-prod",
           "label": "runs on",
@@ -54540,7 +60045,20 @@ window.DRAFT_BROWSER_DATA = {
           "capabilities": []
         }
       ],
-      "inboundRelationships": []
+      "inboundRelationships": [
+        {
+          "uid": "01M7KQAQCD-CWYV",
+          "name": "Agent Factory Control Plane \u2192 Agent Factory Gatekeeper Ingress",
+          "label": "sends events to",
+          "technology": "HTTP (:8090)",
+          "direction": "asynchronous",
+          "targetUid": "01M7GWXKXW-7W49",
+          "targetName": "Agent Factory Gatekeeper Ingress",
+          "capabilities": [],
+          "sourceUid": "01M7GWXKXW-EJWB",
+          "sourceName": "Agent Factory Control Plane"
+        }
+      ]
     },
     "01M7GWXKXW-Z0Z4": {
       "id": "01M7GWXKXW-Z0Z4",
@@ -54750,12 +60268,14 @@ window.DRAFT_BROWSER_DATA = {
       "category": "",
       "deliveryModel": "",
       "domain": "",
-      "description": "",
-      "version": "",
+      "description": "Central product registration for the BeerCanLabs Agent Factory headless autonomous agent hosting platform (Headless Neck REST/MCP + OAuth 2.1 AS, Hot-Swappable Heads, 10 Cast kernel services, Dual-Mode Cartridge & Shared Runtime hosting, and Zero-Trust Gatekeeper perimeter).",
+      "version": "2.0.0",
       "catalogStatus": "complete",
       "lifecycleStatus": "unknown",
       "status": "",
-      "businessContext": {},
+      "businessContext": {
+        "productFamily": "Skippy / Agent Factory"
+      },
       "product": "",
       "runsOn": "",
       "subtype": "",
@@ -54787,7 +60307,12 @@ window.DRAFT_BROWSER_DATA = {
       "shape": "round-rectangle",
       "color": "#7a6e60",
       "source": "catalog/engineering/product-registrations/product-reg-agent-factory.yaml",
-      "tags": [],
+      "tags": [
+        "agent-factory",
+        "headless-neck",
+        "mcp",
+        "oauth21"
+      ],
       "ardCategory": "",
       "internalComponents": [],
       "notes": {
@@ -54873,7 +60398,7 @@ window.DRAFT_BROWSER_DATA = {
         },
         "schemaPath": "framework/schemas/product-registration.schema.yaml"
       },
-      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M1N137Q5-AFAC\",\n  \"type\": \"product_registration\",\n  \"name\": \"BeerCanLabs Agent Factory\",\n  \"catalogStatus\": \"complete\",\n  \"owner\": {\n    \"team\": \"platform-ai-team\",\n    \"contact\": \"platform-ai@example.com\"\n  },\n  \"repository\": {\n    \"provider\": \"github\",\n    \"url\": \"https://github.com/BeerCanLabs/agent-factory\",\n    \"defaultBranch\": \"main\"\n  },\n  \"sdpManifest\": {\n    \"mode\": \"git\",\n    \"path\": \".draft/sdp.yaml\"\n  },\n  \"notes\": {\n    \"deployment\": \"Deployed on AWS us-east-1 (ECS cluster factory-prod). The deployed topology is modeled by SDP 01M15NEKT7-S14J. The repository .draft/sdp.yaml (SDP0000002-AGENTFACTORY) is the cloud-agnostic kernel pattern.\"\n  },\n  \"_source\": \"catalog/engineering/product-registrations/product-reg-agent-factory.yaml\"\n}",
+      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M1N137Q5-AFAC\",\n  \"type\": \"product_registration\",\n  \"name\": \"BeerCanLabs Agent Factory\",\n  \"description\": \"Central product registration for the BeerCanLabs Agent Factory headless autonomous agent hosting platform (Headless Neck REST/MCP + OAuth 2.1 AS, Hot-Swappable Heads, 10 Cast kernel services, Dual-Mode Cartridge & Shared Runtime hosting, and Zero-Trust Gatekeeper perimeter).\",\n  \"version\": \"2.0.0\",\n  \"catalogStatus\": \"complete\",\n  \"owner\": {\n    \"team\": \"platform-ai-team\",\n    \"contact\": \"platform-ai@example.com\"\n  },\n  \"businessContext\": {\n    \"productFamily\": \"Skippy / Agent Factory\"\n  },\n  \"tags\": [\n    \"agent-factory\",\n    \"headless-neck\",\n    \"mcp\",\n    \"oauth21\"\n  ],\n  \"repository\": {\n    \"provider\": \"github\",\n    \"owner\": \"BeerCanLabs\",\n    \"name\": \"agent-factory\",\n    \"url\": \"https://github.com/BeerCanLabs/agent-factory\",\n    \"defaultBranch\": \"main\"\n  },\n  \"sdpManifest\": {\n    \"mode\": \"git\",\n    \"path\": \".draft/sdp.yaml\",\n    \"branch\": \"main\"\n  },\n  \"notes\": {\n    \"deployment\": \"Deployed on AWS us-east-1 (ECS cluster factory-prod). The deployed topology is modeled by SDP 01M15NEKT7-S14J. The repository .draft/sdp.yaml (SDP0000002-AGENTFACTORY) is the cloud-agnostic kernel pattern.\"\n  },\n  \"_source\": \"catalog/engineering/product-registrations/product-reg-agent-factory.yaml\"\n}",
       "existsInCatalog": true,
       "outboundRelationships": [],
       "inboundRelationships": []
@@ -55741,7 +61266,9 @@ window.DRAFT_BROWSER_DATA = {
       "catalogStatus": "incomplete",
       "lifecycleStatus": "preferred",
       "status": "",
-      "businessContext": {},
+      "businessContext": {
+        "productFamily": "Skippy / Agent Factory"
+      },
       "product": "",
       "runsOn": "",
       "subtype": "",
@@ -55844,7 +61371,10 @@ window.DRAFT_BROWSER_DATA = {
         "software-deployment-pattern",
         "agent-factory",
         "aws",
-        "ecs-fargate"
+        "ecs-fargate",
+        "headless-neck",
+        "mcp",
+        "oauth21"
       ],
       "ardCategory": "",
       "internalComponents": [],
@@ -55857,7 +61387,7 @@ window.DRAFT_BROWSER_DATA = {
           "scope": "platform-wide",
           "description": "Single region, single cluster. Losing the control plane blocks wakes and MCP. Losing one agent task does not take down the factory."
         },
-        "externalDependencies": "Cloudflare edge proxy (01M7GTBMQS-YRGF) and Cloudflare Access (01M7GWTG2T-VA2G); ALB factory-prod (01M7GWTG2T-M2Q0); Cloud Map factory.internal (01M7GWTG2T-8A54); Secrets Manager (01M7GWTG2T-3PQY); S3 mind bucket (01M7GWTG2T-GYW1); S3 config/ledger/packages buckets (01M7GWTG2T-F1WG); EFS ledger (01M7GWTG2T-KR1Y); ECR (01M7GWTG2T-0NKZ); CloudWatch (01M7GWTG2T-TQEB); KMS AWS-managed keys (01M7GWTG2T-JHTR).",
+        "externalDependencies": "Cloudflare edge proxy (01M7GTBMQS-YRGF) and Cloudflare Access (01M7GWTG2T-VA2G); ALB factory-prod (01M7GWTG2T-M2Q0); Cloud Map factory.internal (01M7GWTG2T-8A54); Secrets Manager (01M7GWTG2T-3PQY); S3 mind bucket (01M7GWTG2T-GYW1); S3 config/ledger/packages buckets (01M7GWTG2T-F1WG); EFS ledger (01M7GWTG2T-KR1Y); ECR (01M7GWTG2T-0NKZ); CodeBuild admission/skill builders (01M7KQAQCD-WD0R); EventBridge factory event bus (01M7KQAQCD-GHF4); CloudWatch (01M7GWTG2T-TQEB); KMS AWS-managed keys (01M7GWTG2T-JHTR).",
         "interServiceConnections": "The ALB routes the default host to the control plane, factory-dashboard to the console and garrison to garrison. Kernel services find each other through Cloud Map factory.internal.",
         "secretsManagement": "AWS Secrets Manager referenced as ECS container secrets (control-plane 6, gatekeeper-ingress 2, gatekeeper-egress 2, garrison 1, console 0). The gatekeepers inject credentials so agent tasks hold only their run token, except the registered gap GAP-031 (see decision record 01M7GYV3B6-YE24).",
         "iacAutomation": "Terraform in BeerCanLabs/agent-factory landing-zones/aws with an S3 backend.",
@@ -55871,8 +61401,97 @@ window.DRAFT_BROWSER_DATA = {
       "appliesTo": {},
       "inherits": "",
       "scalingUnits": [],
-      "networkZones": [],
-      "sdpConnections": [],
+      "networkZones": [
+        {
+          "id": "edge",
+          "name": "Edge & Identity-Aware Ingress",
+          "tier": "frontend",
+          "description": "Cloudflare edge proxy, Cloudflare Access, and HTTPS AWS ALB restricted to Cloudflare IPv4 ingress CIDRs (see decision records 01M7GTBMQS-SZBH and 01M7GYV3B6-8VN0)."
+        },
+        {
+          "id": "mailbox",
+          "name": "Mailbox, Headless Neck & Client Services",
+          "tier": "application",
+          "description": "Public service subnets hosting Control Plane (:8088/:8089), Gatekeeper Ingress (:8090), Gatekeeper Egress (:8081), Console (:3000), and Garrison (:3000) under Cloud Map DNS (factory.internal)."
+        },
+        {
+          "id": "agents",
+          "name": "Agent Cartridge Compute",
+          "tier": "application",
+          "description": "Private agent subnets intended for zero direct internet egress (Terraform route=[], scoped security group to Control Plane :8088, Gatekeeper Egress :8081, and VPC endpoints :443). Live unmanaged route/SG drift and assignPublicIp=false mitigation are recorded in decision record 01M7GYV3B6-8VN0."
+        },
+        {
+          "id": "data",
+          "name": "Durable Mind, WORM Ledger & Package Storage",
+          "tier": "data",
+          "description": "Encrypted EFS single-writer hot ledger volume (:2049) and versioned/Object-Lock S3 buckets for agent minds, COMPLIANCE WORM checkpoints, configs, and skill packages."
+        }
+      ],
+      "sdpConnections": [
+        {
+          "from": "01M7GWXKXW-VPCD",
+          "to": "01M7GWXKXW-EJWB",
+          "protocol": "HTTP (:8088)",
+          "direction": "synchronous",
+          "port": "",
+          "label": "calls",
+          "serviceGroup": ""
+        },
+        {
+          "from": "01M7GWXKXW-EJWB",
+          "to": "01M7GWXKXW-BPBV",
+          "protocol": "HTTP (:8081)",
+          "direction": "synchronous",
+          "port": "",
+          "label": "calls",
+          "serviceGroup": ""
+        },
+        {
+          "from": "01M7GWXKXW-EJWB",
+          "to": "01M7GWXKXW-7W49",
+          "protocol": "HTTP (:8090)",
+          "direction": "asynchronous",
+          "port": "",
+          "label": "sends events to",
+          "serviceGroup": ""
+        },
+        {
+          "from": "01M7GWXKXW-BPBV",
+          "to": "01M7GWXKXW-EJWB",
+          "protocol": "HTTP (:8088)",
+          "direction": "synchronous",
+          "port": "",
+          "label": "calls",
+          "serviceGroup": ""
+        },
+        {
+          "from": "01M7GWXKXW-7W49",
+          "to": "01M7GWXKXW-EJWB",
+          "protocol": "HTTP (:8088)",
+          "direction": "synchronous",
+          "port": "",
+          "label": "calls",
+          "serviceGroup": ""
+        },
+        {
+          "from": "01M7GWXKXW-4ZJF",
+          "to": "01M7GWXKXW-EJWB",
+          "protocol": "HTTP (:8088)",
+          "direction": "synchronous",
+          "port": "",
+          "label": "calls",
+          "serviceGroup": ""
+        },
+        {
+          "from": "01M7GWXKXW-4ZJF",
+          "to": "01M7GWXKXW-BPBV",
+          "protocol": "HTTP Reverse Proxy & CONNECT (:8081)",
+          "direction": "synchronous",
+          "port": "",
+          "label": "calls",
+          "serviceGroup": ""
+        }
+      ],
       "serviceGroups": [
         {
           "name": "Factory kernel mailboxes",
@@ -55881,14 +61500,17 @@ window.DRAFT_BROWSER_DATA = {
           "deployableObjects": [
             {
               "ref": "01M7GWXKXW-EJWB",
+              "networkZone": "mailbox",
               "diagramTier": "application"
             },
             {
               "ref": "01M7GWXKXW-7W49",
+              "networkZone": "mailbox",
               "diagramTier": "application"
             },
             {
               "ref": "01M7GWXKXW-BPBV",
+              "networkZone": "mailbox",
               "diagramTier": "application"
             }
           ]
@@ -55900,10 +61522,12 @@ window.DRAFT_BROWSER_DATA = {
           "deployableObjects": [
             {
               "ref": "01M7GWXKXW-VPCD",
+              "networkZone": "mailbox",
               "diagramTier": "presentation"
             },
             {
               "ref": "01M7GWXKXW-Z0Z4",
+              "networkZone": "mailbox",
               "diagramTier": "presentation"
             }
           ]
@@ -55915,12 +61539,49 @@ window.DRAFT_BROWSER_DATA = {
           "deployableObjects": [
             {
               "ref": "01M7GWXKXW-4ZJF",
+              "networkZone": "agents",
               "diagramTier": "application"
             }
           ]
         }
       ],
-      "tierVariants": [],
+      "tierVariants": [
+        {
+          "tier": "01M7KQAQCC-T9DS",
+          "deploymentTarget": {
+            "provider": "aws",
+            "region": "us-east-1"
+          },
+          "serviceGroupVariants": [
+            {
+              "serviceGroup": "Factory kernel mailboxes",
+              "replicaCount": 1,
+              "notes": "Single-writer Control Plane (stop-then-start per LG1); Gatekeeper Ingress and Gatekeeper Egress run desiredCount=1."
+            },
+            {
+              "serviceGroup": "Factory clients",
+              "replicaCount": 1,
+              "notes": "Console and Garrison each run desiredCount=1 behind ALB host rules and Cloudflare Access."
+            },
+            {
+              "serviceGroup": "Agent cartridges (on-demand)",
+              "autoscaling": {
+                "enabled": true,
+                "min": 0,
+                "max": 50
+              },
+              "notes": "Disposable scale-to-zero ECS Fargate RunTask execution per wake."
+            }
+          ]
+        },
+        {
+          "tier": "01M7KQAQCC-EG06",
+          "deploymentTarget": {
+            "provider": "other"
+          },
+          "notes": "Ephemeral single-host Docker Compose stack (landing-zones/compose) used for inner-loop local development and CI compose-proof verification."
+        }
+      ],
       "tierId": "",
       "purpose": "",
       "availabilityExpectation": "",
@@ -56263,7 +61924,7 @@ window.DRAFT_BROWSER_DATA = {
         },
         "schemaPath": "framework/schemas/software-deployment-pattern.schema.yaml"
       },
-      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M15NEKT7-S14J\",\n  \"type\": \"software_deployment_pattern\",\n  \"name\": \"Skippy's Submind Agent Factory Deployment Pattern\",\n  \"description\": \"Agent Factory deployment on AWS ECS Fargate (cluster factory-prod, us-east-1) behind the Cloudflare edge and an internet-facing ALB, with Secrets Manager injection, S3 mind storage and an EFS/S3 ledger. Agents run as on-demand tasks.\",\n  \"version\": \"2.0.0\",\n  \"catalogStatus\": \"incomplete\",\n  \"lifecycleStatus\": \"preferred\",\n  \"owner\": {\n    \"team\": \"platform-ai-team\",\n    \"contact\": \"platform-ai@example.com\"\n  },\n  \"tags\": [\n    \"software-deployment-pattern\",\n    \"agent-factory\",\n    \"aws\",\n    \"ecs-fargate\"\n  ],\n  \"serviceGroups\": [\n    {\n      \"name\": \"Factory kernel mailboxes\",\n      \"deploymentTarget\": \"aws-us-east-1\",\n      \"substrate\": \"01M7GWTG2S-AC3R\",\n      \"deployableObjects\": [\n        {\n          \"ref\": \"01M7GWXKXW-EJWB\",\n          \"diagramTier\": \"application\"\n        },\n        {\n          \"ref\": \"01M7GWXKXW-7W49\",\n          \"diagramTier\": \"application\"\n        },\n        {\n          \"ref\": \"01M7GWXKXW-BPBV\",\n          \"diagramTier\": \"application\"\n        }\n      ]\n    },\n    {\n      \"name\": \"Factory clients\",\n      \"deploymentTarget\": \"aws-us-east-1\",\n      \"substrate\": \"01M7GWTG2S-AC3R\",\n      \"deployableObjects\": [\n        {\n          \"ref\": \"01M7GWXKXW-VPCD\",\n          \"diagramTier\": \"presentation\"\n        },\n        {\n          \"ref\": \"01M7GWXKXW-Z0Z4\",\n          \"diagramTier\": \"presentation\"\n        }\n      ]\n    },\n    {\n      \"name\": \"Agent cartridges (on-demand)\",\n      \"deploymentTarget\": \"aws-us-east-1\",\n      \"substrate\": \"01M7GWTG2S-AC3R\",\n      \"deployableObjects\": [\n        {\n          \"ref\": \"01M7GWXKXW-4ZJF\",\n          \"diagramTier\": \"application\"\n        }\n      ]\n    }\n  ],\n  \"decisionRecords\": [\n    {\n      \"ref\": \"01M7GTBMQS-SZBH\",\n      \"key\": \"edgeProxyDecision\"\n    },\n    {\n      \"ref\": \"01M7GYV3B6-K9CZ\",\n      \"key\": \"deploymentTargets\"\n    },\n    {\n      \"ref\": \"01M7GYV3B6-K9CZ\",\n      \"key\": \"patternDeviations\"\n    },\n    {\n      \"ref\": \"01M7GYV3B6-8VN0\",\n      \"key\": \"interServiceConnections\"\n    },\n    {\n      \"ref\": \"01M7GYV3B6-8VN0\",\n      \"key\": \"externalDependencies\"\n    },\n    {\n      \"ref\": \"01M7GYV3B6-EEZ3\",\n      \"key\": \"accessControlModelDecision\"\n    },\n    {\n      \"ref\": \"01M7GYV3B6-YE24\",\n      \"key\": \"secretsManagementDecision\"\n    },\n    {\n      \"ref\": \"01M7GYV3B6-FASW\",\n      \"key\": \"dataClassification\"\n    },\n    {\n      \"ref\": \"01M7GYV3B6-FASW\",\n      \"key\": \"queryParameterizationDecision\"\n    },\n    {\n      \"ref\": \"01M7GYV3B6-083M\",\n      \"key\": \"cryptographyStandardDecision\"\n    },\n    {\n      \"ref\": \"01M7GYV3B6-RYSP\",\n      \"key\": \"availabilityRequirement\"\n    },\n    {\n      \"ref\": \"01M7GYV3B6-RYSP\",\n      \"key\": \"failureDomain\"\n    },\n    {\n      \"ref\": \"01M7GYV3B6-KB8Q\",\n      \"key\": \"errorHandlingLoggingDecision\"\n    },\n    {\n      \"ref\": \"01M7GYV3B6-Q5NV\",\n      \"key\": \"iacAutomationDecision\"\n    },\n    {\n      \"ref\": \"01M7GYV3B6-Q5NV\",\n      \"key\": \"productRegistrationDecision\"\n    },\n    {\n      \"ref\": \"01M7GYV3B6-H03D\",\n      \"key\": \"aiGatewayRoutingDecision\"\n    },\n    {\n      \"ref\": \"01M7GYV3B6-H03D\",\n      \"key\": \"modelInferenceSpecDecision\"\n    }\n  ],\n  \"requirementImplementations\": [\n    {\n      \"requirementGroup\": \"01M15WPEFV-ZMA9\",\n      \"requirementId\": \"req-expand-contract-migrations\",\n      \"status\": \"not-compliant\",\n      \"notes\": \"The placed agent-runtime (01M7GWXKXW-4ZJF) has a SQLite schema created in application code (CREATE TABLE IF NOT EXISTS in memory/episodic.py, notebook.py and workspace.py) that ships with the runtime. There is no expand-and-contract migration decoupled from a code deploy. See decision record 01M7GYV3B6-FASW.\"\n    },\n    {\n      \"requirementGroup\": \"01M15XYZXT-KTJA\",\n      \"requirementId\": \"req-asvs-parameterized-queries\",\n      \"status\": \"satisfied\",\n      \"notes\": \"Agent-runtime SQLite binds query values with parameterized placeholders. The only string-built SQL is notebook.py interpolating table identifiers from carry_tables; the runtime caller does not pass that argument. See decision record 01M7GYV3B6-FASW.\"\n    },\n    {\n      \"requirementGroup\": \"01M15WPEFV-ZMA9\",\n      \"requirementId\": \"req-no-gate-suppressions\",\n      \"status\": \"not-compliant\",\n      \"notes\": \"packages/conformance/baseline.json holds 4 approved baseline entries (GAP-031, GAP-050). See decision record 01M7GYV3B6-Q5NV.\"\n    },\n    {\n      \"requirementGroup\": \"01M15WPEFV-ZMA9\",\n      \"requirementId\": \"req-rollback-mechanism\",\n      \"status\": \"not-compliant\",\n      \"notes\": \"Rollback is a manual redeploy of a recorded pin; ECS deployment circuit breakers are disabled. See decision record 01M7GYV3B6-Q5NV.\"\n    },\n    {\n      \"requirementGroup\": \"01M15WPEFV-ZMA9\",\n      \"requirementId\": \"req-l3-composable-iac\",\n      \"status\": \"not-compliant\",\n      \"notes\": \"Single Terraform root configuration plus one documented hand-set Cloudflare Access bypass. See decision record 01M7GYV3B6-Q5NV.\"\n    },\n    {\n      \"requirementGroup\": \"01M15WPEFV-ZMA9\",\n      \"requirementId\": \"req-l3-ephemeral-preview-environments\",\n      \"status\": \"not-compliant\",\n      \"notes\": \"No per-branch cloud preview environments; CI runs an ephemeral Docker Compose proof only. See decision record 01M7GYV3B6-Q5NV.\"\n    },\n    {\n      \"requirementGroup\": \"01M15WPEFV-ZMA9\",\n      \"requirementId\": \"req-l3-json-structured-logging\",\n      \"status\": \"not-compliant\",\n      \"notes\": \"Application logs are plain text; the ledger is the structured audit trail. See decision record 01M7GYV3B6-KB8Q.\"\n    },\n    {\n      \"requirementGroup\": \"01M15WPEFV-ZMA9\",\n      \"requirementId\": \"req-l3-slo-error-budget\",\n      \"status\": \"not-compliant\",\n      \"notes\": \"No SLO or error-budget policy is defined. See decision record 01M7GYV3B6-RYSP.\"\n    },\n    {\n      \"requirementGroup\": \"01M15WPEFV-ZMA9\",\n      \"requirementId\": \"req-l3-zero-downtime-deployment\",\n      \"status\": \"not-compliant\",\n      \"notes\": \"Control plane deploys stop-then-start (LG1, accepted 2026-09-28); no auto-rollback. See decision record 01M7GYV3B6-Q5NV.\"\n    },\n    {\n      \"requirementGroup\": \"01M15WPEFV-ZMA9\",\n      \"requirementId\": \"req-l3-automated-security-gates\",\n      \"status\": \"not-compliant\",\n      \"notes\": \"No SAST, secret scanning, SCA or IaC policy linting in CI. See decision record 01M7GYV3B6-Q5NV.\"\n    },\n    {\n      \"requirementGroup\": \"01M15XYZXT-KTJA\",\n      \"requirementId\": \"req-asvs-third-party-component-security\",\n      \"status\": \"not-compliant\",\n      \"notes\": \"No automated SCA in CI and no Dependabot configuration. See decision record 01M7GYV3B6-Q5NV.\"\n    }\n  ],\n  \"notes\": {\n    \"verification\": \"Verified read-only on 2026-11-15 (America/Phoenix) against AWS account ending 2296, us-east-1.\",\n    \"deploymentTargets\": \"AWS us-east-1, ECS cluster factory-prod on Fargate/Fargate Spot (01M7GWTG2S-X9V8).\",\n    \"availabilityRequirement\": \"Each kernel and client service runs desired 1 / running 1. Agent compute is zero when idle. gatekeeper-egress and garrison use FARGATE_SPOT. Availability target not yet set.\",\n    \"dataClassification\": \"Confidential (agent-factory .draft/sdp.yaml says the ledger holds metadata plus hashes and the mind holds adopter data).\",\n    \"failureDomain\": {\n      \"scope\": \"platform-wide\",\n      \"description\": \"Single region, single cluster. Losing the control plane blocks wakes and MCP. Losing one agent task does not take down the factory.\"\n    },\n    \"externalDependencies\": \"Cloudflare edge proxy (01M7GTBMQS-YRGF) and Cloudflare Access (01M7GWTG2T-VA2G); ALB factory-prod (01M7GWTG2T-M2Q0); Cloud Map factory.internal (01M7GWTG2T-8A54); Secrets Manager (01M7GWTG2T-3PQY); S3 mind bucket (01M7GWTG2T-GYW1); S3 config/ledger/packages buckets (01M7GWTG2T-F1WG); EFS ledger (01M7GWTG2T-KR1Y); ECR (01M7GWTG2T-0NKZ); CloudWatch (01M7GWTG2T-TQEB); KMS AWS-managed keys (01M7GWTG2T-JHTR).\",\n    \"interServiceConnections\": \"The ALB routes the default host to the control plane, factory-dashboard to the console and garrison to garrison. Kernel services find each other through Cloud Map factory.internal.\",\n    \"secretsManagement\": \"AWS Secrets Manager referenced as ECS container secrets (control-plane 6, gatekeeper-ingress 2, gatekeeper-egress 2, garrison 1, console 0). The gatekeepers inject credentials so agent tasks hold only their run token, except the registered gap GAP-031 (see decision record 01M7GYV3B6-YE24).\",\n    \"iacAutomation\": \"Terraform in BeerCanLabs/agent-factory landing-zones/aws with an S3 backend.\",\n    \"observability\": \"CloudWatch Logs /ecs/factory-prod (30 days), Container Insights, ADOT collector sidecar on control-plane and gatekeeper-egress. No factory alarms or dashboards found.\",\n    \"patternDeviations\": \"Live ECS, the control plane, gatekeeper-ingress and gatekeeper-egress are always-on services; agents scale to zero (see decision record 01M7GYV3B6-K9CZ).\",\n    \"productRegistration\": \"Registered in drafting-table as BeerCanLabs Agent Factory (01M1N137Q5-AFAC).\",\n    \"incomplete\": \"Requirements are answered by the AWS decision records listed above. Known gaps are recorded as not-compliant requirementImplementations. Still open: synthetic test data, local DRAFT validation of the repo SDP, session/JWT hardening (MFA, rate limiting), and reference-architecture conformance: the agent-factory repo SDP maps the orchestrated-tasks pattern to RA 01KV0REFAR-CMSV, but declaring it needs the RA's ingress, orchestration, mesh, data-store and logs slots modeled first. Data components for the mind and ledger, autoscaling and security groups are not yet modeled.\"\n  },\n  \"_source\": \"catalog/engineering/software-deployment-patterns/sdp-skippys-submind.yaml\"\n}",
+      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M15NEKT7-S14J\",\n  \"type\": \"software_deployment_pattern\",\n  \"name\": \"Skippy's Submind Agent Factory Deployment Pattern\",\n  \"description\": \"Agent Factory deployment on AWS ECS Fargate (cluster factory-prod, us-east-1) behind the Cloudflare edge and an internet-facing ALB, with Secrets Manager injection, S3 mind storage and an EFS/S3 ledger. Agents run as on-demand tasks.\",\n  \"version\": \"2.0.0\",\n  \"catalogStatus\": \"incomplete\",\n  \"lifecycleStatus\": \"preferred\",\n  \"owner\": {\n    \"team\": \"platform-ai-team\",\n    \"contact\": \"platform-ai@example.com\"\n  },\n  \"tags\": [\n    \"software-deployment-pattern\",\n    \"agent-factory\",\n    \"aws\",\n    \"ecs-fargate\",\n    \"headless-neck\",\n    \"mcp\",\n    \"oauth21\"\n  ],\n  \"businessContext\": {\n    \"productFamily\": \"Skippy / Agent Factory\"\n  },\n  \"networkZones\": [\n    {\n      \"id\": \"edge\",\n      \"name\": \"Edge & Identity-Aware Ingress\",\n      \"tier\": \"frontend\",\n      \"description\": \"Cloudflare edge proxy, Cloudflare Access, and HTTPS AWS ALB restricted to Cloudflare IPv4 ingress CIDRs (see decision records 01M7GTBMQS-SZBH and 01M7GYV3B6-8VN0).\"\n    },\n    {\n      \"id\": \"mailbox\",\n      \"name\": \"Mailbox, Headless Neck & Client Services\",\n      \"tier\": \"application\",\n      \"description\": \"Public service subnets hosting Control Plane (:8088/:8089), Gatekeeper Ingress (:8090), Gatekeeper Egress (:8081), Console (:3000), and Garrison (:3000) under Cloud Map DNS (factory.internal).\"\n    },\n    {\n      \"id\": \"agents\",\n      \"name\": \"Agent Cartridge Compute\",\n      \"tier\": \"application\",\n      \"description\": \"Private agent subnets intended for zero direct internet egress (Terraform route=[], scoped security group to Control Plane :8088, Gatekeeper Egress :8081, and VPC endpoints :443). Live unmanaged route/SG drift and assignPublicIp=false mitigation are recorded in decision record 01M7GYV3B6-8VN0.\"\n    },\n    {\n      \"id\": \"data\",\n      \"name\": \"Durable Mind, WORM Ledger & Package Storage\",\n      \"tier\": \"data\",\n      \"description\": \"Encrypted EFS single-writer hot ledger volume (:2049) and versioned/Object-Lock S3 buckets for agent minds, COMPLIANCE WORM checkpoints, configs, and skill packages.\"\n    }\n  ],\n  \"serviceGroups\": [\n    {\n      \"name\": \"Factory kernel mailboxes\",\n      \"deploymentTarget\": \"aws-us-east-1\",\n      \"substrate\": \"01M7GWTG2S-AC3R\",\n      \"deployableObjects\": [\n        {\n          \"ref\": \"01M7GWXKXW-EJWB\",\n          \"networkZone\": \"mailbox\",\n          \"diagramTier\": \"application\"\n        },\n        {\n          \"ref\": \"01M7GWXKXW-7W49\",\n          \"networkZone\": \"mailbox\",\n          \"diagramTier\": \"application\"\n        },\n        {\n          \"ref\": \"01M7GWXKXW-BPBV\",\n          \"networkZone\": \"mailbox\",\n          \"diagramTier\": \"application\"\n        }\n      ]\n    },\n    {\n      \"name\": \"Factory clients\",\n      \"deploymentTarget\": \"aws-us-east-1\",\n      \"substrate\": \"01M7GWTG2S-AC3R\",\n      \"deployableObjects\": [\n        {\n          \"ref\": \"01M7GWXKXW-VPCD\",\n          \"networkZone\": \"mailbox\",\n          \"diagramTier\": \"presentation\"\n        },\n        {\n          \"ref\": \"01M7GWXKXW-Z0Z4\",\n          \"networkZone\": \"mailbox\",\n          \"diagramTier\": \"presentation\"\n        }\n      ]\n    },\n    {\n      \"name\": \"Agent cartridges (on-demand)\",\n      \"deploymentTarget\": \"aws-us-east-1\",\n      \"substrate\": \"01M7GWTG2S-AC3R\",\n      \"deployableObjects\": [\n        {\n          \"ref\": \"01M7GWXKXW-4ZJF\",\n          \"networkZone\": \"agents\",\n          \"diagramTier\": \"application\"\n        }\n      ]\n    }\n  ],\n  \"tierVariants\": [\n    {\n      \"tier\": \"01M7KQAQCC-T9DS\",\n      \"deploymentTarget\": {\n        \"provider\": \"aws\",\n        \"region\": \"us-east-1\"\n      },\n      \"serviceGroupVariants\": [\n        {\n          \"serviceGroup\": \"Factory kernel mailboxes\",\n          \"replicaCount\": 1,\n          \"notes\": \"Single-writer Control Plane (stop-then-start per LG1); Gatekeeper Ingress and Gatekeeper Egress run desiredCount=1.\"\n        },\n        {\n          \"serviceGroup\": \"Factory clients\",\n          \"replicaCount\": 1,\n          \"notes\": \"Console and Garrison each run desiredCount=1 behind ALB host rules and Cloudflare Access.\"\n        },\n        {\n          \"serviceGroup\": \"Agent cartridges (on-demand)\",\n          \"autoscaling\": {\n            \"enabled\": true,\n            \"min\": 0,\n            \"max\": 50\n          },\n          \"notes\": \"Disposable scale-to-zero ECS Fargate RunTask execution per wake.\"\n        }\n      ]\n    },\n    {\n      \"tier\": \"01M7KQAQCC-EG06\",\n      \"deploymentTarget\": {\n        \"provider\": \"other\"\n      },\n      \"notes\": \"Ephemeral single-host Docker Compose stack (landing-zones/compose) used for inner-loop local development and CI compose-proof verification.\"\n    }\n  ],\n  \"decisionRecords\": [\n    {\n      \"ref\": \"01M7GTBMQS-SZBH\",\n      \"key\": \"edgeProxyDecision\"\n    },\n    {\n      \"ref\": \"01M7GYV3B6-K9CZ\",\n      \"key\": \"deploymentTargets\"\n    },\n    {\n      \"ref\": \"01M7GYV3B6-K9CZ\",\n      \"key\": \"patternDeviations\"\n    },\n    {\n      \"ref\": \"01M7GYV3B6-8VN0\",\n      \"key\": \"interServiceConnections\"\n    },\n    {\n      \"ref\": \"01M7GYV3B6-8VN0\",\n      \"key\": \"externalDependencies\"\n    },\n    {\n      \"ref\": \"01M7GYV3B6-EEZ3\",\n      \"key\": \"accessControlModelDecision\"\n    },\n    {\n      \"ref\": \"01M7GYV3B6-YE24\",\n      \"key\": \"secretsManagementDecision\"\n    },\n    {\n      \"ref\": \"01M7GYV3B6-FASW\",\n      \"key\": \"dataClassification\"\n    },\n    {\n      \"ref\": \"01M7GYV3B6-FASW\",\n      \"key\": \"queryParameterizationDecision\"\n    },\n    {\n      \"ref\": \"01M7GYV3B6-083M\",\n      \"key\": \"cryptographyStandardDecision\"\n    },\n    {\n      \"ref\": \"01M7GYV3B6-RYSP\",\n      \"key\": \"availabilityRequirement\"\n    },\n    {\n      \"ref\": \"01M7GYV3B6-RYSP\",\n      \"key\": \"failureDomain\"\n    },\n    {\n      \"ref\": \"01M7GYV3B6-KB8Q\",\n      \"key\": \"errorHandlingLoggingDecision\"\n    },\n    {\n      \"ref\": \"01M7GYV3B6-Q5NV\",\n      \"key\": \"iacAutomationDecision\"\n    },\n    {\n      \"ref\": \"01M7GYV3B6-Q5NV\",\n      \"key\": \"productRegistrationDecision\"\n    },\n    {\n      \"ref\": \"01M7GYV3B6-H03D\",\n      \"key\": \"aiGatewayRoutingDecision\"\n    },\n    {\n      \"ref\": \"01M7GYV3B6-H03D\",\n      \"key\": \"modelInferenceSpecDecision\"\n    }\n  ],\n  \"requirementImplementations\": [\n    {\n      \"requirementGroup\": \"01M15WPEFV-ZMA9\",\n      \"requirementId\": \"req-expand-contract-migrations\",\n      \"status\": \"not-compliant\",\n      \"notes\": \"The placed agent-runtime (01M7GWXKXW-4ZJF) has a SQLite schema created in application code (CREATE TABLE IF NOT EXISTS in memory/episodic.py, notebook.py and workspace.py) that ships with the runtime. There is no expand-and-contract migration decoupled from a code deploy. See decision record 01M7GYV3B6-FASW.\"\n    },\n    {\n      \"requirementGroup\": \"01M15XYZXT-KTJA\",\n      \"requirementId\": \"req-asvs-parameterized-queries\",\n      \"status\": \"satisfied\",\n      \"notes\": \"Agent-runtime SQLite binds query values with parameterized placeholders. The only string-built SQL is notebook.py interpolating table identifiers from carry_tables; the runtime caller does not pass that argument. See decision record 01M7GYV3B6-FASW.\"\n    },\n    {\n      \"requirementGroup\": \"01M15WPEFV-ZMA9\",\n      \"requirementId\": \"req-no-gate-suppressions\",\n      \"status\": \"not-compliant\",\n      \"notes\": \"packages/conformance/baseline.json holds 4 approved baseline entries (GAP-031, GAP-050). See decision record 01M7GYV3B6-Q5NV.\"\n    },\n    {\n      \"requirementGroup\": \"01M15WPEFV-ZMA9\",\n      \"requirementId\": \"req-rollback-mechanism\",\n      \"status\": \"not-compliant\",\n      \"notes\": \"Rollback is a manual redeploy of a recorded pin; ECS deployment circuit breakers are disabled. See decision record 01M7GYV3B6-Q5NV.\"\n    },\n    {\n      \"requirementGroup\": \"01M15WPEFV-ZMA9\",\n      \"requirementId\": \"req-l3-composable-iac\",\n      \"status\": \"not-compliant\",\n      \"notes\": \"Single Terraform root configuration plus one documented hand-set Cloudflare Access bypass. See decision record 01M7GYV3B6-Q5NV.\"\n    },\n    {\n      \"requirementGroup\": \"01M15WPEFV-ZMA9\",\n      \"requirementId\": \"req-l3-ephemeral-preview-environments\",\n      \"status\": \"not-compliant\",\n      \"notes\": \"No per-branch cloud preview environments; CI runs an ephemeral Docker Compose proof only. See decision record 01M7GYV3B6-Q5NV.\"\n    },\n    {\n      \"requirementGroup\": \"01M15WPEFV-ZMA9\",\n      \"requirementId\": \"req-l3-json-structured-logging\",\n      \"status\": \"not-compliant\",\n      \"notes\": \"Application logs are plain text; the ledger is the structured audit trail. See decision record 01M7GYV3B6-KB8Q.\"\n    },\n    {\n      \"requirementGroup\": \"01M15WPEFV-ZMA9\",\n      \"requirementId\": \"req-l3-slo-error-budget\",\n      \"status\": \"not-compliant\",\n      \"notes\": \"No SLO or error-budget policy is defined. See decision record 01M7GYV3B6-RYSP.\"\n    },\n    {\n      \"requirementGroup\": \"01M15WPEFV-ZMA9\",\n      \"requirementId\": \"req-l3-zero-downtime-deployment\",\n      \"status\": \"not-compliant\",\n      \"notes\": \"Control plane deploys stop-then-start (LG1, accepted 2026-09-28); no auto-rollback. See decision record 01M7GYV3B6-Q5NV.\"\n    },\n    {\n      \"requirementGroup\": \"01M15WPEFV-ZMA9\",\n      \"requirementId\": \"req-l3-automated-security-gates\",\n      \"status\": \"not-compliant\",\n      \"notes\": \"No SAST, secret scanning, SCA or IaC policy linting in CI. See decision record 01M7GYV3B6-Q5NV.\"\n    },\n    {\n      \"requirementGroup\": \"01M15XYZXT-KTJA\",\n      \"requirementId\": \"req-asvs-third-party-component-security\",\n      \"status\": \"not-compliant\",\n      \"notes\": \"No automated SCA in CI and no Dependabot configuration. See decision record 01M7GYV3B6-Q5NV.\"\n    }\n  ],\n  \"notes\": {\n    \"verification\": \"Verified read-only on 2026-11-15 (America/Phoenix) against AWS account ending 2296, us-east-1.\",\n    \"deploymentTargets\": \"AWS us-east-1, ECS cluster factory-prod on Fargate/Fargate Spot (01M7GWTG2S-X9V8).\",\n    \"availabilityRequirement\": \"Each kernel and client service runs desired 1 / running 1. Agent compute is zero when idle. gatekeeper-egress and garrison use FARGATE_SPOT. Availability target not yet set.\",\n    \"dataClassification\": \"Confidential (agent-factory .draft/sdp.yaml says the ledger holds metadata plus hashes and the mind holds adopter data).\",\n    \"failureDomain\": {\n      \"scope\": \"platform-wide\",\n      \"description\": \"Single region, single cluster. Losing the control plane blocks wakes and MCP. Losing one agent task does not take down the factory.\"\n    },\n    \"externalDependencies\": \"Cloudflare edge proxy (01M7GTBMQS-YRGF) and Cloudflare Access (01M7GWTG2T-VA2G); ALB factory-prod (01M7GWTG2T-M2Q0); Cloud Map factory.internal (01M7GWTG2T-8A54); Secrets Manager (01M7GWTG2T-3PQY); S3 mind bucket (01M7GWTG2T-GYW1); S3 config/ledger/packages buckets (01M7GWTG2T-F1WG); EFS ledger (01M7GWTG2T-KR1Y); ECR (01M7GWTG2T-0NKZ); CodeBuild admission/skill builders (01M7KQAQCD-WD0R); EventBridge factory event bus (01M7KQAQCD-GHF4); CloudWatch (01M7GWTG2T-TQEB); KMS AWS-managed keys (01M7GWTG2T-JHTR).\",\n    \"interServiceConnections\": \"The ALB routes the default host to the control plane, factory-dashboard to the console and garrison to garrison. Kernel services find each other through Cloud Map factory.internal.\",\n    \"secretsManagement\": \"AWS Secrets Manager referenced as ECS container secrets (control-plane 6, gatekeeper-ingress 2, gatekeeper-egress 2, garrison 1, console 0). The gatekeepers inject credentials so agent tasks hold only their run token, except the registered gap GAP-031 (see decision record 01M7GYV3B6-YE24).\",\n    \"iacAutomation\": \"Terraform in BeerCanLabs/agent-factory landing-zones/aws with an S3 backend.\",\n    \"observability\": \"CloudWatch Logs /ecs/factory-prod (30 days), Container Insights, ADOT collector sidecar on control-plane and gatekeeper-egress. No factory alarms or dashboards found.\",\n    \"patternDeviations\": \"Live ECS, the control plane, gatekeeper-ingress and gatekeeper-egress are always-on services; agents scale to zero (see decision record 01M7GYV3B6-K9CZ).\",\n    \"productRegistration\": \"Registered in drafting-table as BeerCanLabs Agent Factory (01M1N137Q5-AFAC).\",\n    \"incomplete\": \"Requirements are answered by the AWS decision records listed above. Known gaps are recorded as not-compliant requirementImplementations. Still open: synthetic test data, local DRAFT validation of the repo SDP, session/JWT hardening (MFA, rate limiting), and reference-architecture conformance: the agent-factory repo SDP maps the orchestrated-tasks pattern to RA 01KV0REFAR-CMSV, but declaring it needs the RA's ingress, orchestration, mesh, data-store and logs slots modeled first. Data components for the mind and ledger, autoscaling and security groups are not yet modeled.\"\n  },\n  \"_source\": \"catalog/engineering/software-deployment-patterns/sdp-skippys-submind.yaml\"\n}",
       "existsInCatalog": true,
       "outboundRelationships": [],
       "inboundRelationships": [],
@@ -56280,8 +61941,8 @@ window.DRAFT_BROWSER_DATA = {
       "category": "",
       "deliveryModel": "",
       "domain": "",
-      "description": "Strategic domain covering the Agent Factory platform substrate (Doorman Proxy,  MCP Gateway, OAuth Auth Server, Persona Publisher Pipeline) and all published  AI Agent Personas and SOUL configurations.\n",
-      "version": "",
+      "description": "Strategic domain covering the BeerCanLabs Agent Factory headless platform: the typed Headless Neck (REST /api/v1/*, Principal/Agent/Run MCP surfaces, and OAuth 2.1 Authorization Server), Hot-Swappable Heads (Console SPA, Factory CLI, Agent Garrison, MCP clients), the 10 deterministic Cast services (Gatekeeper, Keymaster, Executive, Property Manager, Auditor, Accountant, Bouncer, Timekeeper, Registrar, Inspector), Dual-Mode Hosting (Shared Agent Runtime and Repository Cartridges), and portable House Staff & Skill packages.",
+      "version": "2.0.0",
       "catalogStatus": "",
       "lifecycleStatus": "unknown",
       "status": "",
@@ -56307,14 +61968,22 @@ window.DRAFT_BROWSER_DATA = {
       "vendorSLA": "",
       "authenticationModel": "",
       "incidentNotificationProcess": "",
-      "owner": {},
+      "owner": {
+        "team": "platform-ai-team",
+        "contact": "platform-ai@example.com"
+      },
       "definitionOwner": {},
       "provider": {},
       "authority": {},
       "shape": "round-rectangle",
       "color": "#7a6e60",
       "source": "catalog/governance/business-domains/domain-agent-factory.yaml",
-      "tags": [],
+      "tags": [
+        "domain",
+        "agent-factory",
+        "headless-neck",
+        "mcp"
+      ],
       "ardCategory": "",
       "internalComponents": [],
       "notes": {},
@@ -56376,7 +62045,7 @@ window.DRAFT_BROWSER_DATA = {
         "collectionSchemas": {},
         "schemaPath": "framework/schemas/domain.schema.yaml"
       },
-      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M7GTBMQR-GB2Z\",\n  \"type\": \"domain\",\n  \"name\": \"Agent Factory\",\n  \"description\": \"Strategic domain covering the Agent Factory platform substrate (Doorman Proxy,  MCP Gateway, OAuth Auth Server, Persona Publisher Pipeline) and all published  AI Agent Personas and SOUL configurations.\\n\",\n  \"ownerContact\": \"agent-factory-team@beercanlabs.com\",\n  \"_source\": \"catalog/governance/business-domains/domain-agent-factory.yaml\"\n}",
+      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M7GTBMQR-GB2Z\",\n  \"type\": \"domain\",\n  \"name\": \"Agent Factory\",\n  \"description\": \"Strategic domain covering the BeerCanLabs Agent Factory headless platform: the typed Headless Neck (REST /api/v1/*, Principal/Agent/Run MCP surfaces, and OAuth 2.1 Authorization Server), Hot-Swappable Heads (Console SPA, Factory CLI, Agent Garrison, MCP clients), the 10 deterministic Cast services (Gatekeeper, Keymaster, Executive, Property Manager, Auditor, Accountant, Bouncer, Timekeeper, Registrar, Inspector), Dual-Mode Hosting (Shared Agent Runtime and Repository Cartridges), and portable House Staff & Skill packages.\",\n  \"version\": \"2.0.0\",\n  \"owner\": {\n    \"team\": \"platform-ai-team\",\n    \"contact\": \"platform-ai@example.com\"\n  },\n  \"tags\": [\n    \"domain\",\n    \"agent-factory\",\n    \"headless-neck\",\n    \"mcp\"\n  ],\n  \"_source\": \"catalog/governance/business-domains/domain-agent-factory.yaml\"\n}",
       "existsInCatalog": true,
       "outboundRelationships": [],
       "inboundRelationships": []
@@ -58517,6 +64186,2335 @@ window.DRAFT_BROWSER_DATA = {
       "outboundRelationships": [],
       "inboundRelationships": []
     },
+    "01M7KQAQCD-3CBS": {
+      "id": "01M7KQAQCD-3CBS",
+      "uid": "01M7KQAQCD-3CBS",
+      "name": "AWS ALB factory-prod \u2192 Agent Factory Console",
+      "aliases": [],
+      "type": "relationship",
+      "typeLabel": "Relationship",
+      "filterType": "relationship",
+      "category": "",
+      "deliveryModel": "",
+      "domain": "",
+      "description": "",
+      "version": "",
+      "catalogStatus": "complete",
+      "lifecycleStatus": "unknown",
+      "status": "",
+      "businessContext": {},
+      "product": "",
+      "runsOn": "",
+      "subtype": "",
+      "vendor": "",
+      "productName": "",
+      "productVersion": "",
+      "classification": "",
+      "platformDependency": "",
+      "capabilities": [],
+      "configurations": [],
+      "networkPlacement": "",
+      "patchingOwner": "",
+      "complianceCerts": [],
+      "requirementGroups": [],
+      "requirementImplementations": [],
+      "dataLeavesInfrastructure": null,
+      "dataResidencyCommitment": "",
+      "dpaNotes": "",
+      "vendorSLA": "",
+      "authenticationModel": "",
+      "incidentNotificationProcess": "",
+      "owner": {},
+      "definitionOwner": {},
+      "provider": {},
+      "authority": {},
+      "shape": "round-rectangle",
+      "color": "#7a6e60",
+      "source": "catalog/governance/relationships/relationship-cloudflare-alb-ingress-routes-to-console.yaml",
+      "tags": [
+        "agent-factory",
+        "console"
+      ],
+      "ardCategory": "",
+      "internalComponents": [],
+      "notes": "Host-header ALB listener rule (factory-dashboard.dalesackrider.com) forwarding dashboard traffic behind Cloudflare to Console :3000.",
+      "requirements": [],
+      "implementations": [],
+      "appliesTo": {},
+      "inherits": "",
+      "scalingUnits": [],
+      "networkZones": [],
+      "sdpConnections": [],
+      "serviceGroups": [],
+      "tierVariants": [],
+      "tierId": "",
+      "purpose": "",
+      "availabilityExpectation": "",
+      "costPosture": "",
+      "complianceScope": [],
+      "parameterSurface": [],
+      "followsReferenceArchitecture": "",
+      "decisionRecords": [],
+      "affectedComponent": "",
+      "impact": "",
+      "mitigationPath": "",
+      "decisionRationale": "",
+      "relatedDecisionRecords": [],
+      "linkedObject": "",
+      "primaryObjectType": "",
+      "primaryObjectUid": "",
+      "generatedObjects": [],
+      "unresolvedQuestions": [],
+      "assumptions": [],
+      "nextSteps": [],
+      "defaultSelection": false,
+      "requirementCount": 0,
+      "hasRiskRef": false,
+      "outboundRefs": [
+        {
+          "target": "01M7GWTG2T-M2Q0",
+          "path": "source"
+        },
+        {
+          "target": "01M7GWXKXW-VPCD",
+          "path": "target"
+        }
+      ],
+      "referencedBy": [],
+      "editorSchema": {
+        "requiredFields": [
+          "schemaVersion",
+          "uid",
+          "type",
+          "name",
+          "source",
+          "label",
+          "catalogStatus"
+        ],
+        "optionalFields": [
+          "description",
+          "target",
+          "externalTarget",
+          "technology",
+          "direction",
+          "flow",
+          "capabilities",
+          "notes",
+          "tags"
+        ],
+        "fieldTypes": {
+          "tags": "list",
+          "capabilities": "list"
+        },
+        "enumFields": {
+          "catalogStatus": [
+            "stub",
+            "incomplete",
+            "complete"
+          ],
+          "direction": [
+            "synchronous",
+            "asynchronous",
+            "event"
+          ],
+          "flow": [
+            "outbound",
+            "inbound",
+            "bidirectional"
+          ]
+        },
+        "enumListFields": {},
+        "collectionSchemas": {},
+        "schemaPath": "framework/schemas/relationship.schema.yaml"
+      },
+      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M7KQAQCD-3CBS\",\n  \"type\": \"relationship\",\n  \"name\": \"AWS ALB factory-prod \\u2192 Agent Factory Console\",\n  \"source\": \"01M7GWTG2T-M2Q0\",\n  \"target\": \"01M7GWXKXW-VPCD\",\n  \"label\": \"routes to\",\n  \"technology\": \"HTTPS / HTTP (:3000)\",\n  \"direction\": \"synchronous\",\n  \"flow\": \"outbound\",\n  \"catalogStatus\": \"complete\",\n  \"tags\": [\n    \"agent-factory\",\n    \"console\"\n  ],\n  \"notes\": \"Host-header ALB listener rule (factory-dashboard.dalesackrider.com) forwarding dashboard traffic behind Cloudflare to Console :3000.\",\n  \"_source\": \"catalog/governance/relationships/relationship-cloudflare-alb-ingress-routes-to-console.yaml\"\n}",
+      "existsInCatalog": true,
+      "outboundRelationships": [],
+      "inboundRelationships": []
+    },
+    "01M7KQAQCD-9JK7": {
+      "id": "01M7KQAQCD-9JK7",
+      "uid": "01M7KQAQCD-9JK7",
+      "name": "AWS ALB factory-prod \u2192 Agent Factory Control Plane",
+      "aliases": [],
+      "type": "relationship",
+      "typeLabel": "Relationship",
+      "filterType": "relationship",
+      "category": "",
+      "deliveryModel": "",
+      "domain": "",
+      "description": "",
+      "version": "",
+      "catalogStatus": "complete",
+      "lifecycleStatus": "unknown",
+      "status": "",
+      "businessContext": {},
+      "product": "",
+      "runsOn": "",
+      "subtype": "",
+      "vendor": "",
+      "productName": "",
+      "productVersion": "",
+      "classification": "",
+      "platformDependency": "",
+      "capabilities": [],
+      "configurations": [],
+      "networkPlacement": "",
+      "patchingOwner": "",
+      "complianceCerts": [],
+      "requirementGroups": [],
+      "requirementImplementations": [],
+      "dataLeavesInfrastructure": null,
+      "dataResidencyCommitment": "",
+      "dpaNotes": "",
+      "vendorSLA": "",
+      "authenticationModel": "",
+      "incidentNotificationProcess": "",
+      "owner": {},
+      "definitionOwner": {},
+      "provider": {},
+      "authority": {},
+      "shape": "round-rectangle",
+      "color": "#7a6e60",
+      "source": "catalog/governance/relationships/relationship-cloudflare-alb-ingress-routes-to-control-plane.yaml",
+      "tags": [
+        "agent-factory",
+        "ingress"
+      ],
+      "ardCategory": "",
+      "internalComponents": [],
+      "notes": "Default ALB target forwarding Cloudflare-fronted Access sessions, Bearer fk_ API requests, signature-verified webhooks (/api/v1/hooks/*), OAuth 2.1 AS routes, and MCP requests from ALB :443 to Control Plane :8088 while probing listener :8089.",
+      "requirements": [],
+      "implementations": [],
+      "appliesTo": {},
+      "inherits": "",
+      "scalingUnits": [],
+      "networkZones": [],
+      "sdpConnections": [],
+      "serviceGroups": [],
+      "tierVariants": [],
+      "tierId": "",
+      "purpose": "",
+      "availabilityExpectation": "",
+      "costPosture": "",
+      "complianceScope": [],
+      "parameterSurface": [],
+      "followsReferenceArchitecture": "",
+      "decisionRecords": [],
+      "affectedComponent": "",
+      "impact": "",
+      "mitigationPath": "",
+      "decisionRationale": "",
+      "relatedDecisionRecords": [],
+      "linkedObject": "",
+      "primaryObjectType": "",
+      "primaryObjectUid": "",
+      "generatedObjects": [],
+      "unresolvedQuestions": [],
+      "assumptions": [],
+      "nextSteps": [],
+      "defaultSelection": false,
+      "requirementCount": 0,
+      "hasRiskRef": false,
+      "outboundRefs": [
+        {
+          "target": "01M7GWTG2T-M2Q0",
+          "path": "source"
+        },
+        {
+          "target": "01M7GWXKXW-EJWB",
+          "path": "target"
+        }
+      ],
+      "referencedBy": [],
+      "editorSchema": {
+        "requiredFields": [
+          "schemaVersion",
+          "uid",
+          "type",
+          "name",
+          "source",
+          "label",
+          "catalogStatus"
+        ],
+        "optionalFields": [
+          "description",
+          "target",
+          "externalTarget",
+          "technology",
+          "direction",
+          "flow",
+          "capabilities",
+          "notes",
+          "tags"
+        ],
+        "fieldTypes": {
+          "tags": "list",
+          "capabilities": "list"
+        },
+        "enumFields": {
+          "catalogStatus": [
+            "stub",
+            "incomplete",
+            "complete"
+          ],
+          "direction": [
+            "synchronous",
+            "asynchronous",
+            "event"
+          ],
+          "flow": [
+            "outbound",
+            "inbound",
+            "bidirectional"
+          ]
+        },
+        "enumListFields": {},
+        "collectionSchemas": {},
+        "schemaPath": "framework/schemas/relationship.schema.yaml"
+      },
+      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M7KQAQCD-9JK7\",\n  \"type\": \"relationship\",\n  \"name\": \"AWS ALB factory-prod \\u2192 Agent Factory Control Plane\",\n  \"source\": \"01M7GWTG2T-M2Q0\",\n  \"target\": \"01M7GWXKXW-EJWB\",\n  \"label\": \"routes to\",\n  \"technology\": \"HTTPS / HTTP (:8088, health :8089)\",\n  \"direction\": \"synchronous\",\n  \"flow\": \"outbound\",\n  \"catalogStatus\": \"complete\",\n  \"tags\": [\n    \"agent-factory\",\n    \"ingress\"\n  ],\n  \"notes\": \"Default ALB target forwarding Cloudflare-fronted Access sessions, Bearer fk_ API requests, signature-verified webhooks (/api/v1/hooks/*), OAuth 2.1 AS routes, and MCP requests from ALB :443 to Control Plane :8088 while probing listener :8089.\",\n  \"_source\": \"catalog/governance/relationships/relationship-cloudflare-alb-ingress-routes-to-control-plane.yaml\"\n}",
+      "existsInCatalog": true,
+      "outboundRelationships": [],
+      "inboundRelationships": []
+    },
+    "01M7KQAQCD-GQNC": {
+      "id": "01M7KQAQCD-GQNC",
+      "uid": "01M7KQAQCD-GQNC",
+      "name": "Agent Factory Console \u2192 Agent Factory Control Plane",
+      "aliases": [],
+      "type": "relationship",
+      "typeLabel": "Relationship",
+      "filterType": "relationship",
+      "category": "",
+      "deliveryModel": "",
+      "domain": "",
+      "description": "",
+      "version": "",
+      "catalogStatus": "complete",
+      "lifecycleStatus": "unknown",
+      "status": "",
+      "businessContext": {},
+      "product": "",
+      "runsOn": "",
+      "subtype": "",
+      "vendor": "",
+      "productName": "",
+      "productVersion": "",
+      "classification": "",
+      "platformDependency": "",
+      "capabilities": [],
+      "configurations": [],
+      "networkPlacement": "",
+      "patchingOwner": "",
+      "complianceCerts": [],
+      "requirementGroups": [],
+      "requirementImplementations": [],
+      "dataLeavesInfrastructure": null,
+      "dataResidencyCommitment": "",
+      "dpaNotes": "",
+      "vendorSLA": "",
+      "authenticationModel": "",
+      "incidentNotificationProcess": "",
+      "owner": {},
+      "definitionOwner": {},
+      "provider": {},
+      "authority": {},
+      "shape": "round-rectangle",
+      "color": "#7a6e60",
+      "source": "catalog/governance/relationships/relationship-console-proxies-to-control-plane.yaml",
+      "tags": [
+        "agent-factory",
+        "headless-neck"
+      ],
+      "ardCategory": "",
+      "internalComponents": [],
+      "notes": "Zero-secret pass-through proxy forwarding caller cf-access-jwt-assertion or Bearer credentials over Cloud Map (factory.internal) to /api/v1/*, /login, OAuth 2.1 AS, and /mcp*.",
+      "requirements": [],
+      "implementations": [],
+      "appliesTo": {},
+      "inherits": "",
+      "scalingUnits": [],
+      "networkZones": [],
+      "sdpConnections": [],
+      "serviceGroups": [],
+      "tierVariants": [],
+      "tierId": "",
+      "purpose": "",
+      "availabilityExpectation": "",
+      "costPosture": "",
+      "complianceScope": [],
+      "parameterSurface": [],
+      "followsReferenceArchitecture": "",
+      "decisionRecords": [],
+      "affectedComponent": "",
+      "impact": "",
+      "mitigationPath": "",
+      "decisionRationale": "",
+      "relatedDecisionRecords": [],
+      "linkedObject": "",
+      "primaryObjectType": "",
+      "primaryObjectUid": "",
+      "generatedObjects": [],
+      "unresolvedQuestions": [],
+      "assumptions": [],
+      "nextSteps": [],
+      "defaultSelection": false,
+      "requirementCount": 0,
+      "hasRiskRef": false,
+      "outboundRefs": [
+        {
+          "target": "01M7GWXKXW-VPCD",
+          "path": "source"
+        },
+        {
+          "target": "01M7GWXKXW-EJWB",
+          "path": "target"
+        }
+      ],
+      "referencedBy": [],
+      "editorSchema": {
+        "requiredFields": [
+          "schemaVersion",
+          "uid",
+          "type",
+          "name",
+          "source",
+          "label",
+          "catalogStatus"
+        ],
+        "optionalFields": [
+          "description",
+          "target",
+          "externalTarget",
+          "technology",
+          "direction",
+          "flow",
+          "capabilities",
+          "notes",
+          "tags"
+        ],
+        "fieldTypes": {
+          "tags": "list",
+          "capabilities": "list"
+        },
+        "enumFields": {
+          "catalogStatus": [
+            "stub",
+            "incomplete",
+            "complete"
+          ],
+          "direction": [
+            "synchronous",
+            "asynchronous",
+            "event"
+          ],
+          "flow": [
+            "outbound",
+            "inbound",
+            "bidirectional"
+          ]
+        },
+        "enumListFields": {},
+        "collectionSchemas": {},
+        "schemaPath": "framework/schemas/relationship.schema.yaml"
+      },
+      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M7KQAQCD-GQNC\",\n  \"type\": \"relationship\",\n  \"name\": \"Agent Factory Console \\u2192 Agent Factory Control Plane\",\n  \"source\": \"01M7GWXKXW-VPCD\",\n  \"target\": \"01M7GWXKXW-EJWB\",\n  \"label\": \"calls\",\n  \"technology\": \"HTTP (:8088)\",\n  \"direction\": \"synchronous\",\n  \"flow\": \"outbound\",\n  \"catalogStatus\": \"complete\",\n  \"tags\": [\n    \"agent-factory\",\n    \"headless-neck\"\n  ],\n  \"notes\": \"Zero-secret pass-through proxy forwarding caller cf-access-jwt-assertion or Bearer credentials over Cloud Map (factory.internal) to /api/v1/*, /login, OAuth 2.1 AS, and /mcp*.\",\n  \"_source\": \"catalog/governance/relationships/relationship-console-proxies-to-control-plane.yaml\"\n}",
+      "existsInCatalog": true,
+      "outboundRelationships": [],
+      "inboundRelationships": []
+    },
+    "01M7KQAQCD-ZD19": {
+      "id": "01M7KQAQCD-ZD19",
+      "uid": "01M7KQAQCD-ZD19",
+      "name": "Agent Factory Control Plane \u2192 S3 Config, Ledger & Package Buckets",
+      "aliases": [],
+      "type": "relationship",
+      "typeLabel": "Relationship",
+      "filterType": "relationship",
+      "category": "",
+      "deliveryModel": "",
+      "domain": "",
+      "description": "",
+      "version": "",
+      "catalogStatus": "complete",
+      "lifecycleStatus": "unknown",
+      "status": "",
+      "businessContext": {},
+      "product": "",
+      "runsOn": "",
+      "subtype": "",
+      "vendor": "",
+      "productName": "",
+      "productVersion": "",
+      "classification": "",
+      "platformDependency": "",
+      "capabilities": [],
+      "configurations": [],
+      "networkPlacement": "",
+      "patchingOwner": "",
+      "complianceCerts": [],
+      "requirementGroups": [],
+      "requirementImplementations": [],
+      "dataLeavesInfrastructure": null,
+      "dataResidencyCommitment": "",
+      "dpaNotes": "",
+      "vendorSLA": "",
+      "authenticationModel": "",
+      "incidentNotificationProcess": "",
+      "owner": {},
+      "definitionOwner": {},
+      "provider": {},
+      "authority": {},
+      "shape": "round-rectangle",
+      "color": "#7a6e60",
+      "source": "catalog/governance/relationships/relationship-control-plane-checkpoints-to-s3-stores.yaml",
+      "tags": [
+        "agent-factory",
+        "worm-ledger",
+        "s3"
+      ],
+      "ardCategory": "",
+      "internalComponents": [],
+      "notes": "Ships WORM ledger checkpoints to S3 Object Lock (COMPLIANCE mode, 365-day retention), reads/writes immutable versioned agent configurations, and manages skill packages.",
+      "requirements": [],
+      "implementations": [],
+      "appliesTo": {},
+      "inherits": "",
+      "scalingUnits": [],
+      "networkZones": [],
+      "sdpConnections": [],
+      "serviceGroups": [],
+      "tierVariants": [],
+      "tierId": "",
+      "purpose": "",
+      "availabilityExpectation": "",
+      "costPosture": "",
+      "complianceScope": [],
+      "parameterSurface": [],
+      "followsReferenceArchitecture": "",
+      "decisionRecords": [],
+      "affectedComponent": "",
+      "impact": "",
+      "mitigationPath": "",
+      "decisionRationale": "",
+      "relatedDecisionRecords": [],
+      "linkedObject": "",
+      "primaryObjectType": "",
+      "primaryObjectUid": "",
+      "generatedObjects": [],
+      "unresolvedQuestions": [],
+      "assumptions": [],
+      "nextSteps": [],
+      "defaultSelection": false,
+      "requirementCount": 0,
+      "hasRiskRef": false,
+      "outboundRefs": [
+        {
+          "target": "01M7GWXKXW-EJWB",
+          "path": "source"
+        },
+        {
+          "target": "01M7GWTG2T-F1WG",
+          "path": "target"
+        }
+      ],
+      "referencedBy": [],
+      "editorSchema": {
+        "requiredFields": [
+          "schemaVersion",
+          "uid",
+          "type",
+          "name",
+          "source",
+          "label",
+          "catalogStatus"
+        ],
+        "optionalFields": [
+          "description",
+          "target",
+          "externalTarget",
+          "technology",
+          "direction",
+          "flow",
+          "capabilities",
+          "notes",
+          "tags"
+        ],
+        "fieldTypes": {
+          "tags": "list",
+          "capabilities": "list"
+        },
+        "enumFields": {
+          "catalogStatus": [
+            "stub",
+            "incomplete",
+            "complete"
+          ],
+          "direction": [
+            "synchronous",
+            "asynchronous",
+            "event"
+          ],
+          "flow": [
+            "outbound",
+            "inbound",
+            "bidirectional"
+          ]
+        },
+        "enumListFields": {},
+        "collectionSchemas": {},
+        "schemaPath": "framework/schemas/relationship.schema.yaml"
+      },
+      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M7KQAQCD-ZD19\",\n  \"type\": \"relationship\",\n  \"name\": \"Agent Factory Control Plane \\u2192 S3 Config, Ledger & Package Buckets\",\n  \"source\": \"01M7GWXKXW-EJWB\",\n  \"target\": \"01M7GWTG2T-F1WG\",\n  \"label\": \"writes to\",\n  \"technology\": \"HTTPS (:443)\",\n  \"direction\": \"synchronous\",\n  \"flow\": \"bidirectional\",\n  \"catalogStatus\": \"complete\",\n  \"tags\": [\n    \"agent-factory\",\n    \"worm-ledger\",\n    \"s3\"\n  ],\n  \"notes\": \"Ships WORM ledger checkpoints to S3 Object Lock (COMPLIANCE mode, 365-day retention), reads/writes immutable versioned agent configurations, and manages skill packages.\",\n  \"_source\": \"catalog/governance/relationships/relationship-control-plane-checkpoints-to-s3-stores.yaml\"\n}",
+      "existsInCatalog": true,
+      "outboundRelationships": [],
+      "inboundRelationships": []
+    },
+    "01M7KQAQCD-HNYQ": {
+      "id": "01M7KQAQCD-HNYQ",
+      "uid": "01M7KQAQCD-HNYQ",
+      "name": "Agent Factory Control Plane \u2192 Agent Factory Gatekeeper Egress",
+      "aliases": [],
+      "type": "relationship",
+      "typeLabel": "Relationship",
+      "filterType": "relationship",
+      "category": "",
+      "deliveryModel": "",
+      "domain": "",
+      "description": "",
+      "version": "",
+      "catalogStatus": "complete",
+      "lifecycleStatus": "unknown",
+      "status": "",
+      "businessContext": {},
+      "product": "",
+      "runsOn": "",
+      "subtype": "",
+      "vendor": "",
+      "productName": "",
+      "productVersion": "",
+      "classification": "",
+      "platformDependency": "",
+      "capabilities": [],
+      "configurations": [],
+      "networkPlacement": "",
+      "patchingOwner": "",
+      "complianceCerts": [],
+      "requirementGroups": [],
+      "requirementImplementations": [],
+      "dataLeavesInfrastructure": null,
+      "dataResidencyCommitment": "",
+      "dpaNotes": "",
+      "vendorSLA": "",
+      "authenticationModel": "",
+      "incidentNotificationProcess": "",
+      "owner": {},
+      "definitionOwner": {},
+      "provider": {},
+      "authority": {},
+      "shape": "round-rectangle",
+      "color": "#7a6e60",
+      "source": "catalog/governance/relationships/relationship-control-plane-discovers-models-via-gatekeeper-egress.yaml",
+      "tags": [
+        "agent-factory",
+        "model-discovery"
+      ],
+      "ardCategory": "",
+      "internalComponents": [],
+      "notes": "Queries POST /internal/vendor-models over Cloud Map (factory.internal) so Control Plane discovers vendor models without reading Gatekeeper-held secrets (S1).",
+      "requirements": [],
+      "implementations": [],
+      "appliesTo": {},
+      "inherits": "",
+      "scalingUnits": [],
+      "networkZones": [],
+      "sdpConnections": [],
+      "serviceGroups": [],
+      "tierVariants": [],
+      "tierId": "",
+      "purpose": "",
+      "availabilityExpectation": "",
+      "costPosture": "",
+      "complianceScope": [],
+      "parameterSurface": [],
+      "followsReferenceArchitecture": "",
+      "decisionRecords": [],
+      "affectedComponent": "",
+      "impact": "",
+      "mitigationPath": "",
+      "decisionRationale": "",
+      "relatedDecisionRecords": [],
+      "linkedObject": "",
+      "primaryObjectType": "",
+      "primaryObjectUid": "",
+      "generatedObjects": [],
+      "unresolvedQuestions": [],
+      "assumptions": [],
+      "nextSteps": [],
+      "defaultSelection": false,
+      "requirementCount": 0,
+      "hasRiskRef": false,
+      "outboundRefs": [
+        {
+          "target": "01M7GWXKXW-EJWB",
+          "path": "source"
+        },
+        {
+          "target": "01M7GWXKXW-BPBV",
+          "path": "target"
+        }
+      ],
+      "referencedBy": [],
+      "editorSchema": {
+        "requiredFields": [
+          "schemaVersion",
+          "uid",
+          "type",
+          "name",
+          "source",
+          "label",
+          "catalogStatus"
+        ],
+        "optionalFields": [
+          "description",
+          "target",
+          "externalTarget",
+          "technology",
+          "direction",
+          "flow",
+          "capabilities",
+          "notes",
+          "tags"
+        ],
+        "fieldTypes": {
+          "tags": "list",
+          "capabilities": "list"
+        },
+        "enumFields": {
+          "catalogStatus": [
+            "stub",
+            "incomplete",
+            "complete"
+          ],
+          "direction": [
+            "synchronous",
+            "asynchronous",
+            "event"
+          ],
+          "flow": [
+            "outbound",
+            "inbound",
+            "bidirectional"
+          ]
+        },
+        "enumListFields": {},
+        "collectionSchemas": {},
+        "schemaPath": "framework/schemas/relationship.schema.yaml"
+      },
+      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M7KQAQCD-HNYQ\",\n  \"type\": \"relationship\",\n  \"name\": \"Agent Factory Control Plane \\u2192 Agent Factory Gatekeeper Egress\",\n  \"source\": \"01M7GWXKXW-EJWB\",\n  \"target\": \"01M7GWXKXW-BPBV\",\n  \"label\": \"calls\",\n  \"technology\": \"HTTP (:8081)\",\n  \"direction\": \"synchronous\",\n  \"flow\": \"outbound\",\n  \"catalogStatus\": \"complete\",\n  \"tags\": [\n    \"agent-factory\",\n    \"model-discovery\"\n  ],\n  \"notes\": \"Queries POST /internal/vendor-models over Cloud Map (factory.internal) so Control Plane discovers vendor models without reading Gatekeeper-held secrets (S1).\",\n  \"_source\": \"catalog/governance/relationships/relationship-control-plane-discovers-models-via-gatekeeper-egress.yaml\"\n}",
+      "existsInCatalog": true,
+      "outboundRelationships": [],
+      "inboundRelationships": []
+    },
+    "01M7KQAQCD-CWYV": {
+      "id": "01M7KQAQCD-CWYV",
+      "uid": "01M7KQAQCD-CWYV",
+      "name": "Agent Factory Control Plane \u2192 Agent Factory Gatekeeper Ingress",
+      "aliases": [],
+      "type": "relationship",
+      "typeLabel": "Relationship",
+      "filterType": "relationship",
+      "category": "",
+      "deliveryModel": "",
+      "domain": "",
+      "description": "",
+      "version": "",
+      "catalogStatus": "complete",
+      "lifecycleStatus": "unknown",
+      "status": "",
+      "businessContext": {},
+      "product": "",
+      "runsOn": "",
+      "subtype": "",
+      "vendor": "",
+      "productName": "",
+      "productVersion": "",
+      "classification": "",
+      "platformDependency": "",
+      "capabilities": [],
+      "configurations": [],
+      "networkPlacement": "",
+      "patchingOwner": "",
+      "complianceCerts": [],
+      "requirementGroups": [],
+      "requirementImplementations": [],
+      "dataLeavesInfrastructure": null,
+      "dataResidencyCommitment": "",
+      "dpaNotes": "",
+      "vendorSLA": "",
+      "authenticationModel": "",
+      "incidentNotificationProcess": "",
+      "owner": {},
+      "definitionOwner": {},
+      "provider": {},
+      "authority": {},
+      "shape": "round-rectangle",
+      "color": "#7a6e60",
+      "source": "catalog/governance/relationships/relationship-control-plane-notifies-gatekeeper-ingress.yaml",
+      "tags": [
+        "agent-factory",
+        "gatekeeper-ingress"
+      ],
+      "ardCategory": "",
+      "internalComponents": [],
+      "notes": "Pushes presence synchronization (/api/v1/presence) and live typing/tool activity indicators (/api/v1/activity) over Cloud Map (factory.internal).",
+      "requirements": [],
+      "implementations": [],
+      "appliesTo": {},
+      "inherits": "",
+      "scalingUnits": [],
+      "networkZones": [],
+      "sdpConnections": [],
+      "serviceGroups": [],
+      "tierVariants": [],
+      "tierId": "",
+      "purpose": "",
+      "availabilityExpectation": "",
+      "costPosture": "",
+      "complianceScope": [],
+      "parameterSurface": [],
+      "followsReferenceArchitecture": "",
+      "decisionRecords": [],
+      "affectedComponent": "",
+      "impact": "",
+      "mitigationPath": "",
+      "decisionRationale": "",
+      "relatedDecisionRecords": [],
+      "linkedObject": "",
+      "primaryObjectType": "",
+      "primaryObjectUid": "",
+      "generatedObjects": [],
+      "unresolvedQuestions": [],
+      "assumptions": [],
+      "nextSteps": [],
+      "defaultSelection": false,
+      "requirementCount": 0,
+      "hasRiskRef": false,
+      "outboundRefs": [
+        {
+          "target": "01M7GWXKXW-EJWB",
+          "path": "source"
+        },
+        {
+          "target": "01M7GWXKXW-7W49",
+          "path": "target"
+        }
+      ],
+      "referencedBy": [],
+      "editorSchema": {
+        "requiredFields": [
+          "schemaVersion",
+          "uid",
+          "type",
+          "name",
+          "source",
+          "label",
+          "catalogStatus"
+        ],
+        "optionalFields": [
+          "description",
+          "target",
+          "externalTarget",
+          "technology",
+          "direction",
+          "flow",
+          "capabilities",
+          "notes",
+          "tags"
+        ],
+        "fieldTypes": {
+          "tags": "list",
+          "capabilities": "list"
+        },
+        "enumFields": {
+          "catalogStatus": [
+            "stub",
+            "incomplete",
+            "complete"
+          ],
+          "direction": [
+            "synchronous",
+            "asynchronous",
+            "event"
+          ],
+          "flow": [
+            "outbound",
+            "inbound",
+            "bidirectional"
+          ]
+        },
+        "enumListFields": {},
+        "collectionSchemas": {},
+        "schemaPath": "framework/schemas/relationship.schema.yaml"
+      },
+      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M7KQAQCD-CWYV\",\n  \"type\": \"relationship\",\n  \"name\": \"Agent Factory Control Plane \\u2192 Agent Factory Gatekeeper Ingress\",\n  \"source\": \"01M7GWXKXW-EJWB\",\n  \"target\": \"01M7GWXKXW-7W49\",\n  \"label\": \"sends events to\",\n  \"technology\": \"HTTP (:8090)\",\n  \"direction\": \"asynchronous\",\n  \"flow\": \"outbound\",\n  \"catalogStatus\": \"complete\",\n  \"tags\": [\n    \"agent-factory\",\n    \"gatekeeper-ingress\"\n  ],\n  \"notes\": \"Pushes presence synchronization (/api/v1/presence) and live typing/tool activity indicators (/api/v1/activity) over Cloud Map (factory.internal).\",\n  \"_source\": \"catalog/governance/relationships/relationship-control-plane-notifies-gatekeeper-ingress.yaml\"\n}",
+      "existsInCatalog": true,
+      "outboundRelationships": [],
+      "inboundRelationships": []
+    },
+    "01M7KQAQCD-Z7TV": {
+      "id": "01M7KQAQCD-Z7TV",
+      "uid": "01M7KQAQCD-Z7TV",
+      "name": "Agent Factory Control Plane \u2192 Agent Factory EventBridge Event Bus",
+      "aliases": [],
+      "type": "relationship",
+      "typeLabel": "Relationship",
+      "filterType": "relationship",
+      "category": "",
+      "deliveryModel": "",
+      "domain": "",
+      "description": "",
+      "version": "",
+      "catalogStatus": "incomplete",
+      "lifecycleStatus": "unknown",
+      "status": "",
+      "businessContext": {},
+      "product": "",
+      "runsOn": "",
+      "subtype": "",
+      "vendor": "",
+      "productName": "",
+      "productVersion": "",
+      "classification": "",
+      "platformDependency": "",
+      "capabilities": [],
+      "configurations": [],
+      "networkPlacement": "",
+      "patchingOwner": "",
+      "complianceCerts": [],
+      "requirementGroups": [],
+      "requirementImplementations": [],
+      "dataLeavesInfrastructure": null,
+      "dataResidencyCommitment": "",
+      "dpaNotes": "",
+      "vendorSLA": "",
+      "authenticationModel": "",
+      "incidentNotificationProcess": "",
+      "owner": {},
+      "definitionOwner": {},
+      "provider": {},
+      "authority": {},
+      "shape": "round-rectangle",
+      "color": "#7a6e60",
+      "source": "catalog/governance/relationships/relationship-control-plane-publishes-to-eventbridge.yaml",
+      "tags": [
+        "agent-factory",
+        "eventbridge"
+      ],
+      "ardCategory": "",
+      "internalComponents": [],
+      "notes": "Inspector taps the ledger and publishes run outcomes, budget alerts, crashes, and held-action events to the factory EventBridge bus (live rules/targets not yet reviewed).",
+      "requirements": [],
+      "implementations": [],
+      "appliesTo": {},
+      "inherits": "",
+      "scalingUnits": [],
+      "networkZones": [],
+      "sdpConnections": [],
+      "serviceGroups": [],
+      "tierVariants": [],
+      "tierId": "",
+      "purpose": "",
+      "availabilityExpectation": "",
+      "costPosture": "",
+      "complianceScope": [],
+      "parameterSurface": [],
+      "followsReferenceArchitecture": "",
+      "decisionRecords": [],
+      "affectedComponent": "",
+      "impact": "",
+      "mitigationPath": "",
+      "decisionRationale": "",
+      "relatedDecisionRecords": [],
+      "linkedObject": "",
+      "primaryObjectType": "",
+      "primaryObjectUid": "",
+      "generatedObjects": [],
+      "unresolvedQuestions": [],
+      "assumptions": [],
+      "nextSteps": [],
+      "defaultSelection": false,
+      "requirementCount": 0,
+      "hasRiskRef": false,
+      "outboundRefs": [
+        {
+          "target": "01M7GWXKXW-EJWB",
+          "path": "source"
+        },
+        {
+          "target": "01M7KQAQCD-GHF4",
+          "path": "target"
+        }
+      ],
+      "referencedBy": [],
+      "editorSchema": {
+        "requiredFields": [
+          "schemaVersion",
+          "uid",
+          "type",
+          "name",
+          "source",
+          "label",
+          "catalogStatus"
+        ],
+        "optionalFields": [
+          "description",
+          "target",
+          "externalTarget",
+          "technology",
+          "direction",
+          "flow",
+          "capabilities",
+          "notes",
+          "tags"
+        ],
+        "fieldTypes": {
+          "tags": "list",
+          "capabilities": "list"
+        },
+        "enumFields": {
+          "catalogStatus": [
+            "stub",
+            "incomplete",
+            "complete"
+          ],
+          "direction": [
+            "synchronous",
+            "asynchronous",
+            "event"
+          ],
+          "flow": [
+            "outbound",
+            "inbound",
+            "bidirectional"
+          ]
+        },
+        "enumListFields": {},
+        "collectionSchemas": {},
+        "schemaPath": "framework/schemas/relationship.schema.yaml"
+      },
+      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M7KQAQCD-Z7TV\",\n  \"type\": \"relationship\",\n  \"name\": \"Agent Factory Control Plane \\u2192 Agent Factory EventBridge Event Bus\",\n  \"source\": \"01M7GWXKXW-EJWB\",\n  \"target\": \"01M7KQAQCD-GHF4\",\n  \"label\": \"sends events to\",\n  \"technology\": \"HTTPS (:443)\",\n  \"direction\": \"event\",\n  \"flow\": \"outbound\",\n  \"catalogStatus\": \"incomplete\",\n  \"tags\": [\n    \"agent-factory\",\n    \"eventbridge\"\n  ],\n  \"notes\": \"Inspector taps the ledger and publishes run outcomes, budget alerts, crashes, and held-action events to the factory EventBridge bus (live rules/targets not yet reviewed).\",\n  \"_source\": \"catalog/governance/relationships/relationship-control-plane-publishes-to-eventbridge.yaml\"\n}",
+      "existsInCatalog": true,
+      "outboundRelationships": [],
+      "inboundRelationships": []
+    },
+    "01M7KQAQCD-4GN2": {
+      "id": "01M7KQAQCD-4GN2",
+      "uid": "01M7KQAQCD-4GN2",
+      "name": "Agent Factory Control Plane \u2192 CodeBuild Admission & Skill Builders",
+      "aliases": [],
+      "type": "relationship",
+      "typeLabel": "Relationship",
+      "filterType": "relationship",
+      "category": "",
+      "deliveryModel": "",
+      "domain": "",
+      "description": "",
+      "version": "",
+      "catalogStatus": "complete",
+      "lifecycleStatus": "unknown",
+      "status": "",
+      "businessContext": {},
+      "product": "",
+      "runsOn": "",
+      "subtype": "",
+      "vendor": "",
+      "productName": "",
+      "productVersion": "",
+      "classification": "",
+      "platformDependency": "",
+      "capabilities": [],
+      "configurations": [],
+      "networkPlacement": "",
+      "patchingOwner": "",
+      "complianceCerts": [],
+      "requirementGroups": [],
+      "requirementImplementations": [],
+      "dataLeavesInfrastructure": null,
+      "dataResidencyCommitment": "",
+      "dpaNotes": "",
+      "vendorSLA": "",
+      "authenticationModel": "",
+      "incidentNotificationProcess": "",
+      "owner": {},
+      "definitionOwner": {},
+      "provider": {},
+      "authority": {},
+      "shape": "round-rectangle",
+      "color": "#7a6e60",
+      "source": "catalog/governance/relationships/relationship-control-plane-triggers-codebuild-pipeline.yaml",
+      "tags": [
+        "agent-factory",
+        "admission"
+      ],
+      "ardCategory": "",
+      "internalComponents": [],
+      "notes": "Triggers commit-pinned factory-agent-builder, factory-skills-builder, and factory-skill-checker CodeBuild runs.",
+      "requirements": [],
+      "implementations": [],
+      "appliesTo": {},
+      "inherits": "",
+      "scalingUnits": [],
+      "networkZones": [],
+      "sdpConnections": [],
+      "serviceGroups": [],
+      "tierVariants": [],
+      "tierId": "",
+      "purpose": "",
+      "availabilityExpectation": "",
+      "costPosture": "",
+      "complianceScope": [],
+      "parameterSurface": [],
+      "followsReferenceArchitecture": "",
+      "decisionRecords": [],
+      "affectedComponent": "",
+      "impact": "",
+      "mitigationPath": "",
+      "decisionRationale": "",
+      "relatedDecisionRecords": [],
+      "linkedObject": "",
+      "primaryObjectType": "",
+      "primaryObjectUid": "",
+      "generatedObjects": [],
+      "unresolvedQuestions": [],
+      "assumptions": [],
+      "nextSteps": [],
+      "defaultSelection": false,
+      "requirementCount": 0,
+      "hasRiskRef": false,
+      "outboundRefs": [
+        {
+          "target": "01M7GWXKXW-EJWB",
+          "path": "source"
+        },
+        {
+          "target": "01M7KQAQCD-WD0R",
+          "path": "target"
+        }
+      ],
+      "referencedBy": [],
+      "editorSchema": {
+        "requiredFields": [
+          "schemaVersion",
+          "uid",
+          "type",
+          "name",
+          "source",
+          "label",
+          "catalogStatus"
+        ],
+        "optionalFields": [
+          "description",
+          "target",
+          "externalTarget",
+          "technology",
+          "direction",
+          "flow",
+          "capabilities",
+          "notes",
+          "tags"
+        ],
+        "fieldTypes": {
+          "tags": "list",
+          "capabilities": "list"
+        },
+        "enumFields": {
+          "catalogStatus": [
+            "stub",
+            "incomplete",
+            "complete"
+          ],
+          "direction": [
+            "synchronous",
+            "asynchronous",
+            "event"
+          ],
+          "flow": [
+            "outbound",
+            "inbound",
+            "bidirectional"
+          ]
+        },
+        "enumListFields": {},
+        "collectionSchemas": {},
+        "schemaPath": "framework/schemas/relationship.schema.yaml"
+      },
+      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M7KQAQCD-4GN2\",\n  \"type\": \"relationship\",\n  \"name\": \"Agent Factory Control Plane \\u2192 CodeBuild Admission & Skill Builders\",\n  \"source\": \"01M7GWXKXW-EJWB\",\n  \"target\": \"01M7KQAQCD-WD0R\",\n  \"label\": \"calls\",\n  \"technology\": \"HTTPS (:443)\",\n  \"direction\": \"asynchronous\",\n  \"flow\": \"outbound\",\n  \"catalogStatus\": \"complete\",\n  \"tags\": [\n    \"agent-factory\",\n    \"admission\"\n  ],\n  \"notes\": \"Triggers commit-pinned factory-agent-builder, factory-skills-builder, and factory-skill-checker CodeBuild runs.\",\n  \"_source\": \"catalog/governance/relationships/relationship-control-plane-triggers-codebuild-pipeline.yaml\"\n}",
+      "existsInCatalog": true,
+      "outboundRelationships": [],
+      "inboundRelationships": []
+    },
+    "01M7KQAQCD-XTFV": {
+      "id": "01M7KQAQCD-XTFV",
+      "uid": "01M7KQAQCD-XTFV",
+      "name": "Agent Factory Control Plane \u2192 Amazon EFS factory-prod-ledger",
+      "aliases": [],
+      "type": "relationship",
+      "typeLabel": "Relationship",
+      "filterType": "relationship",
+      "category": "",
+      "deliveryModel": "",
+      "domain": "",
+      "description": "",
+      "version": "",
+      "catalogStatus": "complete",
+      "lifecycleStatus": "unknown",
+      "status": "",
+      "businessContext": {},
+      "product": "",
+      "runsOn": "",
+      "subtype": "",
+      "vendor": "",
+      "productName": "",
+      "productVersion": "",
+      "classification": "",
+      "platformDependency": "",
+      "capabilities": [],
+      "configurations": [],
+      "networkPlacement": "",
+      "patchingOwner": "",
+      "complianceCerts": [],
+      "requirementGroups": [],
+      "requirementImplementations": [],
+      "dataLeavesInfrastructure": null,
+      "dataResidencyCommitment": "",
+      "dpaNotes": "",
+      "vendorSLA": "",
+      "authenticationModel": "",
+      "incidentNotificationProcess": "",
+      "owner": {},
+      "definitionOwner": {},
+      "provider": {},
+      "authority": {},
+      "shape": "round-rectangle",
+      "color": "#7a6e60",
+      "source": "catalog/governance/relationships/relationship-control-plane-writes-to-efs-ledger.yaml",
+      "tags": [
+        "agent-factory",
+        "ledger"
+      ],
+      "ardCategory": "",
+      "internalComponents": [],
+      "notes": "Single-writer leased append to SHA-256 hash-chained ledger.jsonl on encrypted EFS access point (LG1).",
+      "requirements": [],
+      "implementations": [],
+      "appliesTo": {},
+      "inherits": "",
+      "scalingUnits": [],
+      "networkZones": [],
+      "sdpConnections": [],
+      "serviceGroups": [],
+      "tierVariants": [],
+      "tierId": "",
+      "purpose": "",
+      "availabilityExpectation": "",
+      "costPosture": "",
+      "complianceScope": [],
+      "parameterSurface": [],
+      "followsReferenceArchitecture": "",
+      "decisionRecords": [],
+      "affectedComponent": "",
+      "impact": "",
+      "mitigationPath": "",
+      "decisionRationale": "",
+      "relatedDecisionRecords": [],
+      "linkedObject": "",
+      "primaryObjectType": "",
+      "primaryObjectUid": "",
+      "generatedObjects": [],
+      "unresolvedQuestions": [],
+      "assumptions": [],
+      "nextSteps": [],
+      "defaultSelection": false,
+      "requirementCount": 0,
+      "hasRiskRef": false,
+      "outboundRefs": [
+        {
+          "target": "01M7GWXKXW-EJWB",
+          "path": "source"
+        },
+        {
+          "target": "01M7GWTG2T-KR1Y",
+          "path": "target"
+        }
+      ],
+      "referencedBy": [],
+      "editorSchema": {
+        "requiredFields": [
+          "schemaVersion",
+          "uid",
+          "type",
+          "name",
+          "source",
+          "label",
+          "catalogStatus"
+        ],
+        "optionalFields": [
+          "description",
+          "target",
+          "externalTarget",
+          "technology",
+          "direction",
+          "flow",
+          "capabilities",
+          "notes",
+          "tags"
+        ],
+        "fieldTypes": {
+          "tags": "list",
+          "capabilities": "list"
+        },
+        "enumFields": {
+          "catalogStatus": [
+            "stub",
+            "incomplete",
+            "complete"
+          ],
+          "direction": [
+            "synchronous",
+            "asynchronous",
+            "event"
+          ],
+          "flow": [
+            "outbound",
+            "inbound",
+            "bidirectional"
+          ]
+        },
+        "enumListFields": {},
+        "collectionSchemas": {},
+        "schemaPath": "framework/schemas/relationship.schema.yaml"
+      },
+      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M7KQAQCD-XTFV\",\n  \"type\": \"relationship\",\n  \"name\": \"Agent Factory Control Plane \\u2192 Amazon EFS factory-prod-ledger\",\n  \"source\": \"01M7GWXKXW-EJWB\",\n  \"target\": \"01M7GWTG2T-KR1Y\",\n  \"label\": \"writes to\",\n  \"technology\": \"NFSv4.1 over TLS (:2049)\",\n  \"direction\": \"synchronous\",\n  \"flow\": \"bidirectional\",\n  \"catalogStatus\": \"complete\",\n  \"tags\": [\n    \"agent-factory\",\n    \"ledger\"\n  ],\n  \"notes\": \"Single-writer leased append to SHA-256 hash-chained ledger.jsonl on encrypted EFS access point (LG1).\",\n  \"_source\": \"catalog/governance/relationships/relationship-control-plane-writes-to-efs-ledger.yaml\"\n}",
+      "existsInCatalog": true,
+      "outboundRelationships": [],
+      "inboundRelationships": []
+    },
+    "01M7KQAQCD-7V12": {
+      "id": "01M7KQAQCD-7V12",
+      "uid": "01M7KQAQCD-7V12",
+      "name": "Agent Factory Gatekeeper Egress \u2192 External LLM & SaaS Providers",
+      "aliases": [],
+      "type": "relationship",
+      "typeLabel": "Relationship",
+      "filterType": "relationship",
+      "category": "",
+      "deliveryModel": "",
+      "domain": "",
+      "description": "",
+      "version": "",
+      "catalogStatus": "incomplete",
+      "lifecycleStatus": "unknown",
+      "status": "",
+      "businessContext": {},
+      "product": "",
+      "runsOn": "",
+      "subtype": "",
+      "vendor": "",
+      "productName": "",
+      "productVersion": "",
+      "classification": "",
+      "platformDependency": "",
+      "capabilities": [],
+      "configurations": [],
+      "networkPlacement": "",
+      "patchingOwner": "",
+      "complianceCerts": [],
+      "requirementGroups": [],
+      "requirementImplementations": [],
+      "dataLeavesInfrastructure": null,
+      "dataResidencyCommitment": "",
+      "dpaNotes": "",
+      "vendorSLA": "",
+      "authenticationModel": "",
+      "incidentNotificationProcess": "",
+      "owner": {},
+      "definitionOwner": {},
+      "provider": {},
+      "authority": {},
+      "shape": "round-rectangle",
+      "color": "#7a6e60",
+      "source": "catalog/governance/relationships/relationship-gatekeeper-egress-calls-external-llm-providers.yaml",
+      "tags": [
+        "agent-factory",
+        "llm-providers"
+      ],
+      "ardCategory": "",
+      "internalComponents": [],
+      "notes": "Injects provider API keys and Keymaster-refreshed OAuth tokens at egress so agent containers do not hold upstream credentials (S1; see decision records 01M7GYV3B6-YE24 and 01M7GYV3B6-H03D for registered gaps GAP-027/GAP-031).",
+      "requirements": [],
+      "implementations": [],
+      "appliesTo": {},
+      "inherits": "",
+      "scalingUnits": [],
+      "networkZones": [],
+      "sdpConnections": [],
+      "serviceGroups": [],
+      "tierVariants": [],
+      "tierId": "",
+      "purpose": "",
+      "availabilityExpectation": "",
+      "costPosture": "",
+      "complianceScope": [],
+      "parameterSurface": [],
+      "followsReferenceArchitecture": "",
+      "decisionRecords": [],
+      "affectedComponent": "",
+      "impact": "",
+      "mitigationPath": "",
+      "decisionRationale": "",
+      "relatedDecisionRecords": [],
+      "linkedObject": "",
+      "primaryObjectType": "",
+      "primaryObjectUid": "",
+      "generatedObjects": [],
+      "unresolvedQuestions": [],
+      "assumptions": [],
+      "nextSteps": [],
+      "defaultSelection": false,
+      "requirementCount": 0,
+      "hasRiskRef": false,
+      "outboundRefs": [
+        {
+          "target": "01M7GWXKXW-BPBV",
+          "path": "source"
+        }
+      ],
+      "referencedBy": [],
+      "editorSchema": {
+        "requiredFields": [
+          "schemaVersion",
+          "uid",
+          "type",
+          "name",
+          "source",
+          "label",
+          "catalogStatus"
+        ],
+        "optionalFields": [
+          "description",
+          "target",
+          "externalTarget",
+          "technology",
+          "direction",
+          "flow",
+          "capabilities",
+          "notes",
+          "tags"
+        ],
+        "fieldTypes": {
+          "tags": "list",
+          "capabilities": "list"
+        },
+        "enumFields": {
+          "catalogStatus": [
+            "stub",
+            "incomplete",
+            "complete"
+          ],
+          "direction": [
+            "synchronous",
+            "asynchronous",
+            "event"
+          ],
+          "flow": [
+            "outbound",
+            "inbound",
+            "bidirectional"
+          ]
+        },
+        "enumListFields": {},
+        "collectionSchemas": {},
+        "schemaPath": "framework/schemas/relationship.schema.yaml"
+      },
+      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M7KQAQCD-7V12\",\n  \"type\": \"relationship\",\n  \"name\": \"Agent Factory Gatekeeper Egress \\u2192 External LLM & SaaS Providers\",\n  \"source\": \"01M7GWXKXW-BPBV\",\n  \"externalTarget\": \"External Model & SaaS APIs (AWS Bedrock, OpenAI, xAI, Anthropic, GitHub, Google Workspace, Notion)\",\n  \"label\": \"calls\",\n  \"technology\": \"HTTPS (:443)\",\n  \"direction\": \"synchronous\",\n  \"flow\": \"outbound\",\n  \"catalogStatus\": \"incomplete\",\n  \"tags\": [\n    \"agent-factory\",\n    \"llm-providers\"\n  ],\n  \"notes\": \"Injects provider API keys and Keymaster-refreshed OAuth tokens at egress so agent containers do not hold upstream credentials (S1; see decision records 01M7GYV3B6-YE24 and 01M7GYV3B6-H03D for registered gaps GAP-027/GAP-031).\",\n  \"_source\": \"catalog/governance/relationships/relationship-gatekeeper-egress-calls-external-llm-providers.yaml\"\n}",
+      "existsInCatalog": true,
+      "outboundRelationships": [],
+      "inboundRelationships": []
+    },
+    "01M7KQAQCD-M02F": {
+      "id": "01M7KQAQCD-M02F",
+      "uid": "01M7KQAQCD-M02F",
+      "name": "Agent Factory Gatekeeper Egress \u2192 Agent Factory Control Plane",
+      "aliases": [],
+      "type": "relationship",
+      "typeLabel": "Relationship",
+      "filterType": "relationship",
+      "category": "",
+      "deliveryModel": "",
+      "domain": "",
+      "description": "",
+      "version": "",
+      "catalogStatus": "complete",
+      "lifecycleStatus": "unknown",
+      "status": "",
+      "businessContext": {},
+      "product": "",
+      "runsOn": "",
+      "subtype": "",
+      "vendor": "",
+      "productName": "",
+      "productVersion": "",
+      "classification": "",
+      "platformDependency": "",
+      "capabilities": [],
+      "configurations": [],
+      "networkPlacement": "",
+      "patchingOwner": "",
+      "complianceCerts": [],
+      "requirementGroups": [],
+      "requirementImplementations": [],
+      "dataLeavesInfrastructure": null,
+      "dataResidencyCommitment": "",
+      "dpaNotes": "",
+      "vendorSLA": "",
+      "authenticationModel": "",
+      "incidentNotificationProcess": "",
+      "owner": {},
+      "definitionOwner": {},
+      "provider": {},
+      "authority": {},
+      "shape": "round-rectangle",
+      "color": "#7a6e60",
+      "source": "catalog/governance/relationships/relationship-gatekeeper-egress-verifies-runs-with-control-plane.yaml",
+      "tags": [
+        "agent-factory",
+        "gatekeeper-egress"
+      ],
+      "ardCategory": "",
+      "internalComponents": [],
+      "notes": "Verifies live run context, kill-switch status, policy, and Accountant budget standing, opens/consumes Bouncer approvals, syncs dynamic model catalogs, and writes attested ledger records.",
+      "requirements": [],
+      "implementations": [],
+      "appliesTo": {},
+      "inherits": "",
+      "scalingUnits": [],
+      "networkZones": [],
+      "sdpConnections": [],
+      "serviceGroups": [],
+      "tierVariants": [],
+      "tierId": "",
+      "purpose": "",
+      "availabilityExpectation": "",
+      "costPosture": "",
+      "complianceScope": [],
+      "parameterSurface": [],
+      "followsReferenceArchitecture": "",
+      "decisionRecords": [],
+      "affectedComponent": "",
+      "impact": "",
+      "mitigationPath": "",
+      "decisionRationale": "",
+      "relatedDecisionRecords": [],
+      "linkedObject": "",
+      "primaryObjectType": "",
+      "primaryObjectUid": "",
+      "generatedObjects": [],
+      "unresolvedQuestions": [],
+      "assumptions": [],
+      "nextSteps": [],
+      "defaultSelection": false,
+      "requirementCount": 0,
+      "hasRiskRef": false,
+      "outboundRefs": [
+        {
+          "target": "01M7GWXKXW-BPBV",
+          "path": "source"
+        },
+        {
+          "target": "01M7GWXKXW-EJWB",
+          "path": "target"
+        }
+      ],
+      "referencedBy": [],
+      "editorSchema": {
+        "requiredFields": [
+          "schemaVersion",
+          "uid",
+          "type",
+          "name",
+          "source",
+          "label",
+          "catalogStatus"
+        ],
+        "optionalFields": [
+          "description",
+          "target",
+          "externalTarget",
+          "technology",
+          "direction",
+          "flow",
+          "capabilities",
+          "notes",
+          "tags"
+        ],
+        "fieldTypes": {
+          "tags": "list",
+          "capabilities": "list"
+        },
+        "enumFields": {
+          "catalogStatus": [
+            "stub",
+            "incomplete",
+            "complete"
+          ],
+          "direction": [
+            "synchronous",
+            "asynchronous",
+            "event"
+          ],
+          "flow": [
+            "outbound",
+            "inbound",
+            "bidirectional"
+          ]
+        },
+        "enumListFields": {},
+        "collectionSchemas": {},
+        "schemaPath": "framework/schemas/relationship.schema.yaml"
+      },
+      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M7KQAQCD-M02F\",\n  \"type\": \"relationship\",\n  \"name\": \"Agent Factory Gatekeeper Egress \\u2192 Agent Factory Control Plane\",\n  \"source\": \"01M7GWXKXW-BPBV\",\n  \"target\": \"01M7GWXKXW-EJWB\",\n  \"label\": \"calls\",\n  \"technology\": \"HTTP (:8088)\",\n  \"direction\": \"synchronous\",\n  \"flow\": \"outbound\",\n  \"catalogStatus\": \"complete\",\n  \"tags\": [\n    \"agent-factory\",\n    \"gatekeeper-egress\"\n  ],\n  \"notes\": \"Verifies live run context, kill-switch status, policy, and Accountant budget standing, opens/consumes Bouncer approvals, syncs dynamic model catalogs, and writes attested ledger records.\",\n  \"_source\": \"catalog/governance/relationships/relationship-gatekeeper-egress-verifies-runs-with-control-plane.yaml\"\n}",
+      "existsInCatalog": true,
+      "outboundRelationships": [],
+      "inboundRelationships": []
+    },
+    "01M7KQAQCD-PND8": {
+      "id": "01M7KQAQCD-PND8",
+      "uid": "01M7KQAQCD-PND8",
+      "name": "Agent Factory Gatekeeper Ingress \u2192 Discord Gateway WebSocket API",
+      "aliases": [],
+      "type": "relationship",
+      "typeLabel": "Relationship",
+      "filterType": "relationship",
+      "category": "",
+      "deliveryModel": "",
+      "domain": "",
+      "description": "",
+      "version": "",
+      "catalogStatus": "complete",
+      "lifecycleStatus": "unknown",
+      "status": "",
+      "businessContext": {},
+      "product": "",
+      "runsOn": "",
+      "subtype": "",
+      "vendor": "",
+      "productName": "",
+      "productVersion": "",
+      "classification": "",
+      "platformDependency": "",
+      "capabilities": [],
+      "configurations": [],
+      "networkPlacement": "",
+      "patchingOwner": "",
+      "complianceCerts": [],
+      "requirementGroups": [],
+      "requirementImplementations": [],
+      "dataLeavesInfrastructure": null,
+      "dataResidencyCommitment": "",
+      "dpaNotes": "",
+      "vendorSLA": "",
+      "authenticationModel": "",
+      "incidentNotificationProcess": "",
+      "owner": {},
+      "definitionOwner": {},
+      "provider": {},
+      "authority": {},
+      "shape": "round-rectangle",
+      "color": "#7a6e60",
+      "source": "catalog/governance/relationships/relationship-gatekeeper-ingress-connects-to-discord-gateway.yaml",
+      "tags": [
+        "agent-factory",
+        "discord"
+      ],
+      "ardCategory": "",
+      "internalComponents": [],
+      "notes": "Holds Discord bot tokens outside agent containers (S1) and maintains Gateway WebSocket presence for registered cartridges declaring a discord surface.",
+      "requirements": [],
+      "implementations": [],
+      "appliesTo": {},
+      "inherits": "",
+      "scalingUnits": [],
+      "networkZones": [],
+      "sdpConnections": [],
+      "serviceGroups": [],
+      "tierVariants": [],
+      "tierId": "",
+      "purpose": "",
+      "availabilityExpectation": "",
+      "costPosture": "",
+      "complianceScope": [],
+      "parameterSurface": [],
+      "followsReferenceArchitecture": "",
+      "decisionRecords": [],
+      "affectedComponent": "",
+      "impact": "",
+      "mitigationPath": "",
+      "decisionRationale": "",
+      "relatedDecisionRecords": [],
+      "linkedObject": "",
+      "primaryObjectType": "",
+      "primaryObjectUid": "",
+      "generatedObjects": [],
+      "unresolvedQuestions": [],
+      "assumptions": [],
+      "nextSteps": [],
+      "defaultSelection": false,
+      "requirementCount": 0,
+      "hasRiskRef": false,
+      "outboundRefs": [
+        {
+          "target": "01M7GWXKXW-7W49",
+          "path": "source"
+        }
+      ],
+      "referencedBy": [],
+      "editorSchema": {
+        "requiredFields": [
+          "schemaVersion",
+          "uid",
+          "type",
+          "name",
+          "source",
+          "label",
+          "catalogStatus"
+        ],
+        "optionalFields": [
+          "description",
+          "target",
+          "externalTarget",
+          "technology",
+          "direction",
+          "flow",
+          "capabilities",
+          "notes",
+          "tags"
+        ],
+        "fieldTypes": {
+          "tags": "list",
+          "capabilities": "list"
+        },
+        "enumFields": {
+          "catalogStatus": [
+            "stub",
+            "incomplete",
+            "complete"
+          ],
+          "direction": [
+            "synchronous",
+            "asynchronous",
+            "event"
+          ],
+          "flow": [
+            "outbound",
+            "inbound",
+            "bidirectional"
+          ]
+        },
+        "enumListFields": {},
+        "collectionSchemas": {},
+        "schemaPath": "framework/schemas/relationship.schema.yaml"
+      },
+      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M7KQAQCD-PND8\",\n  \"type\": \"relationship\",\n  \"name\": \"Agent Factory Gatekeeper Ingress \\u2192 Discord Gateway WebSocket API\",\n  \"source\": \"01M7GWXKXW-7W49\",\n  \"externalTarget\": \"Discord Gateway WebSocket API\",\n  \"label\": \"connects to\",\n  \"technology\": \"WebSocket over TLS (:443)\",\n  \"direction\": \"event\",\n  \"flow\": \"bidirectional\",\n  \"catalogStatus\": \"complete\",\n  \"tags\": [\n    \"agent-factory\",\n    \"discord\"\n  ],\n  \"notes\": \"Holds Discord bot tokens outside agent containers (S1) and maintains Gateway WebSocket presence for registered cartridges declaring a discord surface.\",\n  \"_source\": \"catalog/governance/relationships/relationship-gatekeeper-ingress-connects-to-discord-gateway.yaml\"\n}",
+      "existsInCatalog": true,
+      "outboundRelationships": [],
+      "inboundRelationships": []
+    },
+    "01M7KQAQCD-1AM0": {
+      "id": "01M7KQAQCD-1AM0",
+      "uid": "01M7KQAQCD-1AM0",
+      "name": "Agent Factory Gatekeeper Ingress \u2192 Agent Factory Control Plane",
+      "aliases": [],
+      "type": "relationship",
+      "typeLabel": "Relationship",
+      "filterType": "relationship",
+      "category": "",
+      "deliveryModel": "",
+      "domain": "",
+      "description": "",
+      "version": "",
+      "catalogStatus": "complete",
+      "lifecycleStatus": "unknown",
+      "status": "",
+      "businessContext": {},
+      "product": "",
+      "runsOn": "",
+      "subtype": "",
+      "vendor": "",
+      "productName": "",
+      "productVersion": "",
+      "classification": "",
+      "platformDependency": "",
+      "capabilities": [],
+      "configurations": [],
+      "networkPlacement": "",
+      "patchingOwner": "",
+      "complianceCerts": [],
+      "requirementGroups": [],
+      "requirementImplementations": [],
+      "dataLeavesInfrastructure": null,
+      "dataResidencyCommitment": "",
+      "dpaNotes": "",
+      "vendorSLA": "",
+      "authenticationModel": "",
+      "incidentNotificationProcess": "",
+      "owner": {},
+      "definitionOwner": {},
+      "provider": {},
+      "authority": {},
+      "shape": "round-rectangle",
+      "color": "#7a6e60",
+      "source": "catalog/governance/relationships/relationship-gatekeeper-ingress-wakes-control-plane.yaml",
+      "tags": [
+        "agent-factory",
+        "gatekeeper-ingress"
+      ],
+      "ardCategory": "",
+      "internalComponents": [],
+      "notes": "Dispatches POST /api/v1/agents/:id/wake and conversation handoff on inbound Discord messages over Cloud Map (factory.internal).",
+      "requirements": [],
+      "implementations": [],
+      "appliesTo": {},
+      "inherits": "",
+      "scalingUnits": [],
+      "networkZones": [],
+      "sdpConnections": [],
+      "serviceGroups": [],
+      "tierVariants": [],
+      "tierId": "",
+      "purpose": "",
+      "availabilityExpectation": "",
+      "costPosture": "",
+      "complianceScope": [],
+      "parameterSurface": [],
+      "followsReferenceArchitecture": "",
+      "decisionRecords": [],
+      "affectedComponent": "",
+      "impact": "",
+      "mitigationPath": "",
+      "decisionRationale": "",
+      "relatedDecisionRecords": [],
+      "linkedObject": "",
+      "primaryObjectType": "",
+      "primaryObjectUid": "",
+      "generatedObjects": [],
+      "unresolvedQuestions": [],
+      "assumptions": [],
+      "nextSteps": [],
+      "defaultSelection": false,
+      "requirementCount": 0,
+      "hasRiskRef": false,
+      "outboundRefs": [
+        {
+          "target": "01M7GWXKXW-7W49",
+          "path": "source"
+        },
+        {
+          "target": "01M7GWXKXW-EJWB",
+          "path": "target"
+        }
+      ],
+      "referencedBy": [],
+      "editorSchema": {
+        "requiredFields": [
+          "schemaVersion",
+          "uid",
+          "type",
+          "name",
+          "source",
+          "label",
+          "catalogStatus"
+        ],
+        "optionalFields": [
+          "description",
+          "target",
+          "externalTarget",
+          "technology",
+          "direction",
+          "flow",
+          "capabilities",
+          "notes",
+          "tags"
+        ],
+        "fieldTypes": {
+          "tags": "list",
+          "capabilities": "list"
+        },
+        "enumFields": {
+          "catalogStatus": [
+            "stub",
+            "incomplete",
+            "complete"
+          ],
+          "direction": [
+            "synchronous",
+            "asynchronous",
+            "event"
+          ],
+          "flow": [
+            "outbound",
+            "inbound",
+            "bidirectional"
+          ]
+        },
+        "enumListFields": {},
+        "collectionSchemas": {},
+        "schemaPath": "framework/schemas/relationship.schema.yaml"
+      },
+      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M7KQAQCD-1AM0\",\n  \"type\": \"relationship\",\n  \"name\": \"Agent Factory Gatekeeper Ingress \\u2192 Agent Factory Control Plane\",\n  \"source\": \"01M7GWXKXW-7W49\",\n  \"target\": \"01M7GWXKXW-EJWB\",\n  \"label\": \"calls\",\n  \"technology\": \"HTTP (:8088)\",\n  \"direction\": \"synchronous\",\n  \"flow\": \"outbound\",\n  \"catalogStatus\": \"complete\",\n  \"tags\": [\n    \"agent-factory\",\n    \"gatekeeper-ingress\"\n  ],\n  \"notes\": \"Dispatches POST /api/v1/agents/:id/wake and conversation handoff on inbound Discord messages over Cloud Map (factory.internal).\",\n  \"_source\": \"catalog/governance/relationships/relationship-gatekeeper-ingress-wakes-control-plane.yaml\"\n}",
+      "existsInCatalog": true,
+      "outboundRelationships": [],
+      "inboundRelationships": []
+    },
+    "01M7KQAQCD-8Z5M": {
+      "id": "01M7KQAQCD-8Z5M",
+      "uid": "01M7KQAQCD-8Z5M",
+      "name": "Agent Factory Cartridge Task \u2192 Agent Factory Control Plane",
+      "aliases": [],
+      "type": "relationship",
+      "typeLabel": "Relationship",
+      "filterType": "relationship",
+      "category": "",
+      "deliveryModel": "",
+      "domain": "",
+      "description": "",
+      "version": "",
+      "catalogStatus": "complete",
+      "lifecycleStatus": "unknown",
+      "status": "",
+      "businessContext": {},
+      "product": "",
+      "runsOn": "",
+      "subtype": "",
+      "vendor": "",
+      "productName": "",
+      "productVersion": "",
+      "classification": "",
+      "platformDependency": "",
+      "capabilities": [],
+      "configurations": [],
+      "networkPlacement": "",
+      "patchingOwner": "",
+      "complianceCerts": [],
+      "requirementGroups": [],
+      "requirementImplementations": [],
+      "dataLeavesInfrastructure": null,
+      "dataResidencyCommitment": "",
+      "dpaNotes": "",
+      "vendorSLA": "",
+      "authenticationModel": "",
+      "incidentNotificationProcess": "",
+      "owner": {},
+      "definitionOwner": {},
+      "provider": {},
+      "authority": {},
+      "shape": "round-rectangle",
+      "color": "#7a6e60",
+      "source": "catalog/governance/relationships/relationship-shared-runtime-calls-control-plane.yaml",
+      "tags": [
+        "agent-factory",
+        "agent-runtime"
+      ],
+      "ardCategory": "",
+      "internalComponents": [],
+      "notes": "Authenticated with short-lived FACTORY_RUN_TOKEN across zone boundary (agents -> mailbox) for /input prefetch, /mailbox long-polling, /heartbeat, /result, and POST /mcp/run.",
+      "requirements": [],
+      "implementations": [],
+      "appliesTo": {},
+      "inherits": "",
+      "scalingUnits": [],
+      "networkZones": [],
+      "sdpConnections": [],
+      "serviceGroups": [],
+      "tierVariants": [],
+      "tierId": "",
+      "purpose": "",
+      "availabilityExpectation": "",
+      "costPosture": "",
+      "complianceScope": [],
+      "parameterSurface": [],
+      "followsReferenceArchitecture": "",
+      "decisionRecords": [],
+      "affectedComponent": "",
+      "impact": "",
+      "mitigationPath": "",
+      "decisionRationale": "",
+      "relatedDecisionRecords": [],
+      "linkedObject": "",
+      "primaryObjectType": "",
+      "primaryObjectUid": "",
+      "generatedObjects": [],
+      "unresolvedQuestions": [],
+      "assumptions": [],
+      "nextSteps": [],
+      "defaultSelection": false,
+      "requirementCount": 0,
+      "hasRiskRef": false,
+      "outboundRefs": [
+        {
+          "target": "01M7GWXKXW-4ZJF",
+          "path": "source"
+        },
+        {
+          "target": "01M7GWXKXW-EJWB",
+          "path": "target"
+        }
+      ],
+      "referencedBy": [],
+      "editorSchema": {
+        "requiredFields": [
+          "schemaVersion",
+          "uid",
+          "type",
+          "name",
+          "source",
+          "label",
+          "catalogStatus"
+        ],
+        "optionalFields": [
+          "description",
+          "target",
+          "externalTarget",
+          "technology",
+          "direction",
+          "flow",
+          "capabilities",
+          "notes",
+          "tags"
+        ],
+        "fieldTypes": {
+          "tags": "list",
+          "capabilities": "list"
+        },
+        "enumFields": {
+          "catalogStatus": [
+            "stub",
+            "incomplete",
+            "complete"
+          ],
+          "direction": [
+            "synchronous",
+            "asynchronous",
+            "event"
+          ],
+          "flow": [
+            "outbound",
+            "inbound",
+            "bidirectional"
+          ]
+        },
+        "enumListFields": {},
+        "collectionSchemas": {},
+        "schemaPath": "framework/schemas/relationship.schema.yaml"
+      },
+      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M7KQAQCD-8Z5M\",\n  \"type\": \"relationship\",\n  \"name\": \"Agent Factory Cartridge Task \\u2192 Agent Factory Control Plane\",\n  \"source\": \"01M7GWXKXW-4ZJF\",\n  \"target\": \"01M7GWXKXW-EJWB\",\n  \"label\": \"calls\",\n  \"technology\": \"HTTP (:8088)\",\n  \"direction\": \"synchronous\",\n  \"flow\": \"outbound\",\n  \"catalogStatus\": \"complete\",\n  \"tags\": [\n    \"agent-factory\",\n    \"agent-runtime\"\n  ],\n  \"notes\": \"Authenticated with short-lived FACTORY_RUN_TOKEN across zone boundary (agents -> mailbox) for /input prefetch, /mailbox long-polling, /heartbeat, /result, and POST /mcp/run.\",\n  \"_source\": \"catalog/governance/relationships/relationship-shared-runtime-calls-control-plane.yaml\"\n}",
+      "existsInCatalog": true,
+      "outboundRelationships": [],
+      "inboundRelationships": []
+    },
+    "01M7KQAQCD-RGE7": {
+      "id": "01M7KQAQCD-RGE7",
+      "uid": "01M7KQAQCD-RGE7",
+      "name": "Agent Factory Cartridge Task \u2192 Amazon S3 Agent Factory Mind Bucket",
+      "aliases": [],
+      "type": "relationship",
+      "typeLabel": "Relationship",
+      "filterType": "relationship",
+      "category": "",
+      "deliveryModel": "",
+      "domain": "",
+      "description": "",
+      "version": "",
+      "catalogStatus": "incomplete",
+      "lifecycleStatus": "unknown",
+      "status": "",
+      "businessContext": {},
+      "product": "",
+      "runsOn": "",
+      "subtype": "",
+      "vendor": "",
+      "productName": "",
+      "productVersion": "",
+      "classification": "",
+      "platformDependency": "",
+      "capabilities": [],
+      "configurations": [],
+      "networkPlacement": "",
+      "patchingOwner": "",
+      "complianceCerts": [],
+      "requirementGroups": [],
+      "requirementImplementations": [],
+      "dataLeavesInfrastructure": null,
+      "dataResidencyCommitment": "",
+      "dpaNotes": "",
+      "vendorSLA": "",
+      "authenticationModel": "",
+      "incidentNotificationProcess": "",
+      "owner": {},
+      "definitionOwner": {},
+      "provider": {},
+      "authority": {},
+      "shape": "round-rectangle",
+      "color": "#7a6e60",
+      "source": "catalog/governance/relationships/relationship-shared-runtime-hydrates-from-s3-stores.yaml",
+      "tags": [
+        "agent-factory",
+        "mind-hydration"
+      ],
+      "ardCategory": "",
+      "internalComponents": [],
+      "notes": "Hydrate shim pulls and pushes $MEMORY_DIR over the S3 Gateway VPC Endpoint. Terraform-managed task roles restrict access to each agent's own prefix; runtime-created AgentTaskRole-* roles currently grant broader bucket access (recorded as non-compliant in decision record 01M7GYV3B6-FASW).",
+      "requirements": [],
+      "implementations": [],
+      "appliesTo": {},
+      "inherits": "",
+      "scalingUnits": [],
+      "networkZones": [],
+      "sdpConnections": [],
+      "serviceGroups": [],
+      "tierVariants": [],
+      "tierId": "",
+      "purpose": "",
+      "availabilityExpectation": "",
+      "costPosture": "",
+      "complianceScope": [],
+      "parameterSurface": [],
+      "followsReferenceArchitecture": "",
+      "decisionRecords": [],
+      "affectedComponent": "",
+      "impact": "",
+      "mitigationPath": "",
+      "decisionRationale": "",
+      "relatedDecisionRecords": [],
+      "linkedObject": "",
+      "primaryObjectType": "",
+      "primaryObjectUid": "",
+      "generatedObjects": [],
+      "unresolvedQuestions": [],
+      "assumptions": [],
+      "nextSteps": [],
+      "defaultSelection": false,
+      "requirementCount": 0,
+      "hasRiskRef": false,
+      "outboundRefs": [
+        {
+          "target": "01M7GWXKXW-4ZJF",
+          "path": "source"
+        },
+        {
+          "target": "01M7GWTG2T-GYW1",
+          "path": "target"
+        }
+      ],
+      "referencedBy": [],
+      "editorSchema": {
+        "requiredFields": [
+          "schemaVersion",
+          "uid",
+          "type",
+          "name",
+          "source",
+          "label",
+          "catalogStatus"
+        ],
+        "optionalFields": [
+          "description",
+          "target",
+          "externalTarget",
+          "technology",
+          "direction",
+          "flow",
+          "capabilities",
+          "notes",
+          "tags"
+        ],
+        "fieldTypes": {
+          "tags": "list",
+          "capabilities": "list"
+        },
+        "enumFields": {
+          "catalogStatus": [
+            "stub",
+            "incomplete",
+            "complete"
+          ],
+          "direction": [
+            "synchronous",
+            "asynchronous",
+            "event"
+          ],
+          "flow": [
+            "outbound",
+            "inbound",
+            "bidirectional"
+          ]
+        },
+        "enumListFields": {},
+        "collectionSchemas": {},
+        "schemaPath": "framework/schemas/relationship.schema.yaml"
+      },
+      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M7KQAQCD-RGE7\",\n  \"type\": \"relationship\",\n  \"name\": \"Agent Factory Cartridge Task \\u2192 Amazon S3 Agent Factory Mind Bucket\",\n  \"source\": \"01M7GWXKXW-4ZJF\",\n  \"target\": \"01M7GWTG2T-GYW1\",\n  \"label\": \"reads from\",\n  \"technology\": \"HTTPS via S3 Gateway VPC Endpoint (:443)\",\n  \"direction\": \"synchronous\",\n  \"flow\": \"bidirectional\",\n  \"catalogStatus\": \"incomplete\",\n  \"tags\": [\n    \"agent-factory\",\n    \"mind-hydration\"\n  ],\n  \"notes\": \"Hydrate shim pulls and pushes $MEMORY_DIR over the S3 Gateway VPC Endpoint. Terraform-managed task roles restrict access to each agent's own prefix; runtime-created AgentTaskRole-* roles currently grant broader bucket access (recorded as non-compliant in decision record 01M7GYV3B6-FASW).\",\n  \"_source\": \"catalog/governance/relationships/relationship-shared-runtime-hydrates-from-s3-stores.yaml\"\n}",
+      "existsInCatalog": true,
+      "outboundRelationships": [],
+      "inboundRelationships": []
+    },
+    "01M7KQAQCD-BE9V": {
+      "id": "01M7KQAQCD-BE9V",
+      "uid": "01M7KQAQCD-BE9V",
+      "name": "Agent Factory Cartridge Task \u2192 Agent Factory Gatekeeper Egress",
+      "aliases": [],
+      "type": "relationship",
+      "typeLabel": "Relationship",
+      "filterType": "relationship",
+      "category": "",
+      "deliveryModel": "",
+      "domain": "",
+      "description": "",
+      "version": "",
+      "catalogStatus": "incomplete",
+      "lifecycleStatus": "unknown",
+      "status": "",
+      "businessContext": {},
+      "product": "",
+      "runsOn": "",
+      "subtype": "",
+      "vendor": "",
+      "productName": "",
+      "productVersion": "",
+      "classification": "",
+      "platformDependency": "",
+      "capabilities": [],
+      "configurations": [],
+      "networkPlacement": "",
+      "patchingOwner": "",
+      "complianceCerts": [],
+      "requirementGroups": [],
+      "requirementImplementations": [],
+      "dataLeavesInfrastructure": null,
+      "dataResidencyCommitment": "",
+      "dpaNotes": "",
+      "vendorSLA": "",
+      "authenticationModel": "",
+      "incidentNotificationProcess": "",
+      "owner": {},
+      "definitionOwner": {},
+      "provider": {},
+      "authority": {},
+      "shape": "round-rectangle",
+      "color": "#7a6e60",
+      "source": "catalog/governance/relationships/relationship-shared-runtime-routes-egress-via-gatekeeper-egress.yaml",
+      "tags": [
+        "agent-factory",
+        "zero-trust"
+      ],
+      "ardCategory": "",
+      "internalComponents": [],
+      "notes": "Intended sole outbound egress path from agent tasks (E1, E6) for metered model inference, MCP tool calls, and allowlisted HTTPS CONNECT tunnels. Live Bedrock direct-invocation and agent-subnet route/SG drift are recorded in decision records 01M7GYV3B6-8VN0 and 01M7GYV3B6-H03D.",
+      "requirements": [],
+      "implementations": [],
+      "appliesTo": {},
+      "inherits": "",
+      "scalingUnits": [],
+      "networkZones": [],
+      "sdpConnections": [],
+      "serviceGroups": [],
+      "tierVariants": [],
+      "tierId": "",
+      "purpose": "",
+      "availabilityExpectation": "",
+      "costPosture": "",
+      "complianceScope": [],
+      "parameterSurface": [],
+      "followsReferenceArchitecture": "",
+      "decisionRecords": [],
+      "affectedComponent": "",
+      "impact": "",
+      "mitigationPath": "",
+      "decisionRationale": "",
+      "relatedDecisionRecords": [],
+      "linkedObject": "",
+      "primaryObjectType": "",
+      "primaryObjectUid": "",
+      "generatedObjects": [],
+      "unresolvedQuestions": [],
+      "assumptions": [],
+      "nextSteps": [],
+      "defaultSelection": false,
+      "requirementCount": 0,
+      "hasRiskRef": false,
+      "outboundRefs": [
+        {
+          "target": "01M7GWXKXW-4ZJF",
+          "path": "source"
+        },
+        {
+          "target": "01M7GWXKXW-BPBV",
+          "path": "target"
+        }
+      ],
+      "referencedBy": [],
+      "editorSchema": {
+        "requiredFields": [
+          "schemaVersion",
+          "uid",
+          "type",
+          "name",
+          "source",
+          "label",
+          "catalogStatus"
+        ],
+        "optionalFields": [
+          "description",
+          "target",
+          "externalTarget",
+          "technology",
+          "direction",
+          "flow",
+          "capabilities",
+          "notes",
+          "tags"
+        ],
+        "fieldTypes": {
+          "tags": "list",
+          "capabilities": "list"
+        },
+        "enumFields": {
+          "catalogStatus": [
+            "stub",
+            "incomplete",
+            "complete"
+          ],
+          "direction": [
+            "synchronous",
+            "asynchronous",
+            "event"
+          ],
+          "flow": [
+            "outbound",
+            "inbound",
+            "bidirectional"
+          ]
+        },
+        "enumListFields": {},
+        "collectionSchemas": {},
+        "schemaPath": "framework/schemas/relationship.schema.yaml"
+      },
+      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M7KQAQCD-BE9V\",\n  \"type\": \"relationship\",\n  \"name\": \"Agent Factory Cartridge Task \\u2192 Agent Factory Gatekeeper Egress\",\n  \"source\": \"01M7GWXKXW-4ZJF\",\n  \"target\": \"01M7GWXKXW-BPBV\",\n  \"label\": \"calls\",\n  \"technology\": \"HTTP Reverse Proxy & CONNECT (:8081)\",\n  \"direction\": \"synchronous\",\n  \"flow\": \"outbound\",\n  \"catalogStatus\": \"incomplete\",\n  \"tags\": [\n    \"agent-factory\",\n    \"zero-trust\"\n  ],\n  \"notes\": \"Intended sole outbound egress path from agent tasks (E1, E6) for metered model inference, MCP tool calls, and allowlisted HTTPS CONNECT tunnels. Live Bedrock direct-invocation and agent-subnet route/SG drift are recorded in decision records 01M7GYV3B6-8VN0 and 01M7GYV3B6-H03D.\",\n  \"_source\": \"catalog/governance/relationships/relationship-shared-runtime-routes-egress-via-gatekeeper-egress.yaml\"\n}",
+      "existsInCatalog": true,
+      "outboundRelationships": [],
+      "inboundRelationships": []
+    },
     "01M7GTBMQS-YYDW": {
       "id": "01M7GTBMQS-YYDW",
       "uid": "01M7GTBMQS-YYDW",
@@ -59088,7 +67086,12 @@ window.DRAFT_BROWSER_DATA = {
           "path": "capabilities[2]"
         }
       ],
-      "referencedBy": [],
+      "referencedBy": [
+        {
+          "source": "01M7KQAQCD-XTFV",
+          "path": "target"
+        }
+      ],
       "editorSchema": {
         "requiredFields": [
           "schemaVersion",
@@ -59199,7 +67202,20 @@ window.DRAFT_BROWSER_DATA = {
       "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M7GWTG2T-KR1Y\",\n  \"type\": \"data_store_service\",\n  \"name\": \"Amazon EFS - factory-prod-ledger\",\n  \"description\": \"Encrypted EFS file system mounted by the Agent Factory control plane for the live execution ledger.\",\n  \"catalogStatus\": \"incomplete\",\n  \"lifecycleStatus\": \"preferred\",\n  \"owner\": {\n    \"team\": \"platform-ai-team\",\n    \"contact\": \"platform-ai@example.com\"\n  },\n  \"tags\": [\n    \"aws\",\n    \"efs\",\n    \"ledger\",\n    \"agent-factory\"\n  ],\n  \"deliveryModel\": \"paas\",\n  \"vendor\": \"Amazon Web Services\",\n  \"productName\": \"Amazon Elastic File System\",\n  \"productVersion\": \"managed\",\n  \"patchingOwner\": \"aws-managed\",\n  \"authenticationModel\": \"iam\",\n  \"capabilities\": [\n    \"01KT0V5MCV-924J\",\n    \"01KT0V5MCV-VD0Y\",\n    \"01KQQ4Q026-H3B5\"\n  ],\n  \"provisioningModel\": \"reference-only\",\n  \"notes\": {\n    \"verification\": \"Verified read-only from AWS account ending 2296 (us-east-1) on 2026-11-15 (America/Phoenix).\",\n    \"fileSystem\": \"factory-prod-ledger: encrypted at rest; the control-plane task mounts it as volume data with transit encryption, IAM authorization and an access point.\",\n    \"provisioning\": \"Provisioned by Terraform in BeerCanLabs/agent-factory landing-zones/aws (S3 backend); module not yet packaged as a DRAFT deployablePackage.\",\n    \"incomplete\": \"Backup policy and throughput mode were not reviewed.\"\n  },\n  \"_source\": \"catalog/shared-services/data-store-services/data-store-service-aws-efs-factory-ledger.yaml\"\n}",
       "existsInCatalog": true,
       "outboundRelationships": [],
-      "inboundRelationships": []
+      "inboundRelationships": [
+        {
+          "uid": "01M7KQAQCD-XTFV",
+          "name": "Agent Factory Control Plane \u2192 Amazon EFS factory-prod-ledger",
+          "label": "writes to",
+          "technology": "NFSv4.1 over TLS (:2049)",
+          "direction": "synchronous",
+          "targetUid": "01M7GWTG2T-KR1Y",
+          "targetName": "Amazon EFS - factory-prod-ledger",
+          "capabilities": [],
+          "sourceUid": "01M7GWXKXW-EJWB",
+          "sourceName": "Agent Factory Control Plane"
+        }
+      ]
     },
     "01M7GWTG2T-GYW1": {
       "id": "01M7GWTG2T-GYW1",
@@ -59308,7 +67324,12 @@ window.DRAFT_BROWSER_DATA = {
           "path": "capabilities[1]"
         }
       ],
-      "referencedBy": [],
+      "referencedBy": [
+        {
+          "source": "01M7KQAQCD-RGE7",
+          "path": "target"
+        }
+      ],
       "editorSchema": {
         "requiredFields": [
           "schemaVersion",
@@ -59419,7 +67440,20 @@ window.DRAFT_BROWSER_DATA = {
       "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M7GWTG2T-GYW1\",\n  \"type\": \"data_store_service\",\n  \"name\": \"Amazon S3 - Agent Factory Mind Bucket\",\n  \"description\": \"S3 bucket that holds agent mind (memory) state for the Agent Factory.\",\n  \"catalogStatus\": \"incomplete\",\n  \"lifecycleStatus\": \"preferred\",\n  \"owner\": {\n    \"team\": \"platform-ai-team\",\n    \"contact\": \"platform-ai@example.com\"\n  },\n  \"tags\": [\n    \"aws\",\n    \"s3\",\n    \"mind\",\n    \"agent-factory\"\n  ],\n  \"deliveryModel\": \"paas\",\n  \"vendor\": \"Amazon Web Services\",\n  \"productName\": \"Amazon S3\",\n  \"productVersion\": \"managed\",\n  \"patchingOwner\": \"aws-managed\",\n  \"authenticationModel\": \"iam\",\n  \"capabilities\": [\n    \"01KT0V5MCV-E9TN\",\n    \"01KT0V5MCV-VD0Y\"\n  ],\n  \"provisioningModel\": \"reference-only\",\n  \"notes\": {\n    \"verification\": \"Verified read-only from AWS account ending 2296 (us-east-1) on 2026-11-15 (America/Phoenix).\",\n    \"bucket\": \"agent-factory-mind-prod-924cfefd: SSE-S3 (AES256), versioning Enabled, all four Block Public Access settings on, no Object Lock.\",\n    \"provisioning\": \"Provisioned by Terraform in BeerCanLabs/agent-factory landing-zones/aws (S3 backend); module not yet packaged as a DRAFT deployablePackage.\",\n    \"incomplete\": \"Lifecycle rules, replication and bucket policy were not reviewed.\"\n  },\n  \"_source\": \"catalog/shared-services/data-store-services/data-store-service-aws-s3-factory-mind.yaml\"\n}",
       "existsInCatalog": true,
       "outboundRelationships": [],
-      "inboundRelationships": []
+      "inboundRelationships": [
+        {
+          "uid": "01M7KQAQCD-RGE7",
+          "name": "Agent Factory Cartridge Task \u2192 Amazon S3 Agent Factory Mind Bucket",
+          "label": "reads from",
+          "technology": "HTTPS via S3 Gateway VPC Endpoint (:443)",
+          "direction": "synchronous",
+          "targetUid": "01M7GWTG2T-GYW1",
+          "targetName": "Amazon S3 - Agent Factory Mind Bucket",
+          "capabilities": [],
+          "sourceUid": "01M7GWXKXW-4ZJF",
+          "sourceName": "Agent Factory Cartridge Task (on-demand)"
+        }
+      ]
     },
     "01M7GWTG2T-F1WG": {
       "id": "01M7GWTG2T-F1WG",
@@ -59535,7 +67569,12 @@ window.DRAFT_BROWSER_DATA = {
           "path": "capabilities[2]"
         }
       ],
-      "referencedBy": [],
+      "referencedBy": [
+        {
+          "source": "01M7KQAQCD-ZD19",
+          "path": "target"
+        }
+      ],
       "editorSchema": {
         "requiredFields": [
           "schemaVersion",
@@ -59646,7 +67685,20 @@ window.DRAFT_BROWSER_DATA = {
       "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M7GWTG2T-F1WG\",\n  \"type\": \"data_store_service\",\n  \"name\": \"Amazon S3 - Agent Factory Config, Ledger and Package Buckets\",\n  \"description\": \"S3 buckets for Agent Factory configuration, the WORM ledger archive and skill packages.\",\n  \"catalogStatus\": \"incomplete\",\n  \"lifecycleStatus\": \"preferred\",\n  \"owner\": {\n    \"team\": \"platform-ai-team\",\n    \"contact\": \"platform-ai@example.com\"\n  },\n  \"tags\": [\n    \"aws\",\n    \"s3\",\n    \"ledger\",\n    \"agent-factory\"\n  ],\n  \"deliveryModel\": \"paas\",\n  \"vendor\": \"Amazon Web Services\",\n  \"productName\": \"Amazon S3\",\n  \"productVersion\": \"managed\",\n  \"patchingOwner\": \"aws-managed\",\n  \"authenticationModel\": \"iam\",\n  \"capabilities\": [\n    \"01KT0V5MCV-E9TN\",\n    \"01KT0V5MCV-VD0Y\",\n    \"01KQQ4Q026-7T2H\"\n  ],\n  \"provisioningModel\": \"reference-only\",\n  \"notes\": {\n    \"verification\": \"Verified read-only from AWS account ending 2296 (us-east-1) on 2026-11-15 (America/Phoenix).\",\n    \"buckets\": \"agent-factory-config-prod-924cfefd, agent-factory-ledger-prod-924cfefd and agent-factory-packages-prod-924cfefd. All SSE-S3 (AES256) with versioning Enabled.\",\n    \"ledgerWorm\": \"The ledger bucket has S3 Object Lock in COMPLIANCE mode with 365-day default retention and all Block Public Access settings on.\",\n    \"terraformState\": \"Terraform state lives in a separate bucket agent-factory-tfstate-<account-id> (SSE-S3, versioned); it is infrastructure state, not product data.\",\n    \"provisioning\": \"Provisioned by Terraform in BeerCanLabs/agent-factory landing-zones/aws (S3 backend); module not yet packaged as a DRAFT deployablePackage.\",\n    \"incomplete\": \"Block Public Access was checked only on the ledger bucket; lifecycle and bucket policies were not reviewed.\"\n  },\n  \"_source\": \"catalog/shared-services/data-store-services/data-store-service-aws-s3-factory-support.yaml\"\n}",
       "existsInCatalog": true,
       "outboundRelationships": [],
-      "inboundRelationships": []
+      "inboundRelationships": [
+        {
+          "uid": "01M7KQAQCD-ZD19",
+          "name": "Agent Factory Control Plane \u2192 S3 Config, Ledger & Package Buckets",
+          "label": "writes to",
+          "technology": "HTTPS (:443)",
+          "direction": "synchronous",
+          "targetUid": "01M7GWTG2T-F1WG",
+          "targetName": "Amazon S3 - Agent Factory Config, Ledger and Package Buckets",
+          "capabilities": [],
+          "sourceUid": "01M7GWXKXW-EJWB",
+          "sourceName": "Agent Factory Control Plane"
+        }
+      ]
     },
     "01M7GWTG2S-X9V8": {
       "id": "01M7GWTG2S-X9V8",
@@ -60872,7 +68924,16 @@ window.DRAFT_BROWSER_DATA = {
           "path": "capabilities[1]"
         }
       ],
-      "referencedBy": [],
+      "referencedBy": [
+        {
+          "source": "01M7KQAQCD-3CBS",
+          "path": "source"
+        },
+        {
+          "source": "01M7KQAQCD-9JK7",
+          "path": "source"
+        }
+      ],
       "editorSchema": {
         "requiredFields": [
           "schemaVersion",
@@ -60980,7 +69041,28 @@ window.DRAFT_BROWSER_DATA = {
       },
       "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M7GWTG2T-M2Q0\",\n  \"type\": \"network_service\",\n  \"name\": \"AWS Application Load Balancer - factory-prod\",\n  \"description\": \"Internet-facing ALB that is the AWS origin behind the Cloudflare edge for Agent Factory and Closing Climb hostnames.\",\n  \"catalogStatus\": \"incomplete\",\n  \"lifecycleStatus\": \"preferred\",\n  \"owner\": {\n    \"team\": \"platform-ai-team\",\n    \"contact\": \"platform-ai@example.com\"\n  },\n  \"tags\": [\n    \"aws\",\n    \"alb\",\n    \"load-balancer\",\n    \"ingress\",\n    \"agent-factory\",\n    \"closing-climb\"\n  ],\n  \"deliveryModel\": \"paas\",\n  \"vendor\": \"Amazon Web Services\",\n  \"productName\": \"Elastic Load Balancing Application Load Balancer\",\n  \"productVersion\": \"managed\",\n  \"patchingOwner\": \"aws-managed\",\n  \"authenticationModel\": \"iam\",\n  \"networkFunction\": \"Layer 7 host-based routing and TLS termination for the factory-prod ECS services.\",\n  \"protocols\": [\n    \"HTTPS\",\n    \"HTTP\"\n  ],\n  \"capabilities\": [\n    \"01KSWVZSZ5-M0FR\",\n    \"01KT0XNZEY-RVTG\"\n  ],\n  \"provisioningModel\": \"reference-only\",\n  \"notes\": {\n    \"verification\": \"Verified read-only from AWS account ending 2296 (us-east-1) on 2026-11-15 (America/Phoenix).\",\n    \"listeners\": \"HTTP 80 and HTTPS 443.\",\n    \"routing\": \"Host rules: factory-dashboard.dalesackrider.com -> console; garrison.dalesackrider.com -> garrison; cc.dalesackrider.com -> closing-climb-prod; default -> control-plane (factory-prod-cp).\",\n    \"certificates\": \"ACM certificates for *.dalesackrider.com, submind-aws.dalesackrider.com and agent-factory.beercanlabs.com.\",\n    \"edge\": \"Every listed hostname answered through Cloudflare (server: cloudflare) on 2026-11-15. Cloudflare DNS origin records were not read.\",\n    \"provisioning\": \"Provisioned by Terraform in BeerCanLabs/agent-factory landing-zones/aws (S3 backend); module not yet packaged as a DRAFT deployablePackage.\",\n    \"incomplete\": \"Security group rules, WAF association and HTTP-to-HTTPS redirect behavior were not reviewed.\"\n  },\n  \"_source\": \"catalog/shared-services/network-services/network-service-aws-alb-factory-prod.yaml\"\n}",
       "existsInCatalog": true,
-      "outboundRelationships": [],
+      "outboundRelationships": [
+        {
+          "uid": "01M7KQAQCD-3CBS",
+          "name": "AWS ALB factory-prod \u2192 Agent Factory Console",
+          "label": "routes to",
+          "technology": "HTTPS / HTTP (:3000)",
+          "direction": "synchronous",
+          "targetUid": "01M7GWXKXW-VPCD",
+          "targetName": "Agent Factory Console",
+          "capabilities": []
+        },
+        {
+          "uid": "01M7KQAQCD-9JK7",
+          "name": "AWS ALB factory-prod \u2192 Agent Factory Control Plane",
+          "label": "routes to",
+          "technology": "HTTPS / HTTP (:8088, health :8089)",
+          "direction": "synchronous",
+          "targetUid": "01M7GWXKXW-EJWB",
+          "targetName": "Agent Factory Control Plane",
+          "capabilities": []
+        }
+      ],
       "inboundRelationships": []
     },
     "01M7GWTG2T-8A54": {
@@ -61307,7 +69389,16 @@ window.DRAFT_BROWSER_DATA = {
           "path": "requirementImplementations[0].requirementGroup"
         }
       ],
-      "referencedBy": [],
+      "referencedBy": [
+        {
+          "source": "01M7KQAQCD-01CD",
+          "path": "runtimeSpec.dependencies[0].ref"
+        },
+        {
+          "source": "0C2JQD5S29-RJNY",
+          "path": "target"
+        }
+      ],
       "editorSchema": {
         "requiredFields": [
           "schemaVersion",
@@ -61416,7 +69507,20 @@ window.DRAFT_BROWSER_DATA = {
       "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M7GTBMQS-YRGF\",\n  \"type\": \"network_service\",\n  \"name\": \"Cloudflare Global Anycast Edge Proxy Service\",\n  \"description\": \"Registration object for Geordi's Cloudflare Global Anycast Edge Proxy network service providing ingress routing, Orange Cloud DNS proxying, SSL Full TLS termination, 301 URL redirects, and ALPN negotiation compatibility under Netskope SSL inspection.\",\n  \"deliveryModel\": \"saas\",\n  \"catalogStatus\": \"incomplete\",\n  \"lifecycleStatus\": \"preferred\",\n  \"vendor\": \"Cloudflare\",\n  \"productName\": \"Cloudflare Managed DNS & Edge Proxy\",\n  \"productVersion\": \"Free Tier Anycast Edge Network\",\n  \"networkFunction\": \"Ingress traffic control, HTTPS termination, HTTP/1.1 and HTTP/2 ALPN negotiation, Orange Cloud DNS proxying, and 301 URL redirects.\",\n  \"provisioningModel\": \"deployable\",\n  \"deployablePackage\": {\n    \"registry\": \"github\",\n    \"source\": \"BeerCanLabs/skippy-matrix\",\n    \"version\": \"main\",\n    \"modulePath\": \"terraform/modules/cloudflare-edge-proxy\"\n  },\n  \"protocols\": [\n    \"HTTPS\",\n    \"HTTP/2\",\n    \"HTTP/1.1\"\n  ],\n  \"owner\": {\n    \"team\": \"engineering-platform\",\n    \"contact\": \"platform-ai@example.com\",\n    \"resourceOwner\": \"Geordi\",\n    \"serviceProviderRole\": \"Network Domain Service Provider\"\n  },\n  \"vendorGovernance\": {\n    \"dataLeavesInfrastructure\": false,\n    \"dataResidencyCommitment\": \"Global Anycast Edge with regional origin processing\",\n    \"vendorSLA\": \"100% SLA commitment\",\n    \"acceptableUsePolicy\": \"Mandatory for all public web endpoints across Submind and client workloads. Bare GHS CNAME mappings are strictly non-compliant. All traffic must route through Cloudflare Anycast Edge with Full SSL encryption enabled.\"\n  },\n  \"decisionRecords\": [\n    {\n      \"ref\": \"01M7GTBMQS-SZBH\",\n      \"key\": \"edgeProxyDecision\"\n    }\n  ],\n  \"requirementImplementations\": [\n    {\n      \"requirementGroup\": \"01M7GTBMQT-H66V\",\n      \"requirementId\": \"req-edge-proxy-mandatory\",\n      \"status\": \"satisfied\",\n      \"mechanism\": \"decisionRecord\",\n      \"key\": \"edgeProxyDecision\",\n      \"notes\": \"Satisfied by the Edge Proxy Architecture & Acceptable Use Decision; this object is Geordi's Cloudflare Global Anycast Edge Proxy service module deployed via BeerCanLabs/skippy-matrix.\"\n    }\n  ],\n  \"_source\": \"catalog/shared-services/network-services/network-service-cloudflare-edge-proxy.yaml\"\n}",
       "existsInCatalog": true,
       "outboundRelationships": [],
-      "inboundRelationships": []
+      "inboundRelationships": [
+        {
+          "uid": "0C2JQD5S29-RJNY",
+          "name": "Agent Factory CLI & Benchmark Harness \u2192 Cloudflare Global Anycast Edge Proxy Service",
+          "label": "/api/v1/* and /mcp",
+          "technology": "",
+          "direction": "",
+          "targetUid": "01M7GTBMQS-YRGF",
+          "targetName": "Cloudflare Global Anycast Edge Proxy Service",
+          "capabilities": [],
+          "sourceUid": "01M7KQAQCD-01CD",
+          "sourceName": "Agent Factory CLI & Benchmark Harness"
+        }
+      ]
     },
     "01M7GWTG2T-TQEB": {
       "id": "01M7GWTG2T-TQEB",
@@ -62283,6 +70387,249 @@ window.DRAFT_BROWSER_DATA = {
       "outboundRelationships": [],
       "inboundRelationships": []
     },
+    "01M7KQAQCD-WD0R": {
+      "id": "01M7KQAQCD-WD0R",
+      "uid": "01M7KQAQCD-WD0R",
+      "name": "AWS CodeBuild - Agent Factory Admission & Skill Builders",
+      "aliases": [],
+      "type": "runtime_service",
+      "typeLabel": "RuntimeService / Paas",
+      "filterType": "runtime_service",
+      "category": "",
+      "deliveryModel": "paas",
+      "domain": "",
+      "description": "Managed CodeBuild projects (factory-agent-builder, factory-skills-builder, and factory-skill-checker) that verify, compose, and push Agent Factory cartridge and skill images to Amazon ECR.",
+      "version": "",
+      "catalogStatus": "incomplete",
+      "lifecycleStatus": "preferred",
+      "status": "",
+      "businessContext": {},
+      "product": "",
+      "runsOn": "",
+      "subtype": "",
+      "vendor": "Amazon Web Services",
+      "productName": "AWS CodeBuild",
+      "productVersion": "managed",
+      "classification": "",
+      "platformDependency": "",
+      "capabilities": [
+        "01KT0XNZEY-Q2TF"
+      ],
+      "configurations": [],
+      "networkPlacement": "",
+      "patchingOwner": "aws-managed",
+      "complianceCerts": [],
+      "requirementGroups": [],
+      "requirementImplementations": [],
+      "dataLeavesInfrastructure": null,
+      "dataResidencyCommitment": "",
+      "dpaNotes": "",
+      "vendorSLA": "",
+      "authenticationModel": "iam",
+      "incidentNotificationProcess": "",
+      "owner": {
+        "team": "platform-ai-team",
+        "contact": "platform-ai@example.com"
+      },
+      "definitionOwner": {},
+      "provider": {},
+      "authority": {},
+      "shape": "diamond",
+      "color": "#1f8a5b",
+      "source": "catalog/shared-services/runtime-services/runtime-service-aws-codebuild-factory.yaml",
+      "tags": [
+        "aws",
+        "codebuild",
+        "admission",
+        "agent-factory"
+      ],
+      "ardCategory": "",
+      "internalComponents": [
+        {
+          "ref": "01M7KQAQCD-ZS7E",
+          "role": "function",
+          "configuration": "",
+          "notes": ""
+        }
+      ],
+      "notes": {
+        "verification": "Projects factory-agent-builder, factory-skills-builder and factory-skill-checker verified in AWS account ending 2296 (us-east-1) on 2026-11-15 (see 01M7GWTG2T-0NKZ) and defined in BeerCanLabs/agent-factory landing-zones/aws/codebuild.tf.",
+        "provisioning": "Provisioned by Terraform in BeerCanLabs/agent-factory landing-zones/aws (S3 backend); module not yet packaged as a DRAFT deployablePackage.",
+        "incomplete": "Per-project IAM policies, VPC attachment, and build timeout/concurrency limits were not reviewed."
+      },
+      "requirements": [],
+      "implementations": [],
+      "appliesTo": {},
+      "inherits": "",
+      "scalingUnits": [],
+      "networkZones": [],
+      "sdpConnections": [],
+      "serviceGroups": [],
+      "tierVariants": [],
+      "tierId": "",
+      "purpose": "",
+      "availabilityExpectation": "",
+      "costPosture": "",
+      "complianceScope": [],
+      "parameterSurface": [],
+      "followsReferenceArchitecture": "",
+      "decisionRecords": [],
+      "affectedComponent": "",
+      "impact": "",
+      "mitigationPath": "",
+      "decisionRationale": "",
+      "relatedDecisionRecords": [],
+      "linkedObject": "",
+      "primaryObjectType": "",
+      "primaryObjectUid": "",
+      "generatedObjects": [],
+      "unresolvedQuestions": [],
+      "assumptions": [],
+      "nextSteps": [],
+      "defaultSelection": false,
+      "requirementCount": 0,
+      "hasRiskRef": false,
+      "outboundRefs": [
+        {
+          "target": "01KT0XNZEY-Q2TF",
+          "path": "capabilities[0]"
+        },
+        {
+          "target": "01M7KQAQCD-ZS7E",
+          "path": "primaryTechnologyComponent"
+        }
+      ],
+      "referencedBy": [
+        {
+          "source": "01M7KQAQCD-4GN2",
+          "path": "target"
+        }
+      ],
+      "editorSchema": {
+        "requiredFields": [
+          "schemaVersion",
+          "uid",
+          "type",
+          "name",
+          "deliveryModel",
+          "catalogStatus",
+          "lifecycleStatus"
+        ],
+        "optionalFields": [
+          "aliases",
+          "description",
+          "version",
+          "owner",
+          "tags",
+          "serviceRole",
+          "host",
+          "primaryTechnologyComponent",
+          "internalComponents",
+          "deploymentConfigurations",
+          "vendor",
+          "productName",
+          "productVersion",
+          "capabilities",
+          "configurations",
+          "networkPlacement",
+          "patchingOwner",
+          "authenticationModel",
+          "vendorGovernance",
+          "provisioningModel",
+          "deployablePackage",
+          "notes",
+          "decisionRecords",
+          "requirementImplementations"
+        ],
+        "fieldTypes": {
+          "aliases": "list",
+          "owner": "dict",
+          "tags": "list",
+          "internalComponents": "list",
+          "deploymentConfigurations": "list",
+          "capabilities": "list",
+          "configurations": "list",
+          "notes": "dict",
+          "vendorGovernance": "dict",
+          "requirementGroups": "list",
+          "decisionRecords": "list",
+          "requirementImplementations": "list"
+        },
+        "enumFields": {
+          "serviceRole": [
+            "definition",
+            "instance"
+          ],
+          "provisioningModel": [
+            "deployable",
+            "reference-only"
+          ],
+          "catalogStatus": [
+            "stub",
+            "incomplete",
+            "complete"
+          ],
+          "lifecycleStatus": [
+            "candidate",
+            "preferred",
+            "existing-only",
+            "deprecated",
+            "retired"
+          ],
+          "deliveryModel": [
+            "self-managed",
+            "paas",
+            "saas",
+            "appliance"
+          ],
+          "networkPlacement": [
+            "public-facing",
+            "internal",
+            "vpc-private"
+          ],
+          "patchingOwner": [
+            "provider-managed",
+            "organization-scheduled",
+            "vendor-managed",
+            "aws-managed"
+          ],
+          "authenticationModel": [
+            "iam",
+            "api-key",
+            "oauth",
+            "saml",
+            "other",
+            "TBD"
+          ]
+        },
+        "enumListFields": {},
+        "collectionSchemas": {
+          "internalComponents": "internalComponent",
+          "deploymentConfigurations": "deploymentConfiguration",
+          "configurations": "configuration",
+          "decisionRecords": "decisionRecordRef",
+          "requirementImplementations": "requirementImplementation"
+        },
+        "schemaPath": "framework/schemas/runtime-service.schema.yaml"
+      },
+      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M7KQAQCD-WD0R\",\n  \"type\": \"runtime_service\",\n  \"name\": \"AWS CodeBuild - Agent Factory Admission & Skill Builders\",\n  \"description\": \"Managed CodeBuild projects (factory-agent-builder, factory-skills-builder, and factory-skill-checker) that verify, compose, and push Agent Factory cartridge and skill images to Amazon ECR.\",\n  \"catalogStatus\": \"incomplete\",\n  \"lifecycleStatus\": \"preferred\",\n  \"owner\": {\n    \"team\": \"platform-ai-team\",\n    \"contact\": \"platform-ai@example.com\"\n  },\n  \"tags\": [\n    \"aws\",\n    \"codebuild\",\n    \"admission\",\n    \"agent-factory\"\n  ],\n  \"deliveryModel\": \"paas\",\n  \"vendor\": \"Amazon Web Services\",\n  \"productName\": \"AWS CodeBuild\",\n  \"productVersion\": \"managed\",\n  \"patchingOwner\": \"aws-managed\",\n  \"authenticationModel\": \"iam\",\n  \"capabilities\": [\n    \"01KT0XNZEY-Q2TF\"\n  ],\n  \"primaryTechnologyComponent\": \"01M7KQAQCD-ZS7E\",\n  \"provisioningModel\": \"reference-only\",\n  \"notes\": {\n    \"verification\": \"Projects factory-agent-builder, factory-skills-builder and factory-skill-checker verified in AWS account ending 2296 (us-east-1) on 2026-11-15 (see 01M7GWTG2T-0NKZ) and defined in BeerCanLabs/agent-factory landing-zones/aws/codebuild.tf.\",\n    \"provisioning\": \"Provisioned by Terraform in BeerCanLabs/agent-factory landing-zones/aws (S3 backend); module not yet packaged as a DRAFT deployablePackage.\",\n    \"incomplete\": \"Per-project IAM policies, VPC attachment, and build timeout/concurrency limits were not reviewed.\"\n  },\n  \"_source\": \"catalog/shared-services/runtime-services/runtime-service-aws-codebuild-factory.yaml\"\n}",
+      "existsInCatalog": true,
+      "outboundRelationships": [],
+      "inboundRelationships": [
+        {
+          "uid": "01M7KQAQCD-4GN2",
+          "name": "Agent Factory Control Plane \u2192 CodeBuild Admission & Skill Builders",
+          "label": "calls",
+          "technology": "HTTPS (:443)",
+          "direction": "asynchronous",
+          "targetUid": "01M7KQAQCD-WD0R",
+          "targetName": "AWS CodeBuild - Agent Factory Admission & Skill Builders",
+          "capabilities": [],
+          "sourceUid": "01M7GWXKXW-EJWB",
+          "sourceName": "Agent Factory Control Plane"
+        }
+      ]
+    },
     "01M7GWTG2S-AC3R": {
       "id": "01M7GWTG2S-AC3R",
       "uid": "01M7GWTG2S-AC3R",
@@ -62669,6 +71016,249 @@ window.DRAFT_BROWSER_DATA = {
           "capabilities": [],
           "sourceUid": "01M7GWXKXW-Z0Z4",
           "sourceName": "Agent Garrison"
+        }
+      ]
+    },
+    "01M7KQAQCD-GHF4": {
+      "id": "01M7KQAQCD-GHF4",
+      "uid": "01M7KQAQCD-GHF4",
+      "name": "Amazon EventBridge - Agent Factory Event Bus",
+      "aliases": [],
+      "type": "runtime_service",
+      "typeLabel": "RuntimeService / Paas",
+      "filterType": "runtime_service",
+      "category": "",
+      "deliveryModel": "paas",
+      "domain": "",
+      "description": "Custom Amazon EventBridge event bus provisioned for Agent Factory operational, run lifecycle, budget, crash, and held-action events emitted by the Inspector service.",
+      "version": "",
+      "catalogStatus": "incomplete",
+      "lifecycleStatus": "preferred",
+      "status": "",
+      "businessContext": {},
+      "product": "",
+      "runsOn": "",
+      "subtype": "",
+      "vendor": "Amazon Web Services",
+      "productName": "Amazon EventBridge",
+      "productVersion": "managed",
+      "classification": "",
+      "platformDependency": "",
+      "capabilities": [
+        "01KT0V5MCV-KT72"
+      ],
+      "configurations": [],
+      "networkPlacement": "",
+      "patchingOwner": "aws-managed",
+      "complianceCerts": [],
+      "requirementGroups": [],
+      "requirementImplementations": [],
+      "dataLeavesInfrastructure": null,
+      "dataResidencyCommitment": "",
+      "dpaNotes": "",
+      "vendorSLA": "",
+      "authenticationModel": "iam",
+      "incidentNotificationProcess": "",
+      "owner": {
+        "team": "platform-ai-team",
+        "contact": "platform-ai@example.com"
+      },
+      "definitionOwner": {},
+      "provider": {},
+      "authority": {},
+      "shape": "diamond",
+      "color": "#1f8a5b",
+      "source": "catalog/shared-services/runtime-services/runtime-service-aws-eventbridge-factory-bus.yaml",
+      "tags": [
+        "aws",
+        "eventbridge",
+        "messaging",
+        "agent-factory"
+      ],
+      "ardCategory": "",
+      "internalComponents": [
+        {
+          "ref": "01M7KQAQCD-ZVVA",
+          "role": "function",
+          "configuration": "",
+          "notes": ""
+        }
+      ],
+      "notes": {
+        "source": "Defined as aws_cloudwatch_event_bus.factory in BeerCanLabs/agent-factory landing-zones/aws/storage.tf.",
+        "provisioning": "Provisioned by Terraform in BeerCanLabs/agent-factory landing-zones/aws (S3 backend); module not yet packaged as a DRAFT deployablePackage.",
+        "incomplete": "Live event rules, targets, and archive/replay configuration on the factory event bus were not reviewed."
+      },
+      "requirements": [],
+      "implementations": [],
+      "appliesTo": {},
+      "inherits": "",
+      "scalingUnits": [],
+      "networkZones": [],
+      "sdpConnections": [],
+      "serviceGroups": [],
+      "tierVariants": [],
+      "tierId": "",
+      "purpose": "",
+      "availabilityExpectation": "",
+      "costPosture": "",
+      "complianceScope": [],
+      "parameterSurface": [],
+      "followsReferenceArchitecture": "",
+      "decisionRecords": [],
+      "affectedComponent": "",
+      "impact": "",
+      "mitigationPath": "",
+      "decisionRationale": "",
+      "relatedDecisionRecords": [],
+      "linkedObject": "",
+      "primaryObjectType": "",
+      "primaryObjectUid": "",
+      "generatedObjects": [],
+      "unresolvedQuestions": [],
+      "assumptions": [],
+      "nextSteps": [],
+      "defaultSelection": false,
+      "requirementCount": 0,
+      "hasRiskRef": false,
+      "outboundRefs": [
+        {
+          "target": "01KT0V5MCV-KT72",
+          "path": "capabilities[0]"
+        },
+        {
+          "target": "01M7KQAQCD-ZVVA",
+          "path": "primaryTechnologyComponent"
+        }
+      ],
+      "referencedBy": [
+        {
+          "source": "01M7KQAQCD-Z7TV",
+          "path": "target"
+        }
+      ],
+      "editorSchema": {
+        "requiredFields": [
+          "schemaVersion",
+          "uid",
+          "type",
+          "name",
+          "deliveryModel",
+          "catalogStatus",
+          "lifecycleStatus"
+        ],
+        "optionalFields": [
+          "aliases",
+          "description",
+          "version",
+          "owner",
+          "tags",
+          "serviceRole",
+          "host",
+          "primaryTechnologyComponent",
+          "internalComponents",
+          "deploymentConfigurations",
+          "vendor",
+          "productName",
+          "productVersion",
+          "capabilities",
+          "configurations",
+          "networkPlacement",
+          "patchingOwner",
+          "authenticationModel",
+          "vendorGovernance",
+          "provisioningModel",
+          "deployablePackage",
+          "notes",
+          "decisionRecords",
+          "requirementImplementations"
+        ],
+        "fieldTypes": {
+          "aliases": "list",
+          "owner": "dict",
+          "tags": "list",
+          "internalComponents": "list",
+          "deploymentConfigurations": "list",
+          "capabilities": "list",
+          "configurations": "list",
+          "notes": "dict",
+          "vendorGovernance": "dict",
+          "requirementGroups": "list",
+          "decisionRecords": "list",
+          "requirementImplementations": "list"
+        },
+        "enumFields": {
+          "serviceRole": [
+            "definition",
+            "instance"
+          ],
+          "provisioningModel": [
+            "deployable",
+            "reference-only"
+          ],
+          "catalogStatus": [
+            "stub",
+            "incomplete",
+            "complete"
+          ],
+          "lifecycleStatus": [
+            "candidate",
+            "preferred",
+            "existing-only",
+            "deprecated",
+            "retired"
+          ],
+          "deliveryModel": [
+            "self-managed",
+            "paas",
+            "saas",
+            "appliance"
+          ],
+          "networkPlacement": [
+            "public-facing",
+            "internal",
+            "vpc-private"
+          ],
+          "patchingOwner": [
+            "provider-managed",
+            "organization-scheduled",
+            "vendor-managed",
+            "aws-managed"
+          ],
+          "authenticationModel": [
+            "iam",
+            "api-key",
+            "oauth",
+            "saml",
+            "other",
+            "TBD"
+          ]
+        },
+        "enumListFields": {},
+        "collectionSchemas": {
+          "internalComponents": "internalComponent",
+          "deploymentConfigurations": "deploymentConfiguration",
+          "configurations": "configuration",
+          "decisionRecords": "decisionRecordRef",
+          "requirementImplementations": "requirementImplementation"
+        },
+        "schemaPath": "framework/schemas/runtime-service.schema.yaml"
+      },
+      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M7KQAQCD-GHF4\",\n  \"type\": \"runtime_service\",\n  \"name\": \"Amazon EventBridge - Agent Factory Event Bus\",\n  \"description\": \"Custom Amazon EventBridge event bus provisioned for Agent Factory operational, run lifecycle, budget, crash, and held-action events emitted by the Inspector service.\",\n  \"catalogStatus\": \"incomplete\",\n  \"lifecycleStatus\": \"preferred\",\n  \"owner\": {\n    \"team\": \"platform-ai-team\",\n    \"contact\": \"platform-ai@example.com\"\n  },\n  \"tags\": [\n    \"aws\",\n    \"eventbridge\",\n    \"messaging\",\n    \"agent-factory\"\n  ],\n  \"deliveryModel\": \"paas\",\n  \"vendor\": \"Amazon Web Services\",\n  \"productName\": \"Amazon EventBridge\",\n  \"productVersion\": \"managed\",\n  \"patchingOwner\": \"aws-managed\",\n  \"authenticationModel\": \"iam\",\n  \"capabilities\": [\n    \"01KT0V5MCV-KT72\"\n  ],\n  \"primaryTechnologyComponent\": \"01M7KQAQCD-ZVVA\",\n  \"provisioningModel\": \"reference-only\",\n  \"notes\": {\n    \"source\": \"Defined as aws_cloudwatch_event_bus.factory in BeerCanLabs/agent-factory landing-zones/aws/storage.tf.\",\n    \"provisioning\": \"Provisioned by Terraform in BeerCanLabs/agent-factory landing-zones/aws (S3 backend); module not yet packaged as a DRAFT deployablePackage.\",\n    \"incomplete\": \"Live event rules, targets, and archive/replay configuration on the factory event bus were not reviewed.\"\n  },\n  \"_source\": \"catalog/shared-services/runtime-services/runtime-service-aws-eventbridge-factory-bus.yaml\"\n}",
+      "existsInCatalog": true,
+      "outboundRelationships": [],
+      "inboundRelationships": [
+        {
+          "uid": "01M7KQAQCD-Z7TV",
+          "name": "Agent Factory Control Plane \u2192 Agent Factory EventBridge Event Bus",
+          "label": "sends events to",
+          "technology": "HTTPS (:443)",
+          "direction": "event",
+          "targetUid": "01M7KQAQCD-GHF4",
+          "targetName": "Amazon EventBridge - Agent Factory Event Bus",
+          "capabilities": [],
+          "sourceUid": "01M7GWXKXW-EJWB",
+          "sourceName": "Agent Factory Control Plane"
         }
       ]
     },
@@ -63527,6 +72117,344 @@ window.DRAFT_BROWSER_DATA = {
         "schemaPath": "framework/schemas/runtime-service.schema.yaml"
       },
       "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M7GWTG2T-VA2G\",\n  \"type\": \"runtime_service\",\n  \"name\": \"Cloudflare Access - BeerCanLabs Front Door\",\n  \"description\": \"Cloudflare Zero Trust Access in front of Agent Factory and BeerCanLabs web hostnames.\",\n  \"catalogStatus\": \"incomplete\",\n  \"lifecycleStatus\": \"preferred\",\n  \"owner\": {\n    \"team\": \"platform-ai-team\",\n    \"contact\": \"platform-ai@example.com\"\n  },\n  \"tags\": [\n    \"cloudflare\",\n    \"zero-trust\",\n    \"access\",\n    \"front-door\",\n    \"agent-factory\"\n  ],\n  \"deliveryModel\": \"saas\",\n  \"vendor\": \"Cloudflare\",\n  \"productName\": \"Cloudflare Zero Trust Access\",\n  \"productVersion\": \"managed\",\n  \"patchingOwner\": \"vendor-managed\",\n  \"authenticationModel\": \"oauth\",\n  \"capabilities\": [\n    \"01KQQ4Q026-MHJM\",\n    \"01KQQ4Q026-4JR6\"\n  ],\n  \"provisioningModel\": \"reference-only\",\n  \"notes\": {\n    \"verification\": \"HTTPS probes on 2026-11-15: agent-factory.beercanlabs.com, garrison.dalesackrider.com and knowledge.beercanlabs.ai return 302 to the beercanlabs Cloudflare Access team login; submind-aws.dalesackrider.com returns 401 from Cloudflare.\",\n    \"definition\": \"Access applications (factory front door, signature-verified webhooks bypass, API-key bypass) are defined in BeerCanLabs/agent-factory landing-zones/aws/cloudflare.tf. closing-climb-web validates Cloudflare Access OIDC tokens.\",\n    \"incomplete\": \"Access policies, identity providers and service tokens were not read (no Cloudflare API access used).\"\n  },\n  \"_source\": \"catalog/shared-services/runtime-services/runtime-service-cloudflare-access.yaml\"\n}",
+      "existsInCatalog": true,
+      "outboundRelationships": [],
+      "inboundRelationships": []
+    },
+    "01M7KQAQCD-ZS7E": {
+      "id": "01M7KQAQCD-ZS7E",
+      "uid": "01M7KQAQCD-ZS7E",
+      "name": "AWS CodeBuild",
+      "aliases": [],
+      "type": "technology_component",
+      "typeLabel": "TechnologyComponent / Software",
+      "filterType": "technology_component",
+      "category": "",
+      "deliveryModel": "",
+      "domain": "",
+      "description": "Managed ephemeral container build and verification service used by Agent Factory cartridge admission and skill layering workflows.",
+      "version": "",
+      "catalogStatus": "incomplete",
+      "lifecycleStatus": "",
+      "status": "",
+      "businessContext": {},
+      "product": "",
+      "runsOn": "",
+      "subtype": "",
+      "vendor": "Amazon Web Services",
+      "productName": "AWS CodeBuild",
+      "productVersion": "managed",
+      "classification": "software",
+      "platformDependency": "",
+      "capabilities": [
+        "01KT0XNZEY-Q2TF"
+      ],
+      "configurations": [],
+      "networkPlacement": "",
+      "patchingOwner": "",
+      "complianceCerts": [],
+      "requirementGroups": [],
+      "requirementImplementations": [],
+      "dataLeavesInfrastructure": null,
+      "dataResidencyCommitment": "",
+      "dpaNotes": "",
+      "vendorSLA": "",
+      "authenticationModel": "",
+      "incidentNotificationProcess": "",
+      "owner": {
+        "team": "platform-ai-team",
+        "contact": "platform-ai@example.com"
+      },
+      "definitionOwner": {},
+      "provider": {},
+      "authority": {},
+      "shape": "ellipse",
+      "color": "#64748b",
+      "source": "catalog/shared-services/technology-components/tc-aws-codebuild.yaml",
+      "tags": [
+        "aws",
+        "codebuild",
+        "cicd",
+        "agent-factory"
+      ],
+      "ardCategory": "",
+      "internalComponents": [],
+      "notes": {
+        "source": "Provisioned in BeerCanLabs/agent-factory landing-zones/aws/codebuild.tf.",
+        "incomplete": "Exact build image versions and IAM role boundaries per project are not pinned in the catalog."
+      },
+      "requirements": [],
+      "implementations": [],
+      "appliesTo": {},
+      "inherits": "",
+      "scalingUnits": [],
+      "networkZones": [],
+      "sdpConnections": [],
+      "serviceGroups": [],
+      "tierVariants": [],
+      "tierId": "",
+      "purpose": "",
+      "availabilityExpectation": "",
+      "costPosture": "",
+      "complianceScope": [],
+      "parameterSurface": [],
+      "followsReferenceArchitecture": "",
+      "decisionRecords": [],
+      "affectedComponent": "",
+      "impact": "",
+      "mitigationPath": "",
+      "decisionRationale": "",
+      "relatedDecisionRecords": [],
+      "linkedObject": "",
+      "primaryObjectType": "",
+      "primaryObjectUid": "",
+      "generatedObjects": [],
+      "unresolvedQuestions": [],
+      "assumptions": [],
+      "nextSteps": [],
+      "defaultSelection": false,
+      "requirementCount": 0,
+      "hasRiskRef": false,
+      "outboundRefs": [
+        {
+          "target": "01KT0XNZEY-Q2TF",
+          "path": "capabilities[0]"
+        }
+      ],
+      "referencedBy": [
+        {
+          "source": "01M7KQAQCD-WD0R",
+          "path": "primaryTechnologyComponent"
+        }
+      ],
+      "editorSchema": {
+        "requiredFields": [
+          "schemaVersion",
+          "uid",
+          "type",
+          "name",
+          "vendor",
+          "productName",
+          "productVersion",
+          "classification",
+          "catalogStatus"
+        ],
+        "optionalFields": [
+          "aliases",
+          "description",
+          "version",
+          "owner",
+          "tags",
+          "subtype",
+          "vendorLifecycle",
+          "platformDependency",
+          "capabilities",
+          "configurations",
+          "networkPlacement",
+          "patchingOwner",
+          "complianceCerts",
+          "controlReferences",
+          "notes"
+        ],
+        "fieldTypes": {
+          "aliases": "list",
+          "owner": "dict",
+          "tags": "list",
+          "vendorLifecycle": "dict",
+          "capabilities": "list",
+          "configurations": "list",
+          "complianceCerts": "list",
+          "controlReferences": "list"
+        },
+        "enumFields": {
+          "catalogStatus": [
+            "stub",
+            "incomplete",
+            "complete"
+          ],
+          "classification": [
+            "operating-system",
+            "compute-platform",
+            "software",
+            "agent"
+          ]
+        },
+        "enumListFields": {},
+        "collectionSchemas": {
+          "configurations": "configuration"
+        },
+        "schemaPath": "framework/schemas/technology-component.schema.yaml"
+      },
+      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M7KQAQCD-ZS7E\",\n  \"type\": \"technology_component\",\n  \"name\": \"AWS CodeBuild\",\n  \"description\": \"Managed ephemeral container build and verification service used by Agent Factory cartridge admission and skill layering workflows.\",\n  \"catalogStatus\": \"incomplete\",\n  \"owner\": {\n    \"team\": \"platform-ai-team\",\n    \"contact\": \"platform-ai@example.com\"\n  },\n  \"tags\": [\n    \"aws\",\n    \"codebuild\",\n    \"cicd\",\n    \"agent-factory\"\n  ],\n  \"vendor\": \"Amazon Web Services\",\n  \"productName\": \"AWS CodeBuild\",\n  \"productVersion\": \"managed\",\n  \"classification\": \"software\",\n  \"capabilities\": [\n    \"01KT0XNZEY-Q2TF\"\n  ],\n  \"notes\": {\n    \"source\": \"Provisioned in BeerCanLabs/agent-factory landing-zones/aws/codebuild.tf.\",\n    \"incomplete\": \"Exact build image versions and IAM role boundaries per project are not pinned in the catalog.\"\n  },\n  \"_source\": \"catalog/shared-services/technology-components/tc-aws-codebuild.yaml\"\n}",
+      "existsInCatalog": true,
+      "outboundRelationships": [],
+      "inboundRelationships": []
+    },
+    "01M7KQAQCD-ZVVA": {
+      "id": "01M7KQAQCD-ZVVA",
+      "uid": "01M7KQAQCD-ZVVA",
+      "name": "Amazon EventBridge",
+      "aliases": [],
+      "type": "technology_component",
+      "typeLabel": "TechnologyComponent / Software",
+      "filterType": "technology_component",
+      "category": "",
+      "deliveryModel": "",
+      "domain": "",
+      "description": "Serverless event bus service routing asynchronous Agent Factory lifecycle, budget, crash, and approval events.",
+      "version": "",
+      "catalogStatus": "incomplete",
+      "lifecycleStatus": "",
+      "status": "",
+      "businessContext": {},
+      "product": "",
+      "runsOn": "",
+      "subtype": "",
+      "vendor": "Amazon Web Services",
+      "productName": "Amazon EventBridge",
+      "productVersion": "managed",
+      "classification": "software",
+      "platformDependency": "",
+      "capabilities": [
+        "01KT0V5MCV-KT72"
+      ],
+      "configurations": [],
+      "networkPlacement": "",
+      "patchingOwner": "",
+      "complianceCerts": [],
+      "requirementGroups": [],
+      "requirementImplementations": [],
+      "dataLeavesInfrastructure": null,
+      "dataResidencyCommitment": "",
+      "dpaNotes": "",
+      "vendorSLA": "",
+      "authenticationModel": "",
+      "incidentNotificationProcess": "",
+      "owner": {
+        "team": "platform-ai-team",
+        "contact": "platform-ai@example.com"
+      },
+      "definitionOwner": {},
+      "provider": {},
+      "authority": {},
+      "shape": "ellipse",
+      "color": "#64748b",
+      "source": "catalog/shared-services/technology-components/tc-aws-eventbridge.yaml",
+      "tags": [
+        "aws",
+        "eventbridge",
+        "messaging",
+        "agent-factory"
+      ],
+      "ardCategory": "",
+      "internalComponents": [],
+      "notes": {
+        "source": "Provisioned in BeerCanLabs/agent-factory landing-zones/aws/storage.tf (aws_cloudwatch_event_bus.factory).",
+        "incomplete": "Downstream rules, targets, and dead-letter handling on the factory event bus were not reviewed."
+      },
+      "requirements": [],
+      "implementations": [],
+      "appliesTo": {},
+      "inherits": "",
+      "scalingUnits": [],
+      "networkZones": [],
+      "sdpConnections": [],
+      "serviceGroups": [],
+      "tierVariants": [],
+      "tierId": "",
+      "purpose": "",
+      "availabilityExpectation": "",
+      "costPosture": "",
+      "complianceScope": [],
+      "parameterSurface": [],
+      "followsReferenceArchitecture": "",
+      "decisionRecords": [],
+      "affectedComponent": "",
+      "impact": "",
+      "mitigationPath": "",
+      "decisionRationale": "",
+      "relatedDecisionRecords": [],
+      "linkedObject": "",
+      "primaryObjectType": "",
+      "primaryObjectUid": "",
+      "generatedObjects": [],
+      "unresolvedQuestions": [],
+      "assumptions": [],
+      "nextSteps": [],
+      "defaultSelection": false,
+      "requirementCount": 0,
+      "hasRiskRef": false,
+      "outboundRefs": [
+        {
+          "target": "01KT0V5MCV-KT72",
+          "path": "capabilities[0]"
+        }
+      ],
+      "referencedBy": [
+        {
+          "source": "01M7KQAQCD-GHF4",
+          "path": "primaryTechnologyComponent"
+        }
+      ],
+      "editorSchema": {
+        "requiredFields": [
+          "schemaVersion",
+          "uid",
+          "type",
+          "name",
+          "vendor",
+          "productName",
+          "productVersion",
+          "classification",
+          "catalogStatus"
+        ],
+        "optionalFields": [
+          "aliases",
+          "description",
+          "version",
+          "owner",
+          "tags",
+          "subtype",
+          "vendorLifecycle",
+          "platformDependency",
+          "capabilities",
+          "configurations",
+          "networkPlacement",
+          "patchingOwner",
+          "complianceCerts",
+          "controlReferences",
+          "notes"
+        ],
+        "fieldTypes": {
+          "aliases": "list",
+          "owner": "dict",
+          "tags": "list",
+          "vendorLifecycle": "dict",
+          "capabilities": "list",
+          "configurations": "list",
+          "complianceCerts": "list",
+          "controlReferences": "list"
+        },
+        "enumFields": {
+          "catalogStatus": [
+            "stub",
+            "incomplete",
+            "complete"
+          ],
+          "classification": [
+            "operating-system",
+            "compute-platform",
+            "software",
+            "agent"
+          ]
+        },
+        "enumListFields": {},
+        "collectionSchemas": {
+          "configurations": "configuration"
+        },
+        "schemaPath": "framework/schemas/technology-component.schema.yaml"
+      },
+      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M7KQAQCD-ZVVA\",\n  \"type\": \"technology_component\",\n  \"name\": \"Amazon EventBridge\",\n  \"description\": \"Serverless event bus service routing asynchronous Agent Factory lifecycle, budget, crash, and approval events.\",\n  \"catalogStatus\": \"incomplete\",\n  \"owner\": {\n    \"team\": \"platform-ai-team\",\n    \"contact\": \"platform-ai@example.com\"\n  },\n  \"tags\": [\n    \"aws\",\n    \"eventbridge\",\n    \"messaging\",\n    \"agent-factory\"\n  ],\n  \"vendor\": \"Amazon Web Services\",\n  \"productName\": \"Amazon EventBridge\",\n  \"productVersion\": \"managed\",\n  \"classification\": \"software\",\n  \"capabilities\": [\n    \"01KT0V5MCV-KT72\"\n  ],\n  \"notes\": {\n    \"source\": \"Provisioned in BeerCanLabs/agent-factory landing-zones/aws/storage.tf (aws_cloudwatch_event_bus.factory).\",\n    \"incomplete\": \"Downstream rules, targets, and dead-letter handling on the factory event bus were not reviewed.\"\n  },\n  \"_source\": \"catalog/shared-services/technology-components/tc-aws-eventbridge.yaml\"\n}",
       "existsInCatalog": true,
       "outboundRelationships": [],
       "inboundRelationships": []
@@ -64640,6 +73568,292 @@ window.DRAFT_BROWSER_DATA = {
         "schemaPath": "framework/schemas/relationship.schema.yaml"
       },
       "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"N42482MC9H-V4TZ\",\n  \"type\": \"relationship\",\n  \"name\": \"Agent Factory Cartridge Task (on-demand) \\u2192 AWS ECS Fargate Runtime - factory-prod\",\n  \"source\": \"01M7GWXKXW-4ZJF\",\n  \"target\": \"01M7GWTG2S-AC3R\",\n  \"label\": \"runs on\",\n  \"notes\": \"Derived from runsOn field\",\n  \"catalogStatus\": \"complete\",\n  \"_source\": \"derived from catalog/engineering/product-components/product-component-factory-agent-cartridge-task.yaml [runsOn]\",\n  \"_derived\": true\n}",
+      "existsInCatalog": true,
+      "outboundRelationships": [],
+      "inboundRelationships": []
+    },
+    "0C2JQD5S29-RJNY": {
+      "id": "0C2JQD5S29-RJNY",
+      "uid": "0C2JQD5S29-RJNY",
+      "name": "Agent Factory CLI & Benchmark Harness \u2192 Cloudflare Global Anycast Edge Proxy Service",
+      "aliases": [],
+      "type": "relationship",
+      "typeLabel": "Relationship",
+      "filterType": "relationship",
+      "category": "",
+      "deliveryModel": "",
+      "domain": "",
+      "description": "",
+      "version": "",
+      "catalogStatus": "complete",
+      "lifecycleStatus": "unknown",
+      "status": "",
+      "businessContext": {},
+      "product": "",
+      "runsOn": "",
+      "subtype": "",
+      "vendor": "",
+      "productName": "",
+      "productVersion": "",
+      "classification": "",
+      "platformDependency": "",
+      "capabilities": [],
+      "configurations": [],
+      "networkPlacement": "",
+      "patchingOwner": "",
+      "complianceCerts": [],
+      "requirementGroups": [],
+      "requirementImplementations": [],
+      "dataLeavesInfrastructure": null,
+      "dataResidencyCommitment": "",
+      "dpaNotes": "",
+      "vendorSLA": "",
+      "authenticationModel": "",
+      "incidentNotificationProcess": "",
+      "owner": {},
+      "definitionOwner": {},
+      "provider": {},
+      "authority": {},
+      "shape": "round-rectangle",
+      "color": "#7a6e60",
+      "source": "derived from catalog/engineering/product-components/product-component-factory-cli.yaml [inline dependency]",
+      "tags": [],
+      "ardCategory": "",
+      "internalComponents": [],
+      "notes": "Calls the Agent Factory Headless Neck over public HTTPS through the Cloudflare edge front door.",
+      "requirements": [],
+      "implementations": [],
+      "appliesTo": {},
+      "inherits": "",
+      "scalingUnits": [],
+      "networkZones": [],
+      "sdpConnections": [],
+      "serviceGroups": [],
+      "tierVariants": [],
+      "tierId": "",
+      "purpose": "",
+      "availabilityExpectation": "",
+      "costPosture": "",
+      "complianceScope": [],
+      "parameterSurface": [],
+      "followsReferenceArchitecture": "",
+      "decisionRecords": [],
+      "affectedComponent": "",
+      "impact": "",
+      "mitigationPath": "",
+      "decisionRationale": "",
+      "relatedDecisionRecords": [],
+      "linkedObject": "",
+      "primaryObjectType": "",
+      "primaryObjectUid": "",
+      "generatedObjects": [],
+      "unresolvedQuestions": [],
+      "assumptions": [],
+      "nextSteps": [],
+      "defaultSelection": false,
+      "requirementCount": 0,
+      "hasRiskRef": false,
+      "outboundRefs": [
+        {
+          "target": "01M7KQAQCD-01CD",
+          "path": "source"
+        },
+        {
+          "target": "01M7GTBMQS-YRGF",
+          "path": "target"
+        }
+      ],
+      "referencedBy": [],
+      "editorSchema": {
+        "requiredFields": [
+          "schemaVersion",
+          "uid",
+          "type",
+          "name",
+          "source",
+          "label",
+          "catalogStatus"
+        ],
+        "optionalFields": [
+          "description",
+          "target",
+          "externalTarget",
+          "technology",
+          "direction",
+          "flow",
+          "capabilities",
+          "notes",
+          "tags"
+        ],
+        "fieldTypes": {
+          "tags": "list",
+          "capabilities": "list"
+        },
+        "enumFields": {
+          "catalogStatus": [
+            "stub",
+            "incomplete",
+            "complete"
+          ],
+          "direction": [
+            "synchronous",
+            "asynchronous",
+            "event"
+          ],
+          "flow": [
+            "outbound",
+            "inbound",
+            "bidirectional"
+          ]
+        },
+        "enumListFields": {},
+        "collectionSchemas": {},
+        "schemaPath": "framework/schemas/relationship.schema.yaml"
+      },
+      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"0C2JQD5S29-RJNY\",\n  \"type\": \"relationship\",\n  \"name\": \"Agent Factory CLI & Benchmark Harness \\u2192 Cloudflare Global Anycast Edge Proxy Service\",\n  \"source\": \"01M7KQAQCD-01CD\",\n  \"target\": \"01M7GTBMQS-YRGF\",\n  \"label\": \"/api/v1/* and /mcp\",\n  \"notes\": \"Calls the Agent Factory Headless Neck over public HTTPS through the Cloudflare edge front door.\",\n  \"catalogStatus\": \"complete\",\n  \"_source\": \"derived from catalog/engineering/product-components/product-component-factory-cli.yaml [inline dependency]\",\n  \"_derived\": true\n}",
+      "existsInCatalog": true,
+      "outboundRelationships": [],
+      "inboundRelationships": []
+    },
+    "ZA4E6M9Z1H-V5Q2": {
+      "id": "ZA4E6M9Z1H-V5Q2",
+      "uid": "ZA4E6M9Z1H-V5Q2",
+      "name": "Agent Factory CLI & Benchmark Harness \u2192 Agent Factory Control Plane",
+      "aliases": [],
+      "type": "relationship",
+      "typeLabel": "Relationship",
+      "filterType": "relationship",
+      "category": "",
+      "deliveryModel": "",
+      "domain": "",
+      "description": "",
+      "version": "",
+      "catalogStatus": "complete",
+      "lifecycleStatus": "unknown",
+      "status": "",
+      "businessContext": {},
+      "product": "",
+      "runsOn": "",
+      "subtype": "",
+      "vendor": "",
+      "productName": "",
+      "productVersion": "",
+      "classification": "",
+      "platformDependency": "",
+      "capabilities": [],
+      "configurations": [],
+      "networkPlacement": "",
+      "patchingOwner": "",
+      "complianceCerts": [],
+      "requirementGroups": [],
+      "requirementImplementations": [],
+      "dataLeavesInfrastructure": null,
+      "dataResidencyCommitment": "",
+      "dpaNotes": "",
+      "vendorSLA": "",
+      "authenticationModel": "",
+      "incidentNotificationProcess": "",
+      "owner": {},
+      "definitionOwner": {},
+      "provider": {},
+      "authority": {},
+      "shape": "round-rectangle",
+      "color": "#7a6e60",
+      "source": "derived from catalog/engineering/product-components/product-component-factory-cli.yaml [inline dependency]",
+      "tags": [],
+      "ardCategory": "",
+      "internalComponents": [],
+      "notes": "Consumes the Control Plane REST and MCP operator surfaces.",
+      "requirements": [],
+      "implementations": [],
+      "appliesTo": {},
+      "inherits": "",
+      "scalingUnits": [],
+      "networkZones": [],
+      "sdpConnections": [],
+      "serviceGroups": [],
+      "tierVariants": [],
+      "tierId": "",
+      "purpose": "",
+      "availabilityExpectation": "",
+      "costPosture": "",
+      "complianceScope": [],
+      "parameterSurface": [],
+      "followsReferenceArchitecture": "",
+      "decisionRecords": [],
+      "affectedComponent": "",
+      "impact": "",
+      "mitigationPath": "",
+      "decisionRationale": "",
+      "relatedDecisionRecords": [],
+      "linkedObject": "",
+      "primaryObjectType": "",
+      "primaryObjectUid": "",
+      "generatedObjects": [],
+      "unresolvedQuestions": [],
+      "assumptions": [],
+      "nextSteps": [],
+      "defaultSelection": false,
+      "requirementCount": 0,
+      "hasRiskRef": false,
+      "outboundRefs": [
+        {
+          "target": "01M7KQAQCD-01CD",
+          "path": "source"
+        },
+        {
+          "target": "01M7GWXKXW-EJWB",
+          "path": "target"
+        }
+      ],
+      "referencedBy": [],
+      "editorSchema": {
+        "requiredFields": [
+          "schemaVersion",
+          "uid",
+          "type",
+          "name",
+          "source",
+          "label",
+          "catalogStatus"
+        ],
+        "optionalFields": [
+          "description",
+          "target",
+          "externalTarget",
+          "technology",
+          "direction",
+          "flow",
+          "capabilities",
+          "notes",
+          "tags"
+        ],
+        "fieldTypes": {
+          "tags": "list",
+          "capabilities": "list"
+        },
+        "enumFields": {
+          "catalogStatus": [
+            "stub",
+            "incomplete",
+            "complete"
+          ],
+          "direction": [
+            "synchronous",
+            "asynchronous",
+            "event"
+          ],
+          "flow": [
+            "outbound",
+            "inbound",
+            "bidirectional"
+          ]
+        },
+        "enumListFields": {},
+        "collectionSchemas": {},
+        "schemaPath": "framework/schemas/relationship.schema.yaml"
+      },
+      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"ZA4E6M9Z1H-V5Q2\",\n  \"type\": \"relationship\",\n  \"name\": \"Agent Factory CLI & Benchmark Harness \\u2192 Agent Factory Control Plane\",\n  \"source\": \"01M7KQAQCD-01CD\",\n  \"target\": \"01M7GWXKXW-EJWB\",\n  \"label\": \"/api/v1/* and /mcp\",\n  \"notes\": \"Consumes the Control Plane REST and MCP operator surfaces.\",\n  \"catalogStatus\": \"complete\",\n  \"_source\": \"derived from catalog/engineering/product-components/product-component-factory-cli.yaml [inline dependency]\",\n  \"_derived\": true\n}",
       "existsInCatalog": true,
       "outboundRelationships": [],
       "inboundRelationships": []
@@ -65802,6 +75016,7 @@ window.DRAFT_BROWSER_DATA = {
     "data_store_service",
     "decision_record",
     "domain",
+    "environment_tier",
     "host",
     "network_service",
     "product_component",
@@ -66386,6 +75601,14 @@ window.DRAFT_BROWSER_DATA = {
         "path": "capabilities[0]"
       },
       {
+        "source": "01M7KQAQCD-GHF4",
+        "path": "capabilities[0]"
+      },
+      {
+        "source": "01M7KQAQCD-ZVVA",
+        "path": "capabilities[0]"
+      },
+      {
         "source": "01M7GTBMQT-TFSM",
         "path": "capabilities[0]"
       }
@@ -66440,6 +75663,14 @@ window.DRAFT_BROWSER_DATA = {
       {
         "source": "01KT0VM061-CRN7",
         "path": "requirements[11].relatedCapability"
+      },
+      {
+        "source": "01M7KQAQCD-WD0R",
+        "path": "capabilities[0]"
+      },
+      {
+        "source": "01M7KQAQCD-ZS7E",
+        "path": "capabilities[0]"
       }
     ],
     "01KT0XNZEY-7HWQ": [
@@ -66594,10 +75825,72 @@ window.DRAFT_BROWSER_DATA = {
         "path": "source"
       }
     ],
+    "01M7GTBMQS-YRGF": [
+      {
+        "source": "01M7KQAQCD-01CD",
+        "path": "runtimeSpec.dependencies[0].ref"
+      },
+      {
+        "source": "0C2JQD5S29-RJNY",
+        "path": "target"
+      }
+    ],
     "01M7GWXKXW-EJWB": [
+      {
+        "source": "01M7KQAQCD-01CD",
+        "path": "runtimeSpec.dependencies[1].ref"
+      },
       {
         "source": "01M15NEKT7-S14J",
         "path": "serviceGroups[0].deployableObjects[0].ref"
+      },
+      {
+        "source": "01M7KQAQCD-9JK7",
+        "path": "target"
+      },
+      {
+        "source": "01M7KQAQCD-GQNC",
+        "path": "target"
+      },
+      {
+        "source": "01M7KQAQCD-ZD19",
+        "path": "source"
+      },
+      {
+        "source": "01M7KQAQCD-HNYQ",
+        "path": "source"
+      },
+      {
+        "source": "01M7KQAQCD-CWYV",
+        "path": "source"
+      },
+      {
+        "source": "01M7KQAQCD-Z7TV",
+        "path": "source"
+      },
+      {
+        "source": "01M7KQAQCD-4GN2",
+        "path": "source"
+      },
+      {
+        "source": "01M7KQAQCD-XTFV",
+        "path": "source"
+      },
+      {
+        "source": "01M7KQAQCD-M02F",
+        "path": "target"
+      },
+      {
+        "source": "01M7KQAQCD-1AM0",
+        "path": "target"
+      },
+      {
+        "source": "01M7KQAQCD-8Z5M",
+        "path": "target"
+      },
+      {
+        "source": "ZA4E6M9Z1H-V5Q2",
+        "path": "target"
       },
       {
         "source": "37Y75386HP-XZ13",
@@ -66610,6 +75903,18 @@ window.DRAFT_BROWSER_DATA = {
         "path": "serviceGroups[0].deployableObjects[1].ref"
       },
       {
+        "source": "01M7KQAQCD-CWYV",
+        "path": "target"
+      },
+      {
+        "source": "01M7KQAQCD-PND8",
+        "path": "source"
+      },
+      {
+        "source": "01M7KQAQCD-1AM0",
+        "path": "source"
+      },
+      {
         "source": "TGH5YT0GBB-SQPY",
         "path": "source"
       }
@@ -66620,6 +75925,22 @@ window.DRAFT_BROWSER_DATA = {
         "path": "serviceGroups[0].deployableObjects[2].ref"
       },
       {
+        "source": "01M7KQAQCD-HNYQ",
+        "path": "target"
+      },
+      {
+        "source": "01M7KQAQCD-7V12",
+        "path": "source"
+      },
+      {
+        "source": "01M7KQAQCD-M02F",
+        "path": "source"
+      },
+      {
+        "source": "01M7KQAQCD-BE9V",
+        "path": "target"
+      },
+      {
         "source": "HZPHDW059V-S1NS",
         "path": "source"
       }
@@ -66628,6 +75949,14 @@ window.DRAFT_BROWSER_DATA = {
       {
         "source": "01M15NEKT7-S14J",
         "path": "serviceGroups[1].deployableObjects[0].ref"
+      },
+      {
+        "source": "01M7KQAQCD-3CBS",
+        "path": "target"
+      },
+      {
+        "source": "01M7KQAQCD-GQNC",
+        "path": "source"
       },
       {
         "source": "K3K6BX46KE-5MV9",
@@ -66648,6 +75977,18 @@ window.DRAFT_BROWSER_DATA = {
       {
         "source": "01M15NEKT7-S14J",
         "path": "serviceGroups[2].deployableObjects[0].ref"
+      },
+      {
+        "source": "01M7KQAQCD-8Z5M",
+        "path": "source"
+      },
+      {
+        "source": "01M7KQAQCD-RGE7",
+        "path": "source"
+      },
+      {
+        "source": "01M7KQAQCD-BE9V",
+        "path": "source"
       },
       {
         "source": "N42482MC9H-V4TZ",
@@ -66838,6 +76179,46 @@ window.DRAFT_BROWSER_DATA = {
         "path": "linkedObject"
       }
     ],
+    "01M7GWTG2T-M2Q0": [
+      {
+        "source": "01M7KQAQCD-3CBS",
+        "path": "source"
+      },
+      {
+        "source": "01M7KQAQCD-9JK7",
+        "path": "source"
+      }
+    ],
+    "01M7GWTG2T-F1WG": [
+      {
+        "source": "01M7KQAQCD-ZD19",
+        "path": "target"
+      }
+    ],
+    "01M7KQAQCD-GHF4": [
+      {
+        "source": "01M7KQAQCD-Z7TV",
+        "path": "target"
+      }
+    ],
+    "01M7KQAQCD-WD0R": [
+      {
+        "source": "01M7KQAQCD-4GN2",
+        "path": "target"
+      }
+    ],
+    "01M7GWTG2T-KR1Y": [
+      {
+        "source": "01M7KQAQCD-XTFV",
+        "path": "target"
+      }
+    ],
+    "01M7GWTG2T-GYW1": [
+      {
+        "source": "01M7KQAQCD-RGE7",
+        "path": "target"
+      }
+    ],
     "01M7GVD4FN-YGN9": [
       {
         "source": "01M7GTBMQS-YYDW",
@@ -66888,6 +76269,12 @@ window.DRAFT_BROWSER_DATA = {
         "path": "requirementImplementations[0].requirementGroup"
       }
     ],
+    "01M7KQAQCD-ZS7E": [
+      {
+        "source": "01M7KQAQCD-WD0R",
+        "path": "primaryTechnologyComponent"
+      }
+    ],
     "01M7GWTG2S-X9V8": [
       {
         "source": "01M7GWTG2S-AC3R",
@@ -66898,10 +76285,26 @@ window.DRAFT_BROWSER_DATA = {
         "path": "target"
       }
     ],
+    "01M7KQAQCD-ZVVA": [
+      {
+        "source": "01M7KQAQCD-GHF4",
+        "path": "primaryTechnologyComponent"
+      }
+    ],
     "01KTWS3D6T-T6F6": [
       {
         "source": "01M7GTBMQT-1190",
         "path": "capabilities[0]"
+      }
+    ],
+    "01M7KQAQCD-01CD": [
+      {
+        "source": "0C2JQD5S29-RJNY",
+        "path": "source"
+      },
+      {
+        "source": "ZA4E6M9Z1H-V5Q2",
+        "path": "source"
       }
     ],
     "01M7GTBMQS-YYDW": [
@@ -67386,7 +76789,7 @@ window.DRAFT_BROWSER_DATA = {
         "uid": "01M7GTBMQR-GB2Z",
         "name": "Agent Factory",
         "type": "domain",
-        "description": "Strategic domain covering the Agent Factory platform substrate (Doorman Proxy,  MCP Gateway, OAuth Auth Server, Persona Publisher Pipeline) and all published  AI Agent Personas and SOUL configurations.\n"
+        "description": "Strategic domain covering the BeerCanLabs Agent Factory headless platform: the typed Headless Neck (REST /api/v1/*, Principal/Agent/Run MCP surfaces, and OAuth 2.1 Authorization Server), Hot-Swappable Heads (Console SPA, Factory CLI, Agent Garrison, MCP clients), the 10 deterministic Cast services (Gatekeeper, Keymaster, Executive, Property Manager, Auditor, Accountant, Bouncer, Timekeeper, Registrar, Inspector), Dual-Mode Hosting (Shared Agent Runtime and Repository Cartridges), and portable House Staff & Skill packages."
       },
       {
         "uid": "01KT0XNZEY-HGZZ",
@@ -67461,6 +76864,20 @@ window.DRAFT_BROWSER_DATA = {
         "description": "Strategic domain covering all aspects of software testing, quality assurance, and release gates.\n"
       },
       {
+        "uid": "01M7KQAQCC-EG06",
+        "name": "Development & CI Container Proof (Compose Host)",
+        "type": "environment_tier",
+        "catalogStatus": "complete",
+        "description": "Single-host Docker Compose environment tier (landing-zones/compose) used for inner-loop local development and CI compose-proof end-to-end verification of network isolation, run tokens, Gatekeeper metering, kill-switch, and WORM ledger tamper refusal."
+      },
+      {
+        "uid": "01M7KQAQCC-T9DS",
+        "name": "Production (AWS ECS Fargate Orchestrated Tasks)",
+        "type": "environment_tier",
+        "catalogStatus": "complete",
+        "description": "Production environment tier for BeerCanLabs Agent Factory deploying the Orchestrated Tasks pattern onto AWS ECS Fargate (us-east-1, cluster factory-prod) behind the Cloudflare edge, Cloudflare Access, and HTTPS ALB, with EFS hot ledger and S3 Object Lock COMPLIANCE checkpoints."
+      },
+      {
         "uid": "01M7GWTG2S-X9V8",
         "name": "AWS Fargate factory-prod ECS Cluster Host (us-east-1)",
         "type": "host",
@@ -67515,6 +76932,13 @@ window.DRAFT_BROWSER_DATA = {
         "type": "network_service",
         "catalogStatus": "incomplete",
         "description": "Registration object for Geordi's Cloudflare Global Anycast Edge Proxy network service providing ingress routing, Orange Cloud DNS proxying, SSL Full TLS termination, 301 URL redirects, and ALPN negotiation compatibility under Netskope SSL inspection."
+      },
+      {
+        "uid": "01M7KQAQCD-01CD",
+        "name": "Agent Factory CLI & Benchmark Harness",
+        "type": "product_component",
+        "catalogStatus": "incomplete",
+        "description": "Operator terminal client (@beercanlabs/factory-cli: factory) and Cost-vs-Quality benchmark runner (@beercanlabs/factory-bench: factory-bench). Authenticates via OIDC or fk_ API keys against the Control Plane Headless Neck to inspect runs and ledger chains, decide Bouncer approvals, manage model subscriptions, and score bench.yaml evaluations across candidate models."
       },
       {
         "uid": "01M7GWXKXW-4ZJF",
@@ -67575,7 +76999,8 @@ window.DRAFT_BROWSER_DATA = {
         "uid": "01M1N137Q5-AFAC",
         "name": "BeerCanLabs Agent Factory",
         "type": "product_registration",
-        "catalogStatus": "complete"
+        "catalogStatus": "complete",
+        "description": "Central product registration for the BeerCanLabs Agent Factory headless autonomous agent hosting platform (Headless Neck REST/MCP + OAuth 2.1 AS, Hot-Swappable Heads, 10 Cast kernel services, Dual-Mode Cartridge & Shared Runtime hosting, and Zero-Trust Gatekeeper perimeter)."
       },
       {
         "uid": "01M7GWXKXW-70GF",
@@ -67681,6 +77106,28 @@ window.DRAFT_BROWSER_DATA = {
         "description": "Deployment pattern for simple applications where a client or static presentation layer talks directly to a managed data service without a separately operated application runtime tier. Use this for static sites, thick clients, reporting front ends, or low-code applications whose business logic is primarily in the client and managed data platform."
       },
       {
+        "uid": "01M7KQAQCD-3CBS",
+        "name": "AWS ALB factory-prod \u2192 Agent Factory Console",
+        "type": "relationship",
+        "catalogStatus": "complete",
+        "source": "01M7GWTG2T-M2Q0",
+        "target": "01M7GWXKXW-VPCD",
+        "label": "routes to",
+        "technology": "HTTPS / HTTP (:3000)",
+        "direction": "synchronous"
+      },
+      {
+        "uid": "01M7KQAQCD-9JK7",
+        "name": "AWS ALB factory-prod \u2192 Agent Factory Control Plane",
+        "type": "relationship",
+        "catalogStatus": "complete",
+        "source": "01M7GWTG2T-M2Q0",
+        "target": "01M7GWXKXW-EJWB",
+        "label": "routes to",
+        "technology": "HTTPS / HTTP (:8088, health :8089)",
+        "direction": "synchronous"
+      },
+      {
         "uid": "VP8VB5X0E7-7FJC",
         "name": "AWS ECS Fargate Runtime - factory-prod \u2192 AWS Fargate factory-prod ECS Cluster Host (us-east-1)",
         "type": "relationship",
@@ -67688,6 +77135,24 @@ window.DRAFT_BROWSER_DATA = {
         "source": "01M7GWTG2S-AC3R",
         "target": "01M7GWTG2S-X9V8",
         "label": "runs on"
+      },
+      {
+        "uid": "ZA4E6M9Z1H-V5Q2",
+        "name": "Agent Factory CLI & Benchmark Harness \u2192 Agent Factory Control Plane",
+        "type": "relationship",
+        "catalogStatus": "complete",
+        "source": "01M7KQAQCD-01CD",
+        "target": "01M7GWXKXW-EJWB",
+        "label": "/api/v1/* and /mcp"
+      },
+      {
+        "uid": "0C2JQD5S29-RJNY",
+        "name": "Agent Factory CLI & Benchmark Harness \u2192 Cloudflare Global Anycast Edge Proxy Service",
+        "type": "relationship",
+        "catalogStatus": "complete",
+        "source": "01M7KQAQCD-01CD",
+        "target": "01M7GTBMQS-YRGF",
+        "label": "/api/v1/* and /mcp"
       },
       {
         "uid": "N42482MC9H-V4TZ",
@@ -67699,6 +77164,39 @@ window.DRAFT_BROWSER_DATA = {
         "label": "runs on"
       },
       {
+        "uid": "01M7KQAQCD-8Z5M",
+        "name": "Agent Factory Cartridge Task \u2192 Agent Factory Control Plane",
+        "type": "relationship",
+        "catalogStatus": "complete",
+        "source": "01M7GWXKXW-4ZJF",
+        "target": "01M7GWXKXW-EJWB",
+        "label": "calls",
+        "technology": "HTTP (:8088)",
+        "direction": "synchronous"
+      },
+      {
+        "uid": "01M7KQAQCD-BE9V",
+        "name": "Agent Factory Cartridge Task \u2192 Agent Factory Gatekeeper Egress",
+        "type": "relationship",
+        "catalogStatus": "incomplete",
+        "source": "01M7GWXKXW-4ZJF",
+        "target": "01M7GWXKXW-BPBV",
+        "label": "calls",
+        "technology": "HTTP Reverse Proxy & CONNECT (:8081)",
+        "direction": "synchronous"
+      },
+      {
+        "uid": "01M7KQAQCD-RGE7",
+        "name": "Agent Factory Cartridge Task \u2192 Amazon S3 Agent Factory Mind Bucket",
+        "type": "relationship",
+        "catalogStatus": "incomplete",
+        "source": "01M7GWXKXW-4ZJF",
+        "target": "01M7GWTG2T-GYW1",
+        "label": "reads from",
+        "technology": "HTTPS via S3 Gateway VPC Endpoint (:443)",
+        "direction": "synchronous"
+      },
+      {
         "uid": "K3K6BX46KE-5MV9",
         "name": "Agent Factory Console \u2192 AWS ECS Fargate Runtime - factory-prod",
         "type": "relationship",
@@ -67706,6 +77204,17 @@ window.DRAFT_BROWSER_DATA = {
         "source": "01M7GWXKXW-VPCD",
         "target": "01M7GWTG2S-AC3R",
         "label": "runs on"
+      },
+      {
+        "uid": "01M7KQAQCD-GQNC",
+        "name": "Agent Factory Console \u2192 Agent Factory Control Plane",
+        "type": "relationship",
+        "catalogStatus": "complete",
+        "source": "01M7GWXKXW-VPCD",
+        "target": "01M7GWXKXW-EJWB",
+        "label": "calls",
+        "technology": "HTTP (:8088)",
+        "direction": "synchronous"
       },
       {
         "uid": "37Y75386HP-XZ13",
@@ -67717,6 +77226,72 @@ window.DRAFT_BROWSER_DATA = {
         "label": "runs on"
       },
       {
+        "uid": "01M7KQAQCD-Z7TV",
+        "name": "Agent Factory Control Plane \u2192 Agent Factory EventBridge Event Bus",
+        "type": "relationship",
+        "catalogStatus": "incomplete",
+        "source": "01M7GWXKXW-EJWB",
+        "target": "01M7KQAQCD-GHF4",
+        "label": "sends events to",
+        "technology": "HTTPS (:443)",
+        "direction": "event"
+      },
+      {
+        "uid": "01M7KQAQCD-HNYQ",
+        "name": "Agent Factory Control Plane \u2192 Agent Factory Gatekeeper Egress",
+        "type": "relationship",
+        "catalogStatus": "complete",
+        "source": "01M7GWXKXW-EJWB",
+        "target": "01M7GWXKXW-BPBV",
+        "label": "calls",
+        "technology": "HTTP (:8081)",
+        "direction": "synchronous"
+      },
+      {
+        "uid": "01M7KQAQCD-CWYV",
+        "name": "Agent Factory Control Plane \u2192 Agent Factory Gatekeeper Ingress",
+        "type": "relationship",
+        "catalogStatus": "complete",
+        "source": "01M7GWXKXW-EJWB",
+        "target": "01M7GWXKXW-7W49",
+        "label": "sends events to",
+        "technology": "HTTP (:8090)",
+        "direction": "asynchronous"
+      },
+      {
+        "uid": "01M7KQAQCD-XTFV",
+        "name": "Agent Factory Control Plane \u2192 Amazon EFS factory-prod-ledger",
+        "type": "relationship",
+        "catalogStatus": "complete",
+        "source": "01M7GWXKXW-EJWB",
+        "target": "01M7GWTG2T-KR1Y",
+        "label": "writes to",
+        "technology": "NFSv4.1 over TLS (:2049)",
+        "direction": "synchronous"
+      },
+      {
+        "uid": "01M7KQAQCD-4GN2",
+        "name": "Agent Factory Control Plane \u2192 CodeBuild Admission & Skill Builders",
+        "type": "relationship",
+        "catalogStatus": "complete",
+        "source": "01M7GWXKXW-EJWB",
+        "target": "01M7KQAQCD-WD0R",
+        "label": "calls",
+        "technology": "HTTPS (:443)",
+        "direction": "asynchronous"
+      },
+      {
+        "uid": "01M7KQAQCD-ZD19",
+        "name": "Agent Factory Control Plane \u2192 S3 Config, Ledger & Package Buckets",
+        "type": "relationship",
+        "catalogStatus": "complete",
+        "source": "01M7GWXKXW-EJWB",
+        "target": "01M7GWTG2T-F1WG",
+        "label": "writes to",
+        "technology": "HTTPS (:443)",
+        "direction": "synchronous"
+      },
+      {
         "uid": "HZPHDW059V-S1NS",
         "name": "Agent Factory Gatekeeper Egress \u2192 AWS ECS Fargate Runtime - factory-prod",
         "type": "relationship",
@@ -67726,6 +77301,27 @@ window.DRAFT_BROWSER_DATA = {
         "label": "runs on"
       },
       {
+        "uid": "01M7KQAQCD-M02F",
+        "name": "Agent Factory Gatekeeper Egress \u2192 Agent Factory Control Plane",
+        "type": "relationship",
+        "catalogStatus": "complete",
+        "source": "01M7GWXKXW-BPBV",
+        "target": "01M7GWXKXW-EJWB",
+        "label": "calls",
+        "technology": "HTTP (:8088)",
+        "direction": "synchronous"
+      },
+      {
+        "uid": "01M7KQAQCD-7V12",
+        "name": "Agent Factory Gatekeeper Egress \u2192 External LLM & SaaS Providers",
+        "type": "relationship",
+        "catalogStatus": "incomplete",
+        "source": "01M7GWXKXW-BPBV",
+        "label": "calls",
+        "technology": "HTTPS (:443)",
+        "direction": "synchronous"
+      },
+      {
         "uid": "TGH5YT0GBB-SQPY",
         "name": "Agent Factory Gatekeeper Ingress \u2192 AWS ECS Fargate Runtime - factory-prod",
         "type": "relationship",
@@ -67733,6 +77329,27 @@ window.DRAFT_BROWSER_DATA = {
         "source": "01M7GWXKXW-7W49",
         "target": "01M7GWTG2S-AC3R",
         "label": "runs on"
+      },
+      {
+        "uid": "01M7KQAQCD-1AM0",
+        "name": "Agent Factory Gatekeeper Ingress \u2192 Agent Factory Control Plane",
+        "type": "relationship",
+        "catalogStatus": "complete",
+        "source": "01M7GWXKXW-7W49",
+        "target": "01M7GWXKXW-EJWB",
+        "label": "calls",
+        "technology": "HTTP (:8088)",
+        "direction": "synchronous"
+      },
+      {
+        "uid": "01M7KQAQCD-PND8",
+        "name": "Agent Factory Gatekeeper Ingress \u2192 Discord Gateway WebSocket API",
+        "type": "relationship",
+        "catalogStatus": "complete",
+        "source": "01M7GWXKXW-7W49",
+        "label": "connects to",
+        "technology": "WebSocket over TLS (:443)",
+        "direction": "event"
       },
       {
         "uid": "NM17DK7Z2P-BA6X",
@@ -67944,6 +77561,13 @@ window.DRAFT_BROWSER_DATA = {
         "description": "Starter TX-RAMP requirement group for DRAFT. This file is intended to map TX-RAMP control expectations onto the unified DRAFT requirement model.\n"
       },
       {
+        "uid": "01M7KQAQCD-WD0R",
+        "name": "AWS CodeBuild - Agent Factory Admission & Skill Builders",
+        "type": "runtime_service",
+        "catalogStatus": "incomplete",
+        "description": "Managed CodeBuild projects (factory-agent-builder, factory-skills-builder, and factory-skill-checker) that verify, compose, and push Agent Factory cartridge and skill images to Amazon ECR."
+      },
+      {
         "uid": "01M7GWTG2S-AC3R",
         "name": "AWS ECS Fargate Runtime - factory-prod",
         "type": "runtime_service",
@@ -67977,6 +77601,13 @@ window.DRAFT_BROWSER_DATA = {
         "type": "runtime_service",
         "catalogStatus": "incomplete",
         "description": "Private container registry for Agent Factory, agent cartridge and Closing Climb images."
+      },
+      {
+        "uid": "01M7KQAQCD-GHF4",
+        "name": "Amazon EventBridge - Agent Factory Event Bus",
+        "type": "runtime_service",
+        "catalogStatus": "incomplete",
+        "description": "Custom Amazon EventBridge event bus provisioned for Agent Factory operational, run lifecycle, budget, crash, and held-action events emitted by the Inspector service."
       },
       {
         "uid": "01M7GWTG2T-XKK0",
@@ -68028,6 +77659,13 @@ window.DRAFT_BROWSER_DATA = {
         "description": "Agent Factory deployment on AWS ECS Fargate (cluster factory-prod, us-east-1) behind the Cloudflare edge and an internet-facing ALB, with Secrets Manager injection, S3 mind storage and an EFS/S3 ledger. Agents run as on-demand tasks."
       },
       {
+        "uid": "01M7KQAQCD-ZS7E",
+        "name": "AWS CodeBuild",
+        "type": "technology_component",
+        "catalogStatus": "incomplete",
+        "description": "Managed ephemeral container build and verification service used by Agent Factory cartridge admission and skill layering workflows."
+      },
+      {
         "uid": "01M7GWTG2S-W2BR",
         "name": "AWS Distro for OpenTelemetry Collector",
         "type": "technology_component",
@@ -68040,6 +77678,13 @@ window.DRAFT_BROWSER_DATA = {
         "type": "technology_component",
         "catalogStatus": "incomplete",
         "description": "Serverless container compute for Amazon ECS. Runs the Agent Factory and Closing Climb tasks in the factory-prod cluster."
+      },
+      {
+        "uid": "01M7KQAQCD-ZVVA",
+        "name": "Amazon EventBridge",
+        "type": "technology_component",
+        "catalogStatus": "incomplete",
+        "description": "Serverless event bus service routing asynchronous Agent Factory lifecycle, budget, crash, and approval events."
       },
       {
         "uid": "01M7GTBMQT-TFSM",
@@ -68089,7 +77734,7 @@ window.DRAFT_BROWSER_DATA = {
           "id": "01M7GTBMQR-GB2Z",
           "uid": "01M7GTBMQR-GB2Z",
           "name": "Agent Factory",
-          "description": "Strategic domain covering the Agent Factory platform substrate (Doorman Proxy,  MCP Gateway, OAuth Auth Server, Persona Publisher Pipeline) and all published  AI Agent Personas and SOUL configurations.\n",
+          "description": "Strategic domain covering the BeerCanLabs Agent Factory headless platform: the typed Headless Neck (REST /api/v1/*, Principal/Agent/Run MCP surfaces, and OAuth 2.1 Authorization Server), Hot-Swappable Heads (Console SPA, Factory CLI, Agent Garrison, MCP clients), the 10 deterministic Cast services (Gatekeeper, Keymaster, Executive, Property Manager, Auditor, Accountant, Bouncer, Timekeeper, Registrar, Inspector), Dual-Mode Hosting (Shared Agent Runtime and Repository Cartridges), and portable House Staff & Skill packages.",
           "capabilities": []
         },
         {
@@ -69340,6 +78985,132 @@ window.DRAFT_BROWSER_DATA = {
   "logoDataUri": "",
   "topologyEdges": [
     {
+      "id": "01M7KQAQCD-3CBS",
+      "source": "01M7GWTG2T-M2Q0",
+      "target": "01M7GWXKXW-VPCD",
+      "label": "routes to",
+      "technology": "HTTPS / HTTP (:3000)",
+      "direction": "synchronous",
+      "name": "AWS ALB factory-prod \u2192 Agent Factory Console"
+    },
+    {
+      "id": "01M7KQAQCD-9JK7",
+      "source": "01M7GWTG2T-M2Q0",
+      "target": "01M7GWXKXW-EJWB",
+      "label": "routes to",
+      "technology": "HTTPS / HTTP (:8088, health :8089)",
+      "direction": "synchronous",
+      "name": "AWS ALB factory-prod \u2192 Agent Factory Control Plane"
+    },
+    {
+      "id": "01M7KQAQCD-GQNC",
+      "source": "01M7GWXKXW-VPCD",
+      "target": "01M7GWXKXW-EJWB",
+      "label": "calls",
+      "technology": "HTTP (:8088)",
+      "direction": "synchronous",
+      "name": "Agent Factory Console \u2192 Agent Factory Control Plane"
+    },
+    {
+      "id": "01M7KQAQCD-ZD19",
+      "source": "01M7GWXKXW-EJWB",
+      "target": "01M7GWTG2T-F1WG",
+      "label": "writes to",
+      "technology": "HTTPS (:443)",
+      "direction": "synchronous",
+      "name": "Agent Factory Control Plane \u2192 S3 Config, Ledger & Package Buckets"
+    },
+    {
+      "id": "01M7KQAQCD-HNYQ",
+      "source": "01M7GWXKXW-EJWB",
+      "target": "01M7GWXKXW-BPBV",
+      "label": "calls",
+      "technology": "HTTP (:8081)",
+      "direction": "synchronous",
+      "name": "Agent Factory Control Plane \u2192 Agent Factory Gatekeeper Egress"
+    },
+    {
+      "id": "01M7KQAQCD-CWYV",
+      "source": "01M7GWXKXW-EJWB",
+      "target": "01M7GWXKXW-7W49",
+      "label": "sends events to",
+      "technology": "HTTP (:8090)",
+      "direction": "asynchronous",
+      "name": "Agent Factory Control Plane \u2192 Agent Factory Gatekeeper Ingress"
+    },
+    {
+      "id": "01M7KQAQCD-Z7TV",
+      "source": "01M7GWXKXW-EJWB",
+      "target": "01M7KQAQCD-GHF4",
+      "label": "sends events to",
+      "technology": "HTTPS (:443)",
+      "direction": "event",
+      "name": "Agent Factory Control Plane \u2192 Agent Factory EventBridge Event Bus"
+    },
+    {
+      "id": "01M7KQAQCD-4GN2",
+      "source": "01M7GWXKXW-EJWB",
+      "target": "01M7KQAQCD-WD0R",
+      "label": "calls",
+      "technology": "HTTPS (:443)",
+      "direction": "asynchronous",
+      "name": "Agent Factory Control Plane \u2192 CodeBuild Admission & Skill Builders"
+    },
+    {
+      "id": "01M7KQAQCD-XTFV",
+      "source": "01M7GWXKXW-EJWB",
+      "target": "01M7GWTG2T-KR1Y",
+      "label": "writes to",
+      "technology": "NFSv4.1 over TLS (:2049)",
+      "direction": "synchronous",
+      "name": "Agent Factory Control Plane \u2192 Amazon EFS factory-prod-ledger"
+    },
+    {
+      "id": "01M7KQAQCD-M02F",
+      "source": "01M7GWXKXW-BPBV",
+      "target": "01M7GWXKXW-EJWB",
+      "label": "calls",
+      "technology": "HTTP (:8088)",
+      "direction": "synchronous",
+      "name": "Agent Factory Gatekeeper Egress \u2192 Agent Factory Control Plane"
+    },
+    {
+      "id": "01M7KQAQCD-1AM0",
+      "source": "01M7GWXKXW-7W49",
+      "target": "01M7GWXKXW-EJWB",
+      "label": "calls",
+      "technology": "HTTP (:8088)",
+      "direction": "synchronous",
+      "name": "Agent Factory Gatekeeper Ingress \u2192 Agent Factory Control Plane"
+    },
+    {
+      "id": "01M7KQAQCD-8Z5M",
+      "source": "01M7GWXKXW-4ZJF",
+      "target": "01M7GWXKXW-EJWB",
+      "label": "calls",
+      "technology": "HTTP (:8088)",
+      "direction": "synchronous",
+      "name": "Agent Factory Cartridge Task \u2192 Agent Factory Control Plane"
+    },
+    {
+      "id": "01M7KQAQCD-RGE7",
+      "source": "01M7GWXKXW-4ZJF",
+      "target": "01M7GWTG2T-GYW1",
+      "label": "reads from",
+      "technology": "HTTPS via S3 Gateway VPC Endpoint (:443)",
+      "direction": "synchronous",
+      "name": "Agent Factory Cartridge Task \u2192 Amazon S3 Agent Factory Mind Bucket"
+    },
+    {
+      "id": "01M7KQAQCD-BE9V",
+      "source": "01M7GWXKXW-4ZJF",
+      "target": "01M7GWXKXW-BPBV",
+      "label": "calls",
+      "technology": "HTTP Reverse Proxy & CONNECT (:8081)",
+      "direction": "synchronous",
+      "name": "Agent Factory Cartridge Task \u2192 Agent Factory Gatekeeper Egress"
+    },
+    {
       "id": "N42482MC9H-V4TZ",
       "source": "01M7GWXKXW-4ZJF",
       "target": "01M7GWTG2S-AC3R",
@@ -69347,6 +79118,24 @@ window.DRAFT_BROWSER_DATA = {
       "technology": "",
       "direction": "",
       "name": "Agent Factory Cartridge Task (on-demand) \u2192 AWS ECS Fargate Runtime - factory-prod"
+    },
+    {
+      "id": "0C2JQD5S29-RJNY",
+      "source": "01M7KQAQCD-01CD",
+      "target": "01M7GTBMQS-YRGF",
+      "label": "/api/v1/* and /mcp",
+      "technology": "",
+      "direction": "",
+      "name": "Agent Factory CLI & Benchmark Harness \u2192 Cloudflare Global Anycast Edge Proxy Service"
+    },
+    {
+      "id": "ZA4E6M9Z1H-V5Q2",
+      "source": "01M7KQAQCD-01CD",
+      "target": "01M7GWXKXW-EJWB",
+      "label": "/api/v1/* and /mcp",
+      "technology": "",
+      "direction": "",
+      "name": "Agent Factory CLI & Benchmark Harness \u2192 Agent Factory Control Plane"
     },
     {
       "id": "K3K6BX46KE-5MV9",

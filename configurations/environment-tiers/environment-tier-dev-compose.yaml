@@ -1,0 +1,22 @@
+schemaVersion: '1.0'
+uid: 01M7KQAQCC-EG06
+type: environment_tier
+name: Development & CI Container Proof (Compose Host)
+tierId: dev-compose
+purpose: test
+availabilityExpectation: best-effort
+costPosture: cost-optimized
+catalogStatus: complete
+description: >-
+  Single-host Docker Compose environment tier (landing-zones/compose) used for inner-loop
+  local development and CI compose-proof end-to-end verification of network isolation,
+  run tokens, Gatekeeper metering, kill-switch, and WORM ledger tamper refusal.
+parameterSurface:
+  - name: composeProjectName
+    description: Docker Compose stack namespace (default agent-factory).
+    required: false
+    sensitive: false
+notes: >-
+  Enforces isolated Docker bridge networks (internal factory-agents with zero host egress,
+  internal control network with docker-socket-proxy, and egress bridge for Gatekeeper and
+  Control Plane).

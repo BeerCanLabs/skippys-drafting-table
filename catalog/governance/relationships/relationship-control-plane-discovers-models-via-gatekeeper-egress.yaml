@@ -1,0 +1,15 @@
+schemaVersion: '1.0'
+uid: 01M7KQAQCD-HNYQ
+type: relationship
+name: Agent Factory Control Plane → Agent Factory Gatekeeper Egress
+source: 01M7GWXKXW-EJWB
+target: 01M7GWXKXW-BPBV
+label: calls
+technology: HTTP (:8081)
+direction: synchronous
+flow: outbound
+catalogStatus: complete
+tags:
+  - agent-factory
+  - model-discovery
+notes: Queries POST /internal/vendor-models over Cloud Map (factory.internal) so Control Plane discovers vendor models without reading Gatekeeper-held secrets (S1).

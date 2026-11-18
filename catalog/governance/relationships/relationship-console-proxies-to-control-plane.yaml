@@ -1,0 +1,17 @@
+schemaVersion: '1.0'
+uid: 01M7KQAQCD-GQNC
+type: relationship
+name: Agent Factory Console → Agent Factory Control Plane
+source: 01M7GWXKXW-VPCD
+target: 01M7GWXKXW-EJWB
+label: calls
+technology: HTTP (:8088)
+direction: synchronous
+flow: outbound
+catalogStatus: complete
+tags:
+  - agent-factory
+  - headless-neck
+notes: >-
+  Zero-secret pass-through proxy forwarding caller cf-access-jwt-assertion or Bearer
+  credentials over Cloud Map (factory.internal) to /api/v1/*, /login, OAuth 2.1 AS, and /mcp*.

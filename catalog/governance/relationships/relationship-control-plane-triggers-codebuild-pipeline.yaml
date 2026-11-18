@@ -1,0 +1,15 @@
+schemaVersion: '1.0'
+uid: 01M7KQAQCD-4GN2
+type: relationship
+name: Agent Factory Control Plane → CodeBuild Admission & Skill Builders
+source: 01M7GWXKXW-EJWB
+target: 01M7KQAQCD-WD0R
+label: calls
+technology: HTTPS (:443)
+direction: asynchronous
+flow: outbound
+catalogStatus: complete
+tags:
+  - agent-factory
+  - admission
+notes: Triggers commit-pinned factory-agent-builder, factory-skills-builder, and factory-skill-checker CodeBuild runs.
