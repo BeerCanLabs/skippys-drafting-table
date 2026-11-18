@@ -1,0 +1,16 @@
+schemaVersion: '1.0'
+uid: 01M7QD4DVC-F9GQ
+type: relationship
+name: Agent Factory Control Plane → Agent Factory Bouncer
+source: 01M7GWXKXW-EJWB
+target: 01M7QCY010-1NAQ
+label: checks privileges & holds via
+technology: In-Process TypeScript Module
+direction: synchronous
+flow: outbound
+catalogStatus: complete
+tags:
+  - agent-factory
+  - bouncer
+  - authorization
+notes: Enforces default-deny privilege checks on every API/MCP action and manages operator approval holds and decisions.

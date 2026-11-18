@@ -1,8 +1,8 @@
 schemaVersion: '1.0'
 uid: 01M7KQAQCD-ZD19
 type: relationship
-name: Agent Factory Control Plane → Agent Factory WORM Ledger Archive
-source: 01M7GWXKXW-EJWB
+name: Agent Factory Auditor (Ledger) → Agent Factory WORM Ledger Archive
+source: 01M7QCY010-YM3F
 target: 01M7QAES9Q-M4R9
 label: checkpoints ledger to
 technology: HTTPS (:443)
@@ -11,6 +11,6 @@ flow: outbound
 catalogStatus: complete
 tags:
   - agent-factory
+  - auditor
   - worm-ledger
-  - s3
 notes: Ships periodic SHA-256 hash-chained ledger checkpoints to S3 Object Lock (COMPLIANCE mode, 365-day retention).

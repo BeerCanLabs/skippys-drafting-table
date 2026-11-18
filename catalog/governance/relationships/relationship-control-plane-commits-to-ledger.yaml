@@ -1,0 +1,16 @@
+schemaVersion: '1.0'
+uid: 01M7QD4DVC-6K7H
+type: relationship
+name: Agent Factory Control Plane → Agent Factory Auditor (Ledger)
+source: 01M7GWXKXW-EJWB
+target: 01M7QCY010-YM3F
+label: records attested events in
+technology: In-Process TypeScript Module
+direction: synchronous
+flow: outbound
+catalogStatus: complete
+tags:
+  - agent-factory
+  - auditor
+  - ledger
+notes: Appends sanitized wake, run, policy, approval, and metered egress records to the single-writer hash-chained ledger.

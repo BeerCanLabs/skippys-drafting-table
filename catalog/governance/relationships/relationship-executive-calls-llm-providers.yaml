@@ -1,0 +1,16 @@
+schemaVersion: '1.0'
+uid: 01M7QD4DVC-8154
+type: relationship
+name: Agent Factory Executive → Frontier LLM & Bedrock Inference APIs
+source: 01M7QCY010-M2ZX
+externalTarget: Frontier LLM Inference APIs (AWS Bedrock Converse, Anthropic, OpenAI, xAI)
+label: invokes models on
+technology: HTTPS / AWS SigV4 (:443)
+direction: synchronous
+flow: outbound
+catalogStatus: complete
+tags:
+  - agent-factory
+  - executive
+  - llm-providers
+notes: Translates OpenAI Chat Completions requests to AWS Bedrock Converse (via IAM VPC endpoint) or direct provider LLM endpoints with metered token accounting (M1-M5).

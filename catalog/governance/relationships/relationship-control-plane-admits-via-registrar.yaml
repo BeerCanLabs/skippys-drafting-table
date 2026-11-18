@@ -1,0 +1,15 @@
+schemaVersion: '1.0'
+uid: 01M7QD4DVC-VS9V
+type: relationship
+name: Agent Factory Control Plane → Agent Factory Registrar
+source: 01M7GWXKXW-EJWB
+target: 01M7QCY010-CDPG
+label: admits cartridges & skills via
+technology: In-Process TypeScript Module
+direction: synchronous
+flow: outbound
+catalogStatus: complete
+tags:
+  - agent-factory
+  - registrar
+notes: Routes cartridge registration, skill package uploads, and versioned configuration updates to Registrar.

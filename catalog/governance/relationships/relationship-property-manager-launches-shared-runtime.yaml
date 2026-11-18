@@ -1,0 +1,16 @@
+schemaVersion: '1.0'
+uid: 01M7QD4DVC-SPJP
+type: relationship
+name: Agent Factory Property Manager → Agent Factory Shared Cartridge Runtime
+source: 01M7QCY010-8E7R
+target: 01M7GWXKXW-4ZJF
+label: launches ECS RunTask for
+technology: AWS ECS RunTask API (:443)
+direction: asynchronous
+flow: outbound
+catalogStatus: complete
+tags:
+  - agent-factory
+  - property-manager
+  - ecs
+notes: Provisions own-prefix AgentTaskRole-<agent> IAM roles and launches disposable zero-egress Fargate tasks on wake.

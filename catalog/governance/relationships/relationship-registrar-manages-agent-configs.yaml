@@ -1,0 +1,16 @@
+schemaVersion: '1.0'
+uid: 01M7QCKQX8-MBBY
+type: relationship
+name: Agent Factory Registrar → Agent Factory Deployment Config Store
+source: 01M7QCY010-CDPG
+target: 01M7QCKQX8-5W8P
+label: reads & versions configs in
+technology: HTTPS (:443)
+direction: synchronous
+flow: bidirectional
+catalogStatus: complete
+tags:
+  - agent-factory
+  - registrar
+  - configuration
+notes: Writes one immutable versioned S3 object per agent configuration change and reads pinned configurations on wake or rollback (R1, SK3).

@@ -1,0 +1,16 @@
+schemaVersion: '1.0'
+uid: 01M7QD4DVC-GYVQ
+type: relationship
+name: Agent Factory Benchmark Harness → Agent Factory Control Plane
+source: 01M7QCY010-ZX4T
+target: 01M7GWXKXW-EJWB
+label: runs bench.yaml evaluations via
+technology: HTTPS (/api/v1/*)
+direction: synchronous
+flow: outbound
+catalogStatus: complete
+tags:
+  - agent-factory
+  - benchmark
+  - control-plane
+notes: Dispatches candidate-model benchmark wakes and reads attested token cost and run outputs from the Headless Neck.

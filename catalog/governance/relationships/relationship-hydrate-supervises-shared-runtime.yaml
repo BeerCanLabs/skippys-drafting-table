@@ -1,0 +1,16 @@
+schemaVersion: '1.0'
+uid: 01M7QD4DVC-HM6P
+type: relationship
+name: Agent Factory Hydrate Shim → Agent Factory Shared Cartridge Runtime
+source: 01M7QCY010-83KN
+target: 01M7GWXKXW-4ZJF
+label: wraps & hydrates $MEMORY_DIR for
+technology: In-Container Process Supervision (PID 1)
+direction: synchronous
+flow: outbound
+catalogStatus: complete
+tags:
+  - agent-factory
+  - hydrate
+  - shared-runtime
+notes: Hydrates $MEMORY_DIR SQLite notebook from S3 before launching runtimes/agent-runtime and replicates updated mind state on task exit.
