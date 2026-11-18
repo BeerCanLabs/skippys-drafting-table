@@ -1,0 +1,26 @@
+schemaVersion: '1.0'
+uid: 01M7QCY010-KSCT
+type: product_component
+name: Agent Factory Accountant (Budget)
+description: >-
+  Cast financial governance and spend-control service (@beercanlabs/factory-budget): prices
+  model token consumption, tracks per-agent and per-plan spend accounts and cloud overhead,
+  trips hard budget circuit breakers, and replays owed wakes when budgets are raised.
+repoUrl: https://github.com/BeerCanLabs/agent-factory
+owner:
+  team: platform-ai-team
+  contact: platform-ai@example.com
+classification: library
+catalogStatus: incomplete
+lifecycleStatus: preferred
+language: TypeScript
+runsOn: 01M7GWTG2S-AC3R
+tags:
+  - agent-factory
+  - cast
+  - accountant
+  - budget
+  - finops
+notes:
+  source: packages/budget in BeerCanLabs/agent-factory; hosted in-process by control-plane, executive, and gatekeeper.
+  incomplete: Component-level maturity requirement evidence is tracked at the SDP level (01M15NEKT7-S14J).

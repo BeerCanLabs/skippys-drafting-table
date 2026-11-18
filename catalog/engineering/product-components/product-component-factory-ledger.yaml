@@ -1,0 +1,26 @@
+schemaVersion: '1.0'
+uid: 01M7QCY010-YM3F
+type: product_component
+name: Agent Factory Auditor (Ledger)
+description: >-
+  Cast tamper-evident audit engine (@beercanlabs/factory-ledger): enforces single-writer
+  leased serialization (LG1), sanitizes secrets and raw prompts, appends SHA-256 hash-chained
+  segments to EFS ledger.jsonl, and ships immutable checkpoints to S3 Object Lock COMPLIANCE.
+repoUrl: https://github.com/BeerCanLabs/agent-factory
+owner:
+  team: platform-ai-team
+  contact: platform-ai@example.com
+classification: library
+catalogStatus: incomplete
+lifecycleStatus: preferred
+language: TypeScript
+runsOn: 01M7GWTG2S-AC3R
+tags:
+  - agent-factory
+  - cast
+  - auditor
+  - ledger
+  - worm
+notes:
+  source: packages/ledger in BeerCanLabs/agent-factory; single writer hosted inside control-plane.
+  incomplete: Component-level maturity requirement evidence is tracked at the SDP level (01M15NEKT7-S14J).

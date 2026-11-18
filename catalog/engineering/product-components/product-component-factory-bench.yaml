@@ -1,0 +1,24 @@
+schemaVersion: '1.0'
+uid: 01M7QCY010-ZX4T
+type: product_component
+name: Agent Factory Benchmark Harness
+description: >-
+  Deterministic Cost-vs-Quality evaluation CLI (@beercanlabs/factory-bench: factory-bench)
+  that executes bench.yaml suites against candidate models through the Headless Neck and
+  scores accuracy versus metered token spend.
+repoUrl: https://github.com/BeerCanLabs/agent-factory
+owner:
+  team: platform-ai-team
+  contact: platform-ai@example.com
+classification: cli
+catalogStatus: incomplete
+lifecycleStatus: preferred
+language: TypeScript
+tags:
+  - agent-factory
+  - benchmark
+  - cli
+  - evaluation
+notes:
+  source: packages/bench in BeerCanLabs/agent-factory (Node.js 22 binary factory-bench).
+  incomplete: Standalone CLI distribution and requirement evidence are not yet recorded.

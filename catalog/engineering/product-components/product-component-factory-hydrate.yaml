@@ -1,0 +1,27 @@
+schemaVersion: '1.0'
+uid: 01M7QCY010-83KN
+type: product_component
+name: Agent Factory Hydrate Shim
+description: >-
+  PID-1 cartridge process wrapper (@beercanlabs/factory-hydrate: factory-hydrate) baked into
+  every cartridge image: pulls the agent's $MEMORY_DIR Mind Safe from S3 on wake, configures
+  proxy environment variables toward gatekeeper-egress (:8081), supervises the agent worker
+  process, and pushes updated SQLite/mind state back to S3 on exit.
+repoUrl: https://github.com/BeerCanLabs/agent-factory
+owner:
+  team: platform-ai-team
+  contact: platform-ai@example.com
+classification: worker
+catalogStatus: incomplete
+lifecycleStatus: preferred
+language: TypeScript
+runsOn: 01M7GWTG2S-AC3R
+tags:
+  - agent-factory
+  - hydrate
+  - shim
+  - mind
+  - cartridge
+notes:
+  source: packages/hydrate in BeerCanLabs/agent-factory (Node.js binary factory-hydrate running inside cartridge ECS tasks).
+  incomplete: Component-level maturity requirement evidence is tracked at the SDP level (01M15NEKT7-S14J).

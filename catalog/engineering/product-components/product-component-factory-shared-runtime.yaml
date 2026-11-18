@@ -5,9 +5,9 @@ name: Agent Factory Shared Cartridge Runtime
 aliases:
   - Agent Factory Cartridge Task (on-demand)
 description: >-
-  Scale-to-zero shared container runtime (runtimes/agent-runtime) and PID-1 hydrate shim
-  (packages/hydrate) launched on demand via ECS RunTask when the Control Plane wakes a
-  configuration-only or repository-admitted cartridge inside zero-egress agent subnets.
+  Scale-to-zero shared Python/Node agent execution runtime (runtimes/agent-runtime) launched
+  on demand via ECS RunTask beneath the Hydrate Shim (01M7QCY010-83KN) when the Control Plane
+  wakes a configuration-only or skill-layered cartridge inside zero-egress agent subnets.
 repoUrl: https://github.com/BeerCanLabs/agent-factory
 owner:
   team: platform-ai-team
