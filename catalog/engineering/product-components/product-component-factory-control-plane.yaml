@@ -2,8 +2,13 @@ schemaVersion: '1.0'
 uid: 01M7GWXKXW-EJWB
 type: product_component
 name: Agent Factory Control Plane
-description: 'Factory kernel mailbox: wakes agent cartridges as ECS tasks, serves MCP and the API, and
-  writes the ledger.'
+description: >-
+  Factory Headless Neck and kernel mailbox (:8088/:8089): exposes typed REST (/api/v1/*),
+  Principal/Agent/Run MCP (/mcp*), and an embedded OAuth 2.1 Authorization Server (PKCE,
+  RFC 9728 PRM, consent screen, fk_at_/fk_rt_ tokens), while hosting the deterministic Cast
+  services (Keymaster, Property Manager, Auditor/Ledger, Accountant/Budget, Bouncer,
+  Timekeeper, Registrar, Inspector, Secrets-Bind) to wake disposable ECS agent tasks and
+  append the single-writer hash-chained ledger.
 repoUrl: https://github.com/BeerCanLabs/agent-factory
 owner:
   team: platform-ai-team
@@ -14,12 +19,18 @@ lifecycleStatus: preferred
 tags:
 - agent-factory
 - control-plane
+- headless-neck
+- mcp
+- oauth21
 - kernel
 runsOn: 01M7GWTG2S-AC3R
 language: TypeScript
 notes:
-  verification: Verified read-only from AWS account ending 2296 (us-east-1) on 2026-11-15 (America/Phoenix).
-  deployment: 'ECS service control-plane on factory-prod: FARGATE, task definition factory-prod-control-plane,
-    512 CPU/1024 MB, ports 8088 and 8089, 6 Secrets Manager references, otel sidecar, EFS volume data
-    (factory-prod-ledger). Default target of the factory-prod ALB. Registered in Cloud Map factory.internal.'
-  source: packages/control-plane in BeerCanLabs/agent-factory; image tag 01720b2 at verification time.
+  verification: Verified read-only in AWS account 566332862296 (us-east-1) on 2026-11-15 and 2026-11-18.
+  deployment: 'ECS service control-plane on factory-prod: FARGATE, task definition factory-prod-control-plane:208,
+    512 CPU/1024 MB, ports 8088 and 8089, stop-then-start deployment (min 0 / max 100 per LG1), 6 Secrets Manager
+    references, ADOT otel sidecar (v0.43.3), EFS volume data (factory-prod-ledger). Default target of the
+    factory-prod ALB. Registered in Cloud Map factory.internal.'
+  source: >-
+    packages/{control-plane,auth,bouncer,budget,contract,inspector,keymaster,ledger,property-manager,registrar,secrets-bind,telemetry,timekeeper}
+    in BeerCanLabs/agent-factory (submind-aws main pinned at 540a656; live task image 6630434 at 2026-11-18 check).

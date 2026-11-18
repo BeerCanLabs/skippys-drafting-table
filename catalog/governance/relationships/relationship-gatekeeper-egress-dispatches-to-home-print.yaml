@@ -1,0 +1,19 @@
+schemaVersion: '1.0'
+uid: 01M7QAG5KJ-DCZX
+type: relationship
+name: Agent Factory Gatekeeper Egress → Household Print Queue & Spooler Service
+source: 01M7GWXKXW-BPBV
+target: 01M7GTBMQS-YYDW
+label: dispatches print jobs to
+technology: HTTPS (:443)
+direction: synchronous
+flow: outbound
+catalogStatus: complete
+tags:
+  - agent-factory
+  - print
+  - gatekeeper-egress
+notes: >-
+  Configured in submind-aws FACTORY_EXTRA_GATEKEEPER_EGRESS_ROUTES (id=print ->
+  https://print.dalesackrider.com), injecting PRINT_API_TOKEN so Higgins and Donna never hold
+  the print credential.

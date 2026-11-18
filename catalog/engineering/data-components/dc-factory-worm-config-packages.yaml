@@ -1,0 +1,38 @@
+schemaVersion: '1.0'
+uid: 01M7QAES9Q-M4R9
+type: data_component
+name: Agent Factory WORM Checkpoints, Versioned Configs & Skill Packages
+description: >-
+  Immutable S3 object structures comprising COMPLIANCE-mode Object Lock WORM ledger
+  checkpoints, versioned per-agent deployment configuration snapshots, and SHA-256
+  content-addressed skill package archives.
+repoUrl: https://github.com/BeerCanLabs/agent-factory
+owner:
+  team: platform-ai-team
+  contact: platform-ai@example.com
+runsOn: 01M7GWTG2T-F1WG
+targetEngine: other
+dataClassification: confidential
+containsPII: false
+catalogStatus: incomplete
+lifecycleStatus: preferred
+tags:
+  - agent-factory
+  - s3
+  - worm
+  - object-lock
+  - skills
+tables:
+  - name: ledger-worm-checkpoints
+    description: Periodic ledger chain checkpoints in agent-factory-ledger-prod-* under S3 Object Lock COMPLIANCE mode (365-day retention).
+    containsPII: false
+  - name: agent-deployment-configs
+    description: Immutable versioned agent configuration manifests in agent-factory-config-prod-*.
+    containsPII: false
+  - name: skill-packages
+    description: Verified skill tarballs stored in agent-factory-packages-prod-*.
+    containsPII: false
+retentionPolicy: Ledger checkpoints locked for 365 days in S3 Object Lock COMPLIANCE mode; config and skill buckets retain versioned object history.
+notes:
+  source: landing-zones/aws/storage.tf, packages/ledger, and packages/registrar in BeerCanLabs/agent-factory.
+  incomplete: Lifecycle expiration rules on non-current config/package versions were not reviewed.

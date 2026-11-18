@@ -1,18 +1,17 @@
 schemaVersion: '1.0'
 uid: 01M7KQAQCD-RGE7
 type: relationship
-name: Agent Factory Cartridge Task → Amazon S3 Agent Factory Mind Bucket
+name: Agent Factory Cartridge Task → Agent Mind Safe & SQLite Notebook
 source: 01M7GWXKXW-4ZJF
-target: 01M7GWTG2T-GYW1
-label: reads from
+target: 01M7QAES9Q-FFCP
+label: hydrates mind from
 technology: HTTPS via S3 Gateway VPC Endpoint (:443)
 direction: synchronous
 flow: bidirectional
-catalogStatus: incomplete
+catalogStatus: complete
 tags:
   - agent-factory
   - mind-hydration
 notes: >-
-  Hydrate shim pulls and pushes $MEMORY_DIR over the S3 Gateway VPC Endpoint. Terraform-managed
-  task roles restrict access to each agent's own prefix; runtime-created AgentTaskRole-* roles
-  currently grant broader bucket access (recorded as non-compliant in decision record 01M7GYV3B6-FASW).
+  Hydrate shim pulls and pushes $MEMORY_DIR SQLite state over the S3 Gateway VPC Endpoint,
+  restricted by AgentTaskRole-<agent> MindPersistenceAccess to <agent>-state/* (verified live 2026-11-18).

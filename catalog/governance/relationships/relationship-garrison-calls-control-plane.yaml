@@ -1,0 +1,16 @@
+schemaVersion: '1.0'
+uid: 01M7QAES9Q-NSV3
+type: relationship
+name: Agent Garrison → Agent Factory Control Plane
+source: 01M7GWXKXW-Z0Z4
+target: 01M7GWXKXW-EJWB
+label: calls
+technology: HTTP (:8088)
+direction: synchronous
+flow: outbound
+catalogStatus: complete
+tags:
+  - agent-factory
+  - garrison
+  - headless-neck
+notes: Consumes the Control Plane Headless Neck (/api/v1/* and /mcp) over Cloud Map (factory.internal) to observe and command the agent fleet.

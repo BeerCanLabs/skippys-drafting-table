@@ -1,0 +1,19 @@
+schemaVersion: '1.0'
+uid: 01M7QAES9Q-RQK5
+type: relationship
+name: Agent Factory Control Plane ← Cloudflare Access
+source: 01M7GWXKXW-EJWB
+target: 01M7GWTG2T-VA2G
+label: authenticated at edge by
+technology: HTTPS / RS256 cf-access-jwt-assertion (:443)
+direction: synchronous
+flow: inbound
+catalogStatus: complete
+tags:
+  - agent-factory
+  - cloudflare-access
+  - zero-trust
+notes: >-
+  Verifies interactive operator identity at the Cloudflare Zero Trust edge (beercanlabs.cloudflareaccess.com),
+  with path-scoped bypasses only for signature-verified webhooks (/api/v1/hooks/*), OAuth 2.1 AS / /mcp flows,
+  and Edge Worker-stripped Bearer fk_ requests (A1, A2).

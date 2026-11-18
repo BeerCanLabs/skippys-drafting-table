@@ -1,0 +1,28 @@
+schemaVersion: '1.0'
+uid: 01M7QAES9Q-MX3M
+type: product_component
+name: Agent Factory House Staff Cartridges
+description: >-
+  Built-in repository cartridges shipped in BeerCanLabs/agent-factory (factory-manager,
+  agent-builder, and personal-trainer under agents/staff/*) running on runtimes/python-staff
+  as scale-to-zero on-demand ECS Fargate tasks for conversational fleet administration,
+  agent authoring, and benchmarking/coaching.
+repoUrl: https://github.com/BeerCanLabs/agent-factory
+owner:
+  team: platform-ai-team
+  contact: platform-ai@example.com
+classification: worker
+catalogStatus: incomplete
+lifecycleStatus: preferred
+language: Python
+runsOn: 01M7GWTG2S-AC3R
+tags:
+  - agent-factory
+  - house-staff
+  - cartridge
+  - on-demand
+  - scale-to-zero
+notes:
+  verification: Verified read-only in AWS account 566332862296 (us-east-1) on 2026-11-18 — active ECS task definition families agent-factory-manager, agent-agent-builder, and agent-personal-trainer; allowlisted in submind-aws FACTORY_REPOSITORY_AGENT_IDS (CF6).
+  source: agents/staff/{factory-manager,agent-builder,personal-trainer} and runtimes/python-staff in BeerCanLabs/agent-factory.
+  incomplete: Individual per-staff privilege scopes and evaluation suites are not yet modeled as separate component requirement records.

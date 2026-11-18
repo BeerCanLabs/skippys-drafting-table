@@ -26,6 +26,7 @@ capabilities:
 primaryTechnologyComponent: 01M7KQAQCD-ZVVA
 provisioningModel: reference-only
 notes:
+  verification: Verified read-only in AWS account 566332862296 (us-east-1) on 2026-11-18 — custom event bus factory-prod (arn:aws:events:us-east-1:566332862296:event-bus/factory-prod) exists with zero EventBridge rules (Rules=[]) currently attached.
   source: Defined as aws_cloudwatch_event_bus.factory in BeerCanLabs/agent-factory landing-zones/aws/storage.tf.
   provisioning: Provisioned by Terraform in BeerCanLabs/agent-factory landing-zones/aws (S3 backend); module not yet packaged as a DRAFT deployablePackage.
-  incomplete: Live event rules, targets, and archive/replay configuration on the factory event bus were not reviewed.
+  incomplete: Downstream EventBridge rules, consumer targets, and archive/replay policies are not yet configured on factory-prod.

@@ -1,15 +1,16 @@
 schemaVersion: '1.0'
 uid: 01M7KQAQCD-3CBS
 type: relationship
-name: AWS ALB factory-prod → Agent Factory Console
-source: 01M7GWTG2T-M2Q0
-target: 01M7GWXKXW-VPCD
-label: routes to
-technology: HTTPS / HTTP (:3000)
+name: Agent Factory Console ← AWS ALB factory-prod
+source: 01M7GWXKXW-VPCD
+target: 01M7GWTG2T-M2Q0
+label: receives ingress from
+technology: HTTPS :443 → HTTP :3000
 direction: synchronous
-flow: outbound
+flow: inbound
 catalogStatus: complete
 tags:
   - agent-factory
   - console
-notes: Host-header ALB listener rule (factory-dashboard.dalesackrider.com) forwarding dashboard traffic behind Cloudflare to Console :3000.
+  - ingress
+notes: Host-header ALB listener rule (prio 10, factory-dashboard.dalesackrider.com) forwarding Cloudflare-fronted dashboard traffic to Console :3000.

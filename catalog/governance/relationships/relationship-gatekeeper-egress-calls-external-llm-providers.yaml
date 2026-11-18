@@ -3,16 +3,16 @@ uid: 01M7KQAQCD-7V12
 type: relationship
 name: Agent Factory Gatekeeper Egress → External LLM & SaaS Providers
 source: 01M7GWXKXW-BPBV
-externalTarget: External Model & SaaS APIs (AWS Bedrock, OpenAI, xAI, Anthropic, GitHub, Google Workspace, Notion)
+externalTarget: External Model & SaaS APIs (AWS Bedrock Converse, Anthropic, OpenAI, xAI, GitHub, Google Workspace, Notion, Tavily, Cloudflare API)
 label: calls
 technology: HTTPS (:443)
 direction: synchronous
 flow: outbound
-catalogStatus: incomplete
+catalogStatus: complete
 tags:
   - agent-factory
   - llm-providers
 notes: >-
-  Injects provider API keys and Keymaster-refreshed OAuth tokens at egress so agent
-  containers do not hold upstream credentials (S1; see decision records 01M7GYV3B6-YE24
-  and 01M7GYV3B6-H03D for registered gaps GAP-027/GAP-031).
+  Translates factory model calls to AWS Bedrock Converse via IAM and injects provider API keys
+  or Keymaster-minted OAuth / GitHub App tokens at egress so agent containers hold only their
+  short-lived run token (S1).

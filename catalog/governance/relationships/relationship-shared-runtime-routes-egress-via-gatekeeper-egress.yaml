@@ -8,11 +8,10 @@ label: calls
 technology: HTTP Reverse Proxy & CONNECT (:8081)
 direction: synchronous
 flow: outbound
-catalogStatus: incomplete
+catalogStatus: complete
 tags:
   - agent-factory
   - zero-trust
 notes: >-
-  Intended sole outbound egress path from agent tasks (E1, E6) for metered model inference,
-  MCP tool calls, and allowlisted HTTPS CONNECT tunnels. Live Bedrock direct-invocation and
-  agent-subnet route/SG drift are recorded in decision records 01M7GYV3B6-8VN0 and 01M7GYV3B6-H03D.
+  Sole outbound egress path from zero-egress agent subnets (E1, E6; verified live 2026-11-18)
+  for metered model inference, MCP tool calls, and allowlisted HTTPS CONNECT tunnels.

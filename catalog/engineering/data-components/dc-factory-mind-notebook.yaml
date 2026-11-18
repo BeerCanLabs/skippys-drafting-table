@@ -1,0 +1,38 @@
+schemaVersion: '1.0'
+uid: 01M7QAES9Q-FFCP
+type: data_component
+name: Agent Mind Safe & SQLite Notebook
+description: >-
+  Per-agent persistent memory ("Notebook & Safe", Design Authority §6.6): cartridges read and
+  write local SQLite databases in $MEMORY_DIR while the hydrate shim syncs each agent's state
+  strictly within its own S3 prefix (<agent>-state/*) on wake and sleep.
+repoUrl: https://github.com/BeerCanLabs/agent-factory
+owner:
+  team: platform-ai-team
+  contact: platform-ai@example.com
+runsOn: 01M7GWTG2T-GYW1
+targetEngine: sqlite
+dataClassification: confidential
+containsPII: true
+catalogStatus: incomplete
+lifecycleStatus: preferred
+tags:
+  - agent-factory
+  - mind
+  - sqlite
+  - s3
+tables:
+  - name: episodic_conversations
+    description: Conversation turns, FTS5 search index, and session history managed by runtimes/agent-runtime/memory/episodic.py.
+    containsPII: true
+  - name: notebook_entries
+    description: Structured agent notes and rotation metadata managed by runtimes/agent-runtime/memory/notebook.py.
+    containsPII: true
+  - name: workspace_state
+    description: Working memory and scratchpad state managed by runtimes/agent-runtime/memory/workspace.py.
+    containsPII: true
+retentionPolicy: Versioned S3 objects under agent-factory-mind-prod-924cfefd/<agent>-state/* until explicit two-stage agent purge.
+notes:
+  verification: Verified live on 2026-11-18 — AgentTaskRole-<agent> MindPersistenceAccess restricts S3 Get/Put/Delete/List to <agent>-state/* (GAP-249/GAP-263 remediated in 88a9847).
+  source: packages/hydrate and runtimes/agent-runtime/memory/{episodic,notebook,workspace}.py in BeerCanLabs/agent-factory.
+  incomplete: Schema changes ship as CREATE TABLE IF NOT EXISTS inside runtime deploys rather than decoupled expand-and-contract migrations (see 01M7GYV3B6-FASW).
