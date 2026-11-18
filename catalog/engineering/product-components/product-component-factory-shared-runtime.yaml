@@ -1,0 +1,37 @@
+schemaVersion: '1.0'
+uid: 01M7GWXKXW-4ZJF
+type: product_component
+name: Agent Factory Shared Cartridge Runtime
+aliases:
+  - Agent Factory Cartridge Task (on-demand)
+description: >-
+  Scale-to-zero shared container runtime (runtimes/agent-runtime) and PID-1 hydrate shim
+  (packages/hydrate) launched on demand via ECS RunTask when the Control Plane wakes a
+  configuration-only or repository-admitted cartridge inside zero-egress agent subnets.
+repoUrl: https://github.com/BeerCanLabs/agent-factory
+owner:
+  team: platform-ai-team
+  contact: platform-ai@example.com
+classification: worker
+catalogStatus: incomplete
+lifecycleStatus: preferred
+language: Python
+tags:
+  - agent-factory
+  - shared-runtime
+  - cartridge
+  - on-demand
+  - scale-to-zero
+runsOn: 01M7GWTG2S-AC3R
+notes:
+  verification: Verified read-only in AWS account 566332862296 (us-east-1) on 2026-11-15 and 2026-11-18.
+  deployment: >-
+    Base image in ECR factory-agent-runtime and layered skill images in factory-dynamic-agents;
+    executed as disposable FARGATE tasks (256 CPU/512 MB, assignPublicIp=false) in zero-egress
+    agent subnets under per-agent IAM role AgentTaskRole-<agent> scoped strictly to <agent>-state/*
+    in S3. Hosts external adopter products/fleets (e.g. SM-higgins, agentic-sdlc) registered
+    separately in the catalog.
+  source: runtimes/agent-runtime (Python) and packages/hydrate (Node.js PID-1 shim) in BeerCanLabs/agent-factory.
+  incomplete: >-
+    15 legacy/test task definition families remain registered in ECS alongside the 18 active
+    named agent families.

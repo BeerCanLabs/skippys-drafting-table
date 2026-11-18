@@ -1,0 +1,37 @@
+schemaVersion: '1.0'
+uid: 01M7GWTG2T-F1WG
+type: data_store_service
+name: Amazon S3 - Agent Factory WORM Ledger Bucket
+aliases:
+  - Amazon S3 - Agent Factory Config, Ledger and Package Buckets
+description: >-
+  Immutable S3 Object Lock COMPLIANCE bucket storing tamper-evident WORM checkpoints of the
+  Agent Factory execution ledger.
+catalogStatus: incomplete
+lifecycleStatus: preferred
+owner:
+  team: platform-ai-team
+  contact: platform-ai@example.com
+tags:
+  - aws
+  - s3
+  - ledger
+  - worm
+  - object-lock
+  - agent-factory
+deliveryModel: paas
+vendor: Amazon Web Services
+productName: Amazon S3
+productVersion: managed
+patchingOwner: aws-managed
+authenticationModel: iam
+capabilities:
+  - 01KT0V5MCV-E9TN
+  - 01KT0V5MCV-VD0Y
+  - 01KQQ4Q026-7T2H
+provisioningModel: reference-only
+notes:
+  verification: Verified read-only in AWS account 566332862296 (us-east-1) on 2026-11-15 and 2026-11-18.
+  bucket: 'agent-factory-ledger-prod-924cfefd: SSE-S3 (AES256), versioning Enabled, S3 Object Lock in COMPLIANCE mode (365-day default retention), all four Block Public Access settings on.'
+  provisioning: Provisioned by Terraform in BeerCanLabs/agent-factory landing-zones/aws/storage.tf (aws_s3_bucket.ledger_worm).
+  incomplete: Bucket policy and cross-region replication settings were not reviewed.

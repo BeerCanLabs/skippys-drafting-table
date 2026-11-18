@@ -1,0 +1,31 @@
+schemaVersion: '1.0'
+uid: 01M7QCKQX8-W76J
+type: data_component
+name: Agent Factory Skill Package Registry
+description: >-
+  Content-addressed SHA-256 skill package tarballs admitted after unprivileged AST/SDK/test
+  verification by factory-skill-checker and composed onto the shared agent runtime by
+  factory-skills-builder.
+repoUrl: https://github.com/BeerCanLabs/agent-factory
+owner:
+  team: platform-ai-team
+  contact: platform-ai@example.com
+runsOn: 01M7QCKQX8-V947
+targetEngine: other
+dataClassification: internal
+containsPII: false
+catalogStatus: incomplete
+lifecycleStatus: preferred
+tags:
+  - agent-factory
+  - skills
+  - packages
+  - s3
+tables:
+  - name: skill-package-tarballs
+    description: Immutable SHA-256 content-addressed skill archives and manifests stored in agent-factory-packages-prod-924cfefd.
+    containsPII: false
+retentionPolicy: Versioned S3 objects retained in agent-factory-packages-prod-924cfefd across pinned agent configuration versions.
+notes:
+  source: packages/registrar, landing-zones/aws/compose-skills.sh, and landing-zones/aws/storage.tf in BeerCanLabs/agent-factory.
+  incomplete: Standalone data-component requirement evidence is tracked at the SDP level (01M15NEKT7-S14J).

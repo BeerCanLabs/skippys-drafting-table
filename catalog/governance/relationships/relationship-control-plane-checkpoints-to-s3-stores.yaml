@@ -1,18 +1,16 @@
 schemaVersion: '1.0'
 uid: 01M7KQAQCD-ZD19
 type: relationship
-name: Agent Factory Control Plane → WORM Checkpoints, Configs & Skill Packages
+name: Agent Factory Control Plane → Agent Factory WORM Ledger Archive
 source: 01M7GWXKXW-EJWB
 target: 01M7QAES9Q-M4R9
-label: writes to
+label: checkpoints ledger to
 technology: HTTPS (:443)
 direction: synchronous
-flow: bidirectional
+flow: outbound
 catalogStatus: complete
 tags:
   - agent-factory
   - worm-ledger
   - s3
-notes: >-
-  Ships periodic WORM ledger checkpoints to S3 Object Lock (COMPLIANCE mode, 365-day retention),
-  reads/writes immutable versioned agent configurations, and manages skill package tarballs.
+notes: Ships periodic SHA-256 hash-chained ledger checkpoints to S3 Object Lock (COMPLIANCE mode, 365-day retention).

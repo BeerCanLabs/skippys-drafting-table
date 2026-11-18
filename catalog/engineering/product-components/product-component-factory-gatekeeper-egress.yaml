@@ -5,9 +5,9 @@ name: Agent Factory Gatekeeper Egress
 description: >-
   Outbound zero-trust gatekeeper and Executive enforcement proxy (:8081) for agent tasks:
   evaluates policy, kill-switch, Accountant budgets, and Bouncer holds before translating
-  factory model calls to AWS Bedrock Converse or injecting upstream credentials (Anthropic,
-  OpenAI, xAI, GitHub App/OAuth via Keymaster, Home Print, Closing Climb, Cloudflare, Tavily)
-  so agent containers hold only their short-lived run token.
+  factory model calls to AWS Bedrock Converse or injecting upstream credentials (LLM APIs,
+  Keymaster-managed OAuth / GitHub App tokens, and adopter-configured HTTP routes) so agent
+  containers hold only their short-lived run token.
 repoUrl: https://github.com/BeerCanLabs/agent-factory
 owner:
   team: platform-ai-team
