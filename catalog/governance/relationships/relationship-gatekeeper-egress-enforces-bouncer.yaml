@@ -1,0 +1,16 @@
+schemaVersion: '1.0'
+uid: 01M7QD4DVC-2JWW
+type: relationship
+name: Agent Factory Gatekeeper Egress → Agent Factory Bouncer
+source: 01M7GWXKXW-BPBV
+target: 01M7QCY010-1NAQ
+label: enforces outbound holds via
+technology: In-Process / HTTP (:8088)
+direction: synchronous
+flow: outbound
+catalogStatus: complete
+tags:
+  - agent-factory
+  - gatekeeper-egress
+  - bouncer
+notes: Pauses or refuses sensitive outbound mutations until an operator grants a Bouncer approval (E4).

@@ -1,0 +1,16 @@
+schemaVersion: '1.0'
+uid: 01M7KQAQCD-Z7TV
+type: relationship
+name: Agent Factory Inspector → Agent Factory EventBridge Event Bus
+source: 01M7QCY010-VTXC
+target: 01M7KQAQCD-GHF4
+label: publishes events to
+technology: HTTPS (:443)
+direction: event
+flow: outbound
+catalogStatus: incomplete
+tags:
+  - agent-factory
+  - inspector
+  - eventbridge
+notes: Publishes structured run lifecycle outcomes, budget alerts, crashes, and held-action events to the factory-prod EventBridge bus (Rules=[] live).

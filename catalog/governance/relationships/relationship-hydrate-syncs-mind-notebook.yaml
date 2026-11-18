@@ -1,0 +1,18 @@
+schemaVersion: '1.0'
+uid: 01M7KQAQCD-RGE7
+type: relationship
+name: Agent Factory Hydrate Shim → Agent Mind Safe & SQLite Notebook
+source: 01M7QCY010-83KN
+target: 01M7QAES9Q-FFCP
+label: hydrates & pushes mind in
+technology: HTTPS via S3 Gateway VPC Endpoint (:443)
+direction: synchronous
+flow: bidirectional
+catalogStatus: complete
+tags:
+  - agent-factory
+  - hydrate
+  - mind-hydration
+notes: >-
+  PID-1 factory-hydrate shim pulls $MEMORY_DIR SQLite state on wake and pushes updates on exit
+  over the S3 Gateway VPC Endpoint, scoped strictly to <agent>-state/* by AgentTaskRole-<agent>.

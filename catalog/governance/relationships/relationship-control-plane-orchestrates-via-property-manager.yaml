@@ -1,0 +1,15 @@
+schemaVersion: '1.0'
+uid: 01M7QD4DVC-W1A6
+type: relationship
+name: Agent Factory Control Plane → Agent Factory Property Manager
+source: 01M7GWXKXW-EJWB
+target: 01M7QCY010-8E7R
+label: orchestrates wakes & lifecycle via
+technology: In-Process TypeScript Module
+direction: synchronous
+flow: outbound
+catalogStatus: complete
+tags:
+  - agent-factory
+  - property-manager
+notes: Delegates agent wake launch, PAUSED/RESUME state transitions, crash quarantine, and two-stage cloud purge.

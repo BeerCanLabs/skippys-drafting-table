@@ -1,0 +1,16 @@
+schemaVersion: '1.0'
+uid: 01M7QD4DVC-W89Q
+type: relationship
+name: Agent Factory Control Plane → Agent Factory Headless Neck Contract
+source: 01M7GWXKXW-EJWB
+target: 01M7QCY010-YGWY
+label: implements & serves
+technology: In-Process TypeScript Module
+direction: synchronous
+flow: outbound
+catalogStatus: complete
+tags:
+  - agent-factory
+  - headless-neck
+  - contract
+notes: Dispatches /api/v1/* REST routes, OpenAPI 3.1 metadata, and Principal/Agent/Run /mcp* tool calls from the single typed contract.

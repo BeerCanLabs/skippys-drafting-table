@@ -1,0 +1,16 @@
+schemaVersion: '1.0'
+uid: 01M7QD4DVC-D9A0
+type: relationship
+name: Agent Factory Gatekeeper Egress → Agent Factory Executive
+source: 01M7GWXKXW-BPBV
+target: 01M7QCY010-M2ZX
+label: routes model inference via
+technology: In-Process TypeScript Module
+direction: synchronous
+flow: outbound
+catalogStatus: complete
+tags:
+  - agent-factory
+  - gatekeeper-egress
+  - executive
+notes: Validates model policy, pricing, and token metering through Executive before invoking Bedrock Converse or upstream LLM providers.

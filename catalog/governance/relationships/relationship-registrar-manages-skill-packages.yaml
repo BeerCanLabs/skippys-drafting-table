@@ -1,0 +1,16 @@
+schemaVersion: '1.0'
+uid: 01M7QCKQX8-V5TC
+type: relationship
+name: Agent Factory Registrar → Agent Factory Skill Package Registry
+source: 01M7QCY010-CDPG
+target: 01M7QCKQX8-W76J
+label: stores & resolves skills in
+technology: HTTPS (:443)
+direction: synchronous
+flow: bidirectional
+catalogStatus: complete
+tags:
+  - agent-factory
+  - registrar
+  - skills
+notes: Stores verified SHA-256 skill package tarballs in S3 and supplies pinned skill references to CodeBuild skill composition builds.

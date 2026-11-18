@@ -1,0 +1,16 @@
+schemaVersion: '1.0'
+uid: 01M7QD4DVC-3K3H
+type: relationship
+name: Agent Factory Inspector → Agent Factory Auditor (Ledger)
+source: 01M7QCY010-VTXC
+target: 01M7QCY010-YM3F
+label: taps committed rows from
+technology: In-Process Stream Tap
+direction: event
+flow: outbound
+catalogStatus: complete
+tags:
+  - agent-factory
+  - inspector
+  - ledger
+notes: Observes committed ledger segments to compute run progress, anomaly diagnostics, and downstream EventBridge notifications.
