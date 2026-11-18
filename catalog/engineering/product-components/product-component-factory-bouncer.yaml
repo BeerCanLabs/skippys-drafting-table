@@ -1,0 +1,25 @@
+schemaVersion: '1.0'
+uid: 01M7QCY010-1NAQ
+type: product_component
+name: Agent Factory Bouncer
+description: >-
+  Cast authorization and human-in-the-loop governance service (@beercanlabs/factory-bouncer):
+  enforces default-deny named privileges, holds sensitive outbound actions or deploy/ops
+  decisions, and manages operator approval grants and expirations.
+repoUrl: https://github.com/BeerCanLabs/agent-factory
+owner:
+  team: platform-ai-team
+  contact: platform-ai@example.com
+classification: library
+catalogStatus: incomplete
+lifecycleStatus: preferred
+language: TypeScript
+runsOn: 01M7GWTG2S-AC3R
+tags:
+  - agent-factory
+  - cast
+  - bouncer
+  - authorization
+notes:
+  source: packages/bouncer in BeerCanLabs/agent-factory; hosted in-process by control-plane and enforced at gatekeeper-egress.
+  incomplete: Component-level maturity requirement evidence is tracked at the SDP level (01M15NEKT7-S14J).

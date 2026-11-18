@@ -1,0 +1,27 @@
+schemaVersion: '1.0'
+uid: 01M7QCY010-CDPG
+type: product_component
+name: Agent Factory Registrar
+description: >-
+  Cast cartridge and skill admission service (@beercanlabs/factory-registrar): validates
+  surface.yaml and memory archetypes, triggers commit-pinned CodeBuild agent/skill builds and
+  unprivileged skill checks, pins immutable ECR image digests, and persists versioned agent
+  deployment configurations in S3.
+repoUrl: https://github.com/BeerCanLabs/agent-factory
+owner:
+  team: platform-ai-team
+  contact: platform-ai@example.com
+classification: library
+catalogStatus: incomplete
+lifecycleStatus: preferred
+language: TypeScript
+runsOn: 01M7GWTG2S-AC3R
+tags:
+  - agent-factory
+  - cast
+  - registrar
+  - admission
+  - skills
+notes:
+  source: packages/registrar in BeerCanLabs/agent-factory; hosted inside control-plane.
+  incomplete: Component-level maturity requirement evidence is tracked at the SDP level (01M15NEKT7-S14J).

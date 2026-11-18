@@ -56,17 +56,60 @@ networkZones:
     Encrypted EFS single-writer hot ledger volume (:2049) and four dedicated S3 buckets for
     COMPLIANCE WORM ledger checkpoints, versioned agent configs, skill packages, and agent minds.
 serviceGroups:
-- name: Factory kernel mailboxes
+- name: Control Plane & Cast kernel
   deploymentTarget: aws-us-east-1
   substrate: 01M7GWTG2S-AC3R
   deployableObjects:
   - ref: 01M7GWXKXW-EJWB
     networkZone: mailbox
     diagramTier: application
+  - ref: 01M7QCY010-YGWY
+    networkZone: mailbox
+    diagramTier: application
+  - ref: 01M7QCY010-ZYH3
+    networkZone: mailbox
+    diagramTier: application
+  - ref: 01M7QCY010-1NAQ
+    networkZone: mailbox
+    diagramTier: application
+  - ref: 01M7QCY010-KSCT
+    networkZone: mailbox
+    diagramTier: application
+  - ref: 01M7QCY010-PF3F
+    networkZone: mailbox
+    diagramTier: application
+  - ref: 01M7QCY010-YM3F
+    networkZone: mailbox
+    diagramTier: application
+  - ref: 01M7QCY010-8E7R
+    networkZone: mailbox
+    diagramTier: application
+  - ref: 01M7QCY010-CDPG
+    networkZone: mailbox
+    diagramTier: application
+  - ref: 01M7QCY010-HVC7
+    networkZone: mailbox
+    diagramTier: application
+  - ref: 01M7QCY010-VTXC
+    networkZone: mailbox
+    diagramTier: application
+  - ref: 01M7QCY010-PYAM
+    networkZone: mailbox
+    diagramTier: utility
+  - ref: 01M7QCY010-SW8C
+    networkZone: mailbox
+    diagramTier: utility
+- name: Gatekeeper zero-trust perimeter
+  deploymentTarget: aws-us-east-1
+  substrate: 01M7GWTG2S-AC3R
+  deployableObjects:
   - ref: 01M7GWXKXW-7W49
     networkZone: mailbox
     diagramTier: application
   - ref: 01M7GWXKXW-BPBV
+    networkZone: mailbox
+    diagramTier: application
+  - ref: 01M7QCY010-M2ZX
     networkZone: mailbox
     diagramTier: application
 - name: Factory web console
@@ -76,11 +119,14 @@ serviceGroups:
   - ref: 01M7GWXKXW-VPCD
     networkZone: mailbox
     diagramTier: presentation
-- name: Cartridge runtimes & House Staff (on-demand)
+- name: Cartridge runtimes, Hydrate shim & House Staff (on-demand)
   deploymentTarget: aws-us-east-1
   substrate: 01M7GWTG2S-AC3R
   deployableObjects:
   - ref: 01M7GWXKXW-4ZJF
+    networkZone: agents
+    diagramTier: application
+  - ref: 01M7QCY010-83KN
     networkZone: agents
     diagramTier: application
   - ref: 01M7QAES9Q-MX3M
@@ -104,24 +150,31 @@ serviceGroups:
   - ref: 01M7QAES9Q-FFCP
     networkZone: data
     diagramTier: data
-- name: Operator & CI clients
+- name: Operator, benchmark & conformance tooling
   deploymentTarget: operator-workstation
   deployableObjects:
   - ref: 01M7KQAQCD-01CD
     diagramTier: presentation
+  - ref: 01M7QCY010-ZX4T
+    diagramTier: utility
+  - ref: 01M7QCY010-5KMC
+    diagramTier: utility
 tierVariants:
 - tier: 01M7KQAQCC-T9DS
   deploymentTarget:
     provider: aws
     region: us-east-1
   serviceGroupVariants:
-  - serviceGroup: Factory kernel mailboxes
+  - serviceGroup: Control Plane & Cast kernel
     replicaCount: 1
-    notes: Single-writer Control Plane (stop-then-start per LG1); Gatekeeper Ingress and Gatekeeper Egress run desiredCount=1.
+    notes: Single-writer Control Plane hosting the Cast packages in-process (stop-then-start deployment per LG1).
+  - serviceGroup: Gatekeeper zero-trust perimeter
+    replicaCount: 1
+    notes: Gatekeeper Ingress (FARGATE) and Gatekeeper Egress + Executive (FARGATE_SPOT) each run desiredCount=1.
   - serviceGroup: Factory web console
     replicaCount: 1
     notes: Stateless Web Console runs desiredCount=1 behind ALB host rule factory-dashboard.dalesackrider.com.
-  - serviceGroup: Cartridge runtimes & House Staff (on-demand)
+  - serviceGroup: Cartridge runtimes, Hydrate shim & House Staff (on-demand)
     autoscaling:
       enabled: true
       min: 0

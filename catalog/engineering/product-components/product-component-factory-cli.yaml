@@ -1,13 +1,14 @@
 schemaVersion: '1.0'
 uid: 01M7KQAQCD-01CD
 type: product_component
-name: Agent Factory CLI & Benchmark Harness
+name: Agent Factory CLI
+aliases:
+  - Agent Factory CLI & Benchmark Harness
 description: >-
-  Operator terminal client (@beercanlabs/factory-cli: factory) and Cost-vs-Quality benchmark
-  runner (@beercanlabs/factory-bench: factory-bench). Authenticates via OIDC or fk_ API keys
-  against the Control Plane Headless Neck to inspect runs and ledger chains, decide Bouncer
-  approvals, manage model subscriptions, and score bench.yaml evaluations across candidate
-  models.
+  Hot-swappable operator terminal client (@beercanlabs/factory-cli: factory) authenticating
+  via OIDC or fk_ API keys against the Control Plane Headless Neck to converse with
+  factory-manager, inspect runs and ledger chains, decide Bouncer approvals, and manage
+  model subscriptions.
 version: 2.0.0
 repoUrl: https://github.com/BeerCanLabs/agent-factory
 owner:
@@ -20,15 +21,15 @@ language: TypeScript
 tags:
   - agent-factory
   - cli
-  - benchmark
   - client
+  - hot-swappable-head
 environmentConfiguration:
   - name: FACTORY_URL
     description: Target Agent Factory public HTTPS URL.
     required: true
     sensitive: false
   - name: FACTORY_API_KEY
-    description: Operator or service fk_ API key when invoking headless CLI or CI benchmark commands.
+    description: Operator or service fk_ API key when invoking headless CLI commands.
     required: false
     sensitive: true
 runtimeSpec:
@@ -40,5 +41,5 @@ runtimeSpec:
       purpose: Consumes the Control Plane REST and MCP operator surfaces.
       interface: /api/v1/* and /mcp
 notes:
-  source: packages/cli and packages/bench in BeerCanLabs/agent-factory (Node.js 22 CLI binaries).
-  incomplete: Requirement evidence and standalone CLI distribution/release governance are not yet recorded.
+  source: packages/cli in BeerCanLabs/agent-factory (Node.js 22 binary factory).
+  incomplete: Standalone CLI distribution and requirement evidence are not yet recorded.
