@@ -1,0 +1,16 @@
+schemaVersion: '1.0'
+uid: 01M7QAES9Q-S4ST
+type: relationship
+name: Control Plane → Amazon CloudWatch
+source: 01M7GWXKXW-EJWB
+target: 01M7GWTG2T-TQEB
+label: ships logs & traces to
+technology: OTLP → ADOT Sidecar → HTTPS (:443)
+direction: asynchronous
+flow: outbound
+catalogStatus: complete
+tags:
+  - agent-factory
+  - observability
+  - cloudwatch
+notes: Ships container logs to /ecs/factory-prod and OpenTelemetry request/wake spans and metrics (packages/telemetry) through the ADOT collector sidecar.

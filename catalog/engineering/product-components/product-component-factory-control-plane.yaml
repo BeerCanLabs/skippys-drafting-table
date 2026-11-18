@@ -27,6 +27,27 @@ tags:
 - kernel
 runsOn: 01M7GWTG2S-AC3R
 language: TypeScript
+interfaces:
+  - name: Headless Neck REST & OpenAPI 3.1
+    protocol: REST
+    path: /api/v1/*
+    authenticationModel: oauth
+    description: Typed fleet, agent, run, skill, budget, approval, and model operations defined by @beercanlabs/factory-contract and consumed by Console, CLI, and Garrison.
+  - name: Principal & Cartridge MCP Surface
+    protocol: other
+    path: /mcp and /mcp/run
+    authenticationModel: oauth
+    description: Streamable HTTP Model Context Protocol endpoints exposing curated domain toolsets to operators/IDEs (/mcp) and active agent runs (/mcp/run).
+  - name: Embedded OAuth 2.1 Authorization Server
+    protocol: REST
+    path: /.well-known/oauth-*, /authorize, /token, /register
+    authenticationModel: oauth
+    description: RFC 9728 Protected Resource Metadata, dynamic client registration, PKCE authorization, and refresh rotation for external MCP clients.
+  - name: Inbound Webhook Receiver
+    protocol: REST
+    path: /api/v1/hooks/*
+    authenticationModel: api-key
+    description: Signature-verified webhook ingress (including GitHub App fleet events) triggering agent wakes.
 notes:
   verification: Verified read-only in AWS account 566332862296 (us-east-1) on 2026-11-15 and 2026-11-18.
   deployment: 'ECS service control-plane on factory-prod: FARGATE, task definition factory-prod-control-plane:208,
