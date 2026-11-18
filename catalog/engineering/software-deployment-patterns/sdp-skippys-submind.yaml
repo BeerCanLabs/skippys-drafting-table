@@ -34,13 +34,13 @@ networkZones:
     Gatekeeper Egress (:8081), Console (:3000), and Garrison (:3000) under Cloud Map DNS
     (factory.internal).
 - id: agents
-  name: Agent Cartridge Compute
+  name: Zero-Egress Agent Cartridge Compute
   tier: application
   description: >-
-    Private agent subnets intended for zero direct internet egress (Terraform route=[], scoped
-    security group to Control Plane :8088, Gatekeeper Egress :8081, and VPC endpoints :443).
-    Live unmanaged route/SG drift and assignPublicIp=false mitigation are recorded in decision
-    record 01M7GYV3B6-8VN0.
+    Private agent subnets with zero direct internet egress (factory-prod-agents-no-egress has
+    only local VPC and S3 Gateway endpoint routes; security group factory-prod-agents permits
+    egress only to Control Plane :8088, Gatekeeper Egress :8081, VPC endpoints :443, VPC DNS :53,
+    and ECS metadata :80; assignPublicIp=false — see decision record 01M7GYV3B6-8VN0).
 - id: data
   name: Durable Mind, WORM Ledger & Package Storage
   tier: data
@@ -78,6 +78,26 @@ serviceGroups:
   - ref: 01M7GWXKXW-4ZJF
     networkZone: agents
     diagramTier: application
+  - ref: 01M7QAES9Q-MX3M
+    networkZone: agents
+    diagramTier: application
+- name: Factory durable stores
+  deploymentTarget: aws-us-east-1
+  deployableObjects:
+  - ref: 01M7QAES9Q-10ZE
+    networkZone: data
+    diagramTier: data
+  - ref: 01M7QAES9Q-M4R9
+    networkZone: data
+    diagramTier: data
+  - ref: 01M7QAES9Q-FFCP
+    networkZone: data
+    diagramTier: data
+- name: Operator & CI clients
+  deploymentTarget: operator-workstation
+  deployableObjects:
+  - ref: 01M7KQAQCD-01CD
+    diagramTier: presentation
 tierVariants:
 - tier: 01M7KQAQCC-T9DS
   deploymentTarget:
@@ -181,8 +201,8 @@ requirementImplementations:
   status: not-compliant
   notes: No automated SCA in CI and no Dependabot configuration. See decision record 01M7GYV3B6-Q5NV.
 notes:
-  verification: Verified read-only on 2026-11-15 (America/Phoenix) against AWS account ending 2296, us-east-1.
-  deploymentTargets: AWS us-east-1, ECS cluster factory-prod on Fargate/Fargate Spot (01M7GWTG2S-X9V8).
+  verification: Verified read-only on 2026-11-15 and re-verified on 2026-11-18 against AWS account 566332862296, us-east-1.
+  deploymentTargets: AWS us-east-1, ECS cluster factory-prod on Fargate/Fargate Spot (01M7GWTG2S-X9V8), plus operator-workstation for the Factory CLI & Benchmark Harness (01M7KQAQCD-01CD).
   availabilityRequirement: Each kernel and client service runs desired 1 / running 1. Agent compute is zero when idle. gatekeeper-egress and garrison use FARGATE_SPOT. Availability target not yet set.
   dataClassification: Confidential (agent-factory .draft/sdp.yaml says the ledger holds metadata plus hashes and the mind holds adopter data).
   failureDomain:
@@ -200,5 +220,5 @@ notes:
     requirementImplementations. Still open: synthetic test data, local DRAFT validation of the repo SDP, session/JWT
     hardening (MFA, rate limiting), and reference-architecture
     conformance: the agent-factory repo SDP maps the orchestrated-tasks pattern to RA 01KV0REFAR-CMSV, but declaring it
-    needs the RA's ingress, orchestration, mesh, data-store and logs slots modeled first. Data components for
-    the mind and ledger, autoscaling and security groups are not yet modeled.
+    needs the community RA vendored/adopted and its ingress, orchestration, mesh, data-store and logs slots bound first.
+    Autoscaling policies and standalone security group objects are not yet modeled.

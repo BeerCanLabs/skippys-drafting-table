@@ -1,0 +1,16 @@
+schemaVersion: '1.0'
+uid: 01M7QAES9Q-DEND
+type: relationship
+name: Agent Garrison ← AWS ALB factory-prod
+source: 01M7GWXKXW-Z0Z4
+target: 01M7GWTG2T-M2Q0
+label: receives ingress from
+technology: HTTPS :443 → HTTP :3000
+direction: synchronous
+flow: inbound
+catalogStatus: complete
+tags:
+  - agent-factory
+  - garrison
+  - ingress
+notes: Host-header ALB listener rule (prio 20, garrison.dalesackrider.com) forwarding Cloudflare Access-gated traffic to Agent Garrison :3000.

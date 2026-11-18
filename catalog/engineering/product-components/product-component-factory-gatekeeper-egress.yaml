@@ -2,8 +2,12 @@ schemaVersion: '1.0'
 uid: 01M7GWXKXW-BPBV
 type: product_component
 name: Agent Factory Gatekeeper Egress
-description: 'Outbound gatekeeper for agent tasks: routes provider calls and injects credentials so agents
-  hold only their run token.'
+description: >-
+  Outbound zero-trust gatekeeper and Executive enforcement proxy (:8081) for agent tasks:
+  evaluates policy, kill-switch, Accountant budgets, and Bouncer holds before translating
+  factory model calls to AWS Bedrock Converse or injecting upstream credentials (Anthropic,
+  OpenAI, xAI, GitHub App/OAuth via Keymaster, Home Print, Closing Climb, Cloudflare, Tavily)
+  so agent containers hold only their short-lived run token.
 repoUrl: https://github.com/BeerCanLabs/agent-factory
 owner:
   team: platform-ai-team
@@ -14,14 +18,20 @@ lifecycleStatus: preferred
 tags:
 - agent-factory
 - gatekeeper
+- executive
 - egress
 - secrets-injection
 runsOn: 01M7GWTG2S-AC3R
 language: TypeScript
 notes:
-  verification: Verified read-only from AWS account ending 2296 (us-east-1) on 2026-11-15 (America/Phoenix).
-  deployment: 'ECS service gatekeeper-egress on factory-prod: FARGATE_SPOT, 512 CPU/1024 MB, port 8081,
-    2 Secrets Manager references, otel sidecar, no load balancer, registered in Cloud Map factory.internal.'
-  source: packages/gatekeeper in BeerCanLabs/agent-factory; image tag 01720b2.
-  incomplete: The route table and model-provider routing were not reviewed, so no AI gateway object is
-    linked.
+  verification: Verified read-only in AWS account 566332862296 (us-east-1) on 2026-11-15 and 2026-11-18, and cross-checked with submind-aws config/deploy.env.
+  deployment: 'ECS service gatekeeper-egress on factory-prod: FARGATE_SPOT, task definition factory-prod-gatekeeper-egress:123,
+    512 CPU/1024 MB, port 8081, 2 Secrets Manager references, ADOT otel sidecar (v0.43.3), no load balancer,
+    registered in Cloud Map factory.internal.'
+  routes: >-
+    Configured in submind-aws config/deploy.env: models (AWS Bedrock Converse), anthropic, openai, xai,
+    closing-climb (https://cc.dalesackrider.com), cloudflare (https://api.cloudflare.com/client/v4),
+    print (https://print.dalesackrider.com -> 01M7GTBMQS-YYDW), and tavily (https://api.tavily.com), plus
+    Keymaster-backed OAuth/GitHub App token injection.
+  source: packages/{gatekeeper,gatekeeper-egress,executive} in BeerCanLabs/agent-factory.
+  incomplete: Per-agent runtime route/model policy bindings are live control-plane data and were not read.

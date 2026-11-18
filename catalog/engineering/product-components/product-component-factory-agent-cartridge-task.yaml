@@ -18,12 +18,18 @@ tags:
 - scale-to-zero
 runsOn: 01M7GWTG2S-AC3R
 notes:
-  verification: Verified read-only from AWS account ending 2296 (us-east-1) on 2026-11-15 (America/Phoenix).
-  deployment: Per-agent ECS task definition families (for example agent-higgins, agent-archie, agent-beercanlabs-coder,
-    agent-beercanlabs-conductor, agent-beercanlabs-pr-reviewer), FARGATE, 256 CPU/512 MB, images in ECR
-    factory-dynamic-agents tagged <agent>-<sha>, logs to /ecs/factory-prod.
-  source: Runtime from runtimes/agent-runtime in BeerCanLabs/agent-factory; cartridge content from each
-    agent repository (for example SM-higgins, agentic-sdlc).
-  incomplete: Which families are current and which are leftover test families (e2e, agent-<uuid>) was
-    not established.
+  verification: Verified read-only in AWS account 566332862296 (us-east-1) on 2026-11-15 and 2026-11-18.
+  deployment: >-
+    15 named Submind and SDLC ECS task definition families (agent-archie, agent-higgins, agent-donna,
+    agent-switch, agent-geordi, agent-finley, agent-castle, agent-nick, agent-rosie, agent-skippy,
+    agent-beercanlabs-coder, agent-beercanlabs-conductor, agent-beercanlabs-ops-leader,
+    agent-beercanlabs-pr-reviewer, agent-__helper_beercanlabs-juror), FARGATE, 256 CPU/512 MB,
+    assignPublicIp=false in zero-egress agent subnets, per-agent IAM role AgentTaskRole-<agent>
+    scoped to <agent>-state/* in S3, images in ECR factory-dynamic-agents, logs to /ecs/factory-prod.
+    Built-in House Staff cartridges are modeled alongside in 01M7QAES9Q-MX3M.
+  source: Base runtime from runtimes/agent-runtime and packages/hydrate in BeerCanLabs/agent-factory; cartridge configuration/skills from SM-* and BeerCanLabs/agentic-sdlc.
+  incomplete: >-
+    15 legacy/test active task definition families remain registered in ECS (factory-prod-doorman,
+    factory-prod-gateway, factory-prod-agent-echo-agent, factory-prod-agent-llm-summarizer,
+    agent-e2e-cfg-skill, agent-e2e-cfg-soul, agent-e2e-grok-sub, and 10 agent-<uuid> families).
   language: Cartridge workers vary by agent. runtimes/agent-runtime and SM-higgins are Python, agentic-sdlc agents are Node.js (agent.mjs), and all run behind the Node hydrate shim.

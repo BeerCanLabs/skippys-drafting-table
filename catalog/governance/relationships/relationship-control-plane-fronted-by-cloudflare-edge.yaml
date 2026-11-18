@@ -1,0 +1,16 @@
+schemaVersion: '1.0'
+uid: 01M7QAES9Q-RHA3
+type: relationship
+name: Agent Factory Control Plane ← Cloudflare Edge Proxy
+source: 01M7GWXKXW-EJWB
+target: 01M7GTBMQS-YRGF
+label: fronted by
+technology: HTTPS / TLS 1.3 (:443)
+direction: synchronous
+flow: inbound
+catalogStatus: complete
+tags:
+  - agent-factory
+  - cloudflare
+  - edge
+notes: Public DNS, WAF, DDoS protection, and /.cf-fk-bypass Edge Worker front door; the AWS ALB security group admits only published Cloudflare IPv4 CIDRs.

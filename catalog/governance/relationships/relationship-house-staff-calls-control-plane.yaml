@@ -1,0 +1,17 @@
+schemaVersion: '1.0'
+uid: 01M7QAG5KJ-2PKT
+type: relationship
+name: Agent Factory House Staff Cartridges → Agent Factory Control Plane
+source: 01M7QAES9Q-MX3M
+target: 01M7GWXKXW-EJWB
+label: calls
+technology: HTTP (:8088)
+direction: synchronous
+flow: outbound
+catalogStatus: complete
+tags:
+  - agent-factory
+  - house-staff
+notes: >-
+  factory-manager, agent-builder, and personal-trainer call Control Plane (:8088) with their
+  short-lived FACTORY_RUN_TOKEN for mailbox polling, run results, and scoped fleet MCP tools.

@@ -1,0 +1,16 @@
+schemaVersion: '1.0'
+uid: 01M7QAG5KJ-JV3E
+type: relationship
+name: Agent Factory Gatekeeper Egress → Amazon CloudWatch
+source: 01M7GWXKXW-BPBV
+target: 01M7GWTG2T-TQEB
+label: ships logs & traces to
+technology: HTTPS via Logs VPC Endpoint (:443)
+direction: asynchronous
+flow: outbound
+catalogStatus: complete
+tags:
+  - agent-factory
+  - observability
+  - cloudwatch
+notes: Ships egress proxy logs to /ecs/factory-prod and OpenTelemetry spend/latency telemetry via the ADOT collector sidecar (v0.43.3).

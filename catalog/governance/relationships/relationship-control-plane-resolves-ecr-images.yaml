@@ -1,0 +1,18 @@
+schemaVersion: '1.0'
+uid: 01M7QAES9Q-QSJ9
+type: relationship
+name: Agent Factory Control Plane → Amazon ECR Agent Factory Images
+source: 01M7GWXKXW-EJWB
+target: 01M7GWTG2T-0NKZ
+label: resolves & pins images in
+technology: HTTPS via VPC Endpoint (:443)
+direction: synchronous
+flow: outbound
+catalogStatus: complete
+tags:
+  - agent-factory
+  - ecr
+  - admission
+notes: >-
+  Registrar and Property Manager resolve immutable cartridge and runtime image tags/digests in
+  Amazon ECR (pushed by CodeBuild builders) when registering per-agent ECS task definitions.

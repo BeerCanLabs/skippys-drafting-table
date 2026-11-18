@@ -1,0 +1,19 @@
+schemaVersion: '1.0'
+uid: 01M7QAES9Q-WV15
+type: relationship
+name: Agent Factory Control Plane ← External MCP Clients & Webhook Senders
+source: 01M7GWXKXW-EJWB
+externalTarget: External MCP Clients & Webhook Senders (Claude/Cursor OAuth 2.1 MCP, GitHub App Webhooks)
+label: receives calls & webhooks from
+technology: HTTPS (:443)
+direction: synchronous
+flow: inbound
+catalogStatus: complete
+tags:
+  - agent-factory
+  - mcp
+  - webhooks
+  - oauth21
+notes: >-
+  Serves external OAuth 2.1 + PKCE MCP clients on /mcp and /.well-known/oauth-* and ingests
+  HMAC/signature-verified inbound webhooks on /api/v1/hooks/* (including GitHub App fleet events).

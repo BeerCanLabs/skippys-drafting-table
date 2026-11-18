@@ -1,0 +1,16 @@
+schemaVersion: '1.0'
+uid: 01M7QAG5KJ-DF1H
+type: relationship
+name: Agent Factory House Staff Cartridges → Agent Mind Safe & SQLite Notebook
+source: 01M7QAES9Q-MX3M
+target: 01M7QAES9Q-FFCP
+label: hydrates mind from
+technology: HTTPS via S3 Gateway VPC Endpoint (:443)
+direction: synchronous
+flow: bidirectional
+catalogStatus: complete
+tags:
+  - agent-factory
+  - house-staff
+  - mind-hydration
+notes: Hydrate shim syncs each House Staff agent's $MEMORY_DIR strictly within its own S3 mind prefix (<staff>-state/*).

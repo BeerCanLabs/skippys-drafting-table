@@ -1,0 +1,34 @@
+schemaVersion: '1.0'
+uid: 01M7QAES9Q-10ZE
+type: data_component
+name: Agent Factory Hot Execution Ledger & Runtime State
+description: >-
+  Single-writer append-only SHA-256 hash-chained execution ledger (ledger.jsonl) and live
+  control-plane state (active runs, agent policies, Timekeeper schedules, Bouncer holds and
+  approvals, OAuth refresh store) persisted on the encrypted EFS volume mounted at /data.
+repoUrl: https://github.com/BeerCanLabs/agent-factory
+owner:
+  team: platform-ai-team
+  contact: platform-ai@example.com
+runsOn: 01M7GWTG2T-KR1Y
+targetEngine: other
+dataClassification: confidential
+containsPII: false
+catalogStatus: incomplete
+lifecycleStatus: preferred
+tags:
+  - agent-factory
+  - ledger
+  - efs
+  - hash-chain
+tables:
+  - name: ledger.jsonl
+    description: Append-only SHA-256 hash-chained audit rows (metadata and payloadSha256 only; zero raw secrets or prompt bodies).
+    containsPII: false
+  - name: control-plane-state
+    description: Active run registry, per-agent policies/budgets, Timekeeper cron state, Bouncer approval holds, and OAuth 2.1 refresh grants.
+    containsPII: false
+retentionPolicy: Hot chain retained on encrypted EFS and periodically checkpointed to 365-day S3 Object Lock COMPLIANCE archive.
+notes:
+  source: packages/ledger and packages/control-plane in BeerCanLabs/agent-factory; mounted via EFS access point on factory-prod-ledger.
+  incomplete: Requirement evidence for standalone data component maturity controls is tracked at the SDP level (01M15NEKT7-S14J).

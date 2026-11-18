@@ -1,18 +1,18 @@
 schemaVersion: '1.0'
 uid: 01M7KQAQCD-9JK7
 type: relationship
-name: AWS ALB factory-prod → Agent Factory Control Plane
-source: 01M7GWTG2T-M2Q0
-target: 01M7GWXKXW-EJWB
-label: routes to
-technology: HTTPS / HTTP (:8088, health :8089)
+name: Agent Factory Control Plane ← AWS ALB factory-prod
+source: 01M7GWXKXW-EJWB
+target: 01M7GWTG2T-M2Q0
+label: receives ingress from
+technology: HTTPS :443 → HTTP :8088 (health :8089)
 direction: synchronous
-flow: outbound
+flow: inbound
 catalogStatus: complete
 tags:
   - agent-factory
   - ingress
 notes: >-
-  Default ALB target forwarding Cloudflare-fronted Access sessions, Bearer fk_ API requests,
-  signature-verified webhooks (/api/v1/hooks/*), OAuth 2.1 AS routes, and MCP requests from
-  ALB :443 to Control Plane :8088 while probing listener :8089.
+  Default HTTPS TLS 1.3 ALB target forwarding Cloudflare-verified Access sessions, rewritten
+  Bearer fk_ API calls, signature-verified webhooks (/api/v1/hooks/*), OAuth 2.1 AS routes,
+  and MCP requests from ALB :443 to Control Plane :8088 while probing :8089.
