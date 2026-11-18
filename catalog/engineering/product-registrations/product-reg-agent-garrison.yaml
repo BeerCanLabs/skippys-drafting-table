@@ -1,0 +1,28 @@
+schemaVersion: '1.0'
+uid: 01M7QCKQX8-V20K
+type: product_registration
+name: Agent Garrison
+description: >-
+  3D autonomous agent command-and-control center and forward operating base consuming the
+  BeerCanLabs Agent Factory Headless Neck.
+catalogStatus: incomplete
+owner:
+  team: platform-ai-team
+  contact: platform-ai@example.com
+businessContext:
+  productFamily: Skippy / Agent Factory
+tags:
+  - agent-garrison
+  - client
+repository:
+  provider: github
+  owner: BeerCanLabs
+  name: agent-garrison
+  url: https://github.com/BeerCanLabs/agent-garrison
+  defaultBranch: main
+notes:
+  deployment: >-
+    Deployed as ECS service garrison (01M7GWXKXW-Z0Z4) on shared ECS cluster factory-prod in
+    AWS us-east-1 behind Cloudflare Access and ALB host rule garrison.dalesackrider.com.
+    Modeled separately from the core BeerCanLabs Agent Factory SDP (01M15NEKT7-S14J); a
+    standalone Garrison SDP is not yet authored.

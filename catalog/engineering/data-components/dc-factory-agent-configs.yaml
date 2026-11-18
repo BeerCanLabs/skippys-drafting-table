@@ -1,0 +1,31 @@
+schemaVersion: '1.0'
+uid: 01M7QCKQX8-5W8P
+type: data_component
+name: Agent Factory Deployment Config Store
+description: >-
+  Immutable versioned agent configuration snapshots (SOUL, surface, skill bindings, model and
+  egress policy metadata — secret names only) persisted as one S3 object per configuration
+  version (Design Authority §6.13 R1, §6.14 SK3).
+repoUrl: https://github.com/BeerCanLabs/agent-factory
+owner:
+  team: platform-ai-team
+  contact: platform-ai@example.com
+runsOn: 01M7QCKQX8-9J6P
+targetEngine: other
+dataClassification: confidential
+containsPII: false
+catalogStatus: incomplete
+lifecycleStatus: preferred
+tags:
+  - agent-factory
+  - configuration
+  - registrar
+  - s3
+tables:
+  - name: agent-deployment-configs
+    description: Versioned per-agent configuration manifests in agent-factory-config-prod-924cfefd enabling deterministic rollback and configuration-only cartridge wakes.
+    containsPII: false
+retentionPolicy: Versioned S3 object history retained in agent-factory-config-prod-924cfefd with non-current version lifecycle rules managed in storage.tf.
+notes:
+  source: packages/registrar and landing-zones/aws/storage.tf in BeerCanLabs/agent-factory.
+  incomplete: Standalone data-component requirement evidence is tracked at the SDP level (01M15NEKT7-S14J).

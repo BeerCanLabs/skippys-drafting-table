@@ -34,11 +34,13 @@ decisionRationale: |
   re-verified on 2026-11-18: active named roles (e.g. AgentTaskRole-higgins) carry only MindPersistenceAccess scoped strictly
   to arn:aws:s3:::agent-factory-mind-prod-924cfefd/<agent>-state/* (and s3:ListBucket conditioned on <agent>-state/*), while
   retired AgentTaskRole-<uuid> roles have zero inline or attached policies.
-  The ledger hot chain (01M7QAES9Q-10ZE) is on EFS factory-prod-ledger with one writer (LG1); checkpoints ship to
-  agent-factory-ledger-prod-924cfefd (01M7QAES9Q-M4R9) with S3 Object Lock in COMPLIANCE mode, 365-day default retention, so no
-  principal can delete or overwrite them early (storage.tf; live configuration). Each agent's deployment configuration is one
-  immutable object per version in agent-factory-config-prod-924cfefd (6.14 SK3, R1). Skill packages are in
-  agent-factory-packages-prod-924cfefd.
+  The ledger hot chain (01M7QAES9Q-10ZE) is on EFS factory-prod-ledger (01M7GWTG2T-KR1Y) with one writer (LG1); WORM
+  checkpoints (01M7QAES9Q-M4R9) ship to agent-factory-ledger-prod-924cfefd (01M7GWTG2T-F1WG) with S3 Object Lock in COMPLIANCE
+  mode, 365-day default retention, so no principal can delete or overwrite them early (storage.tf; live configuration). Each
+  agent's deployment configuration (01M7QCKQX8-5W8P) is one immutable object per version in agent-factory-config-prod-924cfefd
+  (01M7QCKQX8-9J6P; Design Authority 6.14 SK3, R1). Content-addressed skill packages (01M7QCKQX8-W76J) live in
+  agent-factory-packages-prod-924cfefd (01M7QCKQX8-V947). All four Factory S3 buckets enforce SSE-S3 (AES256), versioning, and
+  all four Block Public Access settings (verified live 2026-11-18).
   Classification: Confidential. The ledger holds metadata and hashes only, and the mind holds adopter data (agent-factory
   .draft/sdp.yaml notes.dataClassification). The ledger never holds secrets or prompt bodies (AGENTS.md definition of done 4).
   SQL scope: the factory kernel has no SQL engine in packages/*/src. The cartridge runtime this SDP places

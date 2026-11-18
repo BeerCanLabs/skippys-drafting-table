@@ -1,0 +1,34 @@
+schemaVersion: '1.0'
+uid: 01M7QAES9Q-M4R9
+type: data_component
+name: Agent Factory WORM Ledger Archive
+aliases:
+  - Agent Factory WORM Checkpoints, Versioned Configs & Skill Packages
+description: >-
+  Immutable SHA-256 hash-chained ledger checkpoint objects written periodically by the
+  Auditor/Ledger service to S3 Object Lock in COMPLIANCE mode (365-day retention) so no
+  principal can alter or delete historical execution audit records.
+repoUrl: https://github.com/BeerCanLabs/agent-factory
+owner:
+  team: platform-ai-team
+  contact: platform-ai@example.com
+runsOn: 01M7GWTG2T-F1WG
+targetEngine: other
+dataClassification: confidential
+containsPII: false
+catalogStatus: incomplete
+lifecycleStatus: preferred
+tags:
+  - agent-factory
+  - ledger
+  - worm
+  - object-lock
+  - s3
+tables:
+  - name: ledger-worm-checkpoints
+    description: Signed/hash-chained JSONL ledger checkpoints anchored under S3 Object Lock COMPLIANCE mode (metadata and payloadSha256 only; zero raw secrets or prompts).
+    containsPII: false
+retentionPolicy: 365-day immutable retention enforced by S3 Object Lock COMPLIANCE mode (Design Authority §6.10 LG1-LG2).
+notes:
+  source: packages/ledger and landing-zones/aws/storage.tf in BeerCanLabs/agent-factory.
+  incomplete: Standalone data-component requirement evidence is tracked at the SDP level (01M15NEKT7-S14J).

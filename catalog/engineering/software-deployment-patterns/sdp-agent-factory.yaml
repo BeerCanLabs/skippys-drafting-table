@@ -1,8 +1,17 @@
 schemaVersion: '1.0'
 uid: 01M15NEKT7-S14J
 type: software_deployment_pattern
-name: Skippy's Submind Agent Factory Deployment Pattern
-description: Agent Factory deployment on AWS ECS Fargate (cluster factory-prod, us-east-1) behind the Cloudflare edge and an internet-facing ALB, with Secrets Manager injection, S3 mind storage and an EFS/S3 ledger. Agents run as on-demand tasks.
+name: BeerCanLabs Agent Factory Deployment Pattern
+aliases:
+- Skippy's Submind Agent Factory Deployment Pattern
+- BeerCanLabs Agent Factory
+description: >-
+  Production AWS ECS Fargate deployment pattern for BeerCanLabs Agent Factory (cluster
+  factory-prod, us-east-1): Headless Neck & Cast kernel mailboxes, zero-secret Web Console
+  and Factory CLI heads, scale-to-zero Shared Cartridge Runtime and House Staff tasks in
+  zero-egress agent subnets, and five first-party durable data components across encrypted
+  EFS and four S3 stores (WORM Object Lock Ledger, Deployment Configs, Skill Packages, and
+  Agent Mind Safe).
 version: 2.0.0
 catalogStatus: incomplete
 lifecycleStatus: preferred
@@ -27,12 +36,11 @@ networkZones:
     Cloudflare edge proxy, Cloudflare Access, and HTTPS AWS ALB restricted to Cloudflare IPv4
     ingress CIDRs (see decision records 01M7GTBMQS-SZBH and 01M7GYV3B6-8VN0).
 - id: mailbox
-  name: Mailbox, Headless Neck & Client Services
+  name: Mailbox, Headless Neck & Console Services
   tier: application
   description: >-
     Public service subnets hosting Control Plane (:8088/:8089), Gatekeeper Ingress (:8090),
-    Gatekeeper Egress (:8081), Console (:3000), and Garrison (:3000) under Cloud Map DNS
-    (factory.internal).
+    Gatekeeper Egress (:8081), and Web Console (:3000) under Cloud Map DNS (factory.internal).
 - id: agents
   name: Zero-Egress Agent Cartridge Compute
   tier: application
@@ -42,11 +50,11 @@ networkZones:
     egress only to Control Plane :8088, Gatekeeper Egress :8081, VPC endpoints :443, VPC DNS :53,
     and ECS metadata :80; assignPublicIp=false — see decision record 01M7GYV3B6-8VN0).
 - id: data
-  name: Durable Mind, WORM Ledger & Package Storage
+  name: Durable Mind, WORM Ledger, Config & Skill Storage
   tier: data
   description: >-
-    Encrypted EFS single-writer hot ledger volume (:2049) and versioned/Object-Lock S3 buckets
-    for agent minds, COMPLIANCE WORM checkpoints, configs, and skill packages.
+    Encrypted EFS single-writer hot ledger volume (:2049) and four dedicated S3 buckets for
+    COMPLIANCE WORM ledger checkpoints, versioned agent configs, skill packages, and agent minds.
 serviceGroups:
 - name: Factory kernel mailboxes
   deploymentTarget: aws-us-east-1
@@ -61,17 +69,14 @@ serviceGroups:
   - ref: 01M7GWXKXW-BPBV
     networkZone: mailbox
     diagramTier: application
-- name: Factory clients
+- name: Factory web console
   deploymentTarget: aws-us-east-1
   substrate: 01M7GWTG2S-AC3R
   deployableObjects:
   - ref: 01M7GWXKXW-VPCD
     networkZone: mailbox
     diagramTier: presentation
-  - ref: 01M7GWXKXW-Z0Z4
-    networkZone: mailbox
-    diagramTier: presentation
-- name: Agent cartridges (on-demand)
+- name: Cartridge runtimes & House Staff (on-demand)
   deploymentTarget: aws-us-east-1
   substrate: 01M7GWTG2S-AC3R
   deployableObjects:
@@ -88,6 +93,12 @@ serviceGroups:
     networkZone: data
     diagramTier: data
   - ref: 01M7QAES9Q-M4R9
+    networkZone: data
+    diagramTier: data
+  - ref: 01M7QCKQX8-5W8P
+    networkZone: data
+    diagramTier: data
+  - ref: 01M7QCKQX8-W76J
     networkZone: data
     diagramTier: data
   - ref: 01M7QAES9Q-FFCP
@@ -107,10 +118,10 @@ tierVariants:
   - serviceGroup: Factory kernel mailboxes
     replicaCount: 1
     notes: Single-writer Control Plane (stop-then-start per LG1); Gatekeeper Ingress and Gatekeeper Egress run desiredCount=1.
-  - serviceGroup: Factory clients
+  - serviceGroup: Factory web console
     replicaCount: 1
-    notes: Console and Garrison each run desiredCount=1 behind ALB host rules and Cloudflare Access.
-  - serviceGroup: Agent cartridges (on-demand)
+    notes: Stateless Web Console runs desiredCount=1 behind ALB host rule factory-dashboard.dalesackrider.com.
+  - serviceGroup: Cartridge runtimes & House Staff (on-demand)
     autoscaling:
       enabled: true
       min: 0
@@ -203,14 +214,14 @@ requirementImplementations:
 notes:
   verification: Verified read-only on 2026-11-15 and re-verified on 2026-11-18 against AWS account 566332862296, us-east-1.
   deploymentTargets: AWS us-east-1, ECS cluster factory-prod on Fargate/Fargate Spot (01M7GWTG2S-X9V8), plus operator-workstation for the Factory CLI & Benchmark Harness (01M7KQAQCD-01CD).
-  availabilityRequirement: Each kernel and client service runs desired 1 / running 1. Agent compute is zero when idle. gatekeeper-egress and garrison use FARGATE_SPOT. Availability target not yet set.
+  availabilityRequirement: Each Factory kernel and console service runs desired 1 / running 1. Agent compute is zero when idle. gatekeeper-egress uses FARGATE_SPOT. Availability target not yet set.
   dataClassification: Confidential (agent-factory .draft/sdp.yaml says the ledger holds metadata plus hashes and the mind holds adopter data).
   failureDomain:
     scope: platform-wide
     description: Single region, single cluster. Losing the control plane blocks wakes and MCP. Losing one agent task does not take down the factory.
-  externalDependencies: Cloudflare edge proxy (01M7GTBMQS-YRGF) and Cloudflare Access (01M7GWTG2T-VA2G); ALB factory-prod (01M7GWTG2T-M2Q0); Cloud Map factory.internal (01M7GWTG2T-8A54); Secrets Manager (01M7GWTG2T-3PQY); S3 mind bucket (01M7GWTG2T-GYW1); S3 config/ledger/packages buckets (01M7GWTG2T-F1WG); EFS ledger (01M7GWTG2T-KR1Y); ECR (01M7GWTG2T-0NKZ); CodeBuild admission/skill builders (01M7KQAQCD-WD0R); EventBridge factory event bus (01M7KQAQCD-GHF4); CloudWatch (01M7GWTG2T-TQEB); KMS AWS-managed keys (01M7GWTG2T-JHTR).
-  interServiceConnections: The ALB routes the default host to the control plane, factory-dashboard to the console and garrison to garrison. Kernel services find each other through Cloud Map factory.internal.
-  secretsManagement: AWS Secrets Manager referenced as ECS container secrets (control-plane 6, gatekeeper-ingress 2, gatekeeper-egress 2, garrison 1, console 0). The gatekeepers inject credentials so agent tasks hold only their run token, except the registered gap GAP-031 (see decision record 01M7GYV3B6-YE24).
+  externalDependencies: Cloudflare edge proxy (01M7GTBMQS-YRGF) and Cloudflare Access (01M7GWTG2T-VA2G); ALB factory-prod (01M7GWTG2T-M2Q0); Cloud Map factory.internal (01M7GWTG2T-8A54); Secrets Manager (01M7GWTG2T-3PQY); S3 mind bucket (01M7GWTG2T-GYW1); S3 WORM ledger bucket (01M7GWTG2T-F1WG); S3 config bucket (01M7QCKQX8-9J6P); S3 skill packages bucket (01M7QCKQX8-V947); EFS ledger (01M7GWTG2T-KR1Y); ECR (01M7GWTG2T-0NKZ); CodeBuild admission/skill builders (01M7KQAQCD-WD0R); EventBridge factory event bus (01M7KQAQCD-GHF4); CloudWatch (01M7GWTG2T-TQEB); KMS AWS-managed keys (01M7GWTG2T-JHTR).
+  interServiceConnections: The ALB routes the default host to the control plane and factory-dashboard to the console. Kernel services find each other through Cloud Map factory.internal. Co-tenanted client/product workloads (Agent Garrison 01M7QCKQX8-V20K, Closing Climb 01M1N137Q4-BNT8) are registered separately.
+  secretsManagement: AWS Secrets Manager referenced as ECS container secrets (control-plane 6, gatekeeper-ingress 2, gatekeeper-egress 2, console 0) and queried via AWS SDK by packages/secrets-bind. The gatekeepers inject credentials so agent tasks hold only their run token, except the registered gap GAP-031 (see decision record 01M7GYV3B6-YE24).
   iacAutomation: Terraform in BeerCanLabs/agent-factory landing-zones/aws with an S3 backend.
   observability: CloudWatch Logs /ecs/factory-prod (30 days), Container Insights, ADOT collector sidecar on control-plane and gatekeeper-egress. No factory alarms or dashboards found.
   patternDeviations: Live ECS, the control plane, gatekeeper-ingress and gatekeeper-egress are always-on services; agents scale to zero (see decision record 01M7GYV3B6-K9CZ).

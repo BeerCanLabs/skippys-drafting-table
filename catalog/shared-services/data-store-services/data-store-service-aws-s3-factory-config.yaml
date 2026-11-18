@@ -1,0 +1,32 @@
+schemaVersion: '1.0'
+uid: 01M7QCKQX8-9J6P
+type: data_store_service
+name: Amazon S3 - Agent Factory Config Bucket
+description: >-
+  Versioned S3 bucket storing immutable per-version agent deployment configuration manifests
+  for the BeerCanLabs Agent Factory.
+catalogStatus: incomplete
+lifecycleStatus: preferred
+owner:
+  team: platform-ai-team
+  contact: platform-ai@example.com
+tags:
+  - aws
+  - s3
+  - configuration
+  - agent-factory
+deliveryModel: paas
+vendor: Amazon Web Services
+productName: Amazon S3
+productVersion: managed
+patchingOwner: aws-managed
+authenticationModel: iam
+capabilities:
+  - 01KT0V5MCV-E9TN
+  - 01KT0V5MCV-VD0Y
+provisioningModel: reference-only
+notes:
+  verification: Verified read-only in AWS account 566332862296 (us-east-1) on 2026-11-15 and 2026-11-18.
+  bucket: 'agent-factory-config-prod-924cfefd: SSE-S3 (AES256), versioning Enabled, all four Block Public Access settings on, non-current version lifecycle rules defined in Terraform.'
+  provisioning: Provisioned by Terraform in BeerCanLabs/agent-factory landing-zones/aws/storage.tf (aws_s3_bucket.config).
+  incomplete: Bucket policy and non-current version expiration thresholds were not reviewed.
