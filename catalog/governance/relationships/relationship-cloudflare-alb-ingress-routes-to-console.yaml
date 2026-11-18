@@ -1,0 +1,15 @@
+schemaVersion: '1.0'
+uid: 01M7KQAQCD-3CBS
+type: relationship
+name: AWS ALB factory-prod → Agent Factory Console
+source: 01M7GWTG2T-M2Q0
+target: 01M7GWXKXW-VPCD
+label: routes to
+technology: HTTPS / HTTP (:3000)
+direction: synchronous
+flow: outbound
+catalogStatus: complete
+tags:
+  - agent-factory
+  - console
+notes: Host-header ALB listener rule (factory-dashboard.dalesackrider.com) forwarding dashboard traffic behind Cloudflare to Console :3000.

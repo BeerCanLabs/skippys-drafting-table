@@ -1,0 +1,18 @@
+schemaVersion: '1.0'
+uid: 01M7KQAQCD-7V12
+type: relationship
+name: Agent Factory Gatekeeper Egress → External LLM & SaaS Providers
+source: 01M7GWXKXW-BPBV
+externalTarget: External Model & SaaS APIs (AWS Bedrock, OpenAI, xAI, Anthropic, GitHub, Google Workspace, Notion)
+label: calls
+technology: HTTPS (:443)
+direction: synchronous
+flow: outbound
+catalogStatus: incomplete
+tags:
+  - agent-factory
+  - llm-providers
+notes: >-
+  Injects provider API keys and Keymaster-refreshed OAuth tokens at egress so agent
+  containers do not hold upstream credentials (S1; see decision records 01M7GYV3B6-YE24
+  and 01M7GYV3B6-H03D for registered gaps GAP-027/GAP-031).

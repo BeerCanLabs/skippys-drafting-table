@@ -1,0 +1,32 @@
+schemaVersion: '1.0'
+uid: 01M7KQAQCD-WD0R
+type: runtime_service
+name: AWS CodeBuild - Agent Factory Admission & Skill Builders
+description: >-
+  Managed CodeBuild projects (factory-agent-builder, factory-skills-builder, and
+  factory-skill-checker) that verify, compose, and push Agent Factory cartridge and skill
+  images to Amazon ECR.
+catalogStatus: incomplete
+lifecycleStatus: preferred
+owner:
+  team: platform-ai-team
+  contact: platform-ai@example.com
+tags:
+  - aws
+  - codebuild
+  - admission
+  - agent-factory
+deliveryModel: paas
+vendor: Amazon Web Services
+productName: AWS CodeBuild
+productVersion: managed
+patchingOwner: aws-managed
+authenticationModel: iam
+capabilities:
+  - 01KT0XNZEY-Q2TF
+primaryTechnologyComponent: 01M7KQAQCD-ZS7E
+provisioningModel: reference-only
+notes:
+  verification: Projects factory-agent-builder, factory-skills-builder and factory-skill-checker verified in AWS account ending 2296 (us-east-1) on 2026-11-15 (see 01M7GWTG2T-0NKZ) and defined in BeerCanLabs/agent-factory landing-zones/aws/codebuild.tf.
+  provisioning: Provisioned by Terraform in BeerCanLabs/agent-factory landing-zones/aws (S3 backend); module not yet packaged as a DRAFT deployablePackage.
+  incomplete: Per-project IAM policies, VPC attachment, and build timeout/concurrency limits were not reviewed.

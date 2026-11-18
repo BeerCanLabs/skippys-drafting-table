@@ -1,0 +1,31 @@
+schemaVersion: '1.0'
+uid: 01M7KQAQCD-GHF4
+type: runtime_service
+name: Amazon EventBridge - Agent Factory Event Bus
+description: >-
+  Custom Amazon EventBridge event bus provisioned for Agent Factory operational, run lifecycle,
+  budget, crash, and held-action events emitted by the Inspector service.
+catalogStatus: incomplete
+lifecycleStatus: preferred
+owner:
+  team: platform-ai-team
+  contact: platform-ai@example.com
+tags:
+  - aws
+  - eventbridge
+  - messaging
+  - agent-factory
+deliveryModel: paas
+vendor: Amazon Web Services
+productName: Amazon EventBridge
+productVersion: managed
+patchingOwner: aws-managed
+authenticationModel: iam
+capabilities:
+  - 01KT0V5MCV-KT72
+primaryTechnologyComponent: 01M7KQAQCD-ZVVA
+provisioningModel: reference-only
+notes:
+  source: Defined as aws_cloudwatch_event_bus.factory in BeerCanLabs/agent-factory landing-zones/aws/storage.tf.
+  provisioning: Provisioned by Terraform in BeerCanLabs/agent-factory landing-zones/aws (S3 backend); module not yet packaged as a DRAFT deployablePackage.
+  incomplete: Live event rules, targets, and archive/replay configuration on the factory event bus were not reviewed.

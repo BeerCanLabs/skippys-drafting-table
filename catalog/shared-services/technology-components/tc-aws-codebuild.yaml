@@ -1,0 +1,25 @@
+schemaVersion: '1.0'
+uid: 01M7KQAQCD-ZS7E
+type: technology_component
+name: AWS CodeBuild
+description: >-
+  Managed ephemeral container build and verification service used by Agent Factory cartridge
+  admission and skill layering workflows.
+catalogStatus: incomplete
+owner:
+  team: platform-ai-team
+  contact: platform-ai@example.com
+tags:
+  - aws
+  - codebuild
+  - cicd
+  - agent-factory
+vendor: Amazon Web Services
+productName: AWS CodeBuild
+productVersion: managed
+classification: software
+capabilities:
+  - 01KT0XNZEY-Q2TF
+notes:
+  source: Provisioned in BeerCanLabs/agent-factory landing-zones/aws/codebuild.tf.
+  incomplete: Exact build image versions and IAM role boundaries per project are not pinned in the catalog.

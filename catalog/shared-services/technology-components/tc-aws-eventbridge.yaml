@@ -1,0 +1,25 @@
+schemaVersion: '1.0'
+uid: 01M7KQAQCD-ZVVA
+type: technology_component
+name: Amazon EventBridge
+description: >-
+  Serverless event bus service routing asynchronous Agent Factory lifecycle, budget, crash,
+  and approval events.
+catalogStatus: incomplete
+owner:
+  team: platform-ai-team
+  contact: platform-ai@example.com
+tags:
+  - aws
+  - eventbridge
+  - messaging
+  - agent-factory
+vendor: Amazon Web Services
+productName: Amazon EventBridge
+productVersion: managed
+classification: software
+capabilities:
+  - 01KT0V5MCV-KT72
+notes:
+  source: Provisioned in BeerCanLabs/agent-factory landing-zones/aws/storage.tf (aws_cloudwatch_event_bus.factory).
+  incomplete: Downstream rules, targets, and dead-letter handling on the factory event bus were not reviewed.

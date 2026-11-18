@@ -1,0 +1,18 @@
+schemaVersion: '1.0'
+uid: 01M7KQAQCD-ZD19
+type: relationship
+name: Agent Factory Control Plane → S3 Config, Ledger & Package Buckets
+source: 01M7GWXKXW-EJWB
+target: 01M7GWTG2T-F1WG
+label: writes to
+technology: HTTPS (:443)
+direction: synchronous
+flow: bidirectional
+catalogStatus: complete
+tags:
+  - agent-factory
+  - worm-ledger
+  - s3
+notes: >-
+  Ships WORM ledger checkpoints to S3 Object Lock (COMPLIANCE mode, 365-day retention),
+  reads/writes immutable versioned agent configurations, and manages skill packages.

@@ -1,0 +1,15 @@
+schemaVersion: '1.0'
+uid: 01M7KQAQCD-1AM0
+type: relationship
+name: Agent Factory Gatekeeper Ingress → Agent Factory Control Plane
+source: 01M7GWXKXW-7W49
+target: 01M7GWXKXW-EJWB
+label: calls
+technology: HTTP (:8088)
+direction: synchronous
+flow: outbound
+catalogStatus: complete
+tags:
+  - agent-factory
+  - gatekeeper-ingress
+notes: Dispatches POST /api/v1/agents/:id/wake and conversation handoff on inbound Discord messages over Cloud Map (factory.internal).

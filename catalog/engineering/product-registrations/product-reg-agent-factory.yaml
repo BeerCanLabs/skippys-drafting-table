@@ -2,16 +2,32 @@ schemaVersion: '1.0'
 uid: 01M1N137Q5-AFAC
 type: product_registration
 name: BeerCanLabs Agent Factory
+description: >-
+  Central product registration for the BeerCanLabs Agent Factory headless autonomous agent
+  hosting platform (Headless Neck REST/MCP + OAuth 2.1 AS, Hot-Swappable Heads, 10 Cast
+  kernel services, Dual-Mode Cartridge & Shared Runtime hosting, and Zero-Trust Gatekeeper
+  perimeter).
+version: 2.0.0
 catalogStatus: complete
 owner:
   team: platform-ai-team
   contact: platform-ai@example.com
+businessContext:
+  productFamily: Skippy / Agent Factory
+tags:
+  - agent-factory
+  - headless-neck
+  - mcp
+  - oauth21
 repository:
   provider: github
+  owner: BeerCanLabs
+  name: agent-factory
   url: https://github.com/BeerCanLabs/agent-factory
   defaultBranch: main
 sdpManifest:
   mode: git
   path: .draft/sdp.yaml
+  branch: main
 notes:
   deployment: Deployed on AWS us-east-1 (ECS cluster factory-prod). The deployed topology is modeled by SDP 01M15NEKT7-S14J. The repository .draft/sdp.yaml (SDP0000002-AGENTFACTORY) is the cloud-agnostic kernel pattern.
