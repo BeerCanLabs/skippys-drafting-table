@@ -1,13 +1,13 @@
 schemaVersion: '1.0'
 uid: 01M7KQAQCD-3CBS
 type: relationship
-name: Web Console ← AWS ALB factory-prod
-source: 01M7GWXKXW-VPCD
-target: 01M7GWTG2T-M2Q0
-label: receives ingress from
+name: AWS ALB factory-prod → Web Console
+source: 01M7GWTG2T-M2Q0
+target: 01M7GWXKXW-VPCD
+label: routes ingress to
 technology: HTTPS :443 → HTTP :3000
 direction: synchronous
-flow: inbound
+flow: outbound
 catalogStatus: complete
 tags:
   - agent-factory

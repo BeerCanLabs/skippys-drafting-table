@@ -7,7 +7,7 @@ target: 01M7QAES9Q-FFCP
 label: hydrates & pushes mind in
 technology: HTTPS via S3 Gateway VPC Endpoint (:443)
 direction: synchronous
-flow: bidirectional
+flow: outbound
 catalogStatus: complete
 tags:
   - agent-factory

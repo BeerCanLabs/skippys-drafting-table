@@ -1,0 +1,19 @@
+schemaVersion: '1.0'
+uid: 01M7RVPNPT-V3GR
+type: relationship
+name: Control Plane → Discord Bot API & Gateway (REST)
+source: 01M7GWXKXW-EJWB
+target: 01M7GTBMQT-TFSM
+label: sets up Discord bot applications via
+technology: HTTPS (:443) discord.com/api/v10 (plus OAuth2 authorize link)
+direction: synchronous
+flow: outbound
+catalogStatus: incomplete
+tags:
+  - agent-factory
+  - discord
+notes: >-
+  Bot application setup calls the Discord REST API (listener: HTTPS :443, discord.com/api/v10; base URL is
+  configurable for tests) and builds a discord.com/oauth2/authorize link for installing the bot. Evidence:
+  BeerCanLabs/agent-factory packages/control-plane/src/discord-app-setup.ts. Marked incomplete: the exact
+  endpoints called were not enumerated.
