@@ -1,0 +1,20 @@
+schemaVersion: '1.0'
+uid: 01M7RVPNPT-J2C1
+type: relationship
+name: Gatekeeper Egress → Discord Bot API & Gateway (REST)
+source: 01M7GWXKXW-BPBV
+target: 01M7GTBMQT-TFSM
+label: forwards agent message posts to
+technology: HTTPS (:443) POST/PATCH discord.com/api/v10/channels/{id}/messages
+direction: synchronous
+flow: outbound
+catalogStatus: incomplete
+tags:
+  - agent-factory
+  - discord
+  - egress
+notes: >-
+  Credential-injecting egress proxy forwards agent Discord message create/edit calls to the Discord REST API
+  (listener: HTTPS :443, /api/v10/channels/{id}/messages, POST and PATCH). Evidence:
+  BeerCanLabs/agent-factory packages/gatekeeper/src/egress/grounding.ts (isDiscordReply). Marked incomplete:
+  derived from a code search, not a full review of the configured egress routes.

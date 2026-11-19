@@ -23344,7 +23344,7 @@ window.DRAFT_BROWSER_DATA = {
         },
         {
           "source": "01M7KQAQCD-3CBS",
-          "path": "source"
+          "path": "target"
         },
         {
           "source": "01M7KQAQCD-GQNC",
@@ -23432,16 +23432,6 @@ window.DRAFT_BROWSER_DATA = {
       "existsInCatalog": true,
       "outboundRelationships": [
         {
-          "uid": "01M7KQAQCD-3CBS",
-          "name": "Web Console \u2190 AWS ALB factory-prod",
-          "label": "receives ingress from",
-          "technology": "HTTPS :443 \u2192 HTTP :3000",
-          "direction": "synchronous",
-          "targetUid": "01M7GWTG2T-M2Q0",
-          "targetName": "AWS Application Load Balancer - factory-prod",
-          "capabilities": []
-        },
-        {
           "uid": "01M7KQAQCD-GQNC",
           "name": "Web Console \u2192 Control Plane",
           "label": "calls",
@@ -23462,7 +23452,20 @@ window.DRAFT_BROWSER_DATA = {
           "capabilities": []
         }
       ],
-      "inboundRelationships": []
+      "inboundRelationships": [
+        {
+          "uid": "01M7KQAQCD-3CBS",
+          "name": "AWS ALB factory-prod \u2192 Web Console",
+          "label": "routes ingress to",
+          "technology": "HTTPS :443 \u2192 HTTP :3000",
+          "direction": "synchronous",
+          "targetUid": "01M7GWXKXW-VPCD",
+          "targetName": "Web Console",
+          "capabilities": [],
+          "sourceUid": "01M7GWTG2T-M2Q0",
+          "sourceName": "AWS Application Load Balancer - factory-prod"
+        }
+      ]
     },
     {
       "id": "01M7GWXKXW-EJWB",
@@ -23582,7 +23585,7 @@ window.DRAFT_BROWSER_DATA = {
         },
         {
           "source": "01M7KQAQCD-9JK7",
-          "path": "source"
+          "path": "target"
         },
         {
           "source": "01M7KQAQCD-GQNC",
@@ -23597,6 +23600,10 @@ window.DRAFT_BROWSER_DATA = {
           "path": "source"
         },
         {
+          "source": "01M7RVPNPT-V3GR",
+          "path": "source"
+        },
+        {
           "source": "01M7QD4DVC-6K7H",
           "path": "source"
         },
@@ -23606,11 +23613,11 @@ window.DRAFT_BROWSER_DATA = {
         },
         {
           "source": "01M7QAES9Q-RQK5",
-          "path": "source"
+          "path": "target"
         },
         {
           "source": "01M7QAES9Q-RHA3",
-          "path": "source"
+          "path": "target"
         },
         {
           "source": "01M7QD4DVC-80P6",
@@ -23750,16 +23757,6 @@ window.DRAFT_BROWSER_DATA = {
       "existsInCatalog": true,
       "outboundRelationships": [
         {
-          "uid": "01M7KQAQCD-9JK7",
-          "name": "Control Plane \u2190 AWS ALB factory-prod",
-          "label": "receives ingress from",
-          "technology": "HTTPS :443 \u2192 HTTP :8088 (health :8089)",
-          "direction": "synchronous",
-          "targetUid": "01M7GWTG2T-M2Q0",
-          "targetName": "AWS Application Load Balancer - factory-prod",
-          "capabilities": []
-        },
-        {
           "uid": "01M7QD4DVC-VS9V",
           "name": "Control Plane \u2192 Registrar",
           "label": "admits cartridges & skills via",
@@ -23780,6 +23777,16 @@ window.DRAFT_BROWSER_DATA = {
           "capabilities": []
         },
         {
+          "uid": "01M7RVPNPT-V3GR",
+          "name": "Control Plane \u2192 Discord Bot API & Gateway (REST)",
+          "label": "sets up Discord bot applications via",
+          "technology": "HTTPS (:443) discord.com/api/v10 (plus OAuth2 authorize link)",
+          "direction": "synchronous",
+          "targetUid": "01M7GTBMQT-TFSM",
+          "targetName": "Discord Bot API & Gateway",
+          "capabilities": []
+        },
+        {
           "uid": "01M7QD4DVC-6K7H",
           "name": "Control Plane \u2192 Auditor (Ledger)",
           "label": "records attested events in",
@@ -23797,26 +23804,6 @@ window.DRAFT_BROWSER_DATA = {
           "direction": "synchronous",
           "targetUid": "01M7GWXKXW-BPBV",
           "targetName": "Gatekeeper Egress",
-          "capabilities": []
-        },
-        {
-          "uid": "01M7QAES9Q-RQK5",
-          "name": "Control Plane \u2190 Cloudflare Access",
-          "label": "authenticated at edge by",
-          "technology": "HTTPS / RS256 cf-access-jwt-assertion (:443)",
-          "direction": "synchronous",
-          "targetUid": "01M7GWTG2T-VA2G",
-          "targetName": "Cloudflare Access - BeerCanLabs Front Door",
-          "capabilities": []
-        },
-        {
-          "uid": "01M7QAES9Q-RHA3",
-          "name": "Control Plane \u2190 Cloudflare Edge Proxy",
-          "label": "fronted by",
-          "technology": "HTTPS / TLS 1.3 (:443)",
-          "direction": "synchronous",
-          "targetUid": "01M7GTBMQS-YRGF",
-          "targetName": "Cloudflare Global Anycast Edge Proxy Service",
           "capabilities": []
         },
         {
@@ -23914,6 +23901,18 @@ window.DRAFT_BROWSER_DATA = {
           "sourceName": "Benchmark Harness"
         },
         {
+          "uid": "01M7KQAQCD-9JK7",
+          "name": "AWS ALB factory-prod \u2192 Control Plane",
+          "label": "routes ingress to",
+          "technology": "HTTPS :443 \u2192 HTTP :8088 (health :8089)",
+          "direction": "synchronous",
+          "targetUid": "01M7GWXKXW-EJWB",
+          "targetName": "Control Plane",
+          "capabilities": [],
+          "sourceUid": "01M7GWTG2T-M2Q0",
+          "sourceName": "AWS Application Load Balancer - factory-prod"
+        },
+        {
           "uid": "01M7KQAQCD-GQNC",
           "name": "Web Console \u2192 Control Plane",
           "label": "calls",
@@ -23924,6 +23923,30 @@ window.DRAFT_BROWSER_DATA = {
           "capabilities": [],
           "sourceUid": "01M7GWXKXW-VPCD",
           "sourceName": "Web Console"
+        },
+        {
+          "uid": "01M7QAES9Q-RQK5",
+          "name": "Cloudflare Access \u2192 Control Plane",
+          "label": "authenticates operators at the edge for",
+          "technology": "HTTPS / RS256 cf-access-jwt-assertion (:443)",
+          "direction": "synchronous",
+          "targetUid": "01M7GWXKXW-EJWB",
+          "targetName": "Control Plane",
+          "capabilities": [],
+          "sourceUid": "01M7GWTG2T-VA2G",
+          "sourceName": "Cloudflare Access - BeerCanLabs Front Door"
+        },
+        {
+          "uid": "01M7QAES9Q-RHA3",
+          "name": "Cloudflare Edge Proxy \u2192 Control Plane",
+          "label": "fronts and proxies public traffic to",
+          "technology": "HTTPS / TLS 1.3 (:443)",
+          "direction": "synchronous",
+          "targetUid": "01M7GWXKXW-EJWB",
+          "targetName": "Control Plane",
+          "capabilities": [],
+          "sourceUid": "01M7GTBMQS-YRGF",
+          "sourceName": "Cloudflare Global Anycast Edge Proxy Service"
         },
         {
           "uid": "01M7QAES9Q-NSV3",
@@ -24356,6 +24379,10 @@ window.DRAFT_BROWSER_DATA = {
           "path": "target"
         },
         {
+          "source": "01M7RVPNPT-J2C1",
+          "path": "source"
+        },
+        {
           "source": "01M7KQAQCD-7V12",
           "path": "source"
         },
@@ -24472,6 +24499,16 @@ window.DRAFT_BROWSER_DATA = {
       "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M7GWXKXW-BPBV\",\n  \"type\": \"product_component\",\n  \"name\": \"Gatekeeper Egress\",\n  \"aliases\": [\n    \"Agent Factory Gatekeeper Egress\"\n  ],\n  \"description\": \"Outbound zero-trust gatekeeper and Executive enforcement proxy (:8081) for agent tasks: evaluates policy, kill-switch, Accountant budgets, and Bouncer holds before translating factory model calls to AWS Bedrock Converse or injecting upstream credentials (LLM APIs, Keymaster-managed OAuth / GitHub App tokens, and adopter-configured HTTP routes) so agent containers hold only their short-lived run token.\",\n  \"repoUrl\": \"https://github.com/BeerCanLabs/agent-factory\",\n  \"owner\": {\n    \"team\": \"platform-ai-team\",\n    \"contact\": \"platform-ai@example.com\"\n  },\n  \"classification\": \"api-service\",\n  \"catalogStatus\": \"incomplete\",\n  \"lifecycleStatus\": \"preferred\",\n  \"tags\": [\n    \"agent-factory\",\n    \"gatekeeper\",\n    \"executive\",\n    \"egress\",\n    \"secrets-injection\"\n  ],\n  \"runsOn\": \"01M7GWTG2S-AC3R\",\n  \"language\": \"TypeScript\",\n  \"notes\": {\n    \"verification\": \"Verified read-only in AWS account 566332862296 (us-east-1) on 2026-11-15 and 2026-11-18, and cross-checked with submind-aws config/deploy.env.\",\n    \"deployment\": \"ECS service gatekeeper-egress on factory-prod: FARGATE_SPOT, task definition factory-prod-gatekeeper-egress:123, 512 CPU/1024 MB, port 8081, 2 Secrets Manager references, ADOT otel sidecar (v0.43.3), no load balancer, registered in Cloud Map factory.internal.\",\n    \"routes\": \"Configured in submind-aws config/deploy.env: models (AWS Bedrock Converse), anthropic, openai, xai, closing-climb (https://cc.dalesackrider.com), cloudflare (https://api.cloudflare.com/client/v4), print (https://print.dalesackrider.com -> 01M7GTBMQS-YYDW), and tavily (https://api.tavily.com), plus Keymaster-backed OAuth/GitHub App token injection.\",\n    \"source\": \"packages/{gatekeeper,gatekeeper-egress,executive} in BeerCanLabs/agent-factory.\",\n    \"incomplete\": \"Per-agent runtime route/model policy bindings are live control-plane data and were not read.\"\n  },\n  \"_source\": \"catalog/engineering/product-components/product-component-factory-gatekeeper-egress.yaml\"\n}",
       "existsInCatalog": true,
       "outboundRelationships": [
+        {
+          "uid": "01M7RVPNPT-J2C1",
+          "name": "Gatekeeper Egress \u2192 Discord Bot API & Gateway (REST)",
+          "label": "forwards agent message posts to",
+          "technology": "HTTPS (:443) POST/PATCH discord.com/api/v10/channels/{id}/messages",
+          "direction": "synchronous",
+          "targetUid": "01M7GTBMQT-TFSM",
+          "targetName": "Discord Bot API & Gateway",
+          "capabilities": []
+        },
         {
           "uid": "01M7KQAQCD-7V12",
           "name": "Gatekeeper Egress \u2192 External SaaS & Tool APIs",
@@ -24793,12 +24830,12 @@ window.DRAFT_BROWSER_DATA = {
       "outboundRelationships": [
         {
           "uid": "01M7KQAQCD-PND8",
-          "name": "Gatekeeper Ingress \u2192 Discord Gateway WebSocket API",
+          "name": "Gatekeeper Ingress \u2192 Discord Bot API & Gateway (Gateway WebSocket)",
           "label": "connects to",
-          "technology": "WebSocket over TLS (:443)",
+          "technology": "WebSocket over TLS (:443); URL discovered at runtime via the Discord REST gateway endpoint",
           "direction": "event",
-          "targetUid": "",
-          "targetName": "Discord Gateway WebSocket API",
+          "targetUid": "01M7GTBMQT-TFSM",
+          "targetName": "Discord Bot API & Gateway",
           "capabilities": []
         },
         {
@@ -27175,7 +27212,7 @@ window.DRAFT_BROWSER_DATA = {
       "referencedBy": [
         {
           "source": "01M7QAES9Q-DEND",
-          "path": "source"
+          "path": "target"
         },
         {
           "source": "01M7QAES9Q-NSV3",
@@ -27263,16 +27300,6 @@ window.DRAFT_BROWSER_DATA = {
       "existsInCatalog": true,
       "outboundRelationships": [
         {
-          "uid": "01M7QAES9Q-DEND",
-          "name": "Agent Garrison \u2190 AWS ALB factory-prod",
-          "label": "receives ingress from",
-          "technology": "HTTPS :443 \u2192 HTTP :3000",
-          "direction": "synchronous",
-          "targetUid": "01M7GWTG2T-M2Q0",
-          "targetName": "AWS Application Load Balancer - factory-prod",
-          "capabilities": []
-        },
-        {
           "uid": "01M7QAES9Q-NSV3",
           "name": "Agent Garrison \u2192 Control Plane",
           "label": "calls",
@@ -27293,7 +27320,20 @@ window.DRAFT_BROWSER_DATA = {
           "capabilities": []
         }
       ],
-      "inboundRelationships": []
+      "inboundRelationships": [
+        {
+          "uid": "01M7QAES9Q-DEND",
+          "name": "AWS ALB factory-prod \u2192 Agent Garrison",
+          "label": "routes ingress to",
+          "technology": "HTTPS :443 \u2192 HTTP :3000",
+          "direction": "synchronous",
+          "targetUid": "01M7GWXKXW-Z0Z4",
+          "targetName": "Agent Garrison",
+          "capabilities": [],
+          "sourceUid": "01M7GWTG2T-M2Q0",
+          "sourceName": "AWS Application Load Balancer - factory-prod"
+        }
+      ]
     },
     {
       "id": "01M1N137Q5-AFAC",
@@ -31797,7 +31837,7 @@ window.DRAFT_BROWSER_DATA = {
     {
       "id": "01M7QAES9Q-DEND",
       "uid": "01M7QAES9Q-DEND",
-      "name": "Agent Garrison \u2190 AWS ALB factory-prod",
+      "name": "AWS ALB factory-prod \u2192 Agent Garrison",
       "aliases": [],
       "type": "relationship",
       "typeLabel": "Relationship",
@@ -31881,11 +31921,11 @@ window.DRAFT_BROWSER_DATA = {
       "hasRiskRef": false,
       "outboundRefs": [
         {
-          "target": "01M7GWXKXW-Z0Z4",
+          "target": "01M7GWTG2T-M2Q0",
           "path": "source"
         },
         {
-          "target": "01M7GWTG2T-M2Q0",
+          "target": "01M7GWXKXW-Z0Z4",
           "path": "target"
         }
       ],
@@ -31936,7 +31976,7 @@ window.DRAFT_BROWSER_DATA = {
         "collectionSchemas": {},
         "schemaPath": "framework/schemas/relationship.schema.yaml"
       },
-      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M7QAES9Q-DEND\",\n  \"type\": \"relationship\",\n  \"name\": \"Agent Garrison \\u2190 AWS ALB factory-prod\",\n  \"source\": \"01M7GWXKXW-Z0Z4\",\n  \"target\": \"01M7GWTG2T-M2Q0\",\n  \"label\": \"receives ingress from\",\n  \"technology\": \"HTTPS :443 \\u2192 HTTP :3000\",\n  \"direction\": \"synchronous\",\n  \"flow\": \"inbound\",\n  \"catalogStatus\": \"complete\",\n  \"tags\": [\n    \"agent-factory\",\n    \"garrison\",\n    \"ingress\"\n  ],\n  \"notes\": \"Host-header ALB listener rule (prio 20, garrison.dalesackrider.com) forwarding Cloudflare Access-gated traffic to Agent Garrison :3000.\",\n  \"_source\": \"catalog/governance/relationships/relationship-alb-routes-to-garrison.yaml\"\n}",
+      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M7QAES9Q-DEND\",\n  \"type\": \"relationship\",\n  \"name\": \"AWS ALB factory-prod \\u2192 Agent Garrison\",\n  \"source\": \"01M7GWTG2T-M2Q0\",\n  \"target\": \"01M7GWXKXW-Z0Z4\",\n  \"label\": \"routes ingress to\",\n  \"technology\": \"HTTPS :443 \\u2192 HTTP :3000\",\n  \"direction\": \"synchronous\",\n  \"flow\": \"outbound\",\n  \"catalogStatus\": \"complete\",\n  \"tags\": [\n    \"agent-factory\",\n    \"garrison\",\n    \"ingress\"\n  ],\n  \"notes\": \"Host-header ALB listener rule (prio 20, garrison.dalesackrider.com) forwarding Cloudflare Access-gated traffic to Agent Garrison :3000.\",\n  \"_source\": \"catalog/governance/relationships/relationship-alb-routes-to-garrison.yaml\"\n}",
       "existsInCatalog": true,
       "outboundRelationships": [],
       "inboundRelationships": []
@@ -32091,7 +32131,7 @@ window.DRAFT_BROWSER_DATA = {
     {
       "id": "01M7KQAQCD-3CBS",
       "uid": "01M7KQAQCD-3CBS",
-      "name": "Web Console \u2190 AWS ALB factory-prod",
+      "name": "AWS ALB factory-prod \u2192 Web Console",
       "aliases": [],
       "type": "relationship",
       "typeLabel": "Relationship",
@@ -32175,11 +32215,11 @@ window.DRAFT_BROWSER_DATA = {
       "hasRiskRef": false,
       "outboundRefs": [
         {
-          "target": "01M7GWXKXW-VPCD",
+          "target": "01M7GWTG2T-M2Q0",
           "path": "source"
         },
         {
-          "target": "01M7GWTG2T-M2Q0",
+          "target": "01M7GWXKXW-VPCD",
           "path": "target"
         }
       ],
@@ -32230,7 +32270,7 @@ window.DRAFT_BROWSER_DATA = {
         "collectionSchemas": {},
         "schemaPath": "framework/schemas/relationship.schema.yaml"
       },
-      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M7KQAQCD-3CBS\",\n  \"type\": \"relationship\",\n  \"name\": \"Web Console \\u2190 AWS ALB factory-prod\",\n  \"source\": \"01M7GWXKXW-VPCD\",\n  \"target\": \"01M7GWTG2T-M2Q0\",\n  \"label\": \"receives ingress from\",\n  \"technology\": \"HTTPS :443 \\u2192 HTTP :3000\",\n  \"direction\": \"synchronous\",\n  \"flow\": \"inbound\",\n  \"catalogStatus\": \"complete\",\n  \"tags\": [\n    \"agent-factory\",\n    \"console\",\n    \"ingress\"\n  ],\n  \"notes\": \"Host-header ALB listener rule (prio 10, factory-dashboard.dalesackrider.com) forwarding Cloudflare-fronted dashboard traffic to Console :3000.\",\n  \"_source\": \"catalog/governance/relationships/relationship-cloudflare-alb-ingress-routes-to-console.yaml\"\n}",
+      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M7KQAQCD-3CBS\",\n  \"type\": \"relationship\",\n  \"name\": \"AWS ALB factory-prod \\u2192 Web Console\",\n  \"source\": \"01M7GWTG2T-M2Q0\",\n  \"target\": \"01M7GWXKXW-VPCD\",\n  \"label\": \"routes ingress to\",\n  \"technology\": \"HTTPS :443 \\u2192 HTTP :3000\",\n  \"direction\": \"synchronous\",\n  \"flow\": \"outbound\",\n  \"catalogStatus\": \"complete\",\n  \"tags\": [\n    \"agent-factory\",\n    \"console\",\n    \"ingress\"\n  ],\n  \"notes\": \"Host-header ALB listener rule (prio 10, factory-dashboard.dalesackrider.com) forwarding Cloudflare-fronted dashboard traffic to Console :3000.\",\n  \"_source\": \"catalog/governance/relationships/relationship-cloudflare-alb-ingress-routes-to-console.yaml\"\n}",
       "existsInCatalog": true,
       "outboundRelationships": [],
       "inboundRelationships": []
@@ -32238,7 +32278,7 @@ window.DRAFT_BROWSER_DATA = {
     {
       "id": "01M7KQAQCD-9JK7",
       "uid": "01M7KQAQCD-9JK7",
-      "name": "Control Plane \u2190 AWS ALB factory-prod",
+      "name": "AWS ALB factory-prod \u2192 Control Plane",
       "aliases": [],
       "type": "relationship",
       "typeLabel": "Relationship",
@@ -32321,11 +32361,11 @@ window.DRAFT_BROWSER_DATA = {
       "hasRiskRef": false,
       "outboundRefs": [
         {
-          "target": "01M7GWXKXW-EJWB",
+          "target": "01M7GWTG2T-M2Q0",
           "path": "source"
         },
         {
-          "target": "01M7GWTG2T-M2Q0",
+          "target": "01M7GWXKXW-EJWB",
           "path": "target"
         }
       ],
@@ -32376,7 +32416,7 @@ window.DRAFT_BROWSER_DATA = {
         "collectionSchemas": {},
         "schemaPath": "framework/schemas/relationship.schema.yaml"
       },
-      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M7KQAQCD-9JK7\",\n  \"type\": \"relationship\",\n  \"name\": \"Control Plane \\u2190 AWS ALB factory-prod\",\n  \"source\": \"01M7GWXKXW-EJWB\",\n  \"target\": \"01M7GWTG2T-M2Q0\",\n  \"label\": \"receives ingress from\",\n  \"technology\": \"HTTPS :443 \\u2192 HTTP :8088 (health :8089)\",\n  \"direction\": \"synchronous\",\n  \"flow\": \"inbound\",\n  \"catalogStatus\": \"complete\",\n  \"tags\": [\n    \"agent-factory\",\n    \"ingress\"\n  ],\n  \"notes\": \"Default HTTPS TLS 1.3 ALB target forwarding Cloudflare-verified Access sessions, rewritten Bearer fk_ API calls, signature-verified webhooks (/api/v1/hooks/*), OAuth 2.1 AS routes, and MCP requests from ALB :443 to Control Plane :8088 while probing :8089.\",\n  \"_source\": \"catalog/governance/relationships/relationship-cloudflare-alb-ingress-routes-to-control-plane.yaml\"\n}",
+      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M7KQAQCD-9JK7\",\n  \"type\": \"relationship\",\n  \"name\": \"AWS ALB factory-prod \\u2192 Control Plane\",\n  \"source\": \"01M7GWTG2T-M2Q0\",\n  \"target\": \"01M7GWXKXW-EJWB\",\n  \"label\": \"routes ingress to\",\n  \"technology\": \"HTTPS :443 \\u2192 HTTP :8088 (health :8089)\",\n  \"direction\": \"synchronous\",\n  \"flow\": \"outbound\",\n  \"catalogStatus\": \"complete\",\n  \"tags\": [\n    \"agent-factory\",\n    \"ingress\"\n  ],\n  \"notes\": \"Default HTTPS TLS 1.3 ALB target forwarding Cloudflare-verified Access sessions, rewritten Bearer fk_ API calls, signature-verified webhooks (/api/v1/hooks/*), OAuth 2.1 AS routes, and MCP requests from ALB :443 to Control Plane :8088 while probing :8089.\",\n  \"_source\": \"catalog/governance/relationships/relationship-cloudflare-alb-ingress-routes-to-control-plane.yaml\"\n}",
       "existsInCatalog": true,
       "outboundRelationships": [],
       "inboundRelationships": []
@@ -32821,6 +32861,152 @@ window.DRAFT_BROWSER_DATA = {
       "inboundRelationships": []
     },
     {
+      "id": "01M7RVPNPT-V3GR",
+      "uid": "01M7RVPNPT-V3GR",
+      "name": "Control Plane \u2192 Discord Bot API & Gateway (REST)",
+      "aliases": [],
+      "type": "relationship",
+      "typeLabel": "Relationship",
+      "filterType": "relationship",
+      "category": "",
+      "deliveryModel": "",
+      "domain": "",
+      "description": "",
+      "version": "",
+      "catalogStatus": "incomplete",
+      "lifecycleStatus": "unknown",
+      "status": "",
+      "businessContext": {},
+      "product": "",
+      "runsOn": "",
+      "subtype": "",
+      "vendor": "",
+      "productName": "",
+      "productVersion": "",
+      "classification": "",
+      "platformDependency": "",
+      "capabilities": [],
+      "configurations": [],
+      "networkPlacement": "",
+      "patchingOwner": "",
+      "complianceCerts": [],
+      "requirementGroups": [],
+      "requirementImplementations": [],
+      "dataLeavesInfrastructure": null,
+      "dataResidencyCommitment": "",
+      "dpaNotes": "",
+      "vendorSLA": "",
+      "authenticationModel": "",
+      "incidentNotificationProcess": "",
+      "owner": {},
+      "definitionOwner": {},
+      "provider": {},
+      "authority": {},
+      "shape": "round-rectangle",
+      "color": "#7a6e60",
+      "source": "catalog/governance/relationships/relationship-control-plane-calls-discord-rest.yaml",
+      "tags": [
+        "agent-factory",
+        "discord"
+      ],
+      "ardCategory": "",
+      "internalComponents": [],
+      "notes": "Bot application setup calls the Discord REST API (listener: HTTPS :443, discord.com/api/v10; base URL is configurable for tests) and builds a discord.com/oauth2/authorize link for installing the bot. Evidence: BeerCanLabs/agent-factory packages/control-plane/src/discord-app-setup.ts. Marked incomplete: the exact endpoints called were not enumerated.",
+      "requirements": [],
+      "implementations": [],
+      "appliesTo": {},
+      "inherits": "",
+      "scalingUnits": [],
+      "networkZones": [],
+      "sdpConnections": [],
+      "serviceGroups": [],
+      "tierVariants": [],
+      "tierId": "",
+      "purpose": "",
+      "availabilityExpectation": "",
+      "costPosture": "",
+      "complianceScope": [],
+      "parameterSurface": [],
+      "followsReferenceArchitecture": "",
+      "decisionRecords": [],
+      "affectedComponent": "",
+      "impact": "",
+      "mitigationPath": "",
+      "decisionRationale": "",
+      "relatedDecisionRecords": [],
+      "linkedObject": "",
+      "primaryObjectType": "",
+      "primaryObjectUid": "",
+      "generatedObjects": [],
+      "unresolvedQuestions": [],
+      "assumptions": [],
+      "nextSteps": [],
+      "defaultSelection": false,
+      "requirementCount": 0,
+      "hasRiskRef": false,
+      "outboundRefs": [
+        {
+          "target": "01M7GWXKXW-EJWB",
+          "path": "source"
+        },
+        {
+          "target": "01M7GTBMQT-TFSM",
+          "path": "target"
+        }
+      ],
+      "referencedBy": [],
+      "editorSchema": {
+        "requiredFields": [
+          "schemaVersion",
+          "uid",
+          "type",
+          "name",
+          "source",
+          "label",
+          "catalogStatus"
+        ],
+        "optionalFields": [
+          "description",
+          "target",
+          "externalTarget",
+          "technology",
+          "direction",
+          "flow",
+          "capabilities",
+          "notes",
+          "tags"
+        ],
+        "fieldTypes": {
+          "tags": "list",
+          "capabilities": "list"
+        },
+        "enumFields": {
+          "catalogStatus": [
+            "stub",
+            "incomplete",
+            "complete"
+          ],
+          "direction": [
+            "synchronous",
+            "asynchronous",
+            "event"
+          ],
+          "flow": [
+            "outbound",
+            "inbound",
+            "bidirectional"
+          ]
+        },
+        "enumListFields": {},
+        "collectionSchemas": {},
+        "schemaPath": "framework/schemas/relationship.schema.yaml"
+      },
+      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M7RVPNPT-V3GR\",\n  \"type\": \"relationship\",\n  \"name\": \"Control Plane \\u2192 Discord Bot API & Gateway (REST)\",\n  \"source\": \"01M7GWXKXW-EJWB\",\n  \"target\": \"01M7GTBMQT-TFSM\",\n  \"label\": \"sets up Discord bot applications via\",\n  \"technology\": \"HTTPS (:443) discord.com/api/v10 (plus OAuth2 authorize link)\",\n  \"direction\": \"synchronous\",\n  \"flow\": \"outbound\",\n  \"catalogStatus\": \"incomplete\",\n  \"tags\": [\n    \"agent-factory\",\n    \"discord\"\n  ],\n  \"notes\": \"Bot application setup calls the Discord REST API (listener: HTTPS :443, discord.com/api/v10; base URL is configurable for tests) and builds a discord.com/oauth2/authorize link for installing the bot. Evidence: BeerCanLabs/agent-factory packages/control-plane/src/discord-app-setup.ts. Marked incomplete: the exact endpoints called were not enumerated.\",\n  \"_source\": \"catalog/governance/relationships/relationship-control-plane-calls-discord-rest.yaml\"\n}",
+      "existsInCatalog": true,
+      "outboundRelationships": [],
+      "inboundRelationships": []
+    },
+    {
       "id": "01M7QD4DVC-6K7H",
       "uid": "01M7QD4DVC-6K7H",
       "name": "Control Plane \u2192 Auditor (Ledger)",
@@ -33116,7 +33302,7 @@ window.DRAFT_BROWSER_DATA = {
     {
       "id": "01M7QAES9Q-RQK5",
       "uid": "01M7QAES9Q-RQK5",
-      "name": "Control Plane \u2190 Cloudflare Access",
+      "name": "Cloudflare Access \u2192 Control Plane",
       "aliases": [],
       "type": "relationship",
       "typeLabel": "Relationship",
@@ -33200,11 +33386,11 @@ window.DRAFT_BROWSER_DATA = {
       "hasRiskRef": false,
       "outboundRefs": [
         {
-          "target": "01M7GWXKXW-EJWB",
+          "target": "01M7GWTG2T-VA2G",
           "path": "source"
         },
         {
-          "target": "01M7GWTG2T-VA2G",
+          "target": "01M7GWXKXW-EJWB",
           "path": "target"
         }
       ],
@@ -33255,7 +33441,7 @@ window.DRAFT_BROWSER_DATA = {
         "collectionSchemas": {},
         "schemaPath": "framework/schemas/relationship.schema.yaml"
       },
-      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M7QAES9Q-RQK5\",\n  \"type\": \"relationship\",\n  \"name\": \"Control Plane \\u2190 Cloudflare Access\",\n  \"source\": \"01M7GWXKXW-EJWB\",\n  \"target\": \"01M7GWTG2T-VA2G\",\n  \"label\": \"authenticated at edge by\",\n  \"technology\": \"HTTPS / RS256 cf-access-jwt-assertion (:443)\",\n  \"direction\": \"synchronous\",\n  \"flow\": \"inbound\",\n  \"catalogStatus\": \"complete\",\n  \"tags\": [\n    \"agent-factory\",\n    \"cloudflare-access\",\n    \"zero-trust\"\n  ],\n  \"notes\": \"Verifies interactive operator identity at the Cloudflare Zero Trust edge (beercanlabs.cloudflareaccess.com), with path-scoped bypasses only for signature-verified webhooks (/api/v1/hooks/*), OAuth 2.1 AS / /mcp flows, and Edge Worker-stripped Bearer fk_ requests (A1, A2).\",\n  \"_source\": \"catalog/governance/relationships/relationship-control-plane-fronted-by-cloudflare-access.yaml\"\n}",
+      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M7QAES9Q-RQK5\",\n  \"type\": \"relationship\",\n  \"name\": \"Cloudflare Access \\u2192 Control Plane\",\n  \"source\": \"01M7GWTG2T-VA2G\",\n  \"target\": \"01M7GWXKXW-EJWB\",\n  \"label\": \"authenticates operators at the edge for\",\n  \"technology\": \"HTTPS / RS256 cf-access-jwt-assertion (:443)\",\n  \"direction\": \"synchronous\",\n  \"flow\": \"outbound\",\n  \"catalogStatus\": \"complete\",\n  \"tags\": [\n    \"agent-factory\",\n    \"cloudflare-access\",\n    \"zero-trust\"\n  ],\n  \"notes\": \"Verifies interactive operator identity at the Cloudflare Zero Trust edge (beercanlabs.cloudflareaccess.com), with path-scoped bypasses only for signature-verified webhooks (/api/v1/hooks/*), OAuth 2.1 AS / /mcp flows, and Edge Worker-stripped Bearer fk_ requests (A1, A2).\",\n  \"_source\": \"catalog/governance/relationships/relationship-control-plane-fronted-by-cloudflare-access.yaml\"\n}",
       "existsInCatalog": true,
       "outboundRelationships": [],
       "inboundRelationships": []
@@ -33263,7 +33449,7 @@ window.DRAFT_BROWSER_DATA = {
     {
       "id": "01M7QAES9Q-RHA3",
       "uid": "01M7QAES9Q-RHA3",
-      "name": "Control Plane \u2190 Cloudflare Edge Proxy",
+      "name": "Cloudflare Edge Proxy \u2192 Control Plane",
       "aliases": [],
       "type": "relationship",
       "typeLabel": "Relationship",
@@ -33347,11 +33533,11 @@ window.DRAFT_BROWSER_DATA = {
       "hasRiskRef": false,
       "outboundRefs": [
         {
-          "target": "01M7GWXKXW-EJWB",
+          "target": "01M7GTBMQS-YRGF",
           "path": "source"
         },
         {
-          "target": "01M7GTBMQS-YRGF",
+          "target": "01M7GWXKXW-EJWB",
           "path": "target"
         }
       ],
@@ -33402,7 +33588,7 @@ window.DRAFT_BROWSER_DATA = {
         "collectionSchemas": {},
         "schemaPath": "framework/schemas/relationship.schema.yaml"
       },
-      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M7QAES9Q-RHA3\",\n  \"type\": \"relationship\",\n  \"name\": \"Control Plane \\u2190 Cloudflare Edge Proxy\",\n  \"source\": \"01M7GWXKXW-EJWB\",\n  \"target\": \"01M7GTBMQS-YRGF\",\n  \"label\": \"fronted by\",\n  \"technology\": \"HTTPS / TLS 1.3 (:443)\",\n  \"direction\": \"synchronous\",\n  \"flow\": \"inbound\",\n  \"catalogStatus\": \"complete\",\n  \"tags\": [\n    \"agent-factory\",\n    \"cloudflare\",\n    \"edge\"\n  ],\n  \"notes\": \"Public DNS, WAF, DDoS protection, and /.cf-fk-bypass Edge Worker front door; the AWS ALB security group admits only published Cloudflare IPv4 CIDRs.\",\n  \"_source\": \"catalog/governance/relationships/relationship-control-plane-fronted-by-cloudflare-edge.yaml\"\n}",
+      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M7QAES9Q-RHA3\",\n  \"type\": \"relationship\",\n  \"name\": \"Cloudflare Edge Proxy \\u2192 Control Plane\",\n  \"source\": \"01M7GTBMQS-YRGF\",\n  \"target\": \"01M7GWXKXW-EJWB\",\n  \"label\": \"fronts and proxies public traffic to\",\n  \"technology\": \"HTTPS / TLS 1.3 (:443)\",\n  \"direction\": \"synchronous\",\n  \"flow\": \"outbound\",\n  \"catalogStatus\": \"complete\",\n  \"tags\": [\n    \"agent-factory\",\n    \"cloudflare\",\n    \"edge\"\n  ],\n  \"notes\": \"Public DNS, WAF, DDoS protection, and /.cf-fk-bypass Edge Worker front door; the AWS ALB security group admits only published Cloudflare IPv4 CIDRs.\",\n  \"_source\": \"catalog/governance/relationships/relationship-control-plane-fronted-by-cloudflare-edge.yaml\"\n}",
       "existsInCatalog": true,
       "outboundRelationships": [],
       "inboundRelationships": []
@@ -34721,6 +34907,153 @@ window.DRAFT_BROWSER_DATA = {
       "inboundRelationships": []
     },
     {
+      "id": "01M7RVPNPT-J2C1",
+      "uid": "01M7RVPNPT-J2C1",
+      "name": "Gatekeeper Egress \u2192 Discord Bot API & Gateway (REST)",
+      "aliases": [],
+      "type": "relationship",
+      "typeLabel": "Relationship",
+      "filterType": "relationship",
+      "category": "",
+      "deliveryModel": "",
+      "domain": "",
+      "description": "",
+      "version": "",
+      "catalogStatus": "incomplete",
+      "lifecycleStatus": "unknown",
+      "status": "",
+      "businessContext": {},
+      "product": "",
+      "runsOn": "",
+      "subtype": "",
+      "vendor": "",
+      "productName": "",
+      "productVersion": "",
+      "classification": "",
+      "platformDependency": "",
+      "capabilities": [],
+      "configurations": [],
+      "networkPlacement": "",
+      "patchingOwner": "",
+      "complianceCerts": [],
+      "requirementGroups": [],
+      "requirementImplementations": [],
+      "dataLeavesInfrastructure": null,
+      "dataResidencyCommitment": "",
+      "dpaNotes": "",
+      "vendorSLA": "",
+      "authenticationModel": "",
+      "incidentNotificationProcess": "",
+      "owner": {},
+      "definitionOwner": {},
+      "provider": {},
+      "authority": {},
+      "shape": "round-rectangle",
+      "color": "#7a6e60",
+      "source": "catalog/governance/relationships/relationship-gatekeeper-egress-calls-discord-rest.yaml",
+      "tags": [
+        "agent-factory",
+        "discord",
+        "egress"
+      ],
+      "ardCategory": "",
+      "internalComponents": [],
+      "notes": "Credential-injecting egress proxy forwards agent Discord message create/edit calls to the Discord REST API (listener: HTTPS :443, /api/v10/channels/{id}/messages, POST and PATCH). Evidence: BeerCanLabs/agent-factory packages/gatekeeper/src/egress/grounding.ts (isDiscordReply). Marked incomplete: derived from a code search, not a full review of the configured egress routes.",
+      "requirements": [],
+      "implementations": [],
+      "appliesTo": {},
+      "inherits": "",
+      "scalingUnits": [],
+      "networkZones": [],
+      "sdpConnections": [],
+      "serviceGroups": [],
+      "tierVariants": [],
+      "tierId": "",
+      "purpose": "",
+      "availabilityExpectation": "",
+      "costPosture": "",
+      "complianceScope": [],
+      "parameterSurface": [],
+      "followsReferenceArchitecture": "",
+      "decisionRecords": [],
+      "affectedComponent": "",
+      "impact": "",
+      "mitigationPath": "",
+      "decisionRationale": "",
+      "relatedDecisionRecords": [],
+      "linkedObject": "",
+      "primaryObjectType": "",
+      "primaryObjectUid": "",
+      "generatedObjects": [],
+      "unresolvedQuestions": [],
+      "assumptions": [],
+      "nextSteps": [],
+      "defaultSelection": false,
+      "requirementCount": 0,
+      "hasRiskRef": false,
+      "outboundRefs": [
+        {
+          "target": "01M7GWXKXW-BPBV",
+          "path": "source"
+        },
+        {
+          "target": "01M7GTBMQT-TFSM",
+          "path": "target"
+        }
+      ],
+      "referencedBy": [],
+      "editorSchema": {
+        "requiredFields": [
+          "schemaVersion",
+          "uid",
+          "type",
+          "name",
+          "source",
+          "label",
+          "catalogStatus"
+        ],
+        "optionalFields": [
+          "description",
+          "target",
+          "externalTarget",
+          "technology",
+          "direction",
+          "flow",
+          "capabilities",
+          "notes",
+          "tags"
+        ],
+        "fieldTypes": {
+          "tags": "list",
+          "capabilities": "list"
+        },
+        "enumFields": {
+          "catalogStatus": [
+            "stub",
+            "incomplete",
+            "complete"
+          ],
+          "direction": [
+            "synchronous",
+            "asynchronous",
+            "event"
+          ],
+          "flow": [
+            "outbound",
+            "inbound",
+            "bidirectional"
+          ]
+        },
+        "enumListFields": {},
+        "collectionSchemas": {},
+        "schemaPath": "framework/schemas/relationship.schema.yaml"
+      },
+      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M7RVPNPT-J2C1\",\n  \"type\": \"relationship\",\n  \"name\": \"Gatekeeper Egress \\u2192 Discord Bot API & Gateway (REST)\",\n  \"source\": \"01M7GWXKXW-BPBV\",\n  \"target\": \"01M7GTBMQT-TFSM\",\n  \"label\": \"forwards agent message posts to\",\n  \"technology\": \"HTTPS (:443) POST/PATCH discord.com/api/v10/channels/{id}/messages\",\n  \"direction\": \"synchronous\",\n  \"flow\": \"outbound\",\n  \"catalogStatus\": \"incomplete\",\n  \"tags\": [\n    \"agent-factory\",\n    \"discord\",\n    \"egress\"\n  ],\n  \"notes\": \"Credential-injecting egress proxy forwards agent Discord message create/edit calls to the Discord REST API (listener: HTTPS :443, /api/v10/channels/{id}/messages, POST and PATCH). Evidence: BeerCanLabs/agent-factory packages/gatekeeper/src/egress/grounding.ts (isDiscordReply). Marked incomplete: derived from a code search, not a full review of the configured egress routes.\",\n  \"_source\": \"catalog/governance/relationships/relationship-gatekeeper-egress-calls-discord-rest.yaml\"\n}",
+      "existsInCatalog": true,
+      "outboundRelationships": [],
+      "inboundRelationships": []
+    },
+    {
       "id": "01M7KQAQCD-7V12",
       "uid": "01M7KQAQCD-7V12",
       "name": "Gatekeeper Egress \u2192 External SaaS & Tool APIs",
@@ -35747,7 +36080,7 @@ window.DRAFT_BROWSER_DATA = {
     {
       "id": "01M7KQAQCD-PND8",
       "uid": "01M7KQAQCD-PND8",
-      "name": "Gatekeeper Ingress \u2192 Discord Gateway WebSocket API",
+      "name": "Gatekeeper Ingress \u2192 Discord Bot API & Gateway (Gateway WebSocket)",
       "aliases": [],
       "type": "relationship",
       "typeLabel": "Relationship",
@@ -35832,6 +36165,10 @@ window.DRAFT_BROWSER_DATA = {
         {
           "target": "01M7GWXKXW-7W49",
           "path": "source"
+        },
+        {
+          "target": "01M7GTBMQT-TFSM",
+          "path": "target"
         }
       ],
       "referencedBy": [],
@@ -35881,7 +36218,7 @@ window.DRAFT_BROWSER_DATA = {
         "collectionSchemas": {},
         "schemaPath": "framework/schemas/relationship.schema.yaml"
       },
-      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M7KQAQCD-PND8\",\n  \"type\": \"relationship\",\n  \"name\": \"Gatekeeper Ingress \\u2192 Discord Gateway WebSocket API\",\n  \"source\": \"01M7GWXKXW-7W49\",\n  \"externalTarget\": \"Discord Gateway WebSocket API\",\n  \"label\": \"connects to\",\n  \"technology\": \"WebSocket over TLS (:443)\",\n  \"direction\": \"event\",\n  \"flow\": \"bidirectional\",\n  \"catalogStatus\": \"complete\",\n  \"tags\": [\n    \"agent-factory\",\n    \"discord\"\n  ],\n  \"notes\": \"Holds Discord bot tokens outside agent containers (S1) and maintains Gateway WebSocket presence for registered cartridges declaring a discord surface.\",\n  \"_source\": \"catalog/governance/relationships/relationship-gatekeeper-ingress-connects-to-discord-gateway.yaml\"\n}",
+      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M7KQAQCD-PND8\",\n  \"type\": \"relationship\",\n  \"name\": \"Gatekeeper Ingress \\u2192 Discord Bot API & Gateway (Gateway WebSocket)\",\n  \"source\": \"01M7GWXKXW-7W49\",\n  \"target\": \"01M7GTBMQT-TFSM\",\n  \"label\": \"connects to\",\n  \"technology\": \"WebSocket over TLS (:443); URL discovered at runtime via the Discord REST gateway endpoint\",\n  \"direction\": \"event\",\n  \"flow\": \"outbound\",\n  \"catalogStatus\": \"complete\",\n  \"tags\": [\n    \"agent-factory\",\n    \"discord\"\n  ],\n  \"notes\": \"Holds Discord bot tokens outside agent containers (S1) and maintains Gateway WebSocket presence for registered cartridges declaring a discord surface.\",\n  \"_source\": \"catalog/governance/relationships/relationship-gatekeeper-ingress-connects-to-discord-gateway.yaml\"\n}",
       "existsInCatalog": true,
       "outboundRelationships": [],
       "inboundRelationships": []
@@ -36761,7 +37098,7 @@ window.DRAFT_BROWSER_DATA = {
         "collectionSchemas": {},
         "schemaPath": "framework/schemas/relationship.schema.yaml"
       },
-      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M7KQAQCD-RGE7\",\n  \"type\": \"relationship\",\n  \"name\": \"Hydrate Shim \\u2192 Agent Mind Safe & SQLite Notebook\",\n  \"source\": \"01M7QCY010-83KN\",\n  \"target\": \"01M7QAES9Q-FFCP\",\n  \"label\": \"hydrates & pushes mind in\",\n  \"technology\": \"HTTPS via S3 Gateway VPC Endpoint (:443)\",\n  \"direction\": \"synchronous\",\n  \"flow\": \"bidirectional\",\n  \"catalogStatus\": \"complete\",\n  \"tags\": [\n    \"agent-factory\",\n    \"hydrate\",\n    \"mind-hydration\"\n  ],\n  \"notes\": \"PID-1 factory-hydrate shim pulls $MEMORY_DIR SQLite state on wake and pushes updates on exit over the S3 Gateway VPC Endpoint, scoped strictly to <agent>-state/* by AgentTaskRole-<agent>.\",\n  \"_source\": \"catalog/governance/relationships/relationship-hydrate-syncs-mind-notebook.yaml\"\n}",
+      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M7KQAQCD-RGE7\",\n  \"type\": \"relationship\",\n  \"name\": \"Hydrate Shim \\u2192 Agent Mind Safe & SQLite Notebook\",\n  \"source\": \"01M7QCY010-83KN\",\n  \"target\": \"01M7QAES9Q-FFCP\",\n  \"label\": \"hydrates & pushes mind in\",\n  \"technology\": \"HTTPS via S3 Gateway VPC Endpoint (:443)\",\n  \"direction\": \"synchronous\",\n  \"flow\": \"outbound\",\n  \"catalogStatus\": \"complete\",\n  \"tags\": [\n    \"agent-factory\",\n    \"hydrate\",\n    \"mind-hydration\"\n  ],\n  \"notes\": \"PID-1 factory-hydrate shim pulls $MEMORY_DIR SQLite state on wake and pushes updates on exit over the S3 Gateway VPC Endpoint, scoped strictly to <agent>-state/* by AgentTaskRole-<agent>.\",\n  \"_source\": \"catalog/governance/relationships/relationship-hydrate-syncs-mind-notebook.yaml\"\n}",
       "existsInCatalog": true,
       "outboundRelationships": [],
       "inboundRelationships": []
@@ -37496,7 +37833,7 @@ window.DRAFT_BROWSER_DATA = {
         "collectionSchemas": {},
         "schemaPath": "framework/schemas/relationship.schema.yaml"
       },
-      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M7KQAQCD-XTFV\",\n  \"type\": \"relationship\",\n  \"name\": \"Auditor (Ledger) \\u2192 Hot Execution Ledger & Runtime State\",\n  \"source\": \"01M7QCY010-YM3F\",\n  \"target\": \"01M7QAES9Q-10ZE\",\n  \"label\": \"appends hash-chain to\",\n  \"technology\": \"NFSv4.1 over TLS (:2049)\",\n  \"direction\": \"synchronous\",\n  \"flow\": \"bidirectional\",\n  \"catalogStatus\": \"complete\",\n  \"tags\": [\n    \"agent-factory\",\n    \"auditor\",\n    \"ledger\"\n  ],\n  \"notes\": \"Single-writer leased append to SHA-256 hash-chained ledger.jsonl on encrypted EFS access point (LG1).\",\n  \"_source\": \"catalog/governance/relationships/relationship-ledger-writes-to-hot-ledger.yaml\"\n}",
+      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M7KQAQCD-XTFV\",\n  \"type\": \"relationship\",\n  \"name\": \"Auditor (Ledger) \\u2192 Hot Execution Ledger & Runtime State\",\n  \"source\": \"01M7QCY010-YM3F\",\n  \"target\": \"01M7QAES9Q-10ZE\",\n  \"label\": \"appends hash-chain to\",\n  \"technology\": \"NFSv4.1 over TLS (:2049)\",\n  \"direction\": \"synchronous\",\n  \"flow\": \"outbound\",\n  \"catalogStatus\": \"complete\",\n  \"tags\": [\n    \"agent-factory\",\n    \"auditor\",\n    \"ledger\"\n  ],\n  \"notes\": \"Single-writer leased append to SHA-256 hash-chained ledger.jsonl on encrypted EFS access point (LG1).\",\n  \"_source\": \"catalog/governance/relationships/relationship-ledger-writes-to-hot-ledger.yaml\"\n}",
       "existsInCatalog": true,
       "outboundRelationships": [],
       "inboundRelationships": []
@@ -37937,7 +38274,7 @@ window.DRAFT_BROWSER_DATA = {
         "collectionSchemas": {},
         "schemaPath": "framework/schemas/relationship.schema.yaml"
       },
-      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M7QCKQX8-MBBY\",\n  \"type\": \"relationship\",\n  \"name\": \"Registrar \\u2192 Deployment Config Store\",\n  \"source\": \"01M7QCY010-CDPG\",\n  \"target\": \"01M7QCKQX8-5W8P\",\n  \"label\": \"reads & versions configs in\",\n  \"technology\": \"HTTPS (:443)\",\n  \"direction\": \"synchronous\",\n  \"flow\": \"bidirectional\",\n  \"catalogStatus\": \"complete\",\n  \"tags\": [\n    \"agent-factory\",\n    \"registrar\",\n    \"configuration\"\n  ],\n  \"notes\": \"Writes one immutable versioned S3 object per agent configuration change and reads pinned configurations on wake or rollback (R1, SK3).\",\n  \"_source\": \"catalog/governance/relationships/relationship-registrar-manages-agent-configs.yaml\"\n}",
+      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M7QCKQX8-MBBY\",\n  \"type\": \"relationship\",\n  \"name\": \"Registrar \\u2192 Deployment Config Store\",\n  \"source\": \"01M7QCY010-CDPG\",\n  \"target\": \"01M7QCKQX8-5W8P\",\n  \"label\": \"reads & versions configs in\",\n  \"technology\": \"HTTPS (:443)\",\n  \"direction\": \"synchronous\",\n  \"flow\": \"outbound\",\n  \"catalogStatus\": \"complete\",\n  \"tags\": [\n    \"agent-factory\",\n    \"registrar\",\n    \"configuration\"\n  ],\n  \"notes\": \"Writes one immutable versioned S3 object per agent configuration change and reads pinned configurations on wake or rollback (R1, SK3).\",\n  \"_source\": \"catalog/governance/relationships/relationship-registrar-manages-agent-configs.yaml\"\n}",
       "existsInCatalog": true,
       "outboundRelationships": [],
       "inboundRelationships": []
@@ -38084,7 +38421,7 @@ window.DRAFT_BROWSER_DATA = {
         "collectionSchemas": {},
         "schemaPath": "framework/schemas/relationship.schema.yaml"
       },
-      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M7QCKQX8-V5TC\",\n  \"type\": \"relationship\",\n  \"name\": \"Registrar \\u2192 Skill Package Registry\",\n  \"source\": \"01M7QCY010-CDPG\",\n  \"target\": \"01M7QCKQX8-W76J\",\n  \"label\": \"stores & resolves skills in\",\n  \"technology\": \"HTTPS (:443)\",\n  \"direction\": \"synchronous\",\n  \"flow\": \"bidirectional\",\n  \"catalogStatus\": \"complete\",\n  \"tags\": [\n    \"agent-factory\",\n    \"registrar\",\n    \"skills\"\n  ],\n  \"notes\": \"Stores verified SHA-256 skill package tarballs in S3 and supplies pinned skill references to CodeBuild skill composition builds.\",\n  \"_source\": \"catalog/governance/relationships/relationship-registrar-manages-skill-packages.yaml\"\n}",
+      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M7QCKQX8-V5TC\",\n  \"type\": \"relationship\",\n  \"name\": \"Registrar \\u2192 Skill Package Registry\",\n  \"source\": \"01M7QCY010-CDPG\",\n  \"target\": \"01M7QCKQX8-W76J\",\n  \"label\": \"stores & resolves skills in\",\n  \"technology\": \"HTTPS (:443)\",\n  \"direction\": \"synchronous\",\n  \"flow\": \"outbound\",\n  \"catalogStatus\": \"complete\",\n  \"tags\": [\n    \"agent-factory\",\n    \"registrar\",\n    \"skills\"\n  ],\n  \"notes\": \"Stores verified SHA-256 skill package tarballs in S3 and supplies pinned skill references to CodeBuild skill composition builds.\",\n  \"_source\": \"catalog/governance/relationships/relationship-registrar-manages-skill-packages.yaml\"\n}",
       "existsInCatalog": true,
       "outboundRelationships": [],
       "inboundRelationships": []
@@ -41732,15 +42069,15 @@ window.DRAFT_BROWSER_DATA = {
       "referencedBy": [
         {
           "source": "01M7QAES9Q-DEND",
-          "path": "target"
+          "path": "source"
         },
         {
           "source": "01M7KQAQCD-3CBS",
-          "path": "target"
+          "path": "source"
         },
         {
           "source": "01M7KQAQCD-9JK7",
-          "path": "target"
+          "path": "source"
         }
       ],
       "editorSchema": {
@@ -41850,45 +42187,39 @@ window.DRAFT_BROWSER_DATA = {
       },
       "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M7GWTG2T-M2Q0\",\n  \"type\": \"network_service\",\n  \"name\": \"AWS Application Load Balancer - factory-prod\",\n  \"description\": \"Internet-facing ALB that is the AWS origin behind the Cloudflare edge for Agent Factory and Closing Climb hostnames.\",\n  \"catalogStatus\": \"incomplete\",\n  \"lifecycleStatus\": \"preferred\",\n  \"owner\": {\n    \"team\": \"platform-ai-team\",\n    \"contact\": \"platform-ai@example.com\"\n  },\n  \"tags\": [\n    \"aws\",\n    \"alb\",\n    \"load-balancer\",\n    \"ingress\",\n    \"agent-factory\",\n    \"closing-climb\"\n  ],\n  \"deliveryModel\": \"paas\",\n  \"vendor\": \"Amazon Web Services\",\n  \"productName\": \"Elastic Load Balancing Application Load Balancer\",\n  \"productVersion\": \"managed\",\n  \"patchingOwner\": \"aws-managed\",\n  \"authenticationModel\": \"iam\",\n  \"networkFunction\": \"Layer 7 host-based routing and TLS termination for the factory-prod ECS services.\",\n  \"protocols\": [\n    \"HTTPS\",\n    \"HTTP\"\n  ],\n  \"capabilities\": [\n    \"01KSWVZSZ5-M0FR\",\n    \"01KT0XNZEY-RVTG\"\n  ],\n  \"provisioningModel\": \"reference-only\",\n  \"notes\": {\n    \"verification\": \"Verified read-only from AWS account ending 2296 (us-east-1) on 2026-11-15 (America/Phoenix).\",\n    \"listeners\": \"HTTP 80 and HTTPS 443.\",\n    \"routing\": \"Host rules: factory-dashboard.dalesackrider.com -> console; garrison.dalesackrider.com -> garrison; cc.dalesackrider.com -> closing-climb-prod; default -> control-plane (factory-prod-cp).\",\n    \"certificates\": \"ACM certificates for *.dalesackrider.com, submind-aws.dalesackrider.com and agent-factory.beercanlabs.com.\",\n    \"edge\": \"Every listed hostname answered through Cloudflare (server: cloudflare) on 2026-11-15. Cloudflare DNS origin records were not read.\",\n    \"provisioning\": \"Provisioned by Terraform in BeerCanLabs/agent-factory landing-zones/aws (S3 backend); module not yet packaged as a DRAFT deployablePackage.\",\n    \"incomplete\": \"Security group rules, WAF association and HTTP-to-HTTPS redirect behavior were not reviewed.\"\n  },\n  \"_source\": \"catalog/shared-services/network-services/network-service-aws-alb-factory-prod.yaml\"\n}",
       "existsInCatalog": true,
-      "outboundRelationships": [],
-      "inboundRelationships": [
+      "outboundRelationships": [
         {
           "uid": "01M7QAES9Q-DEND",
-          "name": "Agent Garrison \u2190 AWS ALB factory-prod",
-          "label": "receives ingress from",
+          "name": "AWS ALB factory-prod \u2192 Agent Garrison",
+          "label": "routes ingress to",
           "technology": "HTTPS :443 \u2192 HTTP :3000",
           "direction": "synchronous",
-          "targetUid": "01M7GWTG2T-M2Q0",
-          "targetName": "AWS Application Load Balancer - factory-prod",
-          "capabilities": [],
-          "sourceUid": "01M7GWXKXW-Z0Z4",
-          "sourceName": "Agent Garrison"
+          "targetUid": "01M7GWXKXW-Z0Z4",
+          "targetName": "Agent Garrison",
+          "capabilities": []
         },
         {
           "uid": "01M7KQAQCD-3CBS",
-          "name": "Web Console \u2190 AWS ALB factory-prod",
-          "label": "receives ingress from",
+          "name": "AWS ALB factory-prod \u2192 Web Console",
+          "label": "routes ingress to",
           "technology": "HTTPS :443 \u2192 HTTP :3000",
           "direction": "synchronous",
-          "targetUid": "01M7GWTG2T-M2Q0",
-          "targetName": "AWS Application Load Balancer - factory-prod",
-          "capabilities": [],
-          "sourceUid": "01M7GWXKXW-VPCD",
-          "sourceName": "Web Console"
+          "targetUid": "01M7GWXKXW-VPCD",
+          "targetName": "Web Console",
+          "capabilities": []
         },
         {
           "uid": "01M7KQAQCD-9JK7",
-          "name": "Control Plane \u2190 AWS ALB factory-prod",
-          "label": "receives ingress from",
+          "name": "AWS ALB factory-prod \u2192 Control Plane",
+          "label": "routes ingress to",
           "technology": "HTTPS :443 \u2192 HTTP :8088 (health :8089)",
           "direction": "synchronous",
-          "targetUid": "01M7GWTG2T-M2Q0",
-          "targetName": "AWS Application Load Balancer - factory-prod",
-          "capabilities": [],
-          "sourceUid": "01M7GWXKXW-EJWB",
-          "sourceName": "Control Plane"
+          "targetUid": "01M7GWXKXW-EJWB",
+          "targetName": "Control Plane",
+          "capabilities": []
         }
-      ]
+      ],
+      "inboundRelationships": []
     },
     {
       "id": "01M7GWTG2T-8A54",
@@ -42221,7 +42552,7 @@ window.DRAFT_BROWSER_DATA = {
         },
         {
           "source": "01M7QAES9Q-RHA3",
-          "path": "target"
+          "path": "source"
         },
         {
           "source": "0C2JQD5S29-RJNY",
@@ -42335,20 +42666,19 @@ window.DRAFT_BROWSER_DATA = {
       },
       "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M7GTBMQS-YRGF\",\n  \"type\": \"network_service\",\n  \"name\": \"Cloudflare Global Anycast Edge Proxy Service\",\n  \"description\": \"Registration object for Geordi's Cloudflare Global Anycast Edge Proxy network service providing ingress routing, Orange Cloud DNS proxying, SSL Full TLS termination, 301 URL redirects, and ALPN negotiation compatibility under Netskope SSL inspection.\",\n  \"deliveryModel\": \"saas\",\n  \"catalogStatus\": \"incomplete\",\n  \"lifecycleStatus\": \"preferred\",\n  \"vendor\": \"Cloudflare\",\n  \"productName\": \"Cloudflare Managed DNS & Edge Proxy\",\n  \"productVersion\": \"Free Tier Anycast Edge Network\",\n  \"networkFunction\": \"Ingress traffic control, HTTPS termination, HTTP/1.1 and HTTP/2 ALPN negotiation, Orange Cloud DNS proxying, and 301 URL redirects.\",\n  \"provisioningModel\": \"deployable\",\n  \"deployablePackage\": {\n    \"registry\": \"github\",\n    \"source\": \"BeerCanLabs/skippy-matrix\",\n    \"version\": \"main\",\n    \"modulePath\": \"terraform/modules/cloudflare-edge-proxy\"\n  },\n  \"protocols\": [\n    \"HTTPS\",\n    \"HTTP/2\",\n    \"HTTP/1.1\"\n  ],\n  \"owner\": {\n    \"team\": \"engineering-platform\",\n    \"contact\": \"platform-ai@example.com\",\n    \"resourceOwner\": \"Geordi\",\n    \"serviceProviderRole\": \"Network Domain Service Provider\"\n  },\n  \"vendorGovernance\": {\n    \"dataLeavesInfrastructure\": false,\n    \"dataResidencyCommitment\": \"Global Anycast Edge with regional origin processing\",\n    \"vendorSLA\": \"100% SLA commitment\",\n    \"acceptableUsePolicy\": \"Mandatory for all public web endpoints across Submind and client workloads. Bare GHS CNAME mappings are strictly non-compliant. All traffic must route through Cloudflare Anycast Edge with Full SSL encryption enabled.\"\n  },\n  \"decisionRecords\": [\n    {\n      \"ref\": \"01M7GTBMQS-SZBH\",\n      \"key\": \"edgeProxyDecision\"\n    }\n  ],\n  \"requirementImplementations\": [\n    {\n      \"requirementGroup\": \"01M7GTBMQT-H66V\",\n      \"requirementId\": \"req-edge-proxy-mandatory\",\n      \"status\": \"satisfied\",\n      \"mechanism\": \"decisionRecord\",\n      \"key\": \"edgeProxyDecision\",\n      \"notes\": \"Satisfied by the Edge Proxy Architecture & Acceptable Use Decision; this object is Geordi's Cloudflare Global Anycast Edge Proxy service module deployed via BeerCanLabs/skippy-matrix.\"\n    }\n  ],\n  \"_source\": \"catalog/shared-services/network-services/network-service-cloudflare-edge-proxy.yaml\"\n}",
       "existsInCatalog": true,
-      "outboundRelationships": [],
-      "inboundRelationships": [
+      "outboundRelationships": [
         {
           "uid": "01M7QAES9Q-RHA3",
-          "name": "Control Plane \u2190 Cloudflare Edge Proxy",
-          "label": "fronted by",
+          "name": "Cloudflare Edge Proxy \u2192 Control Plane",
+          "label": "fronts and proxies public traffic to",
           "technology": "HTTPS / TLS 1.3 (:443)",
           "direction": "synchronous",
-          "targetUid": "01M7GTBMQS-YRGF",
-          "targetName": "Cloudflare Global Anycast Edge Proxy Service",
-          "capabilities": [],
-          "sourceUid": "01M7GWXKXW-EJWB",
-          "sourceName": "Control Plane"
-        },
+          "targetUid": "01M7GWXKXW-EJWB",
+          "targetName": "Control Plane",
+          "capabilities": []
+        }
+      ],
+      "inboundRelationships": [
         {
           "uid": "0C2JQD5S29-RJNY",
           "name": "Factory CLI \u2192 Cloudflare Global Anycast Edge Proxy Service",
@@ -45167,7 +45497,7 @@ window.DRAFT_BROWSER_DATA = {
       "referencedBy": [
         {
           "source": "01M7QAES9Q-RQK5",
-          "path": "target"
+          "path": "source"
         }
       ],
       "editorSchema": {
@@ -45279,21 +45609,19 @@ window.DRAFT_BROWSER_DATA = {
       },
       "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M7GWTG2T-VA2G\",\n  \"type\": \"runtime_service\",\n  \"name\": \"Cloudflare Access - BeerCanLabs Front Door\",\n  \"description\": \"Cloudflare Zero Trust Access in front of Agent Factory and BeerCanLabs web hostnames.\",\n  \"catalogStatus\": \"incomplete\",\n  \"lifecycleStatus\": \"preferred\",\n  \"owner\": {\n    \"team\": \"platform-ai-team\",\n    \"contact\": \"platform-ai@example.com\"\n  },\n  \"tags\": [\n    \"cloudflare\",\n    \"zero-trust\",\n    \"access\",\n    \"front-door\",\n    \"agent-factory\"\n  ],\n  \"deliveryModel\": \"saas\",\n  \"vendor\": \"Cloudflare\",\n  \"productName\": \"Cloudflare Zero Trust Access\",\n  \"productVersion\": \"managed\",\n  \"patchingOwner\": \"vendor-managed\",\n  \"authenticationModel\": \"oauth\",\n  \"capabilities\": [\n    \"01KQQ4Q026-MHJM\",\n    \"01KQQ4Q026-4JR6\"\n  ],\n  \"provisioningModel\": \"reference-only\",\n  \"notes\": {\n    \"verification\": \"HTTPS probes on 2026-11-15: agent-factory.beercanlabs.com, garrison.dalesackrider.com and knowledge.beercanlabs.ai return 302 to the beercanlabs Cloudflare Access team login; submind-aws.dalesackrider.com returns 401 from Cloudflare.\",\n    \"definition\": \"Access applications (factory front door, signature-verified webhooks bypass, API-key bypass) are defined in BeerCanLabs/agent-factory landing-zones/aws/cloudflare.tf. closing-climb-web validates Cloudflare Access OIDC tokens.\",\n    \"incomplete\": \"Access policies, identity providers and service tokens were not read (no Cloudflare API access used).\"\n  },\n  \"_source\": \"catalog/shared-services/runtime-services/runtime-service-cloudflare-access.yaml\"\n}",
       "existsInCatalog": true,
-      "outboundRelationships": [],
-      "inboundRelationships": [
+      "outboundRelationships": [
         {
           "uid": "01M7QAES9Q-RQK5",
-          "name": "Control Plane \u2190 Cloudflare Access",
-          "label": "authenticated at edge by",
+          "name": "Cloudflare Access \u2192 Control Plane",
+          "label": "authenticates operators at the edge for",
           "technology": "HTTPS / RS256 cf-access-jwt-assertion (:443)",
           "direction": "synchronous",
-          "targetUid": "01M7GWTG2T-VA2G",
-          "targetName": "Cloudflare Access - BeerCanLabs Front Door",
-          "capabilities": [],
-          "sourceUid": "01M7GWXKXW-EJWB",
-          "sourceName": "Control Plane"
+          "targetUid": "01M7GWXKXW-EJWB",
+          "targetName": "Control Plane",
+          "capabilities": []
         }
-      ]
+      ],
+      "inboundRelationships": []
     },
     {
       "id": "01M7KQAQCD-ZS7E",
@@ -46073,7 +46401,20 @@ window.DRAFT_BROWSER_DATA = {
           "path": "capabilities[0]"
         }
       ],
-      "referencedBy": [],
+      "referencedBy": [
+        {
+          "source": "01M7RVPNPT-V3GR",
+          "path": "target"
+        },
+        {
+          "source": "01M7RVPNPT-J2C1",
+          "path": "target"
+        },
+        {
+          "source": "01M7KQAQCD-PND8",
+          "path": "target"
+        }
+      ],
       "editorSchema": {
         "requiredFields": [
           "schemaVersion",
@@ -46135,7 +46476,44 @@ window.DRAFT_BROWSER_DATA = {
       "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M7GTBMQT-TFSM\",\n  \"type\": \"technology_component\",\n  \"name\": \"Discord Bot API & Gateway\",\n  \"aliases\": [\n    \"discord-api\",\n    \"discord-doorman\"\n  ],\n  \"description\": \"Managed real-time messaging, bot API, and WebSocket gateway platform provided by Discord.  Used by Discord Doorman and agent proxy services for user interaction.\\n\",\n  \"version\": \"1.0.0\",\n  \"catalogStatus\": \"incomplete\",\n  \"provisioningModel\": \"reference-only\",\n  \"owner\": {\n    \"team\": \"Agent Factory Platform\",\n    \"contact\": \"agent-factory@beercanlabs.com\"\n  },\n  \"tags\": [\n    \"technology-component\",\n    \"messaging\",\n    \"reference-only\"\n  ],\n  \"vendor\": \"Discord\",\n  \"productName\": \"Discord API\",\n  \"productVersion\": \"v10\",\n  \"classification\": \"software\",\n  \"vendorLifecycle\": {\n    \"mainstreamSupportEnd\": \"Active\",\n    \"extendedSupportEnd\": \"Active\",\n    \"notes\": \"External SaaS API provider platform.\"\n  },\n  \"capabilities\": [\n    \"01KT0V5MCV-KT72\"\n  ],\n  \"_source\": \"catalog/shared-services/technology-components/tc-discord-api.yaml\"\n}",
       "existsInCatalog": true,
       "outboundRelationships": [],
-      "inboundRelationships": []
+      "inboundRelationships": [
+        {
+          "uid": "01M7RVPNPT-V3GR",
+          "name": "Control Plane \u2192 Discord Bot API & Gateway (REST)",
+          "label": "sets up Discord bot applications via",
+          "technology": "HTTPS (:443) discord.com/api/v10 (plus OAuth2 authorize link)",
+          "direction": "synchronous",
+          "targetUid": "01M7GTBMQT-TFSM",
+          "targetName": "Discord Bot API & Gateway",
+          "capabilities": [],
+          "sourceUid": "01M7GWXKXW-EJWB",
+          "sourceName": "Control Plane"
+        },
+        {
+          "uid": "01M7RVPNPT-J2C1",
+          "name": "Gatekeeper Egress \u2192 Discord Bot API & Gateway (REST)",
+          "label": "forwards agent message posts to",
+          "technology": "HTTPS (:443) POST/PATCH discord.com/api/v10/channels/{id}/messages",
+          "direction": "synchronous",
+          "targetUid": "01M7GTBMQT-TFSM",
+          "targetName": "Discord Bot API & Gateway",
+          "capabilities": [],
+          "sourceUid": "01M7GWXKXW-BPBV",
+          "sourceName": "Gatekeeper Egress"
+        },
+        {
+          "uid": "01M7KQAQCD-PND8",
+          "name": "Gatekeeper Ingress \u2192 Discord Bot API & Gateway (Gateway WebSocket)",
+          "label": "connects to",
+          "technology": "WebSocket over TLS (:443); URL discovered at runtime via the Discord REST gateway endpoint",
+          "direction": "event",
+          "targetUid": "01M7GTBMQT-TFSM",
+          "targetName": "Discord Bot API & Gateway",
+          "capabilities": [],
+          "sourceUid": "01M7GWXKXW-7W49",
+          "sourceName": "Gatekeeper Ingress"
+        }
+      ]
     },
     {
       "id": "01M7GVD4FN-F0DT",
@@ -73953,7 +74331,7 @@ window.DRAFT_BROWSER_DATA = {
         },
         {
           "source": "01M7KQAQCD-3CBS",
-          "path": "source"
+          "path": "target"
         },
         {
           "source": "01M7KQAQCD-GQNC",
@@ -74041,16 +74419,6 @@ window.DRAFT_BROWSER_DATA = {
       "existsInCatalog": true,
       "outboundRelationships": [
         {
-          "uid": "01M7KQAQCD-3CBS",
-          "name": "Web Console \u2190 AWS ALB factory-prod",
-          "label": "receives ingress from",
-          "technology": "HTTPS :443 \u2192 HTTP :3000",
-          "direction": "synchronous",
-          "targetUid": "01M7GWTG2T-M2Q0",
-          "targetName": "AWS Application Load Balancer - factory-prod",
-          "capabilities": []
-        },
-        {
           "uid": "01M7KQAQCD-GQNC",
           "name": "Web Console \u2192 Control Plane",
           "label": "calls",
@@ -74071,7 +74439,20 @@ window.DRAFT_BROWSER_DATA = {
           "capabilities": []
         }
       ],
-      "inboundRelationships": []
+      "inboundRelationships": [
+        {
+          "uid": "01M7KQAQCD-3CBS",
+          "name": "AWS ALB factory-prod \u2192 Web Console",
+          "label": "routes ingress to",
+          "technology": "HTTPS :443 \u2192 HTTP :3000",
+          "direction": "synchronous",
+          "targetUid": "01M7GWXKXW-VPCD",
+          "targetName": "Web Console",
+          "capabilities": [],
+          "sourceUid": "01M7GWTG2T-M2Q0",
+          "sourceName": "AWS Application Load Balancer - factory-prod"
+        }
+      ]
     },
     "01M7GWXKXW-EJWB": {
       "id": "01M7GWXKXW-EJWB",
@@ -74191,7 +74572,7 @@ window.DRAFT_BROWSER_DATA = {
         },
         {
           "source": "01M7KQAQCD-9JK7",
-          "path": "source"
+          "path": "target"
         },
         {
           "source": "01M7KQAQCD-GQNC",
@@ -74206,6 +74587,10 @@ window.DRAFT_BROWSER_DATA = {
           "path": "source"
         },
         {
+          "source": "01M7RVPNPT-V3GR",
+          "path": "source"
+        },
+        {
           "source": "01M7QD4DVC-6K7H",
           "path": "source"
         },
@@ -74215,11 +74600,11 @@ window.DRAFT_BROWSER_DATA = {
         },
         {
           "source": "01M7QAES9Q-RQK5",
-          "path": "source"
+          "path": "target"
         },
         {
           "source": "01M7QAES9Q-RHA3",
-          "path": "source"
+          "path": "target"
         },
         {
           "source": "01M7QD4DVC-80P6",
@@ -74359,16 +74744,6 @@ window.DRAFT_BROWSER_DATA = {
       "existsInCatalog": true,
       "outboundRelationships": [
         {
-          "uid": "01M7KQAQCD-9JK7",
-          "name": "Control Plane \u2190 AWS ALB factory-prod",
-          "label": "receives ingress from",
-          "technology": "HTTPS :443 \u2192 HTTP :8088 (health :8089)",
-          "direction": "synchronous",
-          "targetUid": "01M7GWTG2T-M2Q0",
-          "targetName": "AWS Application Load Balancer - factory-prod",
-          "capabilities": []
-        },
-        {
           "uid": "01M7QD4DVC-VS9V",
           "name": "Control Plane \u2192 Registrar",
           "label": "admits cartridges & skills via",
@@ -74389,6 +74764,16 @@ window.DRAFT_BROWSER_DATA = {
           "capabilities": []
         },
         {
+          "uid": "01M7RVPNPT-V3GR",
+          "name": "Control Plane \u2192 Discord Bot API & Gateway (REST)",
+          "label": "sets up Discord bot applications via",
+          "technology": "HTTPS (:443) discord.com/api/v10 (plus OAuth2 authorize link)",
+          "direction": "synchronous",
+          "targetUid": "01M7GTBMQT-TFSM",
+          "targetName": "Discord Bot API & Gateway",
+          "capabilities": []
+        },
+        {
           "uid": "01M7QD4DVC-6K7H",
           "name": "Control Plane \u2192 Auditor (Ledger)",
           "label": "records attested events in",
@@ -74406,26 +74791,6 @@ window.DRAFT_BROWSER_DATA = {
           "direction": "synchronous",
           "targetUid": "01M7GWXKXW-BPBV",
           "targetName": "Gatekeeper Egress",
-          "capabilities": []
-        },
-        {
-          "uid": "01M7QAES9Q-RQK5",
-          "name": "Control Plane \u2190 Cloudflare Access",
-          "label": "authenticated at edge by",
-          "technology": "HTTPS / RS256 cf-access-jwt-assertion (:443)",
-          "direction": "synchronous",
-          "targetUid": "01M7GWTG2T-VA2G",
-          "targetName": "Cloudflare Access - BeerCanLabs Front Door",
-          "capabilities": []
-        },
-        {
-          "uid": "01M7QAES9Q-RHA3",
-          "name": "Control Plane \u2190 Cloudflare Edge Proxy",
-          "label": "fronted by",
-          "technology": "HTTPS / TLS 1.3 (:443)",
-          "direction": "synchronous",
-          "targetUid": "01M7GTBMQS-YRGF",
-          "targetName": "Cloudflare Global Anycast Edge Proxy Service",
           "capabilities": []
         },
         {
@@ -74523,6 +74888,18 @@ window.DRAFT_BROWSER_DATA = {
           "sourceName": "Benchmark Harness"
         },
         {
+          "uid": "01M7KQAQCD-9JK7",
+          "name": "AWS ALB factory-prod \u2192 Control Plane",
+          "label": "routes ingress to",
+          "technology": "HTTPS :443 \u2192 HTTP :8088 (health :8089)",
+          "direction": "synchronous",
+          "targetUid": "01M7GWXKXW-EJWB",
+          "targetName": "Control Plane",
+          "capabilities": [],
+          "sourceUid": "01M7GWTG2T-M2Q0",
+          "sourceName": "AWS Application Load Balancer - factory-prod"
+        },
+        {
           "uid": "01M7KQAQCD-GQNC",
           "name": "Web Console \u2192 Control Plane",
           "label": "calls",
@@ -74533,6 +74910,30 @@ window.DRAFT_BROWSER_DATA = {
           "capabilities": [],
           "sourceUid": "01M7GWXKXW-VPCD",
           "sourceName": "Web Console"
+        },
+        {
+          "uid": "01M7QAES9Q-RQK5",
+          "name": "Cloudflare Access \u2192 Control Plane",
+          "label": "authenticates operators at the edge for",
+          "technology": "HTTPS / RS256 cf-access-jwt-assertion (:443)",
+          "direction": "synchronous",
+          "targetUid": "01M7GWXKXW-EJWB",
+          "targetName": "Control Plane",
+          "capabilities": [],
+          "sourceUid": "01M7GWTG2T-VA2G",
+          "sourceName": "Cloudflare Access - BeerCanLabs Front Door"
+        },
+        {
+          "uid": "01M7QAES9Q-RHA3",
+          "name": "Cloudflare Edge Proxy \u2192 Control Plane",
+          "label": "fronts and proxies public traffic to",
+          "technology": "HTTPS / TLS 1.3 (:443)",
+          "direction": "synchronous",
+          "targetUid": "01M7GWXKXW-EJWB",
+          "targetName": "Control Plane",
+          "capabilities": [],
+          "sourceUid": "01M7GTBMQS-YRGF",
+          "sourceName": "Cloudflare Global Anycast Edge Proxy Service"
         },
         {
           "uid": "01M7QAES9Q-NSV3",
@@ -74965,6 +75366,10 @@ window.DRAFT_BROWSER_DATA = {
           "path": "target"
         },
         {
+          "source": "01M7RVPNPT-J2C1",
+          "path": "source"
+        },
+        {
           "source": "01M7KQAQCD-7V12",
           "path": "source"
         },
@@ -75081,6 +75486,16 @@ window.DRAFT_BROWSER_DATA = {
       "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M7GWXKXW-BPBV\",\n  \"type\": \"product_component\",\n  \"name\": \"Gatekeeper Egress\",\n  \"aliases\": [\n    \"Agent Factory Gatekeeper Egress\"\n  ],\n  \"description\": \"Outbound zero-trust gatekeeper and Executive enforcement proxy (:8081) for agent tasks: evaluates policy, kill-switch, Accountant budgets, and Bouncer holds before translating factory model calls to AWS Bedrock Converse or injecting upstream credentials (LLM APIs, Keymaster-managed OAuth / GitHub App tokens, and adopter-configured HTTP routes) so agent containers hold only their short-lived run token.\",\n  \"repoUrl\": \"https://github.com/BeerCanLabs/agent-factory\",\n  \"owner\": {\n    \"team\": \"platform-ai-team\",\n    \"contact\": \"platform-ai@example.com\"\n  },\n  \"classification\": \"api-service\",\n  \"catalogStatus\": \"incomplete\",\n  \"lifecycleStatus\": \"preferred\",\n  \"tags\": [\n    \"agent-factory\",\n    \"gatekeeper\",\n    \"executive\",\n    \"egress\",\n    \"secrets-injection\"\n  ],\n  \"runsOn\": \"01M7GWTG2S-AC3R\",\n  \"language\": \"TypeScript\",\n  \"notes\": {\n    \"verification\": \"Verified read-only in AWS account 566332862296 (us-east-1) on 2026-11-15 and 2026-11-18, and cross-checked with submind-aws config/deploy.env.\",\n    \"deployment\": \"ECS service gatekeeper-egress on factory-prod: FARGATE_SPOT, task definition factory-prod-gatekeeper-egress:123, 512 CPU/1024 MB, port 8081, 2 Secrets Manager references, ADOT otel sidecar (v0.43.3), no load balancer, registered in Cloud Map factory.internal.\",\n    \"routes\": \"Configured in submind-aws config/deploy.env: models (AWS Bedrock Converse), anthropic, openai, xai, closing-climb (https://cc.dalesackrider.com), cloudflare (https://api.cloudflare.com/client/v4), print (https://print.dalesackrider.com -> 01M7GTBMQS-YYDW), and tavily (https://api.tavily.com), plus Keymaster-backed OAuth/GitHub App token injection.\",\n    \"source\": \"packages/{gatekeeper,gatekeeper-egress,executive} in BeerCanLabs/agent-factory.\",\n    \"incomplete\": \"Per-agent runtime route/model policy bindings are live control-plane data and were not read.\"\n  },\n  \"_source\": \"catalog/engineering/product-components/product-component-factory-gatekeeper-egress.yaml\"\n}",
       "existsInCatalog": true,
       "outboundRelationships": [
+        {
+          "uid": "01M7RVPNPT-J2C1",
+          "name": "Gatekeeper Egress \u2192 Discord Bot API & Gateway (REST)",
+          "label": "forwards agent message posts to",
+          "technology": "HTTPS (:443) POST/PATCH discord.com/api/v10/channels/{id}/messages",
+          "direction": "synchronous",
+          "targetUid": "01M7GTBMQT-TFSM",
+          "targetName": "Discord Bot API & Gateway",
+          "capabilities": []
+        },
         {
           "uid": "01M7KQAQCD-7V12",
           "name": "Gatekeeper Egress \u2192 External SaaS & Tool APIs",
@@ -75402,12 +75817,12 @@ window.DRAFT_BROWSER_DATA = {
       "outboundRelationships": [
         {
           "uid": "01M7KQAQCD-PND8",
-          "name": "Gatekeeper Ingress \u2192 Discord Gateway WebSocket API",
+          "name": "Gatekeeper Ingress \u2192 Discord Bot API & Gateway (Gateway WebSocket)",
           "label": "connects to",
-          "technology": "WebSocket over TLS (:443)",
+          "technology": "WebSocket over TLS (:443); URL discovered at runtime via the Discord REST gateway endpoint",
           "direction": "event",
-          "targetUid": "",
-          "targetName": "Discord Gateway WebSocket API",
+          "targetUid": "01M7GTBMQT-TFSM",
+          "targetName": "Discord Bot API & Gateway",
           "capabilities": []
         },
         {
@@ -77784,7 +78199,7 @@ window.DRAFT_BROWSER_DATA = {
       "referencedBy": [
         {
           "source": "01M7QAES9Q-DEND",
-          "path": "source"
+          "path": "target"
         },
         {
           "source": "01M7QAES9Q-NSV3",
@@ -77872,16 +78287,6 @@ window.DRAFT_BROWSER_DATA = {
       "existsInCatalog": true,
       "outboundRelationships": [
         {
-          "uid": "01M7QAES9Q-DEND",
-          "name": "Agent Garrison \u2190 AWS ALB factory-prod",
-          "label": "receives ingress from",
-          "technology": "HTTPS :443 \u2192 HTTP :3000",
-          "direction": "synchronous",
-          "targetUid": "01M7GWTG2T-M2Q0",
-          "targetName": "AWS Application Load Balancer - factory-prod",
-          "capabilities": []
-        },
-        {
           "uid": "01M7QAES9Q-NSV3",
           "name": "Agent Garrison \u2192 Control Plane",
           "label": "calls",
@@ -77902,7 +78307,20 @@ window.DRAFT_BROWSER_DATA = {
           "capabilities": []
         }
       ],
-      "inboundRelationships": []
+      "inboundRelationships": [
+        {
+          "uid": "01M7QAES9Q-DEND",
+          "name": "AWS ALB factory-prod \u2192 Agent Garrison",
+          "label": "routes ingress to",
+          "technology": "HTTPS :443 \u2192 HTTP :3000",
+          "direction": "synchronous",
+          "targetUid": "01M7GWXKXW-Z0Z4",
+          "targetName": "Agent Garrison",
+          "capabilities": [],
+          "sourceUid": "01M7GWTG2T-M2Q0",
+          "sourceName": "AWS Application Load Balancer - factory-prod"
+        }
+      ]
     },
     "01M1N137Q5-AFAC": {
       "id": "01M1N137Q5-AFAC",
@@ -82406,7 +82824,7 @@ window.DRAFT_BROWSER_DATA = {
     "01M7QAES9Q-DEND": {
       "id": "01M7QAES9Q-DEND",
       "uid": "01M7QAES9Q-DEND",
-      "name": "Agent Garrison \u2190 AWS ALB factory-prod",
+      "name": "AWS ALB factory-prod \u2192 Agent Garrison",
       "aliases": [],
       "type": "relationship",
       "typeLabel": "Relationship",
@@ -82490,11 +82908,11 @@ window.DRAFT_BROWSER_DATA = {
       "hasRiskRef": false,
       "outboundRefs": [
         {
-          "target": "01M7GWXKXW-Z0Z4",
+          "target": "01M7GWTG2T-M2Q0",
           "path": "source"
         },
         {
-          "target": "01M7GWTG2T-M2Q0",
+          "target": "01M7GWXKXW-Z0Z4",
           "path": "target"
         }
       ],
@@ -82545,7 +82963,7 @@ window.DRAFT_BROWSER_DATA = {
         "collectionSchemas": {},
         "schemaPath": "framework/schemas/relationship.schema.yaml"
       },
-      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M7QAES9Q-DEND\",\n  \"type\": \"relationship\",\n  \"name\": \"Agent Garrison \\u2190 AWS ALB factory-prod\",\n  \"source\": \"01M7GWXKXW-Z0Z4\",\n  \"target\": \"01M7GWTG2T-M2Q0\",\n  \"label\": \"receives ingress from\",\n  \"technology\": \"HTTPS :443 \\u2192 HTTP :3000\",\n  \"direction\": \"synchronous\",\n  \"flow\": \"inbound\",\n  \"catalogStatus\": \"complete\",\n  \"tags\": [\n    \"agent-factory\",\n    \"garrison\",\n    \"ingress\"\n  ],\n  \"notes\": \"Host-header ALB listener rule (prio 20, garrison.dalesackrider.com) forwarding Cloudflare Access-gated traffic to Agent Garrison :3000.\",\n  \"_source\": \"catalog/governance/relationships/relationship-alb-routes-to-garrison.yaml\"\n}",
+      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M7QAES9Q-DEND\",\n  \"type\": \"relationship\",\n  \"name\": \"AWS ALB factory-prod \\u2192 Agent Garrison\",\n  \"source\": \"01M7GWTG2T-M2Q0\",\n  \"target\": \"01M7GWXKXW-Z0Z4\",\n  \"label\": \"routes ingress to\",\n  \"technology\": \"HTTPS :443 \\u2192 HTTP :3000\",\n  \"direction\": \"synchronous\",\n  \"flow\": \"outbound\",\n  \"catalogStatus\": \"complete\",\n  \"tags\": [\n    \"agent-factory\",\n    \"garrison\",\n    \"ingress\"\n  ],\n  \"notes\": \"Host-header ALB listener rule (prio 20, garrison.dalesackrider.com) forwarding Cloudflare Access-gated traffic to Agent Garrison :3000.\",\n  \"_source\": \"catalog/governance/relationships/relationship-alb-routes-to-garrison.yaml\"\n}",
       "existsInCatalog": true,
       "outboundRelationships": [],
       "inboundRelationships": []
@@ -82700,7 +83118,7 @@ window.DRAFT_BROWSER_DATA = {
     "01M7KQAQCD-3CBS": {
       "id": "01M7KQAQCD-3CBS",
       "uid": "01M7KQAQCD-3CBS",
-      "name": "Web Console \u2190 AWS ALB factory-prod",
+      "name": "AWS ALB factory-prod \u2192 Web Console",
       "aliases": [],
       "type": "relationship",
       "typeLabel": "Relationship",
@@ -82784,11 +83202,11 @@ window.DRAFT_BROWSER_DATA = {
       "hasRiskRef": false,
       "outboundRefs": [
         {
-          "target": "01M7GWXKXW-VPCD",
+          "target": "01M7GWTG2T-M2Q0",
           "path": "source"
         },
         {
-          "target": "01M7GWTG2T-M2Q0",
+          "target": "01M7GWXKXW-VPCD",
           "path": "target"
         }
       ],
@@ -82839,7 +83257,7 @@ window.DRAFT_BROWSER_DATA = {
         "collectionSchemas": {},
         "schemaPath": "framework/schemas/relationship.schema.yaml"
       },
-      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M7KQAQCD-3CBS\",\n  \"type\": \"relationship\",\n  \"name\": \"Web Console \\u2190 AWS ALB factory-prod\",\n  \"source\": \"01M7GWXKXW-VPCD\",\n  \"target\": \"01M7GWTG2T-M2Q0\",\n  \"label\": \"receives ingress from\",\n  \"technology\": \"HTTPS :443 \\u2192 HTTP :3000\",\n  \"direction\": \"synchronous\",\n  \"flow\": \"inbound\",\n  \"catalogStatus\": \"complete\",\n  \"tags\": [\n    \"agent-factory\",\n    \"console\",\n    \"ingress\"\n  ],\n  \"notes\": \"Host-header ALB listener rule (prio 10, factory-dashboard.dalesackrider.com) forwarding Cloudflare-fronted dashboard traffic to Console :3000.\",\n  \"_source\": \"catalog/governance/relationships/relationship-cloudflare-alb-ingress-routes-to-console.yaml\"\n}",
+      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M7KQAQCD-3CBS\",\n  \"type\": \"relationship\",\n  \"name\": \"AWS ALB factory-prod \\u2192 Web Console\",\n  \"source\": \"01M7GWTG2T-M2Q0\",\n  \"target\": \"01M7GWXKXW-VPCD\",\n  \"label\": \"routes ingress to\",\n  \"technology\": \"HTTPS :443 \\u2192 HTTP :3000\",\n  \"direction\": \"synchronous\",\n  \"flow\": \"outbound\",\n  \"catalogStatus\": \"complete\",\n  \"tags\": [\n    \"agent-factory\",\n    \"console\",\n    \"ingress\"\n  ],\n  \"notes\": \"Host-header ALB listener rule (prio 10, factory-dashboard.dalesackrider.com) forwarding Cloudflare-fronted dashboard traffic to Console :3000.\",\n  \"_source\": \"catalog/governance/relationships/relationship-cloudflare-alb-ingress-routes-to-console.yaml\"\n}",
       "existsInCatalog": true,
       "outboundRelationships": [],
       "inboundRelationships": []
@@ -82847,7 +83265,7 @@ window.DRAFT_BROWSER_DATA = {
     "01M7KQAQCD-9JK7": {
       "id": "01M7KQAQCD-9JK7",
       "uid": "01M7KQAQCD-9JK7",
-      "name": "Control Plane \u2190 AWS ALB factory-prod",
+      "name": "AWS ALB factory-prod \u2192 Control Plane",
       "aliases": [],
       "type": "relationship",
       "typeLabel": "Relationship",
@@ -82930,11 +83348,11 @@ window.DRAFT_BROWSER_DATA = {
       "hasRiskRef": false,
       "outboundRefs": [
         {
-          "target": "01M7GWXKXW-EJWB",
+          "target": "01M7GWTG2T-M2Q0",
           "path": "source"
         },
         {
-          "target": "01M7GWTG2T-M2Q0",
+          "target": "01M7GWXKXW-EJWB",
           "path": "target"
         }
       ],
@@ -82985,7 +83403,7 @@ window.DRAFT_BROWSER_DATA = {
         "collectionSchemas": {},
         "schemaPath": "framework/schemas/relationship.schema.yaml"
       },
-      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M7KQAQCD-9JK7\",\n  \"type\": \"relationship\",\n  \"name\": \"Control Plane \\u2190 AWS ALB factory-prod\",\n  \"source\": \"01M7GWXKXW-EJWB\",\n  \"target\": \"01M7GWTG2T-M2Q0\",\n  \"label\": \"receives ingress from\",\n  \"technology\": \"HTTPS :443 \\u2192 HTTP :8088 (health :8089)\",\n  \"direction\": \"synchronous\",\n  \"flow\": \"inbound\",\n  \"catalogStatus\": \"complete\",\n  \"tags\": [\n    \"agent-factory\",\n    \"ingress\"\n  ],\n  \"notes\": \"Default HTTPS TLS 1.3 ALB target forwarding Cloudflare-verified Access sessions, rewritten Bearer fk_ API calls, signature-verified webhooks (/api/v1/hooks/*), OAuth 2.1 AS routes, and MCP requests from ALB :443 to Control Plane :8088 while probing :8089.\",\n  \"_source\": \"catalog/governance/relationships/relationship-cloudflare-alb-ingress-routes-to-control-plane.yaml\"\n}",
+      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M7KQAQCD-9JK7\",\n  \"type\": \"relationship\",\n  \"name\": \"AWS ALB factory-prod \\u2192 Control Plane\",\n  \"source\": \"01M7GWTG2T-M2Q0\",\n  \"target\": \"01M7GWXKXW-EJWB\",\n  \"label\": \"routes ingress to\",\n  \"technology\": \"HTTPS :443 \\u2192 HTTP :8088 (health :8089)\",\n  \"direction\": \"synchronous\",\n  \"flow\": \"outbound\",\n  \"catalogStatus\": \"complete\",\n  \"tags\": [\n    \"agent-factory\",\n    \"ingress\"\n  ],\n  \"notes\": \"Default HTTPS TLS 1.3 ALB target forwarding Cloudflare-verified Access sessions, rewritten Bearer fk_ API calls, signature-verified webhooks (/api/v1/hooks/*), OAuth 2.1 AS routes, and MCP requests from ALB :443 to Control Plane :8088 while probing :8089.\",\n  \"_source\": \"catalog/governance/relationships/relationship-cloudflare-alb-ingress-routes-to-control-plane.yaml\"\n}",
       "existsInCatalog": true,
       "outboundRelationships": [],
       "inboundRelationships": []
@@ -83429,6 +83847,152 @@ window.DRAFT_BROWSER_DATA = {
       "outboundRelationships": [],
       "inboundRelationships": []
     },
+    "01M7RVPNPT-V3GR": {
+      "id": "01M7RVPNPT-V3GR",
+      "uid": "01M7RVPNPT-V3GR",
+      "name": "Control Plane \u2192 Discord Bot API & Gateway (REST)",
+      "aliases": [],
+      "type": "relationship",
+      "typeLabel": "Relationship",
+      "filterType": "relationship",
+      "category": "",
+      "deliveryModel": "",
+      "domain": "",
+      "description": "",
+      "version": "",
+      "catalogStatus": "incomplete",
+      "lifecycleStatus": "unknown",
+      "status": "",
+      "businessContext": {},
+      "product": "",
+      "runsOn": "",
+      "subtype": "",
+      "vendor": "",
+      "productName": "",
+      "productVersion": "",
+      "classification": "",
+      "platformDependency": "",
+      "capabilities": [],
+      "configurations": [],
+      "networkPlacement": "",
+      "patchingOwner": "",
+      "complianceCerts": [],
+      "requirementGroups": [],
+      "requirementImplementations": [],
+      "dataLeavesInfrastructure": null,
+      "dataResidencyCommitment": "",
+      "dpaNotes": "",
+      "vendorSLA": "",
+      "authenticationModel": "",
+      "incidentNotificationProcess": "",
+      "owner": {},
+      "definitionOwner": {},
+      "provider": {},
+      "authority": {},
+      "shape": "round-rectangle",
+      "color": "#7a6e60",
+      "source": "catalog/governance/relationships/relationship-control-plane-calls-discord-rest.yaml",
+      "tags": [
+        "agent-factory",
+        "discord"
+      ],
+      "ardCategory": "",
+      "internalComponents": [],
+      "notes": "Bot application setup calls the Discord REST API (listener: HTTPS :443, discord.com/api/v10; base URL is configurable for tests) and builds a discord.com/oauth2/authorize link for installing the bot. Evidence: BeerCanLabs/agent-factory packages/control-plane/src/discord-app-setup.ts. Marked incomplete: the exact endpoints called were not enumerated.",
+      "requirements": [],
+      "implementations": [],
+      "appliesTo": {},
+      "inherits": "",
+      "scalingUnits": [],
+      "networkZones": [],
+      "sdpConnections": [],
+      "serviceGroups": [],
+      "tierVariants": [],
+      "tierId": "",
+      "purpose": "",
+      "availabilityExpectation": "",
+      "costPosture": "",
+      "complianceScope": [],
+      "parameterSurface": [],
+      "followsReferenceArchitecture": "",
+      "decisionRecords": [],
+      "affectedComponent": "",
+      "impact": "",
+      "mitigationPath": "",
+      "decisionRationale": "",
+      "relatedDecisionRecords": [],
+      "linkedObject": "",
+      "primaryObjectType": "",
+      "primaryObjectUid": "",
+      "generatedObjects": [],
+      "unresolvedQuestions": [],
+      "assumptions": [],
+      "nextSteps": [],
+      "defaultSelection": false,
+      "requirementCount": 0,
+      "hasRiskRef": false,
+      "outboundRefs": [
+        {
+          "target": "01M7GWXKXW-EJWB",
+          "path": "source"
+        },
+        {
+          "target": "01M7GTBMQT-TFSM",
+          "path": "target"
+        }
+      ],
+      "referencedBy": [],
+      "editorSchema": {
+        "requiredFields": [
+          "schemaVersion",
+          "uid",
+          "type",
+          "name",
+          "source",
+          "label",
+          "catalogStatus"
+        ],
+        "optionalFields": [
+          "description",
+          "target",
+          "externalTarget",
+          "technology",
+          "direction",
+          "flow",
+          "capabilities",
+          "notes",
+          "tags"
+        ],
+        "fieldTypes": {
+          "tags": "list",
+          "capabilities": "list"
+        },
+        "enumFields": {
+          "catalogStatus": [
+            "stub",
+            "incomplete",
+            "complete"
+          ],
+          "direction": [
+            "synchronous",
+            "asynchronous",
+            "event"
+          ],
+          "flow": [
+            "outbound",
+            "inbound",
+            "bidirectional"
+          ]
+        },
+        "enumListFields": {},
+        "collectionSchemas": {},
+        "schemaPath": "framework/schemas/relationship.schema.yaml"
+      },
+      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M7RVPNPT-V3GR\",\n  \"type\": \"relationship\",\n  \"name\": \"Control Plane \\u2192 Discord Bot API & Gateway (REST)\",\n  \"source\": \"01M7GWXKXW-EJWB\",\n  \"target\": \"01M7GTBMQT-TFSM\",\n  \"label\": \"sets up Discord bot applications via\",\n  \"technology\": \"HTTPS (:443) discord.com/api/v10 (plus OAuth2 authorize link)\",\n  \"direction\": \"synchronous\",\n  \"flow\": \"outbound\",\n  \"catalogStatus\": \"incomplete\",\n  \"tags\": [\n    \"agent-factory\",\n    \"discord\"\n  ],\n  \"notes\": \"Bot application setup calls the Discord REST API (listener: HTTPS :443, discord.com/api/v10; base URL is configurable for tests) and builds a discord.com/oauth2/authorize link for installing the bot. Evidence: BeerCanLabs/agent-factory packages/control-plane/src/discord-app-setup.ts. Marked incomplete: the exact endpoints called were not enumerated.\",\n  \"_source\": \"catalog/governance/relationships/relationship-control-plane-calls-discord-rest.yaml\"\n}",
+      "existsInCatalog": true,
+      "outboundRelationships": [],
+      "inboundRelationships": []
+    },
     "01M7QD4DVC-6K7H": {
       "id": "01M7QD4DVC-6K7H",
       "uid": "01M7QD4DVC-6K7H",
@@ -83725,7 +84289,7 @@ window.DRAFT_BROWSER_DATA = {
     "01M7QAES9Q-RQK5": {
       "id": "01M7QAES9Q-RQK5",
       "uid": "01M7QAES9Q-RQK5",
-      "name": "Control Plane \u2190 Cloudflare Access",
+      "name": "Cloudflare Access \u2192 Control Plane",
       "aliases": [],
       "type": "relationship",
       "typeLabel": "Relationship",
@@ -83809,11 +84373,11 @@ window.DRAFT_BROWSER_DATA = {
       "hasRiskRef": false,
       "outboundRefs": [
         {
-          "target": "01M7GWXKXW-EJWB",
+          "target": "01M7GWTG2T-VA2G",
           "path": "source"
         },
         {
-          "target": "01M7GWTG2T-VA2G",
+          "target": "01M7GWXKXW-EJWB",
           "path": "target"
         }
       ],
@@ -83864,7 +84428,7 @@ window.DRAFT_BROWSER_DATA = {
         "collectionSchemas": {},
         "schemaPath": "framework/schemas/relationship.schema.yaml"
       },
-      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M7QAES9Q-RQK5\",\n  \"type\": \"relationship\",\n  \"name\": \"Control Plane \\u2190 Cloudflare Access\",\n  \"source\": \"01M7GWXKXW-EJWB\",\n  \"target\": \"01M7GWTG2T-VA2G\",\n  \"label\": \"authenticated at edge by\",\n  \"technology\": \"HTTPS / RS256 cf-access-jwt-assertion (:443)\",\n  \"direction\": \"synchronous\",\n  \"flow\": \"inbound\",\n  \"catalogStatus\": \"complete\",\n  \"tags\": [\n    \"agent-factory\",\n    \"cloudflare-access\",\n    \"zero-trust\"\n  ],\n  \"notes\": \"Verifies interactive operator identity at the Cloudflare Zero Trust edge (beercanlabs.cloudflareaccess.com), with path-scoped bypasses only for signature-verified webhooks (/api/v1/hooks/*), OAuth 2.1 AS / /mcp flows, and Edge Worker-stripped Bearer fk_ requests (A1, A2).\",\n  \"_source\": \"catalog/governance/relationships/relationship-control-plane-fronted-by-cloudflare-access.yaml\"\n}",
+      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M7QAES9Q-RQK5\",\n  \"type\": \"relationship\",\n  \"name\": \"Cloudflare Access \\u2192 Control Plane\",\n  \"source\": \"01M7GWTG2T-VA2G\",\n  \"target\": \"01M7GWXKXW-EJWB\",\n  \"label\": \"authenticates operators at the edge for\",\n  \"technology\": \"HTTPS / RS256 cf-access-jwt-assertion (:443)\",\n  \"direction\": \"synchronous\",\n  \"flow\": \"outbound\",\n  \"catalogStatus\": \"complete\",\n  \"tags\": [\n    \"agent-factory\",\n    \"cloudflare-access\",\n    \"zero-trust\"\n  ],\n  \"notes\": \"Verifies interactive operator identity at the Cloudflare Zero Trust edge (beercanlabs.cloudflareaccess.com), with path-scoped bypasses only for signature-verified webhooks (/api/v1/hooks/*), OAuth 2.1 AS / /mcp flows, and Edge Worker-stripped Bearer fk_ requests (A1, A2).\",\n  \"_source\": \"catalog/governance/relationships/relationship-control-plane-fronted-by-cloudflare-access.yaml\"\n}",
       "existsInCatalog": true,
       "outboundRelationships": [],
       "inboundRelationships": []
@@ -83872,7 +84436,7 @@ window.DRAFT_BROWSER_DATA = {
     "01M7QAES9Q-RHA3": {
       "id": "01M7QAES9Q-RHA3",
       "uid": "01M7QAES9Q-RHA3",
-      "name": "Control Plane \u2190 Cloudflare Edge Proxy",
+      "name": "Cloudflare Edge Proxy \u2192 Control Plane",
       "aliases": [],
       "type": "relationship",
       "typeLabel": "Relationship",
@@ -83956,11 +84520,11 @@ window.DRAFT_BROWSER_DATA = {
       "hasRiskRef": false,
       "outboundRefs": [
         {
-          "target": "01M7GWXKXW-EJWB",
+          "target": "01M7GTBMQS-YRGF",
           "path": "source"
         },
         {
-          "target": "01M7GTBMQS-YRGF",
+          "target": "01M7GWXKXW-EJWB",
           "path": "target"
         }
       ],
@@ -84011,7 +84575,7 @@ window.DRAFT_BROWSER_DATA = {
         "collectionSchemas": {},
         "schemaPath": "framework/schemas/relationship.schema.yaml"
       },
-      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M7QAES9Q-RHA3\",\n  \"type\": \"relationship\",\n  \"name\": \"Control Plane \\u2190 Cloudflare Edge Proxy\",\n  \"source\": \"01M7GWXKXW-EJWB\",\n  \"target\": \"01M7GTBMQS-YRGF\",\n  \"label\": \"fronted by\",\n  \"technology\": \"HTTPS / TLS 1.3 (:443)\",\n  \"direction\": \"synchronous\",\n  \"flow\": \"inbound\",\n  \"catalogStatus\": \"complete\",\n  \"tags\": [\n    \"agent-factory\",\n    \"cloudflare\",\n    \"edge\"\n  ],\n  \"notes\": \"Public DNS, WAF, DDoS protection, and /.cf-fk-bypass Edge Worker front door; the AWS ALB security group admits only published Cloudflare IPv4 CIDRs.\",\n  \"_source\": \"catalog/governance/relationships/relationship-control-plane-fronted-by-cloudflare-edge.yaml\"\n}",
+      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M7QAES9Q-RHA3\",\n  \"type\": \"relationship\",\n  \"name\": \"Cloudflare Edge Proxy \\u2192 Control Plane\",\n  \"source\": \"01M7GTBMQS-YRGF\",\n  \"target\": \"01M7GWXKXW-EJWB\",\n  \"label\": \"fronts and proxies public traffic to\",\n  \"technology\": \"HTTPS / TLS 1.3 (:443)\",\n  \"direction\": \"synchronous\",\n  \"flow\": \"outbound\",\n  \"catalogStatus\": \"complete\",\n  \"tags\": [\n    \"agent-factory\",\n    \"cloudflare\",\n    \"edge\"\n  ],\n  \"notes\": \"Public DNS, WAF, DDoS protection, and /.cf-fk-bypass Edge Worker front door; the AWS ALB security group admits only published Cloudflare IPv4 CIDRs.\",\n  \"_source\": \"catalog/governance/relationships/relationship-control-plane-fronted-by-cloudflare-edge.yaml\"\n}",
       "existsInCatalog": true,
       "outboundRelationships": [],
       "inboundRelationships": []
@@ -85329,6 +85893,153 @@ window.DRAFT_BROWSER_DATA = {
       "outboundRelationships": [],
       "inboundRelationships": []
     },
+    "01M7RVPNPT-J2C1": {
+      "id": "01M7RVPNPT-J2C1",
+      "uid": "01M7RVPNPT-J2C1",
+      "name": "Gatekeeper Egress \u2192 Discord Bot API & Gateway (REST)",
+      "aliases": [],
+      "type": "relationship",
+      "typeLabel": "Relationship",
+      "filterType": "relationship",
+      "category": "",
+      "deliveryModel": "",
+      "domain": "",
+      "description": "",
+      "version": "",
+      "catalogStatus": "incomplete",
+      "lifecycleStatus": "unknown",
+      "status": "",
+      "businessContext": {},
+      "product": "",
+      "runsOn": "",
+      "subtype": "",
+      "vendor": "",
+      "productName": "",
+      "productVersion": "",
+      "classification": "",
+      "platformDependency": "",
+      "capabilities": [],
+      "configurations": [],
+      "networkPlacement": "",
+      "patchingOwner": "",
+      "complianceCerts": [],
+      "requirementGroups": [],
+      "requirementImplementations": [],
+      "dataLeavesInfrastructure": null,
+      "dataResidencyCommitment": "",
+      "dpaNotes": "",
+      "vendorSLA": "",
+      "authenticationModel": "",
+      "incidentNotificationProcess": "",
+      "owner": {},
+      "definitionOwner": {},
+      "provider": {},
+      "authority": {},
+      "shape": "round-rectangle",
+      "color": "#7a6e60",
+      "source": "catalog/governance/relationships/relationship-gatekeeper-egress-calls-discord-rest.yaml",
+      "tags": [
+        "agent-factory",
+        "discord",
+        "egress"
+      ],
+      "ardCategory": "",
+      "internalComponents": [],
+      "notes": "Credential-injecting egress proxy forwards agent Discord message create/edit calls to the Discord REST API (listener: HTTPS :443, /api/v10/channels/{id}/messages, POST and PATCH). Evidence: BeerCanLabs/agent-factory packages/gatekeeper/src/egress/grounding.ts (isDiscordReply). Marked incomplete: derived from a code search, not a full review of the configured egress routes.",
+      "requirements": [],
+      "implementations": [],
+      "appliesTo": {},
+      "inherits": "",
+      "scalingUnits": [],
+      "networkZones": [],
+      "sdpConnections": [],
+      "serviceGroups": [],
+      "tierVariants": [],
+      "tierId": "",
+      "purpose": "",
+      "availabilityExpectation": "",
+      "costPosture": "",
+      "complianceScope": [],
+      "parameterSurface": [],
+      "followsReferenceArchitecture": "",
+      "decisionRecords": [],
+      "affectedComponent": "",
+      "impact": "",
+      "mitigationPath": "",
+      "decisionRationale": "",
+      "relatedDecisionRecords": [],
+      "linkedObject": "",
+      "primaryObjectType": "",
+      "primaryObjectUid": "",
+      "generatedObjects": [],
+      "unresolvedQuestions": [],
+      "assumptions": [],
+      "nextSteps": [],
+      "defaultSelection": false,
+      "requirementCount": 0,
+      "hasRiskRef": false,
+      "outboundRefs": [
+        {
+          "target": "01M7GWXKXW-BPBV",
+          "path": "source"
+        },
+        {
+          "target": "01M7GTBMQT-TFSM",
+          "path": "target"
+        }
+      ],
+      "referencedBy": [],
+      "editorSchema": {
+        "requiredFields": [
+          "schemaVersion",
+          "uid",
+          "type",
+          "name",
+          "source",
+          "label",
+          "catalogStatus"
+        ],
+        "optionalFields": [
+          "description",
+          "target",
+          "externalTarget",
+          "technology",
+          "direction",
+          "flow",
+          "capabilities",
+          "notes",
+          "tags"
+        ],
+        "fieldTypes": {
+          "tags": "list",
+          "capabilities": "list"
+        },
+        "enumFields": {
+          "catalogStatus": [
+            "stub",
+            "incomplete",
+            "complete"
+          ],
+          "direction": [
+            "synchronous",
+            "asynchronous",
+            "event"
+          ],
+          "flow": [
+            "outbound",
+            "inbound",
+            "bidirectional"
+          ]
+        },
+        "enumListFields": {},
+        "collectionSchemas": {},
+        "schemaPath": "framework/schemas/relationship.schema.yaml"
+      },
+      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M7RVPNPT-J2C1\",\n  \"type\": \"relationship\",\n  \"name\": \"Gatekeeper Egress \\u2192 Discord Bot API & Gateway (REST)\",\n  \"source\": \"01M7GWXKXW-BPBV\",\n  \"target\": \"01M7GTBMQT-TFSM\",\n  \"label\": \"forwards agent message posts to\",\n  \"technology\": \"HTTPS (:443) POST/PATCH discord.com/api/v10/channels/{id}/messages\",\n  \"direction\": \"synchronous\",\n  \"flow\": \"outbound\",\n  \"catalogStatus\": \"incomplete\",\n  \"tags\": [\n    \"agent-factory\",\n    \"discord\",\n    \"egress\"\n  ],\n  \"notes\": \"Credential-injecting egress proxy forwards agent Discord message create/edit calls to the Discord REST API (listener: HTTPS :443, /api/v10/channels/{id}/messages, POST and PATCH). Evidence: BeerCanLabs/agent-factory packages/gatekeeper/src/egress/grounding.ts (isDiscordReply). Marked incomplete: derived from a code search, not a full review of the configured egress routes.\",\n  \"_source\": \"catalog/governance/relationships/relationship-gatekeeper-egress-calls-discord-rest.yaml\"\n}",
+      "existsInCatalog": true,
+      "outboundRelationships": [],
+      "inboundRelationships": []
+    },
     "01M7KQAQCD-7V12": {
       "id": "01M7KQAQCD-7V12",
       "uid": "01M7KQAQCD-7V12",
@@ -86356,7 +87067,7 @@ window.DRAFT_BROWSER_DATA = {
     "01M7KQAQCD-PND8": {
       "id": "01M7KQAQCD-PND8",
       "uid": "01M7KQAQCD-PND8",
-      "name": "Gatekeeper Ingress \u2192 Discord Gateway WebSocket API",
+      "name": "Gatekeeper Ingress \u2192 Discord Bot API & Gateway (Gateway WebSocket)",
       "aliases": [],
       "type": "relationship",
       "typeLabel": "Relationship",
@@ -86441,6 +87152,10 @@ window.DRAFT_BROWSER_DATA = {
         {
           "target": "01M7GWXKXW-7W49",
           "path": "source"
+        },
+        {
+          "target": "01M7GTBMQT-TFSM",
+          "path": "target"
         }
       ],
       "referencedBy": [],
@@ -86490,7 +87205,7 @@ window.DRAFT_BROWSER_DATA = {
         "collectionSchemas": {},
         "schemaPath": "framework/schemas/relationship.schema.yaml"
       },
-      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M7KQAQCD-PND8\",\n  \"type\": \"relationship\",\n  \"name\": \"Gatekeeper Ingress \\u2192 Discord Gateway WebSocket API\",\n  \"source\": \"01M7GWXKXW-7W49\",\n  \"externalTarget\": \"Discord Gateway WebSocket API\",\n  \"label\": \"connects to\",\n  \"technology\": \"WebSocket over TLS (:443)\",\n  \"direction\": \"event\",\n  \"flow\": \"bidirectional\",\n  \"catalogStatus\": \"complete\",\n  \"tags\": [\n    \"agent-factory\",\n    \"discord\"\n  ],\n  \"notes\": \"Holds Discord bot tokens outside agent containers (S1) and maintains Gateway WebSocket presence for registered cartridges declaring a discord surface.\",\n  \"_source\": \"catalog/governance/relationships/relationship-gatekeeper-ingress-connects-to-discord-gateway.yaml\"\n}",
+      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M7KQAQCD-PND8\",\n  \"type\": \"relationship\",\n  \"name\": \"Gatekeeper Ingress \\u2192 Discord Bot API & Gateway (Gateway WebSocket)\",\n  \"source\": \"01M7GWXKXW-7W49\",\n  \"target\": \"01M7GTBMQT-TFSM\",\n  \"label\": \"connects to\",\n  \"technology\": \"WebSocket over TLS (:443); URL discovered at runtime via the Discord REST gateway endpoint\",\n  \"direction\": \"event\",\n  \"flow\": \"outbound\",\n  \"catalogStatus\": \"complete\",\n  \"tags\": [\n    \"agent-factory\",\n    \"discord\"\n  ],\n  \"notes\": \"Holds Discord bot tokens outside agent containers (S1) and maintains Gateway WebSocket presence for registered cartridges declaring a discord surface.\",\n  \"_source\": \"catalog/governance/relationships/relationship-gatekeeper-ingress-connects-to-discord-gateway.yaml\"\n}",
       "existsInCatalog": true,
       "outboundRelationships": [],
       "inboundRelationships": []
@@ -87370,7 +88085,7 @@ window.DRAFT_BROWSER_DATA = {
         "collectionSchemas": {},
         "schemaPath": "framework/schemas/relationship.schema.yaml"
       },
-      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M7KQAQCD-RGE7\",\n  \"type\": \"relationship\",\n  \"name\": \"Hydrate Shim \\u2192 Agent Mind Safe & SQLite Notebook\",\n  \"source\": \"01M7QCY010-83KN\",\n  \"target\": \"01M7QAES9Q-FFCP\",\n  \"label\": \"hydrates & pushes mind in\",\n  \"technology\": \"HTTPS via S3 Gateway VPC Endpoint (:443)\",\n  \"direction\": \"synchronous\",\n  \"flow\": \"bidirectional\",\n  \"catalogStatus\": \"complete\",\n  \"tags\": [\n    \"agent-factory\",\n    \"hydrate\",\n    \"mind-hydration\"\n  ],\n  \"notes\": \"PID-1 factory-hydrate shim pulls $MEMORY_DIR SQLite state on wake and pushes updates on exit over the S3 Gateway VPC Endpoint, scoped strictly to <agent>-state/* by AgentTaskRole-<agent>.\",\n  \"_source\": \"catalog/governance/relationships/relationship-hydrate-syncs-mind-notebook.yaml\"\n}",
+      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M7KQAQCD-RGE7\",\n  \"type\": \"relationship\",\n  \"name\": \"Hydrate Shim \\u2192 Agent Mind Safe & SQLite Notebook\",\n  \"source\": \"01M7QCY010-83KN\",\n  \"target\": \"01M7QAES9Q-FFCP\",\n  \"label\": \"hydrates & pushes mind in\",\n  \"technology\": \"HTTPS via S3 Gateway VPC Endpoint (:443)\",\n  \"direction\": \"synchronous\",\n  \"flow\": \"outbound\",\n  \"catalogStatus\": \"complete\",\n  \"tags\": [\n    \"agent-factory\",\n    \"hydrate\",\n    \"mind-hydration\"\n  ],\n  \"notes\": \"PID-1 factory-hydrate shim pulls $MEMORY_DIR SQLite state on wake and pushes updates on exit over the S3 Gateway VPC Endpoint, scoped strictly to <agent>-state/* by AgentTaskRole-<agent>.\",\n  \"_source\": \"catalog/governance/relationships/relationship-hydrate-syncs-mind-notebook.yaml\"\n}",
       "existsInCatalog": true,
       "outboundRelationships": [],
       "inboundRelationships": []
@@ -88105,7 +88820,7 @@ window.DRAFT_BROWSER_DATA = {
         "collectionSchemas": {},
         "schemaPath": "framework/schemas/relationship.schema.yaml"
       },
-      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M7KQAQCD-XTFV\",\n  \"type\": \"relationship\",\n  \"name\": \"Auditor (Ledger) \\u2192 Hot Execution Ledger & Runtime State\",\n  \"source\": \"01M7QCY010-YM3F\",\n  \"target\": \"01M7QAES9Q-10ZE\",\n  \"label\": \"appends hash-chain to\",\n  \"technology\": \"NFSv4.1 over TLS (:2049)\",\n  \"direction\": \"synchronous\",\n  \"flow\": \"bidirectional\",\n  \"catalogStatus\": \"complete\",\n  \"tags\": [\n    \"agent-factory\",\n    \"auditor\",\n    \"ledger\"\n  ],\n  \"notes\": \"Single-writer leased append to SHA-256 hash-chained ledger.jsonl on encrypted EFS access point (LG1).\",\n  \"_source\": \"catalog/governance/relationships/relationship-ledger-writes-to-hot-ledger.yaml\"\n}",
+      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M7KQAQCD-XTFV\",\n  \"type\": \"relationship\",\n  \"name\": \"Auditor (Ledger) \\u2192 Hot Execution Ledger & Runtime State\",\n  \"source\": \"01M7QCY010-YM3F\",\n  \"target\": \"01M7QAES9Q-10ZE\",\n  \"label\": \"appends hash-chain to\",\n  \"technology\": \"NFSv4.1 over TLS (:2049)\",\n  \"direction\": \"synchronous\",\n  \"flow\": \"outbound\",\n  \"catalogStatus\": \"complete\",\n  \"tags\": [\n    \"agent-factory\",\n    \"auditor\",\n    \"ledger\"\n  ],\n  \"notes\": \"Single-writer leased append to SHA-256 hash-chained ledger.jsonl on encrypted EFS access point (LG1).\",\n  \"_source\": \"catalog/governance/relationships/relationship-ledger-writes-to-hot-ledger.yaml\"\n}",
       "existsInCatalog": true,
       "outboundRelationships": [],
       "inboundRelationships": []
@@ -88546,7 +89261,7 @@ window.DRAFT_BROWSER_DATA = {
         "collectionSchemas": {},
         "schemaPath": "framework/schemas/relationship.schema.yaml"
       },
-      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M7QCKQX8-MBBY\",\n  \"type\": \"relationship\",\n  \"name\": \"Registrar \\u2192 Deployment Config Store\",\n  \"source\": \"01M7QCY010-CDPG\",\n  \"target\": \"01M7QCKQX8-5W8P\",\n  \"label\": \"reads & versions configs in\",\n  \"technology\": \"HTTPS (:443)\",\n  \"direction\": \"synchronous\",\n  \"flow\": \"bidirectional\",\n  \"catalogStatus\": \"complete\",\n  \"tags\": [\n    \"agent-factory\",\n    \"registrar\",\n    \"configuration\"\n  ],\n  \"notes\": \"Writes one immutable versioned S3 object per agent configuration change and reads pinned configurations on wake or rollback (R1, SK3).\",\n  \"_source\": \"catalog/governance/relationships/relationship-registrar-manages-agent-configs.yaml\"\n}",
+      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M7QCKQX8-MBBY\",\n  \"type\": \"relationship\",\n  \"name\": \"Registrar \\u2192 Deployment Config Store\",\n  \"source\": \"01M7QCY010-CDPG\",\n  \"target\": \"01M7QCKQX8-5W8P\",\n  \"label\": \"reads & versions configs in\",\n  \"technology\": \"HTTPS (:443)\",\n  \"direction\": \"synchronous\",\n  \"flow\": \"outbound\",\n  \"catalogStatus\": \"complete\",\n  \"tags\": [\n    \"agent-factory\",\n    \"registrar\",\n    \"configuration\"\n  ],\n  \"notes\": \"Writes one immutable versioned S3 object per agent configuration change and reads pinned configurations on wake or rollback (R1, SK3).\",\n  \"_source\": \"catalog/governance/relationships/relationship-registrar-manages-agent-configs.yaml\"\n}",
       "existsInCatalog": true,
       "outboundRelationships": [],
       "inboundRelationships": []
@@ -88693,7 +89408,7 @@ window.DRAFT_BROWSER_DATA = {
         "collectionSchemas": {},
         "schemaPath": "framework/schemas/relationship.schema.yaml"
       },
-      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M7QCKQX8-V5TC\",\n  \"type\": \"relationship\",\n  \"name\": \"Registrar \\u2192 Skill Package Registry\",\n  \"source\": \"01M7QCY010-CDPG\",\n  \"target\": \"01M7QCKQX8-W76J\",\n  \"label\": \"stores & resolves skills in\",\n  \"technology\": \"HTTPS (:443)\",\n  \"direction\": \"synchronous\",\n  \"flow\": \"bidirectional\",\n  \"catalogStatus\": \"complete\",\n  \"tags\": [\n    \"agent-factory\",\n    \"registrar\",\n    \"skills\"\n  ],\n  \"notes\": \"Stores verified SHA-256 skill package tarballs in S3 and supplies pinned skill references to CodeBuild skill composition builds.\",\n  \"_source\": \"catalog/governance/relationships/relationship-registrar-manages-skill-packages.yaml\"\n}",
+      "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M7QCKQX8-V5TC\",\n  \"type\": \"relationship\",\n  \"name\": \"Registrar \\u2192 Skill Package Registry\",\n  \"source\": \"01M7QCY010-CDPG\",\n  \"target\": \"01M7QCKQX8-W76J\",\n  \"label\": \"stores & resolves skills in\",\n  \"technology\": \"HTTPS (:443)\",\n  \"direction\": \"synchronous\",\n  \"flow\": \"outbound\",\n  \"catalogStatus\": \"complete\",\n  \"tags\": [\n    \"agent-factory\",\n    \"registrar\",\n    \"skills\"\n  ],\n  \"notes\": \"Stores verified SHA-256 skill package tarballs in S3 and supplies pinned skill references to CodeBuild skill composition builds.\",\n  \"_source\": \"catalog/governance/relationships/relationship-registrar-manages-skill-packages.yaml\"\n}",
       "existsInCatalog": true,
       "outboundRelationships": [],
       "inboundRelationships": []
@@ -92341,15 +93056,15 @@ window.DRAFT_BROWSER_DATA = {
       "referencedBy": [
         {
           "source": "01M7QAES9Q-DEND",
-          "path": "target"
+          "path": "source"
         },
         {
           "source": "01M7KQAQCD-3CBS",
-          "path": "target"
+          "path": "source"
         },
         {
           "source": "01M7KQAQCD-9JK7",
-          "path": "target"
+          "path": "source"
         }
       ],
       "editorSchema": {
@@ -92459,45 +93174,39 @@ window.DRAFT_BROWSER_DATA = {
       },
       "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M7GWTG2T-M2Q0\",\n  \"type\": \"network_service\",\n  \"name\": \"AWS Application Load Balancer - factory-prod\",\n  \"description\": \"Internet-facing ALB that is the AWS origin behind the Cloudflare edge for Agent Factory and Closing Climb hostnames.\",\n  \"catalogStatus\": \"incomplete\",\n  \"lifecycleStatus\": \"preferred\",\n  \"owner\": {\n    \"team\": \"platform-ai-team\",\n    \"contact\": \"platform-ai@example.com\"\n  },\n  \"tags\": [\n    \"aws\",\n    \"alb\",\n    \"load-balancer\",\n    \"ingress\",\n    \"agent-factory\",\n    \"closing-climb\"\n  ],\n  \"deliveryModel\": \"paas\",\n  \"vendor\": \"Amazon Web Services\",\n  \"productName\": \"Elastic Load Balancing Application Load Balancer\",\n  \"productVersion\": \"managed\",\n  \"patchingOwner\": \"aws-managed\",\n  \"authenticationModel\": \"iam\",\n  \"networkFunction\": \"Layer 7 host-based routing and TLS termination for the factory-prod ECS services.\",\n  \"protocols\": [\n    \"HTTPS\",\n    \"HTTP\"\n  ],\n  \"capabilities\": [\n    \"01KSWVZSZ5-M0FR\",\n    \"01KT0XNZEY-RVTG\"\n  ],\n  \"provisioningModel\": \"reference-only\",\n  \"notes\": {\n    \"verification\": \"Verified read-only from AWS account ending 2296 (us-east-1) on 2026-11-15 (America/Phoenix).\",\n    \"listeners\": \"HTTP 80 and HTTPS 443.\",\n    \"routing\": \"Host rules: factory-dashboard.dalesackrider.com -> console; garrison.dalesackrider.com -> garrison; cc.dalesackrider.com -> closing-climb-prod; default -> control-plane (factory-prod-cp).\",\n    \"certificates\": \"ACM certificates for *.dalesackrider.com, submind-aws.dalesackrider.com and agent-factory.beercanlabs.com.\",\n    \"edge\": \"Every listed hostname answered through Cloudflare (server: cloudflare) on 2026-11-15. Cloudflare DNS origin records were not read.\",\n    \"provisioning\": \"Provisioned by Terraform in BeerCanLabs/agent-factory landing-zones/aws (S3 backend); module not yet packaged as a DRAFT deployablePackage.\",\n    \"incomplete\": \"Security group rules, WAF association and HTTP-to-HTTPS redirect behavior were not reviewed.\"\n  },\n  \"_source\": \"catalog/shared-services/network-services/network-service-aws-alb-factory-prod.yaml\"\n}",
       "existsInCatalog": true,
-      "outboundRelationships": [],
-      "inboundRelationships": [
+      "outboundRelationships": [
         {
           "uid": "01M7QAES9Q-DEND",
-          "name": "Agent Garrison \u2190 AWS ALB factory-prod",
-          "label": "receives ingress from",
+          "name": "AWS ALB factory-prod \u2192 Agent Garrison",
+          "label": "routes ingress to",
           "technology": "HTTPS :443 \u2192 HTTP :3000",
           "direction": "synchronous",
-          "targetUid": "01M7GWTG2T-M2Q0",
-          "targetName": "AWS Application Load Balancer - factory-prod",
-          "capabilities": [],
-          "sourceUid": "01M7GWXKXW-Z0Z4",
-          "sourceName": "Agent Garrison"
+          "targetUid": "01M7GWXKXW-Z0Z4",
+          "targetName": "Agent Garrison",
+          "capabilities": []
         },
         {
           "uid": "01M7KQAQCD-3CBS",
-          "name": "Web Console \u2190 AWS ALB factory-prod",
-          "label": "receives ingress from",
+          "name": "AWS ALB factory-prod \u2192 Web Console",
+          "label": "routes ingress to",
           "technology": "HTTPS :443 \u2192 HTTP :3000",
           "direction": "synchronous",
-          "targetUid": "01M7GWTG2T-M2Q0",
-          "targetName": "AWS Application Load Balancer - factory-prod",
-          "capabilities": [],
-          "sourceUid": "01M7GWXKXW-VPCD",
-          "sourceName": "Web Console"
+          "targetUid": "01M7GWXKXW-VPCD",
+          "targetName": "Web Console",
+          "capabilities": []
         },
         {
           "uid": "01M7KQAQCD-9JK7",
-          "name": "Control Plane \u2190 AWS ALB factory-prod",
-          "label": "receives ingress from",
+          "name": "AWS ALB factory-prod \u2192 Control Plane",
+          "label": "routes ingress to",
           "technology": "HTTPS :443 \u2192 HTTP :8088 (health :8089)",
           "direction": "synchronous",
-          "targetUid": "01M7GWTG2T-M2Q0",
-          "targetName": "AWS Application Load Balancer - factory-prod",
-          "capabilities": [],
-          "sourceUid": "01M7GWXKXW-EJWB",
-          "sourceName": "Control Plane"
+          "targetUid": "01M7GWXKXW-EJWB",
+          "targetName": "Control Plane",
+          "capabilities": []
         }
-      ]
+      ],
+      "inboundRelationships": []
     },
     "01M7GWTG2T-8A54": {
       "id": "01M7GWTG2T-8A54",
@@ -92830,7 +93539,7 @@ window.DRAFT_BROWSER_DATA = {
         },
         {
           "source": "01M7QAES9Q-RHA3",
-          "path": "target"
+          "path": "source"
         },
         {
           "source": "0C2JQD5S29-RJNY",
@@ -92944,20 +93653,19 @@ window.DRAFT_BROWSER_DATA = {
       },
       "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M7GTBMQS-YRGF\",\n  \"type\": \"network_service\",\n  \"name\": \"Cloudflare Global Anycast Edge Proxy Service\",\n  \"description\": \"Registration object for Geordi's Cloudflare Global Anycast Edge Proxy network service providing ingress routing, Orange Cloud DNS proxying, SSL Full TLS termination, 301 URL redirects, and ALPN negotiation compatibility under Netskope SSL inspection.\",\n  \"deliveryModel\": \"saas\",\n  \"catalogStatus\": \"incomplete\",\n  \"lifecycleStatus\": \"preferred\",\n  \"vendor\": \"Cloudflare\",\n  \"productName\": \"Cloudflare Managed DNS & Edge Proxy\",\n  \"productVersion\": \"Free Tier Anycast Edge Network\",\n  \"networkFunction\": \"Ingress traffic control, HTTPS termination, HTTP/1.1 and HTTP/2 ALPN negotiation, Orange Cloud DNS proxying, and 301 URL redirects.\",\n  \"provisioningModel\": \"deployable\",\n  \"deployablePackage\": {\n    \"registry\": \"github\",\n    \"source\": \"BeerCanLabs/skippy-matrix\",\n    \"version\": \"main\",\n    \"modulePath\": \"terraform/modules/cloudflare-edge-proxy\"\n  },\n  \"protocols\": [\n    \"HTTPS\",\n    \"HTTP/2\",\n    \"HTTP/1.1\"\n  ],\n  \"owner\": {\n    \"team\": \"engineering-platform\",\n    \"contact\": \"platform-ai@example.com\",\n    \"resourceOwner\": \"Geordi\",\n    \"serviceProviderRole\": \"Network Domain Service Provider\"\n  },\n  \"vendorGovernance\": {\n    \"dataLeavesInfrastructure\": false,\n    \"dataResidencyCommitment\": \"Global Anycast Edge with regional origin processing\",\n    \"vendorSLA\": \"100% SLA commitment\",\n    \"acceptableUsePolicy\": \"Mandatory for all public web endpoints across Submind and client workloads. Bare GHS CNAME mappings are strictly non-compliant. All traffic must route through Cloudflare Anycast Edge with Full SSL encryption enabled.\"\n  },\n  \"decisionRecords\": [\n    {\n      \"ref\": \"01M7GTBMQS-SZBH\",\n      \"key\": \"edgeProxyDecision\"\n    }\n  ],\n  \"requirementImplementations\": [\n    {\n      \"requirementGroup\": \"01M7GTBMQT-H66V\",\n      \"requirementId\": \"req-edge-proxy-mandatory\",\n      \"status\": \"satisfied\",\n      \"mechanism\": \"decisionRecord\",\n      \"key\": \"edgeProxyDecision\",\n      \"notes\": \"Satisfied by the Edge Proxy Architecture & Acceptable Use Decision; this object is Geordi's Cloudflare Global Anycast Edge Proxy service module deployed via BeerCanLabs/skippy-matrix.\"\n    }\n  ],\n  \"_source\": \"catalog/shared-services/network-services/network-service-cloudflare-edge-proxy.yaml\"\n}",
       "existsInCatalog": true,
-      "outboundRelationships": [],
-      "inboundRelationships": [
+      "outboundRelationships": [
         {
           "uid": "01M7QAES9Q-RHA3",
-          "name": "Control Plane \u2190 Cloudflare Edge Proxy",
-          "label": "fronted by",
+          "name": "Cloudflare Edge Proxy \u2192 Control Plane",
+          "label": "fronts and proxies public traffic to",
           "technology": "HTTPS / TLS 1.3 (:443)",
           "direction": "synchronous",
-          "targetUid": "01M7GTBMQS-YRGF",
-          "targetName": "Cloudflare Global Anycast Edge Proxy Service",
-          "capabilities": [],
-          "sourceUid": "01M7GWXKXW-EJWB",
-          "sourceName": "Control Plane"
-        },
+          "targetUid": "01M7GWXKXW-EJWB",
+          "targetName": "Control Plane",
+          "capabilities": []
+        }
+      ],
+      "inboundRelationships": [
         {
           "uid": "0C2JQD5S29-RJNY",
           "name": "Factory CLI \u2192 Cloudflare Global Anycast Edge Proxy Service",
@@ -95776,7 +96484,7 @@ window.DRAFT_BROWSER_DATA = {
       "referencedBy": [
         {
           "source": "01M7QAES9Q-RQK5",
-          "path": "target"
+          "path": "source"
         }
       ],
       "editorSchema": {
@@ -95888,21 +96596,19 @@ window.DRAFT_BROWSER_DATA = {
       },
       "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M7GWTG2T-VA2G\",\n  \"type\": \"runtime_service\",\n  \"name\": \"Cloudflare Access - BeerCanLabs Front Door\",\n  \"description\": \"Cloudflare Zero Trust Access in front of Agent Factory and BeerCanLabs web hostnames.\",\n  \"catalogStatus\": \"incomplete\",\n  \"lifecycleStatus\": \"preferred\",\n  \"owner\": {\n    \"team\": \"platform-ai-team\",\n    \"contact\": \"platform-ai@example.com\"\n  },\n  \"tags\": [\n    \"cloudflare\",\n    \"zero-trust\",\n    \"access\",\n    \"front-door\",\n    \"agent-factory\"\n  ],\n  \"deliveryModel\": \"saas\",\n  \"vendor\": \"Cloudflare\",\n  \"productName\": \"Cloudflare Zero Trust Access\",\n  \"productVersion\": \"managed\",\n  \"patchingOwner\": \"vendor-managed\",\n  \"authenticationModel\": \"oauth\",\n  \"capabilities\": [\n    \"01KQQ4Q026-MHJM\",\n    \"01KQQ4Q026-4JR6\"\n  ],\n  \"provisioningModel\": \"reference-only\",\n  \"notes\": {\n    \"verification\": \"HTTPS probes on 2026-11-15: agent-factory.beercanlabs.com, garrison.dalesackrider.com and knowledge.beercanlabs.ai return 302 to the beercanlabs Cloudflare Access team login; submind-aws.dalesackrider.com returns 401 from Cloudflare.\",\n    \"definition\": \"Access applications (factory front door, signature-verified webhooks bypass, API-key bypass) are defined in BeerCanLabs/agent-factory landing-zones/aws/cloudflare.tf. closing-climb-web validates Cloudflare Access OIDC tokens.\",\n    \"incomplete\": \"Access policies, identity providers and service tokens were not read (no Cloudflare API access used).\"\n  },\n  \"_source\": \"catalog/shared-services/runtime-services/runtime-service-cloudflare-access.yaml\"\n}",
       "existsInCatalog": true,
-      "outboundRelationships": [],
-      "inboundRelationships": [
+      "outboundRelationships": [
         {
           "uid": "01M7QAES9Q-RQK5",
-          "name": "Control Plane \u2190 Cloudflare Access",
-          "label": "authenticated at edge by",
+          "name": "Cloudflare Access \u2192 Control Plane",
+          "label": "authenticates operators at the edge for",
           "technology": "HTTPS / RS256 cf-access-jwt-assertion (:443)",
           "direction": "synchronous",
-          "targetUid": "01M7GWTG2T-VA2G",
-          "targetName": "Cloudflare Access - BeerCanLabs Front Door",
-          "capabilities": [],
-          "sourceUid": "01M7GWXKXW-EJWB",
-          "sourceName": "Control Plane"
+          "targetUid": "01M7GWXKXW-EJWB",
+          "targetName": "Control Plane",
+          "capabilities": []
         }
-      ]
+      ],
+      "inboundRelationships": []
     },
     "01M7KQAQCD-ZS7E": {
       "id": "01M7KQAQCD-ZS7E",
@@ -96682,7 +97388,20 @@ window.DRAFT_BROWSER_DATA = {
           "path": "capabilities[0]"
         }
       ],
-      "referencedBy": [],
+      "referencedBy": [
+        {
+          "source": "01M7RVPNPT-V3GR",
+          "path": "target"
+        },
+        {
+          "source": "01M7RVPNPT-J2C1",
+          "path": "target"
+        },
+        {
+          "source": "01M7KQAQCD-PND8",
+          "path": "target"
+        }
+      ],
       "editorSchema": {
         "requiredFields": [
           "schemaVersion",
@@ -96744,7 +97463,44 @@ window.DRAFT_BROWSER_DATA = {
       "detail": "{\n  \"schemaVersion\": \"1.0\",\n  \"uid\": \"01M7GTBMQT-TFSM\",\n  \"type\": \"technology_component\",\n  \"name\": \"Discord Bot API & Gateway\",\n  \"aliases\": [\n    \"discord-api\",\n    \"discord-doorman\"\n  ],\n  \"description\": \"Managed real-time messaging, bot API, and WebSocket gateway platform provided by Discord.  Used by Discord Doorman and agent proxy services for user interaction.\\n\",\n  \"version\": \"1.0.0\",\n  \"catalogStatus\": \"incomplete\",\n  \"provisioningModel\": \"reference-only\",\n  \"owner\": {\n    \"team\": \"Agent Factory Platform\",\n    \"contact\": \"agent-factory@beercanlabs.com\"\n  },\n  \"tags\": [\n    \"technology-component\",\n    \"messaging\",\n    \"reference-only\"\n  ],\n  \"vendor\": \"Discord\",\n  \"productName\": \"Discord API\",\n  \"productVersion\": \"v10\",\n  \"classification\": \"software\",\n  \"vendorLifecycle\": {\n    \"mainstreamSupportEnd\": \"Active\",\n    \"extendedSupportEnd\": \"Active\",\n    \"notes\": \"External SaaS API provider platform.\"\n  },\n  \"capabilities\": [\n    \"01KT0V5MCV-KT72\"\n  ],\n  \"_source\": \"catalog/shared-services/technology-components/tc-discord-api.yaml\"\n}",
       "existsInCatalog": true,
       "outboundRelationships": [],
-      "inboundRelationships": []
+      "inboundRelationships": [
+        {
+          "uid": "01M7RVPNPT-V3GR",
+          "name": "Control Plane \u2192 Discord Bot API & Gateway (REST)",
+          "label": "sets up Discord bot applications via",
+          "technology": "HTTPS (:443) discord.com/api/v10 (plus OAuth2 authorize link)",
+          "direction": "synchronous",
+          "targetUid": "01M7GTBMQT-TFSM",
+          "targetName": "Discord Bot API & Gateway",
+          "capabilities": [],
+          "sourceUid": "01M7GWXKXW-EJWB",
+          "sourceName": "Control Plane"
+        },
+        {
+          "uid": "01M7RVPNPT-J2C1",
+          "name": "Gatekeeper Egress \u2192 Discord Bot API & Gateway (REST)",
+          "label": "forwards agent message posts to",
+          "technology": "HTTPS (:443) POST/PATCH discord.com/api/v10/channels/{id}/messages",
+          "direction": "synchronous",
+          "targetUid": "01M7GTBMQT-TFSM",
+          "targetName": "Discord Bot API & Gateway",
+          "capabilities": [],
+          "sourceUid": "01M7GWXKXW-BPBV",
+          "sourceName": "Gatekeeper Egress"
+        },
+        {
+          "uid": "01M7KQAQCD-PND8",
+          "name": "Gatekeeper Ingress \u2192 Discord Bot API & Gateway (Gateway WebSocket)",
+          "label": "connects to",
+          "technology": "WebSocket over TLS (:443); URL discovered at runtime via the Discord REST gateway endpoint",
+          "direction": "event",
+          "targetUid": "01M7GTBMQT-TFSM",
+          "targetName": "Discord Bot API & Gateway",
+          "capabilities": [],
+          "sourceUid": "01M7GWXKXW-7W49",
+          "sourceName": "Gatekeeper Ingress"
+        }
+      ]
     },
     "01M7GVD4FN-F0DT": {
       "id": "01M7GVD4FN-F0DT",
@@ -102213,7 +102969,7 @@ window.DRAFT_BROWSER_DATA = {
       },
       {
         "source": "01M7QAES9Q-RHA3",
-        "path": "target"
+        "path": "source"
       },
       {
         "source": "0C2JQD5S29-RJNY",
@@ -102235,7 +102991,7 @@ window.DRAFT_BROWSER_DATA = {
       },
       {
         "source": "01M7KQAQCD-9JK7",
-        "path": "source"
+        "path": "target"
       },
       {
         "source": "01M7KQAQCD-GQNC",
@@ -102250,6 +103006,10 @@ window.DRAFT_BROWSER_DATA = {
         "path": "source"
       },
       {
+        "source": "01M7RVPNPT-V3GR",
+        "path": "source"
+      },
+      {
         "source": "01M7QD4DVC-6K7H",
         "path": "source"
       },
@@ -102259,11 +103019,11 @@ window.DRAFT_BROWSER_DATA = {
       },
       {
         "source": "01M7QAES9Q-RQK5",
-        "path": "source"
+        "path": "target"
       },
       {
         "source": "01M7QAES9Q-RHA3",
-        "path": "source"
+        "path": "target"
       },
       {
         "source": "01M7QD4DVC-80P6",
@@ -102540,6 +103300,10 @@ window.DRAFT_BROWSER_DATA = {
         "path": "target"
       },
       {
+        "source": "01M7RVPNPT-J2C1",
+        "path": "source"
+      },
+      {
         "source": "01M7KQAQCD-7V12",
         "path": "source"
       },
@@ -102605,7 +103369,7 @@ window.DRAFT_BROWSER_DATA = {
       },
       {
         "source": "01M7KQAQCD-3CBS",
-        "path": "source"
+        "path": "target"
       },
       {
         "source": "01M7KQAQCD-GQNC",
@@ -102968,10 +103732,24 @@ window.DRAFT_BROWSER_DATA = {
         "path": "linkedObject"
       }
     ],
-    "01M7GWXKXW-Z0Z4": [
+    "01M7GWTG2T-M2Q0": [
       {
         "source": "01M7QAES9Q-DEND",
         "path": "source"
+      },
+      {
+        "source": "01M7KQAQCD-3CBS",
+        "path": "source"
+      },
+      {
+        "source": "01M7KQAQCD-9JK7",
+        "path": "source"
+      }
+    ],
+    "01M7GWXKXW-Z0Z4": [
+      {
+        "source": "01M7QAES9Q-DEND",
+        "path": "target"
       },
       {
         "source": "01M7QAES9Q-NSV3",
@@ -102982,24 +103760,24 @@ window.DRAFT_BROWSER_DATA = {
         "path": "source"
       }
     ],
-    "01M7GWTG2T-M2Q0": [
+    "01M7GTBMQT-TFSM": [
       {
-        "source": "01M7QAES9Q-DEND",
+        "source": "01M7RVPNPT-V3GR",
         "path": "target"
       },
       {
-        "source": "01M7KQAQCD-3CBS",
+        "source": "01M7RVPNPT-J2C1",
         "path": "target"
       },
       {
-        "source": "01M7KQAQCD-9JK7",
+        "source": "01M7KQAQCD-PND8",
         "path": "target"
       }
     ],
     "01M7GWTG2T-VA2G": [
       {
         "source": "01M7QAES9Q-RQK5",
-        "path": "target"
+        "path": "source"
       }
     ],
     "01M7GWTG2T-TQEB": [
@@ -104060,6 +104838,39 @@ window.DRAFT_BROWSER_DATA = {
         "description": "Deployment pattern for simple applications where a client or static presentation layer talks directly to a managed data service without a separately operated application runtime tier. Use this for static sites, thick clients, reporting front ends, or low-code applications whose business logic is primarily in the client and managed data platform."
       },
       {
+        "uid": "01M7QAES9Q-DEND",
+        "name": "AWS ALB factory-prod \u2192 Agent Garrison",
+        "type": "relationship",
+        "catalogStatus": "complete",
+        "source": "01M7GWTG2T-M2Q0",
+        "target": "01M7GWXKXW-Z0Z4",
+        "label": "routes ingress to",
+        "technology": "HTTPS :443 \u2192 HTTP :3000",
+        "direction": "synchronous"
+      },
+      {
+        "uid": "01M7KQAQCD-9JK7",
+        "name": "AWS ALB factory-prod \u2192 Control Plane",
+        "type": "relationship",
+        "catalogStatus": "complete",
+        "source": "01M7GWTG2T-M2Q0",
+        "target": "01M7GWXKXW-EJWB",
+        "label": "routes ingress to",
+        "technology": "HTTPS :443 \u2192 HTTP :8088 (health :8089)",
+        "direction": "synchronous"
+      },
+      {
+        "uid": "01M7KQAQCD-3CBS",
+        "name": "AWS ALB factory-prod \u2192 Web Console",
+        "type": "relationship",
+        "catalogStatus": "complete",
+        "source": "01M7GWTG2T-M2Q0",
+        "target": "01M7GWXKXW-VPCD",
+        "label": "routes ingress to",
+        "technology": "HTTPS :443 \u2192 HTTP :3000",
+        "direction": "synchronous"
+      },
+      {
         "uid": "VP8VB5X0E7-7FJC",
         "name": "AWS ECS Fargate Runtime - factory-prod \u2192 AWS Fargate factory-prod ECS Cluster Host (us-east-1)",
         "type": "relationship",
@@ -104097,17 +104908,6 @@ window.DRAFT_BROWSER_DATA = {
         "target": "01M7GWXKXW-BPBV",
         "label": "calls",
         "technology": "HTTP Reverse Proxy & CONNECT (:8081)",
-        "direction": "synchronous"
-      },
-      {
-        "uid": "01M7QAES9Q-DEND",
-        "name": "Agent Garrison \u2190 AWS ALB factory-prod",
-        "type": "relationship",
-        "catalogStatus": "complete",
-        "source": "01M7GWXKXW-Z0Z4",
-        "target": "01M7GWTG2T-M2Q0",
-        "label": "receives ingress from",
-        "technology": "HTTPS :443 \u2192 HTTP :3000",
         "direction": "synchronous"
       },
       {
@@ -104200,35 +105000,24 @@ window.DRAFT_BROWSER_DATA = {
         "label": "runs on"
       },
       {
-        "uid": "01M7KQAQCD-9JK7",
-        "name": "Control Plane \u2190 AWS ALB factory-prod",
-        "type": "relationship",
-        "catalogStatus": "complete",
-        "source": "01M7GWXKXW-EJWB",
-        "target": "01M7GWTG2T-M2Q0",
-        "label": "receives ingress from",
-        "technology": "HTTPS :443 \u2192 HTTP :8088 (health :8089)",
-        "direction": "synchronous"
-      },
-      {
         "uid": "01M7QAES9Q-RQK5",
-        "name": "Control Plane \u2190 Cloudflare Access",
+        "name": "Cloudflare Access \u2192 Control Plane",
         "type": "relationship",
         "catalogStatus": "complete",
-        "source": "01M7GWXKXW-EJWB",
-        "target": "01M7GWTG2T-VA2G",
-        "label": "authenticated at edge by",
+        "source": "01M7GWTG2T-VA2G",
+        "target": "01M7GWXKXW-EJWB",
+        "label": "authenticates operators at the edge for",
         "technology": "HTTPS / RS256 cf-access-jwt-assertion (:443)",
         "direction": "synchronous"
       },
       {
         "uid": "01M7QAES9Q-RHA3",
-        "name": "Control Plane \u2190 Cloudflare Edge Proxy",
+        "name": "Cloudflare Edge Proxy \u2192 Control Plane",
         "type": "relationship",
         "catalogStatus": "complete",
-        "source": "01M7GWXKXW-EJWB",
-        "target": "01M7GTBMQS-YRGF",
-        "label": "fronted by",
+        "source": "01M7GTBMQS-YRGF",
+        "target": "01M7GWXKXW-EJWB",
+        "label": "fronts and proxies public traffic to",
         "technology": "HTTPS / TLS 1.3 (:443)",
         "direction": "synchronous"
       },
@@ -104304,6 +105093,17 @@ window.DRAFT_BROWSER_DATA = {
         "target": "01M7QCY010-1NAQ",
         "label": "checks privileges & holds via",
         "technology": "In-Process TypeScript Module",
+        "direction": "synchronous"
+      },
+      {
+        "uid": "01M7RVPNPT-V3GR",
+        "name": "Control Plane \u2192 Discord Bot API & Gateway (REST)",
+        "type": "relationship",
+        "catalogStatus": "incomplete",
+        "source": "01M7GWXKXW-EJWB",
+        "target": "01M7GTBMQT-TFSM",
+        "label": "sets up Discord bot applications via",
+        "technology": "HTTPS (:443) discord.com/api/v10 (plus OAuth2 authorize link)",
         "direction": "synchronous"
       },
       {
@@ -104461,6 +105261,17 @@ window.DRAFT_BROWSER_DATA = {
         "direction": "synchronous"
       },
       {
+        "uid": "01M7RVPNPT-J2C1",
+        "name": "Gatekeeper Egress \u2192 Discord Bot API & Gateway (REST)",
+        "type": "relationship",
+        "catalogStatus": "incomplete",
+        "source": "01M7GWXKXW-BPBV",
+        "target": "01M7GTBMQT-TFSM",
+        "label": "forwards agent message posts to",
+        "technology": "HTTPS (:443) POST/PATCH discord.com/api/v10/channels/{id}/messages",
+        "direction": "synchronous"
+      },
+      {
         "uid": "01M7QD4DVC-D9A0",
         "name": "Gatekeeper Egress \u2192 Executive",
         "type": "relationship",
@@ -104514,12 +105325,13 @@ window.DRAFT_BROWSER_DATA = {
       },
       {
         "uid": "01M7KQAQCD-PND8",
-        "name": "Gatekeeper Ingress \u2192 Discord Gateway WebSocket API",
+        "name": "Gatekeeper Ingress \u2192 Discord Bot API & Gateway (Gateway WebSocket)",
         "type": "relationship",
         "catalogStatus": "complete",
         "source": "01M7GWXKXW-7W49",
+        "target": "01M7GTBMQT-TFSM",
         "label": "connects to",
-        "technology": "WebSocket over TLS (:443)",
+        "technology": "WebSocket over TLS (:443); URL discovered at runtime via the Discord REST gateway endpoint",
         "direction": "event"
       },
       {
@@ -104803,17 +105615,6 @@ window.DRAFT_BROWSER_DATA = {
         "source": "01M7QAES9Q-M4R9",
         "target": "01M7GWTG2T-F1WG",
         "label": "runs on"
-      },
-      {
-        "uid": "01M7KQAQCD-3CBS",
-        "name": "Web Console \u2190 AWS ALB factory-prod",
-        "type": "relationship",
-        "catalogStatus": "complete",
-        "source": "01M7GWXKXW-VPCD",
-        "target": "01M7GWTG2T-M2Q0",
-        "label": "receives ingress from",
-        "technology": "HTTPS :443 \u2192 HTTP :3000",
-        "direction": "synchronous"
       },
       {
         "uid": "K3K6BX46KE-5MV9",
@@ -106443,12 +107244,12 @@ window.DRAFT_BROWSER_DATA = {
   "topologyEdges": [
     {
       "id": "01M7QAES9Q-DEND",
-      "source": "01M7GWXKXW-Z0Z4",
-      "target": "01M7GWTG2T-M2Q0",
-      "label": "receives ingress from",
+      "source": "01M7GWTG2T-M2Q0",
+      "target": "01M7GWXKXW-Z0Z4",
+      "label": "routes ingress to",
       "technology": "HTTPS :443 \u2192 HTTP :3000",
       "direction": "synchronous",
-      "name": "Agent Garrison \u2190 AWS ALB factory-prod"
+      "name": "AWS ALB factory-prod \u2192 Agent Garrison"
     },
     {
       "id": "01M7QD4DVC-GYVQ",
@@ -106461,21 +107262,21 @@ window.DRAFT_BROWSER_DATA = {
     },
     {
       "id": "01M7KQAQCD-3CBS",
-      "source": "01M7GWXKXW-VPCD",
-      "target": "01M7GWTG2T-M2Q0",
-      "label": "receives ingress from",
+      "source": "01M7GWTG2T-M2Q0",
+      "target": "01M7GWXKXW-VPCD",
+      "label": "routes ingress to",
       "technology": "HTTPS :443 \u2192 HTTP :3000",
       "direction": "synchronous",
-      "name": "Web Console \u2190 AWS ALB factory-prod"
+      "name": "AWS ALB factory-prod \u2192 Web Console"
     },
     {
       "id": "01M7KQAQCD-9JK7",
-      "source": "01M7GWXKXW-EJWB",
-      "target": "01M7GWTG2T-M2Q0",
-      "label": "receives ingress from",
+      "source": "01M7GWTG2T-M2Q0",
+      "target": "01M7GWXKXW-EJWB",
+      "label": "routes ingress to",
       "technology": "HTTPS :443 \u2192 HTTP :8088 (health :8089)",
       "direction": "synchronous",
-      "name": "Control Plane \u2190 AWS ALB factory-prod"
+      "name": "AWS ALB factory-prod \u2192 Control Plane"
     },
     {
       "id": "01M7KQAQCD-GQNC",
@@ -106505,6 +107306,15 @@ window.DRAFT_BROWSER_DATA = {
       "name": "Control Plane \u2192 Bouncer"
     },
     {
+      "id": "01M7RVPNPT-V3GR",
+      "source": "01M7GWXKXW-EJWB",
+      "target": "01M7GTBMQT-TFSM",
+      "label": "sets up Discord bot applications via",
+      "technology": "HTTPS (:443) discord.com/api/v10 (plus OAuth2 authorize link)",
+      "direction": "synchronous",
+      "name": "Control Plane \u2192 Discord Bot API & Gateway (REST)"
+    },
+    {
       "id": "01M7QD4DVC-6K7H",
       "source": "01M7GWXKXW-EJWB",
       "target": "01M7QCY010-YM3F",
@@ -106524,21 +107334,21 @@ window.DRAFT_BROWSER_DATA = {
     },
     {
       "id": "01M7QAES9Q-RQK5",
-      "source": "01M7GWXKXW-EJWB",
-      "target": "01M7GWTG2T-VA2G",
-      "label": "authenticated at edge by",
+      "source": "01M7GWTG2T-VA2G",
+      "target": "01M7GWXKXW-EJWB",
+      "label": "authenticates operators at the edge for",
       "technology": "HTTPS / RS256 cf-access-jwt-assertion (:443)",
       "direction": "synchronous",
-      "name": "Control Plane \u2190 Cloudflare Access"
+      "name": "Cloudflare Access \u2192 Control Plane"
     },
     {
       "id": "01M7QAES9Q-RHA3",
-      "source": "01M7GWXKXW-EJWB",
-      "target": "01M7GTBMQS-YRGF",
-      "label": "fronted by",
+      "source": "01M7GTBMQS-YRGF",
+      "target": "01M7GWXKXW-EJWB",
+      "label": "fronts and proxies public traffic to",
       "technology": "HTTPS / TLS 1.3 (:443)",
       "direction": "synchronous",
-      "name": "Control Plane \u2190 Cloudflare Edge Proxy"
+      "name": "Cloudflare Edge Proxy \u2192 Control Plane"
     },
     {
       "id": "01M7QD4DVC-80P6",
@@ -106604,6 +107414,15 @@ window.DRAFT_BROWSER_DATA = {
       "name": "Agent Garrison \u2192 Control Plane"
     },
     {
+      "id": "01M7RVPNPT-J2C1",
+      "source": "01M7GWXKXW-BPBV",
+      "target": "01M7GTBMQT-TFSM",
+      "label": "forwards agent message posts to",
+      "technology": "HTTPS (:443) POST/PATCH discord.com/api/v10/channels/{id}/messages",
+      "direction": "synchronous",
+      "name": "Gatekeeper Egress \u2192 Discord Bot API & Gateway (REST)"
+    },
+    {
       "id": "01M7QD4DVC-2JWW",
       "source": "01M7GWXKXW-BPBV",
       "target": "01M7QCY010-1NAQ",
@@ -106656,6 +107475,15 @@ window.DRAFT_BROWSER_DATA = {
       "technology": "HTTP (:8088)",
       "direction": "synchronous",
       "name": "Gatekeeper Egress \u2192 Control Plane"
+    },
+    {
+      "id": "01M7KQAQCD-PND8",
+      "source": "01M7GWXKXW-7W49",
+      "target": "01M7GTBMQT-TFSM",
+      "label": "connects to",
+      "technology": "WebSocket over TLS (:443); URL discovered at runtime via the Discord REST gateway endpoint",
+      "direction": "event",
+      "name": "Gatekeeper Ingress \u2192 Discord Bot API & Gateway (Gateway WebSocket)"
     },
     {
       "id": "01M7KQAQCD-1AM0",

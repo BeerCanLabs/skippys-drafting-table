@@ -1,13 +1,13 @@
 schemaVersion: '1.0'
 uid: 01M7QAES9Q-RQK5
 type: relationship
-name: Control Plane ← Cloudflare Access
-source: 01M7GWXKXW-EJWB
-target: 01M7GWTG2T-VA2G
-label: authenticated at edge by
+name: Cloudflare Access → Control Plane
+source: 01M7GWTG2T-VA2G
+target: 01M7GWXKXW-EJWB
+label: authenticates operators at the edge for
 technology: HTTPS / RS256 cf-access-jwt-assertion (:443)
 direction: synchronous
-flow: inbound
+flow: outbound
 catalogStatus: complete
 tags:
   - agent-factory
