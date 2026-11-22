@@ -95,6 +95,35 @@ Use `provider` for the organization that supplies the DRAFT mapping and
 language. For example, a company-owned policy mapping can have
 `provider.name: Company Name` and `authority.shortName: CompanyPolicy`.
 
+A `field` mechanism is satisfied when the object's `key` field holds a
+non-empty value (or the `equals` value when one is set). A `notIn` list names
+values that never satisfy it, such as `TBD`.
+
+### Listener Protection
+
+The bundled security group carries a mandatory `interface-protection`
+requirement on `listener` objects. It is satisfied by the listener's
+`authenticationModel`: any recorded model satisfies it, including `none`, but
+`TBD` does not. It cannot be marked not-applicable. Like other requirement
+gaps, an unsatisfied `interface-protection` fails a `complete` listener and
+warns on a `stub` or `incomplete` one.
+
+Choosing `none` needs a recorded decision. The conditional
+`interface-unprotected-justification` requirement applies when the listener's
+`authenticationModel` equals `none`. Only a committed DecisionRecord satisfies
+it: one with `status` `accepted`, `mitigated` or `resolved`, referenced from the
+listener's `decisionRecords` with `key: interface_unprotected`. A missing
+record, an `open` draft, or a `not-applicable` answer does not satisfy it.
+DRAFT defines this mechanism only. Which unauthenticated exceptions a company
+accepts stays in company requirement groups and DecisionRecord approval policy.
+
+A `decisionRecord` mechanism with `committedOnly: true` ignores `open`
+DecisionRecords. Conditional requirements normally set `naAllowed: true`. The
+one exception is a conditional requirement whose every `canBeSatisfiedBy`
+entry is a `committedOnly` decisionRecord (with `validAnswerTypes` of only
+`decisionRecord`). It may set `naAllowed: false`, because its applicability
+already limits it to the objects that need the decision.
+
 ## Capability Demand
 
 RequirementGroups are the demand signal for capabilities. When a requirement

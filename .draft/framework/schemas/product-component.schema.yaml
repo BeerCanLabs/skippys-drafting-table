@@ -114,7 +114,7 @@ runtimeDependency:
   fieldDescriptions:
     ref: Reference the catalog UID for the service, data store, network service, component, or other object this component depends on.
     purpose: Explain why this component depends on the referenced object.
-    interface: Name the consumed API, topic, queue, bucket, or configuration surface when known.
+    interface: Name the consumed API, topic, queue, bucket, or configuration surface when known. When it is the UID of a listener, that listener must be owned by ref.
     notes: Add extra runtime dependency context that does not belong in a Relationship object.
 interface:
   requiredFields:
@@ -132,6 +132,13 @@ interface:
     - WebSocket
     - AMQP
     - SMTP
+    - SQL
+    - Redis
+    - Kafka
+    - SQS
+    - SNS
+    - S3
+    - DynamoDB
     - other
     authenticationModel:
     - iam
@@ -149,7 +156,7 @@ interface:
   fieldDescriptions:
     name: Name the interface or API surface exposed by this component.
     path: Record the route, topic, queue, or address when one exists.
-    protocol: Use REST, gRPC, GraphQL, WebSocket, AMQP, SMTP, or other.
+    protocol: Use REST, gRPC, GraphQL, WebSocket, AMQP, SMTP, SQL, Redis, Kafka, SQS, SNS, S3, DynamoDB, or other.
     authenticationModel: Use the authentication model that applies to this interface.
     description: Describe the purpose or consumer-facing behavior of this interface.
 networkBinding:
@@ -230,7 +237,7 @@ fieldDescriptions:
     the SDP placement.
   classification: Choose the one classification that best describes this component's role.
   language: Record the primary programming language or platform (e.g., TypeScript, Python, Java, Go, .NET).
-  interfaces: List the APIs, events, or protocol surfaces this component exposes, when defined by the component itself.
+  interfaces: "List the APIs, events, or protocol surfaces this component exposes, when defined by the component itself. This is the legacy surface: it stays valid and existing relationships that name a targetInterface keep working. New calls name the exact listener object through targetListener."
   networkBindings: List ports this component opens as defined by its own configuration, not by the runtime infrastructure.
   environmentConfiguration: List environment variables or configuration keys this component requires at runtime.
   runtimeSpec: >

@@ -41,7 +41,6 @@ FRAMEWORK_ROOT = Path(__file__).resolve().parent.parent
 REPO_ROOT = FRAMEWORK_ROOT.parent
 WORKSPACE_ROOT = REPO_ROOT.parent if REPO_ROOT.name == ".draft" else REPO_ROOT
 OUTPUT_PATH = WORKSPACE_ROOT / "docs" / "index.html"
-SCHEMA_ROOT = FRAMEWORK_ROOT / "schemas"
 BASE_CONFIGURATION_ROOT = FRAMEWORK_ROOT / "configurations"
 USER_MANUAL_SOURCE_PATH = FRAMEWORK_ROOT / "docs" / "user-manual.md"
 USER_MANUAL_OUTPUT_NAME = "user-manual.html"
@@ -50,44 +49,6 @@ COMPANY_VOCABULARY_OUTPUT_NAME = "company-vocabulary.html"
 DEFAULT_WORKSPACE_ROOT = WORKSPACE_ROOT if REPO_ROOT.name == ".draft" else REPO_ROOT / "examples"
 LOGO_PATH = REPO_ROOT / "draft-logo.png"
 LEGACY_LOGO_PATH = REPO_ROOT / "draftlogo.png"
-CATALOG_FOLDERS = [
-    "capabilities",
-    "requirement-groups",
-    "object-patches",
-    "technology-components",
-    "network-services",
-    "hosts",
-    "runtime-services",
-    "data-store-services",
-    "product-components",
-    "data-components",
-    "decision-records",
-    "objects",
-    "object-types",
-    "automation-targets",
-    "sessions",
-    "software-deployment-patterns",
-    "reference-architectures",
-    "domains",
-    "relationships",
-    "systems",
-    "business-unit-hierarchies",
-    # Nested catalog folders by content role
-    "engineering/product-components",
-    "engineering/data-components",
-    "engineering/software-deployment-patterns",
-    "shared-services/hosts",
-    "shared-services/runtime-services",
-    "shared-services/data-store-services",
-    "shared-services/network-services",
-    "shared-services/technology-components",
-    "governance/decision-records",
-    "governance/sessions",
-    "governance/relationships",
-    "governance/systems",
-    "governance/reference-architectures",
-    "governance/business-unit-hierarchies",
-]
 LIFECYCLE_COLORS = {
     "preferred": "1f8a5b",
     "existing-only": "2a6fdb",
@@ -118,22 +79,6 @@ REF_CONTAINER_KEYS = {
     "source",
 }
 UID_PATTERN = re.compile(r"^[0-9A-HJKMNP-TV-Z]{10}-[0-9A-HJKMNP-TV-Z]{4}$")
-
-
-def is_saas_service_classification(obj: dict[str, Any]) -> bool:
-    return obj.get("type") in {"runtime_service", "data_store_service", "network_service"} and obj.get("deliveryModel") == "saas"
-
-
-def is_paas_service_classification(obj: dict[str, Any]) -> bool:
-    return obj.get("type") in {"runtime_service", "data_store_service", "network_service"} and obj.get("deliveryModel") == "paas"
-
-
-def is_database_service(obj: dict[str, Any]) -> bool:
-    return obj.get("type") == "data_store_service"
-
-
-def is_general_service(obj: dict[str, Any]) -> bool:
-    return obj.get("type") == "runtime_service"
 
 
 def load_workspace_catalog_folders(workspace_root: Path) -> list[str] | None:
@@ -495,48 +440,6 @@ def apply_object_patches(objects: dict[str, dict[str, Any]]) -> dict[str, dict[s
     return patched
 
 
-def load_schemas(root: Path) -> list[dict[str, Any]]:
-    schemas: list[dict[str, Any]] = []
-    for path in sorted(root.glob("*.yaml")):
-        with path.open("r", encoding="utf-8") as handle:
-            data = yaml.safe_load(handle) or {}
-        if isinstance(data, dict):
-            data["_schema_path"] = display_path(path)
-            schemas.append(data)
-    return schemas
-
-
-def is_non_empty(value: Any) -> bool:
-    if value is None:
-        return False
-    if isinstance(value, str):
-        return bool(value.strip())
-    if isinstance(value, (list, dict, tuple, set)):
-        return len(value) > 0
-    return True
-
-
-def schema_specificity(schema: dict[str, Any]) -> int:
-    return sum(1 for key in ("subtype", "category", "deliveryModel") if is_non_empty(schema.get(key)))
-
-
-def select_schema(obj: dict[str, Any], schemas: list[dict[str, Any]]) -> dict[str, Any] | None:
-    candidates: list[dict[str, Any]] = []
-    for schema in schemas:
-        if schema.get("type") != obj.get("type"):
-            continue
-        if is_non_empty(schema.get("subtype")) and schema.get("subtype") != obj.get("subtype"):
-            continue
-        if is_non_empty(schema.get("category")) and schema.get("category") != obj.get("category"):
-            continue
-        if is_non_empty(schema.get("deliveryModel")) and schema.get("deliveryModel") != obj.get("deliveryModel"):
-            continue
-        candidates.append(schema)
-    if not candidates:
-        return None
-    return sorted(candidates, key=schema_specificity, reverse=True)[0]
-
-
 def repository_web_url(root: Path) -> str:
     try:
         remote = subprocess.check_output(
@@ -794,6 +697,7 @@ def build_sdp_connections(obj: dict[str, Any], all_objects: list[dict[str, Any]]
             if isinstance(deployed, dict) and deployed.get("ref"):
                 deployed_uids.add(str(deployed["ref"]))
 
+    by_uid = {str(o.get("uid", "")): o for o in all_objects}
     for rel in all_objects:
         if rel.get("type") != "relationship":
             continue
@@ -810,9 +714,111 @@ def build_sdp_connections(obj: dict[str, Any], all_objects: list[dict[str, Any]]
                 "port": "",
                 "label": str(rel.get("label", "")).strip(),
                 "serviceGroup": "",
+                "targetInterface": connection_interface(rel, by_uid.get(tgt)),
+                "targetListener": connection_listener(rel, by_uid),
             })
 
     return connections
+
+
+def connection_interface(rel: dict[str, Any], target: dict[str, Any] | None) -> str:
+    """The interface a connection enters its target through, or "" when none is recorded.
+
+    A relationship's `targetInterface` is used as written. A derived dependency (not a runsOn or host placement
+    fact) cannot carry one; its raw `_interface` counts only when it names a surface the renderer knows on a
+    product or data component (generate_diagram.declared_interface_names: the implicit `data` surface exists only
+    for a data component that declares no interfaces)."""
+    named = str(rel.get("targetInterface") or "").strip()
+    if named:
+        return named
+    raw = str(rel.get("_interface") or "").strip()
+    if not raw or not rel.get("_derived") or "[inline dependency]" not in str(rel.get("_source", "")):
+        return ""
+    if not isinstance(target, dict) or target.get("type") not in ("product_component", "data_component"):
+        return ""
+    try:
+        import generate_diagram as gd
+    except ImportError:  # the renderer is unavailable (the diagram step reports it); show no derived interface
+        return ""
+    return raw if raw in gd.declared_interface_names(target) else ""
+
+
+LISTENER_OWNER_TYPES = ("product_component", "data_component", "external_system")
+
+
+def listener_summary(listener: dict[str, Any]) -> str:
+    """'protocol port endpoint' of a listener object, skipping parts it does not record (HTTPS 443 /api)."""
+    port = listener.get("port")
+    parts = [
+        str(listener.get("protocol") or "").strip(),
+        str(port).strip() if port is not None and not isinstance(port, bool) else "",
+        str(listener.get("endpoint") or "").strip(),
+    ]
+    return " ".join(part for part in parts if part)
+
+
+def connection_listener(rel: dict[str, Any], by_uid: dict[str, dict[str, Any]]) -> str:
+    """The Listener column of a connection: the targetListener's name with its protocol, port and endpoint
+    ("Orders API (HTTPS 443 /orders)"), or "" when the relationship names none or the uid is not a listener object."""
+    ref = rel.get("targetListener")
+    listener = by_uid.get(ref.strip()) if isinstance(ref, str) and ref.strip() else None
+    if not isinstance(listener, dict) or listener.get("type") != "listener":
+        return ""
+    name = str(listener.get("name") or listener.get("uid") or "").strip()
+    summary = listener_summary(listener)
+    return f"{name} ({summary})" if name and summary else name or summary
+
+
+def build_owned_listeners(all_objects: list[dict[str, Any]]) -> dict[str, list[dict[str, Any]]]:
+    """Owner uid -> the listener objects it owns (owner.ref), in the renderer's listener order (port, protocol,
+    endpoint, uid), each as {uid, name, protocol, port, endpoint, authenticationModel, catalogStatus}."""
+    by_uid = {str(o.get("uid", "")): o for o in all_objects if isinstance(o, dict) and o.get("uid")}
+    try:
+        import generate_diagram as gd
+    except ImportError:  # the renderer is unavailable (the diagram step reports it); list no owned listeners
+        return {}
+    owned: dict[str, list[dict[str, Any]]] = {}
+    for owner, uids in gd.owned_listeners(by_uid).items():
+        owned[owner] = [
+            {
+                "uid": uid,
+                "name": str(by_uid[uid].get("name", "")),
+                "protocol": str(by_uid[uid].get("protocol", "") or ""),
+                "port": by_uid[uid].get("port", ""),
+                "endpoint": str(by_uid[uid].get("endpoint", "") or ""),
+                "authenticationModel": str(by_uid[uid].get("authenticationModel", "") or ""),
+                "catalogStatus": str(by_uid[uid].get("catalogStatus", "") or ""),
+            }
+            for uid in uids
+        ]
+    return owned
+
+
+def build_group_exposure(obj: dict[str, Any], registry: dict[str, dict[str, Any]]) -> list[dict[str, Any]]:
+    """Per service group of a pattern, in order: {"name", "state", "devices"}.
+
+    The renderer's own model decides exposure (generate_diagram.build_diagram_model, read only), so the browser
+    never recomputes slot logic. state is "devices" (devices lists the chain's names in order), "none" for
+    `exposedThrough: none`, or "" when exposure is undetermined or the group is not exposed."""
+    groups = [g for g in obj.get("serviceGroups", []) if isinstance(g, dict)]
+    try:
+        import generate_diagram as gd
+
+        containers = gd.build_diagram_model(registry, obj, False).containers
+    except Exception as exc:  # a pattern that cannot be modelled shows no exposure, never breaks the browser
+        print(f"warning: exposure skipped for {obj.get('uid', '')}: {exc}", file=sys.stderr)
+        containers = []
+    result: list[dict[str, Any]] = []
+    for index, group in enumerate(groups):
+        chain = list(containers[index].exposed_through) if len(containers) == len(groups) else []
+        entry: dict[str, Any] = {"name": str(group.get("name", "")), "state": "", "devices": []}
+        if chain:
+            entry["state"] = "devices"
+            entry["devices"] = [str(registry.get(uid, {}).get("name") or uid) for uid in chain]
+        elif str(group.get("exposedThrough", "")).strip().lower() == "none":
+            entry["state"] = "none"
+        result.append(entry)
+    return result
 
 
 def strip_legacy_intent(value: Any) -> Any:
@@ -829,7 +835,6 @@ def build_browser_payload(registry: dict[str, dict[str, Any]], workspace_root: P
     workspace_vocabulary = load_workspace_vocabulary(workspace_root)
     team_contacts = team_contact_by_id(workspace_vocabulary)
     catalog_indexes = build_catalog_indexes(registry)
-    schemas = load_schemas(SCHEMA_ROOT)
     outbound_refs, referenced_by, warnings = build_reference_index(registry)
     if not registry:
         warnings.append("Warning: The catalog is empty. No objects were loaded.")
@@ -860,20 +865,11 @@ def build_browser_payload(registry: dict[str, dict[str, Any]], workspace_root: P
             return "#64748b"
         return f"#{LIFECYCLE_COLORS.get(status, LIFECYCLE_COLORS['unknown'])}"
 
+    owned_listener_rows = build_owned_listeners(objects)
     for obj in objects:
         obj = strip_legacy_intent(obj)
         object_id = obj["uid"]
-        schema = select_schema(obj, schemas) or {}
         lifecycle_status = browser_lifecycle_status(obj)
-        schema_meta = {
-            "requiredFields": schema.get("requiredFields", []),
-            "optionalFields": schema.get("optionalFields", []),
-            "fieldTypes": schema.get("fieldTypes", {}),
-            "enumFields": schema.get("enumFields", {}),
-            "enumListFields": schema.get("enumListFields", {}),
-            "collectionSchemas": schema.get("collectionSchemas", {}),
-            "schemaPath": schema.get("_schema_path", ""),
-        }
         browser_objects.append(
             {
                 "id": object_id,
@@ -930,8 +926,10 @@ def build_browser_payload(registry: dict[str, dict[str, Any]], workspace_root: P
                 "inherits": obj.get("inherits", ""),
                 "scalingUnits": obj.get("scalingUnits", []),
                 "networkZones": obj.get("networkZones", []),
+                "ownedListeners": owned_listener_rows.get(object_id, []) if obj.get("type") in LISTENER_OWNER_TYPES else [],
                 "sdpConnections": build_sdp_connections(obj, objects) if obj.get("type") == "software_deployment_pattern" else [],
                 "serviceGroups": obj.get("serviceGroups", []),
+                "groupExposure": build_group_exposure(obj, registry) if obj.get("type") == "software_deployment_pattern" else [],
                 "tierVariants": obj.get("tierVariants", []),
                 "tierId": obj.get("tierId", ""),
                 "purpose": obj.get("purpose", ""),
@@ -958,7 +956,6 @@ def build_browser_payload(registry: dict[str, dict[str, Any]], workspace_root: P
                 "hasRiskRef": object_id in risk_marked_rbb_ids,
                 "outboundRefs": outbound_refs.get(object_id, []),
                 "referencedBy": referenced_by.get(object_id, []),
-                "editorSchema": schema_meta,
                 "detail": to_json(obj),
                 "existsInCatalog": True,
             }
@@ -997,22 +994,6 @@ def build_browser_payload(registry: dict[str, dict[str, Any]], workspace_root: P
 
     browser_lookup = {obj["uid"]: obj for obj in browser_objects}
     filter_values = sorted({obj["type"] for obj in objects})
-    impact_lifecycle_types = {
-        "reference_architecture",
-        "software_deployment_pattern",
-        "host",
-        "runtime_service",
-        "data_store_service",
-        "network_service",
-        "product_component",
-        "data_component",
-    }
-    lifecycle_values = sorted(
-        {obj.get("lifecycleStatus", "unknown") for obj in objects if obj.get("type") in impact_lifecycle_types},
-        key=lambda value: ["preferred", "existing-only", "candidate", "deprecated", "retired", "unknown"].index(value)
-        if value in {"preferred", "existing-only", "candidate", "deprecated", "retired", "unknown"}
-        else 999,
-    )
     topology_edges = [
         {
             "id": obj["uid"],
@@ -1034,15 +1015,12 @@ def build_browser_payload(registry: dict[str, dict[str, Any]], workspace_root: P
         "lookup": browser_lookup,
         "lifecycleColors": LIFECYCLE_COLORS,
         "filterValues": filter_values,
-        "lifecycleValues": lifecycle_values,
-        "referencedBy": referenced_by,
         "indexes": catalog_indexes,
         "warnings": warnings,
         "requirements": build_requirement_payload(registry, workspace_root),
         "vocabulary": load_workspace_vocabulary(workspace_root),
         "businessTaxonomy": load_workspace_business_taxonomy(workspace_root),
         "browserConfig": load_workspace_browser_config(workspace_root),
-        "repoUrl": repository_web_url(workspace_root) or repository_web_url(REPO_ROOT),
         "catalogName": workspace_repository_name(workspace_root),
         "logoDataUri": logo_data_uri(),
         "topologyEdges": topology_edges,

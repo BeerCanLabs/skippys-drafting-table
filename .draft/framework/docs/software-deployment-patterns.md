@@ -231,12 +231,126 @@ drafting workflow and revisit it with the accountable owner.
 
 Inter-service dependencies are modeled as relationship objects in
 `catalog/relationships/`, not as inline fields inside the SDP. A relationship
-object carries a `source` UID, a `target` UID (or `externalTarget` for systems
-with no catalog object), a `label`, `technology`, and optional `capabilities`
+object carries a `source` UID, a `target` UID (free-text `externalTarget` for
+systems with no catalog object is deprecated but still accepted), a `label`, `technology`, and optional `capabilities`
 that the validator uses as requirement evidence. The generated diagrams draw
 relationship objects whose both endpoints are deployed in the same SDP as
 connection edges, and the pattern detail page shows them in its Connections
 section.
+
+## Interfaces, Listeners And The Edge Device Chain
+
+Who a component talks to is recorded by the team that owns the thing being
+described. The split is by altitude and by owner.
+
+| Owner | Records | Where |
+|---|---|---|
+| Product team | `interfaces` (name, protocol, optional path, authentication model) | On a `product_component`, and optionally on a `data_component` |
+| Product team | `targetInterface` | On a `relationship`: the interface of the target it uses |
+| Infrastructure team | `listeners` (name, protocol, port) | On `runtime_service`, `data_store_service`, `network_service` and `host` definitions |
+| Infrastructure team | `fills` | On a reference architecture deployable object entry whose `slot` is an edge slot: the `network_service` that fills it |
+| Product team (exception) | `exposedThrough` | On a service group: a different device chain, a list of `network_service` uids in order, or `none` |
+
+The ratcheted rule `relationship-target-interface` requires a relationship whose
+target is a product component to carry a `targetInterface` that names one of its
+`interfaces`. Existing relationships are baselined in
+`.draft/validation-baseline.yaml`; one you change must be fixed. Data component
+targets and `externalTarget` are exempt. A data component without `interfaces`
+has one implicit surface named `data`. A relationship derived from a
+`runtimeSpec.dependencies[]` entry cannot carry `targetInterface`; its
+`interface` string is used when it equals an interface name of the target, and
+otherwise only as a protocol hint. A `targetInterface` that names a surface the
+target does not have is an error and is never baselined. Where the target has no
+`interfaces` list to check against (a definition, or an `externalTarget`) it is
+a warning.
+
+### What each view shows
+
+- **Application view.** One entrance on the top edge of a box per Listener
+  object it owns (`owner.ref`), ordered by port, then protocol, then endpoint
+  path, then uid; an edge enters through the listener its `targetListener` names
+  (a runtime dependency's `interface` may name one too). A box that owns no
+  Listener objects keeps one entrance per declared interface, in declared order,
+  and an edge enters through the interface its `targetInterface` names. Either
+  way an edge naming no entrance of its target enters the first. The
+  Deployment view uses the same entrances. The Application view never shows a
+  port and never shows a device.
+- **Arrowheads (both views).** A relationship that names its listener (a
+  `targetListener` the target owns, or any Listener object for an
+  `externalTarget`) is a call from caller to listener: it draws one arrowhead,
+  at the listener end, and its moving dots run from the caller, whatever a
+  legacy `flow` says. A relationship that names no listener draws as before:
+  the arrowhead at the target for `outbound` or no `flow`, at the source for
+  `inbound`, at both ends for `bidirectional` (deprecated values, reported by
+  `relationship-flow-deprecated`).
+- **Deployment view.** Each connection is labelled with the resolved port chain.
+  When the relationship's `targetListener` names a Listener object the target
+  owns (or, for an `externalTarget`, any Listener object) and that listener has a
+  port, the target's port is that listener's, printed as `protocol port` with
+  HTTP, HTTPS and REST lower-cased (`http 8080`, `gRPC 8092`, `SQL 5432`), and
+  each device hop matches that listener's protocol family. Otherwise the
+  target's port comes from the component's own inbound `runtimeSpec.ports`
+  entry, then the listener of its substrate (a data component uses the listener
+  of the store it `runsOn`), matched to the interface's protocol family, and
+  failing a match the substrate's single listener. Each device hop contributes its
+  listener matching the protocol family, else its single listener, else no port.
+  Examples: `SQL 5432`, `gRPC 8092` (a gRPC interface served by a port recorded
+  as `HTTP/2` prints the interface's word), `https 443 → http 8080`; device
+  listeners print as recorded. The line reads the chain alone when no technology
+  is recorded or it equals the chain's first protocol word (case-insensitive),
+  else `technology · chain` (`PostgreSQL wire protocol · SQL 5432`).
+  A relationship whose `technology` and target interface protocol are in
+  different families is a warning.
+
+### The edge device chain
+
+A group is exposed when it sets `exposedThrough`, or when it has no override and
+the pattern follows a reference architecture that fills edge slots. The edge
+slots are `firewall`, `web-application-firewall`, `load-balancer`, `api-gateway`
+and `ingress`, drawn in that order. They are not all protective: a firewall or
+web application firewall meets a protection requirement, a load balancer an
+availability or performance requirement, an ingress or gateway a routing
+requirement. They appear in the deployment view, never the application view,
+because the group has a north door and those requirements apply to it.
+
+- The chain is drawn at the top of the exposed group's own container, whether or
+  not any drawn connection enters it. No caller or arrow is drawn for it; the
+  device is there because the group is exposed.
+- A connection whose source is outside the deployment target (unplaced, in the
+  outside lane, or in another target) enters through the target group's chain;
+  the label lists each hop's port and the callout adds `via <device>`.
+- Same-deployment-target traffic never takes the hop.
+- A data tier (all data components) is not exposed by the slot default;
+  `exposedThrough: none` draws nothing.
+
+`exposedThrough` is either the literal `none` on its own, a network_service
+definition uid, or a list of such uids in chain order. Validation fails (it is
+not ratcheted) on an unknown uid, a non-network_service, a network_service
+instance (`serviceRole: instance`, or outside the service definitions folder
+when the workspace names one), `none` inside a list, an empty list, or a uid
+listed twice.
+
+`fills` on a reference architecture entry is checked the same way: it must sit
+on one of the five edge slots and name a network_service definition, and when
+the entry names a `capability` the definition (or its technology component)
+must provide it. Each violation fails validation; none is ratcheted.
+
+The precedence above (`exposedThrough: none`, then an explicit chain, then the
+reference architecture's filled edge slots except for a data tier) is resolved
+in one place, `framework/tools/exposure.py`. The deployment diagram and the
+browser's exposure column both read it, so they always agree. The resolver is
+lenient: it leaves out values that are not network services, so a pattern that
+fails validation still renders.
+
+To fix a deployment page that lacks a port or a device: declare `listeners` on
+the definition; fill the slot with `fills` on the reference architecture entry
+(or set `exposedThrough`); and name the target interface on the relationship.
+
+### Deliberately not recorded
+
+Hostnames, IP addresses, environment endpoints, security-group rules,
+certificates and health checks are runbook and infrastructure-code material.
+DRAFT has no field for them.
 
 ## How The Detail Page Should Read
 
@@ -249,7 +363,12 @@ deployment targets. Both show all connections by default; hovering, focusing or
 pinning a box brings its connections forward while the others fade. Each section
 has a Fit width / Actual size toggle (fit by default, actual size scrolls) and an
 Open full page link to the standalone diagram page. A pattern with no generated
-diagram page shows a one-sentence note instead. The sections below them (Service
+diagram page shows a one-sentence note instead. The Service Groups rows show each group's exposure (the device names, or `not exposed`), and the Connections table has an Interface column and a Listener column (the
+`targetListener`'s name with its protocol, port and endpoint, such as
+`Orders API (HTTPS 443 /orders)`, or blank). A product component, data component
+or external system detail page lists the Listener objects it owns (name,
+protocol, port, endpoint, authenticationModel, catalogStatus) in listener order:
+port, then protocol, then endpoint, then uid. The sections below them (Service
 Groups, Decisions, Connections, Tier Variants, Metadata) carry the recorded
 detail. The figures are service-first placement views.
 
@@ -319,7 +438,7 @@ target: <to-uid>
 label: calls
 technology: <protocol>        # was: connection.protocol
 direction: synchronous        # synchronous / asynchronous / event
-flow: outbound
+targetListener: <listener-uid>  # the listener the call lands on
 ```
 
 Then remove the `connections` list from the service group. The browser and

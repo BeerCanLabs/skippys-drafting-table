@@ -36,7 +36,31 @@ by the engineering team and deployed inside or on top of Shared Services Objects
 | ProductComponent | `product_component` | A first-party deployable runtime unit — API, worker, scheduler, or service — that runs on a RuntimeService or Host. Product teams may declare component-owned runtime ports and dependencies in `runtimeSpec`. | Uses `runsOn` to reference the RuntimeService or Host it is deployed on. |
 | DataComponent | `data_component` | A first-party data schema, dataset, or storage unit that lives inside a DataStoreService. | Uses `runsOn` to reference the DataStoreService it is deployed on. |
 | SoftwareDeploymentPattern | `software_deployment_pattern` | The intended assembly of deployable objects for a product or product capability. | Defines the deployable package shape that automation can target. |
+| Listener | `listener` | The exact endpoint a call lands on: owner, `protocol`, `port`, `endpoint` (path only) and `authenticationModel`, with `catalogStatus` `stub`, `incomplete` or `complete`. | Owned by a ProductComponent, DataComponent or external system (`owner.kind` and `owner.ref`); relationships reference it through `targetListener`. |
 | ProductRegistration | `product_registration` | Advertises the formal registration contract linking a product engineering repository to the central `drafting-table` catalog. | Points to the product source repo URL and its decentralized `.draft/sdp.yaml` manifest. |
+
+A Listener object is the endpoint a call lands on, and every relationship names
+one in `targetListener`. Product teams own their components' listeners; find or
+create one with the Listener Lookup Before Create procedure in
+[draftsman.md](draftsman.md), never by guessing an owner or a port. The
+`listeners` field on definitions below is a different, older record of a
+definition's ports.
+
+The target model for a call: the caller is the relationship's `source`, the
+listener's owner is its `target` (a `system` object for an external party), and
+`targetListener` is the listener's UID. Omit `flow`, and do not use free-text
+`externalTarget`. A listener's identity is owner + protocol + port + endpoint,
+so two components that both serve SFTP on port 22 own two listeners, while one
+external system's listener is recorded once and reused by every caller. See
+Add A Listener in [how-to-add-objects.md](how-to-add-objects.md) for the bundled
+examples.
+
+Interfaces and listeners are recorded by different owners. Product teams record
+`interfaces` on a ProductComponent (and optionally on a DataComponent, which
+otherwise has one implicit `data` surface) and `targetInterface` on the
+relationships that use them. The infrastructure team records `listeners`
+(name, protocol, port) on RuntimeService, DataStoreService, NetworkService and
+Host definitions. See [software-deployment-patterns.md](software-deployment-patterns.md).
 
 ## Shared Services Objects
 
@@ -103,6 +127,7 @@ unmarked or mark them `definition`.
 | Domain | `domain` | Names a planning area such as compute, observability, identity, or data; membership is generated from `Capability.domain`. |
 | DecisionRecord | `decision_record` | Records an architecture decision, risk, exception, or rationale. |
 | DraftingSession | `drafting_session` | Stores interview memory, source material, assumptions, unresolved questions, and generated work while drafting. |
+| Relationship | `relationship` | A call from a caller (`source`) to the listener it lands on (`target` owns it, `targetListener` names it). `flow: inbound`, `flow: bidirectional` and free-text `externalTarget` are deprecated but still accepted. |
 | ObjectPatch | `object_patch` | A workspace overlay that changes selected fields on a framework-owned object without copying the full object. |
 
 ## Delivery Models

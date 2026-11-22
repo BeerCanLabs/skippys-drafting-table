@@ -3,7 +3,7 @@ framework:
   source: https://github.com/getdraft/draftsman.git
   vendoredPath: .draft/framework
   updatePolicy: explicit
-  syncedRef: v1.5.5
-  syncedCommit: 70c4622e65c286b44c4a62bcdbf661693f9f7ad3
-  version: 1.5.5
-  syncedTag: v1.5.5
+  syncedRef: v1.21.5
+  syncedCommit: 549e903e0657aebb598c19ec3631e125ed8772a5
+  version: 1.21.5
+  syncedTag: v1.21.5

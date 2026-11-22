@@ -1,3 +1,1062 @@
+## 1.21.5 - 2026-11-22
+
+### Compatibility Impact
+
+- No schema, validation, or catalog-contract change. The inline YAML editor was already unreachable, and removing it does not change how objects validate.
+- The published `docs/` browser does change. `--refresh-shell` brings `docs/` up to the catalog and shell that have been in the tree since 2026-11-21, and drops `editorSchema` at the same time. `browser-data.js` goes from 324 objects to 339. The new objects are three listeners, the Billing Export and Image Import product components, their two decision records, seven relationships, and the PagerDuty system. The payload gains a `listener` filter value, `ownedListeners` (populated for Billing Export Service and Image Import Service), and `targetListener` on SDP connections. The Security and Security Compliance RequirementGroup requirement count goes from 16 to 18. Per-object `referencedBy` is regenerated with that catalog: two existing objects gain references, and five of the new objects have inbound references. The docs copies of `draft-browser.js` and `draft-browser-sdp.css` gain the Listener column and the Owned Listeners section that were already in the framework shell. The OpenStack IaaS diagram footer moves from framework version 1.6.0 to 1.21.4.
+- No compatibility impact from removing the unreachable Cytoscape SDP graph. SDP diagrams stay on Mermaid and the standalone SVG pages. The cytoscape script remains for the detail relationship graph (`detailCy`). `sdpConnections` is unchanged.
+- No compatibility impact from removing the legacy Executive View panels. The live Overview uses the home tiles and `executiveSidebarMarkup`. The `executiveDrilldown` state was write-only after those panels stopped rendering.
+- No compatibility impact from removing the remaining unreachable browser helpers. The per-object `referencedBy` field stays in each object. The unused top-level `lifecycleValues`, `referencedBy`, and `repoUrl` keys are removed. `repository_web_url()` stays.
+
+### Added
+
+- The published browser now includes those 15 example-catalog objects, the `listener` filter, `ownedListeners`, `targetListener`, and the Listener column and Owned Listeners section in the generated shell.
+
+### Changed
+
+- Removed the unused `js-yaml@4.1.0` script and the empty `#editor-overlay` container from the browser shell.
+- Removed the dead inline YAML editor and requirement-importer JavaScript, including the listener that called the nonexistent `openEditor()`, and the unused `.editor-*`, `.import-card*`, and `.structured-preview` CSS.
+- `generate_browser.py` no longer loads schemas to build `editorSchema` entries in `browser-data.js`. `repository_web_url()` is unchanged. Schema selection in `validate.py` is unchanged.
+- Regenerated `docs/` with `generate_browser.py --refresh-shell` on framework 1.21.4 so the browser data, shell copies, and OpenStack diagram page match the generator. The daily date in `docs/company-vocabulary.html` is left as it was.
+- Removed the unreachable Cytoscape SDP graph from `draft-browser.js`: `SDP_GRAPH_PROTOCOL_COLORS`, `SDP_GRAPH_TIER_COLORS`, `buildSdpGraphElements`, `sdpGraphCy`, and `renderSdpGraph`. `destroySdpGraphCy()` still calls `_sdpTeardown()` so Mermaid embed cleanup keeps working.
+- Removed the unused Executive View builders `executiveMetricTile`, `executiveLifecyclePanelMarkup`, `executiveDomainPanelMarkup`, `executiveArchitecturePanelMarkup`, and `executiveControlDrilldownMarkup`, their CSS, the write-only `executiveDrilldown` state, its `drill` hash parameter, and the `controls` / `clear-drilldown` navigation branches. `executiveSidebarMarkup` stays.
+- Removed unreachable helpers from `draft-browser.js` (`referencedByIndex`, `repoUrl`, `DEPLOYABLE_OBJECT_TYPES`, `lifecycleValues`, `deployableTypes`, `capabilityClass`, `syncHashForImpactView`, `rerenderCurrentView`, `interactionCapabilities`, `referencedTechnologyComponents`, `businessContextMarkup`, `sourceRepositoryMarkup`, `sdmRisksMarkup`, `shortRefLabel`, `deploymentTargetPresentation`, `supportEntryTier`, `outboundCatalogRefs`, `inboundCatalogRefs`, `traverseDown`, `traverseUp`) and from `generate_browser.py` (`CATALOG_FOLDERS`, the unused service-classification predicates, and the unused top-level `lifecycleValues`, `referencedBy`, and `repoUrl` payload keys). The per-object `referencedBy` field and `repository_web_url()` stay.
+
+### Fixed
+
+- The generated browser no longer ships an unused CDN dependency, an empty editor overlay, or unused `editorSchema` payloads.
+- The published browser and the OpenStack IaaS diagram page are no longer stuck on the pre-2026-11-21 snapshot and the 1.6.0 framework stamp.
+- The catalog browser no longer carries an unreachable Cytoscape builder for `#sdp-graph-cy` and `#sdp-graph-legend`, which are not in the page.
+- The Overview hash no longer writes a `drill` parameter that nothing rendered.
+- `browser-data.js` no longer carries top-level `lifecycleValues`, `referencedBy`, or `repoUrl` fields that the live browser did not read.
+
+### Migration Notes
+
+- No catalog migration is required. Company workspaces do not need new object types. Refreshing an install with `python3 tools/generate_browser.py --refresh-shell` drops `editorSchema`, publishes the listener shell that is already in the framework source, drops the unused Cytoscape SDP graph and the legacy Executive View panels, and drops the unused top-level `lifecycleValues`, `referencedBy`, and `repoUrl` keys. The 15 additional browser objects are example-catalog content in this repository. Bookmarks that included `drill=controls` still open the Overview. The per-object `referencedBy` field remains, with the references produced by this refresh.
+
+## 1.21.4 - 2026-11-22
+
+### Compatibility Impact
+
+- No workspace migration. The removed files were not copied by workspace bootstrap. New workspaces still receive `.draft/framework.lock` from `framework_lock_data()`, and workspace creation, validation, CLI commands, and the browser are unchanged.
+
+### Added
+
+- No new objects, commands, schemas, or templates.
+
+### Changed
+
+- Removed the unused workspace templates `templates/workspace/.draft/framework.lock.tmpl` and `templates/workspace/.gitignore.tmpl`. The lock template still named the pre-rename framework URL and was never read. The gitignore template was not installed into new workspaces.
+- The Draft Admins onboarding guide no longer tells administrators to copy a `.gitignore` from the workspace templates.
+
+### Fixed
+
+- `AI_INDEX.md` no longer lists the two removed templates.
+
+### Migration Notes
+
+- No action is required. Company workspaces that already have a `.gitignore` or `.draft/framework.lock` keep those files. Refreshing the vendored framework does not delete or rewrite them from these templates.
+
+## 1.21.3 - 2026-11-22
+
+### Compatibility Impact
+
+- No migration is required. Diagram HTML, SVG, and CLI behavior are unchanged. The helpers tests call (`layout_ordinals`, `export_layout_document`, `build_diagram_model`, `DEPLOY_BORDER_CLEAR`, and `Model.warning_count_line`) stay in place.
+
+### Added
+
+- No new diagram behavior or public API.
+
+### Changed
+
+- Removed unreachable symbols from `tools/generate_diagram.py`: `CHIP_W`, `CHIP_H`, `border_point`, `LOGICAL_LANE_GAP`, and `_max_chars`. `CHIP_W` and `CHIP_H` were only the default size arguments of `border_point`. The `math` import is removed with them because `border_point` was its only use.
+
+### Fixed
+
+- No diagram defect is corrected. This change only deletes code with no callers.
+
+### Migration Notes
+
+- No action is required after refreshing the framework. Company workspaces do not call these symbols, and rendered diagram pages stay the same.
+
+## 1.21.2 - 2026-11-22
+
+### Compatibility Impact
+
+- No migration is required. `personalities/` was already removed, and vendoring only copied that directory when it existed. Dropping the leftover directory name, path rewrites, and workspace documentation does not change validation, Draftsman behavior, or any live catalog object.
+
+### Added
+
+- No new framework objects, commands, or configuration. This change only removes references to the deleted Personality Packs directory.
+
+### Changed
+
+- Removed `personalities` from `FRAMEWORK_VENDOR_DIRS` and from the `personalities` path rewrites in `draft_table/repo.py`.
+- Removed the same directory name and path rewrites from `templates/github/draft-framework-update.yml` and `templates/workspace/.github/workflows/draft-framework-update.yml.tmpl`.
+- Removed the Personality Packs section from `docs/workspaces.md`, including its broken link to `personalities/README.md`.
+
+### Fixed
+
+- Framework update and workspace vendoring no longer list a directory that is not in the framework tree, and workspace docs no longer tell companies to activate a pack the framework does not ship.
+
+### Migration Notes
+
+- No action is required. A later framework refresh stops copying or documenting Personality Packs. Historical changelog entries that mention the removed directory are unchanged.
+
+## 1.21.1 - 2026-11-22
+
+### Compatibility Impact
+
+- No workspace migration. The removed symbols were never called, so catalog validation, CLI subcommands, MCP server tools, ASVS import, UID repair, decentralized SDP export, and the 0.10.0 taxonomy migration CLI keep the same behavior.
+
+### Added
+
+- No new framework objects, commands, or configuration fields.
+
+### Changed
+
+- Removed the unused `sys.path` insertion and the unused `indexes` import (`build_catalog_indexes`, `sorted_objects`) from `tools/mcp_server.py`. `TOOLS_ROOT` and `REPO_ROOT` stay.
+- Removed the unused `dump_yaml` helper from `tools/repair_uids.py`. UID repair still writes YAML with `yaml.safe_dump`.
+- Removed the unused `FRAMEWORK_ROOT` constant from `tools/import_asvs.py`.
+- Removed the unused `typing.Any` import from `tools/decentralize_sdp.py`. The script itself stays.
+- Removed the unused `shutil` import and the unused `is_mapping` helper from `tools/migrations/0.10.0/migrate_object_taxonomy.py`. The historical migration CLI stays.
+
+### Fixed
+
+- No user-facing defect. These imports and helpers had no callers inside their scripts or elsewhere in the repository.
+
+### Migration Notes
+
+- No action is required. Company workspaces do not need to refresh catalogs or rerun a migration because of this cleanup.
+
+## 1.21.0 - 2026-11-22
+
+### Compatibility Impact
+
+- No change to validation results, object contracts, schemas, or workspace behavior. `RELATIONSHIP_ENDPOINT_TYPES` and `interaction_capabilities` in `tools/validate.py` were unused and are removed. Existing catalogs validate the same way.
+
+### Added
+
+- No new framework capability. This release only deletes validator symbols that nothing in the repository called.
+
+### Changed
+
+- Removed `RELATIONSHIP_ENDPOINT_TYPES` and `interaction_capabilities` from `tools/validate.py`. Neither symbol was referenced by the validator, other tools, tests, skills, or string lookups.
+
+### Fixed
+
+- No defect in validation output. The deletion removes dead definitions so they cannot be mistaken for an active relationship or interaction rule.
+
+### Migration Notes
+
+- No action is required. Company workspaces do not reference these symbols, and refreshing the framework does not change catalog validation.
+
+## 1.20.15 - 2026-11-22
+
+### Compatibility Impact
+
+- None. This removes an accidentally tracked empty gitlink from the framework repository. Schemas, validation, tools, templates, and company workspace behavior are unchanged.
+
+### Added
+
+- `.gitignore` ignores `.claude/worktrees/` so a local Claude Code worktree cannot be staged again.
+
+### Changed
+
+- The repository index no longer records `.claude/worktrees/agent-a699b6c2`. `.claude/commands/draft.md` is unchanged.
+
+### Fixed
+
+- Removed the bare gitlink `.claude/worktrees/agent-a699b6c2` (mode 160000, commit `5a6ede2d`) that was committed in `637dfd9` with no `.gitmodules` entry and no references in the tree.
+
+### Migration Notes
+
+- No action is required. Company workspaces do not vendor this path. After pulling, Git drops the gitlink; anything under `.claude/worktrees/` stays untracked.
+
+## 1.20.14 - 2026-11-22
+
+### Compatibility Impact
+
+- No workspace, schema, or CLI behavior change. `draft_table/cli.py` no longer defines the unused `run_command` helper or imports `subprocess` and `sys`. Every existing subcommand, argument, and printed result stays the same.
+
+### Added
+
+- No new commands, options, or public helpers. This release only records the removal of dead code from the DRAFT Table CLI module.
+
+### Changed
+
+- `draft_table/cli.py` drops `run_command` and the `subprocess` and `sys` imports that existed only to support that helper.
+
+### Fixed
+
+- The DRAFT Table CLI module no longer carries an unused helper and unused imports that nothing in the package or tests called.
+
+### Migration Notes
+
+- No action is required. `run_command` was not a CLI subcommand and had no callers in this repository.
+
+## 1.20.13 - 2026-11-21
+
+### Compatibility Impact
+
+- None. Documentation only; no tool, template or schema changes.
+
+### Added
+
+- `docs/proposals/sdp-return-path.md` (#195): a design, not built, for how central changes (review findings, shared-service updates, corrections) reach a product repository. It recommends "central publishes, product pulls": requests are reviewed central catalog content, and each product repository's own workflow reads its requests with the App token it already has and opens an issue with its own `GITHUB_TOKEN`, so no central credential ever touches a product repository. It sets out who owns each step (the central side asks, the product team changes) and the open questions.
+- `tests/test_sdp_sync_docs.py`: the setup guide names every secret, variable, workflow and constant the templates and `sdp_sync.py` use, documents the known limits, and has valid example UIDs; the return-path proposal stays design only.
+
+### Changed
+
+- `docs/decentralized-sdp-setup.md` rewritten for the tested pipeline: one-time setup (central settings, the GitHub App with Contents access on the central repository only, registration with the now-required `defaultBranch`, product repository variables), a tokens-and-permissions table, the OIDC audience and checks, the `draft-sdp-sync/1` payload and limits, what the receiver accepts, the cache layout, the pull-request flow and auto-merge, how failures reach the product team, deletion, security notes and known limits, troubleshooting by message, and the upgrade from flat `external_sdps` files and the original templates.
+
+### Fixed
+
+- The setup guide now documents two limits found while building #195: a live OIDC token can be resent with different files for the same commit during its lifetime (and what limits that risk), and required status checks do not run on sync pull requests opened with `GITHUB_TOKEN` (with the two ways to handle it and the repository settings involved).
+
+### Migration Notes
+
+- No action is required by this release. Teams adopting or upgrading the sync should follow the new "One-Time Setup" and "Upgrading from the Original Sync" sections of `docs/decentralized-sdp-setup.md`, and decide how to handle required status checks on `draft-sync/*` pull requests before enabling `DRAFT_SYNC_AUTO_MERGE`.
+
+## 1.20.12 - 2026-11-21
+
+### Compatibility Impact
+
+- Both sync templates change again. The receiver's last step, "Report Sync Result" (`if: always()`), writes a job summary for every outcome and, when the sender's identity was verified, records the outcome as `results/<owner>__<name>/<correlationId>.json` on a `draft-sync-results` branch it creates from the default branch (with the `contents: write` it already has). The sender's new last step, "Await Central Result", reads that file with the App token it already uses for the dispatch and fails the product repository's run with the receiver's message. No new permission or secret; the sender's run now lasts until the central result arrives (default up to 20 minutes, repository variable `DRAFT_SYNC_AWAIT_MINUTES`).
+
+### Added
+
+- `sdp_sync.py report` (receiver) and `sdp_sync.py await-result` (sender) (#195 gap 7). An outcome is `accepted` (with the pull request), `rejected` (with the receiver's reason) or `failed` (validation failures, listed with the product's own files first and paths relative to the workspace; a failed pull request; or a run that stopped early), plus the commit, correlation id and receiver run link. `await-result` polls only its own correlation id, retries while the file does not exist, stops at once on 401/403, and prints the outcome as an escaped `::error` annotation and a job summary.
+- `tests/test_sdp_sync_report.py` with a fake GitHub contents API and command runner.
+- `receive` results now include `identityVerified`.
+
+### Changed
+
+- `templates/github/drafting-table-receiver.yml.tmpl`: "Validate Workspace Architecture" runs with `shell: bash` and keeps its output in `$RUNNER_TEMP/validate.log` for the report.
+- `templates/github/product-repo-sync.yml.tmpl`: adds "Await Central Result" after the dispatch.
+
+### Fixed
+
+- A rejected or invalid sync now fails the product repository's sync run with the reason, instead of appearing only in the central workspace's Actions log.
+
+### Migration Notes
+
+- Update both templates. Payloads rejected before the sender's identity is verified (old template, malformed payload) are shown only in the central run's summary, so the product run times out with a hint to check the central repository's Actions. Result files accumulate on `draft-sync-results`, one small file per sync; delete the branch at any time to clear them (the next report recreates it).
+
+## 1.20.11 - 2026-11-21
+
+### Compatibility Impact
+
+- The central receiver no longer commits to its default branch. Copy the new `templates/github/drafting-table-receiver.yml.tmpl`: it needs `pull-requests: write` (added to the template) and the repository setting "Allow GitHub Actions to create and approve pull requests". Each product's sync becomes one pull request from `draft-sync/<owner>__<name>`, updated by later syncs; synced content reaches the catalog when someone merges it. The `stefanzweifel/git-auto-commit-action` step is gone. Product repositories need no change.
+
+### Added
+
+- `sdp_sync.py publish` (#195 gap 6): after `receive`, validation and index regeneration, it commits the changed files (never Python bytecode) to `draft-sync/<product>` on top of the default branch, force-updates that branch, and opens the product's pull request or updates the open one (title, body with repository, commit, registration, correlation id and the changed files). With `--auto-merge true` (template: repository variable `DRAFT_SYNC_AUTO_MERGE=true`) it requests squash auto-merge only when every change is inside that product's cache folder (or its old flat file) plus the regenerated `docs/assets/draft-indexes.json` and `.draft/AI_INDEX.md`; a later update that reaches further turns auto-merge off. Every git and gh call is an argument list. The outcome is added to the result file under `publish`.
+- `tests/test_sdp_sync_publish.py`: a fake command runner for every branch of the flow, plus the template's own publish script against a real git repository with a fake `gh`.
+
+### Changed
+
+- `templates/github/drafting-table-receiver.yml.tmpl`: `permissions` adds `pull-requests: write`; a `draft-sdp-sync` concurrency group runs syncs one at a time; the last step is "Publish Sync Pull Request" (`GH_TOKEN` from `github.token`, base from the event's default branch).
+
+### Fixed
+
+- A sync can no longer change the central workspace's default branch without a pull request.
+
+### Migration Notes
+
+- Enable "Allow GitHub Actions to create and approve pull requests" in the central repository (Settings, Actions, General) before updating the receiver. To use auto-merge, also enable "Allow auto-merge" and set the `DRAFT_SYNC_AUTO_MERGE` variable to `true`. Pull requests opened with `GITHUB_TOKEN` do not start other workflows, so required status checks on the default branch will not run on them; leave such checks off for these branches or merge by hand.
+
+## 1.20.10 - 2026-11-21
+
+### Compatibility Impact
+
+- `sdp_sync.py pack` now sends every YAML file under the product repository's `.draft/catalog/` with `.draft/sdp.yaml`, and the receiver now rejects a sync whose objects reference a UID that is neither in the same sync nor already in the central workspace. A product whose SDP points at an object the central workspace does not have must sync or register that object first. Files under `.draft/catalog/` that are not product-owned types, hidden paths, unreadable YAML and symbolic links now stop the sender before it dispatches.
+
+### Added
+
+- `sdp_sync.py` product catalog sync (#195 gap 5): `pack` collects `.draft/sdp.yaml` plus `.draft/catalog/**/*.yaml|yml` (other files are ignored) and checks each the way the receiver will. `receive` stores them under `.draft/external_sdps/<owner>__<name>/catalog/` and runs a reference check: every UID-shaped value (collected like `validate.py`) must be an object in the sync or resolve in the workspace's framework and provider configurations, `catalog/`, community content or another product's cache. The product's own previous snapshot does not count, so a reference to an object the product stopped syncing is caught. The rejection names each file and its missing UIDs.
+- Tests in `tests/test_sdp_sync.py` and `tests/test_sdp_sync_templates.py`.
+
+### Changed
+
+- The UID ownership and reference scans read multi-document YAML files.
+
+### Fixed
+
+- A missing `.draft/sdp.yaml` sends a delete that removes every file cached for the product, including its catalog objects, even when `.draft/catalog/` still has files; a resync drops catalog files the product removed.
+
+### Migration Notes
+
+- Before updating the receiver, check that each product's `.draft/sdp.yaml` and `.draft/catalog/` reference only objects they sync or that the central workspace holds. Deleting a product's SDP leaves central objects that referenced its components dangling; `validate.py` reports them.
+
+## 1.20.9 - 2026-11-21
+
+### Compatibility Impact
+
+- The SDP receiver now requires a GitHub Actions OIDC token in every sync payload (`oidcToken`) and rejects payloads without one. Product repositories and the central workspace update together again: copy the new `templates/github/product-repo-sync.yml.tmpl` (its job already has `permissions: id-token: write`; the pack step now passes `--central-repository`) and `templates/github/drafting-table-receiver.yml.tmpl` (passes `--central-repository`). Only the registered default branch (`repository.defaultBranch` on the ProductRegistration, which is now required) can sync. `sdp_sync.receive()` now takes `central_repository=` and optional `keys=` and `now=` arguments.
+
+### Added
+
+- `sdp_sync.py` sender identity (#195 gap 4): `pack --central-repository OWNER/NAME` asks the runner for an OIDC token with audience `draft-sdp-sync:<central owner>/<central name>` and attaches it; `receive --central-repository OWNER/NAME` verifies its RS256 signature against GitHub's published key set (`https://token.actions.githubusercontent.com/.well-known/jwks`) with the standard library only, and checks the issuer, the audience, expiry and not-before (60 seconds of clock skew allowed), that the token's `repository` is the payload's registered repository, that its `ref` is `refs/heads/<defaultBranch>` and that its `ref` and `sha` match the payload. Every rejection names its reason; the token is never written to the cache, the result file or the log. `receive --jwks FILE` reads a key set from a file for tests and offline checks.
+- `tests/test_sdp_sync_oidc.py` and `tests/sdp_sync_identity.py`, which sign test tokens with a fixed test-only key (`tests/fixtures/sdp_sync/oidc_test_key.json`) and inject its key set.
+
+### Changed
+
+- `templates/github/product-repo-sync.yml.tmpl` and `templates/github/drafting-table-receiver.yml.tmpl` pass the central workspace's name to `sdp_sync.py` through an environment variable. The App token step is unchanged.
+
+### Fixed
+
+- A workflow in another repository, a fork, or a feature branch can no longer sync as a registered product by putting that product's name in the payload.
+
+### Migration Notes
+
+- Make sure each syncing product's ProductRegistration sets `repository.defaultBranch` to the branch that syncs. Update the central receiver and each product's sync workflow from the templates in the same change window; a product still on the old template is rejected with a message asking for the update. The receiver needs outbound HTTPS to `token.actions.githubusercontent.com` (GitHub-hosted runners have it).
+
+## 1.20.8 - 2026-11-21
+
+### Compatibility Impact
+
+- The SDP receiver now rejects a sync unless exactly one ProductRegistration under the central `catalog/` has `repository.url` for the sending repository (GitHub, any common URL form, case-insensitive). Products that sync today without a registration must be registered first. Synced objects must be product-owned types, use UIDs that neither the central catalog nor another product owns, and only describe the product's own objects. Existing cached files are not changed until that product syncs again.
+
+### Added
+
+- `sdp_sync.py receive` acceptance checks (#195 gap 3): ProductRegistration match (`find_registration`, `normalize_github_url`), a type allowlist (`software_deployment_pattern`, `product_component`, `data_component`, `listener`, `relationship`, `decision_record`), UID ownership against the central catalog and every other product's cache (including old flat files), and a rule that a synced relationship's `source`, listener's `owner.ref` and decision record's `linkedObject` must be objects in the same sync. Every rejection names its reason, and the result file records the registration UID.
+- `tests/test_sdp_sync_acceptance.py`.
+
+### Changed
+
+- None.
+
+### Fixed
+
+- A repository that is not registered, or registered to a different product, can no longer overwrite or delete another product's cached SDP.
+
+### Migration Notes
+
+- Before updating the receiver, make sure every syncing product has a ProductRegistration whose `repository.url` is its GitHub repository, and that no product syncs a copy of an object the central catalog already holds (move such objects to the product repository or out of the sync).
+
+## 1.20.7 - 2026-11-21
+
+### Compatibility Impact
+
+- The sync workflow templates change. Product repositories and the central workspace adopt them by copying the new `templates/github/product-repo-sync.yml.tmpl` and `templates/github/drafting-table-receiver.yml.tmpl`; both sides must update together, because the receiver now accepts only the `draft-sdp-sync/1` payload and rejects the old `sdp_content` shape with an upgrade message. Product repositories need no new secrets; an optional `DRAFT_FRAMEWORK_REF` repository variable pins the sync tool to the central workspace's framework version (default `main`).
+
+### Added
+
+- `tests/test_sdp_sync_templates.py`: no `run:` step in either template contains a `${{ }}` expression, no template reads `client_payload` through an expression, the sender packs with the framework tool and dispatches the payload file, the receiver receives from the event file before validating, and the templates' own scripts, run with hostile repository names and an SDP full of shell metacharacters, treat them as data.
+
+### Changed
+
+- `templates/github/product-repo-sync.yml.tmpl`: checks out `getdraft/draftsman` (`tools` only) at `DRAFT_FRAMEWORK_REF`, runs `sdp_sync.py pack` with values passed as environment variables, and sends the payload file with `jq --slurpfile` and `curl --fail-with-body`. A deleted `.draft/sdp.yaml` now sends a delete instead of skipping. The App token step is unchanged.
+- `templates/github/drafting-table-receiver.yml.tmpl`: runs `sdp_sync.py receive` on `$GITHUB_EVENT_PATH` before validation; the commit message no longer includes a payload value. It still commits to the default branch until the pull-request flow (#448).
+
+### Fixed
+
+- #195 gap 1: the receiver stores the SDP as YAML, so a single quote no longer breaks it and validation sees an SDP object rather than a string.
+- #195 gap 8: no payload value is interpolated into script text in either template.
+
+### Migration Notes
+
+- Replace both workflow files from the new templates at the same time (central receiver first is safest: until a product repository updates, its syncs are rejected with a clear message rather than stored wrongly). Optionally set `DRAFT_FRAMEWORK_REF` in each product repository to the central workspace's framework version tag.
+
+## 1.20.6 - 2026-11-21
+
+### Compatibility Impact
+
+- None yet. `tools/sdp_sync.py` is new and the sync workflow templates do not call it until the next change, so existing product and central workspaces behave as before. The tool's cache layout is `.draft/external_sdps/<owner>__<name>/`; `validate.py` already reads every YAML file under `.draft/external_sdps/`, including the old flat `<owner>_<name>.yaml` files, which the tool removes when it stores that product's new snapshot.
+
+### Added
+
+- `tools/sdp_sync.py` (#195): `pack` builds a versioned `repository_dispatch` payload (`draft-sdp-sync/1`: repository, commit, ref, action, correlation id and the files' text) from a product repository, packing a delete when `.draft/sdp.yaml` is missing, and refuses payloads over GitHub's limits (10 top-level properties, 64 KB). `receive` reads the payload or the GitHub event file, checks every field, stores each file as the exact YAML text sent (never a JSON-quoted string), replaces the product's cache folder as a snapshot, refuses paths outside `.draft/sdp.yaml` and `.draft/catalog/**.yaml`, and writes a result file. Nothing is written when a payload is rejected, and every rejection names its reason.
+- Fixture product repository and central workspace in `tests/fixtures/sdp_sync/`, and `tests/test_sdp_sync.py`: a round trip through both commands that `validate.py` accepts, the old payload shape, resync and delete, size limits and rejections.
+
+### Changed
+
+- `tests/test_flow_retirement_examples.py` finds the #368 adoption note in whichever release section holds it, so it keeps passing after release promotion.
+
+### Fixed
+
+- The stored SDP is YAML rather than a quoted JSON string, and a single quote in the YAML no longer breaks the write (#195 gap 1), once the receiver template calls `sdp_sync.py receive` in the next change.
+
+### Migration Notes
+
+- No workspace migration required yet.
+
+## 1.20.5 - 2026-11-21
+
+### Compatibility Impact
+
+- None for existing content. New example objects only, plus documentation. This release completes #368: `flow: inbound`, `flow: bidirectional` and free-text `externalTarget` are deprecated, not removed. They keep loading, validating and rendering; removing them is left for a later major version.
+
+### Added
+
+- Examples of the listener target model in `examples/catalog/`: Billing Export Service and Image Import Service each own an SFTP listener on TCP port 22 at `/` (look-alike listeners, different owners, so two listeners), and the PagerDuty `system` owns one Events API v2 listener that the Ops Console, Billing Export Service and Image Import Service all target. All of them validate without the baseline.
+- `tests/test_flow_retirement_examples.py`.
+
+### Changed
+
+- `docs/object-types.md` states the target model for a call (caller as `source`, listener owner as `target`, `targetListener`, no `flow` or `externalTarget`).
+- `docs/how-to-add-objects.md` (Add A Listener) asks about near matches and walks through the new examples.
+- `docs/assets/draft-indexes.json` and `AI_INDEX.md` regenerated for the new examples.
+
+### Fixed
+
+- `draft_table.catalog.load_effective_catalog` now loads Listener objects from `catalog/engineering/listeners/` (and `catalog/listeners/`), so the lookup helpers find listeners stored where the docs say to put them.
+
+### Migration Notes
+
+- Adoption path for the relationship deprecations (#368), a strangler migration:
+  1. Refresh the framework (`/draft update`).
+  2. Run `python3 .draft/framework/tools/validate.py --workspace . --write-baseline` and commit `.draft/validation-baseline.yaml`. Existing uses of the deprecated fields become `baseline:` warnings under `relationship-flow-deprecated`, `relationship-external-target-freetext` and `relationship-source-is-listener-side` (and `relationship-target-listener`), so nothing fails.
+  3. Migrate on touch: a new relationship, or an edited one, is checked as an error again. Before editing one, run `/draft migrate` (or `migrate_relationships.py --object <uid>`) for reviewed proposals: caller as `source`, a `system` object and its listener instead of `externalTarget`, no `flow`.
+  4. Optionally migrate a whole SDP or folder at a time with `/draft migrate sdp <uid>` or `folder <path>`, then re-run `--write-baseline` to drop the cleared entries.
+
+## 1.20.4 - 2026-11-21
+
+### Compatibility Impact
+
+- `draft_table.catalog.link_or_stub_listener` and `record_authored_listener` now return `action: near_match` with `candidates` instead of creating a listener when an existing listener of the same owner and protocol differs only by an API version in the path, by an extending path on the same port, or by the port. Pass `confirmed_new=True` once the user says none is the same listener to get the previous behaviour. Exact matches, owner resolution and stubs with no near match behave as before. Catalog content, validation and diagrams are unchanged.
+- `migrate_relationships.py` asks about a near-match listener instead of proposing a new stub beside it.
+
+### Added
+
+- `/draft migrate [object|sdp|folder]` (`draft-actions/migrate.md`): runs `migrate_relationships.py` with the report and patch outside `catalog/`, presents its proposals for review, asks each needs-input question, and applies only what the user approves before validating (#368).
+- `draft_table.catalog.near_match_listeners` and `listener_near_match`: listeners that look like the one described (version, path or port difference, same owner and protocol) but are not an exact match.
+- `tests/test_listener_near_match.py`.
+
+### Changed
+
+- Listener Lookup Before Create (`docs/draftsman.md`) gains step 4, "Ask about near matches": never link a near match silently. The `draftsman-author` and `draftsman-core` skills carry the same rule.
+- `/draft` routing (`commands/draft.md`), the help tables in `templates/workspace/AGENTS.md.tmpl`, `templates/workspace/README.md.tmpl`, `docs/draftsman-ai-configuration.md` and `docs/operations-guide.md`, and the Cursor and Windsurf integrations list `migrate`.
+
+### Fixed
+
+- None.
+
+### Migration Notes
+
+- Tools that call `link_or_stub_listener` or `record_authored_listener` should handle `near_match` by asking the user, then call again with `confirmed_new=True` if it is a different listener. Existing workspaces pick up `/draft migrate` on their next framework update; regenerated workspace files list it in the help table.
+
+## 1.20.3 - 2026-11-21
+
+### Compatibility Impact
+
+- None. `migrate_relationships.py` is a new opt-in tool that only writes a report and a patch outside `catalog/`; workspaces, validation and diagrams are unchanged until a reviewed patch is applied.
+
+### Added
+
+- `tools/migrate_relationships.py`: proposes listener-based replacements for deprecated relationship fields (#368). `flow: bidirectional` becomes `outbound`; `flow: inbound` swaps source and target (and asks for the listener); an inbound call from an unknown outside party is proposed for removal, with its protection to record on the listener; free-text `externalTarget` links an existing System (by name or alias) and Listener, or proposes System and Listener stubs when the protocol has a default port and the caller is a company component. Ambiguous matches, multi-object files and unknown protocols are reported as needing input. Scope with `--object`, `--sdp` or `--folder`; output a Markdown report, a `git apply` patch, or JSON. UIDs of proposed stubs are stable across runs.
+- `tests/test_migrate_relationships.py`.
+
+### Changed
+
+- `docs/draftsman.md` (Deprecated Relationship Fields) describes the migration helper.
+
+### Fixed
+
+- `draft_table.catalog`: a listener owner of kind `external_system` now resolves `system` objects, not only `external_system` ones, so Listener Lookup Before Create links outside parties recorded as Systems.
+
+### Migration Notes
+
+- Optional: run `migrate_relationships.py`, review the report, apply the patch on a branch and run `validate.py`. Not running it keeps the existing baseline warnings.
+
+## 1.20.2 - 2026-11-21
+
+### Compatibility Impact
+
+- Diagrams change only for relationships that name a listener: a relationship with a `targetListener` the target owns (or any Listener object, for an `externalTarget`) now draws one arrowhead at the listener end, and its moving dots run from the caller, even when it still carries `flow: inbound` or `flow: bidirectional`. Relationships that name no listener draw exactly as before, so a framework refresh does not redraw existing diagrams (the golden SVGs are unchanged and the bundled examples name no listeners).
+
+### Added
+
+- `ListenerArrowheadTests` in `tests/test_generate_diagram.py`: one head at the listener for migrated calls (catalog and external targets, both views), legacy relationships unchanged, a listener owned by another object not counting, the flow overlay direction, and a deterministic mixed workspace (#368).
+
+### Changed
+
+- `tools/generate_diagram.py`: an edge whose relationship names its listener takes `outbound` flow for drawing.
+- `docs/software-deployment-patterns.md` (new Arrowheads bullet; the migration example names `targetListener` instead of `flow`) and the `draftsman-diagram` skill describe the rule.
+
+### Fixed
+
+- A relationship already moved to a listener but still carrying `flow: inbound` no longer draws its arrowhead at the caller.
+
+### Migration Notes
+
+- No workspace migration required.
+
+## 1.20.1 - 2026-11-21
+
+### Compatibility Impact
+
+- None. Tests and a test fixture only.
+
+### Added
+
+- `tests/fixtures/legacy_v155_workspace/`: a workspace with relationships authored before the listener model (`flow: bidirectional`, `flow: inbound`, free-text `externalTarget`, an `inbound` call from an outside party, and no `targetListener`), with no baseline file (#368).
+- `tests/test_legacy_relationship_compat.py`: copying that workspace and running `validate.py --write-baseline`, as a framework refresh does, gives exit code 0 with only `baseline:` warnings for every ratcheted rule; without a baseline the new rules are errors; editing one relationship turns only that relationship's violations into errors while the untouched ones stay warnings; and migrating the edited one clears its deprecated-field errors.
+
+### Changed
+
+- None.
+
+### Fixed
+
+- None.
+
+### Migration Notes
+
+- No workspace migration required.
+
+## 1.20.0 - 2026-11-21
+
+### Compatibility Impact
+
+- Ratcheted only, so a framework refresh stays clean: after `validate.py --write-baseline`, existing relationships with `flow: inbound`, `flow: bidirectional` or free-text `externalTarget` are `baseline:` warnings. A new relationship, or an edited one, that still uses them fails validation. Workspaces that skip `--write-baseline` after refreshing see these as errors, as with every ratcheted rule. The repo's example and diagram-fixture baselines are refreshed in this release (12 and 56 new entries; no existing entry changes).
+
+### Added
+
+- Ratcheted rule `relationship-flow-deprecated`: an authored relationship with `flow: inbound` or `flow: bidirectional`, with the fix for each (#368).
+- Ratcheted rule `relationship-external-target-freetext`: an authored relationship with free-text `externalTarget`; the fix is a `system` object with a listener, then `target` and `targetListener`.
+- Ratcheted rule `relationship-source-is-listener-side`: a heuristic on `flow: inbound` only, when the source owns a listener or the other end is an outside party, so it never fails content the flow rule does not already flag.
+- `tests/test_relationship_deprecation_rules.py`.
+
+### Changed
+
+- `examples/.draft/validation-baseline.yaml` and `tests/fixtures/diagram_workspace/.draft/validation-baseline.yaml` record the existing deprecated uses.
+- `docs/draftsman.md` (Deprecated Relationship Fields) and the relationship schema `aiHint` name the three rules.
+
+### Fixed
+
+- None.
+
+### Migration Notes
+
+- After refreshing the framework, run `python3 .draft/framework/tools/validate.py --write-baseline` and commit `.draft/validation-baseline.yaml` (the documented Framework Updates steps). Fix a baselined relationship when you next edit it.
+
+## 1.19.0 - 2026-11-21
+
+### Compatibility Impact
+
+- None. `flow: inbound`, `flow: bidirectional` and free-text `externalTarget` are deprecated in documentation only: they stay in the schema, existing relationships keep loading, validating and rendering exactly as before, and no new warning or error is raised in this release. Ratcheted rules that flag them only on new or edited content follow in a later release (#368). Removal is deferred to a later major version.
+
+### Added
+
+- `docs/draftsman.md`: a "Deprecated Relationship Fields" section with the replacement for each deprecated value: `bidirectional` becomes `outbound` with `direction: synchronous`, `inbound` becomes a relationship with the caller as `source` (or the protection noted on the listener for an unknown outside caller), and `externalTarget` becomes `target: <system uid>` plus `targetListener`.
+- `tests/test_relationship_deprecation.py` pins that the values are still accepted and the deprecation wording in the schema, template, docs and author skill.
+
+### Changed
+
+- `schemas/relationship.schema.yaml`: `aiHint` and field descriptions mark `flow: inbound`, `flow: bidirectional` and `externalTarget` deprecated (enum and fields unchanged).
+- `templates/relationship.yaml.tmpl`: defaults to `flow: outbound`, adds `targetListener`, and drops the `externalTarget` line (comments explain the replacement).
+- Relationship authoring guidance in `draftsman.md`, `object-types.md` (new Relationship row), `how-to-add-objects.md`, `yaml-schema-reference.md`, `sdp-completion-interview.md`, `software-deployment-patterns.md` and the `draftsman-author` skill: the caller is always `source`, omit `flow`, and target an external party's `system` object instead of `externalTarget`.
+
+### Fixed
+
+- None.
+
+### Migration Notes
+
+- No workspace migration required. Existing relationships need no change now; a migration helper that proposes the conversions as a reviewable patch is planned under #368.
+
+## 1.18.5 - 2026-11-21
+
+### Compatibility Impact
+
+- None for catalog content. The generated browser for catalogs without Listener objects changes only by the new, empty Listener column in a pattern's Connections table and an empty `ownedListeners` / `targetListener` field in the browser data. Run `generate_browser.py --refresh-shell` on an existing install to pick up the new column and section.
+
+### Added
+
+- Browser: a pattern's Connections table gains a Listener column after Interface. It shows the relationship's `targetListener` name with its protocol, port and endpoint (`Orders API (HTTPS 443 /orders)`), or is blank when no Listener object is named (#341 E5).
+- Browser: a product component, data component or external system detail page has an Owned Listeners section listing the Listener objects it owns through `owner.ref` (name, protocol, port, endpoint, authenticationModel, catalogStatus), in the renderer's listener order (port, protocol, endpoint, uid). Each name links to the listener's own page.
+- `connection_listener`, `listener_summary` and `build_owned_listeners` in `tools/generate_browser.py`; browser objects carry `ownedListeners`, and pattern connections carry `targetListener`.
+- `ListenerBrowserTests` in `tests/test_generate_browser.py`.
+
+### Changed
+
+- `docs/software-deployment-patterns.md` and the `draftsman-diagram` skill describe the Listener column and the Owned Listeners section.
+
+### Fixed
+
+- None.
+
+### Migration Notes
+
+- No workspace migration required.
+
+## 1.18.4 - 2026-11-21
+
+### Compatibility Impact
+
+- None for catalogs without Listener objects: their diagrams are byte-identical (golden tests unchanged, and the generated browser for the bundled examples is identical). In a pattern whose relationships name Listener objects through `targetListener`, the Deployment view's far-end port now comes from that listener, so those labels can change.
+
+### Added
+
+- Deployment view: when a relationship's `targetListener` names a Listener object with a port (#341 E5), the far-end technology line uses that port, ahead of today's port resolution: `http 8080`, `gRPC 8092`, `SQL 5432`. For a catalog target the target must own the listener. For an `externalTarget`, any Listener object counts, so external calls can show a port too. Device hops in an exposed group's chain pick their listener by the called listener's protocol family (`https 443 → http 8080 via <device>`), and same-deployment-target traffic still never hops.
+- `Model._called_listener` in `tools/generate_diagram.py`.
+- `ListenerPortTests` in `tests/test_generate_diagram.py` cover the listener port over component ports, the technology-line rules, hop ports and family through a chain, no hop inside one deployment target, fallback (a listener owned by another object, a listener without an integer port, no `targetListener`), an external target's listener, and no port in the Application view.
+
+### Changed
+
+- `docs/software-deployment-patterns.md` and the `draftsman-diagram` skill describe the listener port and the fallback.
+
+### Fixed
+
+- None.
+
+### Migration Notes
+
+- No workspace migration required.
+
+## 1.18.3 - 2026-11-21
+
+### Compatibility Impact
+
+- None for catalogs without Listener objects: their diagrams are byte-identical (golden tests unchanged, and the generated browser for the bundled examples is identical). A pattern whose components own Listener objects now draws one entrance per listener instead of one per declared interface, so those diagrams change.
+
+### Added
+
+- Application and Deployment views draw one attachment point per Listener object a box owns (#341 E5), on the box's top edge. Listeners are ordered by port, then protocol (case-insensitive), then endpoint path, then uid, so the order never depends on file order (D15). A relationship enters through the listener its `targetListener` names, and a runtime dependency enters through the listener its `interface` names. Each counts only when the target owns that listener.
+- `owned_listeners` and `entrance_keys` in `tools/generate_diagram.py`; `DiagramNode.listeners` and `DiagramEdge.target_listener`.
+- `ListenerEntranceTests` in `tests/test_generate_diagram.py` cover the fixed order and tie-breaks, entrance selection (`targetListener` over `targetInterface`), edges entering the named listener in both views, a listener owned by another object being ignored, a derived dependency naming a listener, no port in the Application view, and output independent of file order.
+
+### Changed
+
+- A box with no Listener objects keeps its per-interface entrances (AC5). `docs/software-deployment-patterns.md` and the `draftsman-diagram` skill describe both.
+
+### Fixed
+
+- None.
+
+### Migration Notes
+
+- No workspace migration required.
+
+## 1.18.2 - 2026-11-21
+
+### Compatibility Impact
+
+- None. This release changes skills, documentation and tests only. Validation results are unchanged. Workspaces pick up the new skill text on the next framework refresh; re-run `setup_ide.py` so the `.claude/skills/` projections match (`validate_skills.py` reports stale ones).
+
+### Added
+
+- `draftsman-author` skill section "Calls land on listeners" (#341 E3). Every relationship sets `targetListener`. It carries the five-step Listener Lookup Before Create procedure (resolve the owner and ask when ambiguous, normalize the key, link an exact match without asking, otherwise stub and link, upgrade a stub in place), the vendor-stub, completeness-gate and `interface_unprotected` rules, and the `draft_table.catalog` helpers.
+- `draftsman-author/references/guide.md` repository-scan rows for a served route (a listener on the component) and a client call (a relationship with `targetListener`).
+- `draftsman-query` rows for listener questions ("What port does X listen on?" reads listener objects first; "Which endpoint does X call on Y?" reads `targetListener`), and a rule that a stub listener is not a recorded fact.
+- `tests/test_listener_docs.py` `ListenerSkillTests`: each skill points to the procedure, the author steps and key statements match the docs, the named helpers exist, every mention of guessing an owner or inventing a port is a prohibition, and scan-row protocols are schema enum values.
+
+### Changed
+
+- `draftsman-core` Author profile: every call lands on a listener object; never guess its owner or invent a port.
+- `draftsman-diagram`: a missing `targetListener` is fixed in the catalog with the lookup procedure.
+
+### Fixed
+
+- None.
+
+### Migration Notes
+
+- No workspace migration required. After refreshing the framework, run `python3 .draft/framework/tools/setup_ide.py` to update projected skills.
+
+## 1.18.1 - 2026-11-21
+
+### Compatibility Impact
+
+- None. This release changes documentation and tests only. Validation results are unchanged.
+
+### Added
+
+- `docs/draftsman.md` section "Listener Lookup Before Create" (#341 E3): what a listener object is, and the procedure for finding or creating the listener a call lands on. Resolve the owner (several matches are listed, never picked), normalize the key (owner + protocol + port + endpoint), link an exact match without asking, otherwise create and link a stub, and upgrade a stub in place when the real listener is authored. It also covers the vendor-owned stub rule, the SDP completeness gate, the `none` authentication decision record and the `draft_table.catalog` helpers.
+- `docs/how-to-add-objects.md` section "Add A Listener", and a Listener row in the Engineering Objects table of `docs/object-types.md`.
+- `tests/test_listener_docs.py`: the procedure's steps and key statements, plus checks that the documented owner kinds, default ports, helper names and endpoint normalization match `validate.py` and `draft_table/catalog.py`.
+
+### Changed
+
+- Relationship Authoring in `docs/draftsman.md` adds a `targetListener` step. `how-to-add-objects.md` and `object-types.md` say every relationship names a `targetListener`, and separate Listener objects from the older `listeners` field on definitions.
+
+### Fixed
+
+- None.
+
+### Migration Notes
+
+- No workspace migration required.
+
+## 1.18.0 - 2026-11-21
+
+### Compatibility Impact
+
+- None. Diagram and browser output are unchanged: the generated browser for the bundled examples is byte-identical before and after this change. Validation results are unchanged.
+
+### Added
+
+- `tools/exposure.py`, the one exposure resolver (E4). It holds `EDGE_SLOTS` and the precedence: `exposedThrough: none` turns exposure off, an explicit uid or list is the chain, otherwise the followed reference architecture's filled edge slots apply except to a data tier. Functions: `slot_chain`, `pattern_slot_chain`, `group_chain`, `resolve_pattern_exposure`.
+- `tests/test_exposure.py`: precedence cases, edge slot order, lenient handling of bad values, a single `EDGE_SLOTS` shared by the renderer and validator, and agreement between the resolver, the deployment diagram model and the browser's exposure column on the diagram fixture and every example pattern.
+- `docs/reference-architectures.md` section "Filled Edge Slots".
+
+### Changed
+
+- `generate_diagram.py` delegates `_slot_chain` and `_group_chain` to `exposure.py`; `validate.py` and `generate_diagram.py` take `EDGE_SLOTS` from it. The browser keeps reading the renderer's model, so it uses the same resolver.
+- `docs/software-deployment-patterns.md` names the resolver. The vendored-layout diagram test copies `exposure.py` beside `generate_diagram.py`.
+
+### Fixed
+
+- None.
+
+### Migration Notes
+
+- No workspace migration required. A vendored framework must include `tools/exposure.py`; the normal framework refresh copies the whole `tools/` folder.
+
+## 1.17.0 - 2026-11-21
+
+### Compatibility Impact
+
+- Reference architecture `fills` problems are now validation errors instead of warnings (E4, not ratcheted, so no baseline entry hides them). An RA entry fails when `fills` is set on a slot that is not an edge slot (or on an entry with no slot), names an unknown uid, a non-network_service or a network_service instance, or names a definition that does not satisfy the entry's `capability`. Reference architectures with valid fills are unaffected.
+
+### Added
+
+- `validate_fills` in `tools/validate.py`. It reports the group and entry index, the slot and the offending uid, and uses the same definition-or-instance test as `exposedThrough`.
+- Tests in `tests/test_validate_ownership.py` for a clean fill on every edge slot, a non-edge slot, an entry with no slot, a non-network_service, an unknown uid, an instance (by `serviceRole` and by folder), a missing capability, a capability satisfied through a technology component, and an end-to-end run that exits 1 and that `--write-baseline` does not clear.
+
+### Changed
+
+- `validate_exposure_refs` is replaced by `validate_fills`; exposure validation no longer emits warnings.
+- `schemas/reference-architecture.schema.yaml` lists all five edge slots for `fills` (it omitted `firewall`) and describes the failures.
+
+### Fixed
+
+- None.
+
+### Migration Notes
+
+- Run `validate.py`. For each `fills` failure, move `fills` to an edge slot entry (`firewall`, `web-application-firewall`, `load-balancer`, `api-gateway`, `ingress`), point it at a network_service definition, or give that definition (or its technology component) the slot's capability. In a workspace with no service definitions folder configured, a network_service without `serviceRole` is accepted.
+
+## 1.16.0 - 2026-11-21
+
+### Compatibility Impact
+
+- `serviceGroups[].exposedThrough` problems are now validation errors instead of warnings (E4, not ratcheted, so no baseline entry hides them). A pattern that lists an unknown uid, a non-network_service, a network_service instance, `none` inside a list, an empty list or a repeated uid now fails validation. Patterns with valid values are unaffected.
+
+### Added
+
+- `validate_exposed_through` in `tools/validate.py`. It fails each bad `exposedThrough` value with the group index and the offending uid, and rejects a repeated uid in a chain.
+- Tests in `tests/test_validate_ownership.py` for each valid and invalid `exposedThrough` form, including a network_service instance (by `serviceRole` and by folder), a workspace with no definitions folder configured, and an end-to-end run that exits 1.
+
+### Changed
+
+- `validate_exposure_refs` now covers reference architecture `fills` only; `exposedThrough` checks moved to `validate_exposed_through`.
+- `schemas/software-deployment-pattern.schema.yaml` describes the `exposedThrough` failures.
+
+### Fixed
+
+- None.
+
+### Migration Notes
+
+- Run `validate.py`. For each `exposedThrough` failure, replace the value with the uid of a network_service definition (an object with `serviceRole: definition`, or one in the service definitions folder), or with `none`. List each device once, in chain order. In a workspace with no service definitions folder configured, a network_service without `serviceRole` is accepted.
+
+## 1.15.1 - 2026-11-20
+
+### Compatibility Impact
+
+- None. This release changes documentation and tests only. Validation results are unchanged.
+
+### Added
+
+- `docs/decision-records.md` section "Unprotected Listener Justification". It covers what upstream DRAFT defines (`interface-protection`, `interface-unprotected-justification`, committed DecisionRecords keyed `interface_unprotected`) and where company exception policy lives (company requirement groups and DecisionRecord approval policy).
+- Tests in `tests/test_validation.py`:
+  - the bundled group names no accepted exceptions
+  - the upstream mechanism alone accepts a committed decision
+  - a company requirement group adds a stricter rule that its own committed decision satisfies
+  - an approval policy routes the justification to the company's approver
+- Tests in `tests/test_release_notes.py` that the released notes for the listener protection and SDP completeness work are complete, and that requirement-group and listener schema changes count as contract changes.
+
+### Changed
+
+- None.
+
+### Fixed
+
+- None.
+
+### Migration Notes
+
+- No workspace migration required. To restrict which unauthenticated listeners are acceptable, add a company requirement group or a DecisionRecord approval rule as described in `docs/decision-records.md`.
+
+## 1.15.0 - 2026-11-20
+
+### Compatibility Impact
+
+- The `sdp-internal-stub-listener` baseline hash now covers the pattern and its dependent objects. A baseline entry for this rule written by 1.14.0 no longer matches; run `validate.py --write-baseline` once, as the framework update procedure already does. Other ratcheted rules keep their per-object hash.
+
+### Added
+
+- Ratcheted rules can register a `digest` function that sets the baseline content hash. `sdp-internal-stub-listener` uses it to hash the pattern together with its deployable objects, every relationship from the pattern or those objects, and every listener those calls target.
+- Tests in `tests/test_validate_ratchet.py` for the gate without a baseline, unchanged content, a framework version change alone, unrelated changes, and changes to the pattern, a deployable object, a relationship, a new call, or a called listener, plus a finished listener clearing the gate.
+
+### Changed
+
+- The software deployment pattern `catalogStatus` description records what re-arms the gate.
+
+### Fixed
+
+- None.
+
+### Migration Notes
+
+- After updating the framework, run `python3 .draft/framework/tools/validate.py --workspace . --write-baseline` and commit `.draft/validation-baseline.yaml`.
+
+## 1.14.0 - 2026-11-20
+
+### Compatibility Impact
+
+- A `complete` software deployment pattern whose calls target a stub listener owned by an internal product or data component now fails the ratcheted `sdp-internal-stub-listener` rule. Run `validate.py --write-baseline` to keep existing patterns as baseline warnings until they change. Patterns that are not `complete`, and stubs owned by external systems, are unaffected.
+
+### Added
+
+- Ratcheted rule `sdp-internal-stub-listener`: the SDP completeness gate. It traverses the pattern's calls (relationships with `targetListener` from the pattern and its service groups' deployable objects, and their `runtimeSpec.dependencies[].interface` listener UIDs), names each internally owned stub listener with its caller and call, and blocks completion. Stub listeners owned by an `external_system` do not block.
+- Tests in `tests/test_validation.py` for relationship and runtime-dependency traversal, several calls, mixed internal and external ownership, non-stub listeners, incomplete patterns, calls from outside the pattern, and an end-to-end failure.
+
+### Changed
+
+- The software deployment pattern `catalogStatus` description and the SoftwareDeploymentPattern RequirementGroup description record the gate.
+
+### Fixed
+
+- None.
+
+### Migration Notes
+
+- Before marking a pattern `complete`, finish every internally owned stub listener it calls, or run `validate.py --write-baseline` to grandfather existing patterns until they change.
+
+## 1.13.0 - 2026-11-20
+
+### Compatibility Impact
+
+- Workspaces that activate the bundled security requirement group (`01KQQ4Q027-T3CA`) now require a committed DecisionRecord for every listener whose `authenticationModel` is `none`. A `complete` listener without one fails; a `stub` or `incomplete` one warns. Other requirement groups are unchanged: `committedOnly` is opt-in, and existing conditional requirements still need `naAllowed: true`.
+
+### Added
+
+- Conditional `interface-unprotected-justification` requirement on `listener` in the bundled security requirement group. It applies when `authenticationModel` equals `none`, is satisfied only by a committed DecisionRecord referenced with `key: interface_unprotected`, and sets `naAllowed: false`.
+- `committedOnly: true` on a `decisionRecord` satisfaction mechanism: only an `accepted`, `mitigated` or `resolved` DecisionRecord satisfies it, never an `open` draft, including through a `decisionRecord` requirementImplementation.
+- Listeners accept `decisionRecords` and `requirementImplementations`.
+- Tests in `tests/test_validation.py` rejecting missing, unreferenced, wrongly keyed, draft and not-applicable justifications, accepting committed ones, and covering the narrow `naAllowed` exception and `committedOnly` shape checks.
+
+### Changed
+
+- A conditional requirement may set `naAllowed: false` only when every `canBeSatisfiedBy` entry is a `committedOnly` decisionRecord. Every other conditional requirement still needs `naAllowed: true`.
+- The DecisionRecord `status` description records that `open` is a draft and `accepted`, `mitigated` and `resolved` are committed.
+
+### Fixed
+
+- None.
+
+### Migration Notes
+
+- For each listener with `authenticationModel: none` in a workspace that activates the security group, commit a DecisionRecord and reference it from the listener's `decisionRecords` with `key: interface_unprotected`.
+
+## 1.12.0 - 2026-11-20
+
+### Compatibility Impact
+
+- Workspaces that activate the bundled security requirement group (`01KQQ4Q027-T3CA`) now check listeners. A `complete` listener whose `authenticationModel` is `TBD` fails `interface-protection`; a `stub` or `incomplete` one only warns. Workspaces that do not activate the group are unchanged.
+
+### Added
+
+- Mandatory `interface-protection` requirement on `listener` in the bundled security requirement group. It is satisfied by `authenticationModel`: `none` and every other recorded model satisfy it, `TBD` does not, and `naAllowed` is false.
+- `notIn` on a `field` satisfaction mechanism lists values that never satisfy it.
+- Tests in `tests/test_validation.py` for listener protection with `oauth`, `none` and `TBD`, the stub warning, and `notIn` shape checks.
+
+### Changed
+
+- `listener` is a supported requirement scope, and listeners are checked against applicable requirement groups.
+
+### Fixed
+
+- None.
+
+### Migration Notes
+
+- Before marking a listener `complete` in a workspace that activates the security group, record its real `authenticationModel` instead of `TBD`.
+
+## 1.11.0 - 2026-11-20
+
+### Compatibility Impact
+
+- None. Legacy `product_component.interfaces` remains valid. Existing relationships without `targetListener` stay baseline warnings after `validate.py --write-baseline` until they change.
+
+### Added
+
+- Tests in `tests/test_validate_ratchet.py` for baseline preservation, changed relationships, internal and external targets after a baseline write, duplicate baseline prevention, stub listener upgrade, and legacy `interfaces` retention under the `relationship-target-listener` rule.
+
+### Changed
+
+- `product_component.interfaces` schema description records it as the legacy surface.
+
+### Fixed
+
+- None.
+
+### Migration Notes
+
+- Run `python tools/validate.py --write-baseline` once after vendoring so existing relationships stay warnings.
+
+## 1.10.1 - 2026-11-20
+
+### Compatibility Impact
+
+- None. Existing catalog files and validation results are unchanged. This release adds listener lookup-before-create helpers in `draft_table.catalog` for tools that resolve or author listeners.
+
+### Added
+
+- Listener catalog lookup in `draft_table/catalog.py`: a normalized identity key, owner resolution (with ambiguity returned for human choice), lookup-before-create that links an existing listener or creates a stub, authored upgrade of a stub without a new UID, and a vendor-owned stub rule that requires a company-internal relationship owner before the stub can leave `catalogStatus: stub`.
+- Tests in `tests/test_listener_lookup.py` for lookup, stub creation, upgrade, ambiguity, and the vendor rule.
+
+### Changed
+
+- `upgrade_listener_stub` sets `catalogStatus` to `incomplete` unless the authored listener supplies one, and drops a stub `authenticationModel: TBD` placeholder when the authored listener does not supply a model.
+- `record_authored_listener` applies `vendor_stub_problem` on both create and upgrade paths.
+
+### Fixed
+
+- None.
+
+### Migration Notes
+
+- Nothing is required for existing catalogs. Tools that create or update listeners should call the new lookup-before-create helpers so existing listeners are reused and vendor-owned stubs cannot leave stub status without a company-internal relationship owner.
+
+## 1.10.0 - 2026-11-20
+
+### Compatibility Impact
+
+- New ratcheted rule `relationship-target-listener`: every relationship must name a real listener via `targetListener`. For a catalog target the listener must be owned by that target; an `externalTarget` relationship only needs a real listener. Existing relationships without `targetListener` are recorded in `.draft/validation-baseline.yaml`, so they warn until the relationship changes. A product component `runtimeSpec.dependencies[].interface` that is a listener UID must be owned by that dependency's ref. Protocol or technology disagreement with the named listener is an unratcheted warning.
+
+### Added
+
+- Ratcheted rule `relationship-target-listener` in `tools/validate.py`, the `targetListener` field on `schemas/relationship.schema.yaml`, and tests in `tests/test_validate_ratchet.py`.
+- `examples/.draft/validation-baseline.yaml` entries for existing example relationships that do not yet name a `targetListener`.
+
+### Changed
+
+- The `runtimeSpec.dependencies[].interface` description in `schemas/product-component.schema.yaml` notes that a listener UID must be owned by that dependency's ref.
+
+### Fixed
+
+- None.
+
+### Migration Notes
+
+- After vendoring this release, run `python tools/validate.py --write-baseline` once so existing relationships without `targetListener` stay warnings. New or changed relationships must name a real `targetListener`; for a catalog target, that listener must be owned by the target.
+
+## 1.9.0 - 2026-11-20
+
+### Compatibility Impact
+
+- None. The listener protocol enum and `authenticationModel` values are unchanged; this release settles and documents them.
+
+### Added
+
+- Test `ListenerCatalogTests.test_listener_protocol_enum_and_auth_none_are_settled` in `tests/test_validation.py`, which pins the listener protocol set (SQL, Redis, Kafka, SQS, SNS, S3, gRPC and others) and `authenticationModel: none`.
+
+### Changed
+
+- The listener `protocol` field description in `schemas/listener.schema.yaml` lists the approved set and records gRPC-web as gRPC.
+
+### Fixed
+
+- None.
+
+### Migration Notes
+
+- Nothing is required. Authors record gRPC-web listeners with protocol `gRPC`.
+
+## 1.8.0 - 2026-11-20
+
+### Compatibility Impact
+
+- None. No existing catalog content or validation result changes; the listener identity key is not yet enforced by any rule.
+
+### Added
+
+- `listener_identity(obj)` and `normalize_listener_endpoint(endpoint)` in `tools/validate.py`: a listener's exact identity is owner kind and ref, lowercased protocol, port (protocol default when omitted: HTTP 80, HTTPS 443) and the endpoint normalized to a path with templated parameters (`{name}` or `:name`) as `{}`. A leading scheme and host are discarded and never part of identity, so distinct owners never collapse. Query strings and fragments are dropped. A `://` that appears after a leading slash is left in the path (not parsed as a host).
+- Tests `ListenerIdentityTests` in `tests/test_validation.py`.
+
+### Changed
+
+- The listener `endpoint` field description documents templated path parameters and that the host is not stored.
+
+### Fixed
+
+- `normalize_listener_endpoint` only strips a scheme and host when the endpoint begins with a URI scheme. Path-only endpoints that contain `://` (for example `/proxy/http://x/{id}`) stay distinct, and query strings and fragments are not part of the identity key. A `?` or `#` that ends the authority (for example `https://host?x=/a/b`) no longer lets a later `/` in the query or fragment become the path; such endpoints normalize to `/`.
+
+### Migration Notes
+
+- Nothing is required. Authors should write endpoints as paths without the host.
+
+## 1.7.0 - 2026-11-19
+
+### Compatibility Impact
+
+- New object type `listener` (`schemas/listener.schema.yaml`) and new ratcheted rule `listener-owner`: a listener's `owner.ref` must name an existing catalog object whose type matches `owner.kind`. No existing content declares listeners, so no existing file changes validation result.
+
+### Added
+
+- `listener` schema: a UID-addressable endpoint with `owner` (`kind` and `ref`), `protocol`, `port`, `endpoint`, `authenticationModel` (including `none`), optional `methods`, `description` and `catalogStatus` (`stub`, `incomplete`, `complete`).
+- Tests `ListenerCatalogTests` in `tests/test_validation.py` for valid and invalid listener fields and owners.
+
+### Changed
+
+- None.
+
+### Fixed
+
+- None.
+
+### Migration Notes
+
+- Nothing is required. Adopters who add listeners should set `owner.kind` to `product_component`, `data_component` or `external_system`; an `external_system` owner must be a `system` object.
+
+## 1.6.0 - 2026-11-16
+
+### Compatibility Impact
+
+- New ratcheted rule `relationship-target-interface`: a relationship whose target is a product component must carry `targetInterface` naming one of its `interfaces`. Existing violations bind again when the relationship changes unless recorded in `.draft/validation-baseline.yaml`, so adopters run `validate.py --write-baseline` once after vendoring this release. Data components, `externalTarget`, instances and derived relationships are exempt.
+- A `targetInterface` naming a surface its target lacks is an error that is never baselined; on a target with no `interfaces` list (that is not a data component) or on an `externalTarget` it is a warning.
+- Deployment-view labels and geometry change for patterns that declare the new fields. Labels change only for connections whose target resolves a port from listeners or component ports. Geometry changes only when the pattern follows a reference architecture with a filled edge slot (`fills` is new) or a group sets `exposedThrough`: exposed zone lanes gain an edge device row and connections from other deployment targets route through it. The Application view never shows a port.
+- A component that already declares two or more `interfaces` gets one entrance per interface on the top edge in both views, so its entrances and the edges into them move (today the examples' ops console). Components with one interface or none, and every data component without `interfaces`, render as before.
+- Nothing else changes for content without the new fields: every new field is optional, and no error reads them beyond the ratcheted rule.
+
+### Added
+
+- Optional `interfaces` on `data_component` (the `product_component` shape), `targetInterface` on `relationship`, `listeners` on `runtime_service`, `data_store_service`, `network_service` and `host`, `fills` on a reference architecture deployable object entry, and `exposedThrough` (a uid, a list of uids, or `none`) on a software deployment pattern service group.
+- The interface protocol enum of `product_component` and `data_component` gains SQL, Redis, Kafka, SQS, SNS, S3 and DynamoDB; a listener's protocol adds HTTP, HTTPS, TCP and UDP.
+- `tools/protocol_families.py` with `family(text)`, the single protocol-family table that `validate.py` and `generate_diagram.py` share. `validate.py` also gains an `interface_names` helper.
+- Ratcheted rule `relationship-target-interface` with the error and warning branches above; the fixture workspace baseline records its existing violations.
+- Three warnings, never errors and never ratcheted: a service group `exposedThrough` that is neither `none` nor one or more `network_service` uids; a reference architecture `fills` whose target is not a `network_service`, whose slot is not an edge slot (firewall, web-application-firewall, load-balancer, api-gateway, ingress), or whose definition does not satisfy the slot's `capability` (an entry with no `capability` is not checked); and a relationship whose `technology` and its target interface's protocol resolve to different known protocol families (the text names both protocols). Derived relationships never produce the family warning.
+- Derived dependency relationships carry the raw `runtimeSpec.dependencies[].interface` string as `_interface`.
+- The deployment view resolves the port a connection reaches its target on and prints it in the technology line of the far-end label and the hover callout: a product component's own inbound `runtimeSpec.ports` entry (by protocol family, then by the interface's name), then the listener of its substrate; a data component's store listener; an instance or other definition's own listener. A port prints as `<protocol> <port>` (`SQL 5432`, `gRPC 8092`); a REST, HTTP or HTTPS listener prints its lower-cased name (`https 443`). The technology line reads the port alone when no technology is recorded or it equals the protocol word, else `technology · port`.
+- The deployment view draws an exposed group's edge device chain. A group is exposed when `exposedThrough` names one or more `network_service` definitions, or, without it, when the pattern follows a reference architecture with a filled edge slot (the chain is then the filled slots in the order firewall, web-application-firewall, load-balancer, api-gateway, ingress); `exposedThrough: none` and a group whose deployable objects are all data components are not exposed by the slot default. Each exposed group draws one row of `network` boxes at the top of its first zone lane, inside its own container, whether or not a connection enters it; groups never share a row. A device also placed in the pattern is drawn only in the row.
+- A connection from another deployment target into an exposed group (a box, a data store container or the group's own container) enters the first device of the target group's chain at its top, passes device to device, and leaves the last device's bottom for the target's entrance; connections within one deployment target, and connections into a device of the chain itself, never take the hop, and the source group's own chain is never used. The port chain lists each device's port (its listener of the connection's protocol family, else its single listener) before the target's (`https 443 → https 443 → http 8080`), and the callout adds `via <device name>` per device. Hop segments carry `data-via`.
+- The browser pattern view shows each service group's exposure on its Service Groups row (`Exposed through: <device names in chain order>`, `not exposed` for `exposedThrough: none`, nothing when undetermined), taken from the diagram renderer's model so the browser never recomputes slot logic. The Connections table gains an Interface column (a relationship's `targetInterface`, or a derived dependency's `_interface` when it names an interface of the target; blank otherwise). Object detail lists a component's or data component's interfaces (name, protocol, path) and a definition's listeners (name, protocol, port).
+- Docs and the `draftsman-diagram` skill describe the split by owner (product teams record `interfaces` and `targetInterface`; the infrastructure team records `listeners` and fills edge slots; `exposedThrough` is the exception), the Application view that never shows ports, the Deployment view's port chain, and the edge device chain drawn because the group is exposed and its protection, availability, performance and routing requirements apply (no caller is drawn).
+
+### Changed
+
+- Both diagram views draw one entrance per declared interface on a box's top edge (data components with `interfaces` too). An edge enters through the interface its `targetInterface` names, or a derived dependency's `interface` when it names one, else through the first entrance; labels keep clear of the extra entrances.
+- At a box with several entrances in use, the far-end labels of each entrance take their own block of label rows, stacked upward from the box in entrance order, so labels entering one box from different sources through different entrances never overlap when all are shown; the label band above such a box grows by those rows. Boxes with one entrance are unchanged.
+- A component port or listener matched to the target interface by protocol family prints the interface's protocol, not the recorded one: a gRPC interface served by a port recorded as `HTTP/2` reads `gRPC 8092`, not `gRPC · HTTP/2 8092`. Web listeners keep their lower-cased name (`http 8080`, `rest 8082`), and a single-listener fallback of another family prints as recorded.
+- `validate.py` and `generate_diagram.py` import the shared protocol-family helper (the diagram renderer uses it to match listeners to interfaces); validation output does not change.
+
+### Fixed
+
+- Application view: when a caller left of a multi-interface box called a higher entrance than a caller right of it, the two in-runs crossed each other's stubs. The gutter edges into such a box now arrive from the left for the lower entrances and from the right for the higher ones; the box moves the fewest edges to the other side, and nothing moves for a box already in order.
+
+### Migration Notes
+
+- Run `validate.py --write-baseline` when vendoring this release to record existing relationships to product components in `.draft/validation-baseline.yaml`.
+- The infrastructure team declares `listeners` on runtime services, data store services, network services and hosts, and fills edge slots (`fills`) in reference architectures.
+- Product teams add `interfaces` to their components and `targetInterface` to relationships as they touch them; that clears the baseline entry.
+- Set `exposedThrough` on a service group only for exceptions the reference architecture's filled slots do not describe.
+- Nothing is required for validation to pass after the baseline. Resolve any new `exposedThrough`, `fills` or protocol-family warning when convenient; none of them fails validation.
+
 ## 1.5.5 - 2026-11-15
 
 ### Compatibility Impact

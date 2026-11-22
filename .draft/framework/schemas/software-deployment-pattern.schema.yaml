@@ -154,10 +154,12 @@ serviceGroup:
   - deploymentTarget
   optionalFields:
   - substrate
+  - exposedThrough
   - scalingUnit
   - deployableObjects
   fieldTypes:
     substrate: str
+    exposedThrough: str
     deployableObjects: list
   collectionSchemas:
     deployableObjects: deployableObjectEntry
@@ -170,6 +172,13 @@ serviceGroup:
       deployableObjects. Validation rule sdp-placement-types (ratcheted, enforced)
       reports a deployableObjects ref that is not a ProductComponent or
       DataComponent and names this field as the place for it.
+    exposedThrough: >
+      Optional. A network_service definition uid, or a list of such uids in chain order, that
+      fronts this group's traffic from outside its zone; or the literal none for a group that
+      receives no such traffic.
+      Overrides the filled edge slot of the reference architecture the pattern follows.
+      Validation fails (not ratcheted) on an unknown uid, a non-network_service, a
+      network_service instance, none inside a list, an empty list or a repeated uid.
     deploymentTarget: >
       Workspace vocabulary value identifying the physical or logical deployment
       target for this service group (e.g. aws-us-east-1, openstack-controller).
@@ -325,7 +334,7 @@ fieldDescriptions:
   schemaVersion: Use the schema version string supported by this framework release, normally "1.0".
   type: Use the exact object type declared by the matching schema.
   name: Use a clear human-readable name for the object.
-  catalogStatus: Use stub, incomplete, or complete to describe catalog maturity, not company adoption disposition.
+  catalogStatus: Use stub, incomplete, or complete to describe catalog maturity, not company adoption disposition. A pattern cannot be complete while a call in it targets a stub listener owned by an internal product or data component (ratcheted rule sdp-internal-stub-listener); stubs owned by external systems do not block. The rule is ratcheted on the pattern and the objects it depends on (its deployable objects, their relationships and the listeners they call), so a baselined pattern fails again when any of them changes, but not on a framework upgrade alone.
   lifecycleStatus: Use candidate, preferred, existing-only, deprecated, or retired where this object still carries a lifecycle signal.
   businessContext: Use workspace-defined business taxonomy values, especially businessContext.pillar, to identify which company portfolio or pillar owns this deployment pattern.
   uid: Use the generated opaque UID for object identity. Do not edit it for display-name, product-name, or taxonomy changes.

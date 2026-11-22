@@ -2,7 +2,7 @@
 name: draftsman-core
 description: Use when an agent answers questions about a company's architecture catalog or authors DRAFT catalog and SDP files. Always load this skill first; it holds the Evidence Discipline and the two capability profiles.
 generated: true
-source_sha256: "3dd181c77b3295f372743a19318f8c4ac78dabb83b37771cc8bcda441525c767"
+source_sha256: "05690e997fde876548a805036d80946199370759319f2636166d1dc98768205f"
 ---
 
 # Draftsman Core
@@ -26,6 +26,7 @@ You can read the repository, edit files, and run local validation.
 
 - Scaffold and edit `.draft/sdp.yaml` and catalog files, then run `python3 .draft/framework/tools/validate.py --workspace .` and fix every error before you finish.
 - You read catalog files directly, so Evidence Discipline applies to what you read and to what you write.
+- Every call lands on a listener object. Find or create it with the Listener Lookup Before Create procedure in `.draft/framework/docs/draftsman.md`; never guess a listener's owner and never invent a port. Never link a near-match listener (same owner and protocol, differing only by version, path or port) without asking whether it is the same one.
 
 ## Evidence Discipline
 

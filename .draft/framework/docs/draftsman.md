@@ -797,8 +797,9 @@ otherwise.
 **Recording connections:**
 
 For each confirmed crossing, write one relationship object per (from, to) pair
-identified in Round B, using the protocol from Round C as the `technology` field
-and `flow: outbound` as the default. Set `direction` to `synchronous` for
+identified in Round B, using the protocol from Round C as the `technology` field,
+with the caller as `source` (omit `flow`; `outbound` is the default and the
+other values are deprecated). Set `direction` to `synchronous` for
 REST/gRPC/HTTPS calls, `asynchronous` for fire-and-forget, and `event` for
 event-driven or pub/sub. Do not ask about `port` or `label`. Write relationship
 files to `catalog/relationships/` using the naming convention
@@ -1038,6 +1039,66 @@ resumptionContext:
 If the session's `sessionStatus` is `blocked`, surface the blocking reason from
 `unresolvedQuestions` or `nextSteps` before asking the user how to proceed.
 
+## Listener Lookup Before Create
+
+A listener is the exact endpoint a call lands on: a `listener` object with its
+own UID, owned by a ProductComponent, a DataComponent or an external system
+(`owner.kind` is `product_component`, `data_component` or `external_system`, and
+`owner.ref` is that object's UID). It records `protocol`, `port`, `endpoint` and
+`authenticationModel`; the caller never does. Every relationship names the
+listener it calls in `targetListener` (ratcheted rule
+`relationship-target-listener`), including calls to data components and
+external targets.
+
+Before writing a relationship, resolve its listener with this procedure. Never
+create a listener without running it, and never guess.
+
+1. **Resolve the owner.** Match the owner the user names by UID, then by exact
+   name or alias, among objects of the owner kind. One match is the owner.
+   Several matches are listed for the user to choose from, never picked. No
+   match means the owner must be authored (or confirmed) first.
+2. **Normalize the identity key.** The key is owner + protocol + port +
+   endpoint. Protocol is compared lowercase; a missing port takes the
+   protocol's default (`http` 80, `https` 443); the endpoint keeps only its path
+   (scheme, host, query and fragment are dropped, the host is never stored);
+   templated path parameters (`{id}` or `:id`) compare as one placeholder; and
+   trailing slashes are ignored. Two components that each serve SFTP on port 22
+   own two different listeners, because the owner is part of the key.
+3. **Link an exact match.** If exactly one listener has the key, set
+   `targetListener` to its UID without asking.
+4. **Ask about near matches.** If none has the key but a listener of the same
+   owner and protocol differs only by an API version in the path (`/v1/orders`
+   and `/v2/orders`), by a path one of them extends (`/` and `/orders` on the
+   same port) or by the port (same path), ask whether the call is on that
+   listener. Link it only when the user says it is the same listener; never
+   link a near match silently. Two SFTP listeners on ports 22 and 2222 of the
+   same server are a near match; SFTP on two different servers is not.
+5. **Otherwise create a stub and link it.** If none has the key, create a
+   listener with `catalogStatus: stub` from what the caller knows (owner,
+   protocol, port, endpoint; `authenticationModel: TBD`) and link its UID.
+   Several listeners with the same key are listed and asked about, never
+   chosen silently.
+6. **Upgrade, do not duplicate.** When the real listener is authored later it
+   has the same key, so it upgrades the stub in place and keeps its UID.
+
+Rules that follow from the procedure:
+
+- A stub owned by an external system needs a company-internal relationship
+  owner (a ProductComponent or DataComponent whose relationship calls it) before
+  it can be created or leave `stub`.
+- A SoftwareDeploymentPattern cannot be completed while any call in it targets a
+  stub listener owned by an internal component; the error names the listener
+  (ratcheted rule `sdp-internal-stub-listener`). Stubs owned by external
+  systems do not block completion.
+- `authenticationModel: none` needs a committed DecisionRecord keyed
+  `interface_unprotected` (see [decision-records.md](decision-records.md)).
+- Tools follow the same procedure through `draft_table.catalog`:
+  `lookup_listener`, `near_match_listeners`, `link_or_stub_listener`,
+  `record_authored_listener`, `upgrade_listener_stub` and
+  `vendor_stub_problem`. `link_or_stub_listener` and `record_authored_listener`
+  return `near_match` with the candidates instead of creating a listener; pass
+  `confirmed_new=True` after the user says none of them is the same listener.
+
 ## Relationship Authoring
 
 Relationships are the primary way to model inter-object communication edges —
@@ -1057,14 +1118,24 @@ For each relationship:
    `externalTarget` to the free-text name of an external system with no catalog
    representation (e.g. `"LDAP Directory"`, `"Stripe Payment API"`). Use
    `externalTarget` when the dependency exists but has no catalog UID.
-3. Set `label` to a short verb phrase: "calls", "reads from", "writes to",
+3. Set `targetListener` to the UID of the listener the call lands on, resolved
+   with the Listener Lookup Before Create procedure above. For a catalog
+   target the listener must be owned by that target; for an `externalTarget`
+   it is the external system's listener.
+4. Set `label` to a short verb phrase: "calls", "reads from", "writes to",
    "sends events to", "authenticates via".
-4. Set `technology` when known and not obvious: "HTTPS", "gRPC", "AMQP",
+5. Set `technology` when known and not obvious: "HTTPS", "gRPC", "AMQP",
    "PostgreSQL wire protocol".
-5. Set `direction` to `synchronous` for request/response, `asynchronous` for
+6. Set `direction` to `synchronous` for request/response, `asynchronous` for
    fire-and-forget, or `event` for publish/subscribe or event-driven.
-6. Set `flow` to `outbound` (default), `inbound`, or `bidirectional` from the
-   source object's perspective.
+7. Set `flow` only to `outbound`, or leave it out (`outbound` is the default).
+   The caller is always the `source`, so `flow: inbound` and `flow: bidirectional` are deprecated: for
+   "X calls this component", make X the source; for a request/response call, use
+   `direction: synchronous`. Do not use free-text `externalTarget` for new
+   relationships, which is deprecated too: record the external party as a
+   `system` object with its listeners and set `target` and `targetListener`.
+   Existing deprecated values still load, validate and render; see
+   Deprecated Relationship Fields below.
 
 Write the relationship object to `catalog/relationships/` using the naming
 convention `relationship-<source-name>-<verb>-<target-name>.yaml`.
@@ -1072,6 +1143,44 @@ convention `relationship-<source-name>-<verb>-<target-name>.yaml`.
 Do not ask about relationships unless the user brings up connections, dependencies,
 or topology. Do not block or delay drafting of other objects waiting for relationship
 completeness.
+
+### Deprecated Relationship Fields
+
+`flow: inbound`, `flow: bidirectional` and free-text `externalTarget` are
+deprecated. They stay valid: existing relationships keep loading, validating and
+rendering, and nothing is removed until a later major version. Never write them
+in new or edited relationships:
+
+- `flow: bidirectional` on a request/response call becomes `flow: outbound` (or
+  no `flow`) with `direction: synchronous`.
+- `flow: inbound` ("this component is called by X") becomes a relationship with
+  X as `source` and the component as `target`. When X is an unknown outside
+  party, record the protection on the component's listener
+  (`authenticationModel`, `description`) instead of a relationship.
+- `externalTarget: <name>` becomes `target: <system uid>` and
+  `targetListener: <listener uid>`, found or created with Listener Lookup Before
+  Create.
+
+Three ratcheted rules report them. After a framework refresh,
+`validate.py --write-baseline` records existing uses as `baseline:` warnings;
+only a new relationship, or an edited one, fails:
+
+- `relationship-flow-deprecated`: `flow` is `inbound` or `bidirectional`.
+- `relationship-external-target-freetext`: `externalTarget` is set.
+- `relationship-source-is-listener-side`: a heuristic on `flow: inbound` only,
+  when the source owns a listener or the other end is an outside party (a
+  free-text `externalTarget` or a `system` object), so the caller is probably
+  recorded as the target.
+
+To move existing relationships, run `/draft migrate`, or
+`python3 .draft/framework/tools/migrate_relationships.py --workspace . --report <file> --patch <file>`
+with both files outside `catalog/` (scope it with `--object <uid>`, `--sdp <uid>` or `--folder <path>`). It only
+proposes: nothing in `catalog/` changes. The report lists each conversion, the
+new System and Listener stubs, relationships that need your input (a listener
+to name, a protocol and port, an ambiguous system, a near-match listener to
+confirm), and protection descriptions
+to move onto listeners. Review it, apply the patch with `git apply` on a
+branch, then run `validate.py`.
 
 When reading source material (diagrams, SDPs, architecture docs), extract visible
 directed connections and propose relationship objects for each one. Surface them

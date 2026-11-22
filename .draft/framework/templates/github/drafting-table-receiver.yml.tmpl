@@ -1,6 +1,14 @@
 # DRAFT Framework 1.0 — Central Receiver GitHub Action
-# This workflow listens for decentralized SDP updates sent by engineering product repos,
-# validates the payload, updates local cache, and regenerates central AI/browser indexes.
+# This workflow receives decentralized SDP updates sent by engineering product repos, stores them
+# with the framework's sdp_sync.py, validates the workspace, and regenerates the central indexes.
+# The payload is read from the event file by the tool; no payload value is placed in script text.
+# The tool verifies the sender's GitHub Actions OIDC token (audience: this repository) against GitHub's
+# published keys before storing anything. Nothing is pushed to the default branch: each product's changes
+# go to a draft-sync/<product> branch and one pull request that later syncs update.
+# Repository settings: allow GitHub Actions to create pull requests. Optional repository variable
+# DRAFT_SYNC_AUTO_MERGE=true requests auto-merge when a change stays inside that product's cache folder.
+# Every run ends with a report: a job summary, and (once the sender's identity is verified) a result file on the
+# draft-sync-results branch that the product repository's sync run waits for and fails on.
 name: DRAFT Decentralized SDP Receiver
 
 on:
@@ -9,6 +17,12 @@ on:
 
 permissions:
   contents: write
+  pull-requests: write
+
+# One sync at a time, so pull requests and regenerated indexes never race.
+concurrency:
+  group: draft-sdp-sync
+  cancel-in-progress: false
 
 jobs:
   sync_sdp:
@@ -30,23 +44,49 @@ jobs:
           pip install pyyaml
 
       - name: Store Decentralized SDP Payload
+        env:
+          CENTRAL_REPOSITORY: ${{ github.repository }}
         run: |
-          mkdir -p .draft/external_sdps
-          PRODUCT_ID="${{ github.event.client_payload.product_id }}"
-          # Clean payload filename
-          SAFE_ID=$(echo "$PRODUCT_ID" | tr '/' '_')
-          echo '${{ toJson(github.event.client_payload.sdp_content) }}' > ".draft/external_sdps/${SAFE_ID}.yaml"
+          python3 .draft/framework/tools/sdp_sync.py receive \
+            --workspace . \
+            --payload "$GITHUB_EVENT_PATH" \
+            --central-repository "$CENTRAL_REPOSITORY" \
+            --result "$RUNNER_TEMP/sdp-sync-result.json"
 
       - name: Validate Workspace Architecture
+        shell: bash
         run: |
-          python3 .draft/framework/tools/validate.py --workspace .
+          python3 .draft/framework/tools/validate.py --workspace . 2>&1 | tee "$RUNNER_TEMP/validate.log"
 
       - name: Regenerate Machine Indexes & AI Map
         run: |
           python3 .draft/framework/tools/generate_indexes.py --workspace .
           python3 .draft/framework/tools/generate_ai_index.py
 
-      - name: Commit Updated Index & Cache
-        uses: stefanzweifel/git-auto-commit-action@v5
-        with:
-          commit_message: "chore(draft): sync decentralized SDP for ${{ github.event.client_payload.product_id }}"
+      - name: Publish Sync Pull Request
+        env:
+          GH_TOKEN: ${{ github.token }}
+          BASE_BRANCH: ${{ github.event.repository.default_branch }}
+          AUTO_MERGE: ${{ vars.DRAFT_SYNC_AUTO_MERGE }}
+        run: |
+          python3 .draft/framework/tools/sdp_sync.py publish \
+            --workspace . \
+            --result "$RUNNER_TEMP/sdp-sync-result.json" \
+            --base "$BASE_BRANCH" \
+            --auto-merge "${AUTO_MERGE:-false}"
+
+      - name: Report Sync Result
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+          JOB_STATUS: ${{ job.status }}
+          BASE_BRANCH: ${{ github.event.repository.default_branch }}
+        run: |
+          python3 .draft/framework/tools/sdp_sync.py report \
+            --workspace . \
+            --payload "$GITHUB_EVENT_PATH" \
+            --result "$RUNNER_TEMP/sdp-sync-result.json" \
+            --validate-log "$RUNNER_TEMP/validate.log" \
+            --job-status "$JOB_STATUS" \
+            --base "$BASE_BRANCH" \
+            --summary "$GITHUB_STEP_SUMMARY"

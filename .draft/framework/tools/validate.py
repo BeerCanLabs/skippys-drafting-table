@@ -18,6 +18,8 @@ if str(TOOLS_ROOT) not in sys.path:
     sys.path.insert(0, str(TOOLS_ROOT))
 
 from uid_utils import UID_PATTERN_TEXT, generate_uid
+from protocol_families import family
+from exposure import EDGE_SLOTS as EXPOSURE_EDGE_SLOTS
 
 
 FRAMEWORK_ROOT = Path(__file__).resolve().parent.parent
@@ -53,6 +55,7 @@ VALID_REQUIREMENT_SCOPES = {
     "reference_architecture",
     "software_deployment_pattern",
     "product_registration",
+    "listener",
 }
 
 VALID_REQUIREMENT_ANSWER_TYPES = {
@@ -65,6 +68,8 @@ VALID_REQUIREMENT_ANSWER_TYPES = {
     "field",
 }
 VALID_REQUIREMENT_MODES = {"mandatory", "conditional"}
+# DecisionRecord statuses that count as a committed decision. An open record is still a draft.
+COMMITTED_DECISION_STATUSES = {"accepted", "mitigated", "resolved"}
 VALID_REQUIREMENT_ACTIVATIONS = {"always", "workspace"}
 VALID_IMPLEMENTATION_STATUSES = {"candidate", "preferred", "existing-only", "deprecated", "retired"}
 STANDARD_TYPES = {
@@ -77,7 +82,6 @@ STANDARD_TYPES = {
     "data_component",
 }
 SERVICE_TYPES = {"runtime_service", "data_store_service", "network_service", "ai_gateway"}
-RELATIONSHIP_ENDPOINT_TYPES = STANDARD_TYPES | {"runtime_service", "data_store_service", "network_service", "ai_gateway", "software_deployment_pattern", "reference_architecture", "technology_component", "host", "product_registration"}
 BUSINESS_PILLAR_ID_PATTERN = re.compile(r"^business-pillar\.[a-z0-9-]+$")
 UID_PATTERN = re.compile(UID_PATTERN_TEXT)
 WORKSPACE_DOCUMENT_TYPES = {"vocabulary", "vocabulary_proposal"}
@@ -244,17 +248,26 @@ def parse_args(argv: list[str]) -> argparse.Namespace:
 #
 # A rule is called once per authored object that has a uid. The runner turns the
 # messages into (rule_id, uid, message) violations.
+#
+# A rule whose verdict depends on other objects can pass digest=. The digest
+# function returns the content hash recorded in the baseline, so a change to any
+# object it covers makes the violation an error again. Without one, the hash is
+# the object's own content.
 # ---------------------------------------------------------------------------
 BASELINE_RELATIVE_PATH = Path(".draft") / "validation-baseline.yaml"
 BASELINE_SCHEMA_VERSION = "1.0"
 RatchetCheck = Callable[[dict, dict, dict], Iterable[str]]
+RatchetDigest = Callable[[dict, dict], str]
 RATCHET_RULES: dict[str, RatchetCheck] = {}
+RATCHET_DIGESTS: dict[str, RatchetDigest] = {}
 
 
-def register_ratchet_rule(rule_id: str, check: RatchetCheck) -> None:
+def register_ratchet_rule(rule_id: str, check: RatchetCheck, digest: RatchetDigest | None = None) -> None:
     if rule_id in RATCHET_RULES:
         raise ValueError(f"ratcheted rule '{rule_id}' is already registered")
     RATCHET_RULES[rule_id] = check
+    if digest is not None:
+        RATCHET_DIGESTS[rule_id] = digest
 
 
 def _check_ratchet_test_marker(obj: dict, catalog_by_id: dict, context: dict) -> Iterable[str]:
@@ -400,7 +413,397 @@ def _check_relationship_definition_endpoint(obj: dict, catalog_by_id: dict, cont
 
 
 register_ratchet_rule("sdp-placement-types", _check_sdp_placement_types)
+OWNER_KIND_TYPES = {
+    "product_component": "product_component",
+    "data_component": "data_component",
+    "external_system": "system",
+}
+
+
+def _check_listener_owner(obj: dict, catalog_by_id: dict, context: dict) -> Iterable[str]:
+    # A listener's owner.ref must name an existing catalog object whose type matches owner.kind.
+    if obj.get("type") != "listener" or not isinstance(obj.get("owner"), dict):
+        return []
+    owner = obj["owner"]
+    kind = owner.get("kind")
+    ref = owner.get("ref")
+    label = obj.get("name") or obj.get("uid")
+    if not isinstance(kind, str) or kind not in OWNER_KIND_TYPES:
+        return [f"listener '{label}' owner.kind must be one of {', '.join(OWNER_KIND_TYPES)}; '{kind}' is not valid"]
+    target = catalog_by_id.get(ref) if isinstance(ref, str) else None
+    if not isinstance(target, dict):
+        return [f"listener '{label}' owner.ref '{ref}' names no catalog object"]
+    expected = OWNER_KIND_TYPES[kind]
+    if target.get("type") != expected:
+        return [
+            f"listener '{label}' owner.ref '{ref}' is a {target.get('type')} object, not a {expected} "
+            f"as owner.kind '{kind}' requires"
+        ]
+    return []
+
+
+register_ratchet_rule("listener-owner", _check_listener_owner)
+
+
+LISTENER_DEFAULT_PORTS = {"http": 80, "https": 443}
+_LISTENER_TEMPLATED_SEGMENT = re.compile(r"^(\{[^{}/]+\}|:[A-Za-z_][A-Za-z0-9_]*)$")
+
+
+def normalize_listener_endpoint(endpoint: Any) -> str:
+    """Path of a listener endpoint: a leading scheme and host are dropped (the host is never persisted or keyed),
+    query strings and fragments are dropped, templated path parameters ({name} or :name) become {}, and trailing
+    or repeated slashes are removed. A :// that appears after a leading slash is part of the path, not a scheme."""
+    text = str(endpoint or "").strip()
+    leading = re.match(r"^[A-Za-z][A-Za-z0-9+.-]*://", text)
+    if leading:
+        text = text[leading.end():]
+        starts = [i for i in (text.find(sep) for sep in ("/", "?", "#")) if i >= 0]
+        start = min(starts, default=len(text))
+        text = text[start:] if text[start:start + 1] == "/" else ""
+    cut = len(text)
+    for sep in ("?", "#"):
+        i = text.find(sep)
+        if i >= 0:
+            cut = min(cut, i)
+    text = text[:cut]
+    segments = ["{}" if _LISTENER_TEMPLATED_SEGMENT.match(seg) else seg for seg in text.split("/") if seg]
+    return "/" + "/".join(segments)
+
+
+def listener_identity(obj: dict[str, Any]) -> tuple[str, str, str, int, str] | None:
+    """Exact identity of a listener: (owner kind, owner ref, protocol, port, normalized endpoint).
+    A missing port takes the protocol's default port; None is returned when the identity cannot be formed."""
+    if obj.get("type") != "listener" or not isinstance(obj.get("owner"), dict):
+        return None
+    kind = obj["owner"].get("kind")
+    ref = obj["owner"].get("ref")
+    protocol = str(obj.get("protocol") or "").strip().lower()
+    if not isinstance(kind, str) or not isinstance(ref, str) or not protocol:
+        return None
+    port = obj.get("port")
+    if port is None:
+        port = LISTENER_DEFAULT_PORTS.get(protocol)
+    if not isinstance(port, int) or isinstance(port, bool):
+        return None
+    return (kind, ref, protocol, port, normalize_listener_endpoint(obj.get("endpoint")))
+
+
 register_ratchet_rule("relationship-definition-endpoint", _check_relationship_definition_endpoint)
+
+
+def interface_names(obj: dict[str, Any]) -> list[str]:
+    """Names of the surfaces a relationship can enter through: the declared interfaces, or the implicit
+    `data` surface of a data component that declares none."""
+    names = [
+        str(item.get("name")).strip()
+        for item in obj.get("interfaces") or []
+        if isinstance(item, dict) and is_non_empty(item.get("name"))
+    ]
+    if not names and obj.get("type") == "data_component" and not obj.get("interfaces"):
+        return ["data"]
+    return names
+
+
+def _check_relationship_target_interface(obj: dict, catalog_by_id: dict, context: dict) -> Iterable[str]:
+    # Ratcheted half of relationship-target-interface: a relationship to a product component must name one
+    # of its interfaces. A targetInterface naming a surface the target lacks is never ratcheted; see
+    # validate_target_interface. Data components, externalTarget, instances and derived relationships are exempt.
+    if obj.get("type") != "relationship" or obj.get("_derived"):
+        return []
+    ref = obj.get("target")
+    target = catalog_by_id.get(ref) if isinstance(ref, str) else None
+    if not isinstance(target, dict) or target.get("type") != "product_component" or is_non_empty(obj.get("targetInterface")):
+        return []
+    names = interface_names(target)
+    return [
+        f"relationship '{obj.get('name') or obj.get('uid')}' targets {_describe(target, ref)} without a targetInterface: "
+        f"name one of its interfaces ({', '.join(names) or 'none declared; add interfaces to the component'})"
+    ]
+
+
+register_ratchet_rule("relationship-target-interface", _check_relationship_target_interface)
+
+
+def _is_listener(obj: Any) -> bool:
+    return isinstance(obj, dict) and obj.get("type") == "listener"
+
+
+def _listener_owner_ref(listener: dict) -> Any:
+    owner = listener.get("owner")
+    return owner.get("ref") if isinstance(owner, dict) else None
+
+
+def _listener_dependency_messages(obj: dict, catalog_by_id: dict) -> list[str]:
+    # A product component's runtimeSpec.dependencies[].interface may be a listener UID; that listener must be owned by ref.
+    runtime_spec = obj.get("runtimeSpec")
+    dependencies = runtime_spec.get("dependencies") if isinstance(runtime_spec, dict) else None
+    if not isinstance(dependencies, list):
+        return []
+    messages: list[str] = []
+    for index, dependency in enumerate(dependencies):
+        if not isinstance(dependency, dict) or not isinstance(dependency.get("interface"), str):
+            continue
+        interface = dependency["interface"].strip()
+        listener = catalog_by_id.get(interface) if re.match(UID_PATTERN_TEXT, interface) else None
+        if not _is_listener(listener):
+            continue
+        ref = dependency.get("ref")
+        if _listener_owner_ref(listener) != str(ref or "").strip():
+            messages.append(
+                f"runtimeSpec.dependencies[{index}].interface '{interface}' is a listener owned by "
+                f"'{_listener_owner_ref(listener)}', not by its ref '{ref}'"
+            )
+    return messages
+
+
+def _check_relationship_target_listener(obj: dict, catalog_by_id: dict, context: dict) -> Iterable[str]:
+    # Ratcheted: a relationship names the exact listener it calls (targetListener). For a catalog target the listener
+    # must be owned by that target; an externalTarget has no owner to compare, so any real listener serves.
+    if obj.get("_derived"):
+        return []
+    if obj.get("type") == "product_component":
+        return _listener_dependency_messages(obj, catalog_by_id)
+    if obj.get("type") != "relationship":
+        return []
+    rel = obj.get("name") or obj.get("uid")
+    ref = obj.get("targetListener")
+    if not is_non_empty(ref):
+        return [f"relationship '{rel}' names no targetListener: reference the listener the call uses"]
+    listener = catalog_by_id.get(str(ref).strip())
+    if not _is_listener(listener):
+        return [f"relationship '{rel}' targetListener '{ref}' names no listener object"]
+    target_ref = obj.get("target")
+    if is_non_empty(target_ref) and _listener_owner_ref(listener) != str(target_ref).strip():
+        return [
+            f"relationship '{rel}' targetListener '{ref}' is owned by '{_listener_owner_ref(listener)}', "
+            f"not by its target '{target_ref}'"
+        ]
+    return []
+
+
+register_ratchet_rule("relationship-target-listener", _check_relationship_target_listener)
+
+
+# ---------------------------------------------------------------------------
+# Deprecated relationship fields (#368)
+#
+# flow: inbound, flow: bidirectional and free-text externalTarget are deprecated but still valid. These ratcheted
+# rules make existing uses `baseline:` warnings after --write-baseline and fail only new or edited relationships.
+# Derived relationships (runtimeSpec.dependencies) are exempt: they are not authored as relationship objects.
+# ---------------------------------------------------------------------------
+DEPRECATED_FLOWS = ("inbound", "bidirectional")
+
+
+def _authored_relationship(obj: dict) -> bool:
+    return obj.get("type") == "relationship" and not obj.get("_derived")
+
+
+def _relationship_flow(obj: dict) -> str:
+    flow = obj.get("flow")
+    return flow.strip().lower() if isinstance(flow, str) else ""
+
+
+def _check_relationship_flow_deprecated(obj: dict, catalog_by_id: dict, context: dict) -> Iterable[str]:
+    if not _authored_relationship(obj):
+        return []
+    flow = _relationship_flow(obj)
+    if flow not in DEPRECATED_FLOWS:
+        return []
+    rel = obj.get("name") or obj.get("uid")
+    if flow == "bidirectional":
+        fix = "a request/response call is flow outbound (or no flow) with direction synchronous"
+    else:
+        fix = "make the caller the source and the called object the target, then drop flow (outbound is the default)"
+    return [f"relationship '{rel}' uses deprecated flow '{flow}': {fix}"]
+
+
+register_ratchet_rule("relationship-flow-deprecated", _check_relationship_flow_deprecated)
+
+
+def _check_relationship_external_target_freetext(obj: dict, catalog_by_id: dict, context: dict) -> Iterable[str]:
+    if not _authored_relationship(obj) or not is_non_empty(obj.get("externalTarget")):
+        return []
+    rel = obj.get("name") or obj.get("uid")
+    text = str(obj["externalTarget"]).strip()
+    return [
+        f"relationship '{rel}' uses deprecated free-text externalTarget '{text}': record the external party as a "
+        f"system object with a listener (Listener Lookup Before Create), then set target and targetListener"
+    ]
+
+
+register_ratchet_rule("relationship-external-target-freetext", _check_relationship_external_target_freetext)
+
+
+def _owns_listener(catalog_by_id: dict, uid: str) -> bool:
+    return any(_is_listener(item) and _listener_owner_ref(item) == uid for item in catalog_by_id.values())
+
+
+def _check_relationship_source_is_listener_side(obj: dict, catalog_by_id: dict, context: dict) -> Iterable[str]:
+    # Heuristic, and only ever on flow: inbound (already flagged by relationship-flow-deprecated): the source looks
+    # like the side being called (it owns a listener, or the other end is an outside party), so the caller is
+    # probably recorded as the target.
+    if not _authored_relationship(obj) or _relationship_flow(obj) != "inbound":
+        return []
+    source = str(obj.get("source") or "").strip()
+    target_ref = str(obj.get("target") or "").strip()
+    target = catalog_by_id.get(target_ref) if target_ref else None
+    reasons = []
+    if source and _owns_listener(catalog_by_id, source):
+        reasons.append("its source owns a listener")
+    if not target_ref and is_non_empty(obj.get("externalTarget")):
+        reasons.append("its target is the free-text outside party")
+    elif isinstance(target, dict) and target.get("type") == "system":
+        reasons.append("its target is an external system")
+    if not reasons:
+        return []
+    rel = obj.get("name") or obj.get("uid")
+    return [
+        f"relationship '{rel}' looks like it records the listener side as source ({' and '.join(reasons)}): the caller "
+        f"is the source; swap source and target, or, for an unknown outside caller, record the protection on the "
+        f"listener's authenticationModel or description instead"
+    ]
+
+
+register_ratchet_rule("relationship-source-is-listener-side", _check_relationship_source_is_listener_side)
+
+
+# ---------------------------------------------------------------------------
+# SDP completeness gate (#341 E2)
+#
+# A software deployment pattern cannot be complete while a call in it targets a
+# stub listener owned by an internal component (owner.kind product_component or
+# data_component). Stubs owned by an external_system (a vendor) do not block.
+# The calls of a pattern are traversed from its service groups' deployableObjects
+# (and the pattern itself): every relationship from one of them that names a
+# targetListener, and every runtimeSpec.dependencies[].interface listener UID.
+# ---------------------------------------------------------------------------
+LISTENER_INTERNAL_OWNER_KINDS = ("product_component", "data_component")
+
+
+def sdp_listener_calls(sdp: dict[str, Any], catalog_by_id: dict[str, dict[str, Any]]) -> list[tuple[str, str, str]]:
+    """Return (caller uid, how the call is recorded, listener uid) for every listener call in an SDP, in order."""
+    callers: list[str] = []
+    sdp_uid = str(sdp.get("uid") or "")
+    if sdp_uid:
+        callers.append(sdp_uid)
+    for group in sdp.get("serviceGroups") or []:
+        if not isinstance(group, dict):
+            continue
+        for entry in group.get("deployableObjects") or []:
+            ref = entry.get("ref") if isinstance(entry, dict) else None
+            if is_non_empty(ref) and str(ref).strip() not in callers:
+                callers.append(str(ref).strip())
+    caller_set = set(callers)
+    calls: list[tuple[str, str, str]] = []
+    seen: set[tuple[str, str, str]] = set()
+
+    def add(caller: str, via: str, listener_uid: Any) -> None:
+        if not isinstance(listener_uid, str) or not listener_uid.strip():
+            return
+        key = (caller, via, listener_uid.strip())
+        if key not in seen:
+            seen.add(key)
+            calls.append(key)
+
+    relationships = sorted(
+        (
+            rel for rel in catalog_by_id.values()
+            if isinstance(rel, dict) and rel.get("type") == "relationship"
+            and str(rel.get("source") or "").strip() in caller_set
+        ),
+        key=lambda rel: str(rel.get("uid") or ""),
+    )
+    for caller in callers:
+        for rel in relationships:
+            if str(rel.get("source") or "").strip() == caller:
+                add(caller, f"relationship '{rel.get('name') or rel.get('uid')}'", rel.get("targetListener"))
+        obj = catalog_by_id.get(caller)
+        runtime_spec = obj.get("runtimeSpec") if isinstance(obj, dict) else None
+        dependencies = runtime_spec.get("dependencies") if isinstance(runtime_spec, dict) else None
+        for index, dependency in enumerate(dependencies if isinstance(dependencies, list) else []):
+            if isinstance(dependency, dict):
+                add(caller, f"runtimeSpec.dependencies[{index}].interface", dependency.get("interface"))
+    return calls
+
+
+def sdp_blocking_stub_listeners(
+    sdp: dict[str, Any], catalog_by_id: dict[str, dict[str, Any]]
+) -> list[tuple[str, str, dict[str, Any]]]:
+    """Return (caller uid, via, listener) for each call in the SDP that targets an internally owned stub listener."""
+    blocking: list[tuple[str, str, dict[str, Any]]] = []
+    for caller, via, listener_uid in sdp_listener_calls(sdp, catalog_by_id):
+        listener = catalog_by_id.get(listener_uid)
+        if not _is_listener(listener) or listener.get("catalogStatus") != "stub":
+            continue
+        owner = listener.get("owner") if isinstance(listener.get("owner"), dict) else {}
+        if owner.get("kind") in LISTENER_INTERNAL_OWNER_KINDS:
+            blocking.append((caller, via, listener))
+    return blocking
+
+
+def _check_sdp_internal_stub_listeners(obj: dict, catalog_by_id: dict, context: dict) -> Iterable[str]:
+    # Ratcheted: a complete SDP names every internally owned stub listener its calls target.
+    if obj.get("type") != "software_deployment_pattern" or obj.get("catalogStatus") != "complete":
+        return []
+    messages: list[str] = []
+    for caller, via, listener in sdp_blocking_stub_listeners(obj, catalog_by_id):
+        caller_obj = catalog_by_id.get(caller) or {}
+        caller_name = caller_obj.get("name") or caller
+        owner = listener.get("owner") if isinstance(listener.get("owner"), dict) else {}
+        messages.append(
+            f"pattern cannot be complete: {caller_name} ({caller}) calls stub listener "
+            f"'{listener.get('name') or listener.get('uid')}' ({listener.get('uid')}) owned by internal "
+            f"{owner.get('kind')} '{owner.get('ref')}' through {via}; finish the listener or set the pattern's "
+            "catalogStatus to incomplete"
+        )
+    return messages
+
+
+def sdp_dependent_objects(sdp: dict[str, Any], catalog_by_id: dict[str, dict[str, Any]]) -> list[dict[str, Any]]:
+    """Objects the SDP completeness gate depends on: the pattern's deployable objects, every relationship
+    from the pattern or one of them, and every listener those calls target. Sorted by uid."""
+    sdp_uid = str(sdp.get("uid") or "")
+    callers = {sdp_uid}
+    for group in sdp.get("serviceGroups") or []:
+        if not isinstance(group, dict):
+            continue
+        for entry in group.get("deployableObjects") or []:
+            ref = entry.get("ref") if isinstance(entry, dict) else None
+            if is_non_empty(ref):
+                callers.add(str(ref).strip())
+    dependents: dict[str, dict[str, Any]] = {}
+    for uid in callers:
+        obj = catalog_by_id.get(uid)
+        if isinstance(obj, dict) and uid != sdp_uid:
+            dependents[uid] = obj
+    for rel in catalog_by_id.values():
+        if (
+            isinstance(rel, dict)
+            and rel.get("type") == "relationship"
+            and str(rel.get("source") or "").strip() in callers
+            and is_non_empty(rel.get("uid"))
+        ):
+            dependents[str(rel["uid"])] = rel
+    for _caller, _via, listener_uid in sdp_listener_calls(sdp, catalog_by_id):
+        listener = catalog_by_id.get(listener_uid)
+        if isinstance(listener, dict):
+            dependents[listener_uid] = listener
+    return [dependents[uid] for uid in sorted(dependents)]
+
+
+def _digest_sdp_with_dependents(obj: dict, catalog_by_id: dict) -> str:
+    # The gate is ratcheted on the pattern and the objects it depends on: a change to any of them re-arms it.
+    dumped = yaml.safe_dump(
+        {"object": obj, "dependents": sdp_dependent_objects(obj, catalog_by_id)},
+        sort_keys=True,
+        allow_unicode=True,
+    )
+    return hashlib.sha256(dumped.encode("utf-8")).hexdigest()
+
+
+register_ratchet_rule(
+    "sdp-internal-stub-listener", _check_sdp_internal_stub_listeners, digest=_digest_sdp_with_dependents
+)
 
 
 def object_hash(obj: dict[str, Any]) -> str:
@@ -432,7 +835,9 @@ def collect_ratchet_violations(
         for rule_id in sorted(RATCHET_RULES):
             messages = list(RATCHET_RULES[rule_id](obj, catalog_by_id, context))
             if messages:
-                found.append((rule_id, uid, "; ".join(messages), path, object_hash(obj)))
+                digest = RATCHET_DIGESTS.get(rule_id)
+                content_hash = digest(obj, catalog_by_id) if digest else object_hash(obj)
+                found.append((rule_id, uid, "; ".join(messages), path, content_hash))
     found.sort(key=lambda item: (item[0], item[1]))
     return found
 
@@ -1537,7 +1942,12 @@ def mechanism_description(mechanism: dict[str, Any]) -> str:
     if mechanism_type == "field":
         field = mechanism.get("key", "unknown")
         equals = mechanism.get("equals")
-        return f"field({field}={equals})" if equals is not None else f"field({field})"
+        if equals is not None:
+            return f"field({field}={equals})"
+        excluded = mechanism.get("notIn")
+        if isinstance(excluded, list) and excluded:
+            return f"field({field} set, not {' or '.join(str(value) for value in excluded)})"
+        return f"field({field})"
     if mechanism_type == "relationship":
         capability = mechanism.get("criteria", {}).get("capability", "unknown")
         return f"relationship(capability={capability})"
@@ -1558,10 +1968,11 @@ def mechanism_description(mechanism: dict[str, Any]) -> str:
         return f"note({mechanism.get('key', 'unknown')})"
     if mechanism_type == "decisionRecord":
         key = mechanism.get("key")
+        prefix = "committed " if mechanism.get("committedOnly") is True else ""
         if key:
-            return f"decisionRecord(key={key})"
+            return f"{prefix}decisionRecord(key={key})"
         capability = mechanism.get("criteria", {}).get("capability", "any")
-        return f"decisionRecord(capability={capability})"
+        return f"{prefix}decisionRecord(capability={capability})"
     return str(mechanism_type)
 
 
@@ -1712,12 +2123,78 @@ def resolve_field_path(node: Any, path: str) -> Any:
     return None
 
 
+def field_value_excluded(value: Any, mechanism: dict[str, Any]) -> bool:
+    """True when a field mechanism lists the value under notIn (for example TBD), so it never satisfies."""
+    excluded = mechanism.get("notIn")
+    if not isinstance(excluded, list):
+        return False
+    return isinstance(value, (str, int, float, bool)) and value in excluded
+
+
+def field_implementation_excluded(
+    obj: dict[str, Any], implementation: dict[str, Any], requirement: dict[str, Any]
+) -> bool:
+    """True when a field implementation points at a value the requirement's own field mechanism excludes."""
+    if implementation.get("mechanism") != "field":
+        return False
+    key = implementation.get("key")
+    for mechanism in requirement.get("canBeSatisfiedBy", []) or []:
+        if not isinstance(mechanism, dict) or mechanism.get("mechanism") != "field" or mechanism.get("key") != key:
+            continue
+        if field_value_excluded(get_nested_value(obj, str(key)), mechanism):
+            return True
+    return False
+
+
+def is_committed_decision_record(target: Any) -> bool:
+    return (
+        isinstance(target, dict)
+        and target.get("type") == "decision_record"
+        and target.get("status") in COMMITTED_DECISION_STATUSES
+    )
+
+
+def committed_only_decision_mechanisms(requirement: dict[str, Any]) -> list[dict[str, Any]]:
+    return [
+        mechanism
+        for mechanism in requirement.get("canBeSatisfiedBy", []) or []
+        if isinstance(mechanism, dict)
+        and mechanism.get("mechanism") == "decisionRecord"
+        and mechanism.get("committedOnly") is True
+    ]
+
+
+def decision_implementation_uncommitted(
+    obj: dict[str, Any],
+    implementation: dict[str, Any],
+    requirement: dict[str, Any],
+    catalog_by_id: dict[str, dict[str, Any]],
+) -> bool:
+    """True when a decisionRecord implementation answers a committed-only requirement with no committed record."""
+    if implementation.get("mechanism") != "decisionRecord" or not committed_only_decision_mechanisms(requirement):
+        return False
+    direct_ref = implementation.get("ref")
+    if is_non_empty(direct_ref):
+        return not is_committed_decision_record(catalog_by_id.get(str(direct_ref)))
+    key = implementation.get("key")
+    for entry in obj.get("decisionRecords", []) or []:
+        if not isinstance(entry, dict) or not is_non_empty(entry.get("ref")):
+            continue
+        if key and (entry.get("key") or entry.get("concern")) != key:
+            continue
+        if is_committed_decision_record(catalog_by_id.get(str(entry.get("ref")))):
+            return False
+    return True
+
+
 def mechanism_satisfied(obj: dict[str, Any], mechanism: dict[str, Any], catalog_by_id: dict[str, dict[str, Any]]) -> bool:
     mechanism_type = mechanism.get("mechanism")
     if mechanism_type == "field":
         key = mechanism.get("key", "")
         if "." in key or "[]" in key:
             value = resolve_field_path(obj, key)
+            if field_value_excluded(value, mechanism):
+                return False
             if "equals" in mechanism:
                 return value == mechanism.get("equals")
             if mechanism.get("allowEmpty") is True:
@@ -1726,6 +2203,8 @@ def mechanism_satisfied(obj: dict[str, Any], mechanism: dict[str, Any], catalog_
         if key not in obj:
             return False
         value = obj.get(key)
+        if field_value_excluded(value, mechanism):
+            return False
         if "equals" in mechanism:
             return value == mechanism.get("equals")
         if mechanism.get("allowEmpty") is True:
@@ -1825,6 +2304,8 @@ def mechanism_satisfied(obj: dict[str, Any], mechanism: dict[str, Any], catalog_
             target = catalog_by_id.get(str(ref)) if is_non_empty(ref) else None
             if not target or target.get("type") != "decision_record":
                 continue
+            if mechanism.get("committedOnly") is True and not is_committed_decision_record(target):
+                continue
             # capability-scoped decision (service capability requirements)
             if capability and capability != "any":
                 if (entry.get("capability") or entry.get("concern")) == capability:
@@ -1862,6 +2343,8 @@ def validate_requirement(
             status == "satisfied"
             and mechanism in valid_answer_types
             and implementation_resolves(obj, implementation, catalog_by_id)
+            and not field_implementation_excluded(obj, implementation, requirement)
+            and not decision_implementation_uncommitted(obj, implementation, requirement, catalog_by_id)
         ):
             return True, ""
 
@@ -1907,11 +2390,6 @@ def applicable_requirements_for_object(
             if isinstance(requirement, dict) and requirement_applies_to_object(requirement, obj):
                 requirements.append((group_id, group, requirement))
     return requirements
-
-
-def interaction_capabilities(interaction: dict[str, Any]) -> list[str]:
-    capabilities = interaction.get("capabilities", [])
-    return [str(capability) for capability in capabilities] if isinstance(capabilities, list) else []
 
 
 def technology_ref_satisfies_criteria(
@@ -4120,6 +4598,12 @@ def validate_requirement_group(
                     failures.append(
                         f"{mechanism_context}: Set mechanism to one of {sorted(VALID_REQUIREMENT_ANSWER_TYPES)}"
                     )
+                if "notIn" in mechanism and (mechanism_type != "field" or not isinstance(mechanism.get("notIn"), list)):
+                    failures.append(f"{mechanism_context}: Use notIn only on a field mechanism, as a list of values")
+                if "committedOnly" in mechanism and (
+                    mechanism_type != "decisionRecord" or not isinstance(mechanism.get("committedOnly"), bool)
+                ):
+                    failures.append(f"{mechanism_context}: Use committedOnly only on a decisionRecord mechanism, as true or false")
                 criteria = mechanism.get("criteria")
                 if isinstance(criteria, dict):
                     capability = criteria.get("capability") or criteria.get("concern")
@@ -4132,8 +4616,26 @@ def validate_requirement_group(
             validate_applicability_shape(applicability, context, failures)
         elif mode == "conditional":
             failures.append(f"{context}: Add applicability rules for conditional requirements")
-        if mode == "conditional" and requirement.get("naAllowed") is not True:
-            failures.append(f"{context}: Set naAllowed: true for conditional requirements")
+        if mode == "conditional" and requirement.get("naAllowed") is not True and not decision_only_conditional(requirement):
+            failures.append(
+                f"{context}: Set naAllowed: true for conditional requirements (naAllowed: false is allowed only when "
+                "every canBeSatisfiedBy entry is a committedOnly decisionRecord)"
+            )
+
+
+def decision_only_conditional(requirement: dict[str, Any]) -> bool:
+    """A conditional requirement may set naAllowed: false only when a committed DecisionRecord is its sole answer.
+
+    Applicability already scopes such a requirement to the objects that need the decision, so not-applicable would
+    only let a draft or missing justification through.
+    """
+    mechanisms = requirement.get("canBeSatisfiedBy")
+    if not isinstance(mechanisms, list) or not mechanisms:
+        return False
+    if len(committed_only_decision_mechanisms(requirement)) != len(mechanisms):
+        return False
+    answer_types = requirement.get("validAnswerTypes")
+    return isinstance(answer_types, list) and set(answer_types) == {"decisionRecord"}
 
 
 def validate_applicability_shape(applicability: Any, context: str, failures: list[str]) -> None:
@@ -4313,6 +4815,15 @@ def validate_requirement_implementations(
         if mechanism and mechanism not in valid_answer_types:
             failures.append(
                 f"{context}: Set mechanism to one of {valid_answer_types} for {label}"
+            )
+        elif mechanism and decision_implementation_uncommitted(obj, implementation, requirement, catalog_by_id):
+            record_requirement_gap(
+                obj,
+                path,
+                f"[{object_label(obj)}] Commit the DecisionRecord for {label}: only an accepted, mitigated or resolved "
+                "DecisionRecord satisfies it, not an open draft",
+                failures,
+                warnings,
             )
         elif mechanism and not implementation_resolves(obj, implementation, catalog_by_id):
             record_requirement_gap(
@@ -4562,6 +5073,245 @@ def validate_relationship(
             "add the referenced object to the catalog or correct the UID"
         )
 
+def validate_target_interface(
+    obj: dict[str, Any],
+    path: Path,
+    catalog_by_id: dict[str, dict[str, Any]],
+    failures: list[str],
+    warnings: list[str],
+) -> None:
+    """Unratcheted half of relationship-target-interface: a targetInterface must name a surface its target has
+    (error), or be uncheckable (warning)."""
+    if obj.get("_derived") or not is_non_empty(obj.get("targetInterface")):
+        return
+    named = str(obj["targetInterface"]).strip()
+    rel = obj.get("name") or obj.get("uid")
+    if is_non_empty(obj.get("externalTarget")) and not is_non_empty(obj.get("target")):
+        warnings.append(
+            f"{path}: relationship-target-interface: relationship '{rel}' names targetInterface '{named}' "
+            f"but its target '{obj.get('externalTarget')}' is external, so the interface cannot be checked"
+        )
+        return
+    target = catalog_by_id.get(obj.get("target")) if is_non_empty(obj.get("target")) else None
+    if not isinstance(target, dict):
+        return
+    label = target.get("name") or obj.get("target")
+    names = interface_names(target)
+    if names or target.get("type") in ("product_component", "data_component"):
+        if named not in names:
+            failures.append(
+                f"{path}: relationship-target-interface: relationship '{rel}' names targetInterface '{named}', "
+                f"which is not an interface of target {label} ({', '.join(names) or 'none declared'})"
+            )
+    else:
+        warnings.append(
+            f"{path}: relationship-target-interface: relationship '{rel}' names targetInterface '{named}' "
+            f"but target {label} declares no interfaces, so the interface cannot be checked"
+        )
+
+
+EDGE_SLOTS = EXPOSURE_EDGE_SLOTS
+
+
+def _surface_protocol(target: dict[str, Any], name: str) -> tuple[str | None, str | None]:
+    """Protocol text and family of the named surface of a target: a declared interface, or a data component's
+    implicit surface, whose family is the family of its targetEngine (other or unknown gives None)."""
+    for item in target.get("interfaces") or []:
+        if isinstance(item, dict) and str(item.get("name") or "").strip() == name and is_non_empty(item.get("protocol")):
+            protocol = str(item["protocol"]).strip()
+            return protocol, family(protocol)
+    if name == "data" and target.get("type") == "data_component" and not target.get("interfaces"):
+        engine = str(target.get("targetEngine") or "").strip()
+        engine_family = family(engine) if engine else None
+        if engine_family == "other":
+            engine_family = None
+        return (f"{engine} (implicit data surface)" if engine_family else None), engine_family
+    return None, None
+
+
+def _warn_listener_protocol(
+    obj: dict[str, Any],
+    path: Path,
+    catalog_by_id: dict[str, dict[str, Any]],
+    warnings: list[str],
+) -> None:
+    """Warn (never ratcheted) when a relationship's technology and its targetListener's protocol are in different known families."""
+    if obj.get("_derived") or obj.get("type") != "relationship":
+        return
+    if not is_non_empty(obj.get("technology")) or not is_non_empty(obj.get("targetListener")):
+        return
+    listener = catalog_by_id.get(str(obj["targetListener"]).strip())
+    if not _is_listener(listener):
+        return
+    protocol = str(listener.get("protocol") or "").strip()
+    technology = str(obj["technology"]).strip()
+    tech_family = family(technology)
+    listener_family = family(protocol)
+    if tech_family and listener_family and "other" not in (tech_family, listener_family) and tech_family != listener_family:
+        warnings.append(
+            f"{path}: relationship '{obj.get('name') or obj.get('uid')}' technology '{technology}' (family {tech_family}) "
+            f"does not match listener '{listener.get('name') or obj['targetListener']}' with protocol '{protocol}' "
+            f"(family {listener_family})"
+        )
+
+
+def validate_protocol_family(
+    obj: dict[str, Any],
+    path: Path,
+    catalog_by_id: dict[str, dict[str, Any]],
+    warnings: list[str],
+) -> None:
+    """Warn when a relationship's technology and its target interface's protocol are in different known families."""
+    _warn_listener_protocol(obj, path, catalog_by_id, warnings)
+    if obj.get("_derived") or not is_non_empty(obj.get("technology")) or not is_non_empty(obj.get("targetInterface")):
+        return
+    target = catalog_by_id.get(obj.get("target")) if is_non_empty(obj.get("target")) else None
+    if not isinstance(target, dict):
+        return
+    named = str(obj["targetInterface"]).strip()
+    protocol, iface_family = _surface_protocol(target, named)
+    technology = str(obj["technology"]).strip()
+    tech_family = family(technology)
+    if tech_family and iface_family and tech_family != iface_family:
+        warnings.append(
+            f"{path}: relationship '{obj.get('name') or obj.get('uid')}' technology '{technology}' (family {tech_family}) "
+            f"does not match interface '{named}' of {target.get('name') or obj.get('target')} "
+            f"with protocol '{protocol}' (family {iface_family})"
+        )
+
+
+def _known_service_instance(
+    uid: str,
+    ref: dict[str, Any],
+    role_context: dict[str, Any] | None,
+) -> bool:
+    """True when an infrastructure object is known to be an instance, not a definition (D51).
+
+    An object is an instance when it says serviceRole: instance, or when the workspace names a
+    service definitions folder and the object lives outside it. With no serviceRole and no
+    definitions folder configured the role cannot be told, so the object is not treated as one.
+    """
+    if ref.get("serviceRole") == "instance":
+        return True
+    if ref.get("serviceRole") == "definition":
+        return False
+    context = role_context or {}
+    workspace_config = context.get("workspace_config") or {}
+    if not service_definition_folders(workspace_config):
+        return False
+    return (
+        service_role(ref, context.get("paths", {}).get(uid), workspace_config, context.get("workspace_root"))
+        == "instance"
+    )
+
+
+def validate_exposed_through(
+    obj: dict[str, Any],
+    path: Path,
+    catalog_by_id: dict[str, dict[str, Any]],
+    failures: list[str],
+    role_context: dict[str, Any] | None = None,
+) -> None:
+    """Fail serviceGroups[].exposedThrough values that are not none or network_service definition uids (E4).
+
+    Not ratcheted: exposedThrough is additive, so every value is checked on every run.
+    """
+    if obj.get("type") != "software_deployment_pattern":
+        return
+    for index, group in enumerate(obj.get("serviceGroups") or []):
+        if not isinstance(group, dict) or "exposedThrough" not in group:
+            continue
+        raw = group.get("exposedThrough")
+        where = f"serviceGroups[{index}].exposedThrough"
+        if raw == "none" or not isinstance(raw, (str, list)):
+            continue  # a wrong field type is reported by the schema check
+        if isinstance(raw, list) and not raw:
+            failures.append(f"{path}: {where} is an empty list; use none or one or more network_service definition uids")
+            continue
+        values = raw if isinstance(raw, list) else [raw]
+        seen: set[str] = set()
+        for value in values:
+            if value == "none":
+                failures.append(f"{path}: {where} lists 'none'; none is only valid on its own, not inside a list")
+                continue
+            if isinstance(value, str) and value in seen:
+                failures.append(f"{path}: {where} repeats '{value}'; list each edge device once, in chain order")
+                continue
+            if isinstance(value, str):
+                seen.add(value)
+            ref = catalog_by_id.get(value) if isinstance(value, str) else None
+            if ref is None:
+                failures.append(
+                    f"{path}: {where} value '{value}' must be none or the uid of a network_service definition "
+                    f"(no object has that uid)"
+                )
+            elif ref.get("type") != "network_service":
+                failures.append(
+                    f"{path}: {where} value '{value}' must be none or the uid of a network_service definition "
+                    f"(got {_describe(ref, str(value))})"
+                )
+            elif _known_service_instance(str(value), ref, role_context):
+                failures.append(
+                    f"{path}: {where} value '{value}' names a network_service instance {_describe(ref, str(value))}; "
+                    f"use the uid of its definition (serviceRole: definition, or an object in the service definitions folder)"
+                )
+
+
+def validate_fills(
+    obj: dict[str, Any],
+    path: Path,
+    catalog_by_id: dict[str, dict[str, Any]],
+    failures: list[str],
+    role_context: dict[str, Any] | None = None,
+) -> None:
+    """Fail reference architecture fills that are not a network_service definition on an edge slot (E4).
+
+    Not ratcheted: fills is additive, so every entry is checked on every run.
+    """
+    if obj.get("type") != "reference_architecture":
+        return
+    for index, group in enumerate(obj.get("serviceGroups") or []):
+        if not isinstance(group, dict):
+            continue
+        for entry_index, entry in enumerate(group.get("deployableObjects") or []):
+            if not isinstance(entry, dict) or "fills" not in entry:
+                continue
+            value = entry.get("fills")
+            if not isinstance(value, str):
+                continue  # a wrong field type is reported by the schema check
+            where = f"serviceGroups[{index}].deployableObjects[{entry_index}]"
+            slot = entry.get("slot")
+            if slot not in EDGE_SLOTS:
+                slot_text = f"slot '{slot}'" if is_non_empty(slot) else "an entry with no slot"
+                failures.append(
+                    f"{path}: {where}.fills is set on {slot_text}; only the edge slots {', '.join(EDGE_SLOTS)} are filled"
+                )
+            ref = catalog_by_id.get(value)
+            if ref is None:
+                failures.append(
+                    f"{path}: {where}.fills '{value}' must be the uid of a network_service definition (no object has that uid)"
+                )
+                continue
+            if ref.get("type") != "network_service":
+                failures.append(
+                    f"{path}: {where}.fills '{value}' must be the uid of a network_service definition "
+                    f"(got {_describe(ref, value)})"
+                )
+                continue
+            if _known_service_instance(value, ref, role_context):
+                failures.append(
+                    f"{path}: {where}.fills '{value}' names a network_service instance {_describe(ref, value)}; "
+                    f"use the uid of its definition (serviceRole: definition, or an object in the service definitions folder)"
+                )
+            cap_uid = entry.get("capability")
+            if is_non_empty(cap_uid) and not _target_satisfies_capability(value, ref, str(cap_uid), catalog_by_id):
+                failures.append(
+                    f"{path}: {where}.fills '{value}' ({ref.get('name') or value}) does not satisfy capability "
+                    f"'{cap_uid}' of slot '{slot}'; fill it with a definition that has the capability, directly "
+                    f"or through its technology component"
+                )
+
+
 def validate_diagram_layout(
     obj: dict[str, Any],
     path: Path,
@@ -4700,6 +5450,15 @@ def main(argv: list[str] | None = None) -> int:
     validate_workspace_vocabulary_references(objects, workspace_vocabulary, failures, warnings)
     validate_duplicate_capability_domain_names(objects, workspace_root, warnings)
     validate_capability_ownership_patches(objects, catalog_by_id, capability_ids, warnings)
+    exposure_role_context: dict[str, Any] = {
+        "workspace_root": workspace_root,
+        "workspace_config": load_workspace_config(workspace_root, []),
+        "paths": {
+            str(o["uid"]): p
+            for p, o in sorted(objects.items())
+            if isinstance(o, dict) and is_non_empty(o.get("uid"))
+        },
+    }
 
     for path, obj in objects.items():
         if obj.get("type") is None:
@@ -4740,8 +5499,26 @@ def main(argv: list[str] | None = None) -> int:
                 failures,
                 warnings,
             )
+        if obj.get("type") == "listener":
+            validate_applicable_requirements(
+                obj,
+                path,
+                requirement_groups,
+                catalog_by_id,
+                capability_ids,
+                failures,
+                warnings,
+                active_group_ids,
+                require_active_group_disposition,
+            )
         if obj.get("type") == "relationship":
             validate_relationship(obj, path, catalog_by_id, failures)
+            validate_target_interface(obj, path, catalog_by_id, failures, warnings)
+            validate_protocol_family(obj, path, catalog_by_id, warnings)
+        if obj.get("type") == "software_deployment_pattern":
+            validate_exposed_through(obj, path, catalog_by_id, failures, exposure_role_context)
+        if obj.get("type") == "reference_architecture":
+            validate_fills(obj, path, catalog_by_id, failures, exposure_role_context)
         if obj.get("type") == "diagram_layout":
             validate_diagram_layout(obj, path, catalog_by_id, failures, warnings)
         if obj.get("type") == "system":

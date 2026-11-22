@@ -59,8 +59,11 @@ matches an applicable requirement's `canBeSatisfiedBy` mechanism, or a valid
 
 External dependencies (outbound calls, data reads, platform integrations) are
 modeled as standalone `relationship` objects in the catalog (see [templates/relationship.yaml.tmpl](../../templates/relationship.yaml.tmpl) for a starting point). Set `source` to
-the calling object's UID and `target` to the receiving object's UID (or
-`externalTarget` for systems with no catalog representation).
+the calling object's UID, `target` to the object that owns the listener the call
+lands on, and `targetListener` to that listener. For an external party, `target`
+is its `system` object. Free-text `externalTarget` and `flow: inbound` or
+`flow: bidirectional` are deprecated but still accepted (see Deprecated
+Relationship Fields in the Draftsman docs).
 
 When an internal component is present for a reason outside the applicable
 requirements, document the reason under:
@@ -160,6 +163,69 @@ A ReferenceArchitecture should be generic enough to guide many products, not jus
    ProductComponent is not a starting-point RequirementGroup object; use it here only when the SoftwareDeploymentPattern needs to express a distinct first-party runtime-behavior component deployed on a substrate.
 7. Set `diagramTier` on every deployable object entry (ProductComponents and DataComponents only) using one of `presentation`, `application`, `data`, or `utility`.
 8. Add product-level `notes`, including availability requirement and data classification, so the SoftwareDeploymentPattern satisfies the SoftwareDeploymentPattern RequirementGroup.
+
+## Add A Listener
+
+1. Run the Listener Lookup Before Create procedure in
+   [draftsman.md](draftsman.md) first. If it links an existing listener, stop:
+   use that UID. If it reports a near match (same owner and protocol, only the
+   version, an extending path or the port differs), ask whether it is the same
+   listener before creating a new one.
+2. Create the file under the engineering catalog, for example
+   `catalog/engineering/listeners/`. Add or repair the generated `uid`.
+3. Set `owner` to `kind` (`product_component`, `data_component` or
+   `external_system`) and `ref` (the owner's UID).
+4. Set `protocol`, `port` and `endpoint` (the path only, no host; write path
+   parameters as `{name}` or `:name`).
+5. Set `authenticationModel`. `TBD` does not satisfy `interface-protection`;
+   `none` needs a committed DecisionRecord keyed `interface_unprotected`.
+6. Set `catalogStatus`: `stub` when only the caller's knowledge is recorded,
+   otherwise `incomplete` or `complete`. Authoring a listener whose key matches
+   a stub upgrades that stub and keeps its UID.
+7. Set `targetListener` to this UID on every relationship that calls it, and run
+   validation.
+
+The bundled examples show the target model (`examples/catalog/`):
+
+- **Look-alike internal listeners.** Billing Export Service and Image Import
+  Service each own an SFTP listener on TCP port 22 at `/`
+  (`listener-billing-export-sftp.yaml`, `listener-image-import-sftp.yaml`).
+  Same protocol, port and path, different owners: two listeners, never a near
+  match, and each relationship from the Ops Console names its own.
+- **One external system, one listener, several callers.** PagerDuty is a
+  `system` object (`system-pagerduty.yaml`) owning one listener, PagerDuty
+  Events API v2 (HTTPS 443 `/v2/enqueue`). The Ops Console, Billing Export
+  Service and Image Import Service each have a relationship with
+  `target: <PagerDuty>` and `targetListener: <Events API v2>`, with no
+  `externalTarget` and no `flow`.
+
+```yaml
+source: 01KVFRT368-PCB1        # Billing Export Service, the caller
+target: 01KVFRT368-SY01        # PagerDuty system
+targetListener: 01KVFRT368-PD03 # PagerDuty Events API v2
+label: sends alerts to
+technology: HTTPS
+direction: synchronous
+```
+
+The older example relationships that still use `externalTarget` are kept as
+legacy content (baselined); `/draft migrate` shows how it would convert them.
+
+## Record Interfaces, Listeners And Edge Slots
+
+- Every relationship sets `targetListener` to the Listener object it calls
+  (ratcheted rule `relationship-target-listener`); see Add A Listener.
+- Product team: on a ProductComponent add `interfaces` (name and protocol), and
+  on each relationship that targets a product component set `targetInterface` to
+  the name of an interface it uses (ratcheted rule `relationship-target-interface`;
+  data components and external targets are exempt).
+- Infrastructure team: add `listeners` (name, protocol, port) to the RuntimeService,
+  DataStoreService, NetworkService or Host. On a ReferenceArchitecture, add
+  `fills: <network_service uid>` to the deployable object entry whose `slot` is
+  `firewall`, `web-application-firewall`, `load-balancer`, `api-gateway` or `ingress`.
+- A SoftwareDeploymentPattern service group sets `exposedThrough` only when its
+  chain differs from the reference architecture's (a list of NetworkService uids, or `none`).
+- Do not record hostnames, IPs, endpoints, security-group rules, certificates or health checks.
 
 ## Add A DraftingSession
 
